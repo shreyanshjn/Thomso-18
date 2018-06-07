@@ -1,0 +1,23 @@
+{
+  "name": "wfms",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "proxyquire": "^2.0.1",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.4",
+    "rewire": "^4.0.1"
+  },
+  "scripts": {
+    "start": "node scripts/customized-config start",
+    "build": "node scripts/customized-config build",
+    "test": "node scripts/customized-config test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "image-webpack-loader": "^4.3.0"
+  }
+}
