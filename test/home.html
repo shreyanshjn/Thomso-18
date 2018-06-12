@@ -29,201 +29,22 @@
 <script type="text/javascript" src="/js/main.js?20180608"></script>
 <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
 <script type="text/javascript" src="js/jquery.fullPage.js"></script>
-<style>
-	#navigation {
-		padding: 0px 4vw 0px 4vw;
-		height: fit-content;
-		z-index: 1;
-		position: fixed;
-		width: 100vw;
-		background:red;
-		display: flex;
-		justify-content: space-between;
-	}
-	#navigation > .icon{
-		height: 50px;
-		width: 80px;
-		background: pink;
-		display: flex;
-    	align-items: center;
-		color: purple
-	}
-	#navigation > .links{
-		display: flex;
-    	align-items: center;
-	}
-	#navigation > .links > a, #navigation > .links > a:visited {
-		text-decoration: none;
-		color:aqua;
-		margin: 0px 2vw;
-		transition: all 0.25s;
-	}
-	#navigation > .links > a:hover, #navigation > .links > a:active, #navigation > .links > a:focus{
-		text-decoration: none;
-		color:azure;
-		margin: 0px 2vw;
-	}
-	#home {
-		padding-top: 50px;
-		display: flex;
-		justify-content: space-around;
-		align-items: center;
-		height: 100vh;
-	}
-	#home > .tagline {
-		width: 50vw;
-		text-align: right;
-	}
-	#home > .tagline > .main {
-		font-size: 4em;
-	}
-	#home > .tagline > .sub {
-		font-size: 2em;
-	}
-	#home > .tagline > .subsub {
-		font-size: 1em;
-	}
-	#home > .social {
-		width: 20vw;
-		height: 50vh;
-		display: flex;
-		justify-content: space-around;
-		flex-direction: column;
-	}
-	#about {
-		padding: 10vh 4vw;
-		display: flex;
-		justify-content: space-around;
-		align-items: center;
-		flex-direction: column;
-		height: 100vh;
-	}
-	#about > .title {
-		font-size: 3em;
-    	font-weight: 600;
-	}
-	#about > .description {
-		width: 75vw;
-	}
-	#about > .button {
-		padding: 15px 35px;
-		border: dashed white 2px;
-		border-radius: 50%;
-		color: white;
-		transition: all 0.25s;
-		cursor: pointer;
-	}
-	#about > .button:hover {
-		border: solid white 2px;
-		color: #161e56;
-		background: white;
-	}
-	#contact {
-		display: flex;
-		padding: 0px 4vw 0px 4vw;
-		min-height: 250px;
-		margin-bottom: 5vh;
-		align-items: center;
-	}
-	#contact > .left {
-		width: 50%;
-	}
-	#contact > .right {
-		width: 50%;
-	}
-	#contact > .left > div {
-		width: 100%;
-		text-align: left;
-		margin-bottom: 15px;
-		font-weight: 600;
-		display: inline-flex;
-		text-align:left;
-	}
-	#contact > .right > div {
-		width: 100%;
-		text-align: left;
-		margin-bottom: 15px;
-		font-weight: 600;
-		display: inline-flex;
-		text-align:left;
-	}
-	#contact > .left > .add::before {
-		background: url('../images/location.png');
-		content: '';
-		display: inline-block;
-		height: 35px;
-		width: 50px;
-		position: relative;
-		margin-right: 25px;
-		background-repeat: no-repeat;
-		background-position: right;
-	}
-	#contact > .left > .add > div > p {
-		margin-bottom: 5px;
-	}
-	#contact > .left > .email::before {
-		background: url('../images/web.png');
-		content: '';
-		display: inline-block;
-		height: 30px;
-		width: 50px;
-		position: relative;
-		margin-right: 25px;
-		background-repeat: no-repeat;
-		background-position: right;
-	}
-	#contact > .right > .mob::before {
-		background: url('../images/phone.png');
-		content: '';
-		display: inline-block;
-		height: 33px;
-		width: 50px;
-		position: relative;
-		margin-right: 25px;
-		background-repeat: no-repeat;
-		background-position: right;
-	}
-	#contact > .right > .mob > div {
-		display: flex;
-		width: 50%;
-		justify-content: space-between;
-	}
-	#footer {
-		display: flex;
-		justify-content: center;
-		position: fixed;
-		bottom: 2vh;
-		width: 100%;
-	}
-	#footer > div {
-		display: flex;
-		width: 60%;
-		justify-content: space-around;
-	}
-	#footer > div > div {
-		border-radius: 50%;
-		color: white;
-		height: 2em;
-		width: 2em;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		font-size: 1.5em;
-		background-color: orange;
-		transition: all 0.5s;
-	}
-	#footer > div > div:hover {
-		background-color: cyan;
-		color:blue;
-	}
-</style>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+<link href='css/style.css' rel='stylesheet' type='text/css'>
+
 	</head>
 	<body>
 		<div id="galaxy"></div>
 		<div id="navigation">
 			<!-- <img src="" alt="thomso" /> -->
 			<div class="icon">
-				Thomso'18
+				<img src="images/logo.png" class="header-logo">
 			</div>
 			<div class="links">
 				<a data-menuanchor="about-us" href="#about-us">
@@ -239,29 +60,24 @@
 				<div id="home">
 					<div class="tagline">
 						<div class="main">
-							Seized by Stardust
+							Seized By Stardust
 						</div>
 						<div class="sub">
-							--maa ka bhosda
+							Thomso'18
 						</div>
 						<div class="subsub">
-							----bhosda digs deeper
+							Annual Cultural Fest of IIT Roorkee
 						</div>
 					</div>
-					<div class="social">
-						<div>
-							First
-						</div>
-						<div>
-							Second
-						</div>
-						<div>
-							Third
-						</div>
-						<div>
-							Fourth
-						</div>
-					</div>
+
+					<div class="social-icons">
+							<p class="connectUs">Connect Us</p>
+                                 <ul class="social">
+                                  <li class="facebook"><a href="https://www.facebook.com/thomsoiitroorkee/?ref=br_rs"><i class="fa fa-facebook fa-3x"></i></a></li>
+                                  <li class="twitter"><a href="http://twitter.com/Kyokushinowa"><i class="fa fa-instagram fa-3x"></i></a></li>
+                                  <li class="behance2"><a href="https://www.linkedin.com/company/thomso-iit-roorkee-official/"><i class="fa fa-linkedin fa-3x"></i></a></li>
+                                </ul>
+                          </div>
 				</div>
 			</div>
 			<div class="section">
@@ -269,7 +85,7 @@
 					<div class="title">
 						About Us
 					</div>
-					<div class="description">
+					<div class="description test-justify">
 						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
 					</div>
 					<div class="button">
@@ -279,43 +95,46 @@
 			</div>
 			<div class="section">
 				<div id="contact">
-					<div class="left">
-						<div class="add">
-							<div>
-								<p>P-10</p>
-								<p>Connaught Place</p>
-								<p>New Delhi</p>
-								<p>INDIA - 110001</p>
+					<div class="row">
+						<div class="col-sm-5 col-sm-offset-1">
+							<div class="address">
+								<p class="address-text"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;&nbsp;Addresss : Thomso Office<br/> 
+								<span class="address-span">Multi Activity Center,</span><br/>
+								<span class="address-span">	Indian Institute of Technology, Roorkee</span><br/>
+							</div>
+							<div class="address">
+								<p class="address-text"><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;Email <span class="email-span"> : info@thomso.in</span><br/>
 							</div>
 						</div>
-						<div class="email">
-							<p>info@iotrek.io</p>
+						<div class="col-sm-5">
+							<div class="address">
+								<p class="address-text"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;Contact : <br/> 
+								<span class="address-span">Suyash Singh &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: +91-9919431223 </span><br/>
+								<span class="contact-span">: suyash@thomso.in</span><br/>
+								<span class="address-span">Samarth Gubrele : +91-9919431223 </span><br/>
+								<span class="contact-span">: samarth@thomso.in</span><br/>
+								<span class="address-span">Abhishek BC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : +91-9919431223 </span><br/>
+								<span class="contact-span">: abhishek@thomso.in</span><br/></p>
+							</div>
 						</div>
 					</div>
-					<div class="right">
-						<div class="mob">
-							<div>
-								<p>Randwa One</p>
-								<p>+91-PR05717U73</p>
+						<div class="row icon-row">
+							<div class="col-sm-6 col-sm-offset-3">
+								<ul class="social-network social-circle">
+		                        <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-instagram"></i></a></li>
+		                        <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+		                        <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+		                        <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+		                        <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+		                    </ul>	
 							</div>
 						</div>
-						<div class="mob">
-							<div>
-								<p>Dusra Randwa</p>
-								<p>+91-PR05717U73</p>
-							</div>
-						</div>
-						<div class="mob">
-							<div>
-								<p>R3</p>
-								<p>+91-PR05717U73</p>
-							</div>
-						</div>
+						
 					</div>
 				</div>
 			</div>
 		</div>
-		<div id="footer">
+		<!-- <div id="footer">
 			<div>
 				<div>
 					1
@@ -330,7 +149,7 @@
 					4
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<canvas id='fire' style="height: 0%; width: 0%;position:absolute"></canvas>
 		<script>
 			$(document).ready(function() {
