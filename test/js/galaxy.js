@@ -35,7 +35,7 @@ function Galaxy(element)
 			blending: THREE.AdditiveBlending
 		});
 
-		for ( var i = 0; i < 750; i++ ) {
+		for ( var i = 0; i < 500; i++ ) {
 			var particle = new THREE.Sprite( material );
 			particle.position.x = Math.random() * 2000 - 1000;
 			particle.position.y = Math.random() * 2000 - 1000;
@@ -47,36 +47,36 @@ function Galaxy(element)
 		letterGroup = new THREE.Group();
 		scene.add( letterGroup );
 
-		azar = 'THOMSO';
-		for(var i=0; i< azar.length; i++) {
-			var letter = new THREE.Sprite(new THREE.SpriteMaterial({
-				map: new THREE.CanvasTexture( generateChar(azar[i], 512) ),
-				rotation: Math.random() * Math.PI / 4 - Math.PI / 8,
-				blending: THREE.AdditiveBlending
-			}));
+		// azar = 'THOMSO\'18';
+		// for(var i=0; i< azar.length; i++) {
+		// 	var letter = new THREE.Sprite(new THREE.SpriteMaterial({
+		// 		map: new THREE.CanvasTexture( generateChar(azar[i], 512) ),
+		// 		rotation: Math.random() * Math.PI / 4 - Math.PI / 8,
+		// 		blending: THREE.AdditiveBlending
+		// 	}));
 
-			letter.scale.x = letter.scale.y = 256;
-			letterGroup.add(letter);
+		// 	letter.scale.x = letter.scale.y = 180;
+		// 	letterGroup.add(letter);
 
-			(function(l) {
-				l.material.opacity = 0;
-				new TWEEN.Tween(l.material)
-					.delay(i*250 + 500)
-					.to({opacity: 1}, 500)
-					.start();
+		// 	(function(l) {
+		// 		l.material.opacity = 0;
+		// 		new TWEEN.Tween(l.material)
+		// 			.delay(i*250 + 500)
+		// 			.to({opacity: 1}, 500)
+		// 			.start();
 
-				new TWEEN.Tween(l.position)
-					.easing(TWEEN.Easing.Exponential.Out)
-					.delay(i*250)
-					.to({
-						x: i * 220 - 500,
-						y: Math.random() * 150 - 150,
-						z: Math.random() * 350 + 650
-					}, 1000)
-					.start();
+		// 		new TWEEN.Tween(l.position)
+		// 			.easing(TWEEN.Easing.Exponential.Out)
+		// 			.delay(i*250)
+		// 			.to({
+		// 				x: i * 180 - 500,
+		// 				y: Math.random() * 150 - 150,
+		// 				z: Math.random() * 350 + 650
+		// 			}, 1000)
+		// 			.start();
 
-			})(letter);
-		}
+		// 	})(letter);
+		// }
 
 		renderer = new THREE.WebGLRenderer({alpha: true});
 		renderer.setSize(window.innerWidth, window.innerHeight);
@@ -181,14 +181,14 @@ function Galaxy(element)
 
 		scene.position.y = scrollTop * 0.5;
 
-		camera.position.x += (mouseX / 2 - camera.position.x) * 0.02;
-		camera.position.y += (-mouseY / 2 - camera.position.y) * 0.02;
+		camera.position.x += (mouseX  - camera.position.x) * 0.002;
+		camera.position.y += (-mouseY - camera.position.y) * 0.002;
 		camera.lookAt(scene.position);
 
 		element.style.backgroundPosition = '0 ' + scrollPercent + '%';
 
-		particleGroup.rotation.x += 0.0001;
-		particleGroup.rotation.y += 0.0001;
+		particleGroup.rotation.x += 0.002;
+		particleGroup.rotation.y += 0.002;
 
 		renderer.render(scene, camera);
 	}
