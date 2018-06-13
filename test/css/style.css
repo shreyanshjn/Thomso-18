@@ -1,14 +1,18 @@
 #navigation {
-		padding: 2vh 4vw 0px 4vw;
+		padding: 2vh 4vw 2vh 4vw;
     height: fit-content;
     z-index: 1;
     position: fixed;
     width: 100vw;
-    background-color: #000;
+    background: linear-gradient(0deg, #00000000, black 25%)
     display: flex;
     /* opacity: 0; */
     justify-content: space-between;
 	}
+#galaxy {
+	top:-100px;
+	bottom:-100px
+}
 	.header-logo{
 		height: 13vh;
 		width: 13vw;
@@ -40,7 +44,7 @@
 	#navigation > .links > a:hover, #navigation > .links > a:active, #navigation > .links > a:focus{
 		text-decoration: none;
 		color:#fff;
-		font-size: 1.6em;
+		transform: scale(1.1):
 		margin: 0px 2vw;
 	}
 	#home {
