@@ -13,7 +13,7 @@
 <script type="text/javascript" src="/asset/js/three.min.js"></script>
 <script type="text/javascript" src="/asset/js/Tween.js"></script>
 <script type="text/javascript" src="/js/galaxy.js?20180608"></script>
-<script type="text/javascript" src="/js/support.js"></script>
+<!-- <script type="text/javascript" src="/js/support.js"></script> -->
 <script type="text/javascript" src="/asset/js/jquery.min.js"></script>
 <script type="text/javascript" src="/js/main.js?20180608"></script>
 <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
@@ -76,8 +76,20 @@
 						Know More
 					</div>
 				</div>
+			
+				
 			</div>
+
+
+
 			<div class="section">
+				<div class="sponsors">
+					<!-- <button class="collapsible1">Open Section 1</button>
+					<div class="content">
+					  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</div> -->
+					<!-- <div class="card card-1"></div> -->
+				</div>
 				<div id="contact">
 					<div class="row">
 						<div class="col-sm-5 col-sm-offset-1">
@@ -118,22 +130,6 @@
 				</div>
 			</div>
 		</div>
-		<!-- <div id="footer">
-			<div>
-				<div>
-					1
-				</div>
-				<div>
-					2
-				</div>
-				<div>
-					3
-				</div>
-				<div>
-					4
-				</div>
-			</div>
-		</div> -->
 		<canvas id='fire' style="height: 0%; width: 0%;position:absolute"></canvas>
 		<script>
 			$(document).ready(function() {
@@ -210,5 +206,21 @@
 				});
 			});
 		</script>
+		<script>
+var coll = document.getElementsByClassName("collapsible1");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active1");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
   </body>
   </html>
