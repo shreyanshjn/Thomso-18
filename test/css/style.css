@@ -2,7 +2,7 @@
 		padding: 2vh 4vw 0px 4vw;
 		height: fit-content;
 		z-index: 1;
-		/*position: fixed;*/
+		position: fixed;
 		width: 100vw;
 		/*background:#000;*/
 		display: flex;
@@ -15,9 +15,12 @@
 		margin-top: 8vh
 	}
 	#navigation > .icon{
-		height: 50px;
-		width: 80px;
-		/*background-color: red;*/
+		height: 75px;
+		width: 150px;
+		background: url('../images/logo.png');
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
 		display: flex;
     	align-items: center;
 		color: #fff;
@@ -42,6 +45,7 @@
 		margin: 0px 2vw;
 	}
 	#home {
+		max-height: 100vh;
 		padding-top: 0px;
 		display: flex;
 		justify-content: space-around;
@@ -71,6 +75,7 @@
 		flex-direction: column;
 	}
 	#about {
+		max-height: 100vh;
 		padding: 5vh 4vw;
 		display: flex;
 		justify-content: space-around;
@@ -107,6 +112,7 @@
 		background: white;
 	}
 	#contact {
+		max-height: 100vh;
 		/*display: flex;*/
 		/*padding: 0px 4vw 0px 4vw;*/
 		min-height: 250px;
@@ -117,7 +123,10 @@
 		opacity: .6;
 		padding-bottom: 8vh ;
 		padding-top: 8vh ;
-		margin-top: 15vh
+		/* margin-top: 15vh; */
+		position: absolute;
+		bottom: 0px;
+		width: 100%;
 	}
 	.display{
 		display: inline;
