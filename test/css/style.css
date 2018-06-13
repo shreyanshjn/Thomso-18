@@ -51,20 +51,29 @@
 		align-items: center;
 		height: 100vh;
 		color:#fff;
+		/*font-family: 'Eater', cursive;*/
 	}
 	#home > .tagline {
 		width: 80vw;
 		text-align: right;
 	}
 	#home > .tagline > .main {
-		font-size: 6em;
-		margin-top: -20vh
+		font-size: 8em;
+    /*letter-spacing: .2em;*/
+    margin-top: -15vh;
+    font-weight: 500;
+
 	}
 	#home > .tagline > .sub {
 		font-size: 3em;
+    /*letter-spacing: .2em;*/
+    font-weight: 500;
 	}
 	#home > .tagline > .subsub {
-		font-size: 1.5em;
+		font-size: 2em;
+    letter-spacing: .2em;
+    font-weight: 500;
+    font-weight: 700
 	}
 	#home > .social {
 		width: 20vw;
@@ -90,8 +99,10 @@
 	}
 	#about > .description {
 		width: 75vw;
-		font-size: 1.5em;
-		margin-top: -5vh
+		font-size: 1.3em;
+		margin-top: -8vh;
+		text-align: center;
+    text-justify: inter-word;
 	}
 	#about > .button {
 		padding: 15px 35px;
@@ -120,7 +131,7 @@
 		color: #fff;
 		background-color: #000;
 		opacity: .6;
-		padding-bottom: 8vh ;
+		padding-bottom: 0vh ;
 		padding-top: 8vh ;
 		/* margin-top: 15vh; */
 		position: absolute;
@@ -237,7 +248,7 @@
 	}
 
 .social-icons{
-	margin-left: 20vw
+	margin-left: 30vw
 }
 .connectUs{
 	font-size: 1.5em;
@@ -400,48 +411,142 @@ a.socialIcon:hover, .socialHoverClass {
 	transition: all 0.8s;
 }
 
+.sponsorDiv{
+	width: 80vw;
+    margin-left: 20vw;
+    margin-top: -25vh
+}
+
+.sponsor-button {
+  border-radius: 4px;
+    background-color: #e8420d;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    width: 287px;
+    transition: all 0.5s;
+    cursor: pointer;
+  margin: 5px;
+  letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.sponsor-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.sponsor-button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.sponsor-button:hover span {
+  padding-right: 25px;
+}
+
+.sponsor-button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.current-sponsor{
+
+}
+.previous-spomsor{
+	margin-left: 20vw;
+}
+
+
 @media only screen and (max-width: 700px) {
+#navigation > .links > a, #navigation > .links > a:visited {
+		font-size: 1em;
+	}
 #home{
 	font-size: 1.2vw;
 	margin-top: -10.5vh;
+	text-align: center;
 }   
 #home > .tagline{
 	min-width: 86vw;
-	margin-left: -16vw;
+	margin-left: -10vw;
 }
 #home > .tagline > .main{
-	font-size: 8.1em;
-	margin-top: -25vh;
+	text-align: center;
+	font-size: 10.1em;
+	margin-top: -18vh;
 	margin-bottom: 2vh;
+	font-weight: 700;
+	letter-spacing: 5px
 }
 #home > .tagline > .sub{
-	font-size: 8.5em;
+	font-size: 7.5em;
+	text-align: center;
 
 }
 #home > .tagline > .subsub{
 	font-size: 3.9em;
+	text-align: center;
 }
 .social-icons{
-	margin-left: -84vw;
+	margin-left: -97vw;
 	font-size: 2.4vw;
 	margin-top: 14vh;
 	}
 .connectUs{
 	font-size: 2.7em;
-	margin-left: -5.3vw;
+	margin-left: -16vw;
 }
 #about > .title{
 	font-size: 3em;
 }
 #about > .description{
-	font-size: 1.2em;
+	font-size: .8em;
 	margin-top: -10vh;
 	text-align: justify;
+	word-spacing: -1px
 }
 #contact{
 	font-size: 2.6vw;
 }
 ul.social-network li{
-	padding-right: 40px;
+	padding-right: 15px;
 }
+.social-circle li a {
+	padding: 10px 0px;
+	margin-left: 7%;
 }
+.sponsorDiv{
+	width: 80vw;
+    margin-left: 20vw;
+    margin-top: -40vh
+}
+.sponsor-button {
+    font-size: 15px;
+    padding: 10px;
+    width: 200px;
+}
+.sponsor-button:hover span {
+  padding-right: 25px;
+  font-size: 12px
+}
+.current-sponsor{
+	display: block;
+}
+.previous-spomsor{
+	margin-left: 1.5vw;
+	display: block;
+}
+#navigation > .icon{
+		height: 50px;
+		width: 100px;
+	}
+}
+
