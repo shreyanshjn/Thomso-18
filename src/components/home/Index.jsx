@@ -6,6 +6,7 @@ import PrevThomso from './PrevThomso';
 import ButSuggestion from './ButSuggestion';
 import Footer from './Footer';
 import './style.css';
+import './footer.css';
 
 export default class HomeIndex extends React.Component{
     render(){

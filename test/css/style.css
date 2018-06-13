@@ -12,8 +12,6 @@
 	.header-logo{
 		height: 13vh;
 		width: 13vw;
-		/*position: relative;*/
-		/*padding-top: 15vh*/
 	}
 	#navigation > .icon{
 		height: 75px;
@@ -402,62 +400,48 @@ a.socialIcon:hover, .socialHoverClass {
 	transition: all 0.8s;
 }
 
-/*.collapsible1 {
-    background-color: #777;
-    color: white;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
+@media only screen and (max-width: 700px) {
+#home{
+	font-size: 1.2vw;
+	margin-top: -10.5vh;
+}   
+#home > .tagline{
+	min-width: 86vw;
+	margin-left: -16vw;
 }
+#home > .tagline > .main{
+	font-size: 8.1em;
+	margin-top: -25vh;
+	margin-bottom: 2vh;
+}
+#home > .tagline > .sub{
+	font-size: 8.5em;
 
-.active1, .collapsible1:hover {
-    background-color: #555;
 }
-
-.collapsible1:after {
-    content: '\002B';
-    color: white;
-    font-weight: bold;
-    float: right;
-    margin-left: 5px;
+#home > .tagline > .subsub{
+	font-size: 3.9em;
 }
-
-.active1:after {
-    content: "\2212";
+.social-icons{
+	margin-left: -84vw;
+	font-size: 2.4vw;
+	margin-top: 14vh;
+	}
+.connectUs{
+	font-size: 2.7em;
+	margin-left: -5.3vw;
 }
-.content {
-    padding: 0 18px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-    background-color: #f1f1f1;
-}*/
-
-.sponsors{
-	margin-top: -31vh;
-    width: 60vw;
-    margin-left: 20vw;
+#about > .title{
+	font-size: 3em;
 }
-/*
-.card {
-  background: #fff;
-  border-radius: 2px;
-  display: inline-block;
-  height: 300px;
-  margin: 1rem;
-  position: relative;
-  width: 300px;
+#about > .description{
+	font-size: 1.2em;
+	margin-top: -10vh;
+	text-align: justify;
 }
-
-.card-1 {
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+#contact{
+	font-size: 2.6vw;
 }
-
-.card-1:hover {
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-}*/
+ul.social-network li{
+	padding-right: 40px;
+}
+}
