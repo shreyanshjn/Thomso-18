@@ -14,6 +14,10 @@
 <script type="text/javascript" src="/asset/js/Tween.js"></script>
 <script type="text/javascript" src="/js/galaxy.js?20180608"></script>
 <!-- <script type="text/javascript" src="/js/support.js"></script> -->
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
 <script type="text/javascript" src="/asset/js/jquery.min.js"></script>
 <script type="text/javascript" src="/js/main.js?20180608"></script>
 <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
@@ -41,28 +45,42 @@
 		</div>
 		<div id="fullpage">
 			<div class="section">
-				<div id="home">
-					<div class="tagline">
-						<div class="main">
-							Thomso'18
-						</div>
-						<!-- <div class="sub">
-							25<sup>th</sup> - 28<sup>th</sup> October
-						</div> -->
-						<div class="subsub">
-							Coming Soon....
-						</div>
-					</div>
+				<div class="slid">
+				    <div class="slide">
+				      	<div class="slide__img">
+				        	<iframe class="youtubeEmbed" 
+								src="https://www.youtube.com/embed/kD8ZvzmgVlo">
+							</iframe>
+				      	</div>
+				    </div>
+				    <div class="slide">
+				      	<div class="slide__img">
+				        	<div id="home">
+								<div class="tagline">
+									<div class="main">
+										Thomso'18
+									</div>
+									<!-- <div class="sub">
+										25<sup>th</sup> - 28<sup>th</sup> October
+									</div> -->
+									<div class="subsub">
+										Coming Soon....
+									</div>
+								</div>
 
-					<div class="social-icons">
-							<p class="connectUs">Connect Us</p>
-                                 <ul class="social">
-                                  <li class="facebook"><a href="https://www.facebook.com/thomsoiitroorkee/?ref=br_rs"><i class="fa fa-facebook fa-3x"></i></a></li>
-                                  <li class="twitter"><a href="http://twitter.com/Kyokushinowa"><i class="fa fa-instagram fa-3x"></i></a></li>
-                                  <li class="behance2"><a href="https://www.linkedin.com/company/thomso-iit-roorkee-official/"><i class="fa fa-linkedin fa-3x"></i></a></li>
-                                </ul>
-                          </div>
+								<div class="social-icons">
+									<p class="connectUs">Connect Us</p>
+	                                <ul class="social">
+	                                  	<li class="facebook"><a href="https://www.facebook.com/thomsoiitroorkee/?ref=br_rs"><i class="fa fa-facebook fa-3x"></i></a></li>
+	                                  	<li class="twitter"><a href="http://twitter.com/Kyokushinowa"><i class="fa fa-instagram fa-3x"></i></a></li>
+	                                  	<li class="behance2"><a href="https://www.linkedin.com/company/thomso-iit-roorkee-official/"><i class="fa fa-linkedin fa-3x"></i></a></li>
+	                                </ul>
+		                    	</div>
+							</div>
+				      	</div>
+					</div>
 				</div>
+
 			</div>
 			<div class="section">
 				<div id="about">
@@ -203,6 +221,14 @@
 					onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
 				});
 			});
+
+			$('.slid').slick({
+			  autoplay: true,
+			  speed: 800,
+			  lazyLoad: 'progressive',
+			  arrows: false,
+			  dots: true,
+			}).slickAnimation();
 		</script>
   </body>
   </html>

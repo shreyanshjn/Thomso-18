@@ -57,7 +57,7 @@ html.fp-enabled,
     -ms-user-select: none; /* IE10+ */
     position: absolute;
     z-index: 4;
-    top: 50%;
+    top: 65%;
     cursor: pointer;
     width: 0;
     height: 0;
@@ -70,12 +70,12 @@ html.fp-enabled,
 .fp-controlArrow.fp-prev {
     left: 15px;
     width: 0;
-    border-width: 38.5px 34px 38.5px 0;
+    border-width: 18.5px 18px 18.5px 0;
     border-color: transparent #fff transparent transparent;
 }
 .fp-controlArrow.fp-next {
     right: 15px;
-    border-width: 38.5px 0 38.5px 34px;
+    border-width: 18.5px 0 18.5px 18px;
     border-color: transparent transparent transparent #fff;
 }
 .fp-scrollable {

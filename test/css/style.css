@@ -480,6 +480,200 @@ a.socialIcon:hover, .socialHoverClass {
     width: 75vw;
 }
 
+.youtubeEmbed{
+	height: 84vh;
+    margin-left: 0vw;
+    width: 100vw;
+    margin-top: 9vh;
+}
+
+// Vars
+@slick-dot-width: 20px;
+@slick-dot-height: 20px;
+@slick-dot-color: white;
+@slick-dot-color-active: @slick-dot-color;
+@slick-opacity-default: 0.75;
+@slick-opacity-on-hover: 1;
+@slick-opacity-not-active: 0.25;
+
+// Base
+/*html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Montserrat', sans-serif;
+}*/
+
+// Design Slider
+.slid, .slide {
+  @media (min-width: 992px) {
+    height: 80vh;
+  }
+}
+
+.slide {
+  position: relative;
+  .slide__img {
+    @media (min-width: 992px) {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    img {
+      max-width: 100%;
+      height: auto;
+      opacity: 1 !important;
+      animation-duration: 3s;
+      transition: all 1s ease;
+    }
+  }
+  .slide__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    &--headings {
+      text-align: center;
+      color: #FFF;
+      h2 {
+        font-size: 4.5rem;
+        margin: 10px 0;
+      }
+      .animated {
+        transition: all .5s ease;
+      }
+    }
+  }
+}
+
+// Change animation presets
+.slid [data-animation-in] {
+    opacity: 0;
+    animation-duration: 1.5s;
+    transition: opacity 0.5s ease 0.3s;
+}
+
+// Dots
+.slick-dotted .slick-slider {
+    margin-bottom: 30px;
+}
+
+.slick-dots {
+    position: absolute;
+    bottom: 25px;
+    list-style: none;
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    li {
+        position: relative;
+        display: inline-block;
+        margin: 0 5px;
+        padding: 0;
+        cursor: pointer;
+        button {
+            border: 0;
+            display: block;
+            outline: none;
+            line-height: 0px;
+            font-size: 0px;
+            color: transparent;
+            padding: 5px;
+            cursor: pointer;
+            transition: all .3s ease;
+            &:hover, &:focus {
+                outline: none;
+            }
+        }
+    }
+}
+
+.simple-dots {
+  .slick-dots {
+    li {
+      width: @slick-dot-width;
+      height: @slick-dot-height;
+      button {
+        border-radius: 50%;
+        background-color: @slick-dot-color;
+        opacity: @slick-opacity-not-active;
+        width: @slick-dot-width;
+        height: @slick-dot-height;
+        &:hover, &:focus {
+          opacity: @slick-opacity-on-hover;
+        }
+      }
+      &.slick-active button {
+        color: @slick-dot-color-active;
+        opacity: @slick-opacity-default;
+      }
+    }
+  }
+}
+
+.stick-dots {
+  .slick-dots {
+    li {
+      height: 3px;
+      width: 50px;
+      button {
+        position: relative;
+        background-color: @slick-dot-color;
+        opacity: @slick-opacity-not-active;
+        width: 50px;
+        height: 3px;
+        padding: 0;
+        &:hover, &:focus {
+          opacity: @slick-opacity-on-hover;
+        }
+      }
+      &.slick-active button {
+        color: @slick-dot-color-active;
+        opacity: @slick-opacity-default;
+        &:hover, &:focus {
+          opacity: @slick-opacity-on-hover;
+        }
+      }
+    }
+  }
+}
+
+/* /////////// IMAGE ZOOM /////////// */
+@keyframes zoomInImage {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+  to {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+}
+
+.zoomInImage {
+  animation-name: zoomInImage;
+}
+
+@keyframes zoomOutImage {
+  from {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.zoomOutImage {
+  animation-name: zoomOutImage;
+}
+
+
 @media only screen and (max-width: 700px) {
 #navigation > .links > a, #navigation > .links > a:visited {
 		font-size: 1em;
@@ -563,5 +757,10 @@ ul.social-network li{
 		height: 50px;
 		width: 100px;
 	}
+
+	.footfallImage {
+    height: 50vh;
+    width: 75vw;
+}
 }
 
