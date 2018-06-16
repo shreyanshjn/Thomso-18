@@ -1,5 +1,6 @@
 a,a:hover{
 	text-decoration: none !important;
+	color: #fff
 }
 #navigation {
 		padding: 2vh 4vw 2vh 4vw;
@@ -125,8 +126,11 @@ a,a:hover{
 	#about > .button:hover {
 		border:solid #fff 2px;
 		border-radius: 50%;
-		color: #161e56;
+		
 		background: white;
+	}
+	.brochureBuuton:hover{
+		color: #161e56 !important;
 	}
 	#contact {
 		max-height: 100vh;
@@ -471,6 +475,10 @@ a.socialIcon:hover, .socialHoverClass {
 	margin-left: 20vw;
 }
 
+.footfallImage{
+	    height: 80vh;
+    width: 75vw;
+}
 
 @media only screen and (max-width: 700px) {
 #navigation > .links > a, #navigation > .links > a:visited {
