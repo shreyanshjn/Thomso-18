@@ -2,11 +2,11 @@ import { ADD_SPONSOR_SUCCESS, ADD_SPONSOR_ERROR, ADD_SPONSOR_PENDING} from '../a
 import initialState from './initialState';
 
 
-const Sponsor = (state = initialState.StoreSponsor, action) => {
-    console.log(state);
-    console.log(action.storeSuccess);
-    console.log(action.storePending);
-    console.log(action.storeError);
+const StoreSponsor = (state = initialState.StoreSponsor, action) => {
+    // console.log(state);
+    // console.log(action.storeSuccess);
+    // console.log(action.storePending);
+    // console.log(action.storeError);
     switch(action.type) {
         case ADD_SPONSOR_SUCCESS:
             return {
@@ -30,4 +30,5 @@ const Sponsor = (state = initialState.StoreSponsor, action) => {
             return state;
     }
 }
-export default Sponsor;
+
+export default StoreSponsor;

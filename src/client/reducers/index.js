@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
-import Sponsor from './StoreSponsor';
+import StoreSponsor from './StoreSponsor';
 
 export default combineReducers({
-    Sponsor
+    StoreSponsor
 });

@@ -10,7 +10,7 @@ class SponsorForm extends React.Component{
         super();
         this.state = {
             sponsorType:'Sponsor',
-            email:' ',
+            email:'Email',
             contact:'',
             message:'',
             disabled:false,
@@ -18,6 +18,13 @@ class SponsorForm extends React.Component{
             result: false
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleInput = this.handleInput.bind(this);
+    }
+
+    handleInput(e) {
+        const name = e.target.name;
+        const value = e.target.value;
+        this.setState({[name]: value});
     }
 
     handleSubmit(e){
@@ -36,7 +43,7 @@ class SponsorForm extends React.Component{
         }
     }
 
-    ComponentWillRecieveProps(nextProps){
+    componentWillReceiveProps(nextProps){
         console.log(nextProps);
         if(nextProps.isAdditionSuccess.isAdded === true){
             this.setState({result: 'Contact Added', error:false, disabled : false})
@@ -58,7 +65,7 @@ class SponsorForm extends React.Component{
                         <form action="/register" onSubmit={e => this.handleSubmit(e)}>
                             <div className="form-group">
                                 <label htmlFor="username">Connect as</label>
-                                <select className="selectpicker form-control" value={this.state.sponsorType} onChange={(e) => this.setState({sponsorType: e.target.value})}>
+                                <select name="sponsorType" className="selectpicker form-control" value={this.state.sponsorType} onChange={e => this.handleInput(e)}>
                                     <option value="Sponsor">Sponsors</option>
                                     <option value="Media">Media</option>
                                     <option value="Partner">Partner</option>
@@ -67,20 +74,20 @@ class SponsorForm extends React.Component{
 
                             <div className="form-group">
                                 <label htmlFor="Email">Email</label>
-                                <input className="form-control" type="text" name="Email" placeholder="Email" autoComplete="email"
-                                value={this.state.email} onChange={(e) => this.setState({email: e.target.email})} />
+                                <input className="form-control" type="email" name="email" placeholder="Email" 
+                                autoCorrect="off" autoCapitalize="off" value={this.state.email} onChange={e => this.handleInput(e)} autoComplete="email" />
                             </div>
 
                             <div className="form-group">
                                 <label htmlFor="Contact">Contact</label>
-                                <input className="form-control" type="text" name="Contact" placeholder="Contact"
-                                value={this.state.contact} onChange={(e) => this.setState({contact: e.target.value})} required/>
+                                <input className="form-control" type="text" name="contact" placeholder="Contact"
+                                value={this.state.contact} onChange={e => this.handleInput(e)} required/>
                             </div>
 
                             <div className="form-group">
                                 <label htmlFor="Message">Message</label>
-                                <textarea className="form-control" type="text" name="Message" placeholder="Message"
-                                value={this.state.message} onChange={(e) => this.setState({message: e.target.value})}></textarea> 
+                                <textarea className="form-control" type="text" name="message" placeholder="Message"
+                                value={this.state.message} onChange={e => this.handleInput(e)}></textarea> 
                             </div>
                             <div style={{marginTop: "15px", color: "red"}}>{this.state.error}</div> 
                             <div style={{marginTop: "15px", color: "green"}}>{this.state.result}</div> 
@@ -99,17 +106,17 @@ class SponsorForm extends React.Component{
         )
     }
 }
-SponsorForm.propTypes = {
+SponsorForm.proptypes = {
     isAdditionSuccess  : PropTypes.any.Required,
     isAdditionPending  : PropTypes.bool.Required,
-    AdditionError  : PropTypes.any,
+    additionError  : PropTypes.any,
 }
 
 var mapStateToProps = state => {
     return {
-        isAdditionSuccess : state.Sponsor.storeSuccess,
-        isAdditionPending : state.Sponsor.storePending,
-        AdditionError : state.Sponsor.storeError
+        isAdditionSuccess : state.StoreSponsor.storeSuccess,
+        isAdditionPending : state.StoreSponsor.storePending,
+        additionError : state.StoreSponsor.storeError
     }
 }
 

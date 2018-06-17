@@ -103,7 +103,7 @@ app.use((err, req, res, next) => {
   console.log(err)
   res.status(err.status || 500).json({ message })
 })
-app.listen(3002, ()=>{
+app.listen(process.env.PORT, ()=>{
 	console.log('app is running');
 });
 

@@ -6,6 +6,7 @@ import {loadState} from './LocalStorage';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 const persistedState = loadState();
+// console.log(persistedState);
 const store = createStore(rootReducer, persistedState, composeWithDevTools(applyMiddleware(thunk)));
 
 export default store;
