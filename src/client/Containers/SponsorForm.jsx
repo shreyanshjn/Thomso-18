@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {AddSponsor} from '../actions/AddSponsors';
 
-class SponsorFrom extends React.Component{
+class SponsorForm extends React.Component{
 
     constructor(){
         super();
         this.state = {
-            sponsorType:'',
-            email:'',
+            sponsorType:'Sponsor',
+            email:' ',
             contact:'',
             message:'',
             disabled:false,
@@ -36,9 +36,15 @@ class SponsorFrom extends React.Component{
         }
     }
 
-    componentWillRecieveProps(nextProps){
+    ComponentWillRecieveProps(nextProps){
+        console.log(nextProps);
         if(nextProps.isAdditionSuccess.isAdded === true){
-            this.setState({result: 'Contact Added', disabled : false})
+            this.setState({result: 'Contact Added', error:false, disabled : false})
+        }
+        else{
+            this.setState({
+                error: nextProps.isAdditionSuccess.result, disabled:false
+            })
         }
     }
 
@@ -49,11 +55,11 @@ class SponsorFrom extends React.Component{
                 <canvas id='fire' style={{height: "0%", width: "0%",position:"absolute"}} ></canvas>
                 <div className="row container signup__container">
                     <div className="container__child signup__form col-md-12 col-xs-12">
-                        <form action="/register" onSubmit={e => this.handleSubmit(e)} required>
+                        <form action="/register" onSubmit={e => this.handleSubmit(e)}>
                             <div className="form-group">
                                 <label htmlFor="username">Connect as</label>
                                 <select className="selectpicker form-control" value={this.state.sponsorType} onChange={(e) => this.setState({sponsorType: e.target.value})}>
-                                    <option value="Sponsors">Sponsors</option>
+                                    <option value="Sponsor">Sponsors</option>
                                     <option value="Media">Media</option>
                                     <option value="Partner">Partner</option>
                                 </select>
@@ -62,7 +68,7 @@ class SponsorFrom extends React.Component{
                             <div className="form-group">
                                 <label htmlFor="Email">Email</label>
                                 <input className="form-control" type="text" name="Email" placeholder="Email" autoComplete="email"
-                                value={this.state.email} onChange={(e) => this.setState({name: e.target.email})} required/>
+                                value={this.state.email} onChange={(e) => this.setState({email: e.target.email})} />
                             </div>
 
                             <div className="form-group">
@@ -77,7 +83,7 @@ class SponsorFrom extends React.Component{
                                 value={this.state.message} onChange={(e) => this.setState({message: e.target.value})}></textarea> 
                             </div>
                             <div style={{marginTop: "15px", color: "red"}}>{this.state.error}</div> 
-                            <div style={{marginTop: "15px", color: "red"}}>{this.state.result}</div> 
+                            <div style={{marginTop: "15px", color: "green"}}>{this.state.result}</div> 
                             <div style={{marginTop: "15px", color: "red"}}>{this.props.additionError}</div>
                             <div className="m-t-lg">
                                 <ul className="list-inline">
@@ -93,7 +99,7 @@ class SponsorFrom extends React.Component{
         )
     }
 }
-SponsorFrom.PropTypes = {
+SponsorForm.propTypes = {
     isAdditionSuccess  : PropTypes.any.Required,
     isAdditionPending  : PropTypes.bool.Required,
     AdditionError  : PropTypes.any,
@@ -101,9 +107,9 @@ SponsorFrom.PropTypes = {
 
 var mapStateToProps = state => {
     return {
-        isAdditionSuccess : state.StoreSponsor.storeSuccess,
-        isAdditionPending : state.StoreSponsor.storePending,
-        AdditionError : state.StoreSponsor.storeError
+        isAdditionSuccess : state.Sponsor.storeSuccess,
+        isAdditionPending : state.Sponsor.storePending,
+        AdditionError : state.Sponsor.storeError
     }
 }
 
@@ -113,4 +119,4 @@ var mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SponsorFrom);
+export default connect(mapStateToProps, mapDispatchToProps)(SponsorForm);

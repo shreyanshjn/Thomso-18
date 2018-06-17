@@ -1,5 +1,3 @@
-let BaseUrl = 'http://localhost:3001';
+let BaseUrl = 'http://localhost:3002';
 
-export const RegisterUserUrl = `${BaseUrl}/api/registerUser`;
-export const LoginUserUrl = `${BaseUrl}/api/loginUser`;
-export const FBLoginUserUrl = `${BaseUrl}/api/FBloginUser`;
+export const AddSponsorUrl = `${BaseUrl}/api/addSponsor`;

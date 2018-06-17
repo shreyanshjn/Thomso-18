@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import Sponsor from './Containers/Index.jsx';
+import SponsorIndex from './Containers/Index.jsx';
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={Sponsor} />
-          <Route exact path="/sponsor" component={Sponsor} />
+          <Route exact path="/" component={SponsorIndex} />
+          <Route exact path="/sponsor" component={SponsorIndex} />
         </Switch>
       </BrowserRouter>
     );
