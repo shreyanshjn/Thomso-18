@@ -35,6 +35,9 @@
 			<div class="icon">
 			</div>
 			<div class="links">
+				<a href="sponsorForm.html">
+					Associate With Us
+				</a>
 				<a data-menuanchor="about-us" href="#about-us">
 					About Us
 				</a>
@@ -61,18 +64,17 @@
 										Thomso'18
 									</div>
 									<!-- <div class="sub">
-										25<sup>th</sup> - 28<sup>th</sup> October
-									</div> -->
-									<div class="subsub">
 										Coming Soon....
+									</div> -->
+									<div id="countDown" class="sub">
 									</div>
 								</div>
 
 								<div class="social-icons">
-									<p class="connectUs">Connect Us</p>
+									<!-- <p class="connectUs">Connect Us</p> -->
 	                                <ul class="social">
 	                                  	<li class="facebook"><a href="https://www.facebook.com/thomsoiitroorkee/?ref=br_rs"><i class="fa fa-facebook fa-3x"></i></a></li>
-	                                  	<li class="twitter"><a href="http://twitter.com/Kyokushinowa"><i class="fa fa-instagram fa-3x"></i></a></li>
+	                                  	<li class="twitter"><a href="https://www.instagram.com/thomso.IITR"><i class="fa fa-instagram fa-3x"></i></a></li>
 	                                  	<li class="behance2"><a href="https://www.linkedin.com/company/thomso-iit-roorkee-official/"><i class="fa fa-linkedin fa-3x"></i></a></li>
 	                                </ul>
 		                    	</div>
@@ -81,6 +83,13 @@
 					</div>
 				</div>
 
+			</div>
+			<div class="section">
+				<div id="thomso-stats">
+					<div class="footfallImage">
+						<a href="brochure.html" class="hiddentext">View Brochure</a>
+					</div>
+				</div>
 			</div>
 			<div class="section">
 				<div id="about">
@@ -93,11 +102,6 @@
 					<div class="button">
 						<a href="brochure.html" class="brochureBuuton">Brochure</a>
 					</div>
-				</div>
-			</div>
-			<div class="section">
-				<div id="about">
-					<img src="img/thomso18 brochure_Chech14-07.jpg" class="footfallImage">
 				</div>
 			</div>
 			<div class="section">
@@ -126,18 +130,19 @@
 								<span class="address-span">Samarth Gubrele : +91-9919431223 </span><br/>
 								<span class="contact-span">: samarth@thomso.in</span><br/>
 								<span class="address-span">Abhishek BC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : +91-9919431223 </span><br/>
+								<span class="contact-span">: abhishek@thomso.in</span><br/><span class="address-span">Abhishek BC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : +91-9919431223 </span><br/>
 								<span class="contact-span">: abhishek@thomso.in</span><br/></p>
 							</div>
 						</div>
 					</div>
 						<div class="row icon-row">
 							<div class="col-sm-6 col-sm-offset-3">
-								<ul class="social-network social-circle">
-		                        <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-instagram"></i></a></li>
-		                        <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-		                        <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-		                        <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
-		                        <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+								<ul class="social-network social-circle" style="display: flex; width: 100%; justify-content: space-around;">
+		                        <li><a href="https://www.instagram.com/thomso.IITR/" class="icoRss" title="Rss"><i class="fa fa-instagram"></i></a></li>
+		                        <li><a href="https://www.facebook.com/thomsoiitroorkee/" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+		                        <!-- <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li> -->
+		                        <!-- <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li> -->
+		                        <li><a href="https://www.linkedin.com/company/thomso-iit-roorkee-official" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
 		                    </ul>	
 							</div>
 						</div>
@@ -146,14 +151,13 @@
 				</div>
 			</div>
 		</div>
-		<canvas id='fire' style="height: 0%; width: 0%;position:absolute"></canvas>
 		<script>
 			$(document).ready(function() {
 				$('#fullpage').fullpage({
 					//Navigation
 					menu: '#navigation',
 					lockAnchors: false,
-					anchors:['welcome', 'about-us', 'splash', 'contact-us'],
+					anchors:['welcome', 'stats', 'about-us', 'contact-us'],
 					navigation: false,
 					navigationPosition: 'right',
 					navigationTooltips: ['firstSlide', 'secondSlide', 'thirdSlide'],

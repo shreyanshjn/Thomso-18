@@ -90,12 +90,11 @@ a,a:hover{
 		margin: 0px 2vw;
 	}
 	#home {
-		max-height: 100vh;
 		padding-top: 0px;
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
-		height: 100vh;
+		height: 100%;
 		color:#fff;
 		/*font-family: 'Eater', cursive;*/
 	}
@@ -128,14 +127,21 @@ a,a:hover{
 		justify-content: space-around;
 		flex-direction: column;
 	}
-	#about {
-		max-height: 100vh;
+	#thomso-stats {
 		padding: 5vh 4vw;
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
 		flex-direction: column;
-		height: 100vh;
+		height: 100%;
+	}
+	#about {
+		padding: 5vh 4vw;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		flex-direction: column;
+		height: 100%;
 		color: #fff;
 		text-align: center;
 	}
@@ -171,7 +177,6 @@ a,a:hover{
 		color: #161e56 !important;
 	}
 	#contact {
-		max-height: 100vh;
 		/*display: flex;*/
 		/*padding: 0px 4vw 0px 4vw;*/
 		min-height: 250px;
@@ -181,7 +186,7 @@ a,a:hover{
 		background-color: #000;
 		opacity: .6;
 		padding-bottom: 0vh ;
-		padding-top: 8vh ;
+		padding-top: 4vh ;
 		/* margin-top: 15vh; */
 		position: absolute;
 		bottom: 0px;
@@ -297,85 +302,95 @@ a,a:hover{
 	}
 
 .social-icons{
-	margin-left: 30vw
+	margin-left: 30vw;
+	height: 50vh;
 }
 .connectUs{
 	font-size: 1.5em;
     font-weight: 700;
     margin-left: .5vw;
-    margin-top: 50vh
+    /* margin-top: 50vh */
 }
 	.social {
-    position: relative;
-    height: 3em;
-    width: 13.5em;
-    margin: 7vh 20px;
+		position: relative;
+    /* height: 3em; */
+    height: 100%;
+    /* width: 13.5em; */
+    display: flex;
+    justify-content: space-around;
+		flex-direction: column;
+		margin: 0px 10vw 0px 0px;
+		padding: 0px;
 }
 
 .social li {
-    display: block;
-    height: 4em;
-    line-height: 4em;
-    margin: -2.2em;
-    position: absolute;
-    -webkit-transition: -webkit-transform .7s;
-    -moz-transition: -moz-transform .7s;
-    -ms-transition: -ms-transform .7s;
-    -o-transition: -o-transform .7s;
-    transition: transform .7s;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
+		display: block;
+		border-radius: 50%;
+    /* height: 4em; */
+    /* line-height: 4em; */
+    /* margin: -2.2em; */
+    /* position: absolute; */
+    -webkit-transition: -webkit-transform .35s;
+    -moz-transition: -moz-transform .35s;
+    -ms-transition: -ms-transform .35s;
+    -o-transition: -o-transform .35s;
+    transition: transform .35s;
+    /* -webkit-transform: rotate(45deg); */
+    /* -moz-transform: rotate(45deg); */
+    /* -ms-transform: rotate(45deg); */
+    /* -o-transform: rotate(45deg); */
+    /* transform: rotate(45deg); */
     text-align: center;
-    width: 4em;
+    /* width: 4em; */
 
 }
 
 .social a {
     color: #fffdf0;
-    display: block;
-    height: 4em;
-    line-height: 6em;
+		display: block;
+    height: 4.5em;
+    /* line-height: 6em; */
     text-align: center;
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    width: 4em; 
+    /* -webkit-transform: rotate(-45deg); */
+    /* -moz-transform: rotate(-45deg); */
+    /* -ms-transform: rotate(-45deg); */
+    /* -o-transform: rotate(-45deg); */
+    /* transform: rotate(-45deg); */
+		width: 4.5em;
+		display: flex;
+		justify-content: center;
+		align-items: center; 
   
 }
 
 .social li:hover {
-  -webkit-transform: scale(1.3,1.3) rotate(45deg);
-    -moz-transform: scale(1.3,1.3) rotate(45deg);
-  -ms-transform: scale(1.3,1.3) rotate(45deg);
-    -o-transform: scale(1.3,1.3) rotate(45deg);
-  transform: scale(1.3,1.3) rotate(45deg);
+  -webkit-transform: scale(1.3,1.3);
+    -moz-transform: scale(1.3,1.3);
+  -ms-transform: scale(1.3,1.3);
+    -o-transform: scale(1.3,1.3);
+  transform: scale(1.3,1.3);
 }
 
 .facebook {
     background: #155b9d;
-    left: 0;
-    top: 0%;
+    /* left: 0; */
+    /* top: 0%; */
 }
 
 .twitter {
     background: #e95950;
-    bottom: 0;
-    left: 25%;
+    /* bottom: 0; */
+    /* left: 25%; */
 }
 .pinterest {
     background: #e11a30;
-    left: 50%;
-    top: 0%;
+    /* left: 50%; */
+    /* top: 0%; */
 }
 .behance2 {
     background: #3f7aa3;
-    top: 0%;
-    left: 50%;
+    /* top: 0%; */
+    /* left: 50%; */
 }
 
 ul.social-network {
@@ -514,8 +529,30 @@ a.socialIcon:hover, .socialHoverClass {
 }
 
 .footfallImage{
-	    height: 80vh;
-    width: 75vw;
+			height: 100%;
+			background: url('../img/thomso18 brochure_Chech14-07.jpg');
+		width: 100%;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+		color: white;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+}
+.footfallImage > .hiddentext{
+	opacity: 0;
+	transition: all 0.35s;
+	display: flex;
+	height: 100%;
+	width: 50%;
+	justify-content: center;
+	align-items: center;
+	font-size: 2em;
+}
+.footfallImage > .hiddentext:hover{
+	opacity: 1;
+
 }
 
 .youtubeEmbed{
@@ -713,11 +750,27 @@ body {
 
 
 @media only screen and (max-width: 700px) {
+	.social {
+		position: absolute;
+    width: 100%;
+    left: 0%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    margin: 0px;
+		padding: 0px;
+		height: initial;
+		bottom: 10%;
+}
+.social a {
+	height: 5em;
+	width: 5em;
+}
 .youtubeEmbed{
 	height: 50vh;
 }
 #navigation > .links > a, #navigation > .links > a:visited {
-		font-size: 1em;
+		font-size: 0.8em;
 	}
 #home{
 	font-size: 1.2vw;
@@ -726,7 +779,7 @@ body {
 }   
 #home > .tagline{
 	min-width: 86vw;
-	margin-left: -10vw;
+	margin-left: -25vw;
 }
 #home > .tagline > .main{
 	text-align: center;
@@ -798,10 +851,5 @@ ul.social-network li{
 		height: 50px;
 		width: 100px;
 	}
-
-	.footfallImage {
-    height: 50vh;
-    width: 75vw;
-}
 }
 
