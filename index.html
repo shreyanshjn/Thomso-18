@@ -3,10 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<base href="/">
-		<title>THOMSO</title>		<meta name="description" content="Rêver un lieu nouveau, éclectique &amp; sans frontière. Refuser les limites, oublier le contrôle, accepter le désir.">
-<meta property="og:title" content="AZAR Club">
-<meta property="og:description" content="Rêver un lieu nouveau, éclectique &amp; sans frontière. Refuser les limites, oublier le contrôle, accepter le désir.">
-<meta property="og:type" content="website">
+		<title>THOMSO</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="/css/font.css" media="screen" rel="stylesheet" type="text/css">
 <link href="/css/style.min.css?20180608" media="screen" rel="stylesheet" type="text/css">
@@ -33,6 +30,9 @@
 			var now = new Date().getTime();
 			var distance = countDownDate - now;
 			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			// var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			// var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			// var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 			document.getElementById("countDown").innerHTML = days + " Days to go...";    
 			if (distance < 0) {
 				clearInterval(x);
@@ -49,11 +49,11 @@
 			<div class="icon">
 			</div>
 			<div class="links">
-				<a href="sponsorsForm.html">
+				<a href="sponsorsform.html">
 					Associate With Us
 				</a>
-				<a data-menuanchor="about-us" href="#about-us">
-					About Us
+				<a href="brochure.html">
+					Brochure
 				</a>
 				<a data-menuanchor="contact-us" href="#contact-us">
 					Contact
@@ -68,6 +68,7 @@
 				        	<iframe class="youtubeEmbed" 
 								src="https://www.youtube.com/embed/kD8ZvzmgVlo" scrolling = "yes">
 							</iframe>
+							<div class="youtube-nifix"></div><div class="youtube-nifix youtube-nifix-r"></div>
 				      	</div>
 				    </div>
 				    <div class="slide">
@@ -191,7 +192,7 @@
 				</style>
 				<div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:380px;overflow:hidden;visibility:hidden;">
 					<div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
-						<img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/01.jpg" />
+						<img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/spin.svg" />
 					</div>
 					<div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:380px;overflow:hidden;">
 						<div data-p="170.00">
@@ -262,7 +263,7 @@
 						About Us
 					</div>
 					<div class="description test-justify">
-						Thomso is the annual youth festival of Indian Institute of Technology Roorkee recognized as one of the greatest and the grandest youth festivals of India. Thomso encompasses in itself lavish history, splendid culture and a profoundly rich heritage of IIT Roorkee. IIT Roorkee, earlier known as Thomason College of Civil Engineering (1853-1948) was established in 1847 in British India by the then lieutenant governor, Sir James Thomason. The fest took the name "Thomso" in 1982 inspired by the founder, and holds to it to this day. Recognising this event of gargantuan proportions, the Government of Uttarakhand proclaimed Thomso as the "Annual Youth Festival of Uttarakhand". The fest plays host to the most strikingly talented scholars and academicians from all over the country, attracts media moguls and celebrates the divine congregation of culture and intellect. With a behemothic footfall of more than 40,000 students, comprising several IITs and NITs, Thomso becomes the abode of this ambrosial combination.
+						Thomso is the annual youth festival of Indian Institute of Technology Roorkee recognized as one of the greatest and the grandest youth festivals of India since 1982. Thomso encompasses in itself lavish history, splendid culture and a profoundly rich heritage of IIT Roorkee. Recognising this event of gargantuan proportions, the Government of Uttarakhand proclaimed Thomso as the "Annual Youth Festival of Uttarakhand". The fest plays host to the most strikingly talented scholars and academicians from all over the country, attracts media moguls and celebrates the divine congregation of culture and intellect.
 					</div>
 					<div id="brochureButton" class="button">
 						<a href="brochure.html" class="brochureBuuton" target="_blank">Brochure</a>
@@ -284,19 +285,20 @@
 								<span class="address-span">	Indian Institute of Technology, Roorkee</span><br/>
 							</div>
 							<div class="address">
-								<p class="address-text"><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;Email <span class="email-span"> : info@thomso.in</span><br/>
+								<p class="address-text"><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;Email <span class="email-span"> : thomso@iitr.ac.in</span><br/>
 							</div>
 						</div>
 						<div class="col-sm-5">
 							<div class="address">
 								<p class="address-text"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;Contact : <br/> 
-								<span class="address-span">Suyash Singh &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: +91-9919431223 </span><br/>
-								<span class="contact-span">: suyash@thomso.in</span><br/>
-								<span class="address-span">Samarth Gubrele : +91-9919431223 </span><br/>
-								<span class="contact-span">: samarth@thomso.in</span><br/>
-								<span class="address-span">Abhishek BC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : +91-9919431223 </span><br/>
-								<span class="contact-span">: abhishek@thomso.in</span><br/><span class="address-span">Abhishek BC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : +91-9919431223 </span><br/>
-								<span class="contact-span">: abhishek@thomso.in</span><br/></p>
+								<span class="address-span">Suyash Singh &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: +91-9919431223 </span><br/>
+								<span class="address-span">(Convener) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; suyash.thomso@gmail.com</span><br/>
+								<span class="address-span">Samarth Gubrele &nbsp;&nbsp;: +91-9919431223 </span><br/>
+								<span class="address-span">(Co-Convener) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; samarth.thomso@gmail.com</span><br/>
+								<span class="address-span">Abhishek BC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : +91-9919431223 </span><br/>
+								<span class="address-span">(Co-Convener) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; abhishek98.thomso@gmail.com</span><br/>
+								<span class="address-span">Shubham Jaiswal&nbsp;&nbsp; : +91-9693482762 </span><br/>
+								<span class="address-span">(Public Relations)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shubham.thomso@gmail.com</span><br/></p>
 							</div>
 						</div>
 					</div>

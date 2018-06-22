@@ -1,6 +1,9 @@
-a,a:hover{
+a,a:focus	{
 	text-decoration: none !important;
 	color: #fff
+}
+a:hover {
+	color: inherit
 }
 .sponsors-responsive-image {
 	height: 100px;
@@ -76,17 +79,17 @@ a,a:hover{
     	align-items: center;
     	color: #fff
 	}
-	#navigation > .links > a, #navigation > .links > a:visited {
+	#navigation > .links > a, #navigation > .links > a:visited, #navigation > .links > a:active, #navigation > .links > a:focus {
 		text-decoration: none;
 		font-size: 1.5em;
-		color:#fff;
+		color:#ffffffb3;
 		margin: 0px 2vw;
 		transition: all 0.25s;
 	}
-	#navigation > .links > a:hover, #navigation > .links > a:active, #navigation > .links > a:focus{
+	#navigation > .links > a:hover{
 		text-decoration: none;
 		color:#fff;
-		transform: scale(1.1):
+		transform: scale(1.1);
 		margin: 0px 2vw;
 	}
 	#home {
@@ -151,7 +154,7 @@ a,a:hover{
 	}
 	#about > .description {
 		width: 75vw;
-		font-size: 1.3em;
+		font-size: 1.5em;
 		margin-top: -8vh;
 		text-align: center;
     text-justify: inter-word;
@@ -170,11 +173,11 @@ a,a:hover{
 	#about > .button:hover {
 		border:solid #fff 2px;
 		border-radius: 50%;
-		
+		color: #161e56 !important;
 		background: white;
 	}
-	.brochureBuuton:hover{
-		color: #161e56 !important;
+	.brochureBuuton{
+		color: inherit;
 	}
 	#contact {
 		/*display: flex;*/
@@ -196,11 +199,11 @@ a,a:hover{
 		display: inline;
 	}
 	.address{
-		font-size: 1.3em;
+		font-size: 1.1em;
 		padding: 3vh 0 0 10%;
 	}
 	.address-span{
-		padding-left: 24%
+		padding-left: 20.5%
 	}
 	.email-span{
 		padding-left: 5%
@@ -753,8 +756,22 @@ body {
 	max-width: 1000px;
 	height: auto;
 }
-
+.youtube-nifix{
+	height: 100%;
+	top: 0;
+	width: 40%;
+	position: absolute;
+}
+.youtube-nifix-r{
+	right: 0px;
+}
 @media only screen and (max-width: 700px) {
+	.youtube-nifix{
+		height: 100%;
+		top: 0;
+		width: 0%;
+		position: absolute;
+	}
 	.social {
 		position: absolute;
     width: 100%;
@@ -816,7 +833,8 @@ body {
 	font-size: 3em;
 }
 #about > .description{
-	font-size: .8em;
+	font-size: 1em;
+	width: 85vw;
 	margin-top: -10vh;
 	text-align: justify;
 	word-spacing: -1px
@@ -856,29 +874,4 @@ ul.social-network li{
 		height: 50px;
 		width: 100px;
 	}
-}
-
-.semi-transparent-button {
-  display: block;
-  box-sizing: border-box;
-  margin: 0 auto;
-  padding: 8px;
-  width: 80%;
-  max-width: 200px;
-  background: #fff; /* fallback color for old browsers */background: rgba(255, 255, 255, 0.1);
-  
-  color: #fff;
-  text-align: center;
-  text-decoration: none;
-  letter-spacing: 1px;
-	transition: all 0.3s ease-out;
-	border: 1px solid #fff;
-}
-
-.semi-transparent-button:hover,
-.semi-transparent-button:focus,
-.semi-transparent-button:active {
-  background: #fff;
-  color: #000;
-  transition: all 0.5s ease-in;
 }

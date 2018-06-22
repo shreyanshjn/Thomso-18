@@ -3,10 +3,7 @@
   <head>
     <meta charset="utf-8">
     <base href="/">
-    <title>THOMSO</title>   <meta name="description" content="Rêver un lieu nouveau, éclectique &amp; sans frontière. Refuser les limites, oublier le contrôle, accepter le désir.">
-<meta property="og:title" content="AZAR Club">
-<meta property="og:description" content="Rêver un lieu nouveau, éclectique &amp; sans frontière. Refuser les limites, oublier le contrôle, accepter le désir.">
-<meta property="og:type" content="website">
+    <title>THOMSO</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="/css/font.css" media="screen" rel="stylesheet" type="text/css">
 <link href="/css/style.min.css?20180608" media="screen" rel="stylesheet" type="text/css">
@@ -27,6 +24,59 @@
       font: 100% / 1.414 "Raleway";
       background: #e9e9e9;
     }*/
+    #navigation {
+		padding: 2vh 4vw 2vh 4vw;
+    height: fit-content;
+    z-index: 1;
+    position: relative;
+    width: 100vw;
+    /*background: linear-gradient(0deg, #00000000, black 25%);*/
+    display: flex;
+    /* opacity: 0; */
+    justify-content: space-between;
+	}
+    #navigation > .icon{
+		height: 75px;
+		width: 150px;
+		background: url('../images/logo.png');
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+		display: flex;
+    	align-items: center;
+		color: #fff;
+		
+	}
+	#navigation > .links{
+		display: flex;
+    	align-items: center;
+    	color: #fff
+	}
+	#navigation > .links > a, #navigation > .links > a:visited, #navigation > .links > a:active, #navigation > .links > a:focus {
+		text-decoration: none;
+		font-size: 2.2em;
+		color:#ffffffb3;
+		margin: 0px 2vw;
+		transition: all 0.25s;
+	}
+	#navigation > .links > a:hover{
+		text-decoration: none;
+		color:#fff;
+		transform: scale(1.1);
+		margin: 0px 2vw;
+  }
+  @media only screen and (max-width: 700px) {
+    #navigation > .links > a, #navigation > .links > a:visited {
+      font-size: 0.8em;
+    }
+  }
+
+@media only screen and (max-width: 700px) {
+  #navigation > .icon{
+		height: 50px;
+		width: 100px;
+	}
+}
     .selectpicker {
       padding: 2px 18px 2px 18px !important;
       height: 39px !important;
@@ -36,7 +86,6 @@
     [type="submit"] {transition: all .25s ease-in;}
     .signup__container {
       position: absolute;
-      top: 10%;
       right: 0;
       left: 0;
       margin-right: auto;
@@ -173,6 +222,22 @@
   </head>
   <body>
     <div id="galaxy"></div>
+    <div id="navigation">
+			<!-- <img src="" alt="thomso" /> -->
+			<div class="icon">
+			</div>
+			<div class="links">
+				<a href="index.html">
+					Home
+				</a>
+				<a href="brochure.html">
+					Brochure
+				</a>
+				<a data-menuanchor="contact-us" href="#contact-us">
+					Contact
+				</a>
+			</div>
+		</div>
     <div class="row container signup__container">
 
    <!--  <div class="container__child signup__thumbnail col-md-0 col-xs-0">

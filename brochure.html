@@ -3,10 +3,7 @@
     <head>
         <meta charset="utf-8">
         <base href="/">
-        <title>THOMSO</title>       <meta name="description" content="Rêver un lieu nouveau, éclectique &amp; sans frontière. Refuser les limites, oublier le contrôle, accepter le désir.">
-<meta property="og:title" content="AZAR Club">
-<meta property="og:description" content="Rêver un lieu nouveau, éclectique &amp; sans frontière. Refuser les limites, oublier le contrôle, accepter le désir.">
-<meta property="og:type" content="website">
+        <title>THOMSO</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="/css/font.css" media="screen" rel="stylesheet" type="text/css">
 <link href="/css/style.min.css?20180608" media="screen" rel="stylesheet" type="text/css">
@@ -36,6 +33,22 @@
     </head>
     <body>
         <div id="galaxy"></div>
+        <div id="navigation" style="position:relative; margin-bottom: -15px;">
+			<!-- <img src="" alt="thomso" /> -->
+			<div class="icon">
+			</div>
+			<div class="links">
+				<a href="sponsorsform.html">
+					Associate With Us
+				</a>
+				<a href="pdf/brochure.pdf">
+					Download Brochure
+				</a>
+				<a data-menuanchor="contact-us" href="#contact-us">
+					Contact
+				</a>
+			</div>
+		</div>
     <!-- #region Jssor Slider Begin -->
     <!-- Generator: Jssor Slider Maker -->
     <!-- Source: https://www.jssor.com -->
@@ -59,17 +72,27 @@
 
             /*#region responsive code begin*/
 
-            var MAX_WIDTH = 980;
+            var MAX_WIDTH = 100000;
 
+            function ScaleHeight() {
+                var containerElement = jssor_1_slider.$Elmt.parentNode;
+                var containerHeight = containerElement.clientHeight;
+                if(containerHeight) {
+                    var expectedHeight = containerHeight + 50;
+                    console.log('hello');
+                    document.getElementById('jssor_1').style.height = expectedHeight+'px';
+                } else {
+                    window.setTimeout(ScaleHeight, 30);
+                }
+                
+            }
             function ScaleSlider() {
                 var containerElement = jssor_1_slider.$Elmt.parentNode;
                 var containerWidth = containerElement.clientWidth;
-
                 if (containerWidth) {
-
                     var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
-
                     jssor_1_slider.$ScaleWidth(expectedWidth);
+                    ScaleHeight();
                 }
                 else {
                     window.setTimeout(ScaleSlider, 30);
@@ -87,9 +110,8 @@
     <style>
         
         .divSlider{
-            margin-top: 15vh !important;
-    margin-left: 15vw !important;
-    height: 75vh !important;
+    // margin: 0vh 5vw !important;
+    // height: 75vh !important;
         }
 
         .sliderSlides{
@@ -122,6 +144,7 @@
         .jssora051.jssora051dn {opacity:.5;}
         .jssora051.jssora051ds {opacity:.3;pointer-events:none;}
     </style>
+    <div>
     <div id="jssor_1" class="divSlider" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:380px;overflow:hidden;visibility:hidden;">
         <!-- Loading Screen -->
         <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
@@ -241,7 +264,7 @@
             </svg>
         </div>
     </div>
-    <a class="semi-transparent-button" href="./Thomso'18 brochure.pdf" download>Download Brochure</a>
     <script type="text/javascript">jssor_1_slider_init();</script>
+    </div>
   </body>
   </html>
