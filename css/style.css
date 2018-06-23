@@ -1,3 +1,10 @@
+body, div {
+	-ms-overflow-style: none;
+	overflow: -moz-scrollbars-none;
+}
+body::-webkit-scrollbar, div::-webkit-scrollbar { 
+	display: none;
+}
 a,a:focus	{
 	text-decoration: none !important;
 	color: #fff
@@ -200,7 +207,7 @@ a:hover {
 		display: inline;
 	}
 	.address{
-		font-size: 1.1em;
+		font-size: 1em;
 		padding: 3vh 0 0 10%;
 	}
 	.address-span{
@@ -792,7 +799,7 @@ body {
 .youtubeEmbed{
 	height: 50vh;
 }
-#navigation > .links > a, #navigation > .links > a:visited {
+#navigation > .links > a, #navigation > .links > a:visited, #navigation > .links > a:active, #navigation > .links > a:focus {
 		font-size: 0.8em;
 	}
 #home{
@@ -876,4 +883,25 @@ ul.social-network li{
 		height: 50px;
 		width: 100px;
 	}
+}
+@media only screen and (max-width: 450px) {
+	.sponsor-button {
+    font-size: 0.8em;
+    padding: 0.8em;
+    width: 185px;
+}
+.icon-row {
+	margin-top: 0vh;
+}
+#contact{
+	padding-top: 0vh;
+}
+.social-circle {
+	margin-bottom: 0px;
+}
+#about{
+	padding: 3vh 4vw;
+	display: flex;
+	justify-content: space-between;
+}
 }
