@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <base href="/">
-    <title>THOMSO</title>
+    <title>Thomso'18</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="/css/font.css" media="screen" rel="stylesheet" type="text/css">
 <link href="/css/style.min.css?20180608" media="screen" rel="stylesheet" type="text/css">
@@ -42,7 +42,8 @@
 		background-position: center;
 		background-size: contain;
 		background-repeat: no-repeat;
-		display: flex;
+    display: flex;
+    cursor: pointer;
     	align-items: center;
 		color: #fff;
 		
@@ -224,7 +225,7 @@
     <div id="galaxy"></div>
     <div id="navigation">
 			<!-- <img src="" alt="thomso" /> -->
-			<div class="icon">
+			<div class="icon" onclick="gotoHome()">
 			</div>
 			<div class="links">
 				<a href="index.html">
@@ -303,6 +304,7 @@
         </div>
     </div>
   </div>
+  <a style="position: fixed; bottom: 15px; right: 15px; height: 30px; width: 150px; background:url('img/economical.png'); background-repeat:no-repeat; background-position:center; background-size:contain;" href="economicalhost.com" target="_blank" ></a>
   <script type="text/javascript">
     function handleSubmit() {
       $.ajax({

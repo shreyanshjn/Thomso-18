@@ -70,6 +70,7 @@ a:hover {
 		background-size: contain;
 		background-repeat: no-repeat;
 		display: flex;
+		cursor: pointer;
     	align-items: center;
 		color: #fff;
 		
@@ -119,9 +120,9 @@ a:hover {
 	}
 	#home > .tagline > .subsub {
 		font-size: 2em;
+    margin-bottom: 2.8em;
     letter-spacing: .2em;
     font-weight: 500;
-    font-weight: 700
 	}
 	#home > .social {
 		width: 20vw;
@@ -481,7 +482,7 @@ a.socialIcon:hover, .socialHoverClass {
 .sponsorDiv{
 	width: 80vw;
     margin-left: 20vw;
-    margin-top: -25vh
+    margin-top: -30vh
 }
 
 .sponsor-button {
@@ -533,7 +534,7 @@ a.socialIcon:hover, .socialHoverClass {
 
 .footfallImage{
 			height: 100%;
-			background: url('../img/thomso18 brochure_Chech14-07.jpg');
+			background: url('../img/stats.jpg');
 		width: 100%;
 		background-position: center;
 		background-repeat: no-repeat;
@@ -548,7 +549,7 @@ a.socialIcon:hover, .socialHoverClass {
 	transition: all 0.35s;
 	display: flex;
 	height: 100%;
-	width: 50%;
+	width: 100%;
 	justify-content: center;
 	align-items: center;
 	font-size: 2em;
@@ -818,6 +819,7 @@ body {
 }
 #home > .tagline > .subsub{
 	font-size: 3.9em;
+	margin-bottom: 8em;
 	text-align: center;
 }
 .social-icons{
@@ -852,7 +854,7 @@ ul.social-network li{
 .sponsorDiv{
 	width: 80vw;
     margin-left: 20vw;
-    margin-top: -40vh
+    margin-top: -38vh
 }
 .sponsor-button {
     font-size: 15px;
