@@ -4,15 +4,30 @@
     <meta charset="utf-8">
     <base href="/">
     <title>Thomso'18</title>
+    <script>
+			if ('serviceWorker' in navigator) {
+				window.addEventListener('load', function() {
+					navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+						console.log('Worker registration successful', registration.scope);
+					}, function(err) {
+						console.log('Worker registration failed', err);
+					}).catch(function(err) {
+						console.log(err);
+					});
+				});
+			} else {
+				console.log('Service Worker is not supported by browser.');
+			}
+		</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="/css/font.css" media="screen" rel="stylesheet" type="text/css">
-<link href="/css/style.min.css?20180608" media="screen" rel="stylesheet" type="text/css">
+<link href="/css/style.min.css" media="screen" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="/asset/js/three.min.js"></script>
 <script type="text/javascript" src="/asset/js/Tween.js"></script>
-<script type="text/javascript" src="/js/galaxy.js?20180608"></script>
+<script type="text/javascript" src="/js/galaxy.js"></script>
 <!-- <script type="text/javascript" src="/js/support.js"></script> -->
 <script type="text/javascript" src="/asset/js/jquery.min.js"></script>
-<script type="text/javascript" src="/js/main.js?20180608"></script>
+<script type="text/javascript" src="/js/main.js"></script>
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Black+And+White+Picture|Eater|Faster+One|Shadows+Into+Light" rel="stylesheet">
