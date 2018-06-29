@@ -1,6 +1,6 @@
 var doCache = true;
 
-var CACHE_NAME = 'thomso18beta6486482';
+var CACHE_NAME = 'thomso18beta6486485';
 
 // Delete old caches
 self.addEventListener('activate', event => {

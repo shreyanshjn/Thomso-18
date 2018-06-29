@@ -104,6 +104,7 @@ a:hover {
 		align-items: center;
 		height: 100%;
 		color:#fff;
+		width: 100vw;
 		/*font-family: 'Eater', cursive;*/
 	}
 	#home > .tagline {

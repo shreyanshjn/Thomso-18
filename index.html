@@ -37,8 +37,41 @@
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <link href='css/style.css' rel='stylesheet' type='text/css'>
-<script>
+<!-- <script>
 	$(window).load(function() {
+		var countDownDate = new Date("Oct 25, 2018 00:00:00").getTime();
+		var x = setInterval(function() {
+			var now = new Date().getTime();
+			var distance = countDownDate - now;
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			// var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			// var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			// var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			document.getElementById("countDown").innerHTML = days + " Days to go...";    
+			if (distance < 0) {
+				clearInterval(x);
+				document.getElementById("countDown").innerHTML = "0";
+			}
+		}, 1000);
+	});
+</script> -->
+<script>
+		$(document).ready(function() {
+			setTimeout(() => {
+				if (window.location.href === "https://www.thomso.in/" || window.location.href === "https://www.thomso.in/#welcome") {
+					window.location.href = '/#welcome/1'
+				}
+			}, 3000);
+		});
+		$(window).load(function() {
+			var image = new Image();
+			image.onerror = function(){
+				var secondSlide = $('.fp-slide').eq(1).html();
+				if(secondSlide) {
+					$('.section').eq(0).html(secondSlide)
+				}
+			};
+			image.src = "http://youtube.com/favicon.ico";
 		var countDownDate = new Date("Oct 25, 2018 00:00:00").getTime();
 		var x = setInterval(function() {
 			var now = new Date().getTime();
