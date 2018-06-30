@@ -3,7 +3,7 @@ var doCache = true;
 var CACHE_NAME = 'thomso18beta0648';
 
 // Delete old caches
-self.addEventListeneri('activate', event => {
+self.addEventListener('activate', event => {
 	const currentCachelist = [CACHE_NAME];
 	event.waitUntil(
 		caches.keys()
@@ -43,6 +43,7 @@ self.addEventListener('install', function(event) {
 
 			  '/brochure.html',
 			  '/sponsors.html',
+			  '/sponsorsform.html',
 			  
             ])
 				})
