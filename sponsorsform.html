@@ -312,8 +312,9 @@
         <div class="form-group" >
             <div id="elloWorld" ></div>
         </div>
-
+        <div id="elloWorld" ></div>
         <div class="m-t-lg">
+<<<<<<< HEAD
           <!-- <ul class="list-inline"> -->
             <!-- <li> -->
               <input type="button" id="submitButton" class="btn btn--form" value="Submit" onclick=" return handleSubmit();" />
@@ -322,6 +323,14 @@
           <!-- </ul> -->
         </div>
         
+=======
+          <ul class="list-inline">
+            <li>
+              <input type="button" id="submitButton" class="btn btn--form" value="Submit" onclick="handleSubmit()" />
+            </li>
+          </ul>
+        </div>
+>>>>>>> form redirection
     </div>
   
   </div>
@@ -357,7 +366,7 @@
           dataType: "JSON",
           success: function(data) {
                         $("#elloWorld").css("color","green");
-            $("#elloWorld").html('Response Accepted.');
+            $("#elloWorld").html('Thanx for connecting. We will connect you soon.');
           },
           error: function(err) {
                         $("#elloWorld").css("color","red");
