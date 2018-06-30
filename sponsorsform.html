@@ -303,20 +303,18 @@
           <label for="Message">Message</label>
           <textarea class="form-control" type="text" id="message" name="message" placeholder="Message"></textarea> 
         </div>
-
+        <div class="form-group" >
+            <div id="elloWorld" ></div>
+        </div>
         <div class="m-t-lg">
-          <ul class="list-inline">
-            <li>
-              <button id="submitButton" class="btn btn--form" value="Submit" onclick="handleSubmit()">
-                Submit
-              </button>
-            </li>
+          <!-- <ul class="list-inline"> -->
+            <!-- <li> -->
+              <input type="button" id="submitButton" class="btn btn--form" value="Submit" onclick="handleSubmit()" />
+            <!-- </li> -->
 
-          </ul>
+          <!-- </ul> -->
         </div>
-        <div class="form-group" id="alertMsg" style="display:none">
-            <div>Submitted Successfully</div>
-        </div>
+        
     </div>
   </div>
   <a style="position: fixed; bottom: 15px; right: 15px; height: 30px; width: 150px; background:url('img/economical.png'); background-repeat:no-repeat; background-position:center; background-size:contain;" href="economicalhost.com" target="_blank" ></a>
@@ -333,10 +331,13 @@
           },
           dataType: "JSON",
           success: function(data) {
-            window.location.href='https://thomso.in'
+                        $("#elloWorld").css("color","green");
+            $("#elloWorld").html('Response Accepted.');
           },
           error: function(err) {
-            console.log(err);
+                        $("#elloWorld").css("color","red");
+
+            $("#elloWorld").html('Something went wrong. Please again later.');
           }
       });
     }
