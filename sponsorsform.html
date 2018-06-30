@@ -234,7 +234,15 @@
       border-radius: 3px;
       height: 20px;
     }
-    </style>
+
+    sup {
+    vertical-align: super;
+    font-size: smaller;
+    color:red !important;
+    }
+
+    
+ </style>
   </head>
   <body>
     <div id="galaxy"></div>
@@ -275,14 +283,11 @@
       </div>
 
     </div> -->
+    
     <div class="container__child signup__form col-md-12 col-xs-12">
         <div class="form-group">
-
-
-
-          <label for="select">Connect as</label>
-
-          <select name="sponsorType" id="sponsorType" class="form-control selectpicker" >
+          <label for="select"><sup>*</sup>Connect as</label>
+          <select name="sponsorType"id="sponsorType" class="form-control selectpicker" >
             <option value="Sponsors">Sponsor</option>
             <option value="Media">Media</option>
             <option value="Partner">Partner</option>
@@ -290,36 +295,56 @@
         </div>
 
         <div class="form-group">
-          <label for="Email">Email</label>
-          <input class="form-control" type="email" id="email" name="email" placeholder="Email">
+          <label for="Email"><sup>*</sup>Email</label>
+          <input class="form-control" type="email" id="email" name="email"  placeholder="Email">
         </div>
 
         <div class="form-group">
-          <label for="Contact">Contact</label>
-          <input class="form-control" type="number" id="contact" name="contact" placeholder="Contact">
+          <label for="Contact"><sup>*</sup>Contact</label>
+          <input class="form-control" type="tel" id="contact" name="contact"  placeholder="Contact">
         </div>
 
         <div class="form-group">
-          <label for="Message">Message</label>
-          <textarea class="form-control" type="text" id="message" name="message" placeholder="Message"></textarea> 
+          <label for="Message" >Message</label>
+          <textarea class="form-control" type="text" id="message" name="message" placeholder="Your message here..."></textarea> 
         </div>
+        
         <div class="form-group" >
             <div id="elloWorld" ></div>
         </div>
+
         <div class="m-t-lg">
           <!-- <ul class="list-inline"> -->
             <!-- <li> -->
-              <input type="button" id="submitButton" class="btn btn--form" value="Submit" onclick="handleSubmit()" />
+              <input type="button" id="submitButton" class="btn btn--form" value="Submit" onclick=" return handleSubmit();" />
             <!-- </li> -->
 
           <!-- </ul> -->
         </div>
         
     </div>
+  
   </div>
   <a style="position: fixed; bottom: 15px; right: 15px; height: 30px; width: 150px; background:url('img/economical.png'); background-repeat:no-repeat; background-position:center; background-size:contain;" href="economicalhost.com" target="_blank" ></a>
   <script type="text/javascript">
     function handleSubmit() {
+      
+      var y = document.getElementById('contact').value;
+      var x = document.getElementById('email').value;
+      var atpos = x.indexOf("@");
+      var dotpos = x.lastIndexOf(".");
+      if ((atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)&&(isNaN(y) || y < 4999999999 || y > 9999999999)) {
+        alert("Not a valid e-mail address and Mobile Number");
+        return false; 
+      } 
+      else if((y>4999999999 && y<9999999999)&&(atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)) {
+        alert("Not a valid e-mail address");
+        return false; 
+      }
+      else if ((atpos>1 && dotpos>atpos+2 && dotpos+2<=x.length)&&(isNaN(y) || y < 4999999999 || y > 9999999999)) {
+      alert("Not a valid Mobile Number");
+      return false;
+      }
       $.ajax({
           type: "POST",
           url: "/api/addSponsor",
@@ -340,8 +365,10 @@
             $("#elloWorld").html('Something went wrong. Please again later.');
           }
       });
-    }
-  
-    </script>
+    }  
+
+         
+      
+  </script>
   </body>
   </html>
