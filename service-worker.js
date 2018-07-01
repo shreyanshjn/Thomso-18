@@ -1,6 +1,6 @@
 var doCache = true;
 
-var CACHE_NAME = 'thomso18beta06489';
+var CACHE_NAME = 'thomso18beta08489';
 
 // Delete old caches
 self.addEventListener('activate', event => {
@@ -44,6 +44,21 @@ self.addEventListener('install', function(event) {
 			  '/brochure.html',
 			  '/sponsors.html',
 			  '/sponsorsform.html',
+			  '/img/dsouza.jpg',
+			  '/img/economical.png',
+			  '/img/farhan.jpg',
+			  '/img/nucleya.jpg',
+			  '/img/palash.jpg',
+			  '/img/sonu.jpg',
+			  '/img/stats.jpg',
+			  '/img/sunidhi.jpg',
+			  '/img/udit.jpg',
+
+			  '/images/location.png',
+			  '/images/logo.png',
+			  '/images/phone.png',
+			  '/images/web.png',
+			  '/images/background.jpg',
 			  
             ])
 				})
