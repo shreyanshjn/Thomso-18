@@ -19,9 +19,9 @@ To Serve the build, run `npm prod`
 
 # Create Mongo Role and User:
 
-use <DatabaseName>
+`use <DatabaseName>`
 
-db.createRole({
+`db.createRole({
   createRole: "adminuser",
   privileges: [
     {
@@ -30,6 +30,6 @@ db.createRole({
     },
   ],
   roles: [{ role: "read", db: "<DatabaseName>"}]
-})
+})`
 
-db.createUser({"user" : "<DatabaseUser",pwd: "<DatabasePassword>", "roles" : [{"role" : "adminuser", "db" : "<DatabaseName>"}]})
+`db.createUser({"user" : "<DatabaseUser",pwd: "<DatabasePassword>", "roles" : [{"role" : "adminuser", "db" : "<DatabaseName>"}]})`
