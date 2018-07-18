@@ -23,6 +23,20 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended':'false'}));
 app.use(express.static(path.join(__dirname, 'build')));
 
+app.get('/static/*.js', function (req, res, next) {
+  req.url = req.url + '.gz';
+  res.set('Content-Encoding', 'gzip');
+  res.set('Content-Type', 'text/javascript');
+  next();
+});
+
+// app.get('/static/*.css', function (req, res, next) {
+//   req.url = req.url + '.gz';
+//   res.set('Content-Encoding', 'gzip');
+//   res.set('Content-Type', 'text/css');
+//   next();
+// });
+
 app.use('/api/ca/auth', caAuth);
 app.use('/api/book', book);
 

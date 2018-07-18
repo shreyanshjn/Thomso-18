@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Loadable from 'react-loadable';
 
-import './App.css';
-
 const HomeIndex = Loadable({
   loader: () => import('./components/home/Index'),
   loading: () => <div>Loading HomeIndex</div>,
