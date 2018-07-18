@@ -22,14 +22,23 @@ To Serve the build, run `npm prod`
 `use <DatabaseName>`
 
 `db.createRole({
+
   createRole: "adminuser",
+
   privileges: [
+
     {
+
       resource: { db: "<DatabaseName>", collection: "" },
+
       actions: [ "find","insert","update","createIndex","createCollection","remove" ]
+
     },
+
   ],
+
   roles: [{ role: "read", db: "<DatabaseName>"}]
+
 })`
 
 `db.createUser({"user" : "<DatabaseUser",pwd: "<DatabasePassword>", "roles" : [{"role" : "adminuser", "db" : "<DatabaseName>"}]})`
