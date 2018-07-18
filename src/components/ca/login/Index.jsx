@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import AuthService from '../../../handlers/ca/AuthService';
+import validateInput from '../../../utils/validation/loginValidation';
 import FetchApi from '../../../utils/FetchAPI';
 
 // import './style.css';
@@ -29,17 +30,23 @@ export default class LoginIndex extends Component {
 
         const { username, password } = this.state;
 
-        FetchApi('POST','/api/ca/auth/login', { username, password })
-            .then((result) => {
-                this.Auth.setToken(result.data.token)
-                this.setState({ message: '' });
-                this.props.history.push('/')
-            })
-            .catch(error => {
-                if(error.response.status === 401) {
-                    this.setState({ message: 'Login failed. Username or password not match' });
-                }
-            });
+        const check = validateInput({email:username, password});
+        if (check.isValid) {
+            FetchApi('POST','/api/ca/auth/login', { username, password })
+                .then((result) => {
+                    this.Auth.setToken(result.data.token)
+                    this.setState({ message: '' });
+                    this.props.updateRoutes(true)
+                    this.props.history.push('/ca/')
+                })
+                .catch(error => {
+                    if(error.response.status === 401) {
+                        this.setState({ message: 'Login failed. Username or password not match' });
+                    }
+                });
+        } else {
+            this.setState({message: check.errors})
+        }
     }
 
     render() {
@@ -47,9 +54,14 @@ export default class LoginIndex extends Component {
         return (
             <div>
                 <form onSubmit={this.onSubmit}>
-                    {message !== '' &&
+                    {(message && !(message.password || message.email)) ?
                         <div>
-                            { message }
+                            {message}
+                        </div>
+                    : 
+                        <div>
+                            {message.email ? message.email : null}
+                            {message.password ? message.password : null}
                         </div>
                     }
                     <h2>Please sign in</h2>

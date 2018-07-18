@@ -3,7 +3,7 @@ import {
     isEmpty,
     isLengthBetween,
     isEmail,
-  } from '../../common/helpers/helpers'
+  } from '../helpers/helpers'
   
 export default function validateInput(data, thisCase) {
     const checkEmail = email => {

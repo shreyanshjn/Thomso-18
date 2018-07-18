@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import validateInput from '../../../utils/validation/loginValidation';
 import FetchApi from '../../../utils/FetchAPI';
 
 // import './style.css';
@@ -10,7 +11,8 @@ export default class RegisterIndex extends Component {
         super();
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            error: ''
         };
     }
     onChange = (e) => {
@@ -24,19 +26,40 @@ export default class RegisterIndex extends Component {
 
         const { username, password } = this.state;
 
-        FetchApi('POST','/api/ca/auth/register', { username, password })
-            .then(() => {
-                this.props.history.push("/ca/")
-            })
-            .catch(error => {
-                console.log(error, 'Register')
-            });
+        const check = validateInput({email:username, password});
+        if (check.isValid) {
+            FetchApi('POST','/api/ca/auth/register', { username, password })
+                .then((res) => {
+                    console.log(res)
+                    if (res && res.data) {
+                        if (res.data.success) {
+                            this.props.history.push("/ca/")
+                        } else {
+                            this.setState({error: res.data.msg})
+                        }
+                    }
+                })
+                .catch(error => {
+                    this.setState({error: ''})
+                    console.log(error, 'Register')
+                });    
+        } else {
+            this.setState({error: check.errors})
+        }
     }
 
     render() {
-        const { username, password } = this.state;
+        const { username, password, error } = this.state;
         return (
             <div>
+                {!(error.password || error.email) ?
+                    error
+                : 
+                    <div>
+                        {error.email ? error.email : null}
+                        {error.password ? error.password : null}
+                    </div>
+                }
                 <form onSubmit={this.onSubmit}>
                     <h2>Register</h2>
                     <label>Email address</label>
