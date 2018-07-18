@@ -1,11 +1,12 @@
 var mongoose = require('mongoose');
 var passport = require('passport');
-var settings = require('../config/settings');
-require('../config/passport')(passport);
+var settings = require('../../config/settings');
+require('../../config/passport')(passport);
 var express = require('express');
 var jwt = require('jsonwebtoken');
 var router = express.Router();
-var User = require("../models/User.js");
+
+var User = require("../../models/ca/CA_User");
 
 router.post('/register', function(req, res) {
     if (!req.body.username || !req.body.password) {
@@ -19,7 +20,7 @@ router.post('/register', function(req, res) {
             if (err) {
                 return res.json({success: false, msg: 'Username already exists.'});
             }
-            res.json({success: true, msg: 'Successful created new user.'});
+            res.json({success: true, msg: 'Successfully created new user.'});
         });
     }
 });

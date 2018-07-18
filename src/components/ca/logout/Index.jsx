@@ -1,7 +1,7 @@
-import React from 'react'
-import { Redirect } from 'react-router-dom'
+import React from 'react';
+import { Redirect } from 'react-router-dom';
 
-import AuthService from '../../../handlers/AuthService'
+import AuthService from '../../../handlers/ca/AuthService';
 
 export default class LogoutIndex extends React.Component{
     constructor(props) {
@@ -15,6 +15,6 @@ export default class LogoutIndex extends React.Component{
     }
 
     render(){
-        return (<Redirect to="/" />)
+        return (<Redirect to="/ca/" />)
     }
 }

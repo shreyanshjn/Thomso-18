@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import AuthService from '../../../handlers/ca/AuthService';
 import FetchApi from '../../../utils/FetchAPI';
 
-import './style.css';
+// import './style.css';
 
 export default class LoginIndex extends Component {
 
@@ -14,6 +15,7 @@ export default class LoginIndex extends Component {
             password: '',
             message: ''
         };
+        this.Auth = new AuthService();
     }
 
     onChange = (e) => {
@@ -27,9 +29,9 @@ export default class LoginIndex extends Component {
 
         const { username, password } = this.state;
 
-        FetchApi('POST','/api/auth/login', { username, password })
+        FetchApi('POST','/api/ca/auth/login', { username, password })
             .then((result) => {
-                localStorage.setItem('authToken', result.data.token);
+                this.Auth.setToken(result.data.token)
                 this.setState({ message: '' });
                 this.props.history.push('/')
             })
@@ -52,12 +54,33 @@ export default class LoginIndex extends Component {
                     }
                     <h2>Please sign in</h2>
                     <label htmlFor="inputEmail">Email address</label>
-                    <input id="inputEmail" type="email" placeholder="Email address" name="username" value={username} onChange={this.onChange} required/>
+                    <input 
+                        id="inputEmail" 
+                        type="email" 
+                        placeholder="Email address" 
+                        name="username" 
+                        autoCorrect="off" 
+                        autoCapitalize="off" 
+                        value={username} 
+                        onChange={this.onChange} 
+                        required
+                    />
                     <label htmlFor="inputPassword">Password</label>
-                    <input id="inputPassword" type="password" placeholder="Password" name="password" value={password} onChange={this.onChange} required/>
+                    <input 
+                        id="inputPassword" 
+                        type="password" 
+                        placeholder="Password" 
+                        name="password" 
+                        autoCorrect="off" 
+                        autoComplete="off" 
+                        autoCapitalize="off" 
+                        value={password} 
+                        onChange={this.onChange} 
+                        required
+                    />
                     <button type="submit">Login</button>
                     <p>
-                        Not a member? <Link to="/register">Register here</Link>
+                        Not a member? <Link to="/ca/register">Register here</Link>
                     </p>
                 </form>
             </div>

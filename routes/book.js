@@ -1,11 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var mongoose = require('mongoose');
 
 var passport = require('passport');
 require('../config/passport')(passport)
 
-var Book = require('../models/Book.js');
+var Book = require('../models/Book');
 
 getToken = function (headers) {
   if (headers && headers.authorization) {
