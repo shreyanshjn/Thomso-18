@@ -3,10 +3,20 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 
 var book = require('./routes/book');
 var app = express();
 
+mongoose.Promise = require('bluebird');
+var dbHost = process.env.DB_HOST || 'localhost';
+var dbName = process.env.DB_NAME;
+var dbUser = process.env.DB_USERNAME;
+var dbPass = process.env.DB_PASSWORD;
+var dbPort = process.env.DB_PORT || '27017';
+mongoose.connect('mongodb://'+dbUser+':'+dbPass+'@'+dbHost+':'+dbPort+'/'+dbName, { promiseLibrary: require('bluebird'), useNewUrlParser: true})
+  .then(() =>  console.log('connection succesful'))
+  .catch((err) => console.error(err));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended':'false'}));
@@ -31,5 +41,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 module.exports = app;
