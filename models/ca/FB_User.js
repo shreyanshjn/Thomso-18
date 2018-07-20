@@ -1,5 +1,7 @@
 var mongoose = require('mongoose');
 
+var Counter = require("../counters/Counter");
+
 var UserSchema = new mongoose.Schema({
     fb_id: {
         type: String,
@@ -44,6 +46,10 @@ var UserSchema = new mongoose.Schema({
     why: {
         type: String
     },
+    score: {
+        type: Number,
+        default: 0
+    },
     created: {
         type: Boolean,
         default: false
@@ -52,6 +58,16 @@ var UserSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
+});
+
+UserSchema.pre('save', function (next) {
+    var doc = this;
+    Counter.findByIdAndUpdate({_id: 'ca_id'}, {$inc: { seq: 1} }, {upsert: true, new: true}, function(error, cnt)   {
+        if(error)
+            return next(error);
+        doc.ca_id = "TH-2000" + cnt.seq;
+        next();
+    })
 });
 
 module.exports = mongoose.model('FB_User', UserSchema);

@@ -60,23 +60,6 @@ export default class RegisterCAIndex extends React.Component {
         } else {
             this.setState({errors: 'Fields cannot be empty'})
         }
-        // const check = validateInput({email:username, password});
-        // if (check.isValid) {
-        //     // FetchApi('POST','/api/ca/auth/login', { username, password })
-        //     //     .then((result) => {
-        //     //         this.Auth.setToken(result.data.token)
-        //     //         this.setState({ message: '' });
-        //     //         this.props.updateRoutes(true)
-        //     //         this.props.history.push('/ca/')
-        //     //     })
-        //     //     .catch(error => {
-        //     //         if(error.response.status === 401) {
-        //     //             this.setState({ message: 'Login failed. Username or password not match' });
-        //     //         }
-        //     //     });
-        // } else {
-        //     this.setState({message: check.errors})
-        // }
     }
 
     render(){
@@ -190,7 +173,7 @@ export default class RegisterCAIndex extends React.Component {
                         onChange={this.onChange} 
                         required
                     />
-                    <button type="submit">Login</button>
+                    <button type="submit">Register</button>
                 </form>
             </div>
         );

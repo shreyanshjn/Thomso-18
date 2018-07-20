@@ -96,6 +96,7 @@ router.post('/fblogin', function(req, res) {
                     token = jwt.sign(user.toJSON(), settings.secret);
                     res.json({success: true, msg: 'New User, Created False', token: 'JWT ' + token, new: true, body:user});
                 });
+
             } else {
                 // Update User
                 if (user.created) {
@@ -118,18 +119,6 @@ router.post('/fblogin', function(req, res) {
 router.post('/fbRegister', passport.authenticate('jwt', { session: false}), function(req, res) {
     var token = getToken(req.headers);
     if (token) {
-        var data = {
-            name: req.body.name,
-            contact: req.body.contact,
-            email: req.body.email,
-            gender: req.body.gender,
-            college: req.body.college,
-            state: req.body.state,
-            branch: req.body.branch,
-            address: req.body.address,
-            why: req.body.why,
-            created: true
-        }
         FB_User.findOne({
             fb_id: req.body.fb_id
         }, function(err, user) {
@@ -143,6 +132,18 @@ router.post('/fbRegister', passport.authenticate('jwt', { session: false}), func
             if (!user) {
                 return res.status(400).send({success: false, msg: 'User Not Found'});
             } else {
+                var data = {
+                    name: req.body.name,
+                    contact: req.body.contact,
+                    email: req.body.email,
+                    gender: req.body.gender,
+                    college: req.body.college,
+                    state: req.body.state,
+                    branch: req.body.branch,
+                    address: req.body.address,
+                    why: req.body.why,
+                    created: true
+                }
                 FB_User.findOneAndUpdate({fb_id: req.body.fb_id}, data, { new:true }, function(err, user) {
                     if(err){
                         return res.status(400).send({success:false, msg:'Error Creating User', error:err});
