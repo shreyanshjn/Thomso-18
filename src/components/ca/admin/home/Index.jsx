@@ -17,9 +17,7 @@ export default class HomeIndex extends React.Component {
         FetchApi('GET','/api/ca/admin/participants', null, authtoken)
             .then((result) => {
                 console.log(result, 'Participant List')
-                // this.Auth.setToken(result.data.token)
-                // this.setState({ message: '' });
-                // this.props.updateRoutes(true)
+                this.setState({ participants: result.data });
             })
             .catch(error => {
                 if(error.response.status === 401) {

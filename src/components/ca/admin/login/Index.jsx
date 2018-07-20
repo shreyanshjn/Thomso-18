@@ -33,10 +33,9 @@ export default class LoginIndex extends Component {
         if (check.isValid) {
             FetchApi('POST','/api/ca/admin/auth/login', { username, password })
                 .then((result) => {
-                    console.log(result)
-                    // this.Auth.setToken(result.data.token)
-                    // this.setState({ message: '' });
-                    // this.props.updateRoutes(true)
+                    this.Auth.setData({token: result.data.token, username: result.data.username})
+                    this.setState({ message: '' });
+                    this.props.updateRoutes(true)
                 })
                 .catch(error => {
                     if(error.response.status === 401) {

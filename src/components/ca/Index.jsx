@@ -72,7 +72,7 @@ export default class CAIndex extends React.Component{
     render(){
         return(
             <div>
-                <Route exact path="/ca/admin" component={AdminIndex}/>
+                <Route path="/ca/admin" component={AdminIndex}/>
                 {this.state.isAuthenticated ? 
                     <div>
                         <Route exact path="/ca/logout" render={ () => <LogoutIndex updateRoutes={this.handleUpdate}/> } />

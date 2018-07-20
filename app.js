@@ -3,6 +3,7 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
+var cors = require('cors')
 var mongoose = require('mongoose');
 
 var caAuth = require('./routes/ca/auth');
@@ -24,6 +25,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended':'false'}));
 app.use(express.static(path.join(__dirname, 'build')));
+app.use(cors());
 
 app.get('/static/*.js', function (req, res, next) {
   req.url = req.url + '.gz';
