@@ -21,10 +21,27 @@ var dbPort = process.env.DB_PORT || '27017';
 mongoose.connect('mongodb://'+dbUser+':'+dbPass+'@'+dbHost+':'+dbPort+'/'+dbName, { promiseLibrary: require('bluebird'), useNewUrlParser: true})
   .then(() =>  console.log('connection succesful'))
   .catch((err) => console.error(err));
+
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended':'false'}));
 app.use(express.static(path.join(__dirname, 'build')));
+
+var whitelist = ['https://thomso.in', 'https://www.thomso.in', 'www.thomso.in', 'thomso.in']
+if (process.env.REACT_APP_SERVER_ENVIORNMENT === 'dev') {
+  whitelist = ['http://localhost:'+process.env.PORT, 'http://localhost:'+process.env.REACT_APP_SERVER_PORT]
+}
+
+var corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+}
+
 app.use(cors());
 
 app.get('/static/*.js', function (req, res, next) {
@@ -41,10 +58,10 @@ app.get('/static/*.js', function (req, res, next) {
 //   next();
 // });
 
-app.use('/api/ca/auth', caAuth);
-app.use('/api/ca/admin/auth', caAdminAuth);
-app.use('/api/ca/admin', caAdminRoutes);
-app.use('/api/book', book);
+app.use('/api/ca/auth', cors(corsOptions), caAuth);
+app.use('/api/ca/admin/auth', cors(corsOptions), caAdminAuth);
+app.use('/api/ca/admin', cors(corsOptions), caAdminRoutes);
+app.use('/api/book', cors(corsOptions), book);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
