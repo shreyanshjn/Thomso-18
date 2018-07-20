@@ -6,6 +6,8 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 var caAuth = require('./routes/ca/auth');
+var caAdminAuth = require('./routes/ca/admin/auth');
+var caAdminRoutes = require('./routes/ca/admin/routes');
 var book = require('./routes/book');
 var app = express();
 
@@ -38,6 +40,8 @@ app.get('/static/*.js', function (req, res, next) {
 // });
 
 app.use('/api/ca/auth', caAuth);
+app.use('/api/ca/admin/auth', caAdminAuth);
+app.use('/api/ca/admin', caAdminRoutes);
 app.use('/api/book', book);
 
 // catch 404 and forward to error handler

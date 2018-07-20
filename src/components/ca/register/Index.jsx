@@ -1,20 +1,38 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Redirect } from 'react-router-dom';
 
-import validateInput from '../../../utils/validation/loginValidation';
+import AuthService from '../../../handlers/ca/AuthService';
 import FetchApi from '../../../utils/FetchAPI';
+import validateInput from '../../../utils/validation/loginValidation';
 
-// import './style.css';
-
-export default class RegisterIndex extends Component {
-
-    constructor() {
+export default class RegisterIndex extends React.Component {
+    constructor(){
         super();
         this.state = {
-            username: '',
-            password: '',
-            error: ''
-        };
+            fb_id: '',
+            name: '',
+            contact: '',
+            email: '',
+            gender: '',
+            college : '',
+            state : '',
+            branch : '',
+            address : '',
+            why : '',
+            errors: ''
+        }
+        this.Auth = new AuthService()
     }
+
+    componentWillMount() {
+        this.setState({
+            fb_id: this.props.userData.fb_id,
+            name: this.props.userData.name,
+            email: this.props.userData.email,
+            gender: this.props.userData.gender
+        })
+    }
+
     onChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;
@@ -23,67 +41,135 @@ export default class RegisterIndex extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-
-        const { username, password } = this.state;
-
-        const check = validateInput({email:username, password});
-        if (check.isValid) {
-            FetchApi('POST','/api/ca/auth/register', { username, password })
-                .then((res) => {
-                    console.log(res)
-                    if (res && res.data) {
-                        if (res.data.success) {
-                            this.props.history.push("/ca/")
-                        } else {
-                            this.setState({error: res.data.msg})
-                        }
+        const { fb_id, name, contact, email, gender, college, state, branch, address, why } = this.state;
+        let data = { fb_id, name, contact, email, gender, college, state, branch, address, why }
+        const check = validateInput(email, 'email')
+        if (fb_id && name && contact && email && gender && college && state && branch && address && why && check.isValid) {
+            const tempToken = this.Auth.getTempToken()
+            FetchApi('POST', '/api/ca/auth/fbRegister', data, tempToken)
+                .then(r => {
+                    if (r && r.data && r.data.body) {
+                        this.Auth.setData({token: r.data.token, name:r.data.body.name, user_id: r.data.body.fb_id})
+                        this.props.updateRoutes(true)
+                        this.props.setUserData(r.data.body)
                     }
                 })
-                .catch(error => {
-                    this.setState({error: ''})
-                    console.log(error, 'Register')
-                });    
+                .catch(e => console.log(e));
+        } else if (check.errors) {
+            this.setState({errors: check.errors})
         } else {
-            this.setState({error: check.errors})
+            this.setState({errors: 'Fields cannot be empty'})
         }
     }
 
-    render() {
-        const { username, password, error } = this.state;
+    render(){
+        const { fb_id, name, contact, email, gender, college, state, branch, address, why, errors } = this.state;
+        if (!fb_id) {
+            return (<Redirect to="/ca/" />)
+        }
         return (
             <div>
-                {!(error.password || error.email) ?
-                    error
-                : 
-                    <div>
-                        {error.email ? error.email : null}
-                        {error.password ? error.password : null}
-                    </div>
-                }
                 <form onSubmit={this.onSubmit}>
+                    {errors ?
+                        <div>
+                            {errors}
+                        </div>
+                        : null
+                    }
                     <h2>Register</h2>
-                    <label>Email address</label>
+                    <label htmlFor="inputName">Name</label>
                     <input 
-                        id="inputEmail" 
-                        type="email" 
-                        placeholder="Email address" 
-                        name="username"
-                        autoCorrect="off" 
-                        autoCapitalize="off"  
-                        value={username} 
+                        id="inputName" 
+                        type="text" 
+                        placeholder="Your Name" 
+                        name="name" 
+                        value={name} 
                         onChange={this.onChange} 
                         required
                     />
-                    <label htmlFor="inputPassword">Password</label>
+                    <label htmlFor="inputContact">Contact Number</label>
                     <input 
-                        id="inputPassword" 
-                        type="password" 
-                        placeholder="Password" 
-                        name="password" 
-                        autoCorrect="off" 
-                        autoComplete="off" 
-                        autoCapitalize="off" 
-                        value={password} 
+                        id="inputContact" 
+                        type="number" 
+                        placeholder="Contact Number" 
+                        name="contact" 
+                        maxLength="10"
+                        value={contact} 
+                        onChange={this.onChange} 
+                        required
+                    />
+                    <label htmlFor="inputEmail">Email</label>
+                    <input 
+                        id="inputEmail"
+                        type="email"
+                        placeholder="Your Email"
+                        name="email"
+                        autoCorrect="off"
+                        autoCapitalize="off"
+                        value={email}
+                        onChange={this.onChange}
+                        required
+                    />
+                    <label htmlFor="inputGender">Gender</label>
+                    <select 
+                        id="inputGender" 
+                        name="gender" 
+                        value={gender} 
+                        onChange={this.onChange} 
+                        required
+                    >
+                        <option value="" disabled="true"> Gender </option>
+                        <option value="male"> Male </option>
+                        <option value="female"> Female </option>
+                        <option value="other"> Other </option>
+                    </select>
+                    <label htmlFor="inputCollege">College</label>
+                    <input 
+                        id="inputCollege" 
+                        type="text" 
+                        placeholder="College Name" 
+                        name="college" 
+                        value={college} 
+                        onChange={this.onChange} 
+                        required
+                    />
+                    <label htmlFor="inputState">State</label>
+                    <input 
+                        id="inputState" 
+                        type="text" 
+                        placeholder="State Name" 
+                        name="state" 
+                        value={state} 
+                        onChange={this.onChange} 
+                        required
+                    />
+                    <label htmlFor="inputBranch">Branch</label>
+                    <input 
+                        id="inputBranch" 
+                        type="text" 
+                        placeholder="Branch Name" 
+                        name="branch" 
+                        value={branch} 
+                        onChange={this.onChange} 
+                        required
+                    />
+                    <label htmlFor="inputAddress">Address</label>
+                    <input 
+                        id="inputAddress" 
+                        type="text" 
+                        placeholder="Address Name" 
+                        name="address" 
+                        value={address} 
+                        onChange={this.onChange} 
+                        required
+                    />
+                    <label htmlFor="inputWhy">Why should we choose you?</label>
+                    <textarea 
+                        id="inputWhy" 
+                        placeholder="Your Answer" 
+                        rows="5" 
+                        name="why" 
+                        value={why} 
                         onChange={this.onChange} 
                         required
                     />

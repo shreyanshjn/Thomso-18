@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var passport = require('passport');
-require('../config/ca/passport')(passport)
+require('../config/ca/admin_passport')(passport)
 
 var Book = require('../models/Book');
 

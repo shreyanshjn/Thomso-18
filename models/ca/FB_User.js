@@ -46,7 +46,15 @@ var UserSchema = new mongoose.Schema({
     why: {
         type: String
     },
-    score: {
+    likes: {
+        type: Number,
+        default: 0
+    },
+    shares: {
+        type: Number,
+        default: 0
+    },
+    referrals: {
         type: Number,
         default: 0
     },
