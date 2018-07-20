@@ -23,10 +23,10 @@ export default function validateInput(data, thisCase) {
     const errors = {}
     switch (thisCase) {
         case 'email':
-            checkEmail(data.email)
+            checkEmail(data)
             break
         case 'password':
-            checkPass(data.password)
+            checkPass(data)
             break
         default:
             checkEmail(data.email)

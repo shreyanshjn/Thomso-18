@@ -29,8 +29,18 @@ const RegisterIndex = Loadable({
     loading: Loading,
 });
 
+const RegisterCAIndex = Loadable({
+    loader: () => import('./registerca/Index'),
+    loading: Loading,
+});
+
 const HomeIndex = Loadable({
     loader: () => import('./home/Index'),
+    loading: Loading,
+});
+
+const FBLogin = Loadable({
+    loader: () => import('./fb/Index'),
     loading: Loading,
 });
 
@@ -38,7 +48,8 @@ export default class CAIndex extends React.Component{
     constructor() {
         super();
         this.state = {
-          isAuthenticated: false
+            userData: '',
+            isAuthenticated: false
         };
         this.Auth = new AuthService();
         this.handleUpdate = this.handleUpdate.bind(this)
@@ -50,8 +61,17 @@ export default class CAIndex extends React.Component{
         this.setState({isAuthenticated});
     }
     
-    handleUpdate(isAuthenticated) {
+    handleUpdate = isAuthenticated => {
         this.setState({isAuthenticated})
+    }
+
+
+    // Bug: This makes all the routes re-render
+    // Use redux to prevent re-render
+    setUserData = data => {
+        this.setState({
+            userData: data
+        })
     }
 
     render(){
@@ -59,13 +79,15 @@ export default class CAIndex extends React.Component{
             <div>
                 {this.state.isAuthenticated ? 
                     <div>
-                        <Route path="/ca/" component={HomeIndex} />
                         <Route exact path="/ca/logout" render={ () => <LogutIndex updateRoutes={this.handleUpdate}/> } />
+                        <Route path="/ca/" component={HomeIndex} />
                     </div>
 
                 :
                     <div>
                         <Route exact path="/ca/register" component={RegisterIndex} />
+                        <Route exact path="/ca/registerca" render={ () => <RegisterCAIndex updateRoutes={this.handleUpdate} setUserData={this.setUserData} userData={this.state.userData} /> } />
+                        <Route exact path="/ca/fb" render={ () => <FBLogin updateRoutes={this.handleUpdate} setUserData={this.setUserData} userData={this.state.userData}/> } />
                         <Route exact path="/ca/" render={ () => <LoginIndex updateRoutes={this.handleUpdate}/> } />
                     </div>
                 }

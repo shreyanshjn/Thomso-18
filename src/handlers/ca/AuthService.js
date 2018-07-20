@@ -26,7 +26,32 @@ export default class AuthService extends React.Component{
         }
     }
 
-    setToken(token) {
-        localStorage.setItem('ca_auth_token', token);
+    setData(data) {
+        if (data.token) {
+            localStorage.setItem('ca_auth_token', data.token);
+        }
+        if (data.name) {
+            localStorage.setItem('ca_name', data.name);
+        }
+        if (data.user_id) {
+            localStorage.setItem('ca_user_id', data.user_id);
+        }
+    }
+
+    setTempToken(token) {
+        if (this.getTempToken()) {
+
+        }
+        localStorage.setItem('ca_temp_auth_token', token);
+    }
+
+    removeTempToken() {
+        if (localStorage.getItem('ca_temp_auth_token')) {
+            localStorage.removeItem('ca_temp_auth_token')
+        }
+    }
+
+    getTempToken() {
+        return localStorage.getItem('ca_temp_auth_token');
     }
 }
