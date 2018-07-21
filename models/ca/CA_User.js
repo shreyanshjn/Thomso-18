@@ -78,4 +78,4 @@ UserSchema.pre('save', function (next) {
     })
 });
 
-module.exports = mongoose.model('FB_User', UserSchema);
+module.exports = mongoose.model('CA_User', UserSchema);

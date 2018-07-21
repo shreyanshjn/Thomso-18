@@ -7,7 +7,8 @@ export default class HomeIndex extends React.Component {
     constructor() {
         super();
         this.state = {
-            participants: []
+            participants: [],
+            message: ''
         };
         this.Auth = new AuthService();
     }
@@ -20,9 +21,11 @@ export default class HomeIndex extends React.Component {
                 this.setState({ participants: result.data });
             })
             .catch(error => {
-                if(error.response.status === 401) {
+                if(error.response && error.response.status === 401) {
                     this.setState({ message: 'Token Expired' });
-                    this.props.history.push('/ca/admin/logout')
+                    this.props.history.push('/ca/admin/logout');
+                } else {
+                    this.setState({ message: 'Unable to connect to the server' });
                 }
             });
     }

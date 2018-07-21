@@ -7,7 +7,7 @@ var express = require('express');
 var jwt = require('jsonwebtoken');
 var router = express.Router();
 
-var FB_User = require("../../models/ca/FB_User");
+var CA_User = require("../../models/ca/CA_User");
 
 var client_id = process.env.REACT_APP_FB_ID;
 var client_secret = process.env.FACEBOOK_APP_SECRET;
@@ -37,7 +37,7 @@ router.post('/fblogin', function(req, res) {
     request(`https://graph.facebook.com/oauth/access_token?grant_type=fb_exchange_token&client_id=${client_id}&client_secret=${client_secret}&fb_exchange_token=${accessToken}`, function(err, response, body){
         var access_token = JSON.parse(response.body).access_token;
         var saveData = Object.assign(data, {access_token: access_token})
-        FB_User.findOne({
+        CA_User.findOne({
             fb_id: req.body.id
         }, function(err, user) {
             if (err) {
@@ -49,7 +49,7 @@ router.post('/fblogin', function(req, res) {
             }
             if (!user) {
                 // Return Data
-                var newUser = new FB_User(saveData);
+                var newUser = new CA_User(saveData);
                 newUser.save(function(err, user) {
                     if (err) {
                         return res.json({success: false, msg: 'Unable to Add User'});
@@ -61,10 +61,11 @@ router.post('/fblogin', function(req, res) {
             } else {
                 // Update User
                 if (user.created) {
-                    FB_User.findOneAndUpdate({fb_id: req.body.id}, saveData, { new:true }, function(err, user) {
+                    CA_User.findOneAndUpdate({fb_id: req.body.id}, saveData, { new:true }, function(err, user) {
                         if(err){
                             return res.status(400).send({success:false, msg:'Error Updating User', error:err});
                         }
+                        console.log(user, 'findOneAndUpdate');
                         token = jwt.sign(user.toJSON(), settings.secret);
                         return res.json({success:true, msg:'User Successfully Updated', token: 'JWT ' + token, body:user});
                     })
@@ -80,8 +81,8 @@ router.post('/fblogin', function(req, res) {
 router.post('/fbRegister', passport.authenticate('jwt', { session: false}), function(req, res) {
     var token = getToken(req.headers);
     if (token) {
-        FB_User.findOne({
-            fb_id: req.body.fb_id
+        CA_User.findOne({
+            fb_id: req.user.fb_id
         }, function(err, user) {
             if (err) {
                 return res.status(400).send({
@@ -105,7 +106,7 @@ router.post('/fbRegister', passport.authenticate('jwt', { session: false}), func
                     why: req.body.why,
                     created: true
                 }
-                FB_User.findOneAndUpdate({fb_id: req.body.fb_id}, data, { new:true }, function(err, user) {
+                CA_User.findOneAndUpdate({fb_id: req.user.fb_id}, data, { new:true }, function(err, user) {
                     if(err){
                         return res.status(400).send({success:false, msg:'Error Creating User', error:err});
                     }

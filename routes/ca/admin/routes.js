@@ -4,7 +4,7 @@ var router = express.Router();
 var passport = require('passport');
 require('../../../config/ca/admin_passport')(passport)
 
-var Users = require('../../../models/ca/FB_User');
+var Users = require('../../../models/ca/CA_User');
 
 getToken = function (headers) {
   if (headers && headers.authorization) {

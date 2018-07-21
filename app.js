@@ -7,6 +7,7 @@ var cors = require('cors')
 var mongoose = require('mongoose');
 
 var caAuth = require('./routes/ca/auth');
+caAuthRoutes = require('./routes/ca/routes');
 var caAdminAuth = require('./routes/ca/admin/auth');
 var caAdminRoutes = require('./routes/ca/admin/routes');
 var book = require('./routes/book');
@@ -29,7 +30,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 var whitelist = ['https://thomso.in', 'https://www.thomso.in', 'www.thomso.in', 'thomso.in']
 if (process.env.REACT_APP_SERVER_ENVIORNMENT === 'dev') {
-  whitelist = ['http://localhost:'+process.env.PORT, 'http://localhost:'+process.env.REACT_APP_SERVER_PORT]
+  whitelist = ['http://localhost:'+process.env.PORT, 'http://localhost:'+process.env.REACT_APP_SERVER_PORT, 'http://localhost:80']
 }
 
 var corsOptions = {
@@ -61,7 +62,8 @@ app.get('/static/*.js', function (req, res, next) {
 app.use('/api/ca/auth', cors(corsOptions), caAuth);
 app.use('/api/ca/admin/auth', cors(corsOptions), caAdminAuth);
 app.use('/api/ca/admin', cors(corsOptions), caAdminRoutes);
-app.use('/api/book', cors(corsOptions), book);
+app.use('/api/ca', cors(corsOptions), caAuthRoutes);
+app.use('/api/book', book);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

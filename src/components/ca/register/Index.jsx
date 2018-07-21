@@ -1,5 +1,4 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
 
 import AuthService from '../../../handlers/ca/AuthService';
 import FetchApi from '../../../utils/FetchAPI';
@@ -25,12 +24,17 @@ export default class RegisterIndex extends React.Component {
     }
 
     componentWillMount() {
-        this.setState({
-            fb_id: this.props.userData.fb_id,
-            name: this.props.userData.name,
-            email: this.props.userData.email,
-            gender: this.props.userData.gender
-        })
+        if (this.props.userData) {   
+            this.setState({
+                fb_id: this.props.userData.fb_id,
+                name: this.props.userData.name,
+                email: this.props.userData.email,
+                gender: this.props.userData.gender
+            })
+            if (!this.props.userData.fb_id) {
+                this.props.history.push('/ca/')
+            }
+        }
     }
 
     onChange = (e) => {
@@ -41,10 +45,10 @@ export default class RegisterIndex extends React.Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        const { fb_id, name, contact, email, gender, college, state, branch, address, why } = this.state;
-        let data = { fb_id, name, contact, email, gender, college, state, branch, address, why }
+        const { name, contact, email, gender, college, state, branch, address, why } = this.state;
+        let data = { name, contact, email, gender, college, state, branch, address, why }
         const check = validateInput(email, 'email')
-        if (fb_id && name && contact && email && gender && college && state && branch && address && why && check.isValid) {
+        if (name && contact && email && gender && college && state && branch && address && why && check.isValid) {
             const tempToken = this.Auth.getTempToken()
             FetchApi('POST', '/api/ca/auth/fbRegister', data, tempToken)
                 .then(r => {
@@ -52,6 +56,7 @@ export default class RegisterIndex extends React.Component {
                         this.Auth.setToken(r.data.token)
                         this.props.updateRoutes(true)
                         this.props.setUserData(r.data.body)
+                        this.props.history.push('/ca/')
                     }
                 })
                 .catch(e => console.log(e));
@@ -63,10 +68,7 @@ export default class RegisterIndex extends React.Component {
     }
 
     render(){
-        const { fb_id, name, contact, email, gender, college, state, branch, address, why, errors } = this.state;
-        if (!fb_id) {
-            return (<Redirect to="/ca/" />)
-        }
+        const {name, contact, email, gender, college, state, branch, address, why, errors } = this.state;
         return (
             <div>
                 <form onSubmit={this.onSubmit}>

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
 
 import AuthService from '../../../handlers/ca/AuthService';
 import FetchApi from '../../../utils/FetchAPI';
@@ -49,6 +48,7 @@ export default class LoginIndex extends React.Component {
                         // Pass data to parent
                         this.Auth.setTempToken(r.data.token)
                         this.props.setUserData(r.data.body)
+                        this.props.history.push('/ca/register')
                     }
                 }
             })
@@ -56,9 +56,6 @@ export default class LoginIndex extends React.Component {
     }
 
     render(){
-        if (this.props.userData && this.props.userData.created === false) {
-            return (<Redirect to="/ca/register" />)
-        }
         return (
             <button onClick={() => this.facebookLogin()}>Login/Register</button>
         )

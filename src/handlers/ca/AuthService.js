@@ -12,14 +12,14 @@ export default class AuthService extends React.Component{
     }
 
     logout() {
-        const authToken = this.getToken()
-        if (authToken) {
+        if (this.getToken()) {
             localStorage.removeItem('ca_auth_token')
         }
     }
 
     setToken(token) {
         localStorage.setItem('ca_auth_token', token);
+        this.removeTempToken()
     }
 
     setTempToken(token) {
@@ -27,8 +27,7 @@ export default class AuthService extends React.Component{
     }
 
     removeTempToken() {
-        const tempToken = this.getTempToken()
-        if (tempToken) {
+        if (this.getTempToken()) {
             localStorage.removeItem('ca_temp_auth_token')
         }
     }

@@ -57,6 +57,7 @@ export default class CAIndex extends React.Component{
     }
     
     handleUpdate = isAuthenticated => {
+        console.log(isAuthenticated, 'isAuthenticated')
         this.setState({isAuthenticated})
     }
 
@@ -75,14 +76,14 @@ export default class CAIndex extends React.Component{
                 <Route path="/ca/admin" component={AdminIndex}/>
                 {this.state.isAuthenticated ? 
                     <div>
-                        <Route exact path="/ca/logout" render={ () => <LogoutIndex updateRoutes={this.handleUpdate}/> } />
+                        <Route exact path="/ca/logout" render={ props => <LogoutIndex {...props} updateRoutes={this.handleUpdate}/> } />
                         <Route exact path="/ca/" component={HomeIndex} />
                     </div>
 
                 :
                     <div>
-                        <Route exact path="/ca/register" render={ () => <RegisterIndex updateRoutes={this.handleUpdate} setUserData={this.setUserData} userData={this.state.userData} /> } />
-                        <Route exact path="/ca/" render={ () => <LoginIndex updateRoutes={this.handleUpdate} setUserData={this.setUserData} userData={this.state.userData}/> } />
+                        <Route exact path="/ca/register" render={ props => <RegisterIndex {...props} updateRoutes={this.handleUpdate} setUserData={this.setUserData} userData={this.state.userData} /> } />
+                        <Route exact path="/ca/" render={ props => <LoginIndex {...props} updateRoutes={this.handleUpdate} setUserData={this.setUserData} userData={this.state.userData}/> } />
                     </div>
                 }
             </div>
