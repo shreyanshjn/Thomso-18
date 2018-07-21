@@ -42,7 +42,7 @@ export default class LoginIndex extends React.Component {
                 if (r && r.data && r.data.body) {
                     if (r.data.body.created) {
                         // Set isAuthenticated
-                        this.Auth.setData({token: r.data.token, name:r.data.body.name, user_id: r.data.body.fb_id})
+                        this.Auth.setToken(r.data.token)
                         this.props.updateRoutes(true)
                         this.props.setUserData(r.data.body)
                     } else {

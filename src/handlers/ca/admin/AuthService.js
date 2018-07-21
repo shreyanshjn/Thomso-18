@@ -13,21 +13,12 @@ export default class AuthService extends React.Component{
 
     logout() {
         const authToken = this.getToken()
-        const name = localStorage.getItem('ca_admin_name')
         if (authToken) {
             localStorage.removeItem('ca_admin_auth_token')
         }
-        if (name) {
-            localStorage.removeItem('ca_admin_name')
-        }
     }
 
-    setData(data) {
-        if (data.token) {
-            localStorage.setItem('ca_admin_auth_token', data.token)
-        }
-        if (data.username) {
-            localStorage.setItem('ca_admin_name', data.username)
-        }
+    setToken(token) {
+        localStorage.setItem('ca_admin_auth_token', token)
     }
 }

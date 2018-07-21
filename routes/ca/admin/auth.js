@@ -19,6 +19,10 @@ getToken = function (headers) {
 };
 
 router.post('/register', function(req, res) {
+    if (req.body.username) {
+        req.body.username = req.body.username.toLowerCase();
+        req.body.username = req.body.username.trim()
+    }
     if (!req.body.username || !req.body.password) {
         res.json({success: false, msg: 'Please pass username and password.'});
     } else {
@@ -36,6 +40,10 @@ router.post('/register', function(req, res) {
 });
 
 router.post('/login', function(req, res) {
+    if (req.body.username) {
+        req.body.username = req.body.username.toLowerCase();
+        req.body.username = req.body.username.trim()
+    }
     User.findOne({
         username: req.body.username
     }, function(err, user) {
