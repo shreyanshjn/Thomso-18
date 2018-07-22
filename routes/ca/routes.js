@@ -21,7 +21,7 @@ getToken = function (headers) {
   }
 };
 
-/* GET ALL Users */
+/* GET all Posts */
 router.get('/posts', passport.authenticate('jwt', { session: false}), function(req, res) {
   var token = getToken(req.headers);
   if (token) {
@@ -38,6 +38,26 @@ router.get('/posts', passport.authenticate('jwt', { session: false}), function(r
         return res.status(400).send({success: false, msg: 'Facebook didnt return status.'});
       })
     });
+  } else {
+    return res.status(403).send({success: false, msg: 'Unauthorized.'});
+  }
+});
+
+/* PUT Shared Post ID */
+router.put('/posts/:post_id', passport.authenticate('jwt', { session: false}), function(req, res) {
+  var token = getToken(req.headers);
+  if (token) {
+    if (req.params.post_id) {
+      var post_id = req.params.post_id;
+      Users.findOneAndUpdate({fb_id: req.user.fb_id}, {$addToSet: { posts: post_id }}, { new:true }, function(err, user) {
+        if(err){
+          return res.status(400).send({success:false, msg:'Error Updating User', error:err});
+        }
+        return res.json({success:true, msg:'Post Successfully Shared', body:user});
+      })
+    } else {
+      return res.status(400).send({success:false, msg:'No Post ID Specified', error:err});
+    }
   } else {
     return res.status(403).send({success: false, msg: 'Unauthorized.'});
   }

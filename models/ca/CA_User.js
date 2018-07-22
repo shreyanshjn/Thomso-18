@@ -50,9 +50,13 @@ var UserSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
-    shares: {
+    score: {
         type: Number,
         default: 0
+    },
+    posts: {
+        type: Array,
+        defaule: []
     },
     referrals: {
         type: Number,
@@ -62,10 +66,14 @@ var UserSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
+    blocked: {
+        type: Boolean,
+        default: false
+    },
     updated_date: {
         type: Date,
         default: Date.now
-    },
+    }
 });
 
 UserSchema.pre('save', function (next) {

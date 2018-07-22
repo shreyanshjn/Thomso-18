@@ -6,10 +6,11 @@ var bodyParser = require('body-parser');
 var cors = require('cors')
 var mongoose = require('mongoose');
 
-var caAuth = require('./routes/ca/auth');
-caAuthRoutes = require('./routes/ca/routes');
 var caAdminAuth = require('./routes/ca/admin/auth');
 var caAdminRoutes = require('./routes/ca/admin/routes');
+var caAuth = require('./routes/ca/auth');
+var caScore = require('./routes/ca/score');
+var caAuthRoutes = require('./routes/ca/routes');
 var book = require('./routes/book');
 var app = express();
 
@@ -59,9 +60,10 @@ app.get('/static/*.js', function (req, res, next) {
 //   next();
 // });
 
-app.use('/api/ca/auth', cors(corsOptions), caAuth);
 app.use('/api/ca/admin/auth', cors(corsOptions), caAdminAuth);
 app.use('/api/ca/admin', cors(corsOptions), caAdminRoutes);
+app.use('/api/ca/auth', cors(corsOptions), caAuth);
+app.use('/api/ca/score', caScore)
 app.use('/api/ca', cors(corsOptions), caAuthRoutes);
 app.use('/api/book', book);
 

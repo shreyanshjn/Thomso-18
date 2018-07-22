@@ -11,7 +11,14 @@ var UserSchema = new Schema({
     password: {
         type: String,
         required: true
-    }
+    },
+    last_ip: {
+        type: String
+    },
+    updated_date: {
+        type: Date,
+        default: Date.now
+    },
 });
 
 UserSchema.pre('save', function (next) {

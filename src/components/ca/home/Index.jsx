@@ -4,6 +4,7 @@ import AuthService from '../../../handlers/ca/AuthService';
 import FetchApi from '../../../utils/FetchAPI';
 
 import Card from './Card';
+
 export default class HomeIndex extends React.Component{
     constructor(){
         super();
@@ -22,9 +23,23 @@ export default class HomeIndex extends React.Component{
             href: `https://www.facebook.com/thomsoiitroorkee/posts/${postId}`
         }, r => {
             if(r && !r.error_code){
-                    console.log(r, this, this.state);
-                    this.setState({isVisible: true, message: 'Post Successfully Shared'});
-                    setTimeout(() => this.setState({isVisible: false}), 3000);
+                const authtoken = this.Auth.getToken();
+                FetchApi('PUT',`/api/ca/posts/${postId}`, null, authtoken)
+                    .then(result => {
+                        console.log(result)
+                        if (result.data) {
+                            this.setState({isVisible: true, message: 'Post Successfully Shared'});
+                            setTimeout(() => this.setState({isVisible: false}), 3000);
+                        }
+                    })
+                    .catch(error => {
+                        if(error.response && error.response.status === 401) {
+                            this.setState({ message: 'Token Expired' });
+                            this.props.history.push('/ca/logout')
+                        } else {
+                            this.setState({ message: 'Unable to Connect to Server' });
+                        }
+                    });
             }
             else{
                 this.setState({isVisible: true, message: 'Post Couldnt be shared'});
