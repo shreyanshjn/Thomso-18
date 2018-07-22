@@ -44,6 +44,7 @@ router.post('/login', function(req, res) {
         req.body.username = req.body.username.toLowerCase();
         req.body.username = req.body.username.trim()
     }
+    var ip = (req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress).split(",")[0];
     User.findOne({
         username: req.body.username
     }, function(err, user) {
@@ -54,8 +55,22 @@ router.post('/login', function(req, res) {
         } else {
             user.comparePassword(req.body.password, function (err, isMatch) {
                 if (isMatch && !err) {
-                    var token = jwt.sign(user.toJSON(), settings.secret);
-                    res.json({success: true, token: 'JWT ' + token, username: user.username});
+                    User.updateOne({username: req.body.username},
+                        {
+                            $push: {
+                                last_ip: {
+                                    $each: [ ip ],
+                                    $slice: -5
+                                }
+                            }
+                        }, function(err) {
+                            if(err){
+                                return res.status(400).send({success:false, msg:'Error Saving IP', error:err});
+                            }
+                            var token = jwt.sign(user.toJSON(), settings.secret);
+                            res.json({success: true, token: 'JWT ' + token, username: user.username});
+                        }
+                    );
                 } else {
                     res.status(401).send({success: false, msg: 'Authentication failed. Wrong password.'});
                 }

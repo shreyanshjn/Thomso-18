@@ -34,6 +34,9 @@ var UserSchema = new mongoose.Schema({
     contact: {
         type: String
     },
+    college: {
+        type: String
+    },
     state : {
         type: String
     },
@@ -50,21 +53,28 @@ var UserSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
-    score: {
+    posts: {
+        type: Array,
+        default: []
+    },
+    shares: {
         type: Number,
         default: 0
     },
-    posts: {
-        type: Array,
-        defaule: []
-    },
     referrals: {
+        type: Number,
+        default: 0
+    },
+    score: {
         type: Number,
         default: 0
     },
     created: {
         type: Boolean,
         default: false
+    },
+    notification: {
+        type: String
     },
     blocked: {
         type: Boolean,

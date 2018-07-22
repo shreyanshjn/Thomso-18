@@ -5,6 +5,7 @@ var router = express.Router();
 
 var Users = require('../../models/ca/CA_User');
 
+// Synchronous query to fetch CA Score
 router.get('/sync', function(req, res) {
     Users.find(function (err, allUsers) {
         if (err) return next(err);
@@ -14,6 +15,7 @@ router.get('/sync', function(req, res) {
                 if (allUsers[userIndex].posts.length > 0) {
                     var totalLikes = 0;
                     var totalScore = 0;
+                    var totalShares = 0;
                     function makeSynchronousRequest(postIndex) {
                         var options = {
                             method: 'GET',
@@ -39,7 +41,8 @@ router.get('/sync', function(req, res) {
                                     score = 5 + likes/2;
                                 }
                                 totalLikes = totalLikes + likes;
-                                totalScore = totalScore + score   
+                                totalScore = totalScore + score;
+                                totalShares = totalShares + 1;
                             }
                             if(postIndex < allUsers[userIndex].posts.length - 1) {
                                 makeSynchronousRequest(postIndex+1);
@@ -48,14 +51,15 @@ router.get('/sync', function(req, res) {
                                 var updateData = {
                                     score: totalScore,
                                     likes: totalLikes,
+                                    shares: totalShares
                                 }
                                 console.log('Finding and Updating ID: ' + allUsers[userIndex].fb_id);
-                                Users.findOneAndUpdate({fb_id: allUsers[userIndex].fb_id}, updateData, { new:true }, function(err, user) {
+                                Users.update({fb_id: allUsers[userIndex].fb_id}, updateData, function(err) {
                                     if(err){
                                         console.log(err, 'Find and Update Failed');
                                         return false;
                                     }
-                                    console.log(user, 'Successfully Updated ID: '+allUsers[userIndex].fb_id);
+                                    console.log('Successfully Updated ID: '+allUsers[userIndex].fb_id);
                                     return true
                                 })
                                 if (userIndex < allUsers.length - 1) {
@@ -82,6 +86,8 @@ router.get('/sync', function(req, res) {
     });
 });
 
+// Asynchronous Query to Fetch CA Score
+// Exponentially Faster
 router.get('/async', function(req, res) {
     Users.find(function (err, allUsers) {
         if (err) return next(err);
@@ -97,21 +103,23 @@ router.get('/async', function(req, res) {
                 if (eachUser.posts.length > 0) {
                     var totalLikes = 0;
                     var totalScore = 0;
+                    var totalShares = 0;
                     var eachUserFacebookResponseCounter = 0;
                     function makeAsyncDBUpdate() {
                         totalScore = totalScore + eachUser.referrals*25;
                         var updateData = {
                             score: totalScore,
                             likes: totalLikes,
+                            shares: totalShares
                         }
                         console.log('Finding and Updating ID: ' + eachUser.fb_id);
-                        Users.findOneAndUpdate({fb_id: eachUser.fb_id}, updateData, { new:true }, function(err, user) {
+                        Users.update({fb_id: eachUser.fb_id}, updateData, function(err) {
                             if(err){
                                 updateAllUsersResponseCounter();
                                 console.log(err, 'Find and Update Failed');
                                 return false;
                             } else {
-                                console.log(user, 'Successfully Updated ID: '+eachUser.fb_id);
+                                console.log('Successfully Updated ID: '+eachUser.fb_id);
                                 updateAllUsersResponseCounter();
                                 return true
                             }
@@ -153,6 +161,7 @@ router.get('/async', function(req, res) {
                                 }
                                 totalLikes = totalLikes + likes;
                                 totalScore = totalScore + score;
+                                totalShares = totalShares + 1;
                                 updateEachUserFacebookResponseCounter()
                             } else {
                                 updateEachUserFacebookResponseCounter();
