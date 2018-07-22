@@ -1,0 +1,369 @@
+
+<!DOCTYPE html><html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <base href="/">
+    <title>Thomso'18</title>
+    <script>
+			if ('serviceWorker' in navigator) {
+				window.addEventListener('load', function() {
+					navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+						console.log('Worker registration successful', registration.scope);
+					}, function(err) {
+						console.log('Worker registration failed', err);
+					}).catch(function(err) {
+						console.log(err);
+					});
+				});
+			} else {
+				console.log('Service Worker is not supported by browser.');
+			}
+		</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="/css/font.css" media="screen" rel="stylesheet" type="text/css">
+<link href="/css/style.min.css" media="screen" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/asset/js/three.min.js"></script>
+<script type="text/javascript" src="/asset/js/Tween.js"></script>
+<script type="text/javascript" src="/js/galaxy.js"></script>
+<!-- <script type="text/javascript" src="/js/support.js"></script> -->
+<script type="text/javascript" src="/asset/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Black+And+White+Picture|Eater|Faster+One|Shadows+Into+Light" rel="stylesheet">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    
+<style>
+    /*body {
+      font: 100% / 1.414 "Raleway";
+      background: #e9e9e9;
+    }*/
+    #navigation {
+		padding: 2vh 4vw 2vh 4vw;
+    height: fit-content;
+    z-index: 1;
+    position: relative;
+    width: 100vw;
+    /*background: linear-gradient(0deg, #00000000, black 25%);*/
+    display: flex;
+    /* opacity: 0; */
+    justify-content: space-between;
+	}
+    #navigation > .icon{
+		height: 75px;
+		width: 150px;
+		background: url('../images/logo.png');
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+    display: flex;
+    cursor: pointer;
+    	align-items: center;
+		color: #fff;
+		
+	}
+	#navigation > .links{
+		display: flex;
+    	align-items: center;
+    	color: #fff
+	}
+	#navigation > .links > a, #navigation > .links > a:visited, #navigation > .links > a:active, #navigation > .links > a:focus {
+		text-decoration: none;
+		font-size: 2.2em;
+		color:#ffffffb3;
+		margin: 0px 2vw;
+		transition: all 0.25s;
+	}
+	#navigation > .links > a:hover{
+		text-decoration: none;
+		color:#fff;
+		transform: scale(1.1);
+		margin: 0px 2vw;
+  }
+  @media only screen and (max-width: 700px) {
+    #navigation > .links > a, #navigation > .links > a:visited, #navigation > .links > a:active, #navigation > .links > a:focus {
+      font-size: 1.1em;
+    }
+  }
+
+@media only screen and (max-width: 700px) {
+  #navigation > .icon{
+		height: 50px;
+		width: 100px;
+	}
+}
+    .selectpicker {
+      padding: 2px 18px 2px 18px !important;
+      height: 39px !important;
+    }
+    
+    a,
+    [type="submit"] {transition: all .25s ease-in;}
+    .signup__container {
+      position: absolute;
+      right: 0;
+      left: 0;
+      margin-right: auto;
+      margin-left: auto;
+    
+      overflow: hidden;
+    
+      width: 80vw;
+      height: 87vh;
+      border-radius: remy(3px);
+      box-shadow: 0px remy(3px) remy(7px) rgba(0,0,0,.25);
+    }
+    .signup__overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,.76);
+    }
+    .container__child {
+      width: 100%;
+      height: 85%;
+    
+      color: #fff;
+    }
+    .signup__thumbnail {
+      position: relative;
+      padding: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      /*background: url('http://www.photosforclass.com/download/flickr-7842069486');*/
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: cover;
+    }
+    .thumbnail__logo,
+    .thumbnail__content,
+    .thumbnail__links {
+      position: relative;
+      z-index: 2;
+    }
+    .thumbnail__logo {align-self: flex-start;}
+    .logo__shape {fill: #fff;}
+    .logo__text {
+      display: inline-block;
+      font-size: 1rem;
+      font-weight: 700;
+      vertical-align: bottom;
+    }
+    .thumbnail__content {align-self: center;}
+    h1,
+    h2 {
+      font-weight: 300;
+      color: rgba(255,255,255,1);
+    }
+    .heading--primary {font-size: 1.999rem;}
+    .heading--secondary {font-size: 1.414rem;}
+    .thumbnail__links {
+      align-self: flex-end;
+      width: 100%;
+    }
+    .thumbnail__links a {
+      font-size: 1rem;
+      color: #fff;
+      &:focus,
+      &:hover {color: rgba(255,255,255,.5);}
+    }
+    .signup__form {
+      padding: 2.55rem;
+      background: #fafafa;
+    }
+    label {
+      font-size: 2rem;
+      text-transform: uppercase;
+      color: rgb(144,144,144);
+    }
+    .form-control {
+      background-color: transparent;
+      border-top: 0;
+      border-right: 0;
+      border-left: 0;
+      border-radius: 5px;
+      padding: 19px;
+      font-size: 15px;
+      &:focus {border-color: #111;}
+    }
+    [type="text"] {color: #111;}
+    [type="password"] {color: #111;}
+    .btn--form {
+      padding: 1rem 1rem;
+      left:26%;
+      font-size: 1.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #fff;
+      background: #111;
+      border-radius: 5px;
+      margin-top: 1vh;
+      &:focus,
+      &:hover {background: lighten(#111, 13%);}
+    }
+    .signup__link {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin:50px auto;
+      text-decoration: underline;
+      color: #999;
+      &:focus,
+      &:hover {color: darken(#999, 13%);}
+    
+    li{
+        margin-bottom: 10px;
+        }
+    .form-group{
+        margin-bottom:20px;;
+        }
+    
+        .btn{
+            border-radius:10px;
+            }
+    .m-t-lg{height:70px;
+    margin: 10px auto;
+    }
+    .fa{
+        size: 50px;
+        }
+    .option1{
+      border-radius: 3px;
+      height: 20px;
+    }
+
+    sup {
+    vertical-align: super;
+    font-size: smaller;
+    color:red !important;
+    }
+
+    
+ </style>
+  </head>
+  <body>
+    <div id="galaxy"></div>
+    <div id="navigation">
+			<!-- <img src="" alt="thomso" /> -->
+			<div class="icon" onclick="gotoHome()">
+			</div>
+			<div class="links">
+				<a href="index.html">
+					Home
+				</a>
+				<a href="brochure.html">
+					Brochure
+				</a>
+				<a data-menuanchor="contact-us" href="#contact-us">
+					Contact
+				</a>
+			</div>
+		</div>
+    <div class="row container signup__container">
+
+   <!--  <div class="container__child signup__thumbnail col-md-0 col-xs-0">
+      <div class="thumbnail__logo">
+
+
+      </div>
+      <div class="thumbnail__content text-center">
+        <h1 class="heading--primary">Welcome to Thomso 2018</h1>
+        <h2 class="heading--secondary"></h2>
+      </div>
+      <div class="thumbnail__links">
+        <ul class="list-inline m-b-0 text-center">
+          <li><a href="http://alexdevero.com/" target="_blank"><i class="fa fa-globe"></i></a></li>
+          <li><a href="https://www.behance.net/alexdevero" target="_blank"><fa class="fa fa-behance"></fa></a></li>
+          <li><a href="https://github.com/alexdevero" target="_blank"><i class="fa fa-github"></i></a></li>
+          <li><a href="https://twitter.com/alexdevero" target="_blank"><i class="fa fa-twitter"></i></a></li>
+        </ul>
+      </div>
+
+    </div> -->
+    
+    <div class="container__child signup__form col-md-12 col-xs-12">
+        <div class="form-group">
+          <label for="select"><sup>*</sup>Connect as</label>
+          <select name="sponsorType"id="sponsorType" class="form-control selectpicker" >
+            <option value="Sponsors">Sponsor</option>
+            <option value="Media">Media</option>
+            <option value="Partner">Partner</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="Email"><sup>*</sup>Email</label>
+          <input class="form-control" type="email" id="email" name="email"  placeholder="Email">
+        </div>
+
+        <div class="form-group">
+          <label for="Contact"><sup>*</sup>Contact</label>
+          <input class="form-control" type="tel" id="contact" name="contact"  placeholder="Contact">
+        </div>
+
+        <div class="form-group">
+          <label for="Message" >Message</label>
+          <textarea class="form-control" type="text" id="message" name="message" placeholder="Your message here..."></textarea> 
+        </div>
+        
+        <div id="elloWorld" style="color: red"></div>
+        <div class="m-t-lg">
+          <ul class="list-inline">
+            <li>
+              <input type="button" id="submitButton" class="btn btn--form" value="Submit" onclick="handleSubmit()" />
+            </li>
+          </ul>
+        </div>
+    </div>
+  
+  </div>
+  <a style="position: fixed; bottom: 15px; right: 15px; height: 30px; width: 150px; background:url('img/economical.png'); background-repeat:no-repeat; background-position:center; background-size:contain;" href="economicalhost.com" target="_blank" ></a>
+  <script type="text/javascript">
+    function handleSubmit() {
+      
+      var y = document.getElementById('contact').value;
+      var x = document.getElementById('email').value;
+      var atpos = x.indexOf("@");
+      var dotpos = x.lastIndexOf(".");
+      if ((atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)&&(isNaN(y) || y < 4999999999 || y > 9999999999)) {
+        $("#elloWorld").html('Invalid e-mail address and Mobile Number');
+        return false; 
+      } 
+      else if((y>4999999999 && y<9999999999)&&(atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)) {
+        $("#elloWorld").html('Invalid e-mail address');
+        return false; 
+      }
+      else if ((atpos>1 && dotpos>atpos+2 && dotpos+2<=x.length)&&(isNaN(y) || y < 4999999999 || y > 9999999999)) {
+      $("#elloWorld").html('Invalid Mobile Number');
+      return false;
+      }
+      $.ajax({
+          type: "POST",
+          url: "/api/addSponsor",
+          data: {
+            sponsorType: document.getElementById('sponsorType').value,
+            email: document.getElementById('email').value,
+            message: document.getElementById('message').value,
+            contact: document.getElementById('contact').value
+          },
+          dataType: "JSON",
+          success: function(data) {
+                        $("#elloWorld").css("color","green");
+            $("#elloWorld").html('Thanx for your interest. We will connect you soon.');
+          },
+          error: function(err) {
+                        $("#elloWorld").css("color","red");
+
+            $("#elloWorld").html('Something went wrong. Please again later.');
+          }
+      });
+    }  
+
+         
+      
+  </script>
+  </body>
+  </html>
