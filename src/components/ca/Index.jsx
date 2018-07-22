@@ -34,6 +34,16 @@ const HomeIndex = Loadable({
     loading: Loading,
 });
 
+const LeaderboardIndex = Loadable({
+    loader: () => import('./leaderboard/Index'),
+    loading: Loading,
+});
+
+const IdeasIndex = Loadable({
+    loader: () => import('./ideas/Index'),
+    loading: Loading,
+});
+
 const LoginIndex = Loadable({
     loader: () => import('./login/Index'),
     loading: Loading,
@@ -77,6 +87,8 @@ export default class CAIndex extends React.Component{
                 {this.state.isAuthenticated ? 
                     <div>
                         <Route exact path="/ca/logout" render={ props => <LogoutIndex {...props} updateRoutes={this.handleUpdate}/> } />
+                        <Route exact path="/ca/leaderboard" component={LeaderboardIndex} />
+                        <Route exact path="/ca/idea" component={IdeasIndex} />
                         <Route exact path="/ca/" component={HomeIndex} />
                     </div>
 

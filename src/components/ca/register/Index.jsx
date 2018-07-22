@@ -8,7 +8,6 @@ export default class RegisterIndex extends React.Component {
     constructor(){
         super();
         this.state = {
-            fb_id: '',
             name: '',
             contact: '',
             email: '',
@@ -26,7 +25,6 @@ export default class RegisterIndex extends React.Component {
     componentWillMount() {
         if (this.props.userData) {   
             this.setState({
-                fb_id: this.props.userData.fb_id,
                 name: this.props.userData.name,
                 email: this.props.userData.email,
                 gender: this.props.userData.gender

@@ -25,6 +25,7 @@ getToken = function (headers) {
     }
 };
 
+// Login using Facebook
 router.post('/fblogin', function(req, res) {
     var accessToken = req.body.accessToken;
     var data = {
@@ -78,6 +79,7 @@ router.post('/fblogin', function(req, res) {
     })
 });
 
+// Register Using Facebook
 router.post('/fbRegister', passport.authenticate('jwt', { session: false}), function(req, res) {
     var token = getToken(req.headers);
     if (token) {
