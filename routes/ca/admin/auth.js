@@ -1,22 +1,10 @@
-var settings = require('../../../config/settings');
 var express = require('express');
-var jwt = require('jsonwebtoken');
+var moment = require('moment');
 var router = express.Router();
 
 var User = require("../../../models/ca/CA_Admin");
-
-getToken = function (headers) {
-    if (headers && headers.authorization) {
-      var parted = headers.authorization.split(' ');
-      if (parted.length === 2) {
-        return parted[1];
-      } else {
-        return null;
-      }
-    } else {
-      return null;
-    }
-};
+var CA_Admin_Token = require("../../../models/ca/CA_Admin_Token");
+var TokenHelper = require("../../../helpers/TokenHelper");
 
 router.post('/register', function(req, res) {
     if (req.body.username) {
@@ -67,8 +55,17 @@ router.post('/login', function(req, res) {
                             if(err){
                                 return res.status(400).send({success:false, msg:'Error Saving IP', error:err});
                             }
-                            var token = jwt.sign(user.toJSON(), settings.secret);
-                            res.json({success: true, token: 'JWT ' + token, username: user.username});
+                            var newToken = {
+                                username: req.body.username,
+                                token: TokenHelper.generateAdminToken(req.body.username),
+                                expirationTime: moment().day(30),
+                            };
+                            CA_Admin_Token.findOneAndUpdate({ username: req.body.username }, newToken, { upsert: true, new:true }, function(err, token) {
+                                if (err) {
+                                    return res.status(400).send({success: false, msg: 'Unable Create Token'});
+                                }
+                                res.json({success: true, token: token.token, username: user.username});
+                            });
                         }
                     );
                 } else {
