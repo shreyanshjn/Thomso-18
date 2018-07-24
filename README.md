@@ -7,32 +7,34 @@ For Build, run `npm build`
 To Serve the build, run `npm prod`
 
 # How to install locally:
-  > Run `npm install`
 
-  > Install mongo
+> Run `npm install`
 
-  > Create mongo-data folder
+> Install mongo
 
-  > Start mongo server by navigating to the bin on mongodb and run `./mongod --dbpath ~/mongo-data`
+> Create mongo-data folder
 
-  > Build and Serve
+> Start mongo server by navigating to the bin on mongodb and run `./mongod --dbpath ~/mongo-data`
+
+> Build and Serve
 
 # Create Mongo Role and User:
 
 `use <DatabaseName>`
 
 `db.createRole({`
-  `createRole: "adminuser",`
-  `privileges: [`
-    `{
+`createRole: "adminuser",`
+`privileges: [`
+`{
 
       resource: { db: "<DatabaseName>", collection: "" },
 
       actions: [ "find","insert","update","createIndex","createCollection","remove" ]
 
     }`
-  `],`
-  `roles: [{ role: "read", db: "<DatabaseName>"}]`
+
+`],`
+`roles: [{ role: "read", db: "<DatabaseName>"}]`
 `})`
 
 `db.createUser({"user" : "<DatabaseUser",pwd: "<DatabasePassword>", "roles" : [{"role" : "adminuser", "db" : "<DatabaseName>"}]})`
