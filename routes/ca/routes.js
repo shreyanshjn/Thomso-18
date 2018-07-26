@@ -154,7 +154,11 @@ router.delete('/idea/:id', passport.authenticate('jwt', { session: false }), fun
 router.get('/leaderboard', passport.authenticate('jwt', { session: false }), function(req, res) {
   var token = getToken(req.headers);
   if (token) {
+<<<<<<< HEAD
     Users.find({ blocked: false })
+=======
+    Users.find()
+>>>>>>> f1ed10f1debe2d5bd31af6bca75dba9d599856d2
       .select('name likes college score referrals shares')
       .sort({'score': -1})
       .limit(10)
