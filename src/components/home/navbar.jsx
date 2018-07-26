@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
-import img from "./images/logo.png";
+import img from "./src/img/logo.png";
 
 
-import "./css/nav.css";
+import "./src/css/Navbar.css";
 
 import List from "./list";
 

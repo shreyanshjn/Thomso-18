@@ -1,9 +1,9 @@
 import React , { Component } from 'react';
 import {SectionsContainer, Section} from 'react-fullpage';
-import logo from '../../img/thomso main-01.png';
-import logoo from '../../img/thomso 18 website CA 1-01.jpg';
+import logo from './src/img/thomso main-01.png';
 import './src/css/Main.css';
 import Footer from './Footer';
+import Navbar from  './navbar';
 
 export default class Main extends Component{
   render(){
@@ -20,8 +20,9 @@ export default class Main extends Component{
     };
     return(
       <div className="middlesection">
-      <SectionsContainer {...options}>
+          <SectionsContainer {...options}>
           <Section>
+              <Navbar />
                 <div className="body">
                   <div className="imagelogo" align="center">
                   <img src={logo} height="200px"/>
@@ -33,7 +34,7 @@ export default class Main extends Component{
           <Section>
                 <div id="arrow">
                 page2
-                <img src={logoo} height="250px"/>
+                <img src={logo} height="250px"/>
                 </div>
           </Section>
           <Section>Page 3</Section>
