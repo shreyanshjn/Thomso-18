@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './Footer.css';
-import fblogo from '../../img/fb.svg';
-import inlogo from '../../img/in.svg';
-import ytlogo from '../../img/yt.svg';
-import iglogo from '../../img/li.svg';
+import './src/css/Footer.css';
+import fblogo from './src/img/fbicon-01.png';
+import inlogo from './src/img/ig icon-01.png';
+import ytlogo from './src/img/yt icon-01.png';
+import iglogo from './src/img/in icon-01.png';
 class Footer extends Component {
     constructor(props) {
         super(props);
