@@ -16,7 +16,9 @@ exports.verify = (req, res, next) => {
                 // If token expired
                 res.status(403).json({ success: false, message: 'Token Expired' });
             } else {
-                res.locals.username = user.username;
+                req.locals = {
+                    username: user.username
+                };
                 next();
             }
         });

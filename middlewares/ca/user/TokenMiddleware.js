@@ -16,7 +16,10 @@ exports.verify = (req, res, next) => {
                 // If token expired
                 res.status(403).json({ success: false, message: 'Token Expired' });
             } else {
-                res.locals.fb_id = user.fb_id;
+                console.log(user.fb_id);
+                req.locals = {
+                    fb_id: user.fb_id
+                };
                 next();
             }
         });

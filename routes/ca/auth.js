@@ -10,7 +10,7 @@ var client_id = process.env.REACT_APP_FB_ID;
 var client_secret = process.env.FACEBOOK_APP_SECRET;
 
 // Login using Facebook
-exports.fblogin = router.post('/', function(req, res) {
+exports.fblogin = function(req, res) {
     var accessToken = req.body.accessToken;
     var data = {
         fb_id: req.body.id,
@@ -21,6 +21,8 @@ exports.fblogin = router.post('/', function(req, res) {
     }
     request(`https://graph.facebook.com/oauth/access_token?grant_type=fb_exchange_token&client_id=${client_id}&client_secret=${client_secret}&fb_exchange_token=${accessToken}`, function(err, response, body){
         var access_token = JSON.parse(response.body).access_token;
+        console.log( req.body.id, 'access_toke');
+        
         var saveData = Object.assign(data, {access_token: access_token})
         CA_User.findOne({
             fb_id: req.body.id
@@ -35,9 +37,12 @@ exports.fblogin = router.post('/', function(req, res) {
             if (!user) {
                 // Return Data
                 var newUser = new CA_User(saveData);
+                console.log(newUser);
                 newUser.save(function(err, user) {
                     if (err) {
-                        return res.status(400).send({success: false, msg: 'Unable to Add User'});
+                        console.log(err);
+                        
+                        return res.status(400).send({success: false, msg: 'Unable to Add Use'});
                     }
                     var newToken = {
                         fb_id: req.body.id,
@@ -55,7 +60,6 @@ exports.fblogin = router.post('/', function(req, res) {
                 // Update User
                 if (user.created) {
                     CA_User.findOneAndUpdate({fb_id: req.body.id}, saveData, { new:true }, function(err, user) {
-                        console.log(user, 'findOneAndUpdate');
                         if(err){
                             return res.status(400).send({success:false, msg:'Error Updating User', error:err});
                         }
@@ -87,10 +91,11 @@ exports.fblogin = router.post('/', function(req, res) {
             }
         });
     })
-});
+};
 
 // Register Using Facebook
-exports.fbRegister = router.post('/', function(req, res) {
+exports.fbRegister = function(req, res) {
+    // console.log(req.locals);
     CA_User.findOne({
         fb_id: req.locals.fb_id
     }, function(err, user) {
@@ -116,13 +121,22 @@ exports.fbRegister = router.post('/', function(req, res) {
                 why: req.body.why,
                 created: true
             }
-            CA_User.findOneAndUpdate({fb_id: req.user.fb_id}, data, { new:true }, function(err, user) {
+            CA_User.findOneAndUpdate({fb_id: req.locals.fb_id}, data, { new:true }, function(err, user) {
                 if(err){
                     return res.status(400).send({success:false, msg:'Error Creating User', error:err});
                 }
-                token = jwt.sign(user.toJSON(), settings.secret);
-                return res.json({success:true, msg:'User Created', token: 'JWT ' + token, body:user});
+                var newToken = {
+                    fb_id: req.locals.fb_id,
+                    token: TokenHelper.generateUserToken(req.body.id, req.body.email),
+                    expirationTime: moment().day(30),
+                };
+                CA_User_Token.findOneAndUpdate({ fb_id: req.locals.fb_id }, newToken, { upsert: true, new:true }, function(err, token) {
+                    if (err) {
+                        return res.status(400).send({success: false, msg: 'Unable Create Token'});
+                    }
+                    res.json({success: true, msg: 'User Created', token: token.token, new: true, body:user});
+                });
             })
         }
     });
-});
+};

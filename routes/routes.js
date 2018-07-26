@@ -7,7 +7,7 @@ var caAdminAuth = require('./ca/admin/auth');
 var caAdminRoutes = require('./ca/admin/routes');
 var caAuth = require('./ca/auth');
 var caScore = require('./ca/score');
-var caAuthRoutes = require('./ca/routes');
+var caRoutes = require('./ca/routes');
 var book = require('./book');
 
 // Middlewares
@@ -33,9 +33,9 @@ var corsOptions = {
 router.use('/api/ca/score', caScore);
 router.use('/api/ca/admin/auth', cors(corsOptions), caAdminAuth);
 router.use('/api/ca/admin', cors(corsOptions), CAAdminTokenMiddleware.verify, caAdminRoutes);
-router.use('/api/ca/auth/fblogin', cors(corsOptions), caAuth.fblogin);
-router.use('/api/ca/auth/fbRegister', cors(corsOptions), CAUserTokenMiddleware.verify, caAuth.fbRegister);
-router.use('/api/ca', cors(corsOptions), CAUserTokenMiddleware.verify, caAuthRoutes);
+router.post('/api/ca/auth/fblogin', cors(corsOptions), caAuth.fblogin);
+router.post('/api/ca/auth/fbRegister', cors(corsOptions), CAUserTokenMiddleware.verify, caAuth.fbRegister);
+router.use('/api/ca', cors(corsOptions), CAUserTokenMiddleware.verify, caRoutes);
 router.use('/api/book', book);
 
 module.exports = router;

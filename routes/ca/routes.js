@@ -13,7 +13,7 @@ router.get('/posts', function(req, res) {
   }, function (err, user) {
     if (err) return next(err);
     var fb_auth_token = user.access_token;
-    request(`https://graph.facebook.com/v3.0/me?fields=posts.limit(100){created_time,id,full_picture,message,link}&access_token=${fb_auth_token}`, function(err, response, body){
+    request(`https://graph.facebook.com/v3.0/171774543014513?fields=posts.limit(100){created_time,id,full_picture,message,link}&access_token=${fb_auth_token}`, function(err, response, body){
       if (err) return next(err);
       if (response.statusCode) {
           return res.status(response.statusCode).send(body);
@@ -34,7 +34,7 @@ router.put('/posts/:post_id', function(req, res) {
       return res.json({success:true, msg:'Post Successfully Shared'});
     })
   } else {
-    return res.status(400).send({success:false, msg:'No Post ID Specified'});
+    return res.status(400).send({success:false, msg:'Invalid Post ID Specified'});
   }
 });
 

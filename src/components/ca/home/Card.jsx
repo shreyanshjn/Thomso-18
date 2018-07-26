@@ -16,7 +16,7 @@ export default class Card extends React.Component{
                     <div> Created Time: {this.props.data.created_time} </div>
                     <div> Message: {this.props.data.message} </div>
                     <div> Link: {this.props.data.link ? <a href={this.props.data.link}> Visit Page </a> : null} </div>
-                    <div onClick={() => this.props.sharePost(this.props.data.id)}>Share</div>
+                    <div onClick={() => this.props.sharePost(this.props.data)}>Share</div>
                 </div>
             </div>
         )
