@@ -1,155 +1,155 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 .main
 {
-    background-image:url("../img/background.jpg");
-    height:200vh;
-    width:100%;
-    color:white;
-    font-family: 'Montserrat';
-    letter-spacing:1px;
-    overflow-x:hidden;
+	color:white;
+	font-family: 'Montserrat';
+	letter-spacing:1px;
+	overflow-x:hidden;
 }
 .countdown
 {
-    font-size:14px;
-    width:30%;
-    float:left;
-    text-align:center;
+	text-align:center;
+	position:absolute;
+	top:520px;
+	left:20px;
 }
 .days
 {
-    font-size:25px;
+	font-size:25px;
 }
 .left
 {
-    font-size:12px;
+	font-size:12px;
 }
 .icons
 {
-    width:20%;
-    float:right;
+	width:20%;
+	float:right;
+	position: absolute;
+	right: 0px;
+	top: 520px;;
 }
 .iconsImage
 {
-    width:40px;
-    height:40px;
+	width:40px;
+	height:40px;
 }
 .mainIcons
 {
-    margin-top:2px;
-    display:inline-flex;
+	margin-top:2px;
+	display:inline-flex;
 }
 .follow
 {
-    text-align:left;
-    margin-left:10px;
-    margin-bottom:4px;
+	text-align:left;
+	margin-left:10px;
+	margin-bottom:4px;
 }
 .fbdiv:hover,.ytdiv:hover,.instadiv:hover,.linkediv:hover
 {
-    -ms-transform: rotate(360deg); /* IE 9 */
-    -webkit-transform: rotate(360deg); /* Safari 3-8 */
-    transform: rotate(360deg);
+	-ms-transform: rotate(360deg); /* IE 9 */
+	-webkit-transform: rotate(360deg); /* Safari 3-8 */
+	transform: rotate(360deg);
 }
 .fbdiv:hover
 {
-    background:blue;
+	background:blue;
 }
 .ytdiv:hover
 {
-    background:red;
+	background:red;
 }
 .instadiv:hover
 {
-    background:pink;
+	background:pink;
 }
 .linkediv:hover
 {
-    background:lightblue;
+	background:lightblue;
 }
 .fbdiv, .ytdiv , .instadiv , .linkediv
 {
-    width:40px;
-    height:40px;
-    margin-left:10px;
-    border-radius:50%;
-    transition: 0.5s;
+	width:40px;
+	height:40px;
+	margin-left:10px;
+	border-radius:50%;
+	transition: 0.5s;
 }
 @media only screen and (max-width: 768px) {
-    .main
-    {
-        height:100vh;
-        max-width:100%;
-        color:white;
-        font-family: 'Montserrat';
-        letter-spacing:1px;
-        overflow-x:hidden;
-    }
-    .countdown
-    {
-        font-size:8px;
-        width:40%;
-        float:left;
-        text-align:center;
-    }
-    .days
-    {
-        font-size:15px;
-    }
-    .left
-    {
-        font-size:8px;
-    }
-    .icons
-    {
-        width:30%;
-        float:right;
-    }
-    .iconsImage
-    {
-        width:20px;
-        height:20px;
-    }
-    .mainIcons
-    {
-        margin-top:2px;
-        display:inline-flex;
-    }
-    .follow
-    {
-        font-size:8px;
-        text-align:left;
-        margin-left:10px;
-    }
-    .fbdiv:hover,.ytdiv:hover,.instadiv:hover,.linkediv:hover
-    {
-        -ms-transform: rotate(360deg); /* IE 9 */
-        -webkit-transform: rotate(360deg); /* Safari 3-8 */
-        transform: rotate(360deg);
-        transition: 0.5s;
-        background:blue;
-    }
-    .fbdiv:hover
-    {
-        background:blue;
-    }
-    .ytdiv:hover
-    {
-        background:red;
-    }
-    .instadiv:hover
-    {
-        background:pink;
-    }
-    .linkedin:hover
-    {
-        background:lightblue;
-    }
-    .fbdiv, .ytdiv , .instadiv , .linkediv
-    {
-        width:20px;
-        height:20px;
-        margin-left:10px;
-        border-radius:50%;
-    }
+	.main
+	{
+		height:100vh;
+		max-width:100%;
+		color:white;
+		font-family: 'Montserrat';
+		letter-spacing:1px;
+		overflow-x:hidden;
+	}
+	.countdown
+	{
+		font-size:8px;
+		width:40%;
+		float:left;
+		text-align:center;
+	}
+	.days
+	{
+		font-size:15px;
+	}
+	.left
+	{
+		font-size:8px;
+	}
+	.icons
+	{
+		width:30%;
+		float:right;
+	}
+	.iconsImage
+	{
+		width:20px;
+		height:20px;
+	}
+	.mainIcons
+	{
+		margin-top:2px;
+		display:inline-flex;
+	}
+	.follow
+	{
+		font-size:8px;
+		text-align:left;
+		margin-left:10px;
+	}
+	.fbdiv:hover,.ytdiv:hover,.instadiv:hover,.linkediv:hover
+	{
+		-ms-transform: rotate(360deg); /* IE 9 */
+		-webkit-transform: rotate(360deg); /* Safari 3-8 */
+		transform: rotate(360deg);
+		transition: 0.5s;
+		background:blue;
+	}
+	.fbdiv:hover
+	{
+		background:blue;
+	}
+	.ytdiv:hover
+	{
+		background:red;
+	}
+	.instadiv:hover
+	{
+		background:pink;
+	}
+	.linkedin:hover
+	{
+		background:lightblue;
+	}
+	.fbdiv, .ytdiv , .instadiv , .linkediv
+	{
+		width:20px;
+		height:20px;
+		margin-left:10px;
+		border-radius:50%;
+	}
 }
