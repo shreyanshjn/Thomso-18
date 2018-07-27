@@ -11,14 +11,18 @@ router.get('/posts', function(req, res) {
   Users.findOne({
     fb_id: req.locals.fb_id
   }, function (err, user) {
-    if (err) return next(err);
+    if(err){
+      return res.status(400).send({success:false, msg: 'User not found', error:err});
+    }
     var fb_auth_token = user.access_token;
     request(`https://graph.facebook.com/v3.0/171774543014513?fields=posts.limit(100){created_time,id,full_picture,message,link}&access_token=${fb_auth_token}`, function(err, response, body){
-      if (err) return next(err);
-      if (response.statusCode) {
-          return res.status(response.statusCode).send(body);
+      if(err){
+        return res.status(400).send({success:false, msg: 'Cannot retrive posts', error:err});
+      } else if (response.statusCode) {
+        return res.status(response.statusCode).send(body);
+      } else {
+        return res.status(400).send({success: false, msg: 'Facebook didnt return status.'});
       }
-      return res.status(400).send({success: false, msg: 'Facebook didnt return status.'});
     })
   });
 });

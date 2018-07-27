@@ -1,14 +1,15 @@
 import React from 'react';
-
 import AuthService from '../../../../handlers/ca/admin/AuthService';
 import FetchApi from '../../../../utils/FetchAPI';
+import Database from './Database';
+
 
 export default class HomeIndex extends React.Component {
     constructor() {
         super();
         this.state = {
             participants: [],
-            message: ''
+            message: '',
         };
         this.Auth = new AuthService();
     }
@@ -33,7 +34,9 @@ export default class HomeIndex extends React.Component {
     render(){
         return (
             <div>
-                Admin Home
+               
+            <Database data={this.state.participants} />
+          
             </div>
         )
     }

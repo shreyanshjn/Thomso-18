@@ -33,7 +33,15 @@ const LoginIndex = Loadable({
     loader: () => import('./login/Index'),
     loading: Loading,
 });
+const NavbarIndex = Loadable({
+    loader: () => import('./navbar/Index'),
+    loading: Loading,
+});
 
+const IdeasIndex = Loadable({
+    loader: () => import('./ideas/Index'),
+    loading: Loading,
+});
 export default class CAIndex extends React.Component{
     constructor() {
         super();
@@ -57,6 +65,8 @@ export default class CAIndex extends React.Component{
             <div>
                 {this.state.isAuthenticated ? 
                     <div>
+                        <Route path="/ca/admin" component={NavbarIndex} />
+                        <Route exact path="/ca/admin/ideas" component={IdeasIndex} />
                         <Route exact path="/ca/admin/logout" render={ () => <LogoutIndex updateRoutes={this.handleUpdate}/> } />
                         <Route exact path="/ca/admin" component={HomeIndex} />
                     </div>
