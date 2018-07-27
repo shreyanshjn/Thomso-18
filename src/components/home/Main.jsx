@@ -1,6 +1,7 @@
 import React , { Component } from 'react';
 import {SectionsContainer, Section} from 'react-fullpage';
 import logo from './src/img/thomso main-01.png';
+import arrow from './src/img/arrow.svg';
 import './src/css/Main.css';
 import Footer from './Footer';
 import Navbar from  './navbar';
@@ -20,17 +21,21 @@ export default class Main extends Component{
     };
     return(
       <div className="middlesection">
+              <Navbar />
           <SectionsContainer {...options}>
           <Section>
-              <Navbar />
                 <div className="body">
                   <div className="imagelogo" align="center">
                   <img src={logo} height="200px"/>
-                  <a href="#sectionTwo" className="scroll-down" address="true"></a>
+                  <a href="#sectionTwo" address="true">
+                      <img src={arrow} className="downarrow bounce" alt=
+                      "a"/>
+                  </a>
               </div>
-              <Footer />
                 </div>
+                <Footer />
           </Section>
+          
           <Section>
                 <div id="arrow">
                 page2

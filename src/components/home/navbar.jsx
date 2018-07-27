@@ -29,10 +29,12 @@ class Navbar extends Component {
           </div>
           <div className="t-ctos">
             <div className="toggle">
-              <i
-                onClick={this.toggleHidden.bind(this)}
-                className="fa fa-bars"
-              />
+              <div class="navtoggle fa fa-bars" onClick={this.toggleHidden.bind(this)}>
+	                  <span></span>
+	                  <span></span>
+	                  <span></span>
+                  	<span></span>
+               </div>
             </div>
             <div className={this.state.isHidden ? "list_" : "list_ active"}>
               {!this.state.isHidden && <List />}

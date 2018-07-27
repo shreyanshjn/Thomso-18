@@ -20,16 +20,16 @@ class Footer extends Component {
         return (
             <div className="main">
                 <div className="countdown">
-                    <p>THOMSO'18 COUNTDOWN</p><br />
+                    <p class="thomso">THOMSO'18 COUNTDOWN</p><br />
                     <p className="daysleft"><span className="days">{days}</span> <span className="left">DAYS LEFT</span></p>
                 </div>
                 <div className="icons">
-                    <p className="follow">follow us </p>
+                    <p className="follow">FOLLOW US </p>
                     <div className="mainIcons">
+                    <div className="fbdiv">  <a href="<https://www.facebook.com/thomsoiitroorkee/"> <img src={fblogo} className="iconsImage" alt="fblogo"/></a></div>
                         <div className="instadiv"><a href="https://www.instagram.com/thomso.IITR/"><img src={inlogo} className="iconsImage" alt="inlogo" /></a></div>
                         <div className="ytdiv"><a href=""><img src={ytlogo} className="iconsImage" alt="ytlogo" /></a></div>
                         <div className="linkediv"><a href="https://www.linkedin.com/company/thomso-iit-roorkee-official"> <img src={iglogo} className="iconsImage" alt="lilogo" /></a></div>
-                        <div className="fbdiv">  <a href="<https://www.facebook.com/thomsoiitroorkee/"> <img src={fblogo} className="iconsImage" alt="fblogo"/></a></div>
                         </div>
                     </div>
                 </div>

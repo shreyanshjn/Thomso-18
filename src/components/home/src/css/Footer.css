@@ -5,13 +5,18 @@
     font-family: 'Montserrat';
     letter-spacing:1px;
     overflow-x:hidden;
+    position:fixed;
+    height:20vh;
+    width: 100%;
+    top: 83vh;
+    height: 15vh;
 }
 .countdown
 {
     text-align:center;
     position:absolute;
-    top:520px;
-    left:20px;
+    top:0;
+    left:4vw;
     margin-left: 40px;
 }
 .days
@@ -27,8 +32,8 @@
     width:20%;
     float:right;
     position: absolute;
-    right: 0px;
-    top: 520px;;
+    right: 4vw;
+    top: 0;
 }
 .iconsImage
 {
@@ -55,19 +60,19 @@
 }
 .fbdiv:hover
 {
-    background:blue;
+    background:#3b5998;
 }
 .ytdiv:hover
 {
-    background:red;
+    background:#ff0000;
 }
 .instadiv:hover
 {
-    background:pink;
+    background:#c32aa3;
 }
 .linkediv:hover
 {
-    background:lightblue;
+    background:#007bb5;
 }
 .fbdiv, .ytdiv , .instadiv , .linkediv
 {
@@ -80,37 +85,44 @@
 @media only screen and (max-width: 768px) {
     .main
     {
-        height:100vh;
-        max-width:100%;
         color:white;
         font-family: 'Montserrat';
         letter-spacing:1px;
         overflow-x:hidden;
+        position:fixed;
+        height:20vh;
+        width: 100%;
+        top: 85vh;
+        height: 13vh;
     }
     .countdown
     {
-        font-size:8px;
-        width:40%;
-        float:left;
         text-align:center;
+        position:absolute;
+        top:0;
+        left:-1vw;
+        margin-left: 40px;
     }
     .days
     {
-        font-size:15px;
+        font-size:22px;
     }
     .left
     {
-        font-size:8px;
+        font-size:15px;
     }
     .icons
     {
-        width:30%;
+        width:38%;
         float:right;
+        position: absolute;
+        right: 4vw;
+        top: 0;
     }
     .iconsImage
     {
-        width:20px;
-        height:20px;
+        width:32px;
+        height:32px;
     }
     .mainIcons
     {
@@ -119,7 +131,7 @@
     }
     .follow
     {
-        font-size:8px;
+        font-size:0px;
         text-align:left;
         margin-left:10px;
     }
@@ -149,9 +161,13 @@
     }
     .fbdiv, .ytdiv , .instadiv , .linkediv
     {
-        width:20px;
-        height:20px;
-        margin-left:10px;
+        width:32px;
+        height:32px;
+        margin-left:2px;
         border-radius:50%;
+    }
+    .thomso
+    {
+        font-size:0px;
     }
 }
