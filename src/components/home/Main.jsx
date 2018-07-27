@@ -4,7 +4,7 @@ import logo from './src/img/thomso main-01.png';
 import arrow from './src/img/arrow.svg';
 import './src/css/Main.css';
 import Footer from './Footer';
-import Navbar from  './navbar';
+import Navbar from  './Navbar';
 
 export default class Main extends Component{
   render(){
@@ -25,15 +25,16 @@ export default class Main extends Component{
           <SectionsContainer {...options}>
           <Section>
                 <div className="body">
-                  <div className="imagelogo" align="center">
+                    <div className="imagelogo" align="center">
                   <img src={logo} height="200px"/>
+                 <div class="arrowmove">
                   <a href="#sectionTwo" address="true">
                       <img src={arrow} className="downarrow bounce" alt=
                       "a"/>
                   </a>
+                 </div>
               </div>
                 </div>
-                <Footer />
           </Section>
           
           <Section>
@@ -44,6 +45,7 @@ export default class Main extends Component{
           </Section>
           <Section>Page 3</Section>
       </SectionsContainer>
+                <Footer />
       </div>
   );
   }

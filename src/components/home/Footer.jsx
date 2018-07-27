@@ -20,7 +20,7 @@ class Footer extends Component {
         return (
             <div className="main">
                 <div className="countdown">
-                    <p class="thomso">THOMSO'18 COUNTDOWN</p><br />
+                    <p className="thomso">THOMSO'18 COUNTDOWN</p><br />
                     <p className="daysleft"><span className="days">{days}</span> <span className="left">DAYS LEFT</span></p>
                 </div>
                 <div className="icons">
