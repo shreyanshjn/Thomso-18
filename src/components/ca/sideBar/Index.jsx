@@ -278,7 +278,7 @@ export default class SideBar extends React.Component {
             </div>
           </div>
           <div className="hand flex_row">
-            <div>
+            <div className="inhand">
               <div className="p-logo">
                 <Hand />
               </div>
