@@ -4,6 +4,7 @@ import Loadable from "react-loadable";
 import Sidebar from "./sideBar/Index";
 
 import AuthService from "../../handlers/ca/AuthService";
+import FetchApi from '../../utils/FetchAPI';
 
 // import LoginIndex from './login/Index';
 
@@ -68,7 +69,16 @@ export default class CAIndex extends React.Component {
   componentWillMount() {
     const isAuthenticated = this.Auth.hasToken();
     console.log(isAuthenticated, "isAuthenticated");
-    this.setState({ isAuthenticated });
+    if (isAuthenticated) {
+        const token = this.Auth.getToken()
+        FetchApi('GET', '/api/ca/auth/fbData', null, token)
+            .then(r => {
+                if (r && r.data && r.data.body) {
+                    this.setState({ isAuthenticated, userData: r.data.body });
+                }
+            })
+            .catch(e => console.log(e));
+    }
   }
 
   handleUpdate = isAuthenticated => {

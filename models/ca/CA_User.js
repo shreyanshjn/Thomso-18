@@ -65,6 +65,9 @@ var UserSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
+    link: {
+        type: String
+    },
     ideas: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'CA_Idea'
