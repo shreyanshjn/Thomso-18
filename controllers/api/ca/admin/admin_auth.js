@@ -1,12 +1,10 @@
-var express = require('express');
 var moment = require('moment');
-var router = express.Router();
 
-var User = require("../../../models/ca/CA_Admin");
-var CA_Admin_Token = require("../../../models/ca/CA_Admin_Token");
-var TokenHelper = require("../../../helpers/TokenHelper");
+var User = require("../../../../models/ca/CA_Admin");
+var CA_Admin_Token = require("../../../../models/ca/CA_Admin_Token");
+var TokenHelper = require("../../../../helpers/TokenHelper");
 
-router.post('/register', function(req, res) {
+exports.register = function(req, res) {
     if (req.body.username) {
         req.body.username = req.body.username.toLowerCase();
         req.body.username = req.body.username.trim()
@@ -25,9 +23,9 @@ router.post('/register', function(req, res) {
             res.json({success: true, msg: 'Successfully created new user.'});
         });
     }
-});
+};
 
-router.post('/login', function(req, res) {
+exports.login = function(req, res) {
     if (req.body.username) {
         req.body.username = req.body.username.toLowerCase();
         req.body.username = req.body.username.trim()
@@ -74,6 +72,4 @@ router.post('/login', function(req, res) {
             });
         }
     });
-});
-
-module.exports = router;
+};

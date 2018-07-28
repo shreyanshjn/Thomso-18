@@ -1,11 +1,9 @@
 var request = require('request');
-var express = require('express');
 var moment = require('moment');
-var router = express.Router();
 
-var CA_User = require("../../models/ca/CA_User");
-var CA_User_Token = require("../../models/ca/CA_User_Token");
-var TokenHelper = require("../../helpers/TokenHelper");
+var CA_User = require("../../../models/ca/CA_User");
+var CA_User_Token = require("../../../models/ca/CA_User_Token");
+var TokenHelper = require("../../../helpers/TokenHelper");
 var client_id = process.env.REACT_APP_FB_ID;
 var client_secret = process.env.FACEBOOK_APP_SECRET;
 

@@ -1,12 +1,9 @@
-var express = require('express');
 var request = require('request');
 
-var router = express.Router();
-
-var Users = require('../../models/ca/CA_User');
+var Users = require('../../../models/ca/CA_User');
 
 // Synchronous query to fetch CA Score
-router.get('/sync', function(req, res) {
+exports.getSync = function(req, res) {
     Users.find(function (err, allUsers) {
         if (err) return next(err);
         // console.log(allUsers, 'allUsers');
@@ -84,11 +81,11 @@ router.get('/sync', function(req, res) {
             res.status(400).send({success: false, msg: 'No Users Found'});
         }
     });
-});
+};
 
 // Asynchronous Query to Fetch CA Score
 // Exponentially Faster
-router.get('/async', function(req, res) {
+exports.getASync = function(req, res) {
     Users.find(function (err, allUsers) {
         if (err) return next(err);
         if (allUsers.length > 0) {
@@ -176,9 +173,9 @@ router.get('/async', function(req, res) {
             res.status(400).send({success: false, msg: 'No Users Found'});
         }
     });
-});
+};
 
-router.get('/new', function(req, res) {
+exports.getNew = function(req, res) {
     Users.find(function (err, allUsers) {
         if (err) return next(err);
         if (allUsers.length > 0) {
@@ -263,6 +260,4 @@ router.get('/new', function(req, res) {
             res.status(400).send({success: false, msg: 'No Users Found'});
         }
     });
-});
-
-module.exports = router;
+};
