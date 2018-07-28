@@ -13,7 +13,7 @@ export default class HomeIndex extends React.Component {
         this.Auth = new AuthService();
     }
 
-    componentWillMount() {
+    componentDidMount() {
         const authtoken = this.Auth.getToken();
         FetchApi('GET','/api/ca/admin/participants', null, authtoken)
             .then((result) => {

@@ -1,24 +1,10 @@
-var settings = require('../../../config/settings');
-var express = require('express');
-var jwt = require('jsonwebtoken');
-var router = express.Router();
+var moment = require('moment');
 
-var User = require("../../../models/ca/CA_Admin");
+var User = require("../../../../models/ca/CA_Admin");
+var CA_Admin_Token = require("../../../../models/ca/CA_Admin_Token");
+var TokenHelper = require("../../../../helpers/TokenHelper");
 
-getToken = function (headers) {
-    if (headers && headers.authorization) {
-      var parted = headers.authorization.split(' ');
-      if (parted.length === 2) {
-        return parted[1];
-      } else {
-        return null;
-      }
-    } else {
-      return null;
-    }
-};
-
-router.post('/register', function(req, res) {
+exports.register = function(req, res) {
     if (req.body.username) {
         req.body.username = req.body.username.toLowerCase();
         req.body.username = req.body.username.trim()
@@ -37,9 +23,9 @@ router.post('/register', function(req, res) {
             res.json({success: true, msg: 'Successfully created new user.'});
         });
     }
-});
+};
 
-router.post('/login', function(req, res) {
+exports.login = function(req, res) {
     if (req.body.username) {
         req.body.username = req.body.username.toLowerCase();
         req.body.username = req.body.username.trim()
@@ -47,7 +33,9 @@ router.post('/login', function(req, res) {
     var ip = (req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress).split(",")[0];
     User.findOne({
         username: req.body.username
-    }, function(err, user) {
+    })
+    .select('username password')
+    .exec(function(err, user) {
         if (err) throw err;
 
         if (!user) {
@@ -67,8 +55,19 @@ router.post('/login', function(req, res) {
                             if(err){
                                 return res.status(400).send({success:false, msg:'Error Saving IP', error:err});
                             }
-                            var token = jwt.sign(user.toJSON(), settings.secret);
-                            res.json({success: true, token: 'JWT ' + token, username: user.username});
+                            var newToken = {
+                                username: req.body.username,
+                                user_id: user._id,
+                                token: TokenHelper.generateAdminToken(req.body.username),
+                                expirationTime: moment().day(30),
+                            };
+                            CA_Admin_Token.findOneAndUpdate({ username: req.body.username }, newToken, { upsert: true, new:true })
+                            .exec(function(err, token) {
+                                if (err) {
+                                    return res.status(400).send({success: false, msg: 'Unable Create Token'});
+                                }
+                                res.json({success: true, token: token.token, username: user.username});
+                            });
                         }
                     );
                 } else {
@@ -77,6 +76,4 @@ router.post('/login', function(req, res) {
             });
         }
     });
-});
-
-module.exports = router;
+};

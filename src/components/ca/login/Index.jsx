@@ -31,7 +31,7 @@ export default class LoginIndex extends React.Component {
                 let data = {id, name, email, gender, image, accessToken};
                 this.updateCheckUser(data)
             })
-        }, {scope: 'email, user_likes ,user_posts , user_gender, manage_pages' });
+        }, {scope: 'email, user_likes ,user_posts , user_gender' });
     }
 
     updateCheckUser(data) {
