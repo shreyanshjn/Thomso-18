@@ -108,3 +108,25 @@ exports.getLeaderboard = function(req, res) {
         res.json(allUsers);
     })
 };
+
+/* GET Rank */
+exports.getRank = function(req, res) {
+    Users.findOne({
+        fb_id: req.locals.fb_id
+    })
+    .select('score')
+    .exec(function (err, user) {
+        if (err) return res.status(400).send({success:false, msg:'Cannot Find User'});
+        var score = user.score;
+        if (score !== undefined) {
+            Users.count({"score": { "$gt" : score }}, function(err, rank) {
+                if (err) {
+                    res.status(400).send({success:false, msg:'Rank Undefined', error: err});
+                }
+                return res.json({success:true, msg:'Your CA Rank', rank: rank + 1});
+            })
+        } else {
+            return res.status(400).send({success:false, msg:'Error Reading Score'});
+        }
+    });
+};

@@ -19,7 +19,7 @@ var CAUserTokenMiddleware = require("../../middlewares/ca/user/TokenMiddleware")
 // Routes
 
 // -> /ca/admin
-router.use('/admin', caAdminRoutes);
+router.use('/admin', cors(corsOptions), caAdminRoutes);
 
 // -> /ca/score
 router.get('/score', caScore.getNew);
@@ -37,5 +37,6 @@ router.get('/idea', caControls.getIdea);
 router.put('/idea/:id', caControls.putIdea);
 router.delete('/idea/:id', caControls.deleteIdea);
 router.get('/leaderboard', caControls.getLeaderboard);
+router.get('/rank', caControls.getRank);
 
 module.exports = router;
