@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+.celebrityMain 
+{
+    margin-top:0vh;
+    vertical-align:center;
+    display:flex;
+    color:white;
+    justify-content:center;
+    align-items: center;
+    font-family:Montserrat;
+    font-size:15px;
+}
+.celebrityMain > div
+{
+    margin:15px; 
+    height:47vh;
+    width:16vw;
+    background:rgba(255,255,255,0.3);
+    position:relative;
+    font-family:Montserrat;
+}
+.celebrityMain > div >p
+{ 
+    position:absolute;
+    bottom:-10vh;
+    font-family:Montserrat;
+    font-size:17px;
+    text-align:center;
+}
+.arrow
+{
+  display:none;
+}
+.nucleya
+{
+    left:31%;
+}
+@media only screen and (max-width: 768px) {
+    .arrow
+    {
+        background: none;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px; 
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        background:none;
+        right:0;
+        height: 15px;
+        width: 15px;
+    } 
+}
+

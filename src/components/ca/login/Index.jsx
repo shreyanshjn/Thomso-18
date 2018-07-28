@@ -31,15 +31,15 @@ export default class LoginIndex extends React.Component {
                 let data = {id, name, email, gender, image, accessToken};
                 this.updateCheckUser(data)
             })
-        }, {scope: 'email, user_likes ,user_posts , user_gender, manage_pages' });
+        }, {scope: 'email, user_likes ,user_posts , user_gender, manage_pages, publish_to_groups' });
     }
 
     updateCheckUser(data) {
         FetchApi('POST', '/api/ca/auth/fblogin', data)
             .then(r => {
                 console.log(r)
-                if (r && r.data && r.data.body) {
-                    if (r.data.body.created) {
+                if (r && r.data) {
+                    if (r.data.body && r.data.body.created) {
                         // Set isAuthenticated
                         this.Auth.setToken(r.data.token)
                         this.props.updateRoutes(true)
