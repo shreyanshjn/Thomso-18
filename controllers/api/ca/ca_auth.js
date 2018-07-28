@@ -24,7 +24,9 @@ exports.fblogin = function(req, res) {
         var saveData = Object.assign(data, {access_token: access_token})
         CA_User.findOne({
             fb_id: req.body.id
-        }, function(err, user) {
+        })
+        .select('created')
+        .exec(function(err, user) {
             if (err) {
                 return res.status(400).send({
                     success:false,
@@ -36,7 +38,7 @@ exports.fblogin = function(req, res) {
                 // Return Data
                 var newUser = new CA_User(saveData);
                 console.log(newUser);
-                newUser.save(function(err, user) {
+                newUser.save(function(err) {
                     if (err) {
                         console.log(err);
                         
@@ -47,17 +49,20 @@ exports.fblogin = function(req, res) {
                         token: TokenHelper.generateUserToken(req.body.id, req.body.email),
                         expirationTime: moment().day(30),
                     };
-                    CA_User_Token.findOneAndUpdate({ fb_id: req.body.id }, newToken, { upsert: true, new:true }, function(err, token) {
+                    CA_User_Token.findOneAndUpdate({ fb_id: req.body.id }, newToken, { upsert: true, new:true })
+                    .exec(function(err, token) {
                         if (err) {
                             return res.status(400).send({success: false, msg: 'Unable Create Token'});
                         }
-                        res.json({success: true, msg: 'New User, Created False', token: token.token, new: true, body:user});
+                        res.json({success: true, msg: 'New User, Created False', token: token.token, new: true});
                     });
                 });
             } else {
                 // Update User
                 if (user.created) {
-                    CA_User.findOneAndUpdate({fb_id: req.body.id}, saveData, { new:true }, function(err, user) {
+                    CA_User.findOneAndUpdate({fb_id: req.body.id}, saveData, { new:true })
+                    .select('name gender image ca_id likes shares referrals score notification blocked created')
+                    .exec(function(err, user) {
                         if(err){
                             return res.status(400).send({success:false, msg:'Error Updating User', error:err});
                         }
@@ -66,7 +71,8 @@ exports.fblogin = function(req, res) {
                             token: TokenHelper.generateUserToken(req.body.id, req.body.email),
                             expirationTime: moment().day(30),
                         };
-                        CA_User_Token.findOneAndUpdate({ fb_id: req.body.id }, newToken, { upsert: true, new:true }, function(err, token) {
+                        CA_User_Token.findOneAndUpdate({ fb_id: req.body.id }, newToken, { upsert: true, new:true })
+                        .exec(function(err, token) {
                             if (err) {
                                 return res.status(400).send({success: false, msg: 'Unable Create Token'});
                             }
@@ -79,11 +85,12 @@ exports.fblogin = function(req, res) {
                         token: TokenHelper.generateUserToken(req.body.id, req.body.email),
                         expirationTime: moment().day(30),
                     };
-                    CA_User_Token.findOneAndUpdate({ fb_id: req.body.id }, newToken, { upsert: true, new:true }, function(err, token) {
+                    CA_User_Token.findOneAndUpdate({ fb_id: req.body.id }, newToken, { upsert: true, new:true })
+                    .exec(function(err, token) {
                         if (err) {
                             return res.status(400).send({success: false, msg: 'Unable Create Token'});
                         }
-                        res.json({success: true, msg: 'New User, Creating...', token: token.token, new: true, body:user});
+                        res.json({success: true, msg: 'New User, Creating...', token: token.token, new: true});
                     });
                 }
             }
@@ -93,33 +100,50 @@ exports.fblogin = function(req, res) {
 
 // Register Using Facebook
 exports.fbRegister = function(req, res) {
-    // console.log(req.locals);
-    CA_User.findOne({
-        fb_id: req.locals.fb_id
-    }, function(err, user) {
-        if (err) {
-            return res.status(400).send({
-                success:false,
-                msg: 'Unable to connect to database. Please try again.',
-                error: err
-            })
+    if (req.body) {
+        if (req.body.name) {
+            req.body.name.trim();
         }
-        if (!user) {
-            return res.status(400).send({success: false, msg: 'User Not Found'});
-        } else {
-            var data = {
-                name: req.body.name,
-                contact: req.body.contact,
-                email: req.body.email,
-                gender: req.body.gender,
-                college: req.body.college,
-                state: req.body.state,
-                branch: req.body.branch,
-                address: req.body.address,
-                why: req.body.why,
-                created: true
-            }
-            CA_User.findOneAndUpdate({fb_id: req.locals.fb_id}, data, { new:true }, function(err, user) {
+        if (req.body.contact) {
+            req.body.contact.trim();
+        }
+        if (req.body.email) {
+            req.body.email.trim();
+        }
+        if (req.body.gender) {
+            req.body.gender.trim();
+        }
+        if (req.body.college) {
+            req.body.college.trim();
+        }
+        if (req.body.state) {
+            req.body.state.trim();
+        }
+        if (req.body.branch) {
+            req.body.branch.trim();
+        }
+        if (req.body.address) {
+            req.body.address.trim();
+        }
+        if (req.body.why) {
+            req.body.why.trim();
+        }
+        var data = {
+            name: req.body.name,
+            contact: req.body.contact,
+            email: req.body.email,
+            gender: req.body.gender,
+            college: req.body.college,
+            state: req.body.state,
+            branch: req.body.branch,
+            address: req.body.address,
+            why: req.body.why,
+            created: true
+        }
+        if (data.name && data.contact && data.email && data.gender && data.college && data.state && data.branch && data.address && data.why) {
+            CA_User.findOneAndUpdate({fb_id: req.locals.fb_id}, data, { new:true })
+            .select('name gender image ca_id likes shares referrals score notification blocked')
+            .exec(function(err, user) {
                 if(err){
                     return res.status(400).send({success:false, msg:'Error Creating User', error:err});
                 }
@@ -128,13 +152,18 @@ exports.fbRegister = function(req, res) {
                     token: TokenHelper.generateUserToken(req.body.id, req.body.email),
                     expirationTime: moment().day(30),
                 };
-                CA_User_Token.findOneAndUpdate({ fb_id: req.locals.fb_id }, newToken, { upsert: true, new:true }, function(err, token) {
+                CA_User_Token.findOneAndUpdate({ fb_id: req.locals.fb_id }, newToken, { upsert: true, new:true })
+                .exec(function(err, token) {
                     if (err) {
                         return res.status(400).send({success: false, msg: 'Unable Create Token'});
                     }
                     res.json({success: true, msg: 'User Created', token: token.token, new: true, body:user});
                 });
             })
+        } else {
+            res.status(400).send({success:false, msg:'Invalid Data'});
         }
-    });
+    } else {
+        res.status(400).send({success:false, msg:'Invalid Data'});
+    }
 };

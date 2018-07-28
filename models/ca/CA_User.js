@@ -53,10 +53,6 @@ var UserSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
-    posts: {
-        type: Array,
-        default: []
-    },
     shares: {
         type: Number,
         default: 0

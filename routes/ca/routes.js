@@ -22,9 +22,7 @@ var CAUserTokenMiddleware = require("../../middlewares/ca/user/TokenMiddleware")
 router.use('/admin', cors(corsOptions), caAdminRoutes);
 
 // -> /ca/score
-router.get('/score/sync', caScore.getSync);
-router.get('/score/async', caScore.getASync);
-router.get('/score/new', caScore.getNew);
+router.get('/score', caScore.getNew);
 
 // -> /ca/auth
 router.post('/auth/fblogin', cors(corsOptions), caAuth.fblogin);
@@ -34,7 +32,6 @@ router.post('/auth/fbRegister', cors(corsOptions), CAUserTokenMiddleware.verify,
 router.use('/', cors(corsOptions), CAUserTokenMiddleware.verify);
 
 router.get('/posts', caControls.getPosts);
-router.put('/posts/:post_id', caControls.putPost);
 router.post('/idea', caControls.postIdea);
 router.get('/idea', caControls.getIdea);
 router.put('/idea/:id', caControls.putIdea);

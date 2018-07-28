@@ -33,7 +33,9 @@ exports.login = function(req, res) {
     var ip = (req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress).split(",")[0];
     User.findOne({
         username: req.body.username
-    }, function(err, user) {
+    })
+    .select('username password')
+    .exec(function(err, user) {
         if (err) throw err;
 
         if (!user) {
@@ -58,7 +60,8 @@ exports.login = function(req, res) {
                                 token: TokenHelper.generateAdminToken(req.body.username),
                                 expirationTime: moment().day(30),
                             };
-                            CA_Admin_Token.findOneAndUpdate({ username: req.body.username }, newToken, { upsert: true, new:true }, function(err, token) {
+                            CA_Admin_Token.findOneAndUpdate({ username: req.body.username }, newToken, { upsert: true, new:true })
+                            .exec(function(err, token) {
                                 if (err) {
                                     return res.status(400).send({success: false, msg: 'Unable Create Token'});
                                 }

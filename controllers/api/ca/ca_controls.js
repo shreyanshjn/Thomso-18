@@ -7,7 +7,9 @@ var Ideas = require('../../../models/ca/CA_Idea');
 exports.getPosts = function(req, res) {
   Users.findOne({
     fb_id: req.locals.fb_id
-  }, function (err, user) {
+  })
+  .select('access_token')
+  .exec(function (err, user) {
     if (err) return next(err);
     var fb_auth_token = user.access_token;
     request(`https://graph.facebook.com/v3.0/171774543014513?fields=posts.limit(100){created_time,id,full_picture,message,link}&access_token=${fb_auth_token}`, function(err, response, body){
@@ -20,21 +22,6 @@ exports.getPosts = function(req, res) {
   });
 };
 
-/* PUT Shared Post ID */
-exports.putPost = function(req, res) {
-  if (req.params.post_id) {
-    var post_id = req.params.post_id;
-    Users.updateOne({fb_id: req.locals.fb_id}, {$addToSet: { posts: post_id }}, function(err) {
-      if(err){
-        return res.status(400).send({success:false, msg:'Error Updating User', error:err});
-      }
-      return res.json({success:true, msg:'Post Successfully Shared'});
-    })
-  } else {
-    return res.status(400).send({success:false, msg:'Invalid Post ID Specified'});
-  }
-};
-
 /* Create Idea */
 exports.postIdea = function(req, res) {
   if (req.body && req.body.title && req.body.body) {
@@ -43,7 +30,9 @@ exports.postIdea = function(req, res) {
       title: req.body.title,
       body: req.body.body
     }
-    Ideas.create(newData, function (err, post) {
+    Ideas.create(newData)
+    .select('title body comment')
+    .exec(function (err, post) {
       if(err){
         return res.status(400).send({success:false, msg:'Error Posting Idea', error:err});
       }
@@ -73,7 +62,9 @@ exports.putIdea = function(req, res) {
       title: req.body.title,
       body: req.body.body
     }
-    Ideas.findOneAndUpdate({ fb_id: req.locals.fb_id, _id:req.params.id }, updateData, (err, idea) => {
+    Ideas.findOneAndUpdate({ fb_id: req.locals.fb_id, _id:req.params.id }, updateData)
+    .select('title body comment')
+    .exec(function(err, idea) {
       if(err){
         return res.status(400).send({success:false, msg:'Cannot Update Idea', error:err});
       }
@@ -90,7 +81,8 @@ exports.deleteIdea = function(req, res) {
     var updateData = {
       deleted: true
     };
-    Ideas.update({ fb_id: req.locals.fb_id, _id:req.params.id }, updateData, (err) => {
+    Ideas.update({ fb_id: req.locals.fb_id, _id:req.params.id }, updateData)
+    .exec(function(err) {
       if(err){
         return res.status(400).send({success:false, msg:'Cannot Delete Idea', error:err});
       }

@@ -1,12 +1,11 @@
-var express = require('express');
-var router = express.Router();
-
 var Users = require('../../../../models/ca/CA_User');
 var Ideas = require('../../../../models/ca/CA_Idea');
 
 /* GET ALL Users */
 exports.getParticipant = function(req, res) {
-  Users.find(function (err, allUsers) {
+  Users.find({created:true})
+  .select('address name fb_id college contact branch ca_id state image gender email why')
+  .exec(function (err, allUsers) {
     if (err) return next(err);
     res.json(allUsers);
   });
