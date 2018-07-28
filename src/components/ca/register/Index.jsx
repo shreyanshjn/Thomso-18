@@ -59,7 +59,10 @@ export default class RegisterIndex extends React.Component {
                         this.props.history.push('/ca/')
                     }
                 })
-                .catch(e => console.log(e));
+                .catch(e => {
+                    debugger
+                    console.log(e)
+                });
         } else if (check.errors) {
             this.setState({ errors: check.errors })
         } else {

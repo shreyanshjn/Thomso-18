@@ -6,12 +6,8 @@ var bodyParser = require("body-parser");
 var cors = require("cors");
 var mongoose = require("mongoose");
 
-var caAdminAuth = require("./routes/ca/admin/auth");
-var caAdminRoutes = require("./routes/ca/admin/routes");
-var caAuth = require("./routes/ca/auth");
-var caScore = require("./routes/ca/score");
-var caAuthRoutes = require("./routes/ca/routes");
-var book = require("./routes/book");
+var routes = require('./routes/routes')
+
 var app = express();
 
 mongoose.Promise = require("bluebird");
@@ -39,32 +35,11 @@ mongoose
 
 app.use(logger("dev"));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: "false" }));
-app.use(express.static(path.join(__dirname, "build")));
-
-var whitelist = [
-  "https://thomso.in",
-  "https://www.thomso.in",
-  "www.thomso.in",
-  "thomso.in"
-];
-if (process.env.REACT_APP_SERVER_ENVIORNMENT === "dev") {
-  whitelist = [
-    "http://localhost:" + process.env.PORT,
-    "http://localhost:" + process.env.REACT_APP_SERVER_PORT,
-    "http://localhost:80"
-  ];
+app.use(bodyParser.urlencoded({'extended':'false'}));
+if (process.env.REACT_APP_SERVER_ENVIORNMENT !== 'dev') {
+  app.use(favicon(path.join(__dirname, 'build/favicon.ico')));
 }
-
-var corsOptions = {
-  origin: function(origin, callback) {
-    if (whitelist.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  }
-};
+app.use(express.static(path.join(__dirname, 'build')));
 
 app.use(cors());
 
@@ -82,12 +57,7 @@ app.get("/static/*.js", function(req, res, next) {
 //   next();
 // });
 
-app.use("/api/ca/admin/auth", cors(corsOptions), caAdminAuth);
-app.use("/api/ca/admin", cors(corsOptions), caAdminRoutes);
-app.use("/api/ca/auth", cors(corsOptions), caAuth);
-app.use("/api/ca/score", caScore);
-app.use("/api/ca", cors(corsOptions), caAuthRoutes);
-app.use("/api/book", book);
+app.use('/', routes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

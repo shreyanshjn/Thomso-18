@@ -83,7 +83,6 @@ export default class CAIndex extends React.Component {
       userData: data
     });
   };
-
   render() {
     return (
       <React.Fragment >

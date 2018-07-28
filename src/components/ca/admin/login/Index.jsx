@@ -33,12 +33,14 @@ export default class LoginIndex extends Component {
         if (check.isValid) {
             FetchApi('POST','/api/ca/admin/auth/login', { username, password })
                 .then((result) => {
-                    this.Auth.setToken(result.data.token)
-                    this.setState({ message: '' });
-                    this.props.updateRoutes(true)
+                    if (result.data) {
+                        this.Auth.setToken(result.data.token)
+                        this.setState({ message: '' })
+                        this.props.updateRoutes(true)
+                    }
                 })
                 .catch(error => {
-                    if(error.response.status === 401) {
+                    if(error.response && error.response.status === 401) {
                         this.setState({ message: 'Login failed. Username or password not match' });
                     }
                 });

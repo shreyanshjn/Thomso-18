@@ -1,13 +1,12 @@
-import React from "react";
-
-import Navbar from "./navbar";
-
-export default class HomeIndex extends React.Component {
-  render() {
-    return (
-      <div>
-        <Navbar />
-      </div>
-    );
-  }
+import React from 'react';
+import Main from './Main';
+import './src/css/Index.css';
+export default class HomeIndex extends React.Component{
+    render(){
+        return (
+            <div className="indexmain">
+                <Main />
+            </div>
+        )
+    }
 }
