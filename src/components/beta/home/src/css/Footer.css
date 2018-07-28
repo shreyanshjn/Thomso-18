@@ -167,3 +167,45 @@
         font-size:0px;
     }
 }
+@media (min-width: 1920px) and (max-width: 2560px)
+{
+    .thomso
+    {
+        font-size:40px;
+        font-family:Montserrat;
+    }
+    .days
+    {
+        font-size:40px;
+        font-family:Montserrat;
+    }
+    .left
+    {
+        font-size:30px;
+        font-family:Montserrat;
+    }
+    .main
+    {
+        top:82vh;
+        font-family:Montserrat;
+    }
+    .follow
+    {
+        font-size:35px;
+        font-family:Montserrat;
+    }
+    .iconsImage
+    {
+        width:60px;
+        height:60px;
+    }
+    .fbdiv, .ytdiv , .instadiv , .linkediv
+    {
+        width:60px;
+        height:60px;
+        margin-left:10px;
+        borderradius:50%;
+    }
+ 
+
+}

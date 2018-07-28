@@ -30,7 +30,7 @@ export default class Main extends Component{
           <Section>
                 <div className="body">
                     <div className="imagelogo" align="center">
-                  <img src={logo} alt="logo" height="200px"/>
+                  <img src={logo} alt="logo" className="mainlogo" height="200px"/>
                  <div className="arrowmove">
                   <a href="#sectionTwo" address="true">
                       <img src={arrow} className="downarrow bounce" alt=

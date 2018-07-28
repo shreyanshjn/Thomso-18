@@ -54,3 +54,20 @@ p{
         height: 4vh;
     }
 }
+@media (min-width: 1920px) and (max-width: 2560px)
+{
+    .mainlogo
+    {
+        width: 1125px;
+        height: 389px;
+        margin-top: 270px;
+        width: 992px;
+        height: 390px;
+        margin-top: 279px;
+    }
+    .downarrow
+    {
+     height:50px;
+    
+    }
+}
