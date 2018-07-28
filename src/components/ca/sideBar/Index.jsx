@@ -211,7 +211,7 @@ export default class SideBar extends React.Component {
                   <Certificate />
                 </div>
                 <div className="p-name">
-                  CERTIFICATES
+                  MY POSTS
                 </div>
               </div>
             </Link>
@@ -236,7 +236,7 @@ export default class SideBar extends React.Component {
               </div>
             </Link>
             <Link
-              to="/"
+              to="/ca/logout"
               className={
                 this.state.activeState === "home"
                   ? "sideNavItem activeSideItem"

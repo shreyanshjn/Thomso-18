@@ -71,13 +71,13 @@ export default class HomeIndex extends React.Component {
         const { posts, message, isVisible } = this.state;
         return (
             <div className="cards">
-                {/* {isVisible ? message : null}
+                {isVisible ? message : null}
                 {posts ? posts.map((post, index) => {
                     if (post.link) {
                         return <Card key={'CA-Home-Posts' + index} data={post} sharePost={this.sharePost} />
                     }
                     return null;
-                }) : null} */}
+                }) : null}
             </div>
         )
     }

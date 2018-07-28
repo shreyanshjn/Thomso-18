@@ -6,7 +6,7 @@
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	height: 100vh;
+	height: 100%;
 	width: 76%;
 	margin-left: auto;
 }
@@ -20,7 +20,7 @@
 flex-direction:row;
 height:100%;
 width: 76%;
-margin-left: auto;
+margin: auto;
 }
 @media screen and (max-width:768px){
 	.maindiv{
