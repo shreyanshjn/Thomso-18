@@ -265,12 +265,12 @@ export default class SideBar extends React.Component {
                 this.setActive("home");
               }}
             >
-              <div className="referral flex_row" title="Click to copy">
+              <div onClick={() => { window.location.href = this.props.userData.link }} className="referral flex_row" title="Click to copy">
                 <div className="p-logo">
                   <Referral />
                 </div>
-                <div onClick={this.copytoclipboard} className="p-name">
-                  REFERRAL CODE : {this.state.referral}
+                <div className="p-name">
+                  VIEW YOUR FACEBOOK PROFILE
                 </div>
               </div>
             </div>
