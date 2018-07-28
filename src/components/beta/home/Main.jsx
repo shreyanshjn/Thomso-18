@@ -8,6 +8,7 @@ import Navbar from  './Navbar';
 import About from  './About';
 import Footfall from  './Footfall';
 import Celebrity from  './Celebrity';
+import Contact from  './Contact';
 
 export default class Main extends Component{
   render(){
@@ -29,8 +30,8 @@ export default class Main extends Component{
           <Section>
                 <div className="body">
                     <div className="imagelogo" align="center">
-                  <img src={logo} height="200px"/>
-                 <div class="arrowmove">
+                  <img src={logo} alt="logo" height="200px"/>
+                 <div className="arrowmove">
                   <a href="#sectionTwo" address="true">
                       <img src={arrow} className="downarrow bounce" alt=
                       "a"/>
@@ -43,12 +44,13 @@ export default class Main extends Component{
           <Section>
               <About />
           </Section>
-          <Section>
+          <Section> 
               <Footfall /> 
           </Section>
           <Section>
               <Celebrity /> 
           </Section>
+              <Contact />
           <Section>
           </Section>
       </SectionsContainer>
