@@ -23,9 +23,10 @@ mongoose.connect('mongodb://'+dbUser+':'+dbPass+'@'+dbHost+':'+dbPort+'/'+dbName
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended':'false'}));
+if (process.env.REACT_APP_SERVER_ENVIORNMENT !== 'dev') {
+  app.use(favicon(path.join(__dirname, 'build/favicon.ico')));
+}
 app.use(express.static(path.join(__dirname, 'build')));
-
-app.use(favicon(path.join(__dirname, 'build/favicon.ico')))
 
 app.use(cors());
 
