@@ -38,8 +38,8 @@ export default class LoginIndex extends React.Component {
         FetchApi('POST', '/api/ca/auth/fblogin', data)
             .then(r => {
                 console.log(r)
-                if (r && r.data && r.data.body) {
-                    if (r.data.body.created) {
+                if (r && r.data) {
+                    if (r.data.body && r.data.body.created) {
                         // Set isAuthenticated
                         this.Auth.setToken(r.data.token)
                         this.props.updateRoutes(true)

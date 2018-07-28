@@ -1,11 +1,13 @@
-import React from 'react';
+import React from "react";
 
-export default class HomeIndex extends React.Component{
-    render(){
-        return (
-            <div>
-                Home
-            </div>
-        )
-    }
+import Navbar from "./navbar";
+
+export default class HomeIndex extends React.Component {
+  render() {
+    return (
+      <div>
+        <Navbar />
+      </div>
+    );
+  }
 }
