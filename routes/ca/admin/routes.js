@@ -18,7 +18,7 @@ router.post('/auth/login', adminAuth.login);
 router.use('/', CAAdminTokenMiddleware.verify);
 
 router.get('/participants', adminControls.getParticipant);
-router.get('/idea', adminControls.getIdeas);
+router.get('/ideas', adminControls.getIdeas);
 router.put('/idea/:id', adminControls.putIdea);
 
 module.exports = router;

@@ -57,6 +57,7 @@ exports.login = function(req, res) {
                             }
                             var newToken = {
                                 username: req.body.username,
+                                user_id: user._id,
                                 token: TokenHelper.generateAdminToken(req.body.username),
                                 expirationTime: moment().day(30),
                             };

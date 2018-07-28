@@ -14,6 +14,8 @@ exports.getParticipant = function(req, res) {
 /* Read All Ideas */
 exports.getIdeas = function(req, res) {
   Ideas.find()
+    .populate('user', 'name image ca_id')
+    .select('title body comment')
     .sort({'updated_date': -1})
     .exec(function(err, allIdeas) {
       if(err){

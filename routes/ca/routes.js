@@ -19,7 +19,7 @@ var CAUserTokenMiddleware = require("../../middlewares/ca/user/TokenMiddleware")
 // Routes
 
 // -> /ca/admin
-router.use('/admin', cors(corsOptions), caAdminRoutes);
+router.use('/admin', caAdminRoutes);
 
 // -> /ca/score
 router.get('/score', caScore.getNew);

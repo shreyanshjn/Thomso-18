@@ -18,6 +18,7 @@ exports.verify = (req, res, next) => {
             } else {
                 console.log(user.fb_id);
                 req.locals = {
+                    _id: user.user_id,
                     fb_id: user.fb_id
                 };
                 next();

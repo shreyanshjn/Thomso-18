@@ -1,6 +1,10 @@
 var mongoose = require('mongoose');
 
 var UserSchema = new mongoose.Schema({
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'CA_User'
+    },
     fb_id: {
         type: String,
         required: true

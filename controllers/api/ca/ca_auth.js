@@ -41,11 +41,11 @@ exports.fblogin = function(req, res) {
                 newUser.save(function(err) {
                     if (err) {
                         console.log(err);
-                        
                         return res.status(400).send({success: false, msg: 'Unable to Add Use'});
                     }
                     var newToken = {
                         fb_id: req.body.id,
+                        user_id: newUser._id,
                         token: TokenHelper.generateUserToken(req.body.id, req.body.email),
                         expirationTime: moment().day(30),
                     };
@@ -68,6 +68,7 @@ exports.fblogin = function(req, res) {
                         }
                         var newToken = {
                             fb_id: req.body.id,
+                            user_id: user._id,
                             token: TokenHelper.generateUserToken(req.body.id, req.body.email),
                             expirationTime: moment().day(30),
                         };
@@ -82,6 +83,7 @@ exports.fblogin = function(req, res) {
                 } else {
                     var newToken = {
                         fb_id: req.body.id,
+                        user_id: user._id,
                         token: TokenHelper.generateUserToken(req.body.id, req.body.email),
                         expirationTime: moment().day(30),
                     };
@@ -149,6 +151,7 @@ exports.fbRegister = function(req, res) {
                 }
                 var newToken = {
                     fb_id: req.locals.fb_id,
+                    user_id: user._id,
                     token: TokenHelper.generateUserToken(req.body.id, req.body.email),
                     expirationTime: moment().day(30),
                 };

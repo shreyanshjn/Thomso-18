@@ -17,6 +17,7 @@ exports.verify = (req, res, next) => {
                 res.status(403).json({ success: false, message: 'Token Expired' });
             } else {
                 req.locals = {
+                    _id: user.user_id,
                     username: user.username
                 };
                 next();
