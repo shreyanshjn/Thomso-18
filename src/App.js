@@ -12,6 +12,11 @@ const CAIndex = Loadable({
   loading: () => <div>Loading CAIndex</div>,
 });
 
+const VerifyCerti = Loadable({
+  loader: () => import('./components/verifyCerti/Index'),
+  loading: () => <div>Loading Certificate Verification</div>,
+});
+
 class App extends Component {
   render() {
     return (
@@ -19,6 +24,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={HomeIndex} />
           <Route path="/ca/" component={CAIndex} />
+          <Route path="/verifyCerti/" component={VerifyCerti} />
         </Switch>
       </BrowserRouter>
     );

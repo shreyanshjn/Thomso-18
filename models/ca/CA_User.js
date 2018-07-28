@@ -91,7 +91,7 @@ UserSchema.pre('save', function (next) {
     Counter.findByIdAndUpdate({_id: 'ca_id'}, {$inc: { seq: 1} }, {upsert: true, new: true}, function(error, cnt)   {
         if(error)
             return next(error);
-        doc.ca_id = "TH-2000" + cnt.seq;
+        doc.ca_id = "TH2000" + cnt.seq;
         next();
     })
 });
