@@ -35,5 +35,6 @@ To Serve the build, run `npm run serve`
   ],
   roles: [{ role: "read", db: "<DatabaseName>"}]
 })`
+>>>>>>> register page completed
 
 `db.createUser({"user" : "<DatabaseUser",pwd: "<DatabasePassword>", "roles" : [{"role" : "adminuser", "db" : "<DatabaseName>"}]})`
