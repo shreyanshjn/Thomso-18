@@ -52,28 +52,7 @@
     padding-left: 15px;
     padding-bottom: 10px;
 }
-.fbdiv:hover,.ytdiv:hover,.instadiv:hover,.linkediv:hover
-{
-    -ms-transform: rotate(360deg); /* IE 9 */
-    -webkit-transform: rotate(360deg); /* Safari 3-8 */
-    transform: rotate(360deg);
-}
-.fbdiv:hover
-{
-    background:#3b5998;
-}
-.ytdiv:hover
-{
-    background:#ff0000;
-}
-.instadiv:hover
-{
-    background:#c32aa3;
-}
-.linkediv:hover
-{
-    background:#007bb5;
-}
+
 .fbdiv, .ytdiv , .instadiv , .linkediv
 {
     width:40px;
@@ -81,6 +60,31 @@
     margin-left:10px;
     border-radius:50%;
     transition: 0.5s;
+}
+@media screen and (min-width: 768px)
+{
+    .fbdiv:hover,.ytdiv:hover,.instadiv:hover,.linkediv:hover
+    {
+        -ms-transform: rotate(360deg); /* IE 9 */
+        -webkit-transform: rotate(360deg); /* Safari 3-8 */
+        transform: rotate(360deg);
+    }
+    .fbdiv:hover
+    {
+        background:#3b5998;
+    }
+    .ytdiv:hover
+    {
+        background:#ff0000;
+    }
+    .instadiv:hover
+    {
+        background:#c32aa3;
+    }
+    .linkediv:hover
+    {
+        background:#007bb5;
+    }
 }
 @media only screen and (max-width: 768px) {
     .main
@@ -134,14 +138,6 @@
         font-size:0px;
         text-align:left;
         margin-left:10px;
-    }
-    .fbdiv:hover,.ytdiv:hover,.instadiv:hover,.linkediv:hover
-    {
-        -ms-transform: rotate(360deg); /* IE 9 */
-        -webkit-transform: rotate(360deg); /* Safari 3-8 */
-        transform: rotate(360deg);
-        transition: 0.5s;
-        background:blue;
     }
     .fbdiv:hover
     {

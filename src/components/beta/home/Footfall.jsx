@@ -14,7 +14,7 @@ class Footfall extends Component {
                 <div className="box">
                     <img src={diagram} className="aboveImage" alt="---------" />
                     <span className="first">800+</span> <br/>
-                    <span lassName="second">COLLEGES</span>
+                    <span className="second">COLLEGES</span>
                     <img src={diagram} className="downImage hide" alt="---------" />
                 </div> 
                 <div className="box">
