@@ -8,13 +8,13 @@ var bookRoutes = require('./book/routes');
 
 // Controllers
 var viewController = require('../controllers/view_controller');
-var verifyCerti = require('../controllers/Certificates/verifyCertificates');
+var verifyCerti = require('../controllers/api/Certificates/verifyCertificates');
 // Routes
 
 // -> /api
 router.use('/api/ca', caRoutes);
 router.use('/api/book', bookRoutes);
-router.use('/api/certi_verify', cors(corsOptions), verifyCerti );
+router.use('/api/certiVerify', cors(corsOptions),  verifyCerti.certi_verify );
 // -> /*
 router.get('/*', viewController);
 

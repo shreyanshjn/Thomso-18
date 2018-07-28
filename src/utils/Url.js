@@ -1,6 +1,6 @@
-let BaseUrl = 'https://thomso.in';
-// let BaseUrl = 'http://localhost:4002';
+// let BaseUrl = 'https://thomso.in';
+let BaseUrl = 'http://localhost:4003';
 
-export const VerifyCertiUrl = `${BaseUrl}/api/certi_verify`;
+export const VerifyCertiUrl = `${BaseUrl}/api/certiVerify`;
 
 
