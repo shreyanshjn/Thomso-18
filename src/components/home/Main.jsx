@@ -5,6 +5,8 @@ import arrow from './src/img/arrow.svg';
 import './src/css/Main.css';
 import Footer from './Footer';
 import Navbar from  './Navbar';
+import About from  './About';
+import Footfall from  './Footfall';
 
 export default class Main extends Component{
   render(){
@@ -38,12 +40,11 @@ export default class Main extends Component{
           </Section>
           
           <Section>
-                <div id="arrow">
-                page2
-                <img src={logo} height="250px"/>
-                </div>
+              <About />
           </Section>
-          <Section>Page 3</Section>
+          <Section>
+              <Footfall /> 
+          </Section>
       </SectionsContainer>
                 <Footer />
       </div>
