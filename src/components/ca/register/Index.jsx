@@ -107,6 +107,9 @@ export default class RegisterIndex extends React.Component {
                                         placeholder="Your Name"
                                         name="name"
                                         value={name}
+                                        autoCorrect="off"
+                                        autoComplete="off"
+                                        autoCapitalize="on"
                                         onChange={this.onChange}
                                         required
                                     />
@@ -115,7 +118,7 @@ export default class RegisterIndex extends React.Component {
                                     <label htmlFor="inputContact">Contact Number</label>
                                     <input
                                         id="inputContact"
-                                        type="integer"
+                                        type="number"
                                         placeholder="Contact Number"
                                         name="contact"
                                         maxLength="10"
