@@ -23,9 +23,6 @@ class Celebrity extends Component {
                 <div className="box">
                     <p className="sunidhi">SUNIDHI CHAUHAN</p>
                 </div> 
-                <div className="arrow">
-                     
-                </div>
             </div>
         );
     }

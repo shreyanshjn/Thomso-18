@@ -17,7 +17,8 @@
 .content
 {
     text-align: left;
-    letter-spacing: 2px;
+    font-family:Montserrat;
+    letter-spacing: 1px;
     word-spacing: -1px;
     font-weight: lighter; 
 }
