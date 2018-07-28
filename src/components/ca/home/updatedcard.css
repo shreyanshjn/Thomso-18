@@ -1,17 +1,26 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
-
+.cards{
+	background-image: url("../../beta/home/src/img/dashboard\ bg-01.jpg");
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	height: 100vh;
+	width: 76%;
+	margin-left: auto;
+}
+@media screen and (max-width:768px){
+	.cards{
+		width: 77.77%;
+	}
+}
 .maindiv
 {display:flex;
 flex-direction:row;
 height:100%;
 width: 76%;
 margin-left: auto;
-background-image: url("../../beta/home/src/img/dashboard\ bg-01.jpg");
-background-size: cover;
-background-position: center center;
-background-repeat: no-repeat;
-background-attachment: fixed;
 }
 @media screen and (max-width:768px){
 	.maindiv{

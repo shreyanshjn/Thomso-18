@@ -67,7 +67,7 @@ export default class SideBar extends React.Component {
             <img src={this.props.userData ? this.props.userData.image : boy} className="image" />
             <div className="details">
               <div className="text">{this.props.userData ? this.props.userData.name : "John Doe"}</div>
-              <div className="cname">{college_name}</div>
+              <div className="cname">{this.props.userData ? this.props.userData.college : "John Doe college of Engineering"}</div>
             </div>
           </div>
           <div className="line">
