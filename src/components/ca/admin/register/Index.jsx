@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import validateInput from '../../../../utils/validation/loginValidation';
 import FetchApi from '../../../../utils/FetchAPI';
 
@@ -18,7 +17,7 @@ export default class RegisterIndex extends Component {
     onChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;
-        this.setState({[name]: value});
+        this.setState({ [name]: value });
     }
 
     onSubmit = (e) => {
@@ -28,21 +27,21 @@ export default class RegisterIndex extends Component {
 
         const check = validateInput(password, 'password');
         if (check.isValid) {
-            FetchApi('POST','/api/ca/admin/auth/register', { username, password })
+            FetchApi('POST', '/api/ca/admin/auth/register', { username, password })
                 .then(res => {
                     if (res && res.data) {
                         if (res.data.success) {
                             this.props.history.push("/ca/admin")
                         } else {
-                            this.setState({error: res.data.msg})
+                            this.setState({ error: res.data.msg })
                         }
                     }
                 })
                 .catch(() => {
-                    this.setState({error: 'Something Went Wrong'})
-                });    
+                    this.setState({ error: 'Something Went Wrong' })
+                });
         } else {
-            this.setState({error: check.errors.password})
+            this.setState({ error: check.errors.password })
         }
     }
 
@@ -54,28 +53,28 @@ export default class RegisterIndex extends Component {
                 <form onSubmit={this.onSubmit}>
                     <h2>Register</h2>
                     <label htmlFor="inputUsername">Username</label>
-                    <input 
-                        id="inputUsername" 
-                        type="text" 
-                        placeholder="Username" 
+                    <input
+                        id="inputUsername"
+                        type="text"
+                        placeholder="Username"
                         name="username"
-                        autoCorrect="off" 
-                        autoCapitalize="off"  
-                        value={username} 
-                        onChange={this.onChange} 
+                        autoCorrect="off"
+                        autoCapitalize="off"
+                        value={username}
+                        onChange={this.onChange}
                         required
                     />
                     <label htmlFor="inputPassword">Password</label>
-                    <input 
-                        id="inputPassword" 
-                        type="password" 
-                        placeholder="Password" 
-                        name="password" 
-                        autoCorrect="off" 
-                        autoComplete="off" 
-                        autoCapitalize="off" 
-                        value={password} 
-                        onChange={this.onChange} 
+                    <input
+                        id="inputPassword"
+                        type="password"
+                        placeholder="Password"
+                        name="password"
+                        autoCorrect="off"
+                        autoComplete="off"
+                        autoCapitalize="off"
+                        value={password}
+                        onChange={this.onChange}
                         required
                     />
                     <button type="submit">Register</button>

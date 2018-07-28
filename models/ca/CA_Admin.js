@@ -13,7 +13,8 @@ var UserSchema = new Schema({
         required: true
     },
     last_ip: {
-        type: String
+        type: Array,
+        default: []
     },
     updated_date: {
         type: Date,

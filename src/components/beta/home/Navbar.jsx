@@ -31,11 +31,11 @@ class Navbar extends Component {
           <div className="t-ctos">
             <div className="toggle">
               <div className={this.state.hamburger ? "navtoggle fa fa-bars navtoggle-both" : "fa fa-bars navtoggle navtoggle-mobile"} onClick={this.toggleHidden.bind(this)}>
-	                  <span></span>
-	                  <span></span>
-	                  <span></span>
-                  	<span></span>
-               </div>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
             </div>
             <div className={this.state.isHidden ? "list_" : "list_ active"}>
               {!this.state.isHidden && <List />}
