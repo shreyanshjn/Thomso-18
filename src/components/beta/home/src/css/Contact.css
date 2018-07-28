@@ -3,7 +3,6 @@
 {
     justify-content: center;
     font-family:Montserrat;
-    font-family:Montserrat;
     display:flex;
     color:white;
     font-size:12px;
@@ -37,6 +36,26 @@ tr
     }
 
 }
+@media (min-width: 1920px) and (max-width: 2560px){
 
+    .contactus , .address
+    {
+        font-size:30px;
+    }
+    .contactMain
+    {
+      font-weight:lighter;
+    
+    }
+    .top
+    {
+    font-weight:500;
+    
+    }
+    h1
+    {
+     font-weight:500;
+    }
+}
 
 

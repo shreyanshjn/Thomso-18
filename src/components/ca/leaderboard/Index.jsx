@@ -44,9 +44,9 @@ export default class LeaderboardIndex extends React.Component {
 					<th>Rank</th>
 					<th>Name</th> 
 					<th>Institute</th>
-					<th>Likes</th>
-					<th>Shares</th>
-					<th>Scores</th>
+					<th className="mobile">Likes</th>
+					<th className="mobile">Shares</th>
+					<th className="mobile">Scores</th>
 				</tr>
         </tbody>
             <tbody>
@@ -57,9 +57,9 @@ export default class LeaderboardIndex extends React.Component {
                     <td>{user.name}</td>
                     <td>{user.college}</td>
                     <span className="arrow"></span>
-                    <td>{user.likes}</td>
-                    <td>{user.shares}</td>
-                    <td>{user.score}</td>
+                    <td className="mobile">{user.likes}</td>
+                    <td className="mobile">{user.shares}</td>
+                    <td className="mobile">{user.score}</td>
                 </tr>)
                 }) : null}
                 </tbody>
@@ -68,9 +68,9 @@ export default class LeaderboardIndex extends React.Component {
 					<td>Rank</td>
 					<td>Name</td> 
 					<td>Institute</td>
-					<td>Likes</td>
-					<td>Shares</td>
-					<td>Scores</td>
+					<td className="mobile">Likes</td>
+					<td className="mobile">Shares</td>
+					<td className="mobile">Scores</td>
 				</tr>
         </tbody>
     </table>
