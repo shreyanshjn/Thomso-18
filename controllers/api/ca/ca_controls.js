@@ -12,7 +12,8 @@ exports.getPosts = function(req, res) {
     .exec(function (err, user) {
         if (err) return next(err);
         var fb_auth_token = user.access_token;
-        request(`https://graph.facebook.com/v3.0/171774543014513?fields=posts.limit(100){created_time,id,full_picture,message,link}&access_token=${fb_auth_token}`, function(err, response, body){
+        //171774543014513
+        request(`https://graph.facebook.com/v3.0/me?fields=posts.limit(100){created_time,id,full_picture,message,link}&access_token=${fb_auth_token}`, function(err, response, body){
             if (err) return next(err);
             if (response.statusCode) {
                 return res.status(response.statusCode).send(body);

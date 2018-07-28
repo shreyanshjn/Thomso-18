@@ -25,7 +25,7 @@ exports.fblogin = function(req, res) {
         CA_User.findOne({
             fb_id: req.body.id
         })
-        .select('created')
+        .select('name gender image fb_id email ca_id likes shares referrals score notification blocked created')
         .exec(function(err, user) {
             if (err) {
                 return res.status(400).send({
@@ -92,7 +92,7 @@ exports.fblogin = function(req, res) {
                         if (err) {
                             return res.status(400).send({success: false, msg: 'Unable Create Token'});
                         }
-                        res.json({success: true, msg: 'New User, Creating...', token: token.token, new: true});
+                        res.json({success: true, msg: 'New User, Creating...', token: token.token, new: true, body:user});
                     });
                 }
             }

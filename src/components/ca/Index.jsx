@@ -78,6 +78,7 @@ export default class CAIndex extends React.Component{
         this.setState({
             userData: data
         })
+        console.log(data, 'setData')
     }
 
     render(){
