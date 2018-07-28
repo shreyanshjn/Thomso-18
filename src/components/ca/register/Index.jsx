@@ -210,12 +210,16 @@ export default class RegisterIndex extends React.Component {
                                     id="inputWhy"
                                     placeholder="Your Answer"
                                     name="why"
+                                    rows="1"
                                     value={why}
                                     onChange={this.onChange}
                                     required
                                 />
                             </div>
-                            <button type="submit">Register</button>
+                            <div className="register">
+                                <button type="submit">Register</button>
+                            </div>
+
                         </form>
                     </div>
                 </div >
