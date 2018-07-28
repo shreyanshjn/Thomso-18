@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import "./css/list.css";
+import "./src/css/List.css";
 
 class List extends Component {
   render() {

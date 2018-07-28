@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+.main
+{
+    color:white;
+    font-family: 'Montserrat';
+    letter-spacing:1px;
+    overflow-x:hidden;
+    position:fixed;
+    height:20vh;
+    width: 100%;
+    top: 88vh;
+    height: 15vh;
+}
+.countdown
+{
+    text-align:center;
+    position:absolute;
+    top:0;
+    left:4vw;
+    margin-left: 40px;
+}
+.days
+{
+    font-size:25px;
+}
+.left
+{
+    font-size:12px;
+}
+.icons
+{
+    width:20%;
+    float:right;
+    position: absolute;
+    right: 4vw;
+    top: 0;
+}
+.iconsImage
+{
+    width:40px;
+    height:40px;
+}
+.mainIcons
+{
+    margin-top:2px;
+    display:inline-flex;
+}
+.follow
+{
+    text-align:left;
+    width: 22%;
+    padding-left: 15px;
+    padding-bottom: 10px;
+}
+.fbdiv:hover,.ytdiv:hover,.instadiv:hover,.linkediv:hover
+{
+    -ms-transform: rotate(360deg); /* IE 9 */
+    -webkit-transform: rotate(360deg); /* Safari 3-8 */
+    transform: rotate(360deg);
+}
+.fbdiv:hover
+{
+    background:#3b5998;
+}
+.ytdiv:hover
+{
+    background:#ff0000;
+}
+.instadiv:hover
+{
+    background:#c32aa3;
+}
+.linkediv:hover
+{
+    background:#007bb5;
+}
+.fbdiv, .ytdiv , .instadiv , .linkediv
+{
+    width:40px;
+    height:40px;
+    margin-left:10px;
+    border-radius:50%;
+    transition: 0.5s;
+}
+@media only screen and (max-width: 768px) {
+    .main
+    {
+        color:white;
+        font-family: 'Montserrat';
+        letter-spacing:1px;
+        overflow-x:hidden;
+        position:fixed;
+        height:20vh;
+        width: 100%;
+        top: 85vh;
+        height: 13vh;
+    }
+    .countdown
+    {
+        text-align:center;
+        position:absolute;
+        top:0;
+        left:-1vw;
+        margin-left: 40px;
+    }
+    .days
+    {
+        font-size:22px;
+    }
+    .left
+    {
+        font-size:15px;
+    }
+    .icons
+    {
+        width:38%;
+        float:right;
+        position: absolute;
+        right: 4vw;
+        top: 0;
+    }
+    .iconsImage
+    {
+        width:32px;
+        height:32px;
+    }
+    .mainIcons
+    {
+        margin-top:2px;
+        display:inline-flex;
+    }
+    .follow
+    {
+        font-size:0px;
+        text-align:left;
+        margin-left:10px;
+    }
+    .fbdiv:hover,.ytdiv:hover,.instadiv:hover,.linkediv:hover
+    {
+        -ms-transform: rotate(360deg); /* IE 9 */
+        -webkit-transform: rotate(360deg); /* Safari 3-8 */
+        transform: rotate(360deg);
+        transition: 0.5s;
+        background:blue;
+    }
+    .fbdiv:hover
+    {
+        background:blue;
+    }
+    .ytdiv:hover
+    {
+        background:red;
+    }
+    .instadiv:hover
+    {
+        background:pink;
+    }
+    .linkedin:hover
+    {
+        background:lightblue;
+    }
+    .fbdiv, .ytdiv , .instadiv , .linkediv
+    {
+        width:32px;
+        height:32px;
+        margin-left:2px;
+        border-radius:50%;
+    }
+    .thomso
+    {
+        font-size:0px;
+    }
+}
