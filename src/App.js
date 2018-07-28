@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Loadable from 'react-loadable';
 
 const HomeIndex = Loadable({
-  loader: () => import('./components/home/Index'),
+    loader: () => import('./components/beta/home/Index'),
   loading: () => <div>Loading HomeIndex</div>,
 });
 

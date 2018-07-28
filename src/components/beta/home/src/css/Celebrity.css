@@ -27,28 +27,40 @@
     font-size:17px;
     text-align:center;
 }
-.arrow
-{
-  display:none;
-}
 .nucleya
 {
     left:31%;
 }
 @media only screen and (max-width: 768px) {
-    .arrow
+    .celebrityMain 
     {
-        background: none;
-        border: solid white;
-        border-width: 0 3px 3px 0;
-        display: inline-block;
-        padding: 3px; 
-        transform: rotate(-45deg);
-        -webkit-transform: rotate(-45deg);
-        background:none;
-        right:0;
-        height: 15px;
-        width: 15px;
-    } 
+        flex-direction:column;
+    }
+    .celebrityMain > div
+    {
+        margin:20px; 
+        height:12vh;
+        width:58vw;
+        position:relative;
+    }
+    .celebrityMain > div >p
+    { 
+        position:absolute;
+        bottom:-5vh;
+        font-size:8px;
+        text-align:center;
+    }
+    .farhan
+    {
+        left:30%; 
+    }
+    .nucleya
+    {
+        left:38%; 
+    }
+    .sunidhi
+    {
+        left:30%; 
+    }
 }
 

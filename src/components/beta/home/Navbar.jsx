@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 import img from "./src/img/logo.png";
-import HomeIndex from './Index'
 
 import "./src/css/Navbar.css";
 
