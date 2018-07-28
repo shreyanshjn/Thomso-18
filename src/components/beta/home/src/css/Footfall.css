@@ -69,4 +69,39 @@
         top: -3vh;
     }
 }
+@media (min-width: 1920px) and (max-width: 2560px)
+{
+    .box
+    {
+        padding:20px;
+        margin:36px;
+        font-size:40px;
+        width: 400px;
+        height: 200px;
+        border-radius:10px;
+    }
+    .first
+    {
+        font-size: 90px;
+        font-family:Montserrat;
+    }
+    .second
+    {
+        font-size:32px;
+        font-family:Montserrat;
+
+    }
+    .aboveImage
+    {
+        width: 403px;
+        top: -6vh;
+        left: 6%;
+    }
+    .downImage
+    {
+        width:403px;
+        bottom:-6vh;
+        left:4%;
+    }
+}
 
