@@ -89,8 +89,8 @@ export default class CAIndex extends React.Component {
         <Route path="/ca/admin" component={AdminIndex} />
         {this.state.isAuthenticated ? (
           <div>
-            <Route path="/ca/" component={Sidebar} />
-            <Route exact path="/ca/logout" render={props => (   <LogoutIndex {...props} updateRoutes={this.handleUpdate} /> )}/>
+            <Route path="/ca/" render={props => (<Sidebar {...props} userData={this.state.userData} />)} />
+            <Route exact path="/ca/logout" render={props => (<LogoutIndex {...props} updateRoutes={this.handleUpdate} />)} />
             <Route exact path="/ca/leaderboard" component={LeaderboardIndex} />
             <Route exact path="/ca/contactus" component={ContactIndex} />
             <Route exact path="/ca/idea" component={IdeasIndex} />
@@ -98,8 +98,8 @@ export default class CAIndex extends React.Component {
           </div>
         ) : (
             <div>
-              <Route exact path="/ca/register" render={props => (<RegisterIndex {...props} updateRoutes={this.handleUpdate} setUserData={this.setUserData} userData={this.state.userData} /> )}/>
-              <Route exact path="/ca/" render={props => ( <LoginIndex {...props} updateRoutes={this.handleUpdate} setUserData={this.setUserData} userData={this.state.userData}/> )}/>
+              <Route exact path="/ca/register" render={props => (<RegisterIndex {...props} updateRoutes={this.handleUpdate} setUserData={this.setUserData} userData={this.state.userData} />)} />
+              <Route exact path="/ca/" render={props => (<LoginIndex {...props} updateRoutes={this.handleUpdate} setUserData={this.setUserData} userData={this.state.userData} />)} />
             </div>
           )}
       </React.Fragment>

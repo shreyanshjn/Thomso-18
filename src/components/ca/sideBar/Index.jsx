@@ -23,9 +23,6 @@ export default class SideBar extends React.Component {
     this.state = {
       days: 69,
       referral: 'AVSHFSAD',
-      likes: 69,
-      share: 69,
-      score: 69,
       activeState: window.location.pathname.substring(1)
     };
     if (window.location.pathname.substring(1) === "") {
@@ -57,6 +54,7 @@ export default class SideBar extends React.Component {
     // }
     return (
       <div>
+        {console.log(this.props.userData, 'userdata')}
         <div
           id="mySidenav"
           className={
@@ -66,9 +64,9 @@ export default class SideBar extends React.Component {
           }
         >
           <div className="sidebar-user">
-            <img src={boy} className="image" />
+            <img src={this.props.userData ? this.props.userData.image : boy} className="image" />
             <div className="details">
-              <div className="text">{username}</div>
+              <div className="text">{this.props.userData ? this.props.userData.name : "John Doe"}</div>
               <div className="cname">{college_name}</div>
             </div>
           </div>
@@ -79,7 +77,7 @@ export default class SideBar extends React.Component {
               <div className="n_likes">
                 <div className="inn_likes">
                   <div>
-                    {this.state.likes}
+                    {this.props.userData ? this.props.userData.likes : "0"}
                   </div>
                   <img src={like} />
                 </div>
@@ -90,7 +88,7 @@ export default class SideBar extends React.Component {
               <div className="n_shares">
                 <div className="inn_likes">
                   <div className="change">
-                    {this.state.share}
+                    {this.props.userData ? this.props.userData.shares : "0"}
                   </div>
                   <img src={share} />
                 </div>
@@ -101,7 +99,7 @@ export default class SideBar extends React.Component {
               <div className="n_score">
                 <div className="inn_likes">
                   <div className="change">
-                    {this.state.score}
+                    {this.props.userData ? this.props.userData.score : "0"}
                   </div>
                   <img src={score} />
                 </div>
