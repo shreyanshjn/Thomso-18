@@ -13,19 +13,18 @@ exports.fblogin = function(req, res) {
     var data = {
         fb_id: req.body.id,
         name: req.body.name,
+        link: req.body.link,
         email: req.body.email,
         gender: req.body.gender,
         image: req.body.image
     }
     request(`https://graph.facebook.com/oauth/access_token?grant_type=fb_exchange_token&client_id=${client_id}&client_secret=${client_secret}&fb_exchange_token=${accessToken}`, function(err, response, body){
         var access_token = JSON.parse(response.body).access_token;
-        console.log( req.body.id, 'access_toke');
-        
         var saveData = Object.assign(data, {access_token: access_token})
         CA_User.findOne({
             fb_id: req.body.id
         })
-        .select('name gender image fb_id email ca_id likes shares referrals score notification blocked created')
+        .select('name gender image fb_id email ca_id likes shares referrals score notification blocked link created college')
         .exec(function(err, user) {
             if (err) {
                 return res.status(400).send({
@@ -61,7 +60,7 @@ exports.fblogin = function(req, res) {
                 // Update User
                 if (user.created) {
                     CA_User.findOneAndUpdate({fb_id: req.body.id}, saveData, { new:true })
-                    .select('name gender image ca_id likes shares referrals score notification blocked created')
+                    .select('name gender image ca_id likes shares referrals score notification blocked link created college')
                     .exec(function(err, user) {
                         if(err){
                             return res.status(400).send({success:false, msg:'Error Updating User', error:err});
@@ -144,7 +143,7 @@ exports.fbRegister = function(req, res) {
         }
         if (data.name && data.contact && data.email && data.gender && data.college && data.state && data.branch && data.address && data.why) {
             CA_User.findOneAndUpdate({fb_id: req.locals.fb_id}, data, { new:true })
-            .select('name gender image ca_id likes shares referrals score notification blocked')
+            .select('name gender image ca_id likes shares referrals score notification blocked link college')
             .exec(function(err, user) {
                 if(err){
                     return res.status(400).send({success:false, msg:'Error Creating User', error:err});
@@ -169,4 +168,29 @@ exports.fbRegister = function(req, res) {
     } else {
         res.status(400).send({success:false, msg:'Invalid Data'});
     }
+};
+
+// Get User Data
+exports.getData = function(req, res) {
+    console.log(req.locals.fb_id);
+    CA_User.findOne({
+        fb_id: req.locals.fb_id
+    })
+    .select('name gender image fb_id email ca_id likes shares referrals score notification blocked link college created')
+    .exec(function(err, user) {
+        if (err) {
+            return res.status(400).send({
+                success:false,
+                msg: 'Unable to connect to database. Please try again.',
+                error: err
+            })
+        }
+        if (!user || user.created === false) {
+            return res.status(400).send({success: false, msg: 'User not found'});
+        } else {
+            if (user.created) {
+                res.json({success: true, msg:'User Data Found', body:user});
+            }
+        }
+    });
 };

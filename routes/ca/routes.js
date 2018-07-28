@@ -27,11 +27,13 @@ router.get('/score', caScore.getNew);
 // -> /ca/auth
 router.post('/auth/fblogin', cors(corsOptions), caAuth.fblogin);
 router.post('/auth/fbRegister', cors(corsOptions), CAUserTokenMiddleware.verify, caAuth.fbRegister);
+router.get('/auth/fbData', cors(corsOptions), CAUserTokenMiddleware.verify, caAuth.getData);
 
 // -> /ca
 router.use('/', cors(corsOptions), CAUserTokenMiddleware.verify);
 
 router.get('/posts', caControls.getPosts);
+router.get('/myposts', caControls.getUserPosts);
 router.post('/idea', caControls.postIdea);
 router.get('/idea', caControls.getIdea);
 router.put('/idea/:id', caControls.putIdea);
