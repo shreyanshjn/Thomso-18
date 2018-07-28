@@ -1,39 +1,42 @@
 import React, { Component } from "react";
 
-import img from "./images/logo.png";
+import img from "./src/img/logo.png";
+import HomeIndex from './Index'
 
-import "../../../node_modules/font-awesome/css/font-awesome.css";
+import "./src/css/Navbar.css";
 
-import "./css/nav.css";
-
-import List from "./list";
+import List from "./List";
 
 class Navbar extends Component {
   constructor() {
     super();
     this.state = {
-      isHidden: true
+      isHidden: true,
+      hamburger: true
     };
   }
   toggleHidden() {
     this.setState({
-      isHidden: !this.state.isHidden
+      isHidden: !this.state.isHidden,
+      hamburger: !this.state.hamburger
     });
   }
 
   render() {
     return (
       <div className="contain">
-        <div className="navbar">
+        <div className={this.state.hamburger? "navbar":"navbar overlay navbarToggle"}>
           <div className="t-logo">
             <img src={img} alt="" />
           </div>
           <div className="t-ctos">
             <div className="toggle">
-              <i
-                onClick={this.toggleHidden.bind(this)}
-                className="fa fa-bars"
-              />
+              <div className={this.state.hamburger ? "navtoggle fa fa-bars navtoggle-both" : "fa fa-bars navtoggle navtoggle-mobile"} onClick={this.toggleHidden.bind(this)}>
+	                  <span></span>
+	                  <span></span>
+	                  <span></span>
+                  	<span></span>
+               </div>
             </div>
             <div className={this.state.isHidden ? "list_" : "list_ active"}>
               {!this.state.isHidden && <List />}
