@@ -7,12 +7,13 @@ import Footer from './Footer';
 import Navbar from  './Navbar';
 import About from  './About';
 import Footfall from  './Footfall';
+import Celebrity from  './Celebrity';
 
 export default class Main extends Component{
   render(){
     let options = {
       sectionClassName:     'section',
-      anchors:              ['sectionOne', 'sectionTwo', 'sectionThree'],
+      anchors:              ['sectionOne', 'sectionTwo', 'sectionThree','sectionFour','sectionFive'],
       scrollBar:            false,
       navigation:           false,
       verticalAlign:        false,
@@ -44,6 +45,11 @@ export default class Main extends Component{
           </Section>
           <Section>
               <Footfall /> 
+          </Section>
+          <Section>
+              <Celebrity /> 
+          </Section>
+          <Section>
           </Section>
       </SectionsContainer>
                 <Footer />
