@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+.contactMain
+{
+    justify-content: center;
+    font-family:Montserrat;
+    font-family:Montserrat;
+    display:flex;
+    color:white;
+    font-size:12px;
+}
+table {
+    border-collapse: collapse;
+}
+tr
+{
+    text-align: left;
+}
+.contactus , .address
+{
+    margin:20px;
+}
+@media only screen and (max-width: 768px) {
+    .contactMain
+    {
+        flex-direction:column;
+        font-size:8px;
+        justify-content:left;
+    }
+    tr
+    {
+        padding:2px;
+        text-align: left;
+        margin:10px;
+    }
+    .top{
+        font-size:10px;
+    }
+
+}
+
+
+
