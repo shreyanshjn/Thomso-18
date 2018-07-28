@@ -17,6 +17,11 @@ const VerifyCerti = Loadable({
   loading: () => <div>Loading Certificate Verification</div>,
 });
 
+const Sponsor = Loadable({
+  loader: () => import('./components/Sponsor/Sponsors'),
+  loading: () => <div>Loading Sponsor</div>,
+});
+
 class App extends Component {
   render() {
     return (
@@ -25,6 +30,7 @@ class App extends Component {
           <Route exact path="/" component={HomeIndex} />
           <Route path="/ca/" component={CAIndex} />
           <Route path="/verifyCerti/" component={VerifyCerti} />
+          <Route path="/sponsor/" component={Sponsor} />
         </Switch>
       </BrowserRouter>
     );

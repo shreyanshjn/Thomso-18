@@ -65,7 +65,7 @@ exports.certi_verify = function(req, res){
 exports.get_cerificates_ca = function(req, res){
     var id = req.user.userId;
     var query = `select name, id, college, email, fb_id from ca_form where fb_id=${id} AND certi=1`;
-    console.log(query);
+    // console.log(query);
     con.query(query, function(err, result, field){
         if(err){
             res.json({
