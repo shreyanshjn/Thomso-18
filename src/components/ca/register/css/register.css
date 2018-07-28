@@ -6,7 +6,7 @@
     background-size: cover;
     background-position: center center;
     display: flex;
-    height: 100%;
+    height: 100vh;
     font-family: Montserrat;
     color: white;
 }
@@ -17,7 +17,7 @@
 }
 .register-heading{
     display: flex;
-    padding: 30px 40px 25px 30px;
+    padding: 10px 40px 0px 30px;
 }
 .register-ca{
     padding-left: 20px;
@@ -66,7 +66,7 @@
 }
 .form-heading h2{
     margin: 0;
-    margin-top: 20px;
+    margin-top: 10px;
     color: white;
     font-weight: 600;
     font-family: Montserrat;
@@ -250,7 +250,7 @@
     font-family: Montserrat;
     background: none;
     color: white;
-    padding: 5px;
+    padding: 5px 5px 3px 5px;
 }
 .form-branch input::placeholder{
     color: white;
@@ -319,6 +319,7 @@
     font-size: 12px;
 }
 .form-inwhy-child textarea{
+    margin-top: 5px;
     font-size: 14px;
     outline: 0;
     border-width: 0 0 2px;
@@ -333,3 +334,52 @@
     text-align: center;
 }
 .form-inwhy-child textarea:focus::-webkit-textarea-placeholder { color:transparent; }
+.register{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+.register button{
+    cursor: pointer;
+    padding: 15px;
+    background: none;
+    font-family: Montserrat;
+    font-weight: 600;
+    color: white;
+    border: 0px;
+    background: rgba(255,255,255,0.4);
+    border-radius: 5px;
+}
+@media (max-width:800px){
+    .register-parent{
+        height: 100%;
+        padding-bottom: 20px;
+    }
+    .form-first-child{
+        display: flex;
+        flex-direction:column;
+        margin-top: 5px;
+    }
+    .form-name{
+        width: 100%;
+    }
+    .form-gender{
+        width: 100%;
+    }
+    .form-email{
+        width: 100%;
+    }
+    .form-state{
+        width: 100%;
+    }
+    .form-branch{
+        width: 100%;
+    }
+    .form-contactnumber{
+        width: 100%;
+    }
+    .form-name{
+        width: 100%;
+    }
+}

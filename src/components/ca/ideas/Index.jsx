@@ -1,13 +1,13 @@
 import React from 'react';
-
+import "./css/idea.css";
 import AuthService from '../../../handlers/ca/AuthService';
 import FetchApi from '../../../utils/FetchAPI';
 
 export default class IdeasIndex extends React.Component {
-    constructor(){
+    constructor() {
         super();
         this.state = {
-            title : '',
+            title: '',
             body: '',
             errors: ''
         }
@@ -17,7 +17,7 @@ export default class IdeasIndex extends React.Component {
     onChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;
-        this.setState({[name]: value});
+        this.setState({ [name]: value });
     }
 
     onSubmit = (e) => {
@@ -30,19 +30,19 @@ export default class IdeasIndex extends React.Component {
                 .then(r => {
                     console.log(r)
                     // if (r && r.data ) {
-                        
+
                     // }
                 })
                 .catch(e => console.log(e));
         } else {
-            this.setState({errors: 'Fields cannot be empty'})
+            this.setState({ errors: 'Fields cannot be empty' })
         }
     }
 
-    render(){
+    render() {
         const { title, body, errors } = this.state;
         return (
-            <div>
+            <div className="side-nav-parent">
                 <form onSubmit={this.onSubmit}>
                     {errors ?
                         <div>
@@ -50,30 +50,52 @@ export default class IdeasIndex extends React.Component {
                         </div>
                         : null
                     }
-                    <h2>Submit Your Ideas</h2>
-                    <label htmlFor="inputSubject">What's it about?</label>
-                    <input 
-                        id="inputSubject" 
-                        type="text" 
-                        placeholder="Idea Subject" 
-                        name="title" 
-                        value={title} 
-                        onChange={this.onChange} 
-                        required
-                    />
-                    <label htmlFor="inputIdea">Why should we choose you?</label>
-                    <textarea 
-                        id="inputIdea" 
-                        placeholder="Idea Body" 
-                        rows="5" 
-                        name="body" 
-                        value={body} 
-                        onChange={this.onChange} 
-                        required
-                    />
-                    <button type="submit">Register</button>
+                    <div className="heading">
+                        <span className="dot"></span><h2>Share your ideas</h2>
+                    </div>
+                    <div className="ideasubject">
+                        <span className="dot ideasub"></span>
+                        <input
+                            id="inputSubject"
+                            type="text"
+                            placeholder="Your Idea"
+                            name="title"
+                            value={title}
+                            onChange={this.onChange}
+                            required
+                        />
+                    </div>
+                    <div className="details_idea">
+                        <textarea
+                            id="inputIdea"
+                            placeholder="More details about your idea"
+                            rows="1"
+                            name="body"
+                            value={body}
+                            onChange={this.onChange}
+                            required
+                        />
+                    </div>
+                    <div className="submit">
+                        <button type="submit">Submit</button>
+                    </div>
                 </form>
-            </div>
+                <div className="aideas">
+                    <div className="asubideas">
+                        <div>
+                            <div className="asubject">
+                                <span className="dot"></span><h2>Make a fish pot</h2>
+                            </div>
+                            <div className="adetails">
+                                <p>Fishes are Fishes</p>
+                            </div>
+                            <div className="submit subdel">
+                                <button className="delete">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div >
         );
     }
 }
