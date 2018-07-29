@@ -67,6 +67,12 @@
     .aboveImage
     {
         top: -3vh;
+        width:106px;
+    }
+    .downImage
+    {
+        width:106px;
+        bottom:-3vh;
     }
 }
 @media (min-width: 1920px) and (max-width: 2560px)

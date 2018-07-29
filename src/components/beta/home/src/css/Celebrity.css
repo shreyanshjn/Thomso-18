@@ -13,7 +13,7 @@
 .celebrityMain > div
 {
     margin:15px; 
-    height:47vh;
+    height:38vh;
     width:16vw;
     background:rgba(255,255,255,0.3);
     position:relative;
@@ -24,23 +24,34 @@
     position:absolute;
     bottom:-10vh;
     font-family:Montserrat;
-    font-size:17px;
+    font-size:15px;
     text-align:center;
 }
 .nucleya
 {
     left:31%;
 }
+.celebImage
+{
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    max-width: 20vw;
+    height: auto;
+    border-radius:10px;
+}
 @media only screen and (max-width: 768px) {
     .celebrityMain 
     {
-        flex-direction:column;
+        flex-direction:row;
+        margin-top:10vh;
     }
     .celebrityMain > div
     {
-        margin:20px; 
-        height:12vh;
-        width:58vw;
+        margin:15px; 
+        height:9vh;
+        width:9vw;
         position:relative;
     }
     .celebrityMain > div >p
@@ -52,29 +63,35 @@
     }
     .farhan
     {
-        left:30%; 
+        left:17%; 
     }
     .nucleya
     {
-        left:38%; 
+        left:20%; 
+        bottom:-4vh;
     }
     .sunidhi
     {
-        left:30%; 
+        left:2%; 
+    }
+    .box
+    {
+        width:25vw;
+    
     }
 }
 @media (min-width: 1920px) and (max-width: 2560px)
 {
     .celebrityMain
     {
-        margin-top:4vh;
+        margin-top:10vh;
     } 
     .celebrityMain > div >p
     { 
         font-family:Montserrat;
         font-size:26px;
         text-align:center;
-        bottom:-7vh
+        bottom:-10vh
     }
     .sunidhi
     {
