@@ -17,7 +17,7 @@ import Hand from "./Svg/Hand"
 
 // import logoUser from '../common/images/user.svg';
 
-export default class SideBar extends React.Component {
+export default class Sidebar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -42,16 +42,6 @@ export default class SideBar extends React.Component {
     Field.remove()
   }
   render() {
-    let username;
-    let college_name;
-    // if (localStorage.getItem('name')) {
-    // 	username = localStorage.getItem('name')
-    // } else if (localStorage.getItem('company_name')) {
-    // 	username = localStorage.getItem('company_name')
-    // } else {
-    username = "JOHN DOE";
-    college_name = "John Doe College of Engineering";
-    // }
     return (
       <div>
         {console.log(this.props.userData, 'userdata')}
@@ -66,8 +56,8 @@ export default class SideBar extends React.Component {
           <div className="sidebar-user">
             <img src={this.props.userData ? this.props.userData.image : boy} className="image" />
             <div className="details">
-              <div className="text">{this.props.userData ? this.props.userData.name : "John Doe"}</div>
-              <div className="cname">{this.props.userData ? this.props.userData.college : "John Doe college of Engineering"}</div>
+              <div className="text">{this.props.userData ? this.props.userData.name : "User"}</div>
+              <div className="cname">{this.props.userData ? this.props.userData.college : "-"}</div>
             </div>
           </div>
           <div className="line">
@@ -176,7 +166,7 @@ export default class SideBar extends React.Component {
               </div>
             </Link>
             <Link
-              to="/ca/idea"
+              to="/ca/ideas"
               className={
                 this.state.activeState === "home"
                   ? "sideNavItem activeSideItem"
@@ -211,12 +201,12 @@ export default class SideBar extends React.Component {
                   <Certificate />
                 </div>
                 <div className="p-name">
-                  MY POSTS
+                  Certificate
                 </div>
               </div>
             </Link>
             <Link
-              to="/"
+              to="/ca/contact"
               className={
                 this.state.activeState === "home"
                   ? "sideNavItem activeSideItem"

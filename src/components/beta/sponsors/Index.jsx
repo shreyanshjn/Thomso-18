@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class HomeIndex extends React.Component{
+export default class SponsorsIndex extends React.Component{
     render(){
         return (
             <div>
