@@ -48,7 +48,7 @@ self.addEventListener('install', function(event) {
 			  '/img/economical.png',
 			  '/img/farhan.jpg',
 			  '/img/nucleya.jpg',
-			  '/img/palash.jpg',
+			  '/img/palash.jpeg',
 			  '/img/sonu.jpg',
 			  '/img/stats.jpg',
 			  '/img/sunidhi.jpg',
