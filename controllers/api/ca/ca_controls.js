@@ -66,12 +66,13 @@ exports.postIdea = function (req, res) {
 /* Read All Ideas */
 exports.getIdea = function (req, res) {
     Ideas.find({ fb_id: req.locals.fb_id, deleted: false })
-        .select('title body comment')
+        .select('title body comment updated_date')
+        .sort({ 'updated_date': -1 })
         .exec(function (err, allIdeas) {
             if (err) {
                 return res.status(400).send({ success: false, msg: 'Cannot GET Ideas', error: err });
             }
-            res.json(allIdeas);
+            res.json({ success: true, msg: 'Ideas', body: allIdeas });
         })
 };
 
@@ -82,7 +83,7 @@ exports.putIdea = function (req, res) {
             title: req.body.title,
             body: req.body.body
         }
-        Ideas.findOneAndUpdate({ fb_id: req.locals.fb_id, _id: req.params.id }, updateData)
+        Ideas.findOneAndUpdate({ fb_id: req.locals.fb_id, _id: req.params.id }, updateData, { new: true })
             .select('title body comment')
             .exec(function (err, idea) {
                 if (err) {
