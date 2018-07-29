@@ -24,14 +24,14 @@ export default class LoginIndex extends React.Component {
     facebookLogin(){
         // let props = this.props;
         window.FB.login(response => {
-            window.FB.api('/me?fields=id, name, email, gender, picture.type(large)', res => {
+            window.FB.api('/me?fields=id, name, email, gender, picture.type(large), link', res => {
                 let accessToken = response.authResponse.accessToken;
-                let {id, name, email, gender} = res;
+                let {id, name, email, gender, link} = res;
                 let image = res.picture.data.url;
-                let data = {id, name, email, gender, image, accessToken};
+                let data = {id, name, email, gender, image, accessToken, link};
                 this.updateCheckUser(data)
             })
-        }, {scope: 'email, user_likes ,user_posts , user_gender, manage_pages, publish_to_groups' });
+        }, {scope: 'email, user_likes ,user_posts ,user_gender, user_link' });
     }
 
     updateCheckUser(data) {
