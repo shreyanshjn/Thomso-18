@@ -104,12 +104,12 @@ export default class CAIndex extends React.Component {
             <Route exact path="/ca/leaderboard" component={LeaderboardIndex} />
             <Route exact path="/ca/contact" component={ContactIndex} />
             <Route exact path="/ca/ideas" component={IdeasIndex} />
-            <Route exact path="/ca/*" component={HomeIndex} />
+            <Route exact path="/ca/" component={HomeIndex} />
           </div>
         ) : (
             <div>
               <Route exact path="/ca/register" render={props => (<RegisterIndex {...props} updateRoutes={this.handleUpdate} setUserData={this.setUserData} userData={this.state.userData} />)} />
-              <Route exact path="/ca/*" render={props => (<LoginIndex {...props} updateRoutes={this.handleUpdate} setUserData={this.setUserData} userData={this.state.userData} />)} />
+              <Route exact path="/ca/" render={props => (<LoginIndex {...props} updateRoutes={this.handleUpdate} setUserData={this.setUserData} userData={this.state.userData} />)} />
             </div>
           )}
       </React.Fragment>

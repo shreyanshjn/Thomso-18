@@ -8,13 +8,18 @@ var bookRoutes = require('./book/routes');
 
 // Controllers
 var viewController = require('../controllers/view_controller');
-var verifyCerti = require('../controllers/api/Certificates/verifyCertificates');
+if (process.env.REACT_APP_SERVER_ENVIORNMENT !== 'dev') {
+    var verifyCerti = require('../controllers/api/Certificates/verifyCertificates');
+}
+
 // Routes
 
 // -> /api
 router.use('/api/ca', caRoutes);
 router.use('/api/book', bookRoutes);
-router.use('/api/certiVerify', cors(corsOptions),  verifyCerti.certi_verify );
+if (process.env.REACT_APP_SERVER_ENVIORNMENT !== 'dev') {
+    router.use('/api/certiVerify', cors(corsOptions),  verifyCerti.certi_verify );
+}
 // -> /*
 router.get('/*', viewController);
 
