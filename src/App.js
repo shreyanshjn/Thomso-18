@@ -7,7 +7,10 @@ import Loadable from 'react-loadable';
 //   loader: () => import('./components/beta/Index'),
 //   loading: () => <div>Loading BetaIndex</div>,
 // });
-
+const HomeIndex = Loadable({
+    loader: () => import('./components/beta/home/Index'),
+  loading: () => <div>Loading HomeIndex</div>,
+});
 const CAIndex = Loadable({
   loader: () => import('./components/ca/Index'),
   loading: () => <div>Loading CAIndex</div>,
@@ -27,8 +30,6 @@ class App extends Component {
           <Route exact path="/" component={HomeIndex} />
           <Route path="/Sponsors/" component={Sponsors} />
           <Route path="/ca/" component={CAIndex} />
-
-          <Route path="/verifyCerti/" component={VerifyCerti} />
         </Switch>
       </BrowserRouter>
     );
