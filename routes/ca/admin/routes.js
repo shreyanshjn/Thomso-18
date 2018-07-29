@@ -43,7 +43,7 @@ router.put('/idea/:id', function(req, res) {
 });
 
 /* Read All Ideas */
-router.get('/idea', passport.authenticate('jwt', { session: false }), function(req, res) {
+router.get('/idea', function(req, res) {
   var token = getToken(req.headers);
   if (token) {
     Ideas.find()
@@ -60,7 +60,7 @@ router.get('/idea', passport.authenticate('jwt', { session: false }), function(r
 });
 
 /* Update Idea */
-router.put('/idea/:id', passport.authenticate('jwt', { session: false }), function(req, res) {
+router.put('/idea/:id', function(req, res) {
   var token = getToken(req.headers);
   if (token) {
     if (req.params.id) {
