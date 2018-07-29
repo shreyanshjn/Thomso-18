@@ -106,7 +106,7 @@ export default class Sidebar extends React.Component {
           </div>
           <div className="thomso">
             <Link
-              to="/ca"
+              to="/ca/"
               className={
                 this.state.activeState === "posts"
                   ? "sideNavItem activeSideItem"
@@ -146,14 +146,14 @@ export default class Sidebar extends React.Component {
               </div>
             </Link>
             <Link
-              to="/map"
+              to="/ca/guidelines"
               className={
                 this.state.activeState === "home"
                   ? "sideNavItem activeSideItem"
                   : "sideNavItem"
               }
               onClick={() => {
-                this.setActive("home");
+                this.setActive("guidelines");
               }}
             >
               <div className="guide flex_row">

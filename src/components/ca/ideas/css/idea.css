@@ -121,4 +121,13 @@
     .details_idea textarea{
         height: 40px;
     } 
+    .ideasubject input{
+        padding: 7px;
+        font-size: 14px;
+        outline: 0;
+        border-width: 0 0 2px;
+        border-color: #BEBEBE ;
+        font-family: Montserrat;
+        width: 38%;
+    }
 }
