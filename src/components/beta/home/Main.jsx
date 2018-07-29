@@ -1,5 +1,5 @@
 import React , { Component } from 'react';
-import {SectionsContainer, Section} from 'react-fullpage';
+import {ScrollToTopOnMount, SectionsContainer, Section} from 'react-fullpage';
 import logo from './src/img/thomso main-01.png';
 import arrow from './src/img/arrow.svg';
 import './src/css/Main.css';
@@ -14,18 +14,19 @@ export default class Main extends Component{
   render(){
     let options = {
       sectionClassName:     'section',
-      anchors:              ['sectionOne', 'sectionTwo', 'sectionThree','sectionFour','sectionFive'],
+      anchors:              ['home', 'about', 'footfalls','previous','contact'],
       scrollBar:            false,
       navigation:           false,
       verticalAlign:        false,
       sectionPaddingTop:    '0px',
-      sectionPaddingBottom: '50px',
+    //   sectionPaddingBottom: '50px',
       slidesNavPosition: 'bottom',
       arrowNavigation:      true
     };
     return(
       <div className="middlesection">
               <Navbar />
+              <ScrollToTopOnMount />
           <SectionsContainer {...options}>
           <Section>
                 <div className="body">

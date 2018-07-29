@@ -38,7 +38,7 @@ export default class IdeasIndex extends React.Component {
     }
     deleteIdea = index => {
         if (index !== undefined) {
-            this.state.ideas.splice(index, 1)
+            this.state.ideas.splice(index, 1, {})
             this.setState({})
         }
     }
@@ -47,8 +47,8 @@ export default class IdeasIndex extends React.Component {
             <div className="side-nav-parent">
                 <Form addIdea={this.addIdea} />
                 {this.state.ideas.map((idea, index) => {
-                    console.log(idea, index);
-                    return <Idea data={idea} index={index} updateIdea={this.updateIdea} deleteIdea={this.deleteIdea} key={(Math.random() * 100000).toString()} />
+                    const descIndex = this.state.ideas.length - index - 1;
+                    return <Idea data={idea} index={index} updateIdea={this.updateIdea} deleteIdea={this.deleteIdea} key={`idea${descIndex}`} />
                 })}
             </div >
         );
