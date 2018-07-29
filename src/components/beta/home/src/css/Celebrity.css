@@ -72,12 +72,13 @@
     .celebrityMain > div >p
     { 
         font-family:Montserrat;
-        font-size:25px;
+        font-size:26px;
         text-align:center;
+        bottom:-7vh
     }
     .sunidhi
     {
-        left:7%;
+        left:6%;
         text-align:left;
         width:100%;
     }

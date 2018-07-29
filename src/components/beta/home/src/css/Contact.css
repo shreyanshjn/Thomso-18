@@ -40,12 +40,12 @@ tr
 
     .contactus , .address
     {
-        font-size:30px;
+        font-size:25px;
     }
     .contactMain
     {
       font-weight:lighter;
-    
+      margin-top:7vh
     }
     .top
     {

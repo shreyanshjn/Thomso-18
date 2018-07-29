@@ -74,34 +74,38 @@
     .box
     {
         padding:20px;
-        margin:36px;
+        margin:38px;
         font-size:40px;
-        width: 400px;
-        height: 200px;
+        width: 316px;
+        height: 153px;
         border-radius:10px;
     }
     .first
     {
-        font-size: 90px;
+        font-size: 71px;
         font-family:Montserrat;
     }
     .second
     {
-        font-size:32px;
+        font-size:27px;
         font-family:Montserrat;
 
     }
     .aboveImage
     {
-        width: 403px;
-        top: -6vh;
+        width: 319px;
+        top: -5vh;
         left: 6%;
     }
     .downImage
     {
-        width:403px;
-        bottom:-6vh;
+        width:326px;
+        bottom:-5.5vh;
         left:4%;
+    }
+    .footfall
+    {
+       margin-top:27vh;
     }
 }
 
