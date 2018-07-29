@@ -117,9 +117,6 @@ export default class IdeasIndex extends React.Component {
                     null :
                     <form onSubmit={this.onSubmit}>
                         {isVisible ? errors : null}
-                        <div className="heading">
-                            <span className="dot"></span><h2>Share your ideas</h2>
-                        </div>
                         <div className="ideasubject">
                             <span className="dot ideasub"></span>
                             <input

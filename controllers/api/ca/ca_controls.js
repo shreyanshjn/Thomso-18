@@ -79,18 +79,27 @@ exports.getIdea = function (req, res) {
 /* Update Idea */
 exports.putIdea = function (req, res) {
     if (req.params.id) {
+        if (req.body.title) {
+            req.body.title = req.body.title.trim();
+        }
+        if (req.body.body) {
+            req.body.body = req.body.body.trim();
+        }
         var updateData = {
             title: req.body.title,
             body: req.body.body
         }
-        Ideas.findOneAndUpdate({ fb_id: req.locals.fb_id, _id: req.params.id }, updateData, { new: true })
-            .select('title body comment')
-            .exec(function (err, idea) {
-                if (err) {
-                    return res.status(400).send({ success: false, msg: 'Cannot Update Idea', error: err });
-                }
-                return res.json({ success: true, msg: 'Successfully Updated', body: idea });
-            })
+        if(req.body.title && req.body.body) {
+            Ideas.findOneAndUpdate({ fb_id: req.locals.fb_id, _id: req.params.id }, updateData, { new: true })
+                .select('title body comment')
+                .exec(function (err, idea) {
+                    if (err) {
+                        return res.status(400).send({ success: false, msg: 'Cannot Update Idea', error: err });
+                    }
+                    return res.json({ success: true, msg: 'Successfully Updated', body: idea });
+                })
+        }
+        return res.status(400).send({ success: false, msg: 'Invalid Data' });
     } else {
         return res.status(400).send({ success: false, msg: 'No Post ID Specified' });
     }

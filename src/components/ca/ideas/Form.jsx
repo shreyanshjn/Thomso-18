@@ -28,7 +28,7 @@ export default class Form extends React.Component {
         e.preventDefault();
         const { title, body } = this.state;
         const data = { title, body }
-        if (title && body) {
+        if (title && title.trim() && body && body.trim()) {
             const authtoken = this.Auth.getToken()
             this.setState({ isDisabled: true })
             FetchApi('POST', '/api/ca/idea', data, authtoken)
