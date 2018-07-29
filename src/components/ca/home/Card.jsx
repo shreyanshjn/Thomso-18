@@ -29,7 +29,6 @@ export default class Card extends React.Component {
 
     return (
       <div className="maindiv">
-        <div style={{ width: '356px' }}></div>
         <div className="innerdiv">
           <div className="wrapper">
             <div className="card">

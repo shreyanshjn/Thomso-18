@@ -27,6 +27,7 @@ import logo24 from './Thomso-17 _ A Magical Fantasia_files/205.png';
 import logo25 from './Thomso-17 _ A Magical Fantasia_files/206.jpg';
 import logo26 from './Thomso-17 _ A Magical Fantasia_files/203.png';
 
+
 import logo27 from './Thomso-17 _ A Magical Fantasia_files/204.png';
 import logo28 from './Thomso-17 _ A Magical Fantasia_files/207.jpg';
 import logo29 from './Thomso-17 _ A Magical Fantasia_files/208.png';
@@ -68,7 +69,7 @@ export default class Sponsors extends React.Component{
     render(){
         return (
             <div>
-                
+
                 <div className="sponsors">
                                 <div className="TitleSpons">
                                     <center>

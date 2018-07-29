@@ -1,17 +1,20 @@
-var express = require("express");
-var path = require("path");
-var favicon = require("serve-favicon");
-var logger = require("morgan");
-var bodyParser = require("body-parser");
-var cors = require("cors");
-var mongoose = require("mongoose");
+var express = require('express');
+var path = require('path');
+var favicon = require('serve-favicon');
+var logger = require('morgan');
+var bodyParser = require('body-parser');
+var cors = require('cors')
+var mongoose = require('mongoose');
+var mysql = require('mysql');
 
 var routes = require('./routes/routes')
 
 var app = express();
 
-mongoose.Promise = require("bluebird");
-var dbHost = process.env.DB_HOST || "localhost";
+
+// mongoose setup
+mongoose.Promise = require('bluebird');
+var dbHost = process.env.DB_HOST || 'localhost';
 var dbName = process.env.DB_NAME;
 var dbUser = process.env.DB_USERNAME;
 var dbPass = process.env.DB_PASSWORD;
@@ -33,7 +36,22 @@ mongoose
   .then(() => console.log("connection succesful"))
   .catch(err => console.error(err));
 
-app.use(logger("dev"));
+// mysql setup
+// var con = mysql.createConnection({
+//   host: process.env.MYSQL_DB_HOST,
+//   user: process.env.MYSQL_DB_USERNAME,
+//   password: process.env.MYSQL_DB_PASSWORD,
+//   database: process.env.MYSQL_DB_NAME
+// });
+
+// console.log(con);
+
+// con.connect(function(err) {
+//   if (err) throw err;
+//   console.log("Connection established successfully.");
+// });
+
+app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended':'false'}));
 if (process.env.REACT_APP_SERVER_ENVIORNMENT !== 'dev') {
