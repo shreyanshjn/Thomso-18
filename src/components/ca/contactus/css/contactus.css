@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+.contact-parent{
+    width: 75%;
+    margin-left: auto;
+    font-family: Montserrat;
+}
+.incontact{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.incontact_one{
+    width: 50%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.incontact_two{
+    width: 50%;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.image_one{
+    background-image: url("../lion.jpg");
+    box-shadow: 2px 2px 7px 2px rgba(55,55,55,.5);
+    background-position: center center;
+    height:300px;
+    width: 256px;
+    display: flex;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 2px;
+}
+.details_one{
+    width: 256px;
+    box-shadow: 2px 2px 7px 2px rgba(55,55,55,.2);
+    display: flex;
+    flex-direction: column;
+}
+.name{
+    padding:10px 0 0 20px;
+}
+.name h2{
+    font-size: 16px;
+    font-weight: 600;
+    color: #585858;
+}
+.post{
+    margin-top: 0px;
+    padding-left: 20px;
+}
+.post h2{
+    font-size: 12px;
+    font-weight: 600;
+    color: #585858;
+}

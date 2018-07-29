@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+.side-nav-parent{
+    width: 75%;
+    margin-left: auto;
+    font-family: Montserrat;
+}
+.side-nav-parent form{
+    padding: 20px;
+}
+.heading{
+    display: flex;
+    flex-direction: row;
+}
+.heading h2{
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #58595B;
+    padding: 10px;
+}
+.dot{
+    height: 10px;
+    width: 10px;
+    background-color: rgb(150, 148, 148);
+    border-radius: 50%;
+    margin-top: 15px;
+}
+.ideasub{
+    margin-right: 5px;
+}
+.ideasubject{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+.ideasubject input{
+    padding: 7px;
+    font-size: 14px;
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: #BEBEBE ;
+    font-family: Montserrat;
+    width: 30%;
+}
+.ideasubject input:focus{
+    padding: 12px;
+    transition: all 0.2s ease-in-out;
+}
+.details_idea{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    padding: 0 0 0 50px;
+}
+.details_idea textarea{
+    outline: 0;
+    font-size: 14px;
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: #BEBEBE ;
+    font-family: Montserrat;
+    padding: 7px;
+    width: 70%;
+
+}
+.details_idea textarea:focus{
+    padding: 12px;
+    transition: all 0.2s ease-in-out;
+}
+.submit{
+    display: flex;
+    flex-direction: row;
+    width: 33%;
+    margin-left: auto;
+    padding: 5px 0 0 0;
+}
+.submit button{
+    background: none;
+    color:#58595B;
+    font-family: Montserrat;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+}
+.aideas{
+    padding: 10px 20px;
+}
+.asubject{
+    display: flex;
+    flex-direction: row;
+}
+.asubject h2{
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #58595B;
+    border-bottom:1px solid #BEBEBE;
+    width: 30%;
+    padding: 10px; 
+}
+.adetails{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    padding: 0 0 0 50px;
+}
+.adetails p{
+    margin: 0;
+    font-size: 14px;
+    color: #58595B;
+    border-bottom: 1px solid #BEBEBE;
+    width: 70%;
+    font-weight: 600;
+    padding: 10px;
+}
+.subdel{
+    width:31.7%;
+}
+@media (max-width:800px){
+    .details_idea textarea{
+        height: 40px;
+    } 
+}

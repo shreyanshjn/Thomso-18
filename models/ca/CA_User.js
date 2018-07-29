@@ -53,10 +53,6 @@ var UserSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
-    posts: {
-        type: Array,
-        default: []
-    },
     shares: {
         type: Number,
         default: 0
@@ -69,6 +65,13 @@ var UserSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
+    link: {
+        type: String
+    },
+    ideas: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'CA_Idea'
+    }],
     created: {
         type: Boolean,
         default: false
@@ -91,7 +94,7 @@ UserSchema.pre('save', function (next) {
     Counter.findByIdAndUpdate({_id: 'ca_id'}, {$inc: { seq: 1} }, {upsert: true, new: true}, function(error, cnt)   {
         if(error)
             return next(error);
-        doc.ca_id = "TH-2000" + cnt.seq;
+        doc.ca_id = "TH2000" + cnt.seq;
         next();
     })
 });

@@ -6,6 +6,9 @@ var UserSchema = new mongoose.Schema({
         unique: true,
         required: true
     },
+    user_id: {
+        type: mongoose.Schema.Types.ObjectId,
+    },
     token: {
         type: String,
         unique: true,
