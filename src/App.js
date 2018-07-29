@@ -12,12 +12,18 @@ const CAIndex = Loadable({
   loading: () => <div>Loading CAIndex</div>,
 });
 
+const Sponsors = Loadable({
+  loader: () => import('./components/beta/sponsors/Index'),
+  loading: () => <div>Loading Sponsors</div>,
+});
+
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={HomeIndex} />
+          <Route path="/Sponsors/" component={Sponsors} />
           <Route path="/ca/" component={CAIndex} />
         </Switch>
       </BrowserRouter>
