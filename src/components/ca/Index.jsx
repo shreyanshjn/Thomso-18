@@ -1,7 +1,7 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import Loadable from "react-loadable";
-import Sidebar from "./sideBar/Index";
+import Sidebar from "./sidebar/Index";
 
 import AuthService from "../../handlers/ca/AuthService";
 import FetchApi from '../../utils/FetchAPI';
@@ -102,8 +102,8 @@ export default class CAIndex extends React.Component {
             <Route path="/ca/" render={props => (<Sidebar {...props} userData={this.state.userData} />)} />
             <Route exact path="/ca/logout" render={props => (<LogoutIndex {...props} updateRoutes={this.handleUpdate} />)} />
             <Route exact path="/ca/leaderboard" component={LeaderboardIndex} />
-            <Route exact path="/ca/contactus" component={ContactIndex} />
-            <Route exact path="/ca/idea" component={IdeasIndex} />
+            <Route exact path="/ca/contact" component={ContactIndex} />
+            <Route exact path="/ca/ideas" component={IdeasIndex} />
             <Route exact path="/ca/" component={HomeIndex} />
           </div>
         ) : (
