@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import { BrowserRouter, Route, Link } from 'react-router-dom' 
 import img from "./src/img/logo.png";
 
 import "./src/css/Navbar.css";
@@ -43,26 +43,26 @@ class Navbar extends Component {
             <div className="int-ctos">
               <ul id="tushar">
                 <li>
-                  <a href="">CA PORTAL</a>
+                  <Link to="">CA PORTAL</Link>
                 </li>
                 <li>
-                  <a href="">ZONALS</a>
+                  <Link to="">ZONALS</Link>
                 </li>
                 <li className="dropdown">
-                  <a href="">EVENTS</a>
+                  <Link to="">EVENTS</Link>
                   <div className="dropdown-content">
-                    <a href="#">ONLINE EVENTS</a>
-                    <a href="#">OFFLINE EVENTS</a>
+                    <Link to="#">ONLINE EVENTS</Link>
+                    <Link to="#">OFFLINE EVENTS</Link>
                   </div>
                 </li>
                 <li>
-                  <a href="">TEAM CONTACT</a>
+                  <Link to="">TEAM CONTACT</Link>
                 </li>
                 <li>
-                  <a href="">OUR SPONSERS</a>
+                  <Link to="">OUR SPONSERS</Link>
                 </li>
                 <li>
-                  <a href="">FAQs</a>
+                  <Link to="">FAQs</Link>
                 </li>
               </ul>
             </div>
