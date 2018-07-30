@@ -20,28 +20,15 @@ export default class Card extends React.Component {
       const created_time = this.props.data.created_time;
       const d = new Date(created_time);
       const date = d.getDate();
-      this.setState({date});
+      this.setState({date},{month});
       const month=d.getMonth();
-      this.setState({month});
-      const year=d.getFullYear();
-      this.setState({year});
     }
+
   }
-
-  /*  toggle() {
-    this.setState({
-      shown: !this.state.shown, button:!this.state.button
-    });
-  }*/
   render() {
-    /*  var button=this.state.button?"more":"less";
-      var shown = {
-           display: this.state.shown ? "block" : "none"
-           };
 
-      var hidden = {
-           display: this.state.shown ? "none" : "block", lineHeight: '0.8em'
-           }*/
+
+
 
 
 
@@ -76,30 +63,5 @@ export default class Card extends React.Component {
 
     );
   }
+
 }
-
-
-
-{/*<div style={{height:'auto',width:'100%'}}>
-                      {this.props.data.full_picture ? <img src={this.props.data.full_picture} style={{height:'auto',width:'100%',maxHeight:'400px'}} alt={this.props.data.id} /> : null}
-                  </div>
-                  <div>
-                      <p style={{fontWeight:'bold'}}>posted on {this.props.data.created_time} </p>
-                  </div>
-                    {this.props.data.message ?
-                        <div>
-                          <div id="blockwithtext" style={shown}><p>{this.props.data.message}</p></div>
-                          <div style={hidden}><p>{this.props.data.message}</p></div>
-                          <p style={{margin:'0px'}} onClick={this.toggle.bind(this)}>{button}</p>
-                        </div>
-                        :null
-                    }
-                  <div className="viewpost">
-                    <div style={{width:'50%'}}>{this.props.data.link ? <a href={this.props.data.link} style={{textDecoration:'none'}} target="_blank" >
-                      <p> View Post </p> </a> : null}
-                    </div>
-                    <div className="logo" onClick={() => this.props.sharePost(this.props.data.id)}>
-                      <img src={logoshare} />
-                      <p>Share</p></div>
-                  </div>
-                    */}

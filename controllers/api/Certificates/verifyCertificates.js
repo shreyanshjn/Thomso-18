@@ -40,7 +40,7 @@ exports.certi_verify = function(req, res){
             res.json({
                 status: 400,
                 error: true,
-                err: err 
+                err: err
             })
         }
         else{
@@ -71,7 +71,7 @@ exports.get_cerificates_ca = function(req, res){
             res.json({
                 status: 400,
                 error: true,
-                err: err 
+                err: err
             })
         }
         else{

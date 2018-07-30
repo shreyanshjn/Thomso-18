@@ -30,6 +30,7 @@ class App extends Component {
           <Route exact path="/" component={HomeIndex} />
           <Route path="/Sponsors/" component={Sponsors} />
           <Route path="/ca/" component={CAIndex} />
+          
         </Switch>
       </BrowserRouter>
     );

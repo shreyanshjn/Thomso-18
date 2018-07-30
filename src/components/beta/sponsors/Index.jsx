@@ -1,75 +1,83 @@
 import React from 'react';
 import './sponsors.css';
-import logo1 from './Thomso-17 _ A Magical Fantasia_files/101.png';
-import logo2 from './Thomso-17 _ A Magical Fantasia_files/11.png';
-import logo3 from './Thomso-17 _ A Magical Fantasia_files/6.png';
-import logo4 from './Thomso-17 _ A Magical Fantasia_files/20.png';
-import logo5 from './Thomso-17 _ A Magical Fantasia_files/12.png';
-import logo6 from './Thomso-17 _ A Magical Fantasia_files/13.png';
-import logo7 from './Thomso-17 _ A Magical Fantasia_files/15.png';
-import logo8 from './Thomso-17 _ A Magical Fantasia_files/1.png';
-import logo9 from './Thomso-17 _ A Magical Fantasia_files/19.png';
-import logo10 from './Thomso-17 _ A Magical Fantasia_files/5.png';
-import logo11 from './Thomso-17 _ A Magical Fantasia_files/21.png';
-import logo12 from './Thomso-17 _ A Magical Fantasia_files/18.png';
-import logo13 from './Thomso-17 _ A Magical Fantasia_files/7.png';
-import logo14 from './Thomso-17 _ A Magical Fantasia_files/8.png';
-import logo15 from './Thomso-17 _ A Magical Fantasia_files/23.png';
-import logo16 from './Thomso-17 _ A Magical Fantasia_files/3.png';
-import logo17 from './Thomso-17 _ A Magical Fantasia_files/16.png';
-import logo18 from './Thomso-17 _ A Magical Fantasia_files/226.png';
-import logo19 from './Thomso-17 _ A Magical Fantasia_files/227.png';
-import logo20 from './Thomso-17 _ A Magical Fantasia_files/228.png';
-import logo21 from './Thomso-17 _ A Magical Fantasia_files/229.png';
-import logo22 from './Thomso-17 _ A Magical Fantasia_files/201.png';
-import logo23 from './Thomso-17 _ A Magical Fantasia_files/202.png';
-import logo24 from './Thomso-17 _ A Magical Fantasia_files/205.png';
-import logo25 from './Thomso-17 _ A Magical Fantasia_files/206.jpg';
-import logo26 from './Thomso-17 _ A Magical Fantasia_files/203.png';
-
-
-import logo27 from './Thomso-17 _ A Magical Fantasia_files/204.png';
-import logo28 from './Thomso-17 _ A Magical Fantasia_files/207.jpg';
-import logo29 from './Thomso-17 _ A Magical Fantasia_files/208.png';
-import logo30 from './Thomso-17 _ A Magical Fantasia_files/209.jpg';
-import logo31 from './Thomso-17 _ A Magical Fantasia_files/210.png';
-import logo32 from './Thomso-17 _ A Magical Fantasia_files/211.png';
-import logo33 from './Thomso-17 _ A Magical Fantasia_files/212.png';
-import logo34 from './Thomso-17 _ A Magical Fantasia_files/213.png';
-import logo35 from './Thomso-17 _ A Magical Fantasia_files/214.png';
-import logo36 from './Thomso-17 _ A Magical Fantasia_files/215.png';
-import logo37 from './Thomso-17 _ A Magical Fantasia_files/216.png';
-import logo38 from './Thomso-17 _ A Magical Fantasia_files/217.png';
-import logo39 from './Thomso-17 _ A Magical Fantasia_files/218.png';
-import logo40 from './Thomso-17 _ A Magical Fantasia_files/219.png';
-import logo41 from './Thomso-17 _ A Magical Fantasia_files/220.png';
-import logo42 from './Thomso-17 _ A Magical Fantasia_files/221.png';
-import logo43 from './Thomso-17 _ A Magical Fantasia_files/222.jpg';
-import logo44 from './Thomso-17 _ A Magical Fantasia_files/121.png';
-import logo45 from './Thomso-17 _ A Magical Fantasia_files/122.png';
-import logo46 from './Thomso-17 _ A Magical Fantasia_files/123.png';
-import logo47 from './Thomso-17 _ A Magical Fantasia_files/124.png';
-import logo48 from './Thomso-17 _ A Magical Fantasia_files/125.png';
-import logo49 from './Thomso-17 _ A Magical Fantasia_files/126.png';
-import logo50 from './Thomso-17 _ A Magical Fantasia_files/127.png';
-import logo51 from './Thomso-17 _ A Magical Fantasia_files/128.png';
-import logo52 from './Thomso-17 _ A Magical Fantasia_files/129.png';
-import logo53 from './Thomso-17 _ A Magical Fantasia_files/130.png';
-import logo54 from './Thomso-17 _ A Magical Fantasia_files/223.png';
-import logo55 from './Thomso-17 _ A Magical Fantasia_files/224.png';
-import logo56 from './Thomso-17 _ A Magical Fantasia_files/111.png';
-import logo57 from './Thomso-17 _ A Magical Fantasia_files/112.png';
-import logo58 from './Thomso-17 _ A Magical Fantasia_files/113.png';
-import logo59 from './Thomso-17 _ A Magical Fantasia_files/114.png';
-import logo60 from './Thomso-17 _ A Magical Fantasia_files/115.png';
-import logo61 from './Thomso-17 _ A Magical Fantasia_files/116.png';
-import logo62 from './Thomso-17 _ A Magical Fantasia_files/225.png';
+import Navbar from  '../home/Navbar';
+import logo2 from './img/11.png';
+import logo1 from './img/101.png';
+import logo3 from './img/6.png';
+import logo4 from './img/20.png';
+import logo5 from './img/12.png';
+import logo6 from './img/13.png';
+import logo7 from './img/15.png';
+import logo8 from './img/1.png';
+import logo9 from './img/19.png';
+import logo10 from './img/5.png';
+import logo11 from './img/21.png';
+import logo12 from './img/18.png';
+import logo13 from './img/7.png';
+import logo14 from './img/8.png';
+import logo15 from './img/23.png';
+import logo16 from './img/3.png';
+import logo17 from './img/16.png';
+import logo18 from './img/226.png';
+import logo19 from './img/227.png';
+import logo20 from './img/228.png';
+import logo21 from './img/229.png';
+import logo22 from './img/201.png';
+import logo23 from './img/202.png';
+import logo24 from './img/205.png';
+import logo25 from './img/206.jpg';
+import logo26 from './img/203.png';
+import logo27 from './img/204.png';
+import logo28 from './img/207.jpg';
+import logo29 from './img/208.png';
+import logo30 from './img/209.jpg';
+import logo31 from './img/210.png';
+import logo32 from './img/211.png';
+import logo33 from './img/212.png';
+import logo34 from './img/213.png';
+import logo35 from './img/214.png';
+import logo36 from './img/215.png';
+import logo37 from './img/216.png';
+import logo38 from './img/217.png';
+import logo39 from './img/218.png';
+import logo40 from './img/219.png';
+import logo41 from './img/220.png';
+import logo42 from './img/221.png';
+import logo43 from './img/222.jpg';
+import logo44 from './img/121.png';
+import logo45 from './img/122.png';
+import logo46 from './img/123.png';
+import logo47 from './img/124.png';
+import logo48 from './img/125.png';
+import logo49 from './img/126.png';
+import logo50 from './img/127.png';
+import logo51 from './img/128.png';
+import logo52 from './img/129.png';
+import logo53 from './img/130.png';
+import logo54 from './img/223.png';
+import logo55 from './img/224.png';
+import logo56 from './img/111.png';
+import logo57 from './img/112.png';
+import logo58 from './img/113.png';
+import logo59 from './img/114.png';
+import logo60 from './img/115.png';
+import logo61 from './img/116.png';
+import logo62 from './img/225.png';
 
 export default class Sponsors extends React.Component{
     render(){
         return (
-            <div>
-
+          <div>
+            <div className="navdiv">
+            <Navbar/>
+            </div>
+            <div className="main">
+              <div className="maininnerdiv">
+                <div className="sponsdiv">
+                            <div className="contact-us-img">
+                                <p className="contact-us">Sponsors</p>
+                            </div>
+                        </div>
                 <div className="sponsors">
                                 <div className="TitleSpons">
                                     <center>
@@ -240,8 +248,9 @@ export default class Sponsors extends React.Component{
                                         </div>
                                 </div>
 
-                                        <div className="imgdiv2">
-                                            <center>
+                                        <div className="imgdiv4">
+
+                                              <center>
                                                 <a href="https://zebronics.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo21} alt=""/></a>
                                             </center>
                                             <center>
@@ -384,7 +393,7 @@ export default class Sponsors extends React.Component{
                                     </center>
                                 </div>
                             </div>
-                            <div class="innerdiv">
+                            <div class="innerdiv" style={{marginTop:'2%'}}>
                                 <div className="imgdiv">
                                     <center>
                                         <a href="http://theyouthchronicles.in/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo41} alt=""/></a>
@@ -501,7 +510,7 @@ export default class Sponsors extends React.Component{
                                     </center>
                                 </div>
                             </div>
-                            <div class="innerdiv">
+                            <div class="innerdiv" style={{marginTop:'2%'}}>
                                 <div className="imgdiv">
                                     <center>
                                         <a href="http://www.jaipurlove.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo60} alt=""/></a>
@@ -523,6 +532,8 @@ export default class Sponsors extends React.Component{
 
                             </div>
             </div>
+          </div>
+          </div>
         )
     }
 }
