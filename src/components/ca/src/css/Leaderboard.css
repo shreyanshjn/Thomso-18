@@ -1,12 +1,20 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
+.indexMain
+{
+    background-image: url("../../../beta/home/src/img/dashboard\ bg-01.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height:100vh;
+}
 .maintable
 {
-	background-image: url("../../../beta/home/src/img/dashboard\ bg-01.jpg");
     width:72%;
     float:right;
 }
 th,td {
-    padding: 15px;
+    padding: 20px;
     text-align: left;
 }
 th
@@ -15,11 +23,13 @@ th
 }
 table {
     border-collapse: collapse;
+    border-spacing:0px;
     width: 100%;
     font-weight: bold;
     font-family: Montserrat;
     font-size: 12px;
     color:white;
+ table-layout: fixed;
 }
 .arrow
 {
@@ -28,7 +38,7 @@ table {
 @media only screen and (min-width: 768px){
     .desktop
     {
-         display:none; 
+        display:none; 
     }   
 }
 @media only screen and (max-width: 768px) {
@@ -74,6 +84,6 @@ table {
     }  
     .mobile
     {
-      display:none;
+        display:none;
     }
 }

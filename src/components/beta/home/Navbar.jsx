@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, Link } from 'react-router-dom' 
+import { Link } from 'react-router-dom' 
 import img from "./src/img/logo.png";
 
 import "./src/css/Navbar.css";

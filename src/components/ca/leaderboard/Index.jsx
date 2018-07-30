@@ -31,7 +31,9 @@ export default class LeaderboardIndex extends React.Component {
         // const { users } = this.state;
         return (
             <div className="indexMain">
-                <h2>Leaderboard</h2>
+                <br/>
+                <br/>
+                <br/>
             {/* {users ? users.map( (post, index) => {
                     if(post.link) {
                         return <Card key={'CA-Home-Posts'+index} data={post} sharePost={this.sharePost} />

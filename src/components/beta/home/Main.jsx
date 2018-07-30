@@ -14,12 +14,12 @@ export default class Main extends Component{
   render(){
     let options = {
       sectionClassName:     'section',
-      anchors:              ['sectionOne', 'sectionTwo', 'sectionThree','sectionFour','sectionFive'],
+      anchors:              ['home', 'aboutUs', 'footfall','celebrity','contactUs'],
       scrollBar:            false,
       navigation:           false,
       verticalAlign:        false,
       sectionPaddingTop:    '0px',
-      sectionPaddingBottom: '50px',
+    //   sectionPaddingBottom: '50px',
       slidesNavPosition: 'bottom',
       arrowNavigation:      true
     };
@@ -32,7 +32,7 @@ export default class Main extends Component{
                     <div className="imagelogo" align="center">
                   <img src={logo} alt="logo" className="mainlogo" height="200px"/>
                  <div className="arrowmove">
-                  <a href="#sectionTwo" address="true">
+                  <a href="#aboutUs" address="true">
                       <img src={arrow} className="downarrow bounce" alt=
                       "a"/>
                   </a>

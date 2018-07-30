@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 .celebrityMain 
 {
-    margin-top:0vh;
+    margin-top:24vh;
     vertical-align:center;
     display:flex;
     color:white;
@@ -10,22 +10,35 @@
     font-family:Montserrat;
     font-size:15px;
 }
-.celebrityMain > div
+.hoverEffect
 {
     margin:15px; 
     height:38vh;
-    width:16vw;
-    background:rgba(255,255,255,0.3);
+    width:15vw;
     position:relative;
     font-family:Montserrat;
+    background:black;
+    border-radius:10px;
 }
 .celebrityMain > div >p
 { 
     position:absolute;
-    bottom:-10vh;
+    bottom:-8vh;
     font-family:Montserrat;
-    font-size:15px;
+    font-size:14px;
     text-align:center;
+}
+.farhan
+{
+    left:11%; 
+}
+.nucleya
+{
+    left:20%; 
+}
+.sunidhi
+{
+    left:6%; 
 }
 .nucleya
 {
@@ -36,22 +49,44 @@
     position: absolute;
     left: 0%;
     top: 0%;
-    width: 100%;
-    max-width: 20vw;
-    height: auto;
+    width: 15vw;
+    height:38vh;
     border-radius:10px;
+    transition:1s;
+}
+.hoverEffect:hover  .celebImage
+{
+    opacity:0.6;
+    filter:blur(1px);
+}
+.hoverEffect:hover  .middle
+{
+    opacity:1; 
+}
+.hoverEffect:hover
+{
+    background:rgba(0,0,0,0.8);
+}
+.middle
+{
+    opacity:0;
+    position:absolute;
+    top:49%;
+    left:30%;
+    transition:1s;
+    text-align: center;
 }
 @media only screen and (max-width: 768px) {
     .celebrityMain 
     {
-        flex-direction:row;
+        flex-direction:column;
         margin-top:10vh;
     }
     .celebrityMain > div
     {
-        margin:15px; 
-        height:9vh;
-        width:9vw;
+        margin:18px; 
+        height:18vh;
+        width:30vw;
         position:relative;
     }
     .celebrityMain > div >p
@@ -77,14 +112,18 @@
     .box
     {
         width:25vw;
-    
+    }
+    .celebImage
+    {
+        height:18vh;
+        width:30vw;
     }
 }
 @media (min-width: 1920px) and (max-width: 2560px)
 {
     .celebrityMain
     {
-        margin-top:10vh;
+        margin-top:26vh;
     } 
     .celebrityMain > div >p
     { 
@@ -95,14 +134,21 @@
     }
     .sunidhi
     {
-        left:6%;
+        left:0%;
         text-align:left;
         width:100%;
     }
     .farhan
     {
-        left:13%; 
-
+        left:8%; 
+    }
+    .nucleya
+    {
+        left:27%;
+    }
+    .hoverEffect
+    {
+        margin:50px;
     }
 }
 
