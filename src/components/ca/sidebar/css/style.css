@@ -1,25 +1,28 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
+.sidenav {
+    height: 100%;
+    width: 24.13vw;
+    max-width: 329.61px;
+    position: fixed;
+    z-index: 301;
+    top: 0;
+    left: 0;
+    background-color: #FFFFFF;
+    border-right: 1px solid rgba(174, 174, 174, 0.5);
+    box-shadow: 8px 0 3px -6px rgba(174, 174, 174, 0.5);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding:20px 2vw 0 2vw;
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+    font-family: Montserrat;
+    color: #58595B;
+    overflow: hidden;
+}
 @media screen and (min-width:1400px){
-    .sidenav {
-        height: 100%;
-        width: 24.13%;
-        position: fixed;
-        z-index: 301;
-        top: 0;
-        left: 0;
-        background-color: #FFFFFF;
-        border-right: 1px solid rgba(174, 174, 174, 0.5);
-        box-shadow: 8px 0 3px -6px rgba(174, 174, 174, 0.5);
-        overflow-x: hidden;
-        transition: 0.5s;
-        padding:20px 2% 0 2%;
-        display: flex;
-        flex-direction: column;
-        min-width: 200px;
-        font-family: Montserrat;
-        color: #58595B;
-    }
+
     .sidenav.collapseSide{
         width: 100px;
         min-width: 100px;
@@ -45,7 +48,7 @@
         border-right: 3px solid #ffffff;
         cursor: pointer;
     }
-    .sidenav > .activeSideItem, .sidenav .sideNavItem:hover , .sidenav .sideNavItem:active, .sidenav .sideNavItem:focus{
+    .sidenav > .thomso > .activeSideItem, .sidenav .sideNavItem:hover , .sidenav .sideNavItem:active, .sidenav .sideNavItem:focus{
         background-color:#F1F2F1;
         text-decoration: none;
         text-transform: none;
@@ -82,7 +85,7 @@
         padding: 15px 0px;
     }
     .hand{
-        margin-top: 80px;
+        margin-top: 50px;
         cursor: pointer;
         display: flex;
         flex-direction: row;
@@ -92,6 +95,7 @@
     .hand div{
         display: flex;
         flex-direction: row;
+        text-align: center;
     }
 
     .hand:hover .p-logo svg .handpath{
@@ -168,7 +172,9 @@
     .re{
         margin-top: 20px;
     }
-
+    .re .p-name{
+        letter-spacing: 2px;
+    }
     .sidebar-user > .likeshare{
         display: flex;
         flex-direction: column;
@@ -235,25 +241,7 @@
 
 
 @media screen and (max-width: 1400px){
-    .sidenav {
-        height: 100%;
-        width: 24.13%;
-        position: fixed;
-        z-index: 301;
-        top: 0;
-        left: 0;
-        background-color: #FFFFFF;
-        border-right: 1px solid rgba(174, 174, 174, 0.5);
-        box-shadow: 8px 0 3px -6px rgba(174, 174, 174, 0.5);
-        overflow-x: hidden;
-        transition: 0.5s;
-        padding:20px 2% 0 2%;
-        display: flex;
-        flex-direction: column;
-        min-width: 200px;
-        font-family: Montserrat;
-        color: #58595B;
-    }
+
     .sidenav.collapseSide{
         width: 100px;
         min-width: 100px;
@@ -279,10 +267,31 @@
         border-right: 3px solid #ffffff;
         cursor: pointer;
     }
-    .sidenav > .activeSideItem, .sidenav .sideNavItem:hover , .sidenav .sideNavItem:active, .sidenav .sideNavItem:focus{
+    .sidenav > .thomso > .activeSideItem, .sidenav .sideNavItem:hover , .sidenav .sideNavItem:active, .sidenav .sideNavItem:focus{
         background-color:#F1F2F1;
         text-decoration: none;
         text-transform: none;
+    }
+    .sidenav > .thomso > .activeSideItem > .posts > .p-logo svg .postpath{
+        fill: red;
+    }
+    .sidenav > .thomso > .activeSideItem > .leaderboard > .p-logo svg .leaderpath{
+        fill: green;
+    }
+    .sidenav > .thomso > .activeSideItem > .ideas > .p-logo svg .bulbpath{
+        fill: yellow;
+    }
+    .sidenav > .thomso > .activeSideItem > .certificate > .p-logo svg .certificatepath{
+        fill:orange;
+    }
+    .sidenav > .thomso > .activeSideItem > .guide > .p-logo svg .guidepath{
+        fill: purple;
+    }
+    .sidenav > .thomso > .activeSideItem > .contactus > .p-logo svg .contactpath{
+        fill: blue;
+    }
+    .sidenav > .thomso > .activeSideItem > .logout > .p-logo svg .logoutpath{
+        fill: red;
     }
     .p-logo svg{
         padding: 0 0 0 5px;
