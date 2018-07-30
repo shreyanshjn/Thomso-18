@@ -68,16 +68,13 @@ export default class Sponsors extends React.Component{
     render(){
         return (
           <div>
-            <div className="navdiv">
-            <Navbar/>
-            </div>
+
             <div className="main">
+              <div className="navdiv">
+              <Navbar/>
+              </div>
               <div className="maininnerdiv">
-                <div className="sponsdiv">
-                            <div className="contact-us-img">
-                                <p className="contact-us">Sponsors</p>
-                            </div>
-                        </div>
+                
                 <div className="sponsors">
                                 <div className="TitleSpons">
                                     <center>
