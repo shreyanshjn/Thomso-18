@@ -13,6 +13,7 @@ class Navbar extends Component {
       isHidden: true,
       hamburger: true
     };
+    this.setActive=this.setActive.bind(this);
   }
   toggleHidden() {
     this.setState({
@@ -20,7 +21,12 @@ class Navbar extends Component {
       hamburger: !this.state.hamburger
     });
   }
-
+  setActive(state)
+    {
+       this.setState({
+       activeState:state
+       });
+    }
   render() {
     return (
       <div className="contain">
@@ -43,26 +49,54 @@ class Navbar extends Component {
             <div className="int-ctos">
               <ul id="tushar">
                 <li>
-                  <Link to="">CA PORTAL</Link>
+                    <Link to="" className={(this.state.activeState === "linkCaportal") ? "linkCaportal" : null}
+                    onClick={() => {
+                                    this.setActive("linkCaportal");
+                    }}>
+                    CA PORTAL
+                    </Link>
                 </li>
                 <li>
-                  <Link to="">ZONALS</Link>
+                  <Link to="" className={(this.state.activeState === "linkZonals") ? "linkZonals" : null}
+                    onClick={() => {
+                                    this.setActive("linkZonals");
+                    }}>
+                    ZONALS
+                </Link>
                 </li>
                 <li className="dropdown">
-                  <Link to="">EVENTS</Link>
+                    <Link to="" className={(this.state.activeState === "linkEvents") ? "linkEvents" : null}
+                    onClick={() => {
+                                    this.setActive("linkEvents");
+                    }}>EVENTS</Link>
                   <div className="dropdown-content">
-                    <Link to="#">ONLINE EVENTS</Link>
-                    <Link to="#">OFFLINE EVENTS</Link>
+                    <Link to="" className={(this.state.activeState === "linkEventson") ? "linkEventson" : null}
+                    onClick={() => {
+                                    this.setActive("linkEventson");
+                    }}>ONLINE EVENTS</Link>
+                    <Link to="" className={(this.state.activeState === "linkEventsoff") ? "linkEventsoff" : null}
+                    onClick={() => {
+                                    this.setActive("linkEventsoff");
+                    }}>OFFLINE EVENTS</Link>
                   </div>
                 </li>
                 <li>
-                  <Link to="">TEAM CONTACT</Link>
+                  <Link to="" className={(this.state.activeState === "linkTeam") ? "linkTeam" : null}
+                    onClick={() => {
+                                    this.setActive("linkTeam");
+                    }}>TEAM CONTACT</Link>
                 </li>
                 <li>
-                  <Link to="">OUR SPONSERS</Link>
+                  <Link to="" className={(this.state.activeState === "linkSponsors") ? "linkSponsors" : null}
+                    onClick={() => {
+                                    this.setActive("linkSponsors");
+                    }}>OUR SPONSERS</Link>
                 </li>
                 <li>
-                  <Link to="">FAQs</Link>
+                  <Link to="" className={(this.state.activeState === "linkFaq") ? "linkFaq" : null}
+                    onClick={() => {
+                                    this.setActive("linkFaq");
+                    }}>FAQs</Link>
                 </li>
               </ul>
             </div>

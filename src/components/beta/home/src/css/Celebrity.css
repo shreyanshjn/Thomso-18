@@ -17,7 +17,6 @@
     width:15vw;
     position:relative;
     font-family:Montserrat;
-    background:black;
     border-radius:10px;
 }
 .celebrityMain > div >p
@@ -52,20 +51,15 @@
     width: 15vw;
     height:38vh;
     border-radius:10px;
-    transition:1s;
+    transition:0.2s;
 }
 .hoverEffect:hover  .celebImage
 {
-    opacity:0.6;
     filter:blur(1px);
 }
 .hoverEffect:hover  .middle
 {
     opacity:1; 
-}
-.hoverEffect:hover
-{
-    background:rgba(0,0,0,0.8);
 }
 .middle
 {
@@ -73,7 +67,7 @@
     position:absolute;
     top:49%;
     left:30%;
-    transition:1s;
+    transition:0.2s;
     text-align: center;
 }
 @media only screen and (max-width: 768px) {
