@@ -105,7 +105,7 @@ export default class CAIndex extends React.Component {
             }
             <Route exact path="/ca/logout" render={props => (<LogoutIndex {...props} updateRoutes={this.handleUpdate} />)} />
             <Route exact path="/ca/leaderboard" component={LeaderboardIndex} />
-            <Route exact path="/ca/contact" component={ContactIndex} />
+            <Route exact path="/ca/contact" render={props => (<ContactIndex {...props} userData={this.state.userData} />)} />
             <Route exact path="/ca/ideas" component={IdeasIndex} />
             <Route exact path="/ca/" component={HomeIndex} />
           </div>
