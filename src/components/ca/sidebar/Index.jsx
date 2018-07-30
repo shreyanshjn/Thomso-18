@@ -23,9 +23,9 @@ export default class Sidebar extends React.Component {
     this.state = {
       days: 69,
       referral: 'AVSHFSAD',
-      activeState: window.location.pathname.substring(1)
+      activeState: window.location.pathname.substring(4)
     };
-    if (window.location.pathname.substring(1) === "") {
+    if (!window.location.pathname.substring(4)) {
       this.state = {
         activeState: "home"
       };
@@ -36,6 +36,11 @@ export default class Sidebar extends React.Component {
     this.setState({ activeState: state });
   }
 
+  componentDidMount() {
+    console.log(window.location.pathname, "jjj")
+    console.log(this.state.activeState, "active")
+  }
+
   copytoclipboard = () => {
     let Field = this.state.referral;
     Field.execCommand('copy');
@@ -44,14 +49,9 @@ export default class Sidebar extends React.Component {
   render() {
     return (
       <div>
-        {console.log(this.props.userData, 'userdata')}
         <div
           id="mySidenav"
-          className={
-            this.state.activeState === "map"
-              ? "sidenav collapseSide"
-              : "sidenav"
-          }
+          className="sidenav"
         >
           <div className="sidebar-user">
             <img src={this.props.userData ? this.props.userData.image : boy} className="image" />
@@ -105,15 +105,16 @@ export default class Sidebar extends React.Component {
           <div className="line">
           </div>
           <div className="thomso">
+            {console.log(this.state.activeState, 'state')}
             <Link
               to="/ca/"
               className={
-                this.state.activeState === "posts"
+                (this.state.activeState === "home")
                   ? "sideNavItem activeSideItem"
                   : "sideNavItem"
               }
               onClick={() => {
-                this.setActive("posts");
+                this.setActive("home");
               }}
             >
               <div className="posts flex_row">
@@ -129,7 +130,7 @@ export default class Sidebar extends React.Component {
               to="/ca/leaderboard"
               className={
                 this.state.activeState === "leaderboard"
-                  ? "sideNavItem activeSideItem"
+                  ? "sideNavItem activeSideItem "
                   : "sideNavItem"
               }
               onClick={() => {
@@ -148,7 +149,7 @@ export default class Sidebar extends React.Component {
             <Link
               to="/ca/guidelines"
               className={
-                this.state.activeState === "home"
+                this.state.activeState === "guidelines"
                   ? "sideNavItem activeSideItem"
                   : "sideNavItem"
               }
@@ -168,12 +169,12 @@ export default class Sidebar extends React.Component {
             <Link
               to="/ca/ideas"
               className={
-                this.state.activeState === "home"
+                this.state.activeState === "ideas"
                   ? "sideNavItem activeSideItem"
                   : "sideNavItem"
               }
               onClick={() => {
-                this.setActive("home");
+                this.setActive("ideas");
               }}
             >
               <div className="ideas flex_row">
@@ -186,14 +187,14 @@ export default class Sidebar extends React.Component {
               </div>
             </Link>
             <Link
-              to="/"
+              to="/ca/certificate"
               className={
-                this.state.activeState === "home"
+                this.state.activeState === "certificate"
                   ? "sideNavItem activeSideItem"
                   : "sideNavItem"
               }
               onClick={() => {
-                this.setActive("home");
+                this.setActive("certificate");
               }}
             >
               <div className="certificate flex_row">
@@ -208,12 +209,12 @@ export default class Sidebar extends React.Component {
             <Link
               to="/ca/contact"
               className={
-                this.state.activeState === "home"
+                this.state.activeState === "contact"
                   ? "sideNavItem activeSideItem"
                   : "sideNavItem"
               }
               onClick={() => {
-                this.setActive("home");
+                this.setActive("contact");
               }}
             >
               <div className="contactus flex_row">
@@ -228,12 +229,12 @@ export default class Sidebar extends React.Component {
             <Link
               to="/ca/logout"
               className={
-                this.state.activeState === "home"
+                this.state.activeState === "logout"
                   ? "sideNavItem activeSideItem"
                   : "sideNavItem"
               }
               onClick={() => {
-                this.setActive("home");
+                this.setActive("logout");
               }}
             >
               <div className="logout flex_row">
@@ -246,21 +247,14 @@ export default class Sidebar extends React.Component {
               </div>
             </Link>
             <div
-              className={
-                this.state.activeState === "home"
-                  ? "sideNavItem activeSideItem re"
-                  : "sideNavItem re"
-              }
-              onClick={() => {
-                this.setActive("home");
-              }}
+              className="sideNavItem re"
             >
               <div onClick={() => { window.location.href = this.props.userData.link }} className="referral flex_row" title="Click to copy">
                 <div className="p-logo">
                   <Referral />
                 </div>
                 <div className="p-name">
-                  VIEW YOUR FACEBOOK PROFILE
+                  REFERRAL CODE : {this.state.referral}
                 </div>
               </div>
             </div>

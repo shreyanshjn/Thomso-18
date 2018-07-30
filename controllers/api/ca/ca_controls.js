@@ -10,11 +10,11 @@ exports.getPosts = function (req, res) {
     })
         .select('access_token')
         .exec(function (err, user) {
-            if (err) return next(err);
+            if (err) return res.status(400).send({ success: false, msg: 'Database Returned error' });;
             var fb_auth_token = user.access_token;
             //171774543014513
             request(`https://graph.facebook.com/v3.1/me?fields=posts.limit(100){created_time,id,full_picture,message,link}&access_token=${fb_auth_token}`, function (err, response, body) {
-                if (err) return next(err);
+                if (err) return res.status(400).send({ success: false, msg: 'Facebook returend error.', error: err });;
                 if (response.statusCode) {
                     return res.status(response.statusCode).send(body);
                 }
@@ -89,7 +89,7 @@ exports.putIdea = function (req, res) {
             title: req.body.title,
             body: req.body.body
         }
-        if(req.body.title && req.body.body) {
+        if (req.body.title && req.body.body) {
             Ideas.findOneAndUpdate({ fb_id: req.locals.fb_id, _id: req.params.id }, updateData, { new: true })
                 .select('title body comment')
                 .exec(function (err, idea) {
