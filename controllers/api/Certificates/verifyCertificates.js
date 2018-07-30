@@ -1,5 +1,157 @@
-var con = require('../../database/MysqlConnection');
-exports.certi_verify = function(req, res){
+// var con = require('../../database/MysqlConnection');
+// var con = require('../../database/MysqlConnection');
+var registration_user = require('../../../models/Certificate/registration_user');
+var winner_list = require('../../../models/Certificate/winner_list');
+var ca_certi = require('../../../models/Certificate/ca_certi');
+var ca_form = require('../../../models/Certificate/ca_form');
+
+exports.certi_verify = (res, req) => {
+    // console.log(req.req.body.table,'jfdhj');
+    
+    // var reqParse = JSON.parse(req);
+    // console.log(reqParse.body);
+    if(req.req.body && req.req.body.table === 'registration_user'){
+        // console.log('registeration user');
+        // console.log(typeof req.req.body.id);
+        registration_user.findOne({
+            id: req.req.body.id
+        })
+        .select('id name contact college')
+        .exec(function(err, user) {
+            if (err) {
+                // console.log(err, 'err');
+                return res.json({
+                    status: 400,
+                    error: true,
+                    err: err 
+                });
+            }
+            else if (!user) {
+                // console.log(res.res.status);
+                return res.res.json({
+                    status:200,
+                    success:false
+                });
+            } else {
+                if (user) {
+                    // console.log(user,'user');
+                    res.res.json({
+                        status: 200,
+                        success: true,
+                        data: user
+                    })
+                }
+            }
+        });
+        // console.log(req.req.body.id, 'jhash');
+    }
+
+    else if(req.req.body && req.req.body.table === 'winner_list'){
+        // console.log('registeration user');
+        // console.log(typeof req.req.body.id);
+        let params = req.req.body.id.split('_');
+        winner_list.findOne({
+            id: params[0],
+            coordi_id: params[2]
+        })
+        .select('thomso_id name contact position event_name')
+        .exec(function(err, user) {
+            if (err) {
+                // console.log(err, 'err');
+                return res.json({
+                    status: 400,
+                    error: true,
+                    err: err 
+                });
+            }
+            else if (!user) {
+                // console.log(res.res.status);
+                return res.res.json({
+                    status:200,
+                    success:false
+                });
+            } else {
+                if (user) {
+                    // console.log(user,'user');
+                    res.res.json({
+                        status: 200,
+                        success: true,
+                        data: user
+                    })
+                }
+            }
+        });
+        // console.log(req.req.body.id, 'jhash');
+    }
+
+    else if(req.req.body && req.req.body.table === 'ca'){
+        // console.log('registeration user');
+        // console.log(typeof req.req.body.id);
+        ca_form.findOne({
+            id: req.req.body.id
+        })
+        .select('id name contact college email fb_id')
+        .exec(function(err, user) {
+            if (err) {
+                console.log(err, 'err');
+                return res.json({
+                    status: 400,
+                    error: true,
+                    err: err 
+                });
+            }
+            else if (!user) {
+                // console.log(res.res.status);
+                return res.res.json({
+                    status:200,
+                    success:false
+                });
+            } else {
+                if (user) {
+
+                    // console.log(user,'user');
+                    ca_certi.findOne({
+                        mobile: user.contact
+                    })
+                    .select('mobile')
+                    .exec(function(err, user2) {
+                        if (err) {
+                            // console.log(err, 'err');
+                            return res.json({
+                                status: 400,
+                                error: true,
+                                err: err 
+                            });
+                        }
+                        else if (!user2) {
+                            // console.log(res.res.status);
+                            return res.res.json({
+                                status:200,
+                                success:false
+                            });
+                        } else {
+                            if (user2) {
+                                
+                                // console.log(user2,'user2');
+                                res.res.json({
+                                    status: 200,
+                                    success: true,
+                                    data: user
+                                })
+                            }
+                        }
+                    });
+                }
+            }
+        });
+        // console.log(req.req.body.id, 'jhash');
+    }
+
+    
+    
+}
+
+exports.certi_verify1 = function(req, res){
 
     // console.log('hello');
     let data;
