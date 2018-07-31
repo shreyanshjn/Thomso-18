@@ -18,6 +18,8 @@ router.post('/auth/login', adminAuth.login);
 router.use('/', CAAdminTokenMiddleware.verify);
 
 router.get('/participants', adminControls.getParticipant);
+router.get('/exportToCSV', adminControls.exportToCSV);
+
 router.get('/ideas', adminControls.getIdeas);
 router.put('/idea/:id', adminControls.putIdea);
 

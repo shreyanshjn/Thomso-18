@@ -1,5 +1,13 @@
 var Users = require('../../../../models/ca/CA_User');
 var Ideas = require('../../../../models/ca/CA_Idea');
+// const fs = require('fs');
+// const moment = require('moment');
+// const json2csv = require('json2csv').parse;
+// const path = require('path')
+// // const fields = ['name'];
+// const mongotocsv = require('mongo-to-csv');
+// var csv = require('csv');
+
 
 /* GET ALL Users */
 exports.getParticipant = function(req, res) {
@@ -42,3 +50,42 @@ exports.putIdea = function(req, res) {
         return res.status(400).send({success:false, msg:'No Post ID Specified'});
     }
 };
+
+exports.exportToCSV = function(req, res) {
+    // var filename   = "participant.csv";
+    // var dataArray;
+    // console.log('hello');
+    Users.find({}).select('name email contact gender branch address ca_id contact ideas score state why').lean().exec({}, function(err, participant) {
+        // console.log(participant);
+        // const fields = ['name'];
+        // var csv = json2csv({ data: participant, fields: fields });
+        if (err) {
+            return res.json({ success:false, msg: 'Unable to fetch data', error:err })
+        }
+        else{
+            // console.log(participant);
+            if(participant){
+                res.json({ success:true, data: participant });
+            }
+            else{
+                res.json({ success:false, error:err, msg: 'Something went Wrong' });   
+            }
+            
+        }
+        
+        // res.statusCode = 200;
+        // fs.writeFile('../../file.csv', csv, function(err) {
+        //     if (err) throw err;
+        //     // console.log(csv);
+        //      res.send("done");
+        //   });
+
+        // res.setHeader('Content-Type', 'text/csv');
+
+        // res.setHeader("Content-Disposition", 'attachment; filename='+filename);
+
+        // res.csv(participant, true);
+
+    });
+
+  };
