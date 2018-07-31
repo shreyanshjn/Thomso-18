@@ -21,6 +21,17 @@ th
 {
     border-bottom: 1px solid white;
 }
+.ownrank
+{
+    position:fixed;
+    bottom:0px;
+    border-bottom:none;
+    width:80%;
+}
+.ownrank > tbody > tr > th
+{
+    border-bottom:none;
+}
 table {
     border-collapse: collapse;
     border-spacing:0px;
@@ -29,7 +40,7 @@ table {
     font-family: Montserrat;
     font-size: 12px;
     color:white;
- table-layout: fixed;
+    table-layout: fixed;
 }
 .arrow
 {
@@ -40,12 +51,13 @@ table {
     {
         display:none; 
     }   
+    
 }
 @media only screen and (max-width: 768px) {
     .maintable
     {
-        width:66%;
-        flaot:right;
+        width:62%;
+        float:right;
     }
     th,td {
         padding: 3px;
@@ -85,5 +97,9 @@ table {
     .mobile
     {
         display:none;
+    }
+    .ownrank
+    {
+        width:66%;
     }
 }

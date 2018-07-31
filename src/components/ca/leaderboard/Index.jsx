@@ -31,10 +31,7 @@ export default class LeaderboardIndex extends React.Component {
         // const { users } = this.state;
         return (
             <div className="indexMain">
-                <br/>
-                <br/>
-                <br/>
-            {/* {users ? users.map( (post, index) => {
+                {/* {users ? users.map( (post, index) => {
                     if(post.link) {
                         return <Card key={'CA-Home-Posts'+index} data={post} sharePost={this.sharePost} />
                     }
@@ -58,8 +55,27 @@ export default class LeaderboardIndex extends React.Component {
                             }) : null}
                         </tbody>
                     </table>
-                </div>
-            </div>
+                    <table className="ownrank">
+                        <tbody>
+                            <tr> 
+                                <th>Rank</th>
+                                <th>Name</th> 
+                                <th className="downarrows" onClick={() => this.setState({isExpanded: !this.state.isExpanded})}>Institute</th>
+                                <th className="mobile">Likes</th>
+                                <th className="mobile">Shares</th>
+                                <th className="mobile">Scores</th>
+                            </tr>
+                        {this.state.isExpanded ?
+                                    <tr>
+                                        <td className="desktop">0</td>
+                                        <td className="desktop">0</td>
+                                        <td className="desktop">0</td>
+                                    </tr>
+                                    : null}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
         )
     }
 }
