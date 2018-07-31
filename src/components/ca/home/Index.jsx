@@ -5,6 +5,7 @@ import FetchApi from '../../../utils/FetchAPI';
 
 import Card from './Card';
 
+let unmount = false
 export default class HomeIndex extends React.Component {
     constructor() {
         super();
@@ -42,6 +43,10 @@ export default class HomeIndex extends React.Component {
         }
     }
 
+    componentWillMount() {
+        unmount = false;
+    }
+
     componentDidMount() {
         window.FB.init({
             appId: process.env.REACT_APP_FB_ID,
@@ -52,19 +57,23 @@ export default class HomeIndex extends React.Component {
         const authtoken = this.Auth.getToken();
         FetchApi('GET', '/api/ca/posts', null, authtoken)
             .then((result) => {
-                if (result.data && result.data.posts && result.data.posts.data && result.data.posts.data.length > 0) {
+                if (result.data && result.data.posts && result.data.posts.data && result.data.posts.data.length > 0 && !unmount) {
                     this.setState({ posts: result.data.posts.data });
                     console.log(result, 'Posts')
                 }
             })
             .catch(error => {
-                if (error.response && error.response.status === 401) {
+                if (error.response && error.response.status === 401 && !unmount) {
                     this.setState({ message: 'Token Expired' });
                     // this.props.history.push('/ca/logout')
-                } else {
+                } else if (!unmount){
                     this.setState({ message: 'Unable to Connect to Server' });
                 }
             });
+    }
+
+    componentWillUnmount() {
+        unmount = true
     }
 
     render() {

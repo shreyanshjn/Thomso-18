@@ -1,5 +1,5 @@
 import React , { Component } from 'react';
-import {SectionsContainer, Section} from 'react-fullpage';
+import {ScrollToTopOnMount, SectionsContainer, Section} from 'react-fullpage';
 import logo from './src/img/thomso main-01.png';
 import arrow from './src/img/arrow.svg';
 import './src/css/Main.css';

@@ -4,7 +4,7 @@ import AuthService from '../../../handlers/ca/AuthService';
 import FetchApi from '../../../utils/FetchAPI';
 import '../src/css/Leaderboard.css';
 export default class LeaderboardIndex extends React.Component {
-    constructor(){
+    constructor() {
         super();
         this.state = {
             users: null,
@@ -19,7 +19,7 @@ export default class LeaderboardIndex extends React.Component {
             .then(r => {
                 console.log(r)
                 if (r && r.data && r.data.length > 0) {
-                    this.setState({users: r.data})
+                    this.setState({ users: r.data })
                 } else {
                     console.log(r)
                 }
@@ -27,7 +27,7 @@ export default class LeaderboardIndex extends React.Component {
             .catch(e => console.log(e));
     }
 
-    render(){
+    render() {
         // const { users } = this.state;
         return (
             <div className="indexMain">
