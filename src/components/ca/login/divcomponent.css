@@ -1,0 +1,15 @@
+.div1{
+  height: 100;
+  background: black;
+  display: flex;
+  flex-direction: column;
+
+}
+.div2{
+  height: 100px;
+  background: blue;
+}
+.div3{
+  height: 100px;
+  background: green;
+}
