@@ -14,8 +14,9 @@ class Contact extends Component {
                             </tr>
                             <tr >
                                 <td>(Convener)  </td>
-                                <td>suyash.thomso@gmail.com</td>
+                                <td>&nbsp;&nbsp; suyash.thomso@gmail.com</td>
                             </tr>
+                            <tr><td>&nbsp;</td></tr>
 
                             <tr>
                                 <td>Abhishek Kumar  </td>
@@ -23,30 +24,30 @@ class Contact extends Component {
                             </tr>
                             <tr>
                                 <td>(Co-Convener)   </td>
-                                <td>abhishek98.thomso@gmail.com</td>
+                                <td>&nbsp;&nbsp; abhishek98.thomso@gmail.com</td>
                             </tr>
-
+                            <tr><td>&nbsp;</td></tr>
                             <tr>
                                 <td>Samarth Gubrele </td>
                                 <td>: +91-8349146260 </td>
                             </tr>
                             <tr>
                                 <td>(Co-Convener)   </td>
-                                <td>samarth.thomso@gmail.com</td>
+                                <td>&nbsp;&nbsp; samarth.thomso@gmail.com</td>
                             </tr>
-
+                            <tr><td>&nbsp;</td></tr>
                             <tr>
                                 <td>Shubham Jaiswal </td>
                                 <td>: +91-9693482762 </td>
                             </tr>
                             <tr>
                                 <td>(Public Relations)</td>
-                                <td>shubham.thomso@gmail.com</td>
+                                <td>&nbsp;&nbsp; shubham.thomso@gmail.com</td>
                             </tr>
                         </tbody> 
                     </table>
                 </div>
-                <div className="address">
+                <div className="address" style={{ lineHeight: '2.5em' }}>
                     <h1 className="top">Address</h1>
                     Thomso Office<br/>
                     Multi Activity trueCenter,<br/>
