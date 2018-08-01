@@ -1,17 +1,22 @@
 import React from "react";
 
-
-export default class DivComponent extends Component{
+import './divcomponent.css';
+export default class DivComponent extends React.Component{
   render(){
     return(
     <div>
-      <div className="div1">
+
       <div className="div2">
-      </div>
+
       <div className="div3">
+        dkj
+      </div>
+      <div className="div4">
+        {this.props.data}
       </div>
     </div>
-  </div>
+
+    </div>
   );
   }
 }
