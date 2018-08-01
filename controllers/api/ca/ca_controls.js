@@ -98,8 +98,9 @@ exports.putIdea = function (req, res) {
                     }
                     return res.json({ success: true, msg: 'Successfully Updated', body: idea });
                 })
+        } else {
+            return res.status(400).send({ success: false, msg: 'Invalid Data' });
         }
-        return res.status(400).send({ success: false, msg: 'Invalid Data' });
     } else {
         return res.status(400).send({ success: false, msg: 'No Post ID Specified' });
     }

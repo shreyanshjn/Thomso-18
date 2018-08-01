@@ -8,8 +8,29 @@ export default class Card extends React.Component {
       isExpanded: false,
       shown: true,
       button: true,
+      date: '',
+      month: '',
+      year: '',
+      hours: '',
+      minutes: '',
+      seconds: ''
     };
 
+  }
+  componentDidMount() {
+    if (this.props.data && this.props.data.created_time) {
+      const created_time = this.props.data.created_time
+      const d = new Date(created_time)
+      const da = d.getDate()
+      this.setState({
+        date: d.getDate(),
+        month: d.getMonth(),
+        year: d.getFullYear(),
+        hours: d.getHours(),
+        minutes: d.getMinutes(),
+        seconds: d.getSeconds()
+      });
+    }
   }
 
   /*  toggle() {
@@ -18,6 +39,7 @@ export default class Card extends React.Component {
     });
   }*/
   render() {
+    const { date, month, year, hours, minutes, seconds } = this.state
     /*  var button=this.state.button?"more":"less";
       var shown = {
            display: this.state.shown ? "block" : "none"
@@ -28,7 +50,7 @@ export default class Card extends React.Component {
            }*/
 
     return (
-      <div className="maindiv">
+      <div className="maindiv" >
         <div className="innerdiv">
           <div className="wrapper">
             <div className="card">
@@ -45,7 +67,7 @@ export default class Card extends React.Component {
                   </div>
                 </div>
                 <div className="card__meta">
-                  <p>posted on {this.props.data.created_time} </p>
+
                 </div>
                 <div className="card__article">
                   <p>{this.props.data.message}</p>
@@ -54,7 +76,7 @@ export default class Card extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+      </div >
 
     );
   }

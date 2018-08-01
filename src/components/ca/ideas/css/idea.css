@@ -1,12 +1,19 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
 .side-nav-parent{
-    width: 75%;
+    width: 76%;
     margin-left: auto;
     font-family: Montserrat;
+    background-image: url("../../../beta/home/src/img/dashboard\ bg-01.jpg");
+    background-attachment: fixed;
+    height: 100%;
+    min-height: 100vh;
+    background-size: cover;
 }
 .side-nav-parent form{
     padding: 20px;
+    color: white;
+    opacity: 0.9;
 }
 .heading{
     display: flex;
@@ -16,15 +23,20 @@
     margin: 0;
     font-size: 18px;
     font-weight: 600;
-    color: #58595B;
+    color: rgb(255, 255, 255);
     padding: 10px;
+}
+.form-idea{
+    width: 80%;
+    padding: 0 0 0 20px;
 }
 .dot{
     height: 10px;
     width: 10px;
-    background-color: rgb(150, 148, 148);
+    background-color: rgb(255, 255, 255);
     border-radius: 50%;
     margin-top: 15px;
+    opacity: 0.6;
 }
 .ideasub{
     margin-right: 5px;
@@ -32,20 +44,25 @@
 .ideasubject{
     display: flex;
     flex-direction: row;
-    margin-top: 50px;
+    margin-top: 10px;
 }
 .ideasubject input{
     padding: 7px;
     font-size: 14px;
     outline: 0;
+    color: white;
     border-width: 0 0 2px;
-    border-color: #BEBEBE ;
+    background: none;
     font-family: Montserrat;
-    width: 30%;
+    width: 40%;
 }
-.ideasubject input:focus{
-    padding: 12px;
-    transition: all 0.2s ease-in-out;
+.ideasubject input::placeholder{
+    color: white;
+}
+.details_idea textarea::placeholder{
+    color: white;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 .details_idea{
     display: flex;
@@ -58,30 +75,31 @@
     font-size: 14px;
     outline: 0;
     border-width: 0 0 2px;
-    border-color: #BEBEBE ;
+    color: white;
+    border-color: #BEBEBE;
     font-family: Montserrat;
     padding: 7px;
-    width: 70%;
-
-}
-.details_idea textarea:focus{
-    padding: 12px;
-    transition: all 0.2s ease-in-out;
+    width: 100%;
+    background: none;
+    height: auto;
 }
 .submit{
     display: flex;
     flex-direction: row;
+    justify-content:flex-end;
     width: 33%;
     margin-left: auto;
     padding: 5px 0 0 0;
 }
 .submit button{
     background: none;
-    color:#58595B;
+    font-size: 14px;
+    color:rgb(255, 255, 255);;
     font-family: Montserrat;
     font-weight: 600;
     cursor: pointer;
     border: none;
+    padding: 10px;
 }
 .aideas{
     padding: 10px 20px;
@@ -94,7 +112,6 @@
     margin: 0;
     font-size: 14px;
     font-weight: 600;
-    color: #58595B;
     border-bottom:1px solid #BEBEBE;
     width: 30%;
     padding: 10px; 
@@ -108,7 +125,6 @@
 .adetails p{
     margin: 0;
     font-size: 14px;
-    color: #58595B;
     border-bottom: 1px solid #BEBEBE;
     width: 70%;
     font-weight: 600;
@@ -116,6 +132,37 @@
 }
 .subdel{
     width:31.7%;
+}
+.edit-cancel-submit{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-left: auto;
+}
+.edit-cancel div{
+    padding: 10px;
+    font-family: Montserrat;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
+}
+.delete{
+    padding: 10px;
+    background: none;
+    font-family: Montserrat;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
+}
+.comment{
+    margin-top: 10px;
+}
+.comment p{
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 14px;
 }
 @media (max-width:800px){
     .details_idea textarea{
@@ -129,5 +176,11 @@
         border-color: #BEBEBE ;
         font-family: Montserrat;
         width: 38%;
+        background: none;
+    }
+}
+@media screen and (max-width:768px){
+    .side-nav-parent{
+        width: calc(100% - 80px);
     }
 }

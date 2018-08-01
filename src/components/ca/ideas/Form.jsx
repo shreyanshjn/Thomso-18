@@ -13,6 +13,7 @@ export default class Form extends React.Component {
             body: '',
             errors: '',
             isDisabled: false,
+            isIncrease: false,
             isVisible: false
         }
         this.Auth = new AuthService()
@@ -23,7 +24,6 @@ export default class Form extends React.Component {
         const value = e.target.value;
         this.setState({ [name]: value });
     }
-
     onSubmit = (e) => {
         e.preventDefault();
         const { title, body } = this.state;
@@ -62,13 +62,19 @@ export default class Form extends React.Component {
         clearTimeout(timeout)
     }
 
+    handleEvent = event => {
+        if (event.key == 'Enter') {
+            console.log('enter press here! ')
+
+        }
+    }
     render() {
         const { title, body, errors, isVisible } = this.state;
         return (
-            <form onSubmit={this.onSubmit}>
+            <form className="form-idea" onSubmit={this.onSubmit} novalidate>
                 {isVisible ? errors : null}
                 <div className="heading">
-                    <span className="dot"></span><h2>Share your ideas</h2>
+                    <h2>Share your ideas</h2>
                 </div>
                 <div className="ideasubject">
                     <span className="dot ideasub"></span>
@@ -78,6 +84,9 @@ export default class Form extends React.Component {
                         placeholder="Your Idea"
                         name="title"
                         value={title}
+                        autoCorrect="off"
+                        autoComplete="off"
+                        autoCapitalize="on"
                         onChange={this.onChange}
                         required
                     />
@@ -86,10 +95,13 @@ export default class Form extends React.Component {
                     <textarea
                         id="inputIdea"
                         placeholder="More details about your idea"
-                        rows="1"
                         name="body"
                         value={body}
+                        autoCorrect="off"
+                        autoComplete="off"
+                        autoCapitalize="on"
                         onChange={this.onChange}
+                        onKeyPress={() => this.handleEvent}
                         required
                     />
                 </div>

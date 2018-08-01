@@ -11,6 +11,7 @@ export default class IdeasIndex extends React.Component {
         this.state = {
             title: '',
             body: '',
+            comment: '',
             errors: '',
             isDisabled: false,
             isVisible: false,
@@ -57,7 +58,9 @@ export default class IdeasIndex extends React.Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        const { title, body } = this.state
+        let { title, body } = this.state
+        title = title.trim()
+        body = body.trim()
         const data = { title, body }
         console.log(data)
         if (title && body && this.props.data && this.props.data._id) {
@@ -94,7 +97,7 @@ export default class IdeasIndex extends React.Component {
                 .then(r => {
                     console.log(r)
                     if (r && r.data && r.data.success) {
-                        this.setState({isDeleted: true})
+                        this.setState({ isDeleted: true })
                         this.props.deleteIdea(this.props.index)
                     } else {
                         this.setState({ isVisible: true, errors: 'Server Failed to Update' })
@@ -110,21 +113,23 @@ export default class IdeasIndex extends React.Component {
     }
 
     render() {
-        const { title, body, errors, isVisible, isEditing } = this.state;
+        const { title, body, errors, isVisible, isEditing, comment } = this.state;
         return (
             <React.Fragment>
                 {(!this.props.data || this.state.isDeleted) ?
                     null :
-                    <form onSubmit={this.onSubmit}>
+                    <form className="form-idea" onSubmit={this.onSubmit} novalidate>
                         {isVisible ? errors : null}
                         <div className="ideasubject">
                             <span className="dot ideasub"></span>
                             <input
                                 id="inputSubject"
                                 type="text"
-                                placeholder="Your Idea"
                                 name="title"
                                 value={title}
+                                autoCorrect="off"
+                                autoComplete="off"
+                                autoCapitalize="on"
                                 disabled={!isEditing}
                                 onChange={this.onChange}
                                 required
@@ -133,27 +138,34 @@ export default class IdeasIndex extends React.Component {
                         <div className="details_idea">
                             <textarea
                                 id="inputIdea"
-                                placeholder="More details about your idea"
                                 rows="1"
                                 name="body"
                                 value={body}
+                                autoCorrect="off"
+                                autoComplete="off"
+                                autoCapitalize="on"
                                 disabled={!isEditing}
                                 onChange={this.onChange}
                                 required
                             />
                         </div>
-                        <div className="submit">
-                            <div onClick={() => this.toggleEdit()} >{this.state.isEditing ? 'Cancel' : 'Edit'}</div>
+                        <div className="comment">
+                            <p>{comment}</p>
                         </div>
-                        {this.state.isEditing ?
-                            <div className="submit">
-                                <button type="submit" disabled={this.state.isDisabled}>Submit</button>
+                        <div className="edit-cancel-submit">
+                            <div className="edit-cancel">
+                                <div onClick={() => this.toggleEdit()} >{this.state.isEditing ? 'Cancel' : 'Edit'}</div>
                             </div>
-                            :
-                            <div className="submit">
-                                <div onClick={() => this.deleteIdea()} disabled={this.state.isDisabled}>Delete</div>
-                            </div>
-                        }
+                            {this.state.isEditing ?
+                                <div className="submit">
+                                    <button type="submit" disabled={this.state.isDisabled}>Submit</button>
+                                </div>
+                                :
+                                <div className="delete">
+                                    <div onClick={() => this.deleteIdea()} disabled={this.state.isDisabled}>Delete</div>
+                                </div>
+                            }
+                        </div>
                     </form>
                 }
             </React.Fragment>
