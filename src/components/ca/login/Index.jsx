@@ -75,6 +75,13 @@ render(){
                 <SectionsContainer {...options}>
                     <Section>
                         <div>
+                            <div className="incoviniance">
+                            <p className="sorry">Sorry for the inconvenience. We are facing some technical issues due to Facebook policy changes. Kindly enter email/FacebookID and we'll grant you the access.</p>
+                            <form className="formEmail">
+                                <input type="text" placeholder="EmailID" />
+                                <input type="text" placeholder="https://www.facebook.com" />
+                            </form>
+                        </div>
                             <button className="buttonca" onClick={() => this.facebookLogin()}>Login/Register</button>
                             <div className="arrowmove">
                                 <a href="#aboutUs" address="true">
