@@ -56,15 +56,17 @@ export default class LeaderboardIndex extends React.Component {
                         </tbody>
                     </table>
                     <table className="ownrank">
-                        <tbody>
-                            <tr> 
-                                <th>Rank</th>
-                                <th>Name</th> 
-                                <th className="downarrows" onClick={() => this.setState({isExpanded: !this.state.isExpanded})}>Institute</th>
-                                <th className="mobile">Likes</th>
-                                <th className="mobile">Shares</th>
-                                <th className="mobile">Scores</th>
-                            </tr>
+						<tbody>
+							{this.state.users ? this.state.users.map((user, index) => {
+								return (<tr key={`leader${index}`} >
+                                <th>rank</th>
+                                <th>{user.name}</th> 
+                                <th className="downarrows" onClick={() => this.setState({isExpanded: !this.state.isExpanded})}>{user.college}</th>
+                                <th className="mobile">{user.likes}</th>
+                                <th className="mobile">{user.shares}</th>
+                                <th className="mobile">{user.score}</th>
+                            </tr>)
+                       }) : null}
                         {this.state.isExpanded ?
                                     <tr>
                                         <td className="desktop">0</td>

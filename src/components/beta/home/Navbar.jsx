@@ -49,7 +49,7 @@ class Navbar extends Component {
             <div className="int-ctos">
               <ul id="tushar">
                 <li>
-                    <Link to="" className={(this.state.activeState === "linkCaportal") ? "linkCaportal" : null}
+                    <Link to="../ca/" className={(this.state.activeState === "linkCaportal") ? "linkCaportal" : null}
                     onClick={() => {
                                     this.setActive("linkCaportal");
                     }}>
@@ -87,7 +87,7 @@ class Navbar extends Component {
                     }}>TEAM CONTACT</Link>
                 </li>
                 <li>
-                  <Link to="" className={(this.state.activeState === "linkSponsors") ? "linkSponsors" : null}
+                    <Link to="./sponsors" className={(this.state.activeState === "linkSponsors") ? "linkSponsors" : null}
                     onClick={() => {
                                     this.setActive("linkSponsors");
                     }}>OUR SPONSERS</Link>
