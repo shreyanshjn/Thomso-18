@@ -7,15 +7,9 @@ import Loadable from 'react-loadable';
 //   loader: () => import('./components/beta/Index'),
 //   loading: () => <div>Loading BetaIndex</div>,
 // });
-
 const CAIndex = Loadable({
   loader: () => import('./components/ca/Index'),
   loading: () => <div>Loading CAIndex</div>,
-});
-
-const VerifyCerti = Loadable({
-  loader: () => import('./components/verifyCerti/Index'),
-  loading: () => <div>Loading Certificate Verification</div>,
 });
 
 const FAQIndex = Loadable({
@@ -38,6 +32,19 @@ const HomeIndex = Loadable({
   loading: () => <div>Loading HomeIndex</div>
 });
 
+const VerifyCerti = Loadable({
+  loader: () => import("./components/verifyCerti/Index"),
+  loading: () => <div>Loading VerifyCerti</div>
+});
+
+const Policy = Loadable({
+  loader: () => import("./components/policyandterms/policy"),
+  loading: () =><div>Loading Policy</div>
+})
+const Terms = Loadable({
+  loader:() =>import("./components/policyandterms/thomsoterms"),
+  loading:() => <div>Loading Terms</div>
+})
 class App extends Component {
   render() {
     return (
@@ -52,6 +59,8 @@ class App extends Component {
           <Route path="/ca/" component={CAIndex} />
 
           <Route path="/verifyCerti/" component={VerifyCerti} />
+          <Route path="/policy" component={Policy}/>
+          <Route path="/termsandpolicy" component={Terms}/>
         </Switch>
       </BrowserRouter>
     );

@@ -60,7 +60,8 @@ export default class CAIndex extends React.Component {
     super();
     this.state = {
       userData: "",
-      isAuthenticated: false
+      isAuthenticated: false,
+      string: window.location.pathname.substring(4)
     };
     this.Auth = new AuthService();
     this.handleUpdate = this.handleUpdate.bind(this);
@@ -70,14 +71,14 @@ export default class CAIndex extends React.Component {
     const isAuthenticated = this.Auth.hasToken();
     console.log(isAuthenticated, "isAuthenticated");
     if (isAuthenticated) {
-        const token = this.Auth.getToken()
-        FetchApi('GET', '/api/ca/auth/fbData', null, token)
-            .then(r => {
-                if (r && r.data && r.data.body) {
-                    this.setState({ isAuthenticated, userData: r.data.body });
-                }
-            })
-            .catch(e => console.log(e));
+      const token = this.Auth.getToken()
+      FetchApi('GET', '/api/ca/auth/fbData', null, token)
+        .then(r => {
+          if (r && r.data && r.data.body) {
+            this.setState({ isAuthenticated, userData: r.data.body });
+          }
+        })
+        .catch(e => console.log(e));
     }
   }
 
@@ -99,11 +100,12 @@ export default class CAIndex extends React.Component {
         <Route path="/ca/admin" component={AdminIndex} />
         {this.state.isAuthenticated ? (
           <div>
-            <Route path="/ca/" render={props => (<Sidebar {...props} userData={this.state.userData} />)} />
-            
+            {this.state.string === "admin" ? null :
+              <Route path="/ca/" render={props => (<Sidebar {...props} userData={this.state.userData} />)} />
+            }
             <Route exact path="/ca/logout" render={props => (<LogoutIndex {...props} updateRoutes={this.handleUpdate} />)} />
             <Route exact path="/ca/leaderboard" component={LeaderboardIndex} />
-            <Route exact path="/ca/contact" component={ContactIndex} />
+            <Route exact path="/ca/contact" render={props => (<ContactIndex {...props} userData={this.state.userData} />)} />
             <Route exact path="/ca/ideas" component={IdeasIndex} />
             <Route exact path="/ca/" component={HomeIndex} />
           </div>

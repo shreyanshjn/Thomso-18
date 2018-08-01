@@ -1,10 +1,18 @@
 var Users = require('../../../../models/ca/CA_User');
 var Ideas = require('../../../../models/ca/CA_Idea');
+// const fs = require('fs');
+// const moment = require('moment');
+// const json2csv = require('json2csv').parse;
+// const path = require('path')
+// // const fields = ['name'];
+// const mongotocsv = require('mongo-to-csv');
+// var csv = require('csv');
+
 
 /* GET ALL Users */
 exports.getParticipant = function(req, res) {
   Users.find({created:true})
-  .select('address name fb_id college contact branch ca_id state image gender email why')
+  .select('address name fb_id college contact branch ca_id state image gender email why blocked')
   .exec(function (err, allUsers) {
     if (err) return next(err);
     res.json(allUsers);
@@ -42,3 +50,61 @@ exports.putIdea = function(req, res) {
         return res.status(400).send({success:false, msg:'No Post ID Specified'});
     }
 };
+
+/* Block User */
+exports.blockUser = function(req, res) {
+    if (req.params.id && req.body.blocked !== undefined) {
+        var updateData = {
+            blocked: req.body.blocked
+        };
+        Users.findOneAndUpdate({ _id:req.params.id }, updateData, { new:true })
+        .select('blocked')
+        .exec(function(err, user) {
+            if(err){
+                return res.status(400).send({success:false, msg:'Failed to switch block', error:err});
+            }
+            return res.json({success:true, msg:'Successfully Updated', body: user});
+        });
+    } else {
+        return res.status(400).send({success:false, msg:'No User ID Specified'});
+    }
+};
+
+exports.exportToCSV = function(req, res) {
+    // var filename   = "participant.csv";
+    // var dataArray;
+    // console.log('hello');
+    Users.find({}).select('name email contact gender branch address ca_id contact ideas score state why').lean().exec({}, function(err, participant) {
+        // console.log(participant);
+        // const fields = ['name'];
+        // var csv = json2csv({ data: participant, fields: fields });
+        if (err) {
+            return res.json({ success:false, msg: 'Unable to fetch data', error:err })
+        }
+        else{
+            // console.log(participant);
+            if(participant){
+                res.json({ success:true, data: participant });
+            }
+            else{
+                res.json({ success:false, error:err, msg: 'Something went Wrong' });   
+            }
+            
+        }
+        
+        // res.statusCode = 200;
+        // fs.writeFile('../../file.csv', csv, function(err) {
+        //     if (err) throw err;
+        //     // console.log(csv);
+        //      res.send("done");
+        //   });
+
+        // res.setHeader('Content-Type', 'text/csv');
+
+        // res.setHeader("Content-Disposition", 'attachment; filename='+filename);
+
+        // res.csv(participant, true);
+
+    });
+
+  };

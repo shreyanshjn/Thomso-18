@@ -17,6 +17,10 @@ class Footer extends Component {
         let now=new Date().getTime();
         let distance = countDownDate - now;
         let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        if(days<0)
+        {
+           days=0;  
+        }
         return (
             <div className="main">
                 <div className="countdown">
