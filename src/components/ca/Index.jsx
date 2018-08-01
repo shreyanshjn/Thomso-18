@@ -100,6 +100,7 @@ export default class CAIndex extends React.Component {
         {this.state.isAuthenticated ? (
           <div>
             <Route path="/ca/" render={props => (<Sidebar {...props} userData={this.state.userData} />)} />
+            
             <Route exact path="/ca/logout" render={props => (<LogoutIndex {...props} updateRoutes={this.handleUpdate} />)} />
             <Route exact path="/ca/leaderboard" component={LeaderboardIndex} />
             <Route exact path="/ca/contact" component={ContactIndex} />

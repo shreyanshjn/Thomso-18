@@ -1,5 +1,4 @@
 import React from 'react';
-
 import AuthService from '../../../handlers/ca/AuthService';
 import FetchApi from '../../../utils/FetchAPI';
 
@@ -57,7 +56,7 @@ export default class LoginIndex extends React.Component {
 
     render(){
         return (
-            <button onClick={() => this.facebookLogin()}>Login/Register</button>
+             <button onClick={() => this.facebookLogin()}>Login/Register</button> 
         )
     }
 }
