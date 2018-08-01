@@ -19,11 +19,9 @@ if (process.env.REACT_APP_SERVER_ENVIORNMENT !== 'dev') {
 // -> /api
 router.use('/api/ca', caRoutes);
 router.use('/api/book', bookRoutes);
-
 if (process.env.REACT_APP_SERVER_ENVIORNMENT !== 'dev') {
     router.use('/api/certiVerify', cors(corsOptions),  verifyCerti.certi_verify );
 }
-
 // -> /*
 router.get('/*', viewController);
 

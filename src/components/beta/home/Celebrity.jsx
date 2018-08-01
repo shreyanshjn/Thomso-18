@@ -16,23 +16,25 @@ class Celebrity extends Component {
     }
     render() {
         return (
-            <div className="celebrityMain"> 
-                <div className="box">
+            <div className="celebrityMain">
+                <div className="hoverEffect">
                     <img src={farhan} alt="farhan" className="celebImage"/>
                     <p className="farhan">FARHAN AKHTAR</p>
-                </div> 
-                <div className="box">
+                    <div className="middle">
+                            <div className="text">Farhan</div>
+                    </div>
+                </div>
+                <div className="hoverEffect">
                     <img src={nucleya} alt="nucleya" className="celebImage"/>
                     <p className="nucleya">NUCLEYA</p>
-                </div> 
-                <div className="box">
+                </div>
+                <div className="hoverEffect">
                     <img src={sunidhi} alt="sunidhi" className="celebImage"/>
                     <p className="sunidhi">SUNIDHI CHAUHAN</p>
-                </div> 
+                </div>
             </div>
         );
     }
 }
 
 export default Celebrity;
-

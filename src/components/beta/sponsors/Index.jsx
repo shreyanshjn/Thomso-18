@@ -74,7 +74,7 @@ export default class Sponsors extends React.Component{
               <Navbar/>
               </div>
               <div className="maininnerdiv">
-                
+
                 <div className="sponsors">
                                 <div className="TitleSpons">
                                     <center>

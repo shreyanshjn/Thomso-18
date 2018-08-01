@@ -38,7 +38,7 @@ export default class Card extends React.Component {
           <div className="wrapper">
             <div className="card">
               <div className="card__image">
-                <img src={this.props.data.full_picture} alt="image" className="border-tlr-radius" />
+                <img src={this.props.data.full_picture} alt="fullpicture" className="border-tlr-radius" />
               </div>
               <div className="card__content card__padding">
                 <div className="card__share">

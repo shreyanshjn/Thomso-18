@@ -1,40 +1,108 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
-.contact-parent{
-    width: 75%;
-    margin-left: auto;
-    font-family: Montserrat;
-}
-.incontact{
+.flex-row{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
-.incontact_one{
-    width: 50%;
-    padding: 10px;
+.flex-column{
     display: flex;
     flex-direction: column;
 }
-.incontact_two{
-    width: 50%;
-    padding: 10px;
+.contact-parent{
+    width: 75%;
+    min-height: 100vh;
+    margin-left: auto;
+    font-family: Montserrat;
     display: flex;
+    align-items: center;
+}
+.incontact{
+    display: flex;
+    width: 100%;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.incontact_one{
+    width:30%;
+    padding: 10px;
+}
+.incontact_two{
+    width:30%;
+    padding: 10px;
+}
+.incontact_three{
+    width: 30%;
+    padding: 10px;
 }
 .image_one{
-    background-image: url("../lion.jpg");
+    background-image: url("../../../beta//home/src/img/harshit.jpg");
     box-shadow: 2px 2px 7px 2px rgba(55,55,55,.5);
     background-position: center center;
     height:300px;
-    width: 256px;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 2px;
+    opacity: 0.8;
+    transition: all 0.5s;
+}
+.image_two{
+    background-image: url("../../../beta//home/src/img/niranjan.jpg");
+    box-shadow: 2px 2px 7px 2px rgba(55,55,55,.5);
+    height:300px;
+    width: auto;
     display: flex;
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 2px;
+    opacity: 0.8;
+    transition: all 0.5s;
+}
+.image_one:hover {
+    opacity: 1;
+}
+.image_two:hover {
+    opacity: 1;
+}
+.image_three:hover {
+    opacity: 1;
+}
+.image_three{
+    background-image: url("../../../beta//home/src/img/nikhil.jpg");
+    box-shadow: 2px 2px 7px 2px rgba(55,55,55,.5);
+    background-position: center center;
+    height:300px;
+    width: auto;
+    display: flex;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 2px;
+    opacity: 0.8;
+    transition: all 0.5s;
+}
+.image_four{
+    background-image: url("../../../beta//home/src/img/prashant.jpg");
+    box-shadow: 2px 2px 7px 2px rgba(55,55,55,.5);
+    background-position: center center;
+    height:300px;
+    width: auto;
+    display: flex;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 2px;
+    opacity: 0.8;
+    transition: all 0.5s;
+}
+.image_four:hover {
+    opacity: 1;
 }
 .details_one{
-    width: 256px;
+    width: auto;
     box-shadow: 2px 2px 7px 2px rgba(55,55,55,.2);
     display: flex;
     flex-direction: column;
@@ -48,11 +116,86 @@
     color: #585858;
 }
 .post{
-    margin-top: 0px;
+    margin-top: 10px;
     padding-left: 20px;
 }
 .post h2{
     font-size: 12px;
     font-weight: 600;
     color: #585858;
+}
+.gmail{
+    margin-top: 10px;
+    padding-left: 20px;
+}
+.gmail img{
+    height: 18px;
+    width: auto;
+    padding: 10px 5px 0 5px;
+}
+.gmail span{
+    font-size: 14px;
+    color: #58595B;
+    font-family: Montserrat;
+    padding-left:10px; 
+}
+.call{
+    margin-top: 10px;
+    padding-left: 20px;
+}
+.call img{
+    height: 16px;
+    width: auto;
+    padding: 7px 5px 0 5px;
+}
+.call span{
+    font-size: 14px;
+    color: #58595B;
+    font-family: Montserrat;
+    padding-left: 10px;
+}
+@media screen and (max-width:1096px){
+    .contact-parent{
+        display: flex;
+        flex-direction: column;
+    }
+    .incontact{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .incontact_one{
+        width:60%;
+        padding: 10px;
+    }
+    .incontact_two{
+        width:60%;
+        padding: 10px;
+    }
+    .incontact_three{
+        width: 60%;
+        padding: 10px;
+    }
+}
+@media screen and (max-width:769px){
+    .contact-parent{
+        width: calc(100% - 80px);
+    }
+    .incontact_one{
+        width:90%;
+        padding: 10px;
+    }
+    .incontact_two{
+        width:90%;
+        padding: 10px;
+    }
+    .incontact_three{
+        width: 90%;
+        padding: 10px;
+    }
+}
+@media screen and (max-width:403px){
+    .gmail span{
+        font-size: 10px;
+    }
 }

@@ -20,7 +20,7 @@
 }
 .footfall
 {
-    margin-top:20vh;
+    margin-top:34vh;
     vertical-align:center;
     display:flex;
     color:white;
@@ -53,7 +53,7 @@
     .footfall
     {
         flex-direction:column;
-        margin-top:2vh;
+        margin-top:13vh;
     }
     .box
     {
@@ -73,6 +73,14 @@
     {
         width:106px;
         bottom:-3vh;
+    }
+    .first
+    {
+       font-size:29px;
+    }
+    .second
+    {
+       font-size:12px;
     }
 }
 @media (min-width: 1920px) and (max-width: 2560px)
@@ -111,7 +119,6 @@
     }
     .footfall
     {
-       margin-top:27vh;
+       margin-top:36vh;
     }
 }
-

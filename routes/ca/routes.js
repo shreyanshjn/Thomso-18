@@ -13,7 +13,6 @@ var caControls = require('../../controllers/api/ca/ca_controls');
 // CORS Config
 var corsOptions = require('../config/cors')
 
-// Middlewares
 var CAUserTokenMiddleware = require("../../middlewares/ca/user/TokenMiddleware");
 
 // Routes
