@@ -51,6 +51,25 @@ exports.putIdea = function(req, res) {
     }
 };
 
+/* Block User */
+exports.blockUser = function(req, res) {
+    if (req.params.id && req.body.blocked !== undefined) {
+        var updateData = {
+            blocked: req.body.blocked
+        };
+        Users.findOneAndUpdate({ _id:req.params.id }, updateData, { new:true })
+        .select('blocked')
+        .exec(function(err, user) {
+            if(err){
+                return res.status(400).send({success:false, msg:'Failed to switch block', error:err});
+            }
+            return res.json({success:true, msg:'Successfully Updated', body: user});
+        });
+    } else {
+        return res.status(400).send({success:false, msg:'No User ID Specified'});
+    }
+};
+
 exports.exportToCSV = function(req, res) {
     // var filename   = "participant.csv";
     // var dataArray;
