@@ -525,11 +525,11 @@ export default class Sponsors extends React.Component{
                                     <center>
                                         <h4>Content Partner</h4></center>
                                 </div>
-                            </div>
+                          </div>
 
+                            </div>
+                          </div>
                         </div>
-                    </div>
-                </div>
             </div>
         )
     }

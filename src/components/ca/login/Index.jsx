@@ -1,5 +1,7 @@
 import React from 'react';
 import WISCA from './WISCA.jsx';
+import ROLES from './ROLES.jsx';
+import CONTACT from './CONTACT.jsx';
 import AuthService from '../../../handlers/ca/AuthService';
 import FetchApi from '../../../utils/FetchAPI';
 import LoginPage from './LoginPage';
@@ -61,12 +63,12 @@ export default class LoginIndex extends React.Component {
     }
     render() {
         let options = {
-            sectionClassName: 'section',
-            anchors: ['home', 'aboutUs', 'footfall', 'celebrity', 'contactUs'],
-            scrollBar: false,
-            navigation: false,
-            verticalAlign: false,
-            sectionaddingTop: '0px',
+            sectionClassName:     'section',
+            anchors:              ['home', 'WISCA', 'ROLES','contactUs'],
+            scrollBar:            false,
+            navigation:           false,
+            verticalAlign:        false,
+            sectionaddingTop:    '0px',
             slidesNavPosition: 'bottom',
             arrowNavigation: true
         };
@@ -86,7 +88,7 @@ export default class LoginIndex extends React.Component {
                                 </div>
                                 <button className="buttonca" onClick={() => this.facebookLogin()}>Login/Register</button>
                                 <div className="arrowmove">
-                                    <a href="#aboutUs" address="true">
+                                    <a href="#WISCA" address="true">
                                         <img src={arrow} className="downarrow bounce" alt=
                                             "a" />
                                     </a>
@@ -96,18 +98,15 @@ export default class LoginIndex extends React.Component {
                     </div>
                     <BlackNavbar />
                     <Section>
-                        <div style={{ fontSize: '25px', color: 'white' }}>
-                            <LoginPage />
-                        </div>
-                    </Section>
-
-                    <Section>
                       <WISCA />
-                          <button onClick={() => this.facebookLogin()}>Login/Register</button>
                     </Section>
+                    <BlackNavbar />
                     <Section>
+                    <ROLES />
                     </Section>
+                    <BlackNavbar />
                     <Section>
+                      <CONTACT />
                     </Section>
                 </SectionsContainer>
             </div>
