@@ -1,5 +1,7 @@
 import React from 'react';
 import WISCA from './WISCA.jsx';
+import ROLES from './ROLES.jsx';
+import CONTACT from './CONTACT.jsx';
 import AuthService from '../../../handlers/ca/AuthService';
 import FetchApi from '../../../utils/FetchAPI';
 import LoginPage from './LoginPage';
@@ -61,7 +63,7 @@ export default class LoginIndex extends React.Component {
 render(){
         let options = {
             sectionClassName:     'section',
-            anchors:              ['home', 'aboutUs', 'footfall','celebrity','contactUs'],
+            anchors:              ['home', 'WISCA', 'ROLES','contactUs'],
             scrollBar:            false,
             navigation:           false,
             verticalAlign:        false,
@@ -85,18 +87,13 @@ render(){
                         </div>
                     </Section>
                     <Section>
-                        <div style={{fontSize:'25px',color:'white'}}>
-                            <LoginPage />
-                        </div>
-                    </Section>
-
-                    <Section>
                       <WISCA />
-                          <button onClick={() => this.facebookLogin()}>Login/Register</button>
                     </Section>
                     <Section>
+                    <ROLES />
                     </Section>
                     <Section>
+                      <CONTACT />
                     </Section>
                 </SectionsContainer>
             </div>
