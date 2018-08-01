@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import { Link } from 'react-router-dom' 
 import img from "./src/img/logo.png";
 
 import "./src/css/Navbar.css";
@@ -13,6 +13,7 @@ class Navbar extends Component {
       isHidden: true,
       hamburger: true
     };
+    this.setActive=this.setActive.bind(this);
   }
   toggleHidden() {
     this.setState({
@@ -20,7 +21,12 @@ class Navbar extends Component {
       hamburger: !this.state.hamburger
     });
   }
-
+  setActive(state)
+    {
+       this.setState({
+       activeState:state
+       });
+    }
   render() {
     return (
       <div className="contain">
@@ -43,26 +49,54 @@ class Navbar extends Component {
             <div className="int-ctos">
               <ul id="tushar">
                 <li>
-                  <a href="">CA PORTAL</a>
+                    <Link to="../ca/" className={(this.state.activeState === "linkCaportal") ? "linkCaportal" : null}
+                    onClick={() => {
+                                    this.setActive("linkCaportal");
+                    }}>
+                    CA PORTAL
+                    </Link>
                 </li>
                 <li>
-                  <a href="">ZONALS</a>
+                  <Link to="" className={(this.state.activeState === "linkZonals") ? "linkZonals" : null}
+                    onClick={() => {
+                                    this.setActive("linkZonals");
+                    }}>
+                    ZONALS
+                </Link>
                 </li>
                 <li className="dropdown">
-                  <a href="">EVENTS</a>
+                    <Link to="" className={(this.state.activeState === "linkEvents") ? "linkEvents" : null}
+                    onClick={() => {
+                                    this.setActive("linkEvents");
+                    }}>EVENTS</Link>
                   <div className="dropdown-content">
-                    <a href="#">ONLINE EVENTS</a>
-                    <a href="#">OFFLINE EVENTS</a>
+                    <Link to="" className={(this.state.activeState === "linkEventson") ? "linkEventson" : null}
+                    onClick={() => {
+                                    this.setActive("linkEventson");
+                    }}>ONLINE EVENTS</Link>
+                    <Link to="" className={(this.state.activeState === "linkEventsoff") ? "linkEventsoff" : null}
+                    onClick={() => {
+                                    this.setActive("linkEventsoff");
+                    }}>OFFLINE EVENTS</Link>
                   </div>
                 </li>
                 <li>
-                  <a href="">TEAM CONTACT</a>
+                  <Link to="" className={(this.state.activeState === "linkTeam") ? "linkTeam" : null}
+                    onClick={() => {
+                                    this.setActive("linkTeam");
+                    }}>TEAM CONTACT</Link>
                 </li>
                 <li>
-                  <a href="">OUR SPONSERS</a>
+                    <Link to="./sponsors" className={(this.state.activeState === "linkSponsors") ? "linkSponsors" : null}
+                    onClick={() => {
+                                    this.setActive("linkSponsors");
+                    }}>OUR SPONSERS</Link>
                 </li>
                 <li>
-                  <a href="">FAQs</a>
+                  <Link to="" className={(this.state.activeState === "linkFaq") ? "linkFaq" : null}
+                    onClick={() => {
+                                    this.setActive("linkFaq");
+                    }}>FAQs</Link>
                 </li>
               </ul>
             </div>

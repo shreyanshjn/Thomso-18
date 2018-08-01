@@ -52,6 +52,27 @@
         text-decoration: none;
         text-transform: none;
     }
+    .sidenav > .thomso > .activeSideItem > .posts > .p-logo svg .postpath{
+        fill: red;
+    }
+    .sidenav > .thomso > .activeSideItem > .leaderboard > .p-logo svg .leaderpath{
+        fill: green;
+    }
+    .sidenav > .thomso > .activeSideItem > .ideas > .p-logo svg .bulbpath{
+        fill: yellow;
+    }
+    .sidenav > .thomso > .activeSideItem > .certificate > .p-logo svg .certificatepath{
+        fill:orange;
+    }
+    .sidenav > .thomso > .activeSideItem > .guide > .p-logo svg .guidepath{
+        fill: purple;
+    }
+    .sidenav > .thomso > .activeSideItem > .contactus > .p-logo svg .contactpath{
+        fill: blue;
+    }
+    .sidenav > .thomso > .activeSideItem > .logout > .p-logo svg .logoutpath{
+        fill: red;
+    }
     .p-logo svg{
         padding: 0 0 0 5px;
     }
@@ -89,7 +110,6 @@
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        height: 100%;
     }
     .hand div{
         display: flex;
@@ -216,22 +236,9 @@
         font-size: 1vw;
         min-font-size: 12px;
     }
-
-    .sidenav.collapseSide{
-        width: 70px;
-        min-width: 70px;
-    }
-    .sidenav.collapseSide .sideNavItem {
-        font-size: 0;
-        padding-left: 23px;
-    }
-    .sidenav.collapseSide .sideNavItem > i{
-        visibility: visible;
-        font-size: 18px;
-    }
     .update{
         font-size: 10px;
-        color: #58595B;
+        color: rgb(117, 154, 230);
     }
     .n-likes > .inn_likes div{
         padding: 0 5px;
@@ -324,12 +331,11 @@
         padding: 10px 0px;
     }
     .hand{
-        margin-top: 80px;
+        margin-top: 60px;
         cursor: pointer;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        height: 100%;
     }
     .hand div{
         display: flex;
@@ -344,7 +350,7 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        padding: 15px 0 15px 0;
+        padding: 10px 0 5px 0;
         height: fit-content;
     }
     .sidebar-user > .image {

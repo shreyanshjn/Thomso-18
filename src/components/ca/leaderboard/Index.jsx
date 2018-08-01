@@ -1,5 +1,5 @@
 import React from 'react';
-import "./style.css"
+import DataRow from './DataRow';
 import AuthService from '../../../handlers/ca/AuthService';
 import FetchApi from '../../../utils/FetchAPI';
 import '../src/css/Leaderboard.css';
@@ -8,6 +8,8 @@ export default class LeaderboardIndex extends React.Component {
         super();
         this.state = {
             users: null,
+            isExpandable:true,
+            hide:true
         }
         this.Auth = new AuthService();
     }
@@ -29,8 +31,7 @@ export default class LeaderboardIndex extends React.Component {
     render() {
         // const { users } = this.state;
         return (
-            <div className="leader-parent">
-                <h2>Leaderboard</h2>
+            <div className="indexMain">
                 {/* {users ? users.map( (post, index) => {
                     if(post.link) {
                         return <Card key={'CA-Home-Posts'+index} data={post} sharePost={this.sharePost} />
@@ -38,11 +39,11 @@ export default class LeaderboardIndex extends React.Component {
                     return null;
                 }) : null} */}
                 <div className="maintable">
-                    <table>
+                    <table> 
                         <tbody>
                             <tr className="heading">
                                 <th>Rank</th>
-                                <th>Name</th>
+                                <th>Name</th> 
                                 <th>Institute</th>
                                 <th className="mobile">Likes</th>
                                 <th className="mobile">Shares</th>
@@ -51,31 +52,33 @@ export default class LeaderboardIndex extends React.Component {
                         </tbody>
                         <tbody>
                             {this.state.users ? this.state.users.map((user, index) => {
-                                return (<tr key={`leader${index}`} >
-                                    {console.log('test')}
-                                    <td>{index + 1}</td>
-                                    <td>{user.name}</td>
-                                    <td>{user.college}</td>
-                                    <span className="arrow"></span>
-                                    <td className="mobile">{user.likes}</td>
-                                    <td className="mobile">{user.shares}</td>
-                                    <td className="mobile">{user.score}</td>
-                                </tr>)
+                                return <DataRow key={`leader${index}`} data={user} index={index} />
                             }) : null}
                         </tbody>
-                        <tbody>
-                            <tr>
-                                <td>Rank</td>
-                                <td>Name</td>
-                                <td>Institute</td>
-                                <td className="mobile">Likes</td>
-                                <td className="mobile">Shares</td>
-                                <td className="mobile">Scores</td>
-                            </tr>
-                        </tbody>
                     </table>
-                </div>
-            </div>
+                    <table className="ownrank">
+						<tbody>
+							{this.state.users ? this.state.users.map((user, index) => {
+								return (<tr key={`leader${index}`} >
+                                <th>rank</th>
+                                <th>{user.name}</th> 
+                                <th className="downarrows" onClick={() => this.setState({isExpanded: !this.state.isExpanded})}>{user.college}</th>
+                                <th className="mobile">{user.likes}</th>
+                                <th className="mobile">{user.shares}</th>
+                                <th className="mobile">{user.score}</th>
+                            </tr>)
+                       }) : null}
+                        {this.state.isExpanded ?
+                                    <tr>
+                                        <td className="desktop">0</td>
+                                        <td className="desktop">0</td>
+                                        <td className="desktop">0</td>
+                                    </tr>
+                                    : null}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
         )
     }
 }
