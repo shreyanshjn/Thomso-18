@@ -1,0 +1,42 @@
+/*.div1{
+
+  height: 100vh;
+  width: auto;
+  background: url('CA portal website-04.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
+
+}
+*/
+.div2{
+  height: 141px;
+  width: 475px;
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
+  background: ;
+}
+.div3{
+  height: 113px;
+  width: 108px;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+
+}
+.div4{
+
+  background: ;
+  border: 1px solid;
+  margin-left: 10px;
+  height: 111px;
+  width: 227px;
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import WISCA from './WISCA.jsx';
 import AuthService from '../../../handlers/ca/AuthService';
 import FetchApi from '../../../utils/FetchAPI';
 import LoginPage from './LoginPage';
@@ -96,7 +96,10 @@ render(){
                             <LoginPage />
                         </div>
                     </Section>
-                    <Section> 
+
+                    <Section>
+                      <WISCA />
+                          <button onClick={() => this.facebookLogin()}>Login/Register</button>
                     </Section>
                     <Section>
                     </Section>

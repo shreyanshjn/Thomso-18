@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+
+.main{
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
+}
+.fulldiv{
+  height: 100vh;
+}
+.main2{
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
+}
+.innermain1{
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+}
+.innermain2{
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+}
+.Heading{
+  color:black;
+  font-size: 30px;
+  font-style: bold;
+  padding-bottom: 30px;
+  text-align: center;
+  font-family: Montserrat
+
+}
+.MAINDIV{
+  /*
+    background: url('CA portal website-04.jpg');
+
+    height: 100vh;
+    width: auto;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+
+*/
+    padding-left: 15.7%;
+    margin-top: 202px;
+
+    margin-right: 15.7%;
+}

@@ -76,11 +76,11 @@
     }
     .first
     {
-       font-size:29px; 
+       font-size:29px;
     }
     .second
     {
-       font-size:12px; 
+       font-size:12px;
     }
 }
 @media (min-width: 1920px) and (max-width: 2560px)
@@ -122,4 +122,3 @@
        margin-top:36vh;
     }
 }
-

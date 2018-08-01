@@ -13,9 +13,9 @@ const CAIndex = Loadable({
   loading: () => <div>Loading CAIndex</div>,
 });
 
-const VerifyCerti = Loadable({
-  loader: () => import('./components/verifyCerti/Index'),
-  loading: () => <div>Loading Certificate Verification</div>,
+const Sponsors = Loadable({
+  loader: () => import('./components/beta/sponsors/Index'),
+  loading: () => <div>Loading Sponsors</div>,
 });
 
 const FAQIndex = Loadable({
@@ -45,13 +45,19 @@ class App extends Component {
         <Switch>
           {/* <Route path="/beta" component={BetaIndex} /> */}
           <Route exact path="/" component={HomeIndex} />
+
+          <Route path="/Sponsors/" component={Sponsors} />
+
+
+
           <Route exact path="/sponsors" component={SponsorsIndex} />
           <Route exact path="/team" component={TeamIndex} />
           <Route exact path="/faq" component={FAQIndex} />
 
           <Route path="/ca/" component={CAIndex} />
 
-          <Route path="/verifyCerti/" component={VerifyCerti} />
+        
+
         </Switch>
       </BrowserRouter>
     );
