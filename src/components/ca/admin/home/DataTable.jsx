@@ -1,13 +1,15 @@
 import React from 'react';
 import $ from 'jquery'
+
 import AuthService from '../../../../handlers/ca/admin/AuthService';
 import FetchApi from '../../../../utils/FetchAPI';
+import Row from './Row';
 // import FetchDb from '../../../../utils/FetchDb';
-var fs = require('fs');
-// var Iconv     = require("iconv").Iconv;
-// var iconv     = new Iconv('utf8', 'utf16le');
-var csv_export=require('csv-export');
+// var fs = require('fs');
+// var csv_export=require('csv-export');
 var csv2json = require('csv2json');
+
+
 
 
 export default class DataTable extends React.Component {
@@ -98,7 +100,7 @@ export default class DataTable extends React.Component {
         $("#myInput").on("keyup", function() {
             var value = $(this).val().toLowerCase();
             $("#myTable tr").filter(function() {
-                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                return $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
             });
         });
     }
@@ -110,7 +112,7 @@ export default class DataTable extends React.Component {
       return (
         <div>
             <div>
-                <input id="myInput" type="text" onChange={(e) => this.handleFilter(e)} placeholder="Search Projects.." />
+                <input id="myInput" type="text" onChange={(e) => this.handleFilter(e)} placeholder="Type here to search..." />
             </div>
             <button onClick={()=>this.handleDownload()} >Download Users</button>
             <table>
@@ -126,20 +128,7 @@ export default class DataTable extends React.Component {
                     </tr>
                 </thead>
                 <tbody id="myTable">
-                    {data.map((data,i)=> {
-                        return(
-                            <tr key="i">
-                                <td>{data.name}</td>
-                                <td>{data.college}</td>
-                                <td>{data.email}</td>
-                                <td>{data.branch}</td>
-                                <td>{data.blocked}</td>
-                                <td>{data.fb_id}</td>
-                                <td>{data.gender}</td>
-                            </tr>
-                        )
-                    })
-                    }
+                    {data.map((data,i)=> <Row key={i} data={data} />)}
                 </tbody>
             </table>
         </div>

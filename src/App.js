@@ -7,15 +7,9 @@ import Loadable from 'react-loadable';
 //   loader: () => import('./components/beta/Index'),
 //   loading: () => <div>Loading BetaIndex</div>,
 // });
-
 const CAIndex = Loadable({
   loader: () => import('./components/ca/Index'),
   loading: () => <div>Loading CAIndex</div>,
-});
-
-const Sponsors = Loadable({
-  loader: () => import('./components/beta/sponsors/Index'),
-  loading: () => <div>Loading Sponsors</div>,
 });
 
 const FAQIndex = Loadable({
@@ -38,6 +32,11 @@ const HomeIndex = Loadable({
   loading: () => <div>Loading HomeIndex</div>
 });
 
+const VerifyCerti = Loadable({
+  loader: () => import("./components/verifyCerti/Index"),
+  loading: () => <div>Loading VerifyCerti</div>
+});
+
 class App extends Component {
   render() {
     return (
@@ -45,19 +44,13 @@ class App extends Component {
         <Switch>
           {/* <Route path="/beta" component={BetaIndex} /> */}
           <Route exact path="/" component={HomeIndex} />
-
-          <Route path="/Sponsors/" component={Sponsors} />
-
-
-
           <Route exact path="/sponsors" component={SponsorsIndex} />
           <Route exact path="/team" component={TeamIndex} />
           <Route exact path="/faq" component={FAQIndex} />
 
           <Route path="/ca/" component={CAIndex} />
 
-        
-
+          <Route path="/verifyCerti/" component={VerifyCerti} />
         </Switch>
       </BrowserRouter>
     );

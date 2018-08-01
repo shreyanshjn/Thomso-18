@@ -10,7 +10,6 @@ var bookRoutes = require('./book/routes');
 var viewController = require('../controllers/view_controller');
 var verifyCerti = require('../controllers/api/Certificates/verifyCertificates');
 
-
 // Routes
 
 // -> /api
