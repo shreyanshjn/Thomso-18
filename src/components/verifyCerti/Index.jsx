@@ -8,7 +8,7 @@ export default class VerifyCerti extends React.Component{
         this.state = {
             disabled: false,
             id: '',
-            table: '',
+            table: 'registration_user',
             show: false
         }
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,6 +20,7 @@ export default class VerifyCerti extends React.Component{
             table: this.state.table,
             id: this.state.id
         }
+        // console.log(data);
         FetchApi('POST', '/api/certiVerify', data)
         .then(r => r.data.success ? this.setState({data: r.data.data, show: true, msg: 'Certificate found'}) : this.setState({msg: 'Data not found. Check id again', show: false}))
         .catch(e => console.log(e));
@@ -56,13 +57,14 @@ export default class VerifyCerti extends React.Component{
                 <div className="col-sm-6">
                     <h3>Certificate Details</h3>
                     <div>
+                        {console.log(this.state.data)}
                         {this.state.show && <div> 
-                            <p><b>ID :</b><span>TH{this.state.data[0].id || this.state.data[0].thomso_id}</span></p>
-                            <p><b>Name :</b><span>{this.state.data[0].name}</span></p>
-                            <p><b>College :</b><span>{this.state.data[0].college}</span></p>
-                            <p><b>Contact :</b><span>{this.state.data[0].contact}</span></p>
-                            <p><b>Position :</b><span>{this.state.data[0].position}</span></p>
-                            <p><b>Event :</b><span>{this.state.data[0].event_name}</span></p>
+                            <p><b>ID :</b><span>TH{this.state.data.id || this.state.data.thomso_id}</span></p>
+                            <p><b>Name :</b><span>{this.state.data.name}</span></p>
+                            <p><b>College :</b><span>{this.state.data.college}</span></p>
+                            <p><b>Contact :</b><span>{this.state.data.contact}</span></p>
+                            <p><b>Position :</b><span>{this.state.data.position}</span></p>
+                            <p><b>Event :</b><span>{this.state.data.event_name}</span></p>
 
                         </div>}
                     </div>

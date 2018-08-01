@@ -17,6 +17,28 @@
     background-color: white;
     width: 1px;
 }
+.black-logo{
+    padding: 10px;
+}
+.black-logo img{
+    height: 125px;
+    width: auto;    
+    cursor: pointer;
+}
+.black-line{
+    height: 35px;
+    margin-top: 50px;
+    background-color: white;
+    width: 1px;
+    background-color: black;
+}
+.black-text{
+    padding-left:20px;
+    padding-top: 5px; 
+    margin: 0;
+    color: rgba(0,0,0,0.9);
+    font-family: Montserrat;
+}
 .r-logo{
     padding: 10px;
 }
@@ -24,4 +46,17 @@
     width: auto;
     height: 75px;
     cursor: pointer;
+}
+
+@media only screen and (max-width:768px)
+{
+    .register-heading{
+        flex-direction:column;
+        text-align:center;
+    }
+    .vertical_line
+    {
+        display:none;
+    }
+
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import './updatedcard.css';
-import logoshare from '../img/icons8-share-50 (1).png';
-import logo from '../img/eye.png';
+import share from '../../beta/home/src/img/share.png';
+import eye from '../../beta/home/src/img/eye.png';
 export default class Card extends React.Component {
   constructor() {
     super();
@@ -10,30 +10,39 @@ export default class Card extends React.Component {
       shown: true,
       button: true,
       date: '',
-      month:'',
-      year:''
+      month: '',
+      year: '',
+      hours: '',
+      minutes: '',
+      seconds: ''
     };
   }
-
   componentDidMount() {
     if (this.props.data && this.props.data.created_time) {
-      const created_time = this.props.data.created_time;
-      const d = new Date(created_time);
-      const date = d.getDate();
-      this.setState({date},{month});
-      const month=d.getMonth();
+      const created_time = this.props.data.created_time
+      const d = new Date(created_time)
+      console.log(d, "created_time")
+      const da = d.getDate()
+      this.setState({
+        date: da,
+        month: d.getMonth(),
+        year: d.getFullYear(),
+        hours: d.getHours(),
+        minutes: d.getMinutes(),
+        seconds: d.getSeconds()
+      });
     }
-
   }
+
+  /*  toggle() {
+    this.setState({
+      shown: !this.state.shown, button:!this.state.button
+    });
+  }*/
   render() {
-
-
-
-
-
-
+    const { date, month, year, hours, minutes, seconds } = this.state
     return (
-      <div className="maindiv">
+      <div className="maindiv" >
         <div className="innerdiv">
           <div className="wrapper">
             <div className="card">
@@ -41,16 +50,22 @@ export default class Card extends React.Component {
                 <img src={this.props.data.full_picture} alt="fullpicture" className="border-tlr-radius" />
               </div>
               <div className="card__content card__padding">
-                <div className="card__share">
-                  <div className="share-toggle share-icon" onClick={() => this.props.sharePost(this.props.data.id)}> <a><img src={logoshare} alt="fblogo" /></a></div>
+                <div className="card__share" title="Share on Facebook">
+                  <div className="share-toggle share-icon" onClick={() => this.props.sharePost(this.props.data.id)}>
+                    <a><img src={share} alt="fblogo" /></a></div>
                 </div>
-                <div className="card__share2">
+                <div className="card__share2" title="View on Facebook">
                   <div className="share-toggle share-icon">{this.props.data.link ? <a href={this.props.data.link} style={{ textDecoration: 'none' }} target="_blank" >
-                    <img src={logo} alt="fblogo" /> </a> : null}
+                    <img src={eye} alt="fblogo" /> </a> : null}
                   </div>
                 </div>
                 <div className="card__meta">
-                  <p>{`Posted on ${this.state.date}/${this.state.month}/${this.state.year}`}</p>
+                  <div>
+                    <span className="posted">Posted on</span><span className="date">{date}-{month + 1}-{year}</span>
+                  </div>
+                  <div>
+                    <span className="time">Time</span><span className="hms">{hours}:{minutes}:{seconds}</span>
+                  </div>
                 </div>
                 <div className="card__article">
                   <p>{this.props.data.message}</p>
@@ -59,7 +74,7 @@ export default class Card extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+      </div >
 
     );
   }

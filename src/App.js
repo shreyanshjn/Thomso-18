@@ -13,11 +13,6 @@ const CAIndex = Loadable({
   loading: () => <div>Loading CAIndex</div>,
 });
 
-const Sponsors = Loadable({
-  loader: () => import('./components/beta/sponsors/Index'),
-  loading: () => <div>Loading Sponsors</div>,
-});
-
 const FAQIndex = Loadable({
   loader: () => import("./components/beta/faq/Index"),
   loading: () => <div>Loading FAQIndex</div>
@@ -38,6 +33,11 @@ const HomeIndex = Loadable({
   loading: () => <div>Loading HomeIndex</div>
 });
 
+const VerifyCerti = Loadable({
+  loader: () => import("./components/verifyCerti/Index"),
+  loading: () => <div>Loading VerifyCerti</div>
+});
+
 class App extends Component {
   render() {
     return (
@@ -56,7 +56,7 @@ class App extends Component {
 
           <Route path="/ca/" component={CAIndex} />
 
-        
+
 
         </Switch>
       </BrowserRouter>
