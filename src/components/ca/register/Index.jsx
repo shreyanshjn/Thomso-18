@@ -29,7 +29,6 @@ export default class RegisterIndex extends React.Component {
             this.setState({
                 name: this.props.userData.name,
                 email: this.props.userData.email,
-                gender: this.props.userData.gender
             })
             if (!this.props.userData.fb_id) {
                 this.props.history.push('/ca/')

@@ -15,7 +15,6 @@ exports.fblogin = function(req, res) {
         name: req.body.name,
         link: req.body.link,
         email: req.body.email,
-        gender: req.body.gender,
         image: req.body.image
     }
     request(`https://graph.facebook.com/oauth/access_token?grant_type=fb_exchange_token&client_id=${client_id}&client_secret=${client_secret}&fb_exchange_token=${accessToken}`, function(err, response, body){
@@ -24,7 +23,7 @@ exports.fblogin = function(req, res) {
         CA_User.findOne({
             fb_id: req.body.id
         })
-        .select('name gender image fb_id email ca_id likes shares referrals score notification blocked link created college')
+        .select('name image fb_id email ca_id likes shares referrals score notification blocked link created college')
         .exec(function(err, user) {
             if (err) {
                 return res.status(400).send({
@@ -60,7 +59,7 @@ exports.fblogin = function(req, res) {
                 // Update User
                 if (user.created) {
                     CA_User.findOneAndUpdate({fb_id: req.body.id}, saveData, { new:true })
-                    .select('name gender image ca_id likes shares referrals score notification blocked link created college')
+                    .select('name image ca_id likes shares referrals score notification blocked link created college')
                     .exec(function(err, user) {
                         if(err){
                             return res.status(400).send({success:false, msg:'Error Updating User', error:err});
@@ -103,31 +102,31 @@ exports.fblogin = function(req, res) {
 exports.fbRegister = function(req, res) {
     if (req.body) {
         if (req.body.name) {
-            req.body.name.trim();
+            req.body.name = req.body.name.trim();
         }
         if (req.body.contact) {
-            req.body.contact.trim();
+            req.body.contact = req.body.contact.trim();
         }
         if (req.body.email) {
-            req.body.email.trim();
+            req.body.email = req.body.email.trim();
         }
         if (req.body.gender) {
-            req.body.gender.trim();
+            req.body.gender = req.body.gender.trim();
         }
         if (req.body.college) {
-            req.body.college.trim();
+            req.body.college = req.body.college.trim();
         }
         if (req.body.state) {
-            req.body.state.trim();
+            req.body.state = req.body.state.trim();
         }
         if (req.body.branch) {
-            req.body.branch.trim();
+            req.body.branch = req.body.branch.trim();
         }
         if (req.body.address) {
-            req.body.address.trim();
+            req.body.address = req.body.address.trim();
         }
         if (req.body.why) {
-            req.body.why.trim();
+            req.body.why = req.body.why.trim();
         }
         var data = {
             name: req.body.name,

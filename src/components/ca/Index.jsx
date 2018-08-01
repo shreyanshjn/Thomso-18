@@ -55,6 +55,11 @@ const LoginIndex = Loadable({
   loading: Loading
 });
 
+const TimelineIndex = Loadable({
+  loader: () => import("./timeline/Index"),
+  loading: Loading
+});
+
 export default class CAIndex extends React.Component {
   constructor() {
     super();
@@ -105,6 +110,7 @@ export default class CAIndex extends React.Component {
             }
             <Route exact path="/ca/logout" render={props => (<LogoutIndex {...props} updateRoutes={this.handleUpdate} />)} />
             <Route exact path="/ca/leaderboard" component={LeaderboardIndex} />
+            <Route exact path="/ca/timeline" component={TimelineIndex} />
             <Route exact path="/ca/contact" render={props => (<ContactIndex {...props} userData={this.state.userData} />)} />
             <Route exact path="/ca/ideas" component={IdeasIndex} />
             <Route exact path="/ca/" component={HomeIndex} />
