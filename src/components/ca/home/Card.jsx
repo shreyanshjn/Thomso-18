@@ -1,6 +1,7 @@
 import React from 'react';
 import './updatedcard.css';
 import logoshare from '../img/icons8-share-50 (1).png';
+import logo from '../img/eye.png';
 export default class Card extends React.Component {
   constructor() {
     super();
@@ -8,25 +9,23 @@ export default class Card extends React.Component {
       isExpanded: false,
       shown: true,
       button: true,
+      date: '',
+      month:'',
+      year:''
     };
-
   }
 
-  /*  toggle() {
-    this.setState({
-      shown: !this.state.shown, button:!this.state.button
-    });
-  }*/
+  componentDidMount() {
+    if (this.props.data && this.props.data.created_time) {
+      const created_time = this.props.data.created_time;
+      const d = new Date(created_time);
+      const date = d.getDate();
+      this.setState({date},{month});
+      const month=d.getMonth();
+    }
+
+  }
   render() {
-    /*  var button=this.state.button?"more":"less";
-      var shown = {
-           display: this.state.shown ? "block" : "none"
-           };
-
-      var hidden = {
-           display: this.state.shown ? "none" : "block", lineHeight: '0.8em'
-           }*/
-
     return (
       <div className="maindiv">
         <div className="innerdiv">
@@ -41,11 +40,11 @@ export default class Card extends React.Component {
                 </div>
                 <div className="card__share2">
                   <div className="share-toggle share-icon">{this.props.data.link ? <a href={this.props.data.link} style={{ textDecoration: 'none' }} target="_blank" >
-                    <img src={logoshare} alt="fblogo" /> </a> : null}
+                    <img src={logo} alt="fblogo" /> </a> : null}
                   </div>
                 </div>
                 <div className="card__meta">
-                  <p>posted on {this.props.data.created_time} </p>
+                  <p>{`Posted on ${this.state.date}/${this.state.month}/${this.state.year}`}</p>
                 </div>
                 <div className="card__article">
                   <p>{this.props.data.message}</p>
@@ -59,6 +58,3 @@ export default class Card extends React.Component {
     );
   }
 }
-
-
-

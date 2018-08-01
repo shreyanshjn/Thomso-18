@@ -18,7 +18,7 @@ export default class HomeIndex extends React.Component {
     }
 
     sharePost = data => {
-        let postId = data.id.split('_')[1];
+        let postId = data.split('_')[1];
         let feedObject = {
             method: 'share',
         };
