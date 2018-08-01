@@ -87,10 +87,10 @@ class Navbar extends Component {
                     }}>TEAM CONTACT</Link>
                 </li>
                 <li>
-                    <Link to="./sponsors" className={(this.state.activeState === "linkSponsors") ? "linkSponsors" : null}
+                    <Link to="../sponsors" className={(this.state.activeState === "linkSponsors") ? "linkSponsors" : null}
                     onClick={() => {
                                     this.setActive("linkSponsors");
-                    }}>OUR SPONSERS</Link>
+                    }}>OUR SPONSORS</Link>
                 </li>
                 <li>
                   <Link to="" className={(this.state.activeState === "linkFaq") ? "linkFaq" : null}
