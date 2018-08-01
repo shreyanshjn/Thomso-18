@@ -98,6 +98,9 @@
     opacity: 0.8;
     transition: all 0.5s;
 }
+.image_four:hover {
+    opacity: 1;
+}
 .details_one{
     width: auto;
     box-shadow: 2px 2px 7px 2px rgba(55,55,55,.2);

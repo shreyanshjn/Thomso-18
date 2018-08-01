@@ -2,6 +2,8 @@ import React from 'react';
 
 import AuthService from '../../../handlers/ca/AuthService';
 import FetchApi from '../../../utils/FetchAPI';
+import MainPage from './MainPage';
+import './src/css/Index.css';
 
 export default class LoginIndex extends React.Component {
     constructor(){
@@ -57,7 +59,10 @@ export default class LoginIndex extends React.Component {
 
     render(){
         return (
-            <button onClick={() => this.facebookLogin()}>Login/Register</button>
+            <div className="mainIndex">
+                <MainPage />
+                <button  className="buttonca" onClick={() => this.facebookLogin()}>Login/Register</button>
+            </div>
         )
     }
 }
