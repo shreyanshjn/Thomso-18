@@ -61,7 +61,7 @@ export default class LoginIndex extends React.Component {
 render(){
         let options = {
             sectionClassName:     'section',
-            anchors:              ['home', 'aboutUs', 'footfall','celebrity','contactUs'],
+            anchors:              ['home', 'ca?', 'roles','contact'],
             scrollBar:            false,
             navigation:           false,
             verticalAlign:        false,
