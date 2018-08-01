@@ -1,12 +1,17 @@
 import React from 'react';
-
+import WISCA from './WISCA.jsx';
+import ROLES from './ROLES.jsx';
+import CONTACT from './CONTACT.jsx';
 import AuthService from '../../../handlers/ca/AuthService';
 import FetchApi from '../../../utils/FetchAPI';
-import MainPage from './MainPage';
-import './src/css/Index.css';
-
+import LoginPage from './LoginPage';
+import RegisterNavbar from './RegisterNavbar';
+import { SectionsContainer, Section } from 'react-fullpage';
+import arrow from './src/img/arrow.svg';
+import './src/css/Main.css';
+import BlackNavbar from './blacknavbar'
 export default class LoginIndex extends React.Component {
-    constructor(){
+    constructor() {
         super();
         this.state = {
             facebook: true,
@@ -15,25 +20,28 @@ export default class LoginIndex extends React.Component {
         this.facebookLogin = this.facebookLogin.bind(this);
     }
 
-    componentDidMount(){
+    componentDidMount() {
         window.FB.init({
-            appId : process.env.REACT_APP_FB_ID,
+            appId: process.env.REACT_APP_FB_ID,
             status: true,
             xfbml: true
         });
     }
 
-    facebookLogin(){
+    facebookLogin() {
         // let props = this.props;
         window.FB.login(response => {
             window.FB.api('/me?fields=id, name, email, picture.type(large), link', res => {
                 let accessToken = response.authResponse.accessToken;
                 let {id, name, email, link} = res;
                 let image = res.picture.data.url;
-                let data = {id, name, email, image, accessToken, link};
+                let data = {id, name, image, accessToken, link};
+                if (email !== undefined) {
+                    data['email'] = email
+                }
                 this.updateCheckUser(data)
             })
-        }, {scope: 'email, user_likes ,user_posts, user_link' });
+        }, {scope: 'user_likes, email, user_posts, user_link' });
     }
 
     updateCheckUser(data) {
@@ -56,13 +64,55 @@ export default class LoginIndex extends React.Component {
             })
             .catch(e => console.log(e));
     }
-
-    render(){
+    render() {
+        let options = {
+            sectionClassName:     'section',
+            anchors:              ['home', 'WISCA', 'ROLES','contactUs'],
+            scrollBar:            false,
+            navigation:           false,
+            verticalAlign:        false,
+            sectionaddingTop:    '0px',
+            slidesNavPosition: 'bottom',
+            arrowNavigation: true
+        };
         return (
-            <div className="mainIndex">
-                <MainPage />
-                <button  className="buttonca" onClick={() => this.facebookLogin()}>Login/Register</button>
+            <div className="middlesection">
+                <SectionsContainer {...options}>
+                    <div className="child-middle">
+                        <RegisterNavbar />
+                        <Section>
+                            <div>
+                                {/* <div className="inconvi">
+                                    <p className="sorry">Sorry for the inconvenience. We are facing some technical issues due to Facebook policy changes. Kindly enter email/FacebookID and we'll grant you the access.</p>
+                                    <form className="formEmail">
+                                        <input type="text" placeholder="EmailID" />
+                                        <input type="text" placeholder="https://www.facebook.com" />
+                                    </form>
+                                </div> */}
+                                <button className="buttonca" onClick={() => this.facebookLogin()}>Login/Register</button>
+                                <div className="arrowmove">
+                                    <a href="#WISCA" address="true">
+                                        <img src={arrow} className="downarrow bounce" alt=
+                                            "a" />
+                                    </a>
+                                </div>
+                            </div>
+                        </Section>
+                    </div>
+                    <BlackNavbar />
+                    <Section>
+                      <WISCA />
+                    </Section>
+                    <BlackNavbar />
+                    <Section>
+                    <ROLES />
+                    </Section>
+                    <BlackNavbar />
+                    <Section>
+                      <CONTACT />
+                    </Section>
+                </SectionsContainer>
             </div>
-        )
+        );
     }
 }

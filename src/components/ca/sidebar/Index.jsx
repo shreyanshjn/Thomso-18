@@ -30,13 +30,12 @@ export default class Sidebar extends React.Component {
       };
     }
   }
-      
+
   setActive(state) {
     this.setState({ activeState: state });
   }
 
   componentDidMount() {
-    console.log(window.location.pathname, "jjj")
     console.log(this.state.activeState, "active")
   }
 
@@ -45,15 +44,14 @@ export default class Sidebar extends React.Component {
     Field.execCommand('copy');
     Field.remove()
   }
-    render() {
-        let countDownDate = new Date("Oct 25, 2018 00:00:00").getTime();
-        let now=new Date().getTime();
-        let distance = countDownDate - now;
-        let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        if(days<0)
-        {
-           days=0;  
-        }
+  render() {
+    let countDownDate = new Date("Oct 25, 2018 00:00:00").getTime();
+    let now = new Date().getTime();
+    let distance = countDownDate - now;
+    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    if (days < 0) {
+      days = 0;
+    }
 
     return (
       <div>
@@ -63,7 +61,7 @@ export default class Sidebar extends React.Component {
           style={(this.props.userData && this.props.userData.gender === "female") ? {backgroundColor: 'Pink'} : {backgroundColor: '#00ff95d9'}}
         >
           <div className="sidebar-user">
-            <img src={this.props.userData ? this.props.userData.image : boy} className="image" alt ="dataImg"/>
+            <img src={this.props.userData ? this.props.userData.image : boy} className="image" alt="dataImg" />
             <div className="details">
               <div className="text">{this.props.userData ? this.props.userData.name : "User"}</div>
               <div className="cname">{this.props.userData ? this.props.userData.college : "-"}</div>
@@ -78,7 +76,7 @@ export default class Sidebar extends React.Component {
                   <div>
                     {this.props.userData ? this.props.userData.likes : "0"}
                   </div>
-                  <img src={like} alt="like"/>
+                  <img src={like} alt="like" />
                 </div>
                 <div className="plikes">
                   LIKES
@@ -211,7 +209,7 @@ export default class Sidebar extends React.Component {
                   <Certificate />
                 </div>
                 <div className="p-name">
-                  Certificate
+                  CERTIFICATE
                 </div>
               </div>
             </Link> */}
@@ -226,7 +224,7 @@ export default class Sidebar extends React.Component {
                 this.setActive("contact");
               }}
             >
-              <div className="contactus flex_row">
+              <div className=".ca-sidebar-contactus flex_row">
                 <div className="p-logo">
                   <Contact />
                 </div>

@@ -10,7 +10,8 @@ import FetchApi from '../../utils/FetchAPI';
 
 const Loading = ({ error }) => {
   if (error) {
-    return console.log(error);
+    console.log(error);
+    return <h3>Error loading component</h3>;
   } else {
     return <h3>Loading...</h3>;
   }

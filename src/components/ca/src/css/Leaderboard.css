@@ -14,7 +14,7 @@
     float:right;
 }
 th,td {
-    padding: 20px;
+    /* padding: 20px; */
     text-align: left;
 }
 th
@@ -56,7 +56,7 @@ table {
 @media only screen and (max-width: 768px) {
     .maintable
     {
-        width:62%;
+        width:67%;
         float:right;
     }
     th,td {

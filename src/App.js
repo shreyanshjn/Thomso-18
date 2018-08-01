@@ -36,7 +36,10 @@ const VerifyCerti = Loadable({
   loader: () => import("./components/verifyCerti/Index"),
   loading: () => <div>Loading VerifyCerti</div>
 });
-
+const Sponsors = Loadable({
+  loader: () => import('./components/beta/sponsors/Index'),
+  loading: () => <div>Loading Sponsors</div>,
+});
 class App extends Component {
   render() {
     return (

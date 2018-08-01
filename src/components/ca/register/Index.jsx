@@ -26,10 +26,16 @@ export default class RegisterIndex extends React.Component {
 
     componentWillMount() {
         if (this.props.userData) {
-            this.setState({
-                name: this.props.userData.name,
-                email: this.props.userData.email,
-            })
+            if (this.props.userData.email) {
+                this.setState({
+                    name: this.props.userData.name,
+                    email: this.props.userData.email,
+                })
+            } else {
+                this.setState({
+                    name: this.props.userData.name,
+                })
+            }
             if (!this.props.userData.fb_id) {
                 this.props.history.push('/ca/')
             }
@@ -121,6 +127,9 @@ export default class RegisterIndex extends React.Component {
                                         placeholder="Contact Number"
                                         name="contact"
                                         maxLength="10"
+                                        autoCorrect="off"
+                                        autoComplete="off"
+                                        autoCapitalize="on"
                                         value={contact}
                                         onChange={this.onChange}
                                         required
@@ -165,6 +174,9 @@ export default class RegisterIndex extends React.Component {
                                     type="text"
                                     placeholder="College Name"
                                     name="college"
+                                    autoCorrect="off"
+                                    autoComplete="off"
+                                    autoCapitalize="on"
                                     value={college}
                                     onChange={this.onChange}
                                     required
@@ -178,6 +190,9 @@ export default class RegisterIndex extends React.Component {
                                         type="text"
                                         placeholder="State Name"
                                         name="state"
+                                        autoCorrect="off"
+                                        autoComplete="off"
+                                        autoCapitalize="on"
                                         value={state}
                                         onChange={this.onChange}
                                         required
@@ -190,6 +205,9 @@ export default class RegisterIndex extends React.Component {
                                         type="text"
                                         placeholder="Branch Name"
                                         name="branch"
+                                        autoCorrect="off"
+                                        autoComplete="off"
+                                        autoCapitalize="on"
                                         value={branch}
                                         onChange={this.onChange}
                                         required
@@ -203,6 +221,9 @@ export default class RegisterIndex extends React.Component {
                                     type="text"
                                     placeholder="Address Name"
                                     name="address"
+                                    autoCorrect="off"
+                                    autoComplete="off"
+                                    autoCapitalize="on"
                                     value={address}
                                     onChange={this.onChange}
                                     required
@@ -214,6 +235,9 @@ export default class RegisterIndex extends React.Component {
                                     id="inputWhy"
                                     placeholder="Your Answer"
                                     name="why"
+                                    autoCorrect="off"
+                                    autoComplete="off"
+                                    autoCapitalize="on"
                                     rows="1"
                                     value={why}
                                     onChange={this.onChange}

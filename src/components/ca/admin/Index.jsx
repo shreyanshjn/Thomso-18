@@ -42,7 +42,7 @@ const IdeasIndex = Loadable({
     loader: () => import('./ideas/Index'),
     loading: Loading,
 });
-export default class CAIndex extends React.Component{
+export default class AdminIndex extends React.Component{
     constructor() {
         super();
         this.state = {

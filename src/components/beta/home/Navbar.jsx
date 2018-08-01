@@ -32,7 +32,7 @@ class Navbar extends Component {
       <div className="contain">
         <div className={this.state.hamburger? "navbar":"navbar overlay navbarToggle"}>
           <div className="t-logo">
-            <img src={img} alt="" />
+              <Link to="./"> <img src={img} alt="" /></Link>
           </div>
           <div className="t-ctos">
             <div className="toggle">
@@ -49,15 +49,15 @@ class Navbar extends Component {
             <div className="int-ctos">
               <ul id="tushar">
                 <li>
-                    <Link to="" className={(this.state.activeState === "linkCaportal") ? "linkCaportal" : null}
+                    <Link to="../ca/" className={(this.state.activeState === "linkCaportal") ? "linkCaportal" : null}
                     onClick={() => {
                                     this.setActive("linkCaportal");
                     }}>
                     CA PORTAL
                     </Link>
                 </li>
-                <li>
-                  <Link to="" className={(this.state.activeState === "linkZonals") ? "linkZonals" : null}
+                {/*     <li>
+              <Link to="" className={(this.state.activeState === "linkZonals") ? "linkZonals" : null}
                     onClick={() => {
                                     this.setActive("linkZonals");
                     }}>
@@ -85,19 +85,19 @@ class Navbar extends Component {
                     onClick={() => {
                                     this.setActive("linkTeam");
                     }}>TEAM CONTACT</Link>
-                </li>
+                </li>*/}
                 <li>
-                  <Link to="" className={(this.state.activeState === "linkSponsors") ? "linkSponsors" : null}
+                    <Link to="../sponsors" className={(this.state.activeState === "linkSponsors") ? "linkSponsors" : null}
                     onClick={() => {
                                     this.setActive("linkSponsors");
-                    }}>OUR SPONSERS</Link>
+                    }}>OUR SPONSORS</Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link to="" className={(this.state.activeState === "linkFaq") ? "linkFaq" : null}
                     onClick={() => {
                                     this.setActive("linkFaq");
                     }}>FAQs</Link>
-                </li>
+                </li>*/}
               </ul>
             </div>
           </div>

@@ -35,11 +35,10 @@ exports.fblogin = function(req, res) {
             if (!user) {
                 // Return Data
                 var newUser = new CA_User(saveData);
-                console.log(newUser);
-                newUser.save(function(err) {
+                newUser.save(function(err, user) {
                     if (err) {
                         console.log(err);
-                        return res.status(400).send({success: false, msg: 'Unable to Add Use'});
+                        return res.status(400).send({success: false, msg: 'Unable to Add User'});
                     }
                     var newToken = {
                         fb_id: req.body.id,
@@ -52,7 +51,11 @@ exports.fblogin = function(req, res) {
                         if (err) {
                             return res.status(400).send({success: false, msg: 'Unable Create Token'});
                         }
-                        res.json({success: true, msg: 'New User, Created False', token: token.token, new: true});
+                        res.json({success: true, msg: 'New User, Created False', token: token.token, new: true, body: {
+                            email: user.email,
+                            name: user.name,
+                            fb_id: user.fb_id
+                        }});
                     });
                 });
             } else {
