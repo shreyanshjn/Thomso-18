@@ -1,34 +1,68 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
+.indexMain
+{
+    background-image: url("../../../beta/home/src/img/dashboard\ bg-01.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height:100vh;
+}
+.maintable
+{
+    width:72%;
+    float:right;
+}
 th,td {
-    padding: 15px;
+    padding: 20px;
     text-align: left;
 }
 th
 {
     border-bottom: 1px solid white;
 }
+.ownrank
+{
+    position:fixed;
+    bottom:0px;
+    border-bottom:none;
+    width:80%;
+}
+.ownrank > tbody > tr > th
+{
+    border-bottom:none;
+}
 table {
     border-collapse: collapse;
+    border-spacing:0px;
     width: 100%;
     font-weight: bold;
     font-family: Montserrat;
     font-size: 12px;
-    background-color:black;
     color:white;
+    table-layout: fixed;
 }
 .arrow
 {
     display:none;
 }
+@media only screen and (min-width: 768px){
+    .desktop
+    {
+        display:none; 
+    }   
+    
+}
 @media only screen and (max-width: 768px) {
+    .maintable
+    {
+        width:67%;
+        float:right;
+    }
     th,td {
         padding: 3px;
         text-align: left;
         font-size:10px;
-    }
-    .mobile
-    {
-        display:none;
     }
     .maintable
     {
@@ -42,5 +76,30 @@ table {
         padding: 3px;
         transform: rotate(45deg);
         -webkit-transform: rotate(45deg);
+    }
+    .downarrows
+    {
+        position:relative;
+    }
+    .downarrows::after
+    {
+        content:"";
+        background:url('../../img/arrow.svg') no-repeat;
+        background-size: 10px 20px;
+        display:inline-block;
+        width:20px;
+        height:20px;
+        position:absolute;
+        left:78%;
+        top:0%;
+
+    }  
+    .mobile
+    {
+        display:none;
+    }
+    .ownrank
+    {
+        width:66%;
     }
 }

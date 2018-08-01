@@ -166,6 +166,15 @@
 .int-ctos ul li a:hover::after {
     width: 100%;
 }
+.int-ctos ul li  .linkZonals::after , .int-ctos ul li .linkCaportal::after , .int-ctos ul li .linkEvents::after , .int-ctos ul li .linkTeam::after , .int-ctos ul li .linkSponsors::after , .int-ctos ul li .linkFaq::after ,.int-ctos ul li .linkEventson::after, .int-ctos ul li .linkEventsoff::after{
+    content: "";
+    display: block;
+    margin-top: 1vh;
+    width: 100%;
+    height: 2px;
+    background: white;
+}
+
 @media (max-width: 816px) {
     .toggle {
         display: flex;
@@ -197,11 +206,11 @@
 @media (min-width: 1920px) and (max-width: 2560px){
 .t-logo img
 {
-    height:170px;
+    height:122px;
 }
 .int-ctos ul li a
 {
-    font-size:27px;
+    font-size:25px;
 }
 
 }

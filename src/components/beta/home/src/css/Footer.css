@@ -96,7 +96,7 @@
         position:fixed;
         height:20vh;
         width: 100%;
-        top: 85vh;
+        top: 83vh;
         height: 13vh;
     }
     .countdown
@@ -171,41 +171,44 @@
 {
     .thomso
     {
-        font-size:40px;
+        font-size:26px;
         font-family:Montserrat;
     }
     .days
     {
-        font-size:40px;
+        font-size:36px;
         font-family:Montserrat;
     }
     .left
     {
-        font-size:30px;
+        font-size:21px;
         font-family:Montserrat;
     }
     .main
     {
-        top:82vh;
+        top:86vh;
         font-family:Montserrat;
     }
     .follow
     {
-        font-size:35px;
+        font-size:27px;
         font-family:Montserrat;
     }
     .iconsImage
     {
-        width:60px;
-        height:60px;
+        width:50px;
+        height:50px;
     }
     .fbdiv, .ytdiv , .instadiv , .linkediv
     {
-        width:60px;
-        height:60px;
-        margin-left:10px;
+        width:50px;
+        height:50px;
+        margin-left:15px;
         borderradius:50%;
     }
- 
+    .mainIcons
+    {
+       margin-top:6px;
+    }
 
 }

@@ -12,7 +12,7 @@ render(){
 		Uttarakhand". The fest plays host to the most strikingly talented scholars and academicians from all over
 
 		the country, attracts media moguls and celebrates the divine congregation of culture and intellect.
-        Brochure.</p> 
+        </p> 
 		</div>
 	     );
       }

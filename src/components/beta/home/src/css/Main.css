@@ -7,7 +7,7 @@
     height: 100vh;
 
 }
-.imagelogo img{
+.imagelogo ,.downarrow{
     max-width: 100%;
     margin-top: 200px;
     padding-bottom:150px;
@@ -39,16 +39,22 @@ p{
     animation: bounce 2s infinite;
 }
 @media only screen and (max-width: 768px){
-    .imagelogo img{
+    .mainlogo , .downarrow{
         max-width: 100%;
         margin-top: 200px;
         padding-bottom:135px;
     }
+    .mainlogo
+    {
+        margin-top:2vh;
+        width:100%;
+        height:auto;
+    }
     .downarrow
     {
         position: absolute;
-        left: 50%;
-        top: 340px;
+        left: 48%;
+        top: 43vh;
         z-index: 10;
         width: 30px;
         height: 4vh;
@@ -58,16 +64,16 @@ p{
 {
     .mainlogo
     {
-        width: 1125px;
-        height: 389px;
+        width: 992px;
+        height: 409px;
         margin-top: 270px;
         width: 992px;
         height: 390px;
-        margin-top: 279px;
+        margin-top: 9vh;
     }
     .downarrow
     {
-     height:50px;
-    
+     height:41px;
+     top:61vh;
     }
 }
