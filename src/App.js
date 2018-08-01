@@ -47,7 +47,7 @@ class App extends Component {
           <Route exact path="/" component={HomeIndex} />
 
           <Route path="/Sponsors/" component={Sponsors} />
-          
+
 
 
           <Route exact path="/sponsors" component={SponsorsIndex} />
@@ -56,7 +56,7 @@ class App extends Component {
 
           <Route path="/ca/" component={CAIndex} />
 
-          <Route path="/verifyCerti/" component={VerifyCerti} />
+        
 
         </Switch>
       </BrowserRouter>

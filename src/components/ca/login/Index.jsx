@@ -89,7 +89,10 @@ render(){
                             <LoginPage />
                         </div>
                     </Section>
+
                     <Section>
+                      <WISCA />
+                          <button onClick={() => this.facebookLogin()}>Login/Register</button>
                     </Section>
                     <Section>
                     </Section>
@@ -100,5 +103,3 @@ render(){
         );
     }
 }
-<WISCA />
-    <button onClick={() => this.facebookLogin()}>Login/Register</button>

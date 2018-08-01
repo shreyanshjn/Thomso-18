@@ -5,7 +5,7 @@ export default class WISCA extends React.Component{
   render(){
     let sj="this is shreyansh"
     return(
-    <div className="fulldiv">
+    <div className="fullpage">
       <div className="MAINDIV">
 
                 <div className="Heading">
