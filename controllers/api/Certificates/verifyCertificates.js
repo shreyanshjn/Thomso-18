@@ -1,93 +1,79 @@
-var con = require('../../database/MysqlConnection');
-exports.certi_verify = function(req, res){
+var registration_user = require('../../../models/Certificate/registration_user');
+var winner_list = require('../../../models/Certificate/winner_list');
+var ca_certi = require('../../../models/Certificate/ca_certi');
+var ca_form = require('../../../models/Certificate/ca_form');
 
-    // console.log('hello');
-    let data;
-    let query;
-    // console.log(req.body.table);
-    if(req.body.table === 'registration_user'){
-        // console.log('registeration user');
-        data = {
-            id: con.escape(req.body.id),
-            table: con.escape(req.body.table)
-        }
-        query = `SELECT id, name,contact, college FROM registration_user WHERE id=${data.id}`;
-    }
-    else if(req.body.table === 'winner_list'){
-        // console.log('winner list');
-        let id = req.body.id.split('_');
-        data = {
-            id: con.escape(id[0]),
-            event_name: con.escape(id[1]),
-            coordi_id: con.escape(id[2]),
-            table: con.escape(req.body.table)
-        }
-        query = `SELECT thomso_id, name, contact, position, event_name FROM winner_list WHERE id=${data.id} AND coordi_id=${data.coordi_id}`;
-    }
-    else if (req.body.table === 'ca') {
-        // console.log('campus ambassdor');
-        data = {
-            id: con.escape(req.body.id),
-            table: con.escape(req.body.table)
-        }
-        query = `select t1.id, t1.contact, t1.name, t1.college, t1.email, t1.fb_id from ca_form as t1 inner join ca_certi as t2 on t1.contact = t2.mobile WHERE t1.fb_id=${data.id}`;
-    }
-    // console.log(query);
-    con.query(query, function(err, result, field){
-        // console.log(err);
-        // console.log(result);
-        if(err){
-            res.json({
-                status: 400,
-                error: true,
-                err: err 
-            })
-        }
-        else{
-            if(result[0]){
-                // console.log(result[0])
-                res.json({
-                    status: 200,
-                    success: true,
-                    data: result
-                })
+exports.certi_verify = (res, req) => {
+    if(req.req.body && req.req.body.table === 'registration_user'){
+        registration_user.findOne({
+            id: req.req.body.id
+        })
+        .select('id name contact college')
+        .exec(function(err, user) {
+            if (err) {
+                return res.json({ status: 400, error: true,err: err  });
             }
-            else{
-                res.json({
-                    status: 200,
-                    success: false,
-                })
+            else if (!user) {
+                return res.res.json({ status:200,success:false});
+            } else {
+                if (user) {
+                    res.res.json({ status: 200,success: true, data: user })
+                }
             }
-        }
-    })
-}
+        });
+    }
+    else if(req.req.body && req.req.body.table === 'winner_list'){
+        let params = req.req.body.id.split('_');
+        winner_list.findOne({
+            id: params[0],
+            coordi_id: params[2]
+        })
+        .select('thomso_id name contact position event_name')
+        .exec(function(err, user) {
+            if (err) {
+                return res.json({ status: 400, error: true, err: err });
+            }
+            else if (!user) {
+                return res.res.json({ status:200, success:false });
+            } else {
+                if (user) {
+                    res.res.json({status: 200, success: true,  data: user})
+                }
+            }
+        });
+    }
 
-exports.get_cerificates_ca = function(req, res){
-    var id = req.user.userId;
-    var query = `select name, id, college, email, fb_id from ca_form where fb_id=${id} AND certi=1`;
-    // console.log(query);
-    con.query(query, function(err, result, field){
-        if(err){
-            res.json({
-                status: 400,
-                error: true,
-                err: err 
-            })
-        }
-        else{
-            if(result[0]){
-                res.json({
-                    status: 200,
-                    success: true,
-                    result: result
-                })
+    else if(req.req.body && req.req.body.table === 'ca'){
+        ca_form.findOne({
+            id: req.req.body.id
+        })
+        .select('id name contact college email fb_id')
+        .exec(function(err, user) {
+            if (err) {
+                return res.json({status: 400, error: true, err: err  });
             }
-            else{
-                res.json({
-                    status: 200,
-                    success: false
-                })
+            else if (!user) {
+                return res.res.json({status:200,success:false});
+            } else {
+                if (user) {
+                    ca_certi.findOne({
+                        mobile: user.contact
+                    })
+                    .select('mobile')
+                    .exec(function(err, user2) {
+                        if (err) {
+                            return res.json({status: 400,error: true,err: err});
+                        }
+                        else if (!user2) {
+                            return res.res.json({status:200,success:false});
+                        } else {
+                            if (user2) {
+                                res.res.json({status: 200,success: true,data: user})
+                            }
+                        }
+                    });
+                }
             }
-        }
-    })
+       });
+    }
 }

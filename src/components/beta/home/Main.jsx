@@ -25,6 +25,7 @@ export default class Main extends Component{
         return(
             <div className="middlesection">
                 <Navbar />
+                <ScrollToTopOnMount />
                 <SectionsContainer {...options}>
                     <Section>
                         <div className="body">
