@@ -17,12 +17,6 @@ export default class Card extends React.Component {
       seconds: ''
     };
   }
-  
-  /*  toggle() {
-    this.setState({
-      shown: !this.state.shown, button:!this.state.button
-    });
-  }*/
   render() {
     const { date, month, year, hours, minutes, seconds } = this.state
     return (
