@@ -70,7 +70,13 @@
 
 */
     padding-left: 15%;
-    margin-top: 5%;
+    margin-top: 15%;
+    position: relative;
 
     margin-right: 15.7%;
+}
+@media screen and (max-width:768px){
+  .heading{
+    font-size: 6px;
+  }
 }

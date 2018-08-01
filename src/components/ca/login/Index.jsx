@@ -88,7 +88,7 @@ export default class LoginIndex extends React.Component {
                                 </div>
                                 <button className="buttonca" onClick={() => this.facebookLogin()}>Login/Register</button>
                                 <div className="arrowmove">
-                                    <a href="#aboutUs" address="true">
+                                    <a href="#WISCA" address="true">
                                         <img src={arrow} className="downarrow bounce" alt=
                                             "a" />
                                     </a>
@@ -100,9 +100,11 @@ export default class LoginIndex extends React.Component {
                     <Section>
                       <WISCA />
                     </Section>
+                    <BlackNavbar />
                     <Section>
                     <ROLES />
                     </Section>
+                    <BlackNavbar />
                     <Section>
                       <CONTACT />
                     </Section>

@@ -25,7 +25,6 @@
 .divb{
   height:71px;
   width: 71px;
-  background: black;
   display: flex;
   flex-direction: column;
   justify-content:flex-start;
