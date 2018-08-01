@@ -7,15 +7,9 @@ import Loadable from 'react-loadable';
 //   loader: () => import('./components/beta/Index'),
 //   loading: () => <div>Loading BetaIndex</div>,
 // });
-
 const CAIndex = Loadable({
   loader: () => import('./components/ca/Index'),
   loading: () => <div>Loading CAIndex</div>,
-});
-
-const VerifyCerti = Loadable({
-  loader: () => import('./components/verifyCerti/Index'),
-  loading: () => <div>Loading Certificate Verification</div>,
 });
 
 const FAQIndex = Loadable({
@@ -36,6 +30,11 @@ const TeamIndex = Loadable({
 const HomeIndex = Loadable({
   loader: () => import("./components/beta/home/Index"),
   loading: () => <div>Loading HomeIndex</div>
+});
+
+const VerifyCerti = Loadable({
+  loader: () => import("./components/verifyCerti/Index"),
+  loading: () => <div>Loading VerifyCerti</div>
 });
 
 class App extends Component {

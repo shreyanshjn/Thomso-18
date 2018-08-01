@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:600");
 
 .sidenav {
     height: 100%;
@@ -159,6 +159,7 @@
         font-size: 12px;
         letter-spacing: 2px;
         padding: 0 5px;
+        font-weight: 600;
     }
     .days{
         width: 85%;

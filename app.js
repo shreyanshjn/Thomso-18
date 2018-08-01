@@ -5,12 +5,9 @@ var logger = require('morgan');
 var bodyParser = require('body-parser');
 var cors = require('cors')
 var mongoose = require('mongoose');
-var mysql = require('mysql');
-
 var routes = require('./routes/routes')
 
 var app = express();
-
 
 // mongoose setup
 mongoose.Promise = require('bluebird');
@@ -35,21 +32,6 @@ mongoose
   )
   .then(() => console.log("connection succesful"))
   .catch(err => console.error(err));
-
-// mysql setup
-// var con = mysql.createConnection({
-//   host: process.env.MYSQL_DB_HOST,
-//   user: process.env.MYSQL_DB_USERNAME,
-//   password: process.env.MYSQL_DB_PASSWORD,
-//   database: process.env.MYSQL_DB_NAME
-// });
-
-// console.log(con);
-
-// con.connect(function(err) {
-//   if (err) throw err;
-//   console.log("Connection established successfully.");
-// });
 
 app.use(logger('dev'));
 app.use(bodyParser.json());

@@ -1,422 +1,532 @@
 import React from 'react';
+import './sponsors.css';
+import Navbar from '../home/Navbar';
+import logo2 from './img/11.png';
+import logo1 from './img/101.png';
+import logo3 from './img/6.png';
+import logo4 from './img/20.png';
+import logo5 from './img/12.png';
+import logo6 from './img/13.png';
+import logo7 from './img/15.png';
+import logo8 from './img/1.png';
+import logo9 from './img/19.png';
+import logo10 from './img/5.png';
+import logo11 from './img/21.png';
+import logo12 from './img/18.png';
+import logo13 from './img/7.png';
+import logo14 from './img/8.png';
+import logo15 from './img/23.png';
+import logo16 from './img/3.png';
+import logo17 from './img/16.png';
+import logo18 from './img/226.png';
+import logo19 from './img/227.png';
+import logo20 from './img/228.png';
+import logo21 from './img/229.png';
+import logo22 from './img/201.png';
+import logo23 from './img/202.png';
+import logo24 from './img/205.png';
+import logo25 from './img/206.jpg';
+import logo26 from './img/203.png';
+import logo27 from './img/204.png';
+import logo28 from './img/207.jpg';
+import logo29 from './img/208.png';
+import logo30 from './img/209.jpg';
+import logo31 from './img/210.png';
+import logo32 from './img/211.png';
+import logo33 from './img/212.png';
+import logo34 from './img/213.png';
+import logo35 from './img/214.png';
+import logo36 from './img/215.png';
+import logo37 from './img/216.png';
+import logo38 from './img/217.png';
+import logo39 from './img/218.png';
+import logo40 from './img/219.png';
+import logo41 from './img/220.png';
+import logo42 from './img/221.png';
+import logo43 from './img/222.jpg';
+import logo44 from './img/121.png';
+import logo45 from './img/122.png';
+import logo46 from './img/123.png';
+import logo47 from './img/124.png';
+import logo48 from './img/125.png';
+import logo49 from './img/126.png';
+import logo50 from './img/127.png';
+import logo51 from './img/128.png';
+import logo52 from './img/129.png';
+import logo53 from './img/130.png';
+import logo54 from './img/223.png';
+import logo55 from './img/224.png';
+import logo56 from './img/111.png';
+import logo57 from './img/112.png';
+import logo58 from './img/113.png';
+import logo59 from './img/114.png';
+import logo60 from './img/115.png';
+import logo61 from './img/116.png';
+import logo62 from './img/225.png';
 
-export default class Sponsor extends React.Component {
+export default class Sponsors extends React.Component {
     render() {
         return (
             <div>
-                <div data-reactroot="" className="body">
-                    <div className="container-fluid">
-                        <div style={{ marginTop: "150px", marginBottom: "0px" }}>
-                            <div className="row no-margin-row-team" style={{ color: "white", fontSize: "1em" }}>
-                                <div className="col-md-offset-2 col-md-8" style={{ display: "flex", justifyContent: "center" }}>
-                                    <div className="contact-us-img" style={{ marginBottom: "50px" }}>
-                                        <p className="contact-us" style={{ fontFamily: "prashant", fontSize: "2em" }}>Sponsors</p>
-                                    </div>
+
+                <div className="main">
+                    <div className="navdiv">
+                        <Navbar />
+                    </div>
+                    <div className="maininnerdiv">
+
+                        <div className="sponsors">
+                            <div className="TitleSpons">
+                                <center>
+                                    <h2>Title Sponsor</h2>
+                                </center>
+                            </div>
+
+                            <div className="imgdiv2">
+                                <center>
+                                    <a href="https://www.comio.in/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo1} alt="" /></a>
+                                </center>
+                            </div>
+                            <div className="Titlediv">
+                                <center>
+                                    <h2>Pronites Title Sponsor</h2></center>
+                            </div>
+                            <div className="imgdiv2">
+                                <center>
+                                    <a href="http://mtv.in.com/colorsofyouth/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo2} alt="" /></a>
+                                </center>
+                            </div>
+                            <div className="Titlediv">
+                                <center>
+                                    <h2>Driven By</h2></center>
+                            </div>
+
+                            <div className="imgdiv2">
+                                <center>
+                                    <a href="http://www.heromotocorp.com/en-in/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo3} alt="" /></a>
+                                </center>
+                            </div>
+                            <div className="Titlediv">
+                                <center>
+                                    <h2>Powered By</h2></center>
+                            </div>
+                            <div className="imgdiv2">
+                                <center>
+                                    <a href="http://www.ongcindia.com/wps/wcm/connect/ongcindia/home/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo4} alt="" /></a>
+                                </center>
+                            </div>
+                            <div className="Titlediv">
+                                <center>
+                                    <h2>Associate Sponsor</h2></center>
+                            </div>
+                            <div className="innerdiv">
+                                <div className="imgdiv">
+                                    <center>
+                                        <a href="http://www.nbccindia.com/nbccindia/index.jsp" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo5} alt="" /></a>
+                                    </center>
                                 </div>
-                                <div className="col-md-offset-1 col-md-10" style={{ marginBottom: "150px" }}>
-                                    <div className="row" id="sponsors" style={{ background: "rgb(255, 255, 255)", color: "rgb(0, 0, 0)", paddingBottom: "50px" }}>
-                                        <div className="col-lg-12">
-                                            <center>
-                                                <h2 style={{ marginTop: "50px", marginBottom: "30px", fontFamily: "gaurav", textDecoration: 'underline' }}>Title Sponsor</h2></center>
-                                        </div>
-                                        <div className="col-lg-4 col-md-4 col-sm-offset-4 col-md-offset-4" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="https://www.comio.in/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/101.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-12 ">
-                                            <center>
-                                                <h2 style={{ marginTop: "50px", marginBottom: "30px", fontFamily: "gaurav", textDecoration: 'underline' }}>Pronites Title Sponsor</h2></center>
-                                        </div>
-                                        <div className="col-md-4 col-sm-offset-4 col-md-offset-4 col-sm-4" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="http://mtv.in.com/colorsofyouth/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/11.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-12 ">
-                                            <center>
-                                                <h2 style={{ marginTop: "50px", marginBottom: "30px", fontFamily: "gaurav", textDecoration: 'underline' }}>Driven By</h2></center>
-                                        </div>
-                                        <div className="col-md-4 col-sm-offset-4 col-md-offset-4 col-sm-4" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="http://www.heromotocorp.com/en-in/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/6.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-12 ">
-                                            <center>
-                                                <h2 style={{ marginTop: "50px", marginBottom: "30px", fontFamily: "gaurav", textDecoration: 'underline' }}>Powered By</h2></center>
-                                        </div>
-                                        <div className="col-md-4 col-sm-offset-4 col-md-offset-4 col-sm-4" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="http://www.ongcindia.com/wps/wcm/connect/ongcindia/home/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/20.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-12 ">
-                                            <center>
-                                                <h2 style={{ marginTop: "50px", marginBottom: "30px", fontFamily: "gaurav", textDecoration: 'underline' }}>Associate Sponsor</h2></center>
-                                        </div>
-                                        <div className="col-md-4 col-sm-4" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="http://www.nbccindia.com/nbccindia/index.jsp" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/12.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-4 col-md-4" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="https://www.pnbindia.in/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/13.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-4 col-md-4" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="https://www.onlinesbi.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/15.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-12 col-md-12">
-                                            <center>
-                                                <h2 style={{ marginTop: "50px", marginBottom: "30px", fontFamily: "gaurav", textDecoration: 'underline' }}>Workshop Title Sponsor</h2></center>
-                                        </div>
-                                        <div className="col-lg-12 col-md-12" style={{ marginTop: "30px" }}>
-                                        </div>
-                                        <div className="col-lg-12 ">
-                                            <center>
-                                                <h2 style={{ marginTop: "50px", marginBottom: "30px", fontFamily: "gaurav", textDecoration: 'underline' }}>Co-Sponsors</h2></center>
-                                        </div>
-                                        <div className="col-md-4 col-sm-4" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="http://www.visionias.in/beta/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/19.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-4 col-md-4" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="http://www.gailonline.com/final_site/index.html" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/5.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-4 col-md-4" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="https://manforcecondoms.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/21.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-12 col-md-12">
-                                            <center>
-                                                <h2 style={{ marginTop: "50px", marginBottom: "30px", fontFamily: "gaurav", textDecoration: 'underline' }}>Partners</h2></center>
-                                        </div>
-                                        <div className="col-lg-4 col-md-4" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="http://www.99uttarakhand.in/uttarakhand-simply-heaven-photo-gallery.php" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/18.png" alt="" /></a>
-                                            </center>
-                                            <center>
-                                                <h4 style={{ fontFamily: "gaurav" }}>Tourism Partner</h4></center>
-                                        </div>
-                                        <div className="col-lg-4 col-md-4" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="http://onlinehrda.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/7.png" alt="" /></a>
-                                            </center>
-                                            <center>
-                                                <h4 style={{ fontFamily: "gaurav" }}>Developement Partner</h4></center>
-                                        </div>
-                                        <div className="col-lg-4 col-md-4" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="https://iesmaster.org/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/8.png" alt="" /></a>
-                                            </center>
-                                            <center>
-                                                <h4 style={{ fontFamily: "gaurav" }}>Education Partner</h4></center>
-                                        </div>
-                                        <div className="col-lg-4 col-md-4" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="http://www.airtel.in/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/23.png" alt="" /></a>
-                                            </center>
-                                            <center>
-                                                <h4 style={{ fontFamily: "gaurav" }}>Telecom Partner</h4></center>
-                                        </div>
-                                        <div className="col-lg-4 col-md-4" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="http://cpwd.gov.in/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/3.png" alt="" /></a>
-                                            </center>
-                                            <center>
-                                                <h4 style={{ fontFamily: "gaurav" }}>Public Work Partner</h4></center>
-                                        </div>
-                                        <div className="col-lg-4 col-md-4" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="https://www.servo.in/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/16.png" alt="" /></a>
-                                            </center>
-                                            <center>
-                                                <h4 style={{ fontFamily: "gaurav" }}>Lubricant Partner</h4></center>
-                                        </div>
-                                        <div className="col-lg-4 col-md-4" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="https://rog.asus.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/226.png" alt="" /></a>
-                                            </center>
-                                            <center>
-                                                <h4 style={{ fontFamily: "gaurav" }}>e-sports Partner</h4></center>
-                                        </div>
-                                        <div className="col-lg-4 col-md-4" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="https://www.mylescars.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/227.png" alt="" /></a>
-                                            </center>
-                                            <center>
-                                                <h4 style={{ fontFamily: "gaurav" }}>Travel Partner</h4></center>
-                                        </div>
-                                        <div className="col-lg-4 col-md-4" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="https://www.thomso.in/sponsors#" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/228.png" alt="" /></a>
-                                            </center>
-                                            <center>
-                                                <h4 style={{ fontFamily: "gaurav" }}>Food Partner</h4></center>
-                                        </div>
-                                        <div className="col-lg-4 col-md-4 col-md-offset-4" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="https://zebronics.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/229.png" alt="" /></a>
-                                            </center>
-                                            <center>
-                                                <h4 style={{ fontFamily: "gaurav" }}>Multimedia Partner</h4></center>
-                                        </div>
-                                        <div className="col-lg-6 col-md-6">
-                                            <div className="row" style={{ padding: "0px 50px" }}>
-                                                <div className="col-lg-12 col-md-12">
-                                                    <center>
-                                                        <h2 style={{ marginTop: "50px", marginBottom: "30px", fontFamily: "gaurav", textDecoration: 'underline' }}> Music Channel Partners</h2></center>
-                                                </div>
-                                                <div className="col-lg-6 col-md-6" style={{ marginTop: "30px" }}>
-                                                    <center>
-                                                        <a href="http://www.9xm.in/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/201.png" alt="" /></a>
-                                                    </center>
-                                                </div>
-                                                <div className="col-lg-6 col-md-6" style={{ marginTop: "30px" }}>
-                                                    <center>
-                                                        <a href="http://9xtashan.in/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/202.png" alt="" /></a>
-                                                    </center>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-6 col-md-6">
-                                            <div className="row" style={{ padding: "0px 50px" }}>
-                                                <div className="col-lg-12 col-md-12">
-                                                    <center>
-                                                        <h2 style={{ marginTop: "50px", marginBottom: "30px", fontFamily: "gaurav", textDecoration: 'underline' }}> Radio Partners</h2></center>
-                                                </div>
-                                                <div className="col-lg-6 col-md-6" style={{ marginTop: "30px" }}>
-                                                    <center>
-                                                        <a href="http://www.fmtadka.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/205.png" alt="" /></a>
-                                                    </center>
-                                                </div>
-                                                <div className="col-lg-6 col-md-6" style={{ marginTop: "30px" }}>
-                                                    <center>
-                                                        <a href="http://927bigfm.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/206.jpg" alt="" /></a>
-                                                    </center>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-12 col-md-12">
-                                            <center>
-                                                <h2 style={{ marginTop: "50px", marginBottom: "30px", fontFamily: "gaurav", textDecoration: 'underline' }}> Newspaper Partners</h2></center>
-                                        </div>
-                                        <div className="col-lg-4 col-md-4" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="https://timesofindia.indiatimes.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/203.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-4 col-md-4" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="http://indianexpress.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/204.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-4 col-md-4" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="https://www.bhaskar.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/207.jpg" alt="" /></a>
-                                            </center>
-                                            <center>
-                                                <h4 style={{ fontFamily: "gaurav" }}>Hindi Broadcasting Partner</h4></center>
-                                        </div>
-                                        <div className="col-lg-12 col-md-12">
-                                            <center>
-                                                <h2 style={{ marginTop: "50px", marginBottom: "30px", fontFamily: "gaurav", textDecoration: 'underline' }}> Magazine Partners</h2></center>
-                                        </div>
-                                        <div className="col-lg-3 col-md-3" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="https://womansera.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/208.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-3 col-md-3" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="http://www.openthemagazine.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/209.jpg" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-3 col-md-3" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="http://www.theweek.in/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/210.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-3 col-md-3" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="http://www.crictoday.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/211.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-3 col-md-3" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="http://www.youthincmag.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/212.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-3 col-md-3" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="http://www.fashionlady.in/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/213.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-3 col-md-3" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="https://highonscore.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/214.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-3 col-md-3" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="http://bikeindia.in/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/215.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-3 col-md-3" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="http://abraxaslifestyle.{{om/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/216.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-3 col-md-3" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="http://www.delhinowmagazine.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/217.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-3 col-md-3" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="https://www.creativica.in/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/218.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-3 col-md-3" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="http://theteenagertoday.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/219.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-4 col-md-4" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="http://theyouthchronicles.in/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/220.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-4 col-md-4" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="https://cocktailzindagi.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/221.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-4 col-md-4" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="http://www.curriculum-magazine.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/222.jpg" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-12 col-md-12">
-                                            <center>
-                                                <h2 style={{ marginTop: "100px", marginBottom: "30px", fontFamily: "gaurav", textDecoration: "underline" }}> Online Media Partners</h2></center>
-                                        </div>
-                                        <div className="col-lg-3 col-md-3" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="http://beingstudent.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/121.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-3 col-md-3" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="http://topyaps.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/122.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-3 col-md-3" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="http://festpav.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/123.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-3 col-md-3" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="http://testfunda.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/124.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-3 col-md-3" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="https://www.hellointern.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/125.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-3 col-md-3" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="https://www.brainbuxa.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/126.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-3 col-md-3" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="http://www.twenty19.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/127.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-3 col-md-3" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="http://ohcampus.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/128.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-3 col-md-3" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="http://efy.in/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/129.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-3 col-md-3" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="http://dubeat.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/130.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-3 col-md-3" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="http://www.blogadda.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/223.png" alt="" /></a>
-                                            </center>
-                                            <center>
-                                                <h4 style={{ fontFamily: "gaurav" }}>Blogging Outreach Partner</h4></center>
-                                        </div>
-                                        <div className="col-lg-3 col-md-3" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="https://www.top10sms.in/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/224.png" alt="" /></a>
-                                            </center>
-                                            <center>
-                                                <h4 style={{ fontFamily: "gaurav" }}>Messaging Partner</h4></center>
-                                        </div>
-                                        <div className="col-lg-12 col-md-12">
-                                            <center>
-                                                <h2 style={{ marginTop: "100px", marginBottom: "30px", fontFamily: "gaurav", textDecoration: "underline" }}> Digital Media Partners</h2></center>
-                                        </div>
-                                        <div className="col-lg-3 col-md-3" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="https://theengineerbro.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/111.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-3 col-md-3" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="https://www.facebook.com/engineer.born/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/112.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-3 col-md-3" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="https://scoopnow.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image scoop" src="img/sponsors/113.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-3 col-md-3" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="http://www.delhifoodwalks.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/114.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-4 col-md-4" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="http://www.jaipurlove.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/115.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-4 col-md-4" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="http://www.panjabdigilib.org/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/116.png" alt="" /></a>
-                                            </center>
-                                        </div>
-                                        <div className="col-lg-4 col-md-4" style={{ marginTop: "30px" }}>
-                                            <center>
-                                                <a href="http://atkt.in/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src="img/sponsors/225.png" alt="" /></a>
-                                            </center>
-                                            <center>
-                                                <h4 style={{ fontFamily: "gaurav" }}>Content Partner</h4></center>
-                                        </div>
-                                    </div>
+                                <div className="imgdiv">
+                                    <center>
+                                        <a href="https://www.pnbindia.in/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo6} alt="" /></a>
+                                    </center>
+                                </div>
+                                <div className="imgdiv">
+                                    <center>
+                                        <a href="https://www.onlinesbi.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo7} alt="" /></a>
+                                    </center>
                                 </div>
                             </div>
+                            <div className="Titlediv">
+                                <center>
+                                    <h2>Workshop Title Sponsor</h2></center>
+                            </div>
+                            <div className="imgdiv2">
+                                <center>
+                                    <a href="https://www.cisco.com/c/en_in/index.html" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo8} alt="" /></a>
+                                </center>
+                            </div>
+
+                            <div className="Titlediv">
+                                <center>
+                                    <h2>Co-Sponsors</h2></center>
+                            </div>
+                            <div className="innerdiv">
+                                <div className="imgdiv">
+                                    <center>
+                                        <a href="http://www.visionias.in/beta/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo9} alt="" /></a>
+                                    </center>
+                                </div>
+                                <div className="imgdiv">
+                                    <center>
+                                        <a href="http://www.gailonline.com/final_site/index.html" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo10} alt="" /></a>
+                                    </center>
+                                </div>
+                                <div className="imgdiv">
+                                    <center>
+                                        <a href="https://manforcecondoms.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo11} alt="" /></a>
+                                    </center>
+                                </div>
+                            </div>
+
+
+                            <div className="Titlediv">
+                                <center>
+                                    <h2>Partners</h2></center>
+                            </div>
+
+                            <div class="innerdiv">
+                                <div className="imgdiv">
+                                    <center>
+                                        <a href="http://www.99uttarakhand.in/uttarakhand-simply-heaven-photo-gallery.php" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo12} alt="" /></a>
+                                    </center>
+                                    <center>
+                                        <h4>Tourism Partner</h4></center>
+                                </div>
+                                <div className="imgdiv">
+                                    <center>
+                                        <a href="http://onlinehrda.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo13} alt="" /></a>
+                                    </center>
+                                    <center>
+                                        <h4>Developement Partner</h4></center>
+                                </div>
+                                <div className="imgdiv">
+                                    <center>
+                                        <a href="https://iesmaster.org/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo14} alt="" /></a>
+                                    </center>
+                                    <center>
+                                        <h4>Education Partner</h4></center>
+                                </div>
+                            </div>
+
+                            <div class="innerdiv">
+                                <div className="imgdiv">
+                                    <center>
+                                        <a href="http://www.airtel.in/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo15} alt="" /></a>
+                                    </center>
+                                    <center>
+                                        <h4>Telecom Partner</h4></center>
+                                </div>
+                                <div className="imgdiv">
+                                    <center>
+                                        <a href="http://cpwd.gov.in/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo16} alt="" /></a>
+                                    </center>
+                                    <center>
+                                        <h4>Public Work Partner</h4></center>
+                                </div>
+                                <div className="imgdiv">
+                                    <center>
+                                        <a href="https://www.servo.in/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo17} alt="" /></a>
+                                    </center>
+                                    <center>
+                                        <h4>Lubricant Partner</h4></center>
+                                </div>
+                            </div>
+                            <div class="innerdiv">
+                                <div className="imgdiv">
+                                    <center>
+                                        <a href="https://rog.asus.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo18} alt="" /></a>
+                                    </center>
+                                    <center>
+                                        <h4>e-sports Partner</h4></center>
+                                </div>
+                                <div className="imgdiv">
+                                    <center>
+                                        <a href="https://www.mylescars.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo19} alt="" /></a>
+                                    </center>
+                                    <center>
+                                        <h4>Travel Partner</h4></center>
+                                </div>
+                                <div className="imgdiv">
+                                    <center>
+                                        <a href="https://www.thomso.in/sponsors#" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo20} alt="" /></a>
+                                    </center>
+                                    <center>
+                                        <h4>Food Partner</h4></center>
+                                </div>
+                            </div>
+
+                            <div className="imgdiv4">
+
+                                <center>
+                                    <a href="https://zebronics.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo21} alt="" /></a>
+                                </center>
+                                <center>
+                                    <h4>Multimedia Partner</h4></center>
+                            </div>
+
+
+
+
+
+                            <div className="Titlediv">
+
+                                <center>
+                                    <h2> Music Channel Partners</h2></center>
+                            </div>
+                            <div className="innerdiv">
+                                <div className="imgdiv3">
+                                    <center>
+                                        <a href="http://www.9xm.in/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo22} alt="" /></a>
+                                    </center>
+                                </div>
+                                <div className="imgdiv3">
+                                    <center>
+                                        <a href="http://9xtashan.in/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo23} alt="" /></a>
+                                    </center>
+                                </div>
+                            </div>
+
+
+
+                            <div className="Titlediv">
+                                <center>
+                                    <h2> Radio Partners</h2></center>
+                            </div>
+                            <div className="innerdiv">
+                                <div className="imgdiv3">
+                                    <center>
+                                        <a href="http://www.fmtadka.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo24} alt="" /></a>
+                                    </center>
+                                </div>
+                                <div className="imgdiv3">
+                                    <center>
+                                        <a href="http://927bigfm.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo25} alt="" /></a>
+                                    </center>
+                                </div>
+                            </div>
+
+                            <div className="Titlediv">
+                                <center>
+                                    <h2> Newspaper Partners</h2></center>
+                            </div>
+
+                            <div class="innerdiv">
+                                <div className="imgdiv">
+                                    <center>
+                                        <a href="https://timesofindia.indiatimes.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo26} alt="" /></a>
+                                    </center>
+                                </div>
+                                <div className="imgdiv">
+                                    <center>
+                                        <a href="http://indianexpress.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo27} alt="" /></a>
+                                    </center>
+                                </div>
+                                <div className="imgdiv">
+                                    <center>
+                                        <a href="https://www.bhaskar.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo28} alt="" /></a>
+                                    </center>
+
+                                    <center>
+                                        <h4> Broadcasting Partner</h4></center>
+                                </div>
+                            </div>
+                            <div className="Titlediv">
+                                <center>
+                                    <h2> Magazine Partners</h2></center>
+                            </div>
+                            <div class="innerdiv1">
+                                <div className="imgdiv1">
+                                    <center>
+                                        <a href="https://womansera.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo29} alt="" /></a>
+                                    </center>
+                                </div>
+                                <div className="imgdiv1">
+                                    <center>
+                                        <a href="http://www.openthemagazine.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo30} alt="" /></a>
+                                    </center>
+                                </div>
+                                <div className="imgdiv1">
+                                    <center>
+                                        <a href="http://www.theweek.in/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo31} alt="" /></a>
+                                    </center>
+                                </div>
+                                <div className="imgdiv1">
+                                    <center>
+                                        <a href="http://www.crictoday.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo32} alt="" /></a>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="innerdiv1">
+                                <div className="imgdiv1">
+                                    <center>
+                                        <a href="http://www.youthincmag.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo33} alt="" /></a>
+                                    </center>
+                                </div>
+                                <div className="imgdiv1">
+                                    <center>
+                                        <a href="http://www.fashionlady.in/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo34} alt="" /></a>
+                                    </center>
+                                </div>
+                                <div className="imgdiv1">
+                                    <center>
+                                        <a href="https://highonscore.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo35} alt="" /></a>
+                                    </center>
+                                </div>
+                                <div className="imgdiv1">
+                                    <center>
+                                        <a href="http://bikeindia.in/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo36} alt="" /></a>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="innerdiv1">
+                                <div className="imgdiv1">
+                                    <center>
+                                        <a href="http://abraxaslifestyle.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo37} alt="" /></a>
+                                    </center>
+                                </div>
+                                <div className="imgdiv1">
+                                    <center>
+                                        <a href="http://www.delhinowmagazine.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo38} alt="" /></a>
+                                    </center>
+                                </div>
+                                <div className="imgdiv1">
+                                    <center>
+                                        <a href="https://www.creativica.in/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo39} alt="" /></a>
+                                    </center>
+                                </div>
+                                <div className="imgdiv1">
+                                    <center>
+                                        <a href="http://theteenagertoday.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo40} alt="" /></a>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="innerdiv" style={{ marginTop: '2%' }}>
+                                <div className="imgdiv">
+                                    <center>
+                                        <a href="http://theyouthchronicles.in/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo41} alt="" /></a>
+                                    </center>
+                                </div>
+                                <div className="imgdiv">
+                                    <center>
+                                        <a href="https://cocktailzindagi.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo42} alt="" /></a>
+                                    </center>
+                                </div>
+                                <div className="imgdiv">
+                                    <center>
+                                        <a href="http://www.curriculum-magazine.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo43} alt="" /></a>
+                                    </center>
+                                </div>
+                            </div>
+                            <div className="Titlediv">
+                                <center>
+                                    <h2> Online Media Partners</h2></center>
+                            </div>
+                            <div class="innerdiv1">
+                                <div className="imgdiv1">
+                                    <center>
+                                        <a href="http://beingstudent.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo44} alt="" /></a>
+                                    </center>
+                                </div>
+                                <div className="imgdiv1">
+                                    <center>
+                                        <a href="http://topyaps.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo45} alt="" /></a>
+                                    </center>
+                                </div>
+                                <div className="imgdiv1">
+                                    <center>
+                                        <a href="http://festpav.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo46} alt="" /></a>
+                                    </center>
+                                </div>
+                                <div className="imgdiv1">
+                                    <center>
+                                        <a href="http://testfunda.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo47} alt="" /></a>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="innerdiv1">
+                                <div className="imgdiv1">
+                                    <center>
+                                        <a href="https://www.hellointern.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo48} alt="" /></a>
+                                    </center>
+                                </div>
+                                <div className="imgdiv1">
+                                    <center>
+                                        <a href="https://www.brainbuxa.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo49} alt="" /></a>
+                                    </center>
+                                </div>
+                                <div className="imgdiv1">
+                                    <center>
+                                        <a href="http://www.twenty19.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo50} alt="" /></a>
+                                    </center>
+                                </div>
+                                <div className="imgdiv1">
+                                    <center>
+                                        <a href="http://ohcampus.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo51} alt="" /></a>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="innerdiv1">
+                                <div className="imgdiv1">
+                                    <center>
+                                        <a href="http://efy.in/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo52} alt="" /></a>
+                                    </center>
+                                </div>
+                                <div className="imgdiv1">
+                                    <center>
+                                        <a href="http://dubeat.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo53} alt="" /></a>
+                                    </center>
+                                </div>
+                                <div className="imgdiv1">
+                                    <center>
+                                        <a href="http://www.blogadda.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo54} alt="" /></a>
+                                    </center>
+                                    <center>
+                                        <h4>Blogging Outreach Partner</h4></center>
+                                </div>
+                                <div className="imgdiv1">
+                                    <center>
+                                        <a href="https://www.top10sms.in/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo55} alt="" /></a>
+                                    </center>
+                                    <center>
+                                        <h4>Messaging Partner</h4></center>
+                                </div>
+                            </div>
+                            <div className="Titlediv">
+                                <center>
+                                    <h2> Digital Media Partners</h2></center>
+                            </div>
+                            <div class="innerdiv1">
+                                <div className="imgdiv1">
+                                    <center>
+                                        <a href="https://theengineerbro.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo56} alt="" /></a>
+                                    </center>
+                                </div>
+                                <div className="imgdiv1">
+                                    <center>
+                                        <a href="https://www.facebook.com/engineer.born/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo57} alt="" /></a>
+                                    </center>
+                                </div>
+                                <div className="imgdiv1">
+                                    <center>
+                                        <a href="https://scoopnow.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image scoop" src={logo58} alt="" /></a>
+                                    </center>
+                                </div>
+                                <div className="imgdiv1">
+                                    <center>
+                                        <a href="http://www.delhifoodwalks.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo59} alt="" /></a>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="innerdiv" style={{ marginTop: '2%' }}>
+                                <div className="imgdiv">
+                                    <center>
+                                        <a href="http://www.jaipurlove.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo60} alt="" /></a>
+                                    </center>
+                                </div>
+                                <div className="imgdiv">
+                                    <center>
+                                        <a href="http://www.panjabdigilib.org/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo61} alt="" /></a>
+                                    </center>
+                                </div>
+                                <div className="imgdiv">
+                                    <center>
+                                        <a href="http://atkt.in/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo62} alt="" /></a>
+                                    </center>
+                                    <center>
+                                        <h4>Content Partner</h4></center>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>

@@ -71,7 +71,7 @@ export default class Form extends React.Component {
     render() {
         const { title, body, errors, isVisible } = this.state;
         return (
-            <form className="form-idea" onSubmit={this.onSubmit} novalidate>
+            <form className="form-idea" onSubmit={this.onSubmit} noValidate>
                 {isVisible ? errors : null}
                 <div className="heading">
                     <h2>Share your ideas</h2>
@@ -96,6 +96,7 @@ export default class Form extends React.Component {
                         id="inputIdea"
                         placeholder="More details about your idea"
                         name="body"
+                        rows="1"
                         value={body}
                         autoCorrect="off"
                         autoComplete="off"

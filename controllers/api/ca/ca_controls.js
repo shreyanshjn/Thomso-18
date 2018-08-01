@@ -78,6 +78,7 @@ exports.getIdea = function (req, res) {
 
 /* Update Idea */
 exports.putIdea = function (req, res) {
+    console.log('put');
     if (req.params.id) {
         if (req.body.title) {
             req.body.title = req.body.title.trim();

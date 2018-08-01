@@ -118,7 +118,7 @@ export default class IdeasIndex extends React.Component {
             <React.Fragment>
                 {(!this.props.data || this.state.isDeleted) ?
                     null :
-                    <form className="form-idea" onSubmit={this.onSubmit} novalidate>
+                    <form className="form-idea" onSubmit={this.onSubmit} noValidate>
                         {isVisible ? errors : null}
                         <div className="ideasubject">
                             <span className="dot ideasub"></span>

@@ -79,7 +79,7 @@ export default class RegisterIndex extends React.Component {
                 <div className="register-child">
                     <div className="register-heading">
                         <div className="r-logo">
-                            <img src={img} />
+                            <img src={img} alt="r-logo"/>
                         </div>
                         <div className="vertical_line">
                         </div>

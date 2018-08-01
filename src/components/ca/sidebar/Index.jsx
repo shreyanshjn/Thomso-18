@@ -21,7 +21,6 @@ export default class Sidebar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      days: 69,
       referral: 'AVSHFSAD',
       activeState: window.location.pathname.substring(4)
     };
@@ -37,7 +36,6 @@ export default class Sidebar extends React.Component {
   }
 
   componentDidMount() {
-    console.log(window.location.pathname, "jjj")
     console.log(this.state.activeState, "active")
   }
 
@@ -47,6 +45,14 @@ export default class Sidebar extends React.Component {
     Field.remove()
   }
   render() {
+    let countDownDate = new Date("Oct 25, 2018 00:00:00").getTime();
+    let now = new Date().getTime();
+    let distance = countDownDate - now;
+    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    if (days < 0) {
+      days = 0;
+    }
+
     return (
       <div>
         <div
@@ -54,7 +60,7 @@ export default class Sidebar extends React.Component {
           className="sidenav"
         >
           <div className="sidebar-user">
-            <img src={this.props.userData ? this.props.userData.image : boy} className="image" />
+            <img src={this.props.userData ? this.props.userData.image : boy} className="image" alt="dataImg" />
             <div className="details">
               <div className="text">{this.props.userData ? this.props.userData.name : "User"}</div>
               <div className="cname">{this.props.userData ? this.props.userData.college : "-"}</div>
@@ -69,7 +75,7 @@ export default class Sidebar extends React.Component {
                   <div>
                     {this.props.userData ? this.props.userData.likes : "0"}
                   </div>
-                  <img src={like} />
+                  <img src={like} alt="like" />
                 </div>
                 <div className="plikes">
                   LIKES
@@ -80,7 +86,7 @@ export default class Sidebar extends React.Component {
                   <div className="change">
                     {this.props.userData ? this.props.userData.shares : "0"}
                   </div>
-                  <img src={share} />
+                  <img src={share} alt="share" />
                 </div>
                 <div className="plikes">
                   SHARES
@@ -91,7 +97,7 @@ export default class Sidebar extends React.Component {
                   <div className="change">
                     {this.props.userData ? this.props.userData.score : "0"}
                   </div>
-                  <img src={score} />
+                  <img src={score} alt="score" />
                 </div>
                 <div className="plikes">
                   SCORES
@@ -202,7 +208,7 @@ export default class Sidebar extends React.Component {
                   <Certificate />
                 </div>
                 <div className="p-name">
-                  Certificate
+                  CERTIFICATE
                 </div>
               </div>
             </Link>
@@ -265,7 +271,7 @@ export default class Sidebar extends React.Component {
                 <Hand />
               </div>
               <div className="days">
-                {this.state.days} DAYS LEFT
+                {days} DAYS LEFT
             </div>
             </div>
           </div>
