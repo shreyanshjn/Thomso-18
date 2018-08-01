@@ -79,13 +79,13 @@ export default class LoginIndex extends React.Component {
                         <RegisterNavbar />
                         <Section>
                             <div>
-                                <div className="inconvi">
+                                {/* <div className="inconvi">
                                     <p className="sorry">Sorry for the inconvenience. We are facing some technical issues due to Facebook policy changes. Kindly enter email/FacebookID and we'll grant you the access.</p>
                                     <form className="formEmail">
                                         <input type="text" placeholder="EmailID" />
                                         <input type="text" placeholder="https://www.facebook.com" />
                                     </form>
-                                </div>
+                                </div> */}
                                 <button className="buttonca" onClick={() => this.facebookLogin()}>Login/Register</button>
                                 <div className="arrowmove">
                                     <a href="#WISCA" address="true">
