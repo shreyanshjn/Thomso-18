@@ -17,10 +17,10 @@ const FAQIndex = Loadable({
   loading: () => <div>Loading FAQIndex</div>
 });
 
-const SponsorsIndex = Loadable({
-  loader: () => import("./components/beta/sponsors/Index"),
-  loading: () => <div>Loading SponsorsIndex</div>
-});
+// const SponsorsIndex = Loadable({
+//   loader: () => import("./components/beta/sponsors/Index"),
+//   loading: () => <div>Loading SponsorsIndex</div>
+// });
 
 const TeamIndex = Loadable({
   loader: () => import("./components/beta/team/Index"),
@@ -36,10 +36,15 @@ const VerifyCerti = Loadable({
   loader: () => import("./components/verifyCerti/Index"),
   loading: () => <div>Loading VerifyCerti</div>
 });
-const Sponsors = Loadable({
-  loader: () => import('./components/beta/sponsors/Index'),
-  loading: () => <div>Loading Sponsors</div>,
-});
+
+const Policy = Loadable({
+  loader: () => import("./components/policyandterms/policy"),
+  loading: () =><div>Loading Policy</div>
+})
+const Terms = Loadable({
+  loader:() =>import("./components/policyandterms/thomsoterms"),
+  loading:() => <div>Loading Terms</div>
+})
 class App extends Component {
   render() {
     return (
@@ -47,13 +52,15 @@ class App extends Component {
         <Switch>
           {/* <Route path="/beta" component={BetaIndex} /> */}
           <Route exact path="/" component={HomeIndex} />
-          <Route exact path="/sponsors" component={SponsorsIndex} />
+          {/* <Route exact path="/sponsors" component={SponsorsIndex} /> */}
           <Route exact path="/team" component={TeamIndex} />
           <Route exact path="/faq" component={FAQIndex} />
 
           <Route path="/ca/" component={CAIndex} />
 
           <Route path="/verifyCerti/" component={VerifyCerti} />
+          <Route path="/policy" component={Policy}/>
+          <Route path="/termsandpolicy" component={Terms}/>
         </Switch>
       </BrowserRouter>
     );

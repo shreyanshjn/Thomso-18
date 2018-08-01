@@ -64,7 +64,7 @@ import logo60 from './img/115.png';
 import logo61 from './img/116.png';
 import logo62 from './img/225.png';
 
-export default class Sponsors extends React.Component{
+export default class SponsorIndex extends React.Component{
     render(){
         return (
             <div>
