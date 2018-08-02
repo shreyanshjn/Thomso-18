@@ -63,6 +63,10 @@ var UserSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
+    bonus: {
+        type: Number,
+        default: 0
+    },
     link: {
         type: String
     },
