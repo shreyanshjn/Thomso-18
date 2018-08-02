@@ -30,7 +30,7 @@ export default class Main extends Component {
                             <Navbar />
                             <SectionsContainer {...options}>
                                 <Section>
-                                    <div className="body">
+                                    <div >
                                         <div className="imagelogo" align="center">
                                             <img src={logo} alt="logo" className="mainlogo" height="200px" />
                                             <div className="arrowmove">

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom' 
+import { Link } from 'react-router-dom' ;
 import img from "./src/img/logo.png";
 
 import "./src/css/Navbar.css";
@@ -11,7 +11,8 @@ class Navbar extends Component {
     super();
     this.state = {
       isHidden: true,
-      hamburger: true
+        hamburger: true,
+        activeState:window.location.pathname.substring(1)
     };
     this.setActive=this.setActive.bind(this);
   }
@@ -27,7 +28,7 @@ class Navbar extends Component {
        activeState:state
        });
     }
-  render() {
+    render() {
     return (
       <div className="contain">
         <div className={this.state.hamburger? "navbar":"navbar overlay navbarToggle"}>
@@ -49,7 +50,7 @@ class Navbar extends Component {
             <div className="int-ctos">
               <ul id="tushar">
                 <li>
-                    <Link to="../ca/" className={(this.state.activeState === "linkCaportal") ? "linkCaportal" : null}
+                    <Link to="../ca/" className={(this.state.activeState === "ca/") ? "linkCaportal" : null}
                     onClick={() => {
                                     this.setActive("linkCaportal");
                     }}>
@@ -87,7 +88,7 @@ class Navbar extends Component {
                     }}>TEAM CONTACT</Link>
                 </li>*/}
                 <li>
-                    <Link to="../sponsors" className={(this.state.activeState === "linkSponsors") ? "linkSponsors" : null}
+                    <Link to="../sponsors" className={(this.state.activeState === "sponsors") ? "linkSponsors" : null}
                     onClick={() => {
                                     this.setActive("linkSponsors");
                     }}>OUR SPONSORS</Link>

@@ -69,7 +69,7 @@ export default class SponsorIndex extends React.Component{
         return (
             <div>
 
-                <div className="main">
+                <div className="sponsors-main">
                     <div className="navdiv">
                         <Navbar />
                     </div>
