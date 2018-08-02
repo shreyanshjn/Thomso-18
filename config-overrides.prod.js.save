@@ -1,4 +1,4 @@
-var CompressionPlugin = require('compression-webpack-plugin');
+ompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = function(config) {
     config.plugins.splice(-1, 0, new CompressionPlugin({
