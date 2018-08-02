@@ -3,10 +3,10 @@ import './src/css/Contact.css';
 class Contact extends Component {
     render() {
         return (
-            <div className="contactMain">
-                <div className="contactus">
-                    <h1 className="top">Contact</h1>
-                    <table>
+            <div className="beta-home-contactMain">
+                <div className="beta-home-contactus">
+                    <h1 className="beta-home-top">Contact</h1>
+                    <table className="beta-home-contact-table">
                         <tbody>
                             <tr>
                                 <td>Suyash Singh </td>
@@ -47,8 +47,8 @@ class Contact extends Component {
                         </tbody> 
                     </table>
                 </div>
-                <div className="address" style={{ lineHeight: '2.5em' }}>
-                    <h1 className="top">Address</h1>
+                <div className="beta-home-address" style={{ lineHeight: '2.5em' }}>
+                    <h1 className="beta-home-top">Address</h1>
                     Thomso Office<br/>
                     Multi Activity trueCenter,<br/>
                     Indian Institute of Technology, Roorkee<br/>

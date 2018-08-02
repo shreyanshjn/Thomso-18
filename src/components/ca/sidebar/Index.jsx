@@ -44,7 +44,8 @@ export default class Sidebar extends React.Component {
     Field.execCommand('copy');
     Field.remove()
   }
-  render() {
+    render() {
+        console.log(this.state.activeState,"testting")
     let countDownDate = new Date("Oct 25, 2018 00:00:00").getTime();
     let now = new Date().getTime();
     let distance = countDownDate - now;
