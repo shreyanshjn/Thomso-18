@@ -58,7 +58,7 @@
     padding: 10px;
     display: flex;
     flex-direction: column;
-    background-color:rgba(255,255,255,0.2);
+    background-color:rgba(0,0,0,0.2);
     border-radius: 10px;
 }
 .form-heading{
@@ -260,7 +260,7 @@
     text-align: center;
 }
 .form-branch input:focus::-webkit-input-placeholder { color:transparent; }
-.form-state input{
+.form-state .form-state-select{
     font-size: 14px;
     outline: 0;
     border-width: 0 0 2px;
@@ -270,14 +270,14 @@
     color: white;
     padding: 5px 5px 3px 5px;
 }
-.form-state input::placeholder{
+.form-state .form-state-select::placeholder{
     color: white;
     text-align: center;
 }
-.form-state input option{
-    color: #58595B;
+.form-state .form-state-select option{
+    color: red;
 }
-.form-state input:focus::-webkit-input-placeholder { color:transparent; }
+.form-state .form-state-select:focus::-webkit-.form-state-select-placeholder { color:transparent; }
 .form-add-child{
     display: flex;
     flex-direction: column;
