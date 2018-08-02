@@ -1,11 +1,11 @@
 import React from 'react';
-import WISCA from './WISCA.jsx';
-import ROLES from './ROLES.jsx';
-import CONTACT from './CONTACT.jsx';
+import Wisca from './Wisca.jsx';
+import Roles from './Roles.jsx';
+import Contact from './Contact.jsx';
 import AuthService from '../../../handlers/ca/AuthService';
 import FetchApi from '../../../utils/FetchAPI';
 import LoginPage from './LoginPage';
-import RegisterNavbar from './RegisterNavbar';
+import CalandingNavbar from "./CaLanding";
 import { SectionsContainer, Section } from 'react-fullpage';
 import arrow from './src/img/arrow.svg';
 import './src/css/Main.css';
@@ -13,7 +13,7 @@ export default class LoginIndex extends React.Component {
     constructor() {
         super();
         this.state = {
-            facebook: true,
+            facebook: true
         }
         this.Auth = new AuthService();
         this.facebookLogin = this.facebookLogin.bind(this);
@@ -63,22 +63,26 @@ export default class LoginIndex extends React.Component {
             })
             .catch(e => console.log(e));
     }
+    componentWillMount() {
+        window.location.hash = "#home";
+    }
     render() {
         let options = {
             sectionClassName: 'section',
-            anchors: ['home', 'WISCA', 'ROLES', 'contactUs'],
+            anchors: ['home', 'Wisca', 'Roles', 'Contact'],
+            delay: 1000,
             scrollBar: false,
             navigation: false,
             verticalAlign: false,
             sectionaddingTop: '0px',
             slidesNavPosition: 'bottom',
-            arrowNavigation: true
+            arrowNavigation: true,
         };
         return (
             <div className="middlesection">
+                <CalandingNavbar className={(window.location.hash === "#Wisca" || window.location.hash === "#Roles" || window.location.hash === "#Contact") ? 'ca-landing-heading ca-landing-heading-dark' : 'ca-landing-heading'} />
                 <SectionsContainer {...options}>
                     <div className="child-middle">
-                        <RegisterNavbar />
                         <Section>
                             <div>
                                 {/* <div className="inconvi">
@@ -90,7 +94,7 @@ export default class LoginIndex extends React.Component {
                                 </div> */}
                                 <button className="buttonca" onClick={() => this.facebookLogin()}>Login/Register</button>
                                 <div className="arrowmove">
-                                    <a href="#WISCA" address="true">
+                                    <a href="#Wisca" address="true">
                                         <img src={arrow} className="downarrow bounce" alt=
                                             "a" />
                                     </a>
@@ -98,15 +102,21 @@ export default class LoginIndex extends React.Component {
                             </div>
                         </Section>
                     </div>
-                    <Section>
-                        <WISCA />
-                    </Section>
-                    <Section>
-                        <ROLES />
-                    </Section>
-                    <Section>
-                        <CONTACT />
-                    </Section>
+                    <div className="Ca-login-Section-Parent">
+                        <Section>
+                            <Wisca />
+                        </Section>
+                    </div>
+                    <div className="Ca-login-Section-Parent">
+                        <Section>
+                            <Roles />
+                        </Section>
+                    </div>
+                    <div className="Ca-login-Section-Parent">
+                        <Section>
+                            <Contact />
+                        </Section>
+                    </div>
                 </SectionsContainer>
             </div>
         );
