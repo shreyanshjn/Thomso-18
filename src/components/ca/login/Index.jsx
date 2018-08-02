@@ -99,18 +99,24 @@ export default class LoginIndex extends React.Component {
                             </div>
                         </Section>
                     </div>
+                    <div className="Ca-login-Section-Parent">
                     <BlackNavbar />
                     <Section>
                       <Wisca />
                     </Section>
+                    </div>
+                    <div className="Ca-login-Section-Parent">
                     <BlackNavbar />
                     <Section>
                     <Roles />
                     </Section>
+                    </div>
+                    <div className="Ca-login-Section-Parent">
                     <BlackNavbar />
                     <Section>
                       <Contact />
                     </Section>
+                  </div>
                 </SectionsContainer>
             </div>
         );

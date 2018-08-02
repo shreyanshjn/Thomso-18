@@ -1,6 +1,6 @@
 import React from "react";
 
-import './LoginDivCompo.css';
+import './src/css/LoginDivCompo.css';
 export default class LoginDivCompo extends React.Component{
 
   render(){

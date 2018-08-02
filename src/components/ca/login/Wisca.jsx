@@ -1,5 +1,5 @@
 import React from "react";
-import './Wisca.css'
+import './src/css/Wisca.css';
 import LoginDivCompo from './LoginDivCompo.jsx';
 import img1 from './img/certi-01.png';
 import img2 from './img/ticket-01.png';

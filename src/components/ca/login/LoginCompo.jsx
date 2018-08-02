@@ -1,6 +1,6 @@
 import React from "react";
 
-import './LoginCompo.css';
+import './src/css/LoginCompo.css';
 export default class LoginCompo extends React.Component{
 
   render(){

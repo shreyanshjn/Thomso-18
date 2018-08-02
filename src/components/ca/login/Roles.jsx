@@ -1,5 +1,5 @@
 import React from 'react';
-import './Wisca.css'
+import './src/css/Wisca.css';
 import img4 from './img/social media-01.png';
 import img5 from './img/friends-01.png';
 import img6 from './img/handshake-01.png';
