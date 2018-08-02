@@ -9,7 +9,7 @@ class List extends Component {
         <li>
           <a href="">CA PORTAL</a>
         </li>
-        <li>
+        {/*       <li>
           <a href="">ZONALS</a>
         </li>
         <li>
@@ -20,13 +20,13 @@ class List extends Component {
         </li>
         <li>
           <a href="">TEAM CONTACT</a>
-        </li>
+        </li>*/}
         <li>
           <a href="">OUR SPONSERS</a>
         </li>
-        <li>
+        {/* <li>
           <a href="">FAQs</a>
-        </li>
+        </li>*/}
       </ul>
     );
   }

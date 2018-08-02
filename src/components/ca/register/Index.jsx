@@ -26,11 +26,16 @@ export default class RegisterIndex extends React.Component {
 
     componentWillMount() {
         if (this.props.userData) {
-            this.setState({
-                name: this.props.userData.name,
-                email: this.props.userData.email,
-                gender: this.props.userData.gender
-            })
+            if (this.props.userData.email) {
+                this.setState({
+                    name: this.props.userData.name,
+                    email: this.props.userData.email,
+                })
+            } else {
+                this.setState({
+                    name: this.props.userData.name,
+                })
+            }
             if (!this.props.userData.fb_id) {
                 this.props.history.push('/ca/')
             }
@@ -62,7 +67,6 @@ export default class RegisterIndex extends React.Component {
                     }
                 })
                 .catch(e => {
-                    debugger
                     console.log(e)
                 });
         } else if (check.errors) {

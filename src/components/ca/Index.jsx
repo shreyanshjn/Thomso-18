@@ -10,7 +10,8 @@ import FetchApi from '../../utils/FetchAPI';
 
 const Loading = ({ error }) => {
   if (error) {
-    return console.log(error);
+    console.log(error);
+    return <h3>Error loading component</h3>;
   } else {
     return <h3>Loading...</h3>;
   }
@@ -52,6 +53,11 @@ const IdeasIndex = Loadable({
 
 const LoginIndex = Loadable({
   loader: () => import("./login/Index"),
+  loading: Loading
+});
+
+const TimelineIndex = Loadable({
+  loader: () => import("./timeline/Index"),
   loading: Loading
 });
 
@@ -105,6 +111,7 @@ export default class CAIndex extends React.Component {
             }
             <Route exact path="/ca/logout" render={props => (<LogoutIndex {...props} updateRoutes={this.handleUpdate} />)} />
             <Route exact path="/ca/leaderboard" component={LeaderboardIndex} />
+            <Route exact path="/ca/timeline" component={TimelineIndex} />
             <Route exact path="/ca/contact" render={props => (<ContactIndex {...props} userData={this.state.userData} />)} />
             <Route exact path="/ca/ideas" component={IdeasIndex} />
             <Route exact path="/ca/" component={HomeIndex} />

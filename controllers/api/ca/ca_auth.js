@@ -15,7 +15,6 @@ exports.fblogin = function(req, res) {
         name: req.body.name,
         link: req.body.link,
         email: req.body.email,
-        gender: req.body.gender,
         image: req.body.image
     }
     request(`https://graph.facebook.com/oauth/access_token?grant_type=fb_exchange_token&client_id=${client_id}&client_secret=${client_secret}&fb_exchange_token=${accessToken}`, function(err, response, body){
@@ -36,11 +35,10 @@ exports.fblogin = function(req, res) {
             if (!user) {
                 // Return Data
                 var newUser = new CA_User(saveData);
-                console.log(newUser);
-                newUser.save(function(err) {
+                newUser.save(function(err, user) {
                     if (err) {
                         console.log(err);
-                        return res.status(400).send({success: false, msg: 'Unable to Add Use'});
+                        return res.status(400).send({success: false, msg: 'Unable to Add User'});
                     }
                     var newToken = {
                         fb_id: req.body.id,
@@ -53,7 +51,11 @@ exports.fblogin = function(req, res) {
                         if (err) {
                             return res.status(400).send({success: false, msg: 'Unable Create Token'});
                         }
-                        res.json({success: true, msg: 'New User, Created False', token: token.token, new: true});
+                        res.json({success: true, msg: 'New User, Created False', token: token.token, new: true, body: {
+                            email: user.email,
+                            name: user.name,
+                            fb_id: user.fb_id
+                        }});
                     });
                 });
             } else {
@@ -103,31 +105,31 @@ exports.fblogin = function(req, res) {
 exports.fbRegister = function(req, res) {
     if (req.body) {
         if (req.body.name) {
-            req.body.name.trim();
+            req.body.name = req.body.name.trim();
         }
         if (req.body.contact) {
-            req.body.contact.trim();
+            req.body.contact = req.body.contact.trim();
         }
         if (req.body.email) {
-            req.body.email.trim();
+            req.body.email = req.body.email.trim();
         }
         if (req.body.gender) {
-            req.body.gender.trim();
+            req.body.gender = req.body.gender.trim();
         }
         if (req.body.college) {
-            req.body.college.trim();
+            req.body.college = req.body.college.trim();
         }
         if (req.body.state) {
-            req.body.state.trim();
+            req.body.state = req.body.state.trim();
         }
         if (req.body.branch) {
-            req.body.branch.trim();
+            req.body.branch = req.body.branch.trim();
         }
         if (req.body.address) {
-            req.body.address.trim();
+            req.body.address = req.body.address.trim();
         }
         if (req.body.why) {
-            req.body.why.trim();
+            req.body.why = req.body.why.trim();
         }
         var data = {
             name: req.body.name,
@@ -143,7 +145,7 @@ exports.fbRegister = function(req, res) {
         }
         if (data.name && data.contact && data.email && data.gender && data.college && data.state && data.branch && data.address && data.why) {
             CA_User.findOneAndUpdate({fb_id: req.locals.fb_id}, data, { new:true })
-            .select('name gender image ca_id likes shares referrals score notification blocked link college')
+            .select('name gender image email ca_id likes shares referrals score notification blocked link college')
             .exec(function(err, user) {
                 if(err){
                     return res.status(400).send({success:false, msg:'Error Creating User', error:err});

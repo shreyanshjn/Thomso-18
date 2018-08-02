@@ -5,7 +5,7 @@ export default class BlackNavbar extends React.Component {
     render() {
         return (
             <div>
-                <div className="register-heading">
+                <div className="register-heading black">
                     <div className="black-logo">
                         <img src={logoca} alt="r-logo" />
                     </div>

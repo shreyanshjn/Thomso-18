@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
-.main
+.footer-main
 {
     color:white;
     font-family: 'Montserrat';
@@ -87,7 +87,7 @@
     }
 }
 @media only screen and (max-width: 768px) {
-    .main
+    .footer-main
     {
         color:white;
         font-family: 'Montserrat';

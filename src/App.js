@@ -37,6 +37,14 @@ const VerifyCerti = Loadable({
   loading: () => <div>Loading VerifyCerti</div>
 });
 
+const Policy = Loadable({
+  loader: () => import("./components/policyandterms/policy"),
+  loading: () =><div>Loading Policy</div>
+})
+const Terms = Loadable({
+  loader:() =>import("./components/policyandterms/thomsoterms"),
+  loading:() => <div>Loading Terms</div>
+})
 class App extends Component {
   render() {
     return (
@@ -51,6 +59,8 @@ class App extends Component {
           <Route path="/ca/" component={CAIndex} />
 
           <Route path="/verifyCerti/" component={VerifyCerti} />
+          <Route path="/policy" component={Policy}/>
+          <Route path="/terms" component={Terms}/>
         </Switch>
       </BrowserRouter>
     );

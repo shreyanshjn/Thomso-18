@@ -64,8 +64,8 @@ import logo60 from './img/115.png';
 import logo61 from './img/116.png';
 import logo62 from './img/225.png';
 
-export default class Sponsors extends React.Component {
-    render() {
+export default class SponsorIndex extends React.Component{
+    render(){
         return (
             <div>
 
@@ -174,7 +174,7 @@ export default class Sponsors extends React.Component {
                                     <h2>Partners</h2></center>
                             </div>
 
-                            <div class="innerdiv">
+                            <div className="innerdiv">
                                 <div className="imgdiv">
                                     <center>
                                         <a href="http://www.99uttarakhand.in/uttarakhand-simply-heaven-photo-gallery.php" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo12} alt="" /></a>
@@ -198,7 +198,7 @@ export default class Sponsors extends React.Component {
                                 </div>
                             </div>
 
-                            <div class="innerdiv">
+                            <div className="innerdiv">
                                 <div className="imgdiv">
                                     <center>
                                         <a href="http://www.airtel.in/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo15} alt="" /></a>
@@ -221,7 +221,7 @@ export default class Sponsors extends React.Component {
                                         <h4>Lubricant Partner</h4></center>
                                 </div>
                             </div>
-                            <div class="innerdiv">
+                            <div className="innerdiv">
                                 <div className="imgdiv">
                                     <center>
                                         <a href="https://rog.asus.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo18} alt="" /></a>
@@ -300,7 +300,7 @@ export default class Sponsors extends React.Component {
                                     <h2> Newspaper Partners</h2></center>
                             </div>
 
-                            <div class="innerdiv">
+                            <div className="innerdiv">
                                 <div className="imgdiv">
                                     <center>
                                         <a href="https://timesofindia.indiatimes.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo26} alt="" /></a>
@@ -324,7 +324,7 @@ export default class Sponsors extends React.Component {
                                 <center>
                                     <h2> Magazine Partners</h2></center>
                             </div>
-                            <div class="innerdiv1">
+                            <div className="innerdiv1">
                                 <div className="imgdiv1">
                                     <center>
                                         <a href="https://womansera.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo29} alt="" /></a>
@@ -346,7 +346,7 @@ export default class Sponsors extends React.Component {
                                     </center>
                                 </div>
                             </div>
-                            <div class="innerdiv1">
+                            <div className="innerdiv1">
                                 <div className="imgdiv1">
                                     <center>
                                         <a href="http://www.youthincmag.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo33} alt="" /></a>
@@ -368,7 +368,7 @@ export default class Sponsors extends React.Component {
                                     </center>
                                 </div>
                             </div>
-                            <div class="innerdiv1">
+                            <div className="innerdiv1">
                                 <div className="imgdiv1">
                                     <center>
                                         <a href="http://abraxaslifestyle.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo37} alt="" /></a>
@@ -390,7 +390,7 @@ export default class Sponsors extends React.Component {
                                     </center>
                                 </div>
                             </div>
-                            <div class="innerdiv" style={{ marginTop: '2%' }}>
+                            <div className="innerdiv" style={{ marginTop: '2%' }}>
                                 <div className="imgdiv">
                                     <center>
                                         <a href="http://theyouthchronicles.in/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo41} alt="" /></a>
@@ -411,7 +411,7 @@ export default class Sponsors extends React.Component {
                                 <center>
                                     <h2> Online Media Partners</h2></center>
                             </div>
-                            <div class="innerdiv1">
+                            <div className="innerdiv1">
                                 <div className="imgdiv1">
                                     <center>
                                         <a href="http://beingstudent.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo44} alt="" /></a>
@@ -433,7 +433,7 @@ export default class Sponsors extends React.Component {
                                     </center>
                                 </div>
                             </div>
-                            <div class="innerdiv1">
+                            <div className="innerdiv1">
                                 <div className="imgdiv1">
                                     <center>
                                         <a href="https://www.hellointern.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo48} alt="" /></a>
@@ -455,7 +455,7 @@ export default class Sponsors extends React.Component {
                                     </center>
                                 </div>
                             </div>
-                            <div class="innerdiv1">
+                            <div className="innerdiv1">
                                 <div className="imgdiv1">
                                     <center>
                                         <a href="http://efy.in/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo52} alt="" /></a>
@@ -485,7 +485,7 @@ export default class Sponsors extends React.Component {
                                 <center>
                                     <h2> Digital Media Partners</h2></center>
                             </div>
-                            <div class="innerdiv1">
+                            <div className="innerdiv1">
                                 <div className="imgdiv1">
                                     <center>
                                         <a href="https://theengineerbro.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo56} alt="" /></a>
@@ -507,7 +507,7 @@ export default class Sponsors extends React.Component {
                                     </center>
                                 </div>
                             </div>
-                            <div class="innerdiv" style={{ marginTop: '2%' }}>
+                            <div className="innerdiv" style={{ marginTop: '2%' }}>
                                 <div className="imgdiv">
                                     <center>
                                         <a href="http://www.jaipurlove.com/" target="_blank" rel="noopener noreferrer"><img className="sponsors-responsive-image" src={logo60} alt="" /></a>
@@ -525,11 +525,11 @@ export default class Sponsors extends React.Component {
                                     <center>
                                         <h4>Content Partner</h4></center>
                                 </div>
-                            </div>
+                          </div>
 
+                            </div>
+                          </div>
                         </div>
-                    </div>
-                </div>
             </div>
         )
     }

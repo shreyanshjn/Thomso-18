@@ -16,7 +16,6 @@ var verifyCerti = require('../controllers/api/Certificates/verifyCertificates');
 router.use('/api/ca', caRoutes);
 router.use('/api/book', bookRoutes);
 router.use('/api/certiVerify', cors(corsOptions),  verifyCerti.certi_verify );
-
 // -> /*
 router.get('/*', viewController);
 

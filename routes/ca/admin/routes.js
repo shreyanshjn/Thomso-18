@@ -11,7 +11,7 @@ var CAAdminTokenMiddleware = require("../../../middlewares/ca/admin/TokenMiddlew
 // Routes
 
 // -> /ca/admin/auth
-router.post('/auth/register', adminAuth.register);
+// router.post('/auth/register', adminAuth.register);
 router.post('/auth/login', adminAuth.login);
 
 // -> /ca/admin

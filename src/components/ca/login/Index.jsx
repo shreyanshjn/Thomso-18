@@ -1,5 +1,7 @@
 import React from 'react';
-
+import Wisca from './Wisca.jsx';
+import Roles from './Roles.jsx';
+import Contact from './Contact.jsx';
 import AuthService from '../../../handlers/ca/AuthService';
 import FetchApi from '../../../utils/FetchAPI';
 import LoginPage from './LoginPage';
@@ -29,14 +31,17 @@ export default class LoginIndex extends React.Component {
     facebookLogin() {
         // let props = this.props;
         window.FB.login(response => {
-            window.FB.api('/me?fields=id, name, email, gender, picture.type(large), link', res => {
+            window.FB.api('/me?fields=id, name, email, picture.type(large), link', res => {
                 let accessToken = response.authResponse.accessToken;
-                let { id, name, email, gender, link } = res;
+                let {id, name, email, link} = res;
                 let image = res.picture.data.url;
-                let data = { id, name, email, gender, image, accessToken, link };
+                let data = {id, name, image, accessToken, link};
+                if (email !== undefined) {
+                    data['email'] = email
+                }
                 this.updateCheckUser(data)
             })
-        }, { scope: 'email, user_likes ,user_posts ,user_gender, user_link' });
+        }, {scope: 'user_likes, email, user_posts, user_link' });
     }
 
     updateCheckUser(data) {
@@ -61,12 +66,12 @@ export default class LoginIndex extends React.Component {
     }
     render() {
         let options = {
-            sectionClassName: 'section',
-            anchors: ['home', 'aboutUs', 'footfall', 'celebrity', 'contactUs'],
-            scrollBar: false,
-            navigation: false,
-            verticalAlign: false,
-            sectionaddingTop: '0px',
+            sectionClassName:     'section',
+            anchors:              ['home', 'Wisca', 'Roles','Contact'],
+            scrollBar:            false,
+            navigation:           false,
+            verticalAlign:        false,
+            sectionaddingTop:    '0px',
             slidesNavPosition: 'bottom',
             arrowNavigation: true
         };
@@ -77,16 +82,16 @@ export default class LoginIndex extends React.Component {
                         <RegisterNavbar />
                         <Section>
                             <div>
-                                <div className="inconvi">
+                                {/* <div className="inconvi">
                                     <p className="sorry">Sorry for the inconvenience. We are facing some technical issues due to Facebook policy changes. Kindly enter email/FacebookID and we'll grant you the access.</p>
                                     <form className="formEmail">
                                         <input type="text" placeholder="EmailID" />
                                         <input type="text" placeholder="https://www.facebook.com" />
                                     </form>
-                                </div>
+                                </div> */}
                                 <button className="buttonca" onClick={() => this.facebookLogin()}>Login/Register</button>
                                 <div className="arrowmove">
-                                    <a href="#aboutUs" address="true">
+                                    <a href="#Wisca" address="true">
                                         <img src={arrow} className="downarrow bounce" alt=
                                             "a" />
                                     </a>
@@ -94,18 +99,24 @@ export default class LoginIndex extends React.Component {
                             </div>
                         </Section>
                     </div>
+                    <div className="Ca-login-Section-Parent">
                     <BlackNavbar />
                     <Section>
-                        <div style={{ fontSize: '25px', color: 'white' }}>
-                            <LoginPage />
-                        </div>
+                      <Wisca />
                     </Section>
+                    </div>
+                    <div className="Ca-login-Section-Parent">
+                    <BlackNavbar />
                     <Section>
+                    <Roles />
                     </Section>
+                    </div>
+                    <div className="Ca-login-Section-Parent">
+                    <BlackNavbar />
                     <Section>
+                      <Contact />
                     </Section>
-                    <Section>
-                    </Section>
+                  </div>
                 </SectionsContainer>
             </div>
         );

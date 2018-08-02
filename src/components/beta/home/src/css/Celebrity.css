@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
-.celebrityMain 
+.celebrityMain
 {
     margin-top:24vh;
     vertical-align:center;
@@ -12,7 +12,7 @@
 }
 .hoverEffect
 {
-    margin:15px; 
+    margin:15px;
     height:38vh;
     width:15vw;
     position:relative;
@@ -20,7 +20,7 @@
     border-radius:10px;
 }
 .celebrityMain > div >p
-{ 
+{
     position:absolute;
     bottom:-8vh;
     font-family:Montserrat;
@@ -29,15 +29,15 @@
 }
 .farhan
 {
-    left:11%; 
+    left:11%;
 }
 .nucleya
 {
-    left:20%; 
+    left:20%;
 }
 .sunidhi
 {
-    left:6%; 
+    left:6%;
 }
 .nucleya
 {
@@ -59,32 +59,32 @@
 }
 .hoverEffect:hover  .middle
 {
-    opacity:1; 
+    opacity:1;
 }
 .middle
 {
     opacity:0;
     position:absolute;
-    top:49%;
-    left:30%;
+    bottom: 5%;
+    left:10%;
     transition:0.2s;
     text-align: center;
 }
 @media only screen and (max-width: 768px) {
-    .celebrityMain 
+    .celebrityMain
     {
         flex-direction:column;
         margin-top:10vh;
     }
     .celebrityMain > div
     {
-        margin:18px; 
+        margin:18px;
         height:18vh;
         width:30vw;
         position:relative;
     }
     .celebrityMain > div >p
-    { 
+    {
         position:absolute;
         bottom:-5vh;
         font-size:8px;
@@ -92,16 +92,16 @@
     }
     .farhan
     {
-        left:17%; 
+        left:17%;
     }
     .nucleya
     {
-        left:20%; 
+        left:20%;
         bottom:-4vh;
     }
     .sunidhi
     {
-        left:2%; 
+        left:2%;
     }
     .box
     {
@@ -112,15 +112,20 @@
         height:18vh;
         width:30vw;
     }
+    .middle
+    {
+       font-size:8px;
+       top:30%;
+    }
 }
 @media (min-width: 1920px) and (max-width: 2560px)
 {
     .celebrityMain
     {
         margin-top:26vh;
-    } 
+    }
     .celebrityMain > div >p
-    { 
+    {
         font-family:Montserrat;
         font-size:26px;
         text-align:center;
@@ -134,7 +139,7 @@
     }
     .farhan
     {
-        left:8%; 
+        left:8%;
     }
     .nucleya
     {
@@ -144,6 +149,14 @@
     {
         margin:50px;
     }
+    .middle
+    {
+        font-size:22px;
+        opacity:0;
+        position:absolute;
+        bottom: 5%;
+        left:10%;
+        transition:0.2s;
+        text-align: center;
+    }
 }
-
-

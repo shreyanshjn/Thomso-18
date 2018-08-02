@@ -17,19 +17,7 @@ var dbUser = process.env.DB_USERNAME;
 var dbPass = process.env.DB_PASSWORD;
 var dbPort = process.env.DB_PORT || "27017";
 mongoose
-  .connect(
-    "mongodb://" +
-      dbUser +
-      ":" +
-      dbPass +
-      "@" +
-      dbHost +
-      ":" +
-      dbPort +
-      "/" +
-      dbName,
-    { promiseLibrary: require("bluebird"), useNewUrlParser: true }
-  )
+  .connect("mongodb://" + dbUser + ":" + dbPass + "@" + dbHost + ":" + dbPort + "/" + dbName, { promiseLibrary: require("bluebird"), useNewUrlParser: true })
   .then(() => console.log("connection succesful"))
   .catch(err => console.error(err));
 

@@ -13,7 +13,8 @@ export default class LeaderboardIndex extends React.Component {
         }
         this.Auth = new AuthService();
     }
-    componentDidMount(){
+
+    componentDidMount() {
         const authtoken = this.Auth.getToken()
         FetchApi('GET', '/api/ca/leaderboard', null, authtoken)
             .then(r => {
