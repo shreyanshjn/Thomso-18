@@ -55,9 +55,11 @@ export default class Sidebar extends React.Component {
 
     return (
       <div>
+        {console.log(this.props.userData, 'UserData')}
         <div
           id="mySidenav"
           className="sidenav"
+          style={(this.props.userData && this.props.userData.gender === "female") ? {backgroundColor: 'Pink'} : {backgroundColor: '#00ff95d9'}}
         >
           <div className="sidebar-user">
             <img src={this.props.userData ? this.props.userData.image : boy} className="image" alt="dataImg" />
@@ -153,14 +155,14 @@ export default class Sidebar extends React.Component {
               </div>
             </Link>
             <Link
-              to="/ca/guidelines"
+              to="/ca/timeline"
               className={
-                this.state.activeState === "guidelines"
+                this.state.activeState === "timeline"
                   ? "sideNavItem activeSideItem"
                   : "sideNavItem"
               }
               onClick={() => {
-                this.setActive("guidelines");
+                this.setActive("timeline");
               }}
             >
               <div className="guide flex_row">
@@ -168,7 +170,7 @@ export default class Sidebar extends React.Component {
                   <Guide />
                 </div>
                 <div className="p-name">
-                  GUIDELINES
+                  TIMELINE
                 </div>
               </div>
             </Link>
@@ -192,7 +194,7 @@ export default class Sidebar extends React.Component {
                 </div>
               </div>
             </Link>
-            <Link
+            {/* <Link
               to="/ca/certificate"
               className={
                 this.state.activeState === "certificate"
@@ -211,7 +213,7 @@ export default class Sidebar extends React.Component {
                   CERTIFICATE
                 </div>
               </div>
-            </Link>
+            </Link> */}
             <Link
               to="/ca/contact"
               className={
@@ -223,7 +225,7 @@ export default class Sidebar extends React.Component {
                 this.setActive("contact");
               }}
             >
-              <div className="contactus flex_row">
+              <div className=".ca-sidebar-contactus flex_row">
                 <div className="p-logo">
                   <Contact />
                 </div>
@@ -260,7 +262,7 @@ export default class Sidebar extends React.Component {
                   <Referral />
                 </div>
                 <div className="p-name">
-                  REFERRAL CODE : {this.state.referral}
+                  Visit Facebook Profile
                 </div>
               </div>
             </div>

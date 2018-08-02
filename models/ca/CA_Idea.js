@@ -21,8 +21,7 @@ var UserSchema = new mongoose.Schema({
         type: String
     },
     deleted: {
-        type: Boolean,
-        default: false
+        type: Boolean
     },
     updated_date: {
         type: Date,

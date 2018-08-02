@@ -28,12 +28,14 @@
     "start": "node scripts/customized-config start",
     "build": "node scripts/customized-config build",
     "serve": "node ./bin/www",
+    "https": "node ./bin/ww2",
     "server": "nodemon ./bin/www",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
     "compression-webpack-plugin": "^1.1.11",
+    "https": "^1.0.0",
     "image-webpack-loader": "^4.3.1",
     "nodemon": "^1.18.3",
     "rewire": "^4.0.1"

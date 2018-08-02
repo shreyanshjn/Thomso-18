@@ -7,7 +7,7 @@ import Row from './Row';
 // import FetchDb from '../../../../utils/FetchDb';
 // var fs = require('fs');
 // var csv_export=require('csv-export');
-var csv2json = require('csv2json');
+// var csv2json = require('csv2json');
 
 
 
@@ -27,7 +27,6 @@ export default class DataTable extends React.Component {
             message: '',
         };
         this.Auth = new AuthService();
-        this.handleDownload = this.handleDownload.bind(this);
     }
 
     componentDidMount() {
@@ -47,53 +46,53 @@ export default class DataTable extends React.Component {
             });
     }
 
-    convertAndDownloadCsv = function (data) {
-        if (data && data.length > 0) {
-            var csvData = csv2json.csvProcessor({
-                data: data,
-                quotes: '',
-                del: ';'
-            });
-            var filename = "participants.csv";
-            var blob = new Blob([csvData], { type: 'text/csv;charset=utf-8;' });
-            if (navigator.msSaveBlob) {
-                navigator.msSaveBlob(blob, filename);
-            } else {
-                var link = document.createElement("a");
-                if (link.download !== undefined) {
-                    var url = URL.createObjectURL(blob);
-                    link.setAttribute("href", url);
-                    link.setAttribute("download", filename);
-                    link.style.visibility = 'hidden';
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                }
-            }
-        }
-    }
+    // convertAndDownloadCsv = function (data) {
+    //     if (data && data.length > 0) {
+    //         var csvData = csv2json.csvProcessor({
+    //             data: data,
+    //             quotes: '',
+    //             del: ';'
+    //         });
+    //         var filename = "participants.csv";
+    //         var blob = new Blob([csvData], { type: 'text/csv;charset=utf-8;' });
+    //         if (navigator.msSaveBlob) {
+    //             navigator.msSaveBlob(blob, filename);
+    //         } else {
+    //             var link = document.createElement("a");
+    //             if (link.download !== undefined) {
+    //                 var url = URL.createObjectURL(blob);
+    //                 link.setAttribute("href", url);
+    //                 link.setAttribute("download", filename);
+    //                 link.style.visibility = 'hidden';
+    //                 document.body.appendChild(link);
+    //                 link.click();
+    //                 document.body.removeChild(link);
+    //             }
+    //         }
+    //     }
+    // }
 
-    handleDownload(){
-        const authtoken = this.Auth.getToken();
-        FetchApi('GET','/api/ca/admin/exportToCSV', null, authtoken)
-            .then((result) => {
-                console.log(result.data.data, 'export');
-                var fetchedData  = result.data.data;
-                // console.log(fetchedData);
-                // console.log(typeof this.convertAndDownloadCsv);
-                this.convertAndDownloadCsv(fetchedData);
+    // handleDownload(){
+    //     const authtoken = this.Auth.getToken();
+    //     FetchApi('GET','/api/ca/admin/exportToCSV', null, authtoken)
+    //         .then((result) => {
+    //             console.log(result.data.data, 'export');
+    //             var fetchedData  = result.data.data;
+    //             // console.log(fetchedData);
+    //             // console.log(typeof this.convertAndDownloadCsv);
+    //             this.convertAndDownloadCsv(fetchedData);
 
-                // csv_export.export(result.data.data,function(buffer){
-                //     fs.writeFileSync('./data.csv',buffer);
-                //   });
-            })
-            .catch(error => {
-                if(error){
-                    console.log(error, 'export error');
-                }
-            }
-        );
-    }
+    //             // csv_export.export(result.data.data,function(buffer){
+    //             //     fs.writeFileSync('./data.csv',buffer);
+    //             //   });
+    //         })
+    //         .catch(error => {
+    //             if(error){
+    //                 console.log(error, 'export error');
+    //             }
+    //         }
+    //     );
+    // }
 
     handleFilter(e){
         e.preventDefault();
@@ -114,7 +113,7 @@ export default class DataTable extends React.Component {
             <div>
                 <input id="myInput" type="text" onChange={(e) => this.handleFilter(e)} placeholder="Type here to search..." />
             </div>
-            <button onClick={()=>this.handleDownload()} >Download Users</button>
+            {/* <button onClick={()=>this.handleDownload()} >Download Users</button> */}
             <table>
                 <thead>
                     <tr>

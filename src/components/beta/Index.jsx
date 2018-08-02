@@ -17,10 +17,10 @@ const FAQIndex = Loadable({
   loading: Loading
 });
 
-const SponsorsIndex = Loadable({
-  loader: () => import("./sponsors/Index"),
-  loading: Loading
-});
+// const SponsorsIndex = Loadable({
+//   loader: () => import("./sponsors/Index"),
+//   loading: Loading
+// });
 
 const TeamIndex = Loadable({
   loader: () => import("./team/Index"),
@@ -38,7 +38,7 @@ export default class BetaIndex extends React.Component {
     return (
       <React.Fragment >
         <Route exact path="/beta/" component={HomeIndex} />
-        <Route exact path="/beta/sponsors" component={SponsorsIndex} />
+        {/* <Route exact path="/beta/sponsors" component={SponsorsIndex} /> */}
         <Route exact path="/beta/team" component={TeamIndex} />
         <Route exact path="/beta/faq" component={FAQIndex} />
       </React.Fragment>

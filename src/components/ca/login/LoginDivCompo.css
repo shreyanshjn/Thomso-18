@@ -20,7 +20,6 @@
   display: flex;
   flex-direction: row;
   justify-content:flex-start;
-  background: ;
 }
 .Login-divb{
   height:71px;
@@ -28,8 +27,6 @@
   display: flex;
   flex-direction: column;
   justify-content:flex-start;
-
-
 }
 .Login-divb img{
   height: 71px;
@@ -47,6 +44,4 @@
   flex-direction: column;
   justify-content:flex-start;
   font-family: Montserrat;
-
-
 }

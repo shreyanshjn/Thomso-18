@@ -21,6 +21,22 @@
     overflow: hidden;
 }
 @media screen and (min-width:1400px){
+
+    .sidenav.collapseSide{
+        width: 100px;
+        min-width: 100px;
+    }
+    .sidenav.collapseSide .sideNavItem {
+        font-size: 0;
+        padding-left: 36px;
+    }
+    .sidenav.collapseSide .sideNavItem > i{
+        visibility: visible;
+        font-size: 24px;
+    }
+    .sidenav.collapseSide > .sidebar-user > .text{
+        font-size: 14px;
+    }
     .sidenav .sideNavItem {
         padding: 5px 8px 5px 0px;
         text-decoration: none;
@@ -51,7 +67,7 @@
     .sidenav > .thomso > .activeSideItem > .guide > .p-logo svg .guidepath{
         fill: purple;
     }
-    .sidenav > .thomso > .activeSideItem > .contactus > .p-logo svg .contactpath{
+    .sidenav > .thomso > .activeSideItem > .ca-sidebar-contactus > .p-logo svg .contactpath{
         fill: blue;
     }
     .sidenav > .thomso > .activeSideItem > .logout > .p-logo svg .logoutpath{
@@ -89,6 +105,7 @@
         padding: 15px 0px;
     }
     .hand{
+        margin-top: 50px;
         cursor: pointer;
         display: flex;
         flex-direction: row;
@@ -231,6 +248,22 @@
 
 
 @media screen and (max-width: 1400px){
+
+    .sidenav.collapseSide{
+        width: 100px;
+        min-width: 100px;
+    }
+    .sidenav.collapseSide .sideNavItem {
+        font-size: 0;
+        padding-left: 36px;
+    }
+    .sidenav.collapseSide .sideNavItem > i{
+        visibility: visible;
+        font-size: 24px;
+    }
+    .sidenav.collapseSide > .sidebar-user > .text{
+        font-size: 12px;
+    }
     .sidenav .sideNavItem {
         padding: 5px 8px 5px 0px;
         text-decoration: none;
@@ -261,7 +294,7 @@
     .sidenav > .thomso > .activeSideItem > .guide > .p-logo svg .guidepath{
         fill: purple;
     }
-    .sidenav > .thomso > .activeSideItem > .contactus > .p-logo svg .contactpath{
+    .sidenav > .thomso > .activeSideItem > .ca-sidebar-contactus > .p-logo svg .contactpath{
         fill: blue;
     }
     .sidenav > .thomso > .activeSideItem > .logout > .p-logo svg .logoutpath{

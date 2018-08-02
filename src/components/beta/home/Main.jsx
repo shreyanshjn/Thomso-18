@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { ScrollToTopOnMount, SectionsContainer, Section } from 'react-fullpage';
+import React , { Component } from 'react';
+import { SectionsContainer, Section } from 'react-fullpage';
 import logo from './src/img/thomso main-01.png';
 import arrow from './src/img/arrow.svg';
 import './src/css/Main.css';
@@ -28,7 +28,6 @@ export default class Main extends Component {
                     <div className="stars">
                         <div className="twinkling">
                             <Navbar />
-                            <ScrollToTopOnMount />
                             <SectionsContainer {...options}>
                                 <Section>
                                     <div className="body">
