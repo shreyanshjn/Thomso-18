@@ -27,7 +27,6 @@ export default class DataTable extends React.Component {
             message: '',
         };
         this.Auth = new AuthService();
-        this.handleDownload = this.handleDownload.bind(this);
     }
 
     componentDidMount() {
