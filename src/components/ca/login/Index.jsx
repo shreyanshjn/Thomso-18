@@ -77,9 +77,10 @@ export default class LoginIndex extends React.Component {
         };
         return (
             <div className="middlesection">
+              <RegisterNavbar />
                 <SectionsContainer {...options}>
                     <div className="child-middle">
-                        <RegisterNavbar />
+
                         <Section>
                             <div>
                                 {/* <div className="inconvi">
@@ -100,19 +101,19 @@ export default class LoginIndex extends React.Component {
                         </Section>
                     </div>
                     <div className="Ca-login-Section-Parent">
-                    <BlackNavbar />
+
                     <Section>
                       <Wisca />
                     </Section>
                     </div>
                     <div className="Ca-login-Section-Parent">
-                    <BlackNavbar />
+
                     <Section>
                     <Roles />
                     </Section>
                     </div>
                     <div className="Ca-login-Section-Parent">
-                    <BlackNavbar />
+
                     <Section>
                       <Contact />
                     </Section>

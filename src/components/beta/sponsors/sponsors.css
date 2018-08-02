@@ -124,7 +124,18 @@ width: 100%;
 .Sponsors-sponsdiv{
 display:flex;justify-content:center;margin-top:4%;
 }
+.Sponsors-sponsors::-webkit-scrollbar {
+  width: 1em;
+}
 
+.Sponsors-sponsors::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+.Sponsors-sponsors::-webkit-scrollbar-thumb {
+background-color: darkgrey;
+outline: 1px solid slategrey;
+}
 @media (max-width: 768px){
 	.Sponsors-sponsors-responsive-image{
 			height: 45px;
@@ -192,4 +203,46 @@ display:flex;justify-content:center;margin-top:4%;
     padding-bottom: 2%;
     height: 518px;
   }
+  .Sponsors-sponsors::-webkit-scrollbar-thumb {
+  background-color: white;
+  outline: 0px white;
+}
+}
+@media (min-width: 1920px) and (max-width: 2560px){
+
+  .Sponsors-sponsors{
+    background: rgb(255, 255, 255); color: rgb(0, 0, 0); padding-bottom: 5%;
+    padding-top: 2%;
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 750px;
+
+  }
+
+  .Sponsors-sponsors::-webkit-scrollbar {
+    width: 1em;
+}
+
+  .Sponsors-sponsors::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+  .Sponsors-sponsors::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+.Sponsors-innerdiv{
+  display:flex;
+  flex-direction:row;
+  justify-content:flex-start;
+  padding: 0px 0px 0px 10%;
+}
+.Sponsors-innerdiv1{
+  display:flex;
+  flex-direction:row;
+  justify-content:flex-start;
+  padding: 0px 0px 0px 10%;
+}
+
 }
