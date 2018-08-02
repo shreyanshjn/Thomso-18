@@ -1,7 +1,7 @@
 import React from 'react';
-import WISCA from './WISCA.jsx';
-import ROLES from './ROLES.jsx';
-import CONTACT from './CONTACT.jsx';
+import Wisca from './Wisca.jsx';
+import Roles from './Roles.jsx';
+import Contact from './Contact.jsx';
 import AuthService from '../../../handlers/ca/AuthService';
 import FetchApi from '../../../utils/FetchAPI';
 import LoginPage from './LoginPage';
@@ -64,7 +64,7 @@ export default class LoginIndex extends React.Component {
     render() {
         let options = {
             sectionClassName:     'section',
-            anchors:              ['home', 'WISCA', 'ROLES','contactUs'],
+            anchors:              ['home', 'Wisca', 'Roles','Contact'],
             scrollBar:            false,
             navigation:           false,
             verticalAlign:        false,
@@ -88,7 +88,7 @@ export default class LoginIndex extends React.Component {
                                 </div>
                                 <button className="buttonca" onClick={() => this.facebookLogin()}>Login/Register</button>
                                 <div className="arrowmove">
-                                    <a href="#WISCA" address="true">
+                                    <a href="#Wisca" address="true">
                                         <img src={arrow} className="downarrow bounce" alt=
                                             "a" />
                                     </a>
@@ -98,15 +98,15 @@ export default class LoginIndex extends React.Component {
                     </div>
                     <BlackNavbar />
                     <Section>
-                      <WISCA />
+                      <Wisca />
                     </Section>
                     <BlackNavbar />
                     <Section>
-                    <ROLES />
+                    <Roles />
                     </Section>
                     <BlackNavbar />
                     <Section>
-                      <CONTACT />
+                      <Contact />
                     </Section>
                 </SectionsContainer>
             </div>
