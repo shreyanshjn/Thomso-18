@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
-.overlay {
+.beta-navbar-overlay {
     position: fixed;
     display: none;
     width: 100%;
@@ -7,7 +7,7 @@
     background-color: black;
     z-index: 2;
     cursor: pointer;
-}.navtoggle{
+}.beta-navbar-navtoggle{
     position:absolute;
     height:40px;
     width:31px;
@@ -16,7 +16,7 @@
     right: 9vw;
     top: 3vh;
 }
-.navtoggle span{
+.beta-navbar-navtoggle span{
     display:block;
     width:40px;
     height:2px;
@@ -28,46 +28,46 @@
     transition:.5s;
     box-shadow:0 2px 2px rgba(0,0,0,.20);
 }
-.navtoggle-both span:nth-child(1){
+.beta-navbar-navtoggle-both span:nth-child(1){
     transform:translate(-50%,-50%)translateY(19px);
     transition: .2s;
 }
 
-.navtoggle-both span:nth-child(4){
+.beta-navbar-navtoggle-both span:nth-child(4){
     transform:translate(-50%,-50%)translateY(9px);
     transition: .2s;
 }
 
-.navtoggle-mobile span:nth-child(1){
+.beta-navbar-navtoggle-mobile span:nth-child(1){
     transform:translate(-50%,-50%)translateY(19px);
     opacity: 0;
 }
 
-.navtoggle-mobile span:nth-child(4){
+.beta-navbar-navtoggle-mobile span:nth-child(4){
     transform:translate(-50%,-50%)translateY(9px);
     opacity: 0;
 }
 
-.navtoggle-mobile span:nth-child(2){
+.beta-navbar-navtoggle-mobile span:nth-child(2){
     transform:translate(-50%,-50%)rotate(-45deg);
     transition-delay: .2s;	
 }
 
-.navtoggle-mobile span:nth-child(3){
+.beta-navbar-navtoggle-mobile span:nth-child(3){
     transform:translate(-50%,-50%)rotate(45deg);
     transition-delay: .2s;	
 }
 
-.contain {
+.beta-navbar-contain {
     display: flex;
     width: 100%;
 }
 
-.active {
+.beta-navbar-active {
     transition: all 2s ease-in-out;
 }
 
-.navbar {
+.beta-home-navbar {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -75,20 +75,20 @@
     position: fixed;
     z-index:20;
 }
-.navbarToggle
+.beta-navbar-navbarToggle
 {
    height:100%;
 }
-.dropdowm {
+.beta-navbar-dropdown {
     padding: 10px 0 0 0;
 }
-.dropdown-content {
+.beta-navbar-dropdown-content {
     display: none;
     position: absolute;
     min-width: 100px;
     z-index: 1;
 }
-.dropdown-content a {
+.beta-navbar-dropdown-content a {
     float: none;
     color: white;
     padding: 10px 0px 0px 0px;
@@ -96,43 +96,43 @@
     display: block;
     text-align: left;
 }
-.dropdown:hover .dropdown-content {
+.dropdown:hover .beta-navbar-dropdown-content {
     transition: ease-in-out 0.1s;
     display: block;
 }
-.t-logo {
+.beta-navbar-t-logo {
     width: 20%;
     padding: 37px 30px 20px 87px;
 }
 
-.t-logo img {
+.beta-navbar-t-logo img {
     width: auto;
     height: 65px;
     cursor: pointer;
 }
 
-.t-ctos {
+.beta-navbar-t-ctos {
     width: 80%;
 }
-.toggle {
+.beta-navbar-toggle {
     text-align: right;
     box-sizing: border-box;
     display: none;
     width: 100%;
 }
-.toggle i {
+.beta-navbar-toggle i {
     cursor: pointer;
     font-size: 30px;
     color: white;
     padding: 20px 30px 10px 0;
 }
 
-.int-ctos {
+.beta-navbar-int-ctos {
     padding: 37px 0 25px 0;
     width: 100%;
 }
 
-.int-ctos ul {
+.beta-navbar-int-ctos ul {
     cursor: pointer;
     list-style: none;
     display: flex;
@@ -141,10 +141,10 @@
     padding: 0 80px 0 0;
     float: right;
 }
-.int-ctos ul li {
+.beta-navbar-int-ctos ul li {
     padding: 0px 35px 0px 0px;
 }
-.int-ctos ul li a {
+.beta-navbar-int-ctos ul li a {
     text-decoration: none;
     font-weight: bold;
     font-family: Montserrat;
@@ -152,8 +152,7 @@
     color: white;
     letter-spacing: 2px;
 }
-
-.int-ctos ul li a::after {
+.beta-navbar-int-ctos ul li a::after {
     content: "";
     display: block;
     margin-top: 1vh;
@@ -162,11 +161,10 @@
     background: white;
     transition: width 0.3s;
 }
-
-.int-ctos ul li a:hover::after {
+.beta-navbar-int-ctos ul li a:hover::after {
     width: 100%;
 }
-.int-ctos ul li  .linkZonals::after , .int-ctos ul li .linkCaportal::after , .int-ctos ul li .linkEvents::after , .int-ctos ul li .linkTeam::after , .int-ctos ul li .linkSponsors::after , .int-ctos ul li .linkFaq::after ,.int-ctos ul li .linkEventson::after, .int-ctos ul li .linkEventsoff::after{
+.beta-navbar-int-ctos ul li  .linkZonals::after , .beta-navbar-int-ctos ul li .linkCaportal::after , .beta-navbar-int-ctos ul li .linkEvents::after , .beta-navbar-int-ctos ul li .linkTeam::after , .beta-navbar-int-ctos ul li .linkSponsors::after , .beta-navbar-int-ctos ul li .linkFaq::after ,.beta-navbar-int-ctos ul li .linkEventson::after, .beta-navbar-int-ctos ul li .linkEventsoff::after{
     content: "";
     display: block;
     margin-top: 1vh;
@@ -176,41 +174,40 @@
 }
 
 @media (max-width: 816px) {
-    .toggle {
+    .beta-navbar-toggle {
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
         transition: all 0.2s;
     }
-    .t-logo {
+    .beta-navbar-t-logo {
         padding: 10px 10px 10px 20px;
         transition: ease-in-out 0.2s;
     }
-    #tushar {
+    #beta-navbar-options-hide {
         display: none;
         transition: all 2s ease-in-out;
     }
 }
 @media (max-width: 1096px) {
-    .int-ctos ul {
+    .beta-navbar-int-ctos ul {
         padding: 0 30px 0 0;
     }
-    .int-ctos ul li {
+    .beta-navbar-int-ctos ul li {
         padding: 0 20px 0 0;
     }
-    .int-ctos ul li a {
+    .beta-navbar-int-ctos ul li a {
         font-size: 10px;
         letter-spacing: 1.5px;
     }
 }
 @media (min-width: 1920px) and (max-width: 2560px){
-.t-logo img
-{
-    height:122px;
-}
-.int-ctos ul li a
-{
-    font-size:25px;
-}
-
+    .beta-navbar-t-logo img
+    {
+        height:122px;
+    }
+    .beta-navbar-int-ctos ul li a
+    {
+        font-size:25px;
+    }
 }

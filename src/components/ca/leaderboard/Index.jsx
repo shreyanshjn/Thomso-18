@@ -31,14 +31,14 @@ export default class LeaderboardIndex extends React.Component {
     render() {
         // const { users } = this.state;
         return (
-            <div className="indexMain">
+            <div className="ca-leader-indexMain">
                 {/* {users ? users.map( (post, index) => {
                     if(post.link) {
                         return <Card key={'CA-Home-Posts'+index} data={post} sharePost={this.sharePost} />
                     }
                     return null;
                 }) : null} */}
-                <div className="maintable">
+                <div className="ca-leader-maintable">
                     <table> 
                         <tbody>
                             <tr className="heading">
@@ -55,30 +55,27 @@ export default class LeaderboardIndex extends React.Component {
                                 return <DataRow key={`leader${index}`} data={user} index={index} />
                             }) : null}
                         </tbody>
-                    </table>
-                    <table className="ownrank">
-						<tbody>
-							{this.state.users ? this.state.users.map((user, index) => {
-								return (<tr key={`leader${index}`} >
+                        <tbody>
+                            {this.props.userData ?
+                            <tr>
                                 <th>rank</th>
-                                <th>{user.name}</th> 
-                                <th className="downarrows" onClick={() => this.setState({isExpanded: !this.state.isExpanded})}>{user.college}</th>
-                                <th className="mobile">{user.likes}</th>
-                                <th className="mobile">{user.shares}</th>
-                                <th className="mobile">{user.score}</th>
-                            </tr>)
-                       }) : null}
-                        {this.state.isExpanded ?
-                                    <tr>
-                                        <td className="desktop">0</td>
-                                        <td className="desktop">0</td>
-                                        <td className="desktop">0</td>
-                                    </tr>
-                                    : null}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                                <th>{this.props.userData.name ? this.props.userData.name : null}</th> 
+                                <th className="downarrows" onClick={() => this.setState({isExpanded: !this.state.isExpanded})}>{this.props.userData.college ? this.props.userData.college : null}</th>
+                                <th className="mobile">{this.props.userData.likes ? this.props.userData.likes : 0}</th>
+                                <th className="mobile">{this.props.userData.shares ? this.props.userData.shares : 0}</th>
+                                <th className="mobile">{this.props.userData.score ? this.props.userData.score : 0}</th>
+                            </tr> : null}
+                            {this.state.isExpanded ?
+                                <tr>
+                                    <td className="desktop">0</td>
+                                    <td className="desktop">0</td>
+                                    <td className="desktop">0</td>
+                                </tr>
+                            : null}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         )
     }
 }

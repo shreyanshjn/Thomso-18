@@ -19,7 +19,7 @@ class List extends Component {
     }
     render() { 
         return (
-            <ul className="list">
+            <ul className="beta-home-list">
                 <li>
                     <Link to="../ca" className={(this.state.activeStateLink
                         === "list-ca-link") ? "list-ca-link" : null } 

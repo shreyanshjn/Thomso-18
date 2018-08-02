@@ -4,24 +4,24 @@ import diagram from './src/img/diagram-01.png';
 class Footfall extends Component {
     render() {
         return (
-            <div className="footfall"> 
-                <div className="box">
-                    <img src={diagram} className="aboveImage" alt="---------" />
-                    <span className="first">150+</span><br/>
-                    <span className="second">EVENTS</span>
-                    <img src={diagram} className="downImage hide" alt="---------" />
+            <div className="beta-main-footfall"> 
+                <div className="beta-footfall-box">
+                    <img src={diagram} className="beta-footfall-aboveImage" alt="---------" />
+                    <span className="beta-footfall-first">150+</span><br/>
+                    <span className="beta-footfall-second">EVENTS</span>
+                    <img src={diagram} className="beta-footfall-downImage beta-footfall-hide" alt="---------" />
                 </div> 
-                <div className="box">
-                    <img src={diagram} className="aboveImage" alt="---------" />
-                    <span className="first">800+</span> <br/>
-                    <span className="second">COLLEGES</span>
-                    <img src={diagram} className="downImage hide" alt="---------" />
+                <div className="beta-footfall-box">
+                    <img src={diagram} className="beta-footfall-aboveImage" alt="---------" />
+                    <span className="beta-footfall-first">800+</span> <br/>
+                    <span className="beta-footfall-second">COLLEGES</span>
+                    <img src={diagram} className="beta-footfall-downImage beta-footfall-hide" alt="---------" />
                 </div> 
-                <div className="box">
-                    <img src={diagram} className="aboveImage" alt="---------" />
-                    <span className="first">100K+</span><br/>
-                    <span className="second">FOOTFALLS</span>
-                    <img src={diagram} className="downImage" alt="---------" />
+                <div className="beta-footfall-box">
+                    <img src={diagram} className="beta-footfall-aboveImage" alt="---------" />
+                    <span className="beta-footfall-first">100K+</span><br/>
+                    <span className="beta-footfall-second">FOOTFALLS</span>
+                    <img src={diagram} className="beta-footfall-downImage" alt="---------" />
                 </div> 
             </div>
         );

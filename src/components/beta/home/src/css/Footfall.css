@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
-.aboveImage
+.beta-footfall-aboveImage
 {
     position:absolute;
     top: -4vh;
@@ -7,7 +7,7 @@
     width: 166px;
     opacity: 0.5;
 }
-.downImage
+.beta-footfall-downImage
 {
     position:absolute;
     bottom: -4vh;
@@ -18,7 +18,7 @@
     -ms-transform: rotate(90deg);
     transform: rotate(180deg);
 }
-.footfall
+.beta-main-footfall
 {
     margin-top:34vh;
     vertical-align:center;
@@ -28,7 +28,7 @@
     align-items: center;
     font-family:Montserrat;
 }
-.box
+.beta-footfall-box
 {
     position:relative;
     padding:20px;
@@ -41,51 +41,52 @@
     text-align:center;
     border-radius:10px;
 }
-.first
+.beta-footfall-first
 {
     font-size:40px;
 }
-.second
+.beta-footfall-second
 {
     font-size:15px;
 }
 @media only screen and (max-width: 768px) {
-    .footfall
+    .beta-main-footfall
     {
         flex-direction:column;
         margin-top:13vh;
     }
-    .box
+    .beta-footfall-box
     {
         margin:13px;
         height:70px;
+        width:25vw;
     }
-    .hide
+    .beta-footfall-hide
     {
         display:none;
     }
-    .aboveImage
+    .beta-footfall-aboveImage
     {
         top: -3vh;
         width:106px;
     }
-    .downImage
+    .beta-footfall-downImage
     {
         width:106px;
         bottom:-3vh;
     }
-    .first
+    .beta-footfall-first
     {
        font-size:29px;
     }
-    .second
+    .beta-footfall-second
     {
        font-size:12px;
     }
 }
 @media (min-width: 1920px) and (max-width: 2560px)
 {
-    .box
+    .beta-footfall-box
     {
         padding:20px;
         margin:38px;
@@ -94,30 +95,30 @@
         height: 153px;
         border-radius:10px;
     }
-    .first
+    .beta-footfall-first
     {
         font-size: 71px;
         font-family:Montserrat;
     }
-    .second
+    .beta-footfall-second
     {
         font-size:27px;
         font-family:Montserrat;
 
     }
-    .aboveImage
+    .beta-footfall-aboveImage
     {
         width: 319px;
         top: -5vh;
         left: 6%;
     }
-    .downImage
+    .beta-footfall-downImage
     {
         width:326px;
         bottom:-5.5vh;
         left:4%;
     }
-    .footfall
+    .beta-main-footfall
     {
        margin-top:36vh;
     }

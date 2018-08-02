@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
-.indexMain
+.ca-leader-indexMain
 {
     background-image: url("../../../beta/home/src/img/dashboard\ bg-01.jpg");
     background-size: cover;
@@ -8,7 +8,7 @@
     background-attachment: fixed;
     height:100vh;
 }
-.maintable
+.ca-leader-maintable
 {
     width:72%;
     float:right;
@@ -54,7 +54,7 @@ table {
     
 }
 @media only screen and (max-width: 768px) {
-    .maintable
+    .ca-leader-maintable
     {
         width:67%;
         float:right;
@@ -64,7 +64,7 @@ table {
         text-align: left;
         font-size:10px;
     }
-    .maintable
+    .ca-leader-maintable
     {
         overflow-x:hidden;
     }

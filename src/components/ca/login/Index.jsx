@@ -76,9 +76,9 @@ export default class LoginIndex extends React.Component {
             arrowNavigation: true
         };
         return (
-            <div className="middlesection">
+            <div className="ca-opening-middlesection">
                 <SectionsContainer {...options}>
-                    <div className="child-middle">
+                    <div className="ca-opening-child-middle">
                         <RegisterNavbar />
                         <Section>
                             <div>
@@ -89,11 +89,11 @@ export default class LoginIndex extends React.Component {
                                         <input type="text" placeholder="https://www.facebook.com" />
                                     </form>
                                 </div> */}
-                                <button className="buttonca" onClick={() => this.facebookLogin()}>Login/Register</button>
-                                <div className="arrowmove">
+                                <button className="ca-opening-button" onClick={() => this.facebookLogin()}>Login/Register</button>
+                                <div className="ca-opening-arrowmove">
                                     <a href="#WISCA" address="true">
-                                        <img src={arrow} className="downarrow bounce" alt=
-                                            "a" />
+                                        <img src={arrow} className="ca-opening-downarrow" alt=
+                                            "cadownarrow" />
                                     </a>
                                 </div>
                             </div>
