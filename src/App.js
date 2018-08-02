@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "./App.css";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Loadable from 'react-loadable';
 
@@ -39,11 +40,11 @@ const VerifyCerti = Loadable({
 
 const Policy = Loadable({
   loader: () => import("./components/policyandterms/policy"),
-  loading: () =><div>Loading Policy</div>
+  loading: () => <div>Loading Policy</div>
 })
 const Terms = Loadable({
-  loader:() =>import("./components/policyandterms/thomsoterms"),
-  loading:() => <div>Loading Terms</div>
+  loader: () => import("./components/policyandterms/thomsoterms"),
+  loading: () => <div>Loading Terms</div>
 })
 class App extends Component {
   render() {
@@ -59,8 +60,8 @@ class App extends Component {
           <Route path="/ca/" component={CAIndex} />
 
           <Route path="/verifyCerti/" component={VerifyCerti} />
-          <Route path="/policy" component={Policy}/>
-          <Route path="/terms" component={Terms}/>
+          <Route path="/policy" component={Policy} />
+          <Route path="/terms" component={Terms} />
         </Switch>
       </BrowserRouter>
     );

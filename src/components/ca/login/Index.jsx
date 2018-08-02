@@ -5,16 +5,15 @@ import Contact from './Contact.jsx';
 import AuthService from '../../../handlers/ca/AuthService';
 import FetchApi from '../../../utils/FetchAPI';
 import LoginPage from './LoginPage';
-import RegisterNavbar from './RegisterNavbar';
+import CalandingNavbar from "./CaLanding";
 import { SectionsContainer, Section } from 'react-fullpage';
 import arrow from './src/img/arrow.svg';
 import './src/css/Main.css';
-import BlackNavbar from './blacknavbar'
 export default class LoginIndex extends React.Component {
     constructor() {
         super();
         this.state = {
-            facebook: true,
+            facebook: true
         }
         this.Auth = new AuthService();
         this.facebookLogin = this.facebookLogin.bind(this);
@@ -33,15 +32,15 @@ export default class LoginIndex extends React.Component {
         window.FB.login(response => {
             window.FB.api('/me?fields=id, name, email, picture.type(large), link', res => {
                 let accessToken = response.authResponse.accessToken;
-                let {id, name, email, link} = res;
+                let { id, name, email, link } = res;
                 let image = res.picture.data.url;
-                let data = {id, name, image, accessToken, link};
+                let data = { id, name, image, accessToken, link };
                 if (email !== undefined) {
                     data['email'] = email
                 }
                 this.updateCheckUser(data)
             })
-        }, {scope: 'user_likes, email, user_posts, user_link' });
+        }, { scope: 'user_likes, email, user_posts, user_link' });
     }
 
     updateCheckUser(data) {
@@ -64,25 +63,28 @@ export default class LoginIndex extends React.Component {
             })
             .catch(e => console.log(e));
     }
+    componentWillMount() {
+        window.location.hash = "#home";
+    }
     render() {
         let options = {
-            sectionClassName:     'section',
-            anchors:              ['home', 'Wisca', 'Roles','Contact'],
-            scrollBar:            false,
-            navigation:           false,
-            verticalAlign:        false,
-            sectionaddingTop:    '0px',
+            sectionClassName: 'section',
+            anchors: ['home', 'Wisca', 'Roles', 'Contact'],
+            delay: 1000,
+            scrollBar: false,
+            navigation: false,
+            verticalAlign: false,
+            sectionaddingTop: '0px',
             slidesNavPosition: 'bottom',
-            arrowNavigation: true
+            arrowNavigation: true,
         };
         return (
-            <div className="middlesection">
-              <RegisterNavbar />
+            <div className="ca-opening-middlesection">
+                <CalandingNavbar className={(window.location.hash === "#Wisca" || window.location.hash === "#Roles" || window.location.hash === "#Contact") ? 'ca-landing-heading ca-landing-heading-dark' : 'ca-landing-heading'} />
                 <SectionsContainer {...options}>
-                    <div className="child-middle">
-
+                    <div className="ca-opening-child-middle">
                         <Section>
-                            <div>
+                            <div className="ca-opening-button-parent">
                                 {/* <div className="inconvi">
                                     <p className="sorry">Sorry for the inconvenience. We are facing some technical issues due to Facebook policy changes. Kindly enter email/FacebookID and we'll grant you the access.</p>
                                     <form className="formEmail">
@@ -90,10 +92,10 @@ export default class LoginIndex extends React.Component {
                                         <input type="text" placeholder="https://www.facebook.com" />
                                     </form>
                                 </div> */}
-                                <button className="buttonca" onClick={() => this.facebookLogin()}>Login/Register</button>
-                                <div className="arrowmove">
+                                <button className="ca-opening-button" onClick={() => this.facebookLogin()}>Login/Register</button>
+                                <div>
                                     <a href="#Wisca" address="true">
-                                        <img src={arrow} className="downarrow bounce" alt=
+                                        <img src={arrow} className="ca-opening-downarrow" alt=
                                             "a" />
                                     </a>
                                 </div>
@@ -101,23 +103,20 @@ export default class LoginIndex extends React.Component {
                         </Section>
                     </div>
                     <div className="Ca-login-Section-Parent">
-
-                    <Section>
-                      <Wisca />
-                    </Section>
+                        <Section>
+                            <Wisca />
+                        </Section>
                     </div>
                     <div className="Ca-login-Section-Parent">
-
-                    <Section>
-                    <Roles />
-                    </Section>
+                        <Section>
+                            <Roles />
+                        </Section>
                     </div>
                     <div className="Ca-login-Section-Parent">
-
-                    <Section>
-                      <Contact />
-                    </Section>
-                  </div>
+                        <Section>
+                            <Contact />
+                        </Section>
+                    </div>
                 </SectionsContainer>
             </div>
         );

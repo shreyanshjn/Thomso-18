@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat");
 .beta-home-contactMain
 {
     justify-content: center;
@@ -6,7 +5,7 @@
     display:flex;
     color:white;
     font-size:12px;
-    margin-top:29vh;
+    margin-top:150px;
 }
 .beta-home-contact-table {
     border-collapse: collapse;

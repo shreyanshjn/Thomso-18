@@ -60,7 +60,7 @@ export default class Sidebar extends React.Component {
         <div
           id="mySidenav"
           className="sidenav"
-          style={(this.props.userData && this.props.userData.gender === "female") ? {backgroundColor: 'Pink'} : {backgroundColor: '#00ff95d9'}}
+          style={(this.props.userData && this.props.userData.gender === "female") ? { backgroundColor: 'Pink' } : { backgroundColor: '#00ff95d9' }}
         >
           <div className="sidebar-user">
             <img src={this.props.userData ? this.props.userData.image : boy} className="image" alt="dataImg" />
@@ -208,7 +208,7 @@ export default class Sidebar extends React.Component {
             >
               <div className="certificate flex_row">
                 <div className="p-logo">
-                  <Certificate />
+                  <Certificate /> 
                 </div>
                 <div className="p-name">
                   CERTIFICATE
@@ -226,7 +226,7 @@ export default class Sidebar extends React.Component {
                 this.setActive("contact");
               }}
             >
-              <div className=".ca-sidebar-contactus flex_row">
+              <div className="ca-sidebar-contactus flex_row">
                 <div className="p-logo">
                   <Contact />
                 </div>
@@ -246,7 +246,7 @@ export default class Sidebar extends React.Component {
                 this.setActive("logout");
               }}
             >
-              <div className="logout flex_row">
+              <div className="ca-sidebar-logout flex_row">
                 <div className="p-logo">
                   <Logout />
                 </div>
@@ -263,7 +263,7 @@ export default class Sidebar extends React.Component {
                   <Referral />
                 </div>
                 <div className="p-name">
-                  Visit Facebook Profile
+                  VISIT FACEBOOK PROFILE
                 </div>
               </div>
             </div>
@@ -273,7 +273,7 @@ export default class Sidebar extends React.Component {
               <div className="p-logo">
                 <Hand />
               </div>
-              <div className="days">
+              <div className="sidebar-days">
                 {days} DAYS LEFT
             </div>
             </div>
