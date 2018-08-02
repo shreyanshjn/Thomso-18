@@ -67,7 +67,7 @@ export default class CAIndex extends React.Component {
     this.state = {
       userData: "",
       isAuthenticated: false,
-      string: window.location.pathname.substring(4)
+      string: window.location.pathname.substring(4, 9)
     };
     this.Auth = new AuthService();
     this.handleUpdate = this.handleUpdate.bind(this);

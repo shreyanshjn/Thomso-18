@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
 .contactMain
 {
     justify-content: center;
@@ -6,7 +6,7 @@
     display:flex;
     color:white;
     font-size:12px;
-    margin-top:29vh;
+    margin-top:150px;
 }
 table {
     border-collapse: collapse;
@@ -14,6 +14,9 @@ table {
 tr
 {
     text-align: left;
+}
+td{
+    letter-spacing: 1px;
 }
 .contactus , .address
 {
