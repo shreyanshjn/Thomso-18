@@ -23,7 +23,7 @@ exports.fblogin = function(req, res) {
         CA_User.findOne({
             fb_id: req.body.id
         })
-        .select('name image fb_id email ca_id likes shares referrals score notification blocked link created college')
+        .select('name gender image fb_id email ca_id likes shares referrals score notification blocked link created college')
         .exec(function(err, user) {
             if (err) {
                 return res.status(400).send({
@@ -62,7 +62,7 @@ exports.fblogin = function(req, res) {
                 // Update User
                 if (user.created) {
                     CA_User.findOneAndUpdate({fb_id: req.body.id}, saveData, { new:true })
-                    .select('name image ca_id likes shares referrals score notification blocked link created college')
+                    .select('name gender image ca_id likes shares referrals score notification blocked link created college')
                     .exec(function(err, user) {
                         if(err){
                             return res.status(400).send({success:false, msg:'Error Updating User', error:err});
@@ -145,7 +145,7 @@ exports.fbRegister = function(req, res) {
         }
         if (data.name && data.contact && data.email && data.gender && data.college && data.state && data.branch && data.address && data.why) {
             CA_User.findOneAndUpdate({fb_id: req.locals.fb_id}, data, { new:true })
-            .select('name gender image ca_id likes shares referrals score notification blocked link college')
+            .select('name gender image email ca_id likes shares referrals score notification blocked link college')
             .exec(function(err, user) {
                 if(err){
                     return res.status(400).send({success:false, msg:'Error Creating User', error:err});

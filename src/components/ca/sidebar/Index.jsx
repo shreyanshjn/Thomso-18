@@ -55,6 +55,7 @@ export default class Sidebar extends React.Component {
 
     return (
       <div>
+        {console.log(this.props.userData, 'UserData')}
         <div
           id="mySidenav"
           className="sidenav"

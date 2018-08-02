@@ -67,7 +67,6 @@ export default class RegisterIndex extends React.Component {
                     }
                 })
                 .catch(e => {
-                    debugger
                     console.log(e)
                 });
         } else if (check.errors) {

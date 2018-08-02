@@ -17,10 +17,10 @@ const FAQIndex = Loadable({
   loading: () => <div>Loading FAQIndex</div>
 });
 
-// const SponsorsIndex = Loadable({
-//   loader: () => import("./components/beta/sponsors/Index"),
-//   loading: () => <div>Loading SponsorsIndex</div>
-// });
+const SponsorsIndex = Loadable({
+  loader: () => import("./components/beta/sponsors/Index"),
+  loading: () => <div>Loading SponsorsIndex</div>
+});
 
 const TeamIndex = Loadable({
   loader: () => import("./components/beta/team/Index"),
@@ -52,7 +52,7 @@ class App extends Component {
         <Switch>
           {/* <Route path="/beta" component={BetaIndex} /> */}
           <Route exact path="/" component={HomeIndex} />
-          {/* <Route exact path="/sponsors" component={SponsorsIndex} /> */}
+          <Route exact path="/sponsors" component={SponsorsIndex} />
           <Route exact path="/team" component={TeamIndex} />
           <Route exact path="/faq" component={FAQIndex} />
 
@@ -60,7 +60,7 @@ class App extends Component {
 
           <Route path="/verifyCerti/" component={VerifyCerti} />
           <Route path="/policy" component={Policy}/>
-          <Route path="/termsandpolicy" component={Terms}/>
+          <Route path="/terms" component={Terms}/>
         </Switch>
       </BrowserRouter>
     );

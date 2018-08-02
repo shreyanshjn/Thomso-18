@@ -65,7 +65,7 @@
 {
     opacity:0;
     position:absolute;
-    top:32%;
+    bottom: 5%;
     left:10%;
     transition:0.2s;
     text-align: center;
@@ -154,7 +154,7 @@
         font-size:22px;
         opacity:0;
         position:absolute;
-        top:30%;
+        bottom: 5%;
         left:10%;
         transition:0.2s;
         text-align: center;
