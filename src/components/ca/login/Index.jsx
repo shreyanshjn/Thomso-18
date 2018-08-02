@@ -1,7 +1,7 @@
 import React from 'react';
-import WISCA from './WISCA.jsx';
-import ROLES from './ROLES.jsx';
-import CONTACT from './CONTACT.jsx';
+import Wisca from './Wisca.jsx';
+import Roles from './Roles.jsx';
+import Contact from './Contact.jsx';
 import AuthService from '../../../handlers/ca/AuthService';
 import FetchApi from '../../../utils/FetchAPI';
 import LoginPage from './LoginPage';
@@ -67,7 +67,7 @@ export default class LoginIndex extends React.Component {
     render() {
         let options = {
             sectionClassName:     'section',
-            anchors:              ['home', 'WISCA', 'ROLES','contactUs'],
+            anchors:              ['home', 'Wisca', 'Roles','Contact'],
             scrollBar:            false,
             navigation:           false,
             verticalAlign:        false,
@@ -76,10 +76,11 @@ export default class LoginIndex extends React.Component {
             arrowNavigation: true
         };
         return (
-            <div className="ca-opening-middlesection">
+            <div className="middlesection">
+              <RegisterNavbar />
                 <SectionsContainer {...options}>
-                    <div className="ca-opening-child-middle">
-                        <RegisterNavbar />
+                    <div className="child-middle">
+
                         <Section>
                             <div>
                                 {/* <div className="inconvi">
@@ -89,28 +90,34 @@ export default class LoginIndex extends React.Component {
                                         <input type="text" placeholder="https://www.facebook.com" />
                                     </form>
                                 </div> */}
-                                <button className="ca-opening-button" onClick={() => this.facebookLogin()}>Login/Register</button>
-                                <div className="ca-opening-arrowmove">
-                                    <a href="#WISCA" address="true">
-                                        <img src={arrow} className="ca-opening-downarrow" alt=
-                                            "cadownarrow" />
+                                <button className="buttonca" onClick={() => this.facebookLogin()}>Login/Register</button>
+                                <div className="arrowmove">
+                                    <a href="#Wisca" address="true">
+                                        <img src={arrow} className="downarrow bounce" alt=
+                                            "a" />
                                     </a>
                                 </div>
                             </div>
                         </Section>
                     </div>
-                    <BlackNavbar />
+                    <div className="Ca-login-Section-Parent">
+
                     <Section>
-                      <WISCA />
+                      <Wisca />
                     </Section>
-                    <BlackNavbar />
+                    </div>
+                    <div className="Ca-login-Section-Parent">
+
                     <Section>
-                    <ROLES />
+                    <Roles />
                     </Section>
-                    <BlackNavbar />
+                    </div>
+                    <div className="Ca-login-Section-Parent">
+
                     <Section>
-                      <CONTACT />
+                      <Contact />
                     </Section>
+                  </div>
                 </SectionsContainer>
             </div>
         );
