@@ -45,6 +45,7 @@
   flex-direction: column;
   justify-content:flex-start;
   font-size: 14px;
+  font-weight: bold;
   color: black;
   font-family: Montserrat;
   width: 50%;
@@ -54,6 +55,7 @@
   flex-direction: column;
   justify-content:flex-start;
   font-size: 14px;
+  font-weight: bold;
   color: black;
   font-family: Montserrat;
   margin-left: 10%
