@@ -223,7 +223,7 @@ export default class RegisterIndex extends React.Component {
                                         name="collegestate"
                                         value={collegestate}
                                         onChange={this.onChange}
-                                        onFocus="this.state=4"
+                                        onClick={this.size = 4}
                                         required
                                     >
                                         <option value="" disabled="true"> College State </option>

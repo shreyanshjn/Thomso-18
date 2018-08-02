@@ -260,7 +260,7 @@
     text-align: center;
 }
 .form-branch input:focus::-webkit-input-placeholder { color:transparent; }
-.form-state .form-state-select{
+.form-state select{
     font-size: 14px;
     outline: 0;
     border-width: 0 0 2px;
@@ -270,12 +270,12 @@
     color: white;
     padding: 5px 5px 3px 5px;
 }
-.form-state .form-state-select::placeholder{
+.form-state select::placeholder{
     color: white;
     text-align: center;
 }
-.form-state .form-state-select option{
-    color: red;
+.form-state select option{
+    color: #58595B;
 }
 .form-state .form-state-select:focus::-webkit-.form-state-select-placeholder { color:transparent; }
 .form-add-child{

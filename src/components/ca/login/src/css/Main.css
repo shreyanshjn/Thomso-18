@@ -33,14 +33,18 @@
 }
 .buttonca
 {
-    background-color:#404e64;
-    border:2px solid #404e64;
-    left:46%;
+    left:45%;
     position:absolute;
     top:15%;
-    color:white;
-    padding:10px;
-    cursor:pointer;
+    cursor: pointer;
+    padding: 15px;
+    background: none;
+    font-family: Montserrat;
+    font-weight: 600;
+    color: white;
+    border: 0px;
+    background: rgba(255,255,255,0.4);
+    border-radius: 5px;
 }
 .sorry
 {

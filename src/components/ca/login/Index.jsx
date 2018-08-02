@@ -9,7 +9,6 @@ import RegisterNavbar from './RegisterNavbar';
 import { SectionsContainer, Section } from 'react-fullpage';
 import arrow from './src/img/arrow.svg';
 import './src/css/Main.css';
-import BlackNavbar from './blacknavbar'
 export default class LoginIndex extends React.Component {
     constructor() {
         super();
@@ -33,15 +32,15 @@ export default class LoginIndex extends React.Component {
         window.FB.login(response => {
             window.FB.api('/me?fields=id, name, email, picture.type(large), link', res => {
                 let accessToken = response.authResponse.accessToken;
-                let {id, name, email, link} = res;
+                let { id, name, email, link } = res;
                 let image = res.picture.data.url;
-                let data = {id, name, image, accessToken, link};
+                let data = { id, name, image, accessToken, link };
                 if (email !== undefined) {
                     data['email'] = email
                 }
                 this.updateCheckUser(data)
             })
-        }, {scope: 'user_likes, email, user_posts, user_link' });
+        }, { scope: 'user_likes, email, user_posts, user_link' });
     }
 
     updateCheckUser(data) {
@@ -66,12 +65,12 @@ export default class LoginIndex extends React.Component {
     }
     render() {
         let options = {
-            sectionClassName:     'section',
-            anchors:              ['home', 'WISCA', 'ROLES','contactUs'],
-            scrollBar:            false,
-            navigation:           false,
-            verticalAlign:        false,
-            sectionaddingTop:    '0px',
+            sectionClassName: 'section',
+            anchors: ['home', 'WISCA', 'ROLES', 'contactUs'],
+            scrollBar: false,
+            navigation: false,
+            verticalAlign: false,
+            sectionaddingTop: '0px',
             slidesNavPosition: 'bottom',
             arrowNavigation: true
         };
@@ -99,17 +98,14 @@ export default class LoginIndex extends React.Component {
                             </div>
                         </Section>
                     </div>
-                    <BlackNavbar />
                     <Section>
-                      <WISCA />
+                        <WISCA />
                     </Section>
-                    <BlackNavbar />
                     <Section>
-                    <ROLES />
+                        <ROLES />
                     </Section>
-                    <BlackNavbar />
                     <Section>
-                      <CONTACT />
+                        <CONTACT />
                     </Section>
                 </SectionsContainer>
             </div>
