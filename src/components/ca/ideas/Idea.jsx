@@ -149,7 +149,7 @@ export default class IdeasIndex extends React.Component {
                                 required
                             />
                         </div>
-                        <div className="comment">
+                        <div className="ideas-comment">
                             <p>{comment}</p>
                         </div>
                         <div className="edit-cancel-submit">

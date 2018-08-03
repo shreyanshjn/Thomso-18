@@ -18,7 +18,9 @@ export default class Form extends React.Component {
         }
         this.Auth = new AuthService()
     }
-
+    isEmpty() {
+        this.setState({ title: '', body: '' })
+    }
     onChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;
@@ -107,7 +109,7 @@ export default class Form extends React.Component {
                     />
                 </div>
                 <div className="submit">
-                    <button type="submit" disabled={this.state.isDisabled} >Submit</button>
+                    <button type="submit" onClick={this.isEmpty} disabled={this.state.isDisabled} >Submit</button>
                 </div>
             </form>)
     }
