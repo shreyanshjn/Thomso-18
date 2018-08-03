@@ -71,6 +71,10 @@ export default class IdeaContainer extends React.Component {
         }
     }
 
+    componentWillUnmount() {
+        clearTimeout(timeout)
+    }
+
     switchEdit = () => {
         if (!this.state.submitDisabed) {
             if (this.state.editing) {

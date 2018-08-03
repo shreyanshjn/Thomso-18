@@ -25,11 +25,11 @@ export default class ContactIndex extends React.Component {
                                     <h2>EVENTS AND MANAGEMENT</h2>
                                 </div>
                                 <div className="gmail">
-                                    <img src={gmail} />
+                                    <img src={gmail} alt="contactus"/>
                                     <span>harshit.thomso@gmail.com</span>
                                 </div>
                                 <div className="call">
-                                    <img src={call} />
+                                    <img src={call} alt="contactus"/>
                                     <span>+91-9340043505</span>
                                 </div>
                             </div>
@@ -47,11 +47,11 @@ export default class ContactIndex extends React.Component {
                                     <h2>PUBLIC RELATIONS</h2>
                                 </div>
                                 <div className="gmail">
-                                    <img src={gmail} />
+                                    <img src={gmail} alt="contactus"/>
                                     <span>Niranjan98.thomso@gmail.com</span>
                                 </div>
                                 <div className="call">
-                                    <img src={call} />
+                                    <img src={call} alt="contactus"/>
                                     <span>+91-7023511775</span>
                                 </div>
                             </div>
@@ -70,11 +70,11 @@ export default class ContactIndex extends React.Component {
                                         <h2>TECHNICAL HEAD</h2>
                                     </div>
                                     <div className="gmail">
-                                        <img src={gmail} />
+                                        <img src={gmail} alt="contactus"/>
                                         <span>nikhil.thomso@gmail.com</span>
                                     </div>
                                     <div className="call">
-                                        <img src={call} />
+                                        <img src={call} alt="contactus"/>
                                         <span>+91-9116891112</span>
                                     </div>
                                 </div>
@@ -93,11 +93,11 @@ export default class ContactIndex extends React.Component {
                                         <h2>TECHNICAL HEAD</h2>
                                     </div>
                                     <div className="gmail">
-                                        <img src={gmail} />
+                                        <img src={gmail} alt="contactus"/>
                                         <span>prashant.thomso@gmail.com</span>
                                     </div>
                                     <div className="call">
-                                        <img src={call} />
+                                        <img src={call} alt="contactus"/>
                                         <span>+91-8840592467</span>
                                     </div>
                                 </div>

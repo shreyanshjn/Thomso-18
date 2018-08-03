@@ -1,6 +1,5 @@
 import React from 'react';
 import './src/css/Wisca.css';
-import LoginDivCompo from './LoginDivCompo.jsx';
 export default class Contact extends React.Component{
   render(){
 
