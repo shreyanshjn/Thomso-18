@@ -51,6 +51,24 @@ exports.putIdea = function(req, res) {
     }
 };
 
+/* Delete Idea */
+exports.deleteIdea = function(req, res) {
+    if (req.params.id) {
+        var updateData = {
+            deleted: req.body.deleted
+        }
+        Ideas.update({ _id:req.params.id }, updateData)
+        .exec(function(err) {
+            if(err){
+                return res.status(400).send({success:false, msg:'Cannot Delete Idea', error:err});
+            }
+            return res.json({success:true, msg:'Successfully Deleted'});
+        });
+    } else {
+        return res.status(400).send({success:false, msg:'No Post ID Specified'});
+    }
+};
+
 /* Block User */
 exports.blockUser = function(req, res) {
     if (req.params.id && req.body.blocked !== undefined) {

@@ -9,15 +9,25 @@ export default class IdeaContainer extends React.Component {
         this.state = {
             message: '',
             comment: '',
-            commentDisabled: true,
+            editing: false,
+            deleted: false,
+            submitDisabed: false,
             deleteDisabled: false
         };
         this.Auth = new AuthService();
     }
 
     componentDidMount() {
-        if (this.props.data && this.props.data.comment) {
-            this.setState({comment: this.props.data.comment})
+        if (this.props.data) {
+            let comment = ''
+            let deleted = false
+            if (this.props.data.comment) {
+                comment = this.props.data.comment
+            }
+            if (this.props.data.deleted) {
+                deleted = this.props.data.deleted
+            }
+            this.setState({comment, deleted})
         }
     }
 
@@ -29,25 +39,37 @@ export default class IdeaContainer extends React.Component {
 
     deletePost = () => {
         if (!this.state.deleteDisabled) {
-            if (this.props.data && this.props.data._id) {
-                // const authtoken = this.Auth.getToken();
-                // FetchApi('GET',`/api/ca/admin/idea${this.props.data._id}`, {comment}, authtoken)
-                //     .then((result) => {
-                //         console.log(result)
-                //     })
-                //     .catch(error => {
-                //         console.log(error)
-                //     });
+            if (this.props.data && this.props.data._id && this.state.deleted !== undefined) {
+                const authtoken = this.Auth.getToken()
+                let deleted = false
+                if (this.state.deleted === true) {
+                    deleted = true
+                }
+                FetchApi('DELETE',`/api/ca/admin/idea${this.props.data._id}`, {deleted}, authtoken)
+                    .then((result) => {
+                        console.log(result)
+                    })
+                    .catch(error => {
+                        console.log(error)
+                    });
             }
         }
     }
 
+    switchEdit = () => {
+        if (this.state.submitDisabed) {
+            this.setState({
+                editing: !this.state.editing
+            })
+        }
+    }
+
     submitComment = () => {
-        if (this.state.commentDisabled) {
+        if (this.state.submitDisabed) {
             if (this.state.comment) {
                 const comment = this.state.comment.trim();
                 if (this.props.data && this.props.data._id && comment) {
-                    const authtoken = this.Auth.getToken();
+                    const authtoken = this.Auth.getToken()
                     FetchApi('PUT',`/api/ca/admin/idea/${this.props.data._id}`, {comment}, authtoken)
                         .then((result) => {
                             console.log(result)
@@ -57,14 +79,11 @@ export default class IdeaContainer extends React.Component {
                         });
                 }
             }
-        } else {
-            // this.setState()
         }
     }
 
     render(){
         return(
-            
             <React.Fragment>
                 {this.props.data ?
                     <React.Fragment>
@@ -112,9 +131,17 @@ export default class IdeaContainer extends React.Component {
                                     this.props.data.body ? 
                                         <div>{this.props.data.body}</div> : null
                                 }
-                                <input disabled={this.state.commentDisabled} value={this.state.comment} name='comment' onChange={this.onChange} />
-                                <button onClick={() => this.submitComment()}> { this.state.commentDisabled ? 'Edit' : 'Submit' } </button>
-                                <button onClick={() => this.deletePost()}> Delete </button>
+                                <input disabled={this.state.editing} value={this.state.comment} name='comment' onChange={this.onChange} />
+                                {this.state.editing ?
+                                    <React.Fragment>
+                                        <button disabled={this.state.submitDisabed} onClick={() => this.submitComment()}> Submit </button>
+                                    </React.Fragment>
+                                    :
+                                    <React.Fragment>
+                                        <button disabled={this.state.deleteDisabled} onClick={() => this.deletePost()}> { this.state.deleted ? 'Undelete' : 'Delete' } </button>
+                                    </React.Fragment>
+                                }
+                                <button onClick={() => this.switchEdit()}> {this.state.editing ? 'Cancel': 'Edit'} </button>
                             </div>
                         }
                     </React.Fragment>
