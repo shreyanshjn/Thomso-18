@@ -14,7 +14,7 @@ exports.getParticipant = function(req, res) {
   Users.find({created:true})
   .select('address name fb_id college contact branch ca_id state image gender email why blocked')
   .exec(function (err, allUsers) {
-    if (err) return next(err);
+    if (err) return res.status(400).send({success:false, msg:'Unable to GET Participants', error:err});
     res.json(allUsers);
   });
 };
@@ -23,7 +23,7 @@ exports.getParticipant = function(req, res) {
 exports.getIdeas = function(req, res) {
   Ideas.find()
     .populate('user', 'name image ca_id')
-    .select('title body comment deleted')
+    .select('title body comment deleted updated_date')
     .sort({'updated_date': -1})
     .exec(function(err, allIdeas) {
       if(err){
@@ -57,12 +57,13 @@ exports.deleteIdea = function(req, res) {
         var updateData = {
             deleted: req.body.deleted
         }
-        Ideas.update({ _id:req.params.id }, updateData)
-        .exec(function(err) {
+        Ideas.findOneAndUpdate({ _id: req.params.id }, updateData, { new:true })
+        .select('deleted')
+        .exec(function(err, idea) {
             if(err){
-                return res.status(400).send({success:false, msg:'Cannot Delete Idea', error:err});
+                return res.status(400).send({success:false, msg:'Cannot Switch Delete', error:err});
             }
-            return res.json({success:true, msg:'Successfully Deleted'});
+            return res.json({success:true, msg:'Delete Switch Success', body: idea});
         });
     } else {
         return res.status(400).send({success:false, msg:'No Post ID Specified'});

@@ -22,12 +22,10 @@ export default class HomeIndex extends React.Component {
         let feedObject = {
             method: 'share',
         };
-        if (postId) {
+        if (postId && window.FB) {
             feedObject['href'] = `https://www.facebook.com/thomsoiitroorkee/posts/${postId}`;
             feedObject['link'] = `https://www.facebook.com/thomsoiitroorkee/posts/${postId}`;
-            console.log(feedObject)
             window.FB.ui(feedObject, r => {
-                console.log(r)
                 if (r && !r.error_code) {
                     this.setState({ isVisible: true, message: 'Post shared successfully' });
                     setTimeout(() => this.setState({ isVisible: false }), 3000);

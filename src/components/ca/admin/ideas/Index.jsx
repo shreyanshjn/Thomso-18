@@ -10,7 +10,7 @@ export default class IdeasIndex extends React.Component {
         this.state = {
             ideas: [],
             message: '',
-            showDeleted: false
+            showDeleted: true
         };
         this.Auth = new AuthService();
     }
