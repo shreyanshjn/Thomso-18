@@ -6,10 +6,12 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     height:100vh;
+    width: 75.83vw;
+    margin-left: auto;
 }
 .ca-leader-maintable
 {
-    width:72%;
+    width:100%;
     float:right;
 }
 .ca-leader-heading > th,td {
@@ -78,16 +80,13 @@
     
 }
 @media only screen and (max-width: 768px) {
+    .ca-leader-indexMain{
+        width: calc(100% - 121px);
+    }
     .ca-leader-maintable
     {
-        width:67%;
-        float:right;
+        width: 100%;
     }
- /*th,td {
-        padding: 3px;
-        text-align: left;
-        font-size:10px;
-    }*/
     .ca-leader-maintable
     {
         overflow-x:hidden;

@@ -1,4 +1,4 @@
 .leader-parent{
-    width: 76%;
+    width: calc(100% - 20.13vw);
     margin-left: auto;
 }

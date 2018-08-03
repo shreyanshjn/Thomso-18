@@ -1,41 +1,43 @@
 import React from 'react';
+import { Link } from 'react-router-dom' ;
+
 import "./css/register.css";
 import img from "./img/logo.png";
 import AuthService from '../../../handlers/ca/AuthService';
 import FetchApi from '../../../utils/FetchAPI';
 import validateInput from '../../../utils/validation/loginValidation';
-import { Link } from 'react-router-dom' ;
-const maxLength=10;
-const options = [
-    { value: 'Arunachal Pradesh', label: 'Arunachal Pradesh' },
-    { value: 'Assam', label: 'Assam' },
-    { value: 'Bihar', label: 'Bihar' },
-    { value: 'Chhattisgarh', label: 'Chattisgarh' },
-    { value: 'Goa', label: 'Goa' },
-    { value: 'Gujarat', label: 'Gujarat' },
-    { value: 'Haryana', label: 'Haryana' },
-    { value: 'Himachal Pradesh', label: 'Himachal Pradesh' },
-    { value: 'Jammu and Kashmir', label: 'Jammu and Kashmir' },
-    { value: 'Jharkhand', label: 'Jharkhand' },
-    { value: 'Karnataka', label: 'Karnataka' },
-    { value: 'Kerala', label: 'Kerala' },
-    { value: 'Madhya Pradesh', label: 'Madhya Pradesh' },
-    { value: 'Maharashtra', label: 'Maharashtra' },
-    { value: 'Manipur', label: 'Manipur' },
-    { value: 'Meghalaya', label: 'Meghalaya' },
-    { value: 'Mizoram', label: 'Mizoram' },
-    { value: 'Nagaland', label: 'Nagaland' },
-    { value: 'Odisha', label: 'Odisha' },
-    { value: 'Punjab', label: 'Punjab' },
-    { value: 'Rajasthan', label: 'Rajasthan' },
-    { value: 'Sikkim', label: 'Sikkim' },
-    { value: 'Tamil Nadu', label: 'Tamil Nadu' },
-    { value: 'Telangana', label: 'Telangana' },
-    { value: 'Tripura', label: 'Tripura' },
-    { value: 'Uttar Pradesh', label: 'Uttar Pradesh' },
-    { value: 'Uttarakhand', label: 'Uttarakhand' },
-    { value: 'West Bengal', label: 'West Bengal' }
-];
+
+// const options = [
+//     { value: 'Arunachal Pradesh', label: 'Arunachal Pradesh' },
+//     { value: 'Assam', label: 'Assam' },
+//     { value: 'Bihar', label: 'Bihar' },
+//     { value: 'Chhattisgarh', label: 'Chattisgarh' },
+//     { value: 'Goa', label: 'Goa' },
+//     { value: 'Gujarat', label: 'Gujarat' },
+//     { value: 'Haryana', label: 'Haryana' },
+//     { value: 'Himachal Pradesh', label: 'Himachal Pradesh' },
+//     { value: 'Jammu and Kashmir', label: 'Jammu and Kashmir' },
+//     { value: 'Jharkhand', label: 'Jharkhand' },
+//     { value: 'Karnataka', label: 'Karnataka' },
+//     { value: 'Kerala', label: 'Kerala' },
+//     { value: 'Madhya Pradesh', label: 'Madhya Pradesh' },
+//     { value: 'Maharashtra', label: 'Maharashtra' },
+//     { value: 'Manipur', label: 'Manipur' },
+//     { value: 'Meghalaya', label: 'Meghalaya' },
+//     { value: 'Mizoram', label: 'Mizoram' },
+//     { value: 'Nagaland', label: 'Nagaland' },
+//     { value: 'Odisha', label: 'Odisha' },
+//     { value: 'Punjab', label: 'Punjab' },
+//     { value: 'Rajasthan', label: 'Rajasthan' },
+//     { value: 'Sikkim', label: 'Sikkim' },
+//     { value: 'Tamil Nadu', label: 'Tamil Nadu' },
+//     { value: 'Telangana', label: 'Telangana' },
+//     { value: 'Tripura', label: 'Tripura' },
+//     { value: 'Uttar Pradesh', label: 'Uttar Pradesh' },
+//     { value: 'Uttarakhand', label: 'Uttarakhand' },
+//     { value: 'West Bengal', label: 'West Bengal' }
+// ];
+
 export default class RegisterIndex extends React.Component {
     constructor() {
         super();
@@ -114,7 +116,7 @@ export default class RegisterIndex extends React.Component {
     }
 
     render() {
-        const { name, contact, email, gender, college, state, branch, address, why, errors, selectedOption } = this.state;
+        const { name, contact, email, gender, college, state, branch, address, why, errors } = this.state;
         return (
             <div className="register-parent">
                 <div className="register-child">

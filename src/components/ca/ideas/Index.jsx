@@ -44,7 +44,7 @@ export default class IdeasIndex extends React.Component {
     }
     render() {
         return (
-            <div className="side-nav-parent">
+            <div className="ca-idea-parent">
                 <Form addIdea={this.addIdea} />
                 {this.state.ideas.map((idea, index) => {
                     const descIndex = this.state.ideas.length - index - 1;

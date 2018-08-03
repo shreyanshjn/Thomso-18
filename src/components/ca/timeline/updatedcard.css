@@ -13,7 +13,7 @@
 }
 @media screen and (max-width:768px){
 	.cards{
-		width: calc(100% - 80px);
+		width: calc(100% - 121px);
 	}
 }
 .maindiv
