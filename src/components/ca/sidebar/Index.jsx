@@ -35,16 +35,12 @@ export default class Sidebar extends React.Component {
     this.setState({ activeState: state });
   }
 
-  componentDidMount() {
-    console.log(this.state.activeState, "active")
-  }
-
   copytoclipboard = () => {
     let Field = this.state.referral;
     Field.execCommand('copy');
     Field.remove()
   }
-  render() {
+    render() {
     let countDownDate = new Date("Oct 25, 2018 00:00:00").getTime();
     let now = new Date().getTime();
     let distance = countDownDate - now;
@@ -107,13 +103,12 @@ export default class Sidebar extends React.Component {
               </div>
             </div>
             <div className="update">
-              *Scores willbe updated at 12 am
+              *Scores will be updated at 12 am
             </div>
           </div>
           <div className="line">
           </div>
           <div className="thomso">
-            {console.log(this.state.activeState, 'state')}
             <Link
               to="/ca/"
               className={

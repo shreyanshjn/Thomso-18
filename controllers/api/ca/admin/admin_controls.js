@@ -23,7 +23,7 @@ exports.getParticipant = function(req, res) {
 exports.getIdeas = function(req, res) {
   Ideas.find()
     .populate('user', 'name image ca_id')
-    .select('title body comment')
+    .select('title body comment deleted')
     .sort({'updated_date': -1})
     .exec(function(err, allIdeas) {
       if(err){
@@ -37,7 +37,7 @@ exports.getIdeas = function(req, res) {
 exports.putIdea = function(req, res) {
     if (req.params.id) {
         var updateData = {
-            comment: req.body
+            comment: req.body.comment
         }
         Ideas.findOneAndUpdate({ _id:req.params.id }, updateData, { new:true })
         .exec(function(err, idea) {
@@ -45,6 +45,24 @@ exports.putIdea = function(req, res) {
                 return res.status(400).send({success:false, msg:'Cannot Update Idea', error:err});
             }
             return res.json({success:true, msg:'Successfully Updated', body: idea});
+        });
+    } else {
+        return res.status(400).send({success:false, msg:'No Post ID Specified'});
+    }
+};
+
+/* Delete Idea */
+exports.deleteIdea = function(req, res) {
+    if (req.params.id) {
+        var updateData = {
+            deleted: req.body.deleted
+        }
+        Ideas.update({ _id:req.params.id }, updateData)
+        .exec(function(err) {
+            if(err){
+                return res.status(400).send({success:false, msg:'Cannot Delete Idea', error:err});
+            }
+            return res.json({success:true, msg:'Successfully Deleted'});
         });
     } else {
         return res.status(400).send({success:false, msg:'No Post ID Specified'});

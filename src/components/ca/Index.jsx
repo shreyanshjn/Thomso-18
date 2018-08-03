@@ -7,13 +7,14 @@ import AuthService from "../../handlers/ca/AuthService";
 import FetchApi from '../../utils/FetchAPI';
 
 // import LoginIndex from './login/Index';
+import Loader from "../common/loader";
 
 const Loading = ({ error }) => {
   if (error) {
     console.log(error);
     return <h3>Error loading component</h3>;
   } else {
-    return <h3>Loading...</h3>;
+    return <Loader />;
   }
 };
 
@@ -110,7 +111,7 @@ export default class CAIndex extends React.Component {
               <Route path="/ca/" render={props => (<Sidebar {...props} userData={this.state.userData} />)} />
             }
             <Route exact path="/ca/logout" render={props => (<LogoutIndex {...props} updateRoutes={this.handleUpdate} />)} />
-            <Route exact path="/ca/leaderboard" component={LeaderboardIndex} />
+            <Route exact path="/ca/leaderboard" render={props => (<LeaderboardIndex {...props} userData={this.state.userData} />)} />
             <Route exact path="/ca/timeline" component={TimelineIndex} />
             <Route exact path="/ca/contact" render={props => (<ContactIndex {...props} userData={this.state.userData} />)} />
             <Route exact path="/ca/ideas" component={IdeasIndex} />

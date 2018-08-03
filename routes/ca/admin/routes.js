@@ -22,6 +22,7 @@ router.get('/exportToCSV', adminControls.exportToCSV);
 
 router.get('/ideas', adminControls.getIdeas);
 router.put('/idea/:id', adminControls.putIdea);
+router.delete('/idea/:id', adminControls.deleteIdea);
 
 router.put('/block/:id', adminControls.blockUser);
 

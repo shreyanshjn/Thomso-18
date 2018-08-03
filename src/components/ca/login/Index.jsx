@@ -79,12 +79,12 @@ export default class LoginIndex extends React.Component {
             arrowNavigation: true,
         };
         return (
-            <div className="middlesection">
+            <div className="ca-opening-middlesection">
                 <CalandingNavbar className={(window.location.hash === "#Wisca" || window.location.hash === "#Roles" || window.location.hash === "#Contact") ? 'ca-landing-heading ca-landing-heading-dark' : 'ca-landing-heading'} />
                 <SectionsContainer {...options}>
-                    <div className="child-middle">
+                    <div className="ca-opening-child-middle">
                         <Section>
-                            <div>
+                            <div className="ca-opening-button-parent">
                                 {/* <div className="inconvi">
                                     <p className="sorry">Sorry for the inconvenience. We are facing some technical issues due to Facebook policy changes. Kindly enter email/FacebookID and we'll grant you the access.</p>
                                     <form className="formEmail">
@@ -92,10 +92,10 @@ export default class LoginIndex extends React.Component {
                                         <input type="text" placeholder="https://www.facebook.com" />
                                     </form>
                                 </div> */}
-                                <button className="buttonca" onClick={() => this.facebookLogin()}>Login/Register</button>
-                                <div className="arrowmove">
+                                <button className="ca-opening-button" onClick={() => this.facebookLogin()}>Login/Register</button>
+                                <div>
                                     <a href="#Wisca" address="true">
-                                        <img src={arrow} className="downarrow bounce" alt=
+                                        <img src={arrow} className="ca-opening-downarrow" alt=
                                             "a" />
                                     </a>
                                 </div>

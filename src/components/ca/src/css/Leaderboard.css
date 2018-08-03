@@ -1,5 +1,4 @@
-
-.indexMain
+.ca-leader-indexMain
 {
     background-image: url("../../../beta/home/src/img/dashboard\ bg-01.jpg");
     background-size: cover;
@@ -8,18 +7,42 @@
     background-attachment: fixed;
     height:100vh;
 }
-.maintable
+.ca-leader-maintable
 {
     width:72%;
     float:right;
 }
-th,td {
-    /* padding: 20px; */
+.ca-leader-heading > th,td {
+    padding: 20px;
     text-align: left;
 }
-th
+.ca-leader-heading > th{
+    border-bottom:1px solid white;
+}
+.ca-leader-user-table >td
 {
-    border-bottom: 1px solid white;
+    padding: 20px;
+    text-align: left;
+}
+.ca-leader-rank >th
+{
+    padding:20px;
+    text-align:left;
+}
+.ca-leader-rank-child >td
+{
+    padding:20px;
+    text-align:left;
+}
+.ca-leader-rank
+{
+    border-top:1px solid white;
+}
+.ca-leader-rank-mobile> tr
+{
+   padding:0px;
+   text-align:left;
+
 }
 .ownrank
 {
@@ -28,11 +51,7 @@ th
     border-bottom:none;
     width:80%;
 }
-.ownrank > tbody > tr > th
-{
-    border-bottom:none;
-}
-table {
+.ca-leaderboard-table {
     border-collapse: collapse;
     border-spacing:0px;
     width: 100%;
@@ -47,28 +66,28 @@ table {
     display:none;
 }
 @media only screen and (min-width: 768px){
-    .desktop
+    .ca-leader-desktop
     {
         display:none; 
     }   
     
 }
 @media only screen and (max-width: 768px) {
-    .maintable
+    .ca-leader-maintable
     {
         width:67%;
         float:right;
     }
-    th,td {
+ /*th,td {
         padding: 3px;
         text-align: left;
         font-size:10px;
-    }
-    .maintable
+    }*/
+    .ca-leader-maintable
     {
         overflow-x:hidden;
     }
-    .arrow
+    .ca-leader-arrow
     {
         border: solid white;
         border-width: 0 3px 3px 0;
@@ -77,11 +96,11 @@ table {
         transform: rotate(45deg);
         -webkit-transform: rotate(45deg);
     }
-    .downarrows
+    .ca-leader-downarrows
     {
         position:relative;
     }
-    .downarrows::after
+    .ca-leader-downarrows::after
     {
         content:"";
         background:url('../../img/arrow.svg') no-repeat;
@@ -94,12 +113,20 @@ table {
         top:0%;
 
     }  
-    .mobile
+    .ca-leader-mobile
     {
         display:none;
     }
-    .ownrank
+    .ca-leader-heading > th,td {
+        padding: 5px;
+        text-align: left;
+    }
+    .ca-leader-desktop
     {
-        width:66%;
+        padding:5px;
+    }
+    .ca-leader-rank>th
+    {
+        padding:5px;
     }
 }

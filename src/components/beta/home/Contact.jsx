@@ -3,10 +3,10 @@ import './src/css/Contact.css';
 class Contact extends Component {
     render() {
         return (
-            <div className="contactMain">
-                <div className="contactus">
-                    <h1 className="top">Contact</h1>
-                    <table>
+            <div className="beta-home-contactMain">
+                <div className="beta-home-contactus">
+                    <h1 className="beta-home-top">Contacts</h1>
+                    <table className="beta-home-contact-table">
                         <tbody>
                             <tr>
                                 <td>Suyash Singh </td>
@@ -20,7 +20,7 @@ class Contact extends Component {
 
                             <tr>
                                 <td>Abhishek Kumar  </td>
-                                <td>: +91-7409247817 </td>
+                                <td>: +91-7979071260 </td>
                             </tr>
                             <tr>
                                 <td>(Co-Convener)   </td>
@@ -47,10 +47,10 @@ class Contact extends Component {
                         </tbody> 
                     </table>
                 </div>
-                <div className="address" style={{ lineHeight: '2.5em' }}>
-                    <h1 className="top">Address</h1>
+                <div className="beta-home-address" style={{ lineHeight: '2.5em' }}>
+                    <h1 className="beta-home-top">Address</h1>
                     Thomso Office<br/>
-                    Multi Activity trueCenter,<br/>
+                    Multi Activity Center,<br/>
                     Indian Institute of Technology, Roorkee<br/>
                 <div className="email"> <h1>Email </h1>
                     thomso@iitr.ac.in

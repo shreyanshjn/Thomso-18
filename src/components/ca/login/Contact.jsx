@@ -27,7 +27,7 @@ export default class Contact extends React.Component{
 
                       <tr>
                           <td>Abhishek Kumar  </td>
-                          <td>: +91-7409247817 </td>
+                          <td>: +91-7979071260 </td>
                       </tr>
                       <tr>
                           <td>(Co-Convener)   </td>
@@ -57,7 +57,7 @@ export default class Contact extends React.Component{
           <div className="Login-Contact-address">
               <h2 className="Login-Contact-top">ADDRESS</h2>
               Thomso Office<br/>
-              Multi Activity trueCenter,<br/>
+              Multi Activity Center,<br/>
               Indian Institute of Technology, Roorkee<br/>
             <div className="Login-Contact-email"> <h2>EMAIL </h2>
               thomso@iitr.ac.in

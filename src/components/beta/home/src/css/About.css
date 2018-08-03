@@ -1,4 +1,4 @@
-.about
+.beta-home-about
 {
     color:white;
     width:70%;
@@ -9,11 +9,11 @@
     font-size: 15px;
     margin-top: 34vh;
 }
-.heading
+.beta-home-heading
 {
     text-align:left;
 }
-.content
+.beta-home-content
 {
     text-align: left;
     font-family:Montserrat;
@@ -22,13 +22,13 @@
     font-weight: lighter; 
 }
 @media only screen and (max-width: 768px) {
-    .about
+    .beta-home-about
     {
         font-size: 13px;
         margin-top: 23vh;
         font-family:Montserrat;
     }
-    .content
+    .beta-home-content
     {
         text-align: left;
         letter-spacing: 0px;
@@ -39,17 +39,17 @@
 }
 @media (min-width: 1920px) and (max-width: 2560px)
 {
-    .content
+    .beta-home-content
     {
         font-size:30px;
         font-family:Montserrat;
     }
-    .heading
+    .beta-home-heading
     {
         font-size:40px;
         font-family:Montserrat;
     }
-    .about
+    .beta-home-about
     {
        margin-top:30vh;
     }

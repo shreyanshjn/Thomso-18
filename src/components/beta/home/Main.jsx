@@ -24,42 +24,36 @@ export default class Main extends Component {
         };
         return (
             <div className="middlesection">
-                <div className="bgeffect">
-                    <div className="stars">
-                        <div className="twinkling">
-                            <Navbar />
-                            <SectionsContainer {...options}>
-                                <Section>
-                                    <div className="body">
-                                        <div className="imagelogo" align="center">
-                                            <img src={logo} alt="logo" className="mainlogo" height="200px" />
-                                            <div className="arrowmove">
-                                                <a href="#aboutUs" address="true">
-                                                    <img src={arrow} className="downarrow bounce" alt=
-                                                        "a" />
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </Section>
-
-                                <Section>
-                                    <About />
-                                </Section>
-                                <Section>
-                                    <Footfall />
-                                </Section>
-                                <Section>
-                                    <Celebrity />
-                                </Section>
-                                <Contact />
-                                <Section>
-                                </Section>
-                            </SectionsContainer>
-                            <Footer />
+                <Navbar />
+                <SectionsContainer {...options}>
+                    <Section>
+                        <div className="body">
+                            <div className="imagelogo" align="center">
+                                <img src={logo} alt="logo" className="mainlogo" height="200px" />
+                                <div className="arrowmove">
+                                    <a href="#aboutUs" address="true">
+                                        <img src={arrow} className="downarrow bounce" alt=
+                                            "a" />
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    </Section>
+
+                    <Section>
+                        <About />
+                    </Section>
+                    <Section>
+                        <Footfall />
+                    </Section>
+                    <Section>
+                        <Celebrity />
+                    </Section>
+                    <Contact />
+                    <Section>
+                    </Section>
+                </SectionsContainer>
+                <Footer />
             </div>
         );
     }

@@ -45,7 +45,7 @@ export default class RegisterIndex extends React.Component {
             email: '',
             gender: '',
             college: '',
-            collegestate: '',
+            state: '',
             branch: '',
             address: '',
             why: '',
@@ -56,7 +56,6 @@ export default class RegisterIndex extends React.Component {
     }
     handleChange = (selectedOption) => {
         this.setState({ selectedOption });
-        console.log(`Option selected:`, selectedOption);
     }
     componentWillMount() {
         if (this.props.userData) {
@@ -111,7 +110,7 @@ export default class RegisterIndex extends React.Component {
     }
 
     render() {
-        const { name, contact, email, gender, college, collegestate, branch, address, why, errors, selectedOption } = this.state;
+        const { name, contact, email, gender, college, state, branch, address, why, errors, selectedOption } = this.state;
         return (
             <div className="register-parent">
                 <div className="register-child">
@@ -127,12 +126,12 @@ export default class RegisterIndex extends React.Component {
                     </div>
                     <div className="register-form">
                         <form onSubmit={this.onSubmit}>
-                            {errors ?
+                            {/* {errors ?
                                 <div>
                                     {errors}
                                 </div>
                                 : null
-                            }
+                            } */}
                             <div className="form-heading">
                                 <h2>CA Registration form</h2>
                             </div>
@@ -220,11 +219,10 @@ export default class RegisterIndex extends React.Component {
                                     <label htmlFor="inputState">College State</label>
                                     <select
                                         className="form-state-select"
-                                        id="collegestate"
-                                        name="collegestate"
-                                        value={collegestate}
+                                        id="state"
+                                        name="state"
+                                        value={state}
                                         onChange={this.onChange}
-                                        onClick={this.size = 4}
                                         required
                                     >
                                         <option value="" disabled="true"> College State </option>
