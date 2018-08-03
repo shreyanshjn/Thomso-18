@@ -107,7 +107,7 @@ export default class Sidebar extends React.Component {
               </div>
             </div>
             <div className="update">
-              *Scores willbe updated at 12 am
+              *Scores will be updated at 12 am
             </div>
           </div>
           <div className="line">

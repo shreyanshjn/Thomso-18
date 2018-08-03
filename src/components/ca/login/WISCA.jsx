@@ -10,10 +10,10 @@ import img6 from './img/social media-01.png';
 export default class WISCA extends React.Component{
   render(){
     let a="Certificate of Appreciation";
-    let b="absolutely free entry to the pronities , center stage events and the workshops";
+    let b="Absolutely free entry to the pronities , center stage events and the workshops";
     let c="Grab the offical Thomso'18 Merchandise";
     let d="Receive goodies from our sponsorship partners";
-    let e="Oppurtunity to get featured on our website";
+    let e="Opportunity to get featured on our website";
     let f="Internship courses and certificates";
     return(
     <div className="fullpage">

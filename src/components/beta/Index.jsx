@@ -3,12 +3,12 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import Loadable from "react-loadable";
-
+import Loader from "../common/loader";
 const Loading = ({ error }) => {
   if (error) {
     return console.log(error);
   } else {
-    return <h3>Loading...</h3>;
+    return <Loader />;
   }
 };
 

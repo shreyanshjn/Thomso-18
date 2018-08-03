@@ -7,13 +7,14 @@ import AuthService from "../../handlers/ca/AuthService";
 import FetchApi from '../../utils/FetchAPI';
 
 // import LoginIndex from './login/Index';
+import Loader from "../common/loader";
 
 const Loading = ({ error }) => {
   if (error) {
     console.log(error);
     return <h3>Error loading component</h3>;
   } else {
-    return <h3>Loading...</h3>;
+    return <Loader />;
   }
 };
 

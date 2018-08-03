@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Loadable from 'react-loadable';
 
+import Loader from "./components/common/loader";
 // Beta route not being used currently
 // const BetaIndex = Loadable({
 //   loader: () => import('./components/beta/Index'),
@@ -9,41 +10,41 @@ import Loadable from 'react-loadable';
 // });
 const CAIndex = Loadable({
   loader: () => import('./components/ca/Index'),
-  loading: () => <div>Loading CAIndex</div>,
+  loading: () => <Loader />,
 });
 
 const FAQIndex = Loadable({
   loader: () => import("./components/beta/faq/Index"),
-  loading: () => <div>Loading FAQIndex</div>
+  loading: () => <Loader />
 });
 
 const SponsorsIndex = Loadable({
   loader: () => import("./components/beta/sponsors/Index"),
-  loading: () => <div>Loading SponsorsIndex</div>
+  loading: () => <Loader />
 });
 
 const TeamIndex = Loadable({
   loader: () => import("./components/beta/team/Index"),
-  loading: () => <div>Loading TeamIndex</div>
+  loading: () => <Loader />
 });
 
 const HomeIndex = Loadable({
   loader: () => import("./components/beta/home/Index"),
-  loading: () => <div>Loading HomeIndex</div>
+  loading: () => <Loader />
 });
 
 const VerifyCerti = Loadable({
   loader: () => import("./components/verifyCerti/Index"),
-  loading: () => <div>Loading VerifyCerti</div>
+  loading: () => <Loader />
 });
 
 const Policy = Loadable({
-  loader: () => import("./components/policyandterms/policy"),
-  loading: () =><div>Loading Policy</div>
+  loader: () => import("./components/common/policy"),
+  loading: () =><Loader />
 })
 const Terms = Loadable({
-  loader:() =>import("./components/policyandterms/thomsoterms"),
-  loading:() => <div>Loading Terms</div>
+  loader:() =>import("./components/common/thomsoterms"),
+  loading:() => <Loader />
 })
 class App extends Component {
   render() {

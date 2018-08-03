@@ -44,7 +44,7 @@ export default class ContactIndex extends React.Component {
                                     <h2>Rohit Niranjan</h2>
                                 </div>
                                 <div className="post">
-                                    <h2>EVENTS AND MANAGEMENT</h2>
+                                    <h2>PUBLIC RELATIONS</h2>
                                 </div>
                                 <div className="gmail">
                                     <img src={gmail} />
@@ -68,7 +68,7 @@ export default class ContactIndex extends React.Component {
                                         <h2>Nikhil Mehra</h2>
                                     </div>
                                     <div className="post">
-                                        <h2>Technical Head</h2>
+                                        <h2>TECHNICAL HEAD</h2>
                                     </div>
                                     <div className="gmail">
                                         <img src={gmail} />
@@ -91,7 +91,7 @@ export default class ContactIndex extends React.Component {
                                         <h2>Prashant Verma</h2>
                                     </div>
                                     <div className="post">
-                                        <h2>Technical Head</h2>
+                                        <h2>TECHNICAL HEAD</h2>
                                     </div>
                                     <div className="gmail">
                                         <img src={gmail} />

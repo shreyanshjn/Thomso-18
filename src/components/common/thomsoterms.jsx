@@ -42,6 +42,7 @@ export default class Terms extends React.Component {
             <p>Upon termination, your right to use the Service will immediately cease. If you wish to terminate your account, you may simply discontinue using the Service.</p>
             <p>All provisions of the Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity and limitations of liability.
                 </p>
+            
             <h2>Governing Law</h2>
             
             
