@@ -40,7 +40,7 @@ export default class Sidebar extends React.Component {
     Field.execCommand('copy');
     Field.remove()
   }
-    render() {
+  render() {
     let countDownDate = new Date("Oct 25, 2018 00:00:00").getTime();
     let now = new Date().getTime();
     let distance = countDownDate - now;
@@ -59,56 +59,56 @@ export default class Sidebar extends React.Component {
         >
           <div className="sidebar-user">
             <img src={this.props.userData ? this.props.userData.image : boy} className="image" alt="dataImg" />
-            <div className="details">
+            <div className="sidebar-user-details">
               <div className="text">{this.props.userData ? this.props.userData.name : "User"}</div>
               <div className="cname">{this.props.userData ? this.props.userData.college : "-"}</div>
             </div>
           </div>
-          <div className="line">
+          <div className="sidebar-line">
           </div>
-          <div className="likeshare">
-            <div className="inls">
-              <div className="n_likes">
-                <div className="inn_likes">
+          <div className="sidebar-like-share-score">
+            <div className="sidebar-like-share-score-child">
+              <div className="sidebar-likes">
+                <div className="sidebar-likes-child">
                   <div>
                     {this.props.userData ? this.props.userData.likes : "0"}
                   </div>
                   <img src={like} alt="like" />
                 </div>
-                <div className="plikes">
+                <div className="sidebar-likes-number">
                   LIKES
                 </div>
               </div>
-              <div className="n_shares">
-                <div className="inn_likes">
-                  <div className="change">
+              <div className="sidebar-shares">
+                <div className="sidebar-likes-child">
+                  <div className="sidebar-likes-shares-score-data">
                     {this.props.userData ? this.props.userData.shares : "0"}
                   </div>
                   <img src={share} alt="share" />
                 </div>
-                <div className="plikes">
+                <div className="sidebar-likes-number">
                   SHARES
                 </div>
               </div>
-              <div className="n_score">
-                <div className="inn_likes">
-                  <div className="change">
+              <div className="sidebar-score">
+                <div className="sidebar-likes-child">
+                  <div className="sidebar-likes-shares-score-data">
                     {this.props.userData ? this.props.userData.score : "0"}
                   </div>
                   <img src={score} alt="score" />
                 </div>
-                <div className="plikes">
+                <div className="sidebar-likes-number">
                   SCORES
                 </div>
               </div>
             </div>
-            <div className="update">
+            <div className="sidebar-updatenews">
               *Scores will be updated at 12 am
             </div>
           </div>
-          <div className="line">
+          <div className="sidebar-line">
           </div>
-          <div className="thomso">
+          <div className="sidebar-contents">
             <Link
               to="/ca/"
               className={
@@ -120,11 +120,11 @@ export default class Sidebar extends React.Component {
                 this.setActive("home");
               }}
             >
-              <div className="posts flex_row">
-                <div className="p-logo">
+              <div className="sidebar-posts flex_row">
+                <div className="sidebar-svg-logo">
                   <Post />
                 </div>
-                <div className="p-name">
+                <div className="sidebar-navitem-name">
                   POSTS
                 </div>
               </div>
@@ -140,11 +140,11 @@ export default class Sidebar extends React.Component {
                 this.setActive("leaderboard");
               }}
             >
-              <div className="leaderboard flex_row">
-                <div className="p-logo">
+              <div className="sidebar-leaderboard flex_row">
+                <div className="sidebar-svg-logo">
                   <Leader />
                 </div>
-                <div className="p-name">
+                <div className="sidebar-navitem-name">
                   LEADERBOARD
                 </div>
               </div>
@@ -160,11 +160,11 @@ export default class Sidebar extends React.Component {
                 this.setActive("timeline");
               }}
             >
-              <div className="guide flex_row">
-                <div className="p-logo">
+              <div className="sidebar-guide flex_row">
+                <div className="sidebar-svg-logo">
                   <Guide />
                 </div>
-                <div className="p-name">
+                <div className="sidebar-navitem-name">
                   TIMELINE
                 </div>
               </div>
@@ -180,11 +180,11 @@ export default class Sidebar extends React.Component {
                 this.setActive("ideas");
               }}
             >
-              <div className="ideas flex_row">
-                <div className="p-logo">
+              <div className="sidebar-ideas flex_row">
+                <div className="sidebar-svg-logo">
                   <Bulb />
                 </div>
-                <div className="p-name">
+                <div className="sidebar-navitem-name">
                   IDEAS
                 </div>
               </div>
@@ -200,11 +200,11 @@ export default class Sidebar extends React.Component {
                 this.setActive("certificate");
               }}
             >
-              <div className="certificate flex_row">
-                <div className="p-logo">
+              <div className="sidebar-certificate flex_row">
+                <div className="sidebar-svg-logo">
                   <Certificate /> 
                 </div>
-                <div className="p-name">
+                <div className="sidebar-navitem-name">
                   CERTIFICATE
                 </div>
               </div>
@@ -220,11 +220,11 @@ export default class Sidebar extends React.Component {
                 this.setActive("contact");
               }}
             >
-              <div className="ca-sidebar-contactus flex_row">
-                <div className="p-logo">
+              <div className="sidebar-contactus flex_row">
+                <div className="sidebar-svg-logo">
                   <Contact />
                 </div>
-                <div className="p-name">
+                <div className="sidebar-navitem-name">
                   CONTACT US
                 </div>
               </div>
@@ -240,11 +240,11 @@ export default class Sidebar extends React.Component {
                 this.setActive("logout");
               }}
             >
-              <div className="ca-sidebar-logout flex_row">
-                <div className="p-logo">
+              <div className="sidebar-logout flex_row">
+                <div className="sidebar-svg-logo">
                   <Logout />
                 </div>
-                <div className="p-name">
+                <div className="sidebar-navitem-name">
                   LOGOUT
                 </div>
               </div>
@@ -253,21 +253,21 @@ export default class Sidebar extends React.Component {
               className="sideNavItem re"
             >
               <div onClick={() => { window.location.href = this.props.userData.link }} className="referral flex_row" title="Click to copy">
-                <div className="p-logo">
+                <div className="sidebar-svg-logo">
                   <Referral />
                 </div>
-                <div className="p-name">
+                <div className="sidebar-navitem-name">
                   VISIT FACEBOOK PROFILE
                 </div>
               </div>
             </div>
           </div>
-          <div className="hand flex_row">
-            <div className="inhand">
-              <div className="p-logo">
+          <div className="sidebar-hand flex_row">
+            <div className="sidebar-hand-child">
+              <div className="sidebar-svg-logo">
                 <Hand />
               </div>
-              <div className="sidebar-days">
+              <div className="sidebar-hand-days">
                 {days} DAYS LEFT
             </div>
             </div>

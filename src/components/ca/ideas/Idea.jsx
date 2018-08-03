@@ -118,10 +118,10 @@ export default class IdeasIndex extends React.Component {
             <React.Fragment>
                 {(!this.props.data || this.state.isDeleted) ?
                     null :
-                    <form className="form-idea" onSubmit={this.onSubmit} noValidate>
+                    <form className="ca-idea-form" onSubmit={this.onSubmit} noValidate>
                         {isVisible ? errors : null}
-                        <div className="ideasubject">
-                            <span className="dot ideasub"></span>
+                        <div className="ca-idea-subject">
+                            <span className="ca-idea-dot ca-idea-subject-child"></span>
                             <input
                                 id="inputSubject"
                                 type="text"
@@ -135,7 +135,7 @@ export default class IdeasIndex extends React.Component {
                                 required
                             />
                         </div>
-                        <div className="details_idea">
+                        <div className="ca-idea-details">
                             <textarea
                                 id="inputIdea"
                                 rows="1"
@@ -149,19 +149,21 @@ export default class IdeasIndex extends React.Component {
                                 required
                             />
                         </div>
-                        <div className="ideas-comment">
-                            <p>{comment}</p>
-                        </div>
-                        <div className="edit-cancel-submit">
-                            <div className="edit-cancel">
+                        {comment ?
+                            <div className="ca-idea-comment">
+                                <span>Comment : </span><p>{comment}</p>
+                            </div> : null
+                        }
+                        <div className="ca-idea-edit-cancel-submit">
+                            <div className="ca-idea-edit-cancel">
                                 <div onClick={() => this.toggleEdit()} >{this.state.isEditing ? 'Cancel' : 'Edit'}</div>
                             </div>
                             {this.state.isEditing ?
-                                <div className="submit">
+                                <div className="ca-idea-submit">
                                     <button type="submit" disabled={this.state.isDisabled}>Submit</button>
                                 </div>
                                 :
-                                <div className="delete">
+                                <div className="ca-idea-delete">
                                     <div onClick={() => this.deleteIdea()} disabled={this.state.isDisabled}>Delete</div>
                                 </div>
                             }

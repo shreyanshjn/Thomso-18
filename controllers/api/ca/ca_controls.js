@@ -65,7 +65,7 @@ exports.postIdea = function (req, res) {
 
 /* Read All Ideas */
 exports.getIdea = function (req, res) {
-    Ideas.find({ fb_id: req.locals.fb_id, deleted: false })
+    Ideas.find({ fb_id: req.locals.fb_id, deleted: { $ne: true } })
         .select('title body comment updated_date')
         .sort({ 'updated_date': -1 })
         .exec(function (err, allIdeas) {
