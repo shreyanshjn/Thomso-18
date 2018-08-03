@@ -1,7 +1,6 @@
 import React from 'react';
 import './updatedcard.css';
 import logoshare from '../img/icons8-share-50 (1).png';
-import logo from '../img/eye.png';
 export default class Card extends React.Component {
   constructor() {
     super();
@@ -23,7 +22,6 @@ export default class Card extends React.Component {
       this.setState({date, month});
       const month=d.getMonth();
     }
-
   }
   render() {
     return (

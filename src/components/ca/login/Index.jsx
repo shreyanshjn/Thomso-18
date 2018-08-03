@@ -4,7 +4,6 @@ import Roles from './Roles.jsx';
 import Contact from './Contact.jsx';
 import AuthService from '../../../handlers/ca/AuthService';
 import FetchApi from '../../../utils/FetchAPI';
-import LoginPage from './LoginPage';
 import CalandingNavbar from "./CaLanding";
 import { SectionsContainer, Section } from 'react-fullpage';
 import arrow from './src/img/arrow.svg';
