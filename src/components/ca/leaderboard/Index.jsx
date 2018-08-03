@@ -9,7 +9,8 @@ export default class LeaderboardIndex extends React.Component {
         this.state = {
             users: null,
             isExpandable:true,
-            hide:true
+            hide:true,
+            rank: '-'
         }
         this.Auth = new AuthService();
     }
@@ -18,9 +19,17 @@ export default class LeaderboardIndex extends React.Component {
         const authtoken = this.Auth.getToken()
         FetchApi('GET', '/api/ca/leaderboard', null, authtoken)
             .then(r => {
-                console.log(r)
                 if (r && r.data && r.data.length > 0) {
                     this.setState({ users: r.data })
+                } else {
+                    console.log(r)
+                }
+            })
+            .catch(e => console.log(e));
+        FetchApi('GET', '/api/ca/rank', null, authtoken)
+            .then(r => {
+                if (r && r.data && r.data.success === true ) {
+                    this.setState({ rank: r.data.rank })
                 } else {
                     console.log(r)
                 }
@@ -53,11 +62,9 @@ export default class LeaderboardIndex extends React.Component {
                                 return <DataRow key={`leader${index}`} data={user} index={index} />
                             }) : null}
 
-
-                            {/* user rank*/}
                             {this.props.userData ?
                             <tr className="ca-leader-rank">
-                                <th>rank</th>
+                                <th>{this.state.rank}</th>
                                 <th>{this.props.userData.name ? this.props.userData.name : null}</th> 
                                 <th className="ca-leader-downarrows" onClick={() => this.setState({isExpanded: !this.state.isExpanded})}>{this.props.userData.college ? this.props.userData.college : null}</th>
                                 <th className="ca-leader-mobile">{this.props.userData.likes ? this.props.userData.likes : 0}</th>

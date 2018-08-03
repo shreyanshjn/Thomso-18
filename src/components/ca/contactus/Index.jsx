@@ -57,8 +57,7 @@ export default class ContactIndex extends React.Component {
                             </div>
                         </div>
                     </div>
-                    {console.log()}
-                    {(this.props.userData && this.props.userData.gender !== "female") ?
+                    {(this.props.userData && this.props.userData.gender === "female") ?
                         <div className="incontact_three">
                             <div className="child flex_column">
                                 <div className="image_three">
