@@ -220,6 +220,6 @@
 }
 @media screen and (max-width:768px){
     .ca-idea-parent{
-        width: calc(100% - 121px);
+        width: calc(100% - 81px);
     }
 }
