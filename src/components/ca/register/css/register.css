@@ -354,6 +354,9 @@
     background: rgba(255,255,255,0.4);
     border-radius: 5px;
 }
+.common-cursor{
+  cursor : default;
+}
 @media (max-width:800px){
     .register-parent{
         height: 100%;
@@ -415,5 +418,8 @@
     }
     .form-name{
         width: 100%;
+    }
+    .common-cursor{
+      cursor : default;
     }
 }

@@ -4,6 +4,7 @@ import img from "./img/logo.png";
 import AuthService from '../../../handlers/ca/AuthService';
 import FetchApi from '../../../utils/FetchAPI';
 import validateInput from '../../../utils/validation/loginValidation';
+import { Link } from 'react-router-dom' ;
 
 const options = [
     { value: 'Arunachal Pradesh', label: 'Arunachal Pradesh' },
@@ -115,11 +116,11 @@ export default class RegisterIndex extends React.Component {
                 <div className="register-child">
                     <div className="register-heading">
                         <div className="r-logo">
-                            <img src={img} alt="r-logo" />
+                            <Link to="/"><img src={img} alt="r-logo" /></Link>
                         </div>
                         <div className="vertical_line">
                         </div>
-                        <div className="register-ca">
+                        <div className="register-ca common-cursor">
                             <h1>Campus<br /> Ambassador</h1>
                         </div>
                     </div>

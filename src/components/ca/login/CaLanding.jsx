@@ -13,7 +13,7 @@ export default class CalandingNavbar extends React.Component {
                     </div>
                     <div className="vertical_line">
                     </div>
-                    <div className="ca-landing-ca">
+                    <div className="ca-landing-ca common-cursor">
                         <h2>Campus<br /> Ambassador</h2>
                     </div>
                 </div>
