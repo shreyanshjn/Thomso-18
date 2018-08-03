@@ -25,19 +25,19 @@ export default class Roles extends React.Component{
                   </div>
                   <div className="Login-Wisca-main">
                     <div className="Login-Wisca-innermain1">
-                        <LoginCompo data={a} image={img4} heading={e} />
+                        <LoginCompo data={e} image={img4} heading={a} />
                     </div>
                   </div>
 
                   <div className="Login-Wisca-main2">
                     <div className="Login-Wisca-innermain1">
-                        <LoginCompo data={b} image={img5} heading={f} />
+                        <LoginCompo data={f} image={img5} heading={b} />
                     </div>
                   </div>
 
                   <div className="Login-Wisca-main2">
                     <div className="Login-Wisca-innermain1">
-                        <LoginCompo data={c} image={img6} heading={g} />
+                        <LoginCompo data={g} image={img6} heading={c} />
                     </div>
                   </div>
       </div>

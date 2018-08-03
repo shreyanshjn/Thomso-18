@@ -13,7 +13,7 @@ export default class LoginCompo extends React.Component{
         <img src={this.props.image}/>
       </div>
       <div className="Login-div4">
-        <p>{this.props.data}</p>{this.props.heading}
+       <p className="Login-para">{this.props.heading}</p> {this.props.data}
       </div>
     </div>
 

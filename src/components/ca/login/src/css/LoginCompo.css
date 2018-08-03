@@ -34,12 +34,14 @@
   justify-content:flex-start;
   font-family: Montserrat;
 }
-.Login-div4 p{
+.Login-para{
   font-family: Montserrat;
   font-size: 12px;
   font-weight: bold;
   vertical-align: middle;
   margin: 0px;
+  color:black;
+  text-align: left;
 }
 @media screen and (max-width:768px){
 
