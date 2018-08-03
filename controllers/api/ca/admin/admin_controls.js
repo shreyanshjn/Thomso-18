@@ -23,7 +23,7 @@ exports.getParticipant = function(req, res) {
 exports.getIdeas = function(req, res) {
   Ideas.find()
     .populate('user', 'name image ca_id')
-    .select('title body comment')
+    .select('title body comment deleted')
     .sort({'updated_date': -1})
     .exec(function(err, allIdeas) {
       if(err){
@@ -37,7 +37,7 @@ exports.getIdeas = function(req, res) {
 exports.putIdea = function(req, res) {
     if (req.params.id) {
         var updateData = {
-            comment: req.body
+            comment: req.body.comment
         }
         Ideas.findOneAndUpdate({ _id:req.params.id }, updateData, { new:true })
         .exec(function(err, idea) {

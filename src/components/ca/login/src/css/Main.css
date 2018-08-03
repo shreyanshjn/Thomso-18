@@ -1,10 +1,9 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat");
-.middlesection
+.ca-opening-middlesection
 {
     height: 100vh;
     width:100%;
 }
-.child-middle{
+.ca-opening-child-middle{
     background-image:url("../img/background.png");
     background-repeat: no-repeat;
     background-position: center;
@@ -23,24 +22,32 @@
         transform: translateY(-10px);
     }
 }
-.downarrow
+.ca-opening-downarrow
 {
-    position: absolute;
-    left: 48%;
-    top: 75vh;
+    margin-top: 15vh;
     z-index: 10;
     animation: bounce 2s infinite;
 }
-.buttonca
-{
-    background-color:#404e64;
-    border:2px solid #404e64;
-    left:46%;
-    position:absolute;
+.ca-opening-button-parent {
+    position: absolute;
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
     top:15%;
-    color:white;
-    padding:10px;
-    cursor:pointer;
+}
+.ca-opening-button
+{
+    cursor: pointer;
+    width: fit-content;
+    padding: 15px;
+    background: none;
+    font-family: Montserrat;
+    font-weight: 600;
+    color: white;
+    border: 0px;
+    background: rgba(255,255,255,0.4);
+    border-radius: 5px;
 }
 .sorry
 {
@@ -60,11 +67,6 @@
     top:9%;
     left:33%;
 }
-input
-{
-  margin-left:10px;
-  width:18vw;
-}
 .black{
     color: #000;
 }
@@ -79,13 +81,18 @@ input
     font-size: 14px;
     color: white;
 }
+
+.Ca-login-Section-Parent{
+  background: white;
+
+}
 @media (min-width: 1920px) and (max-width: 2560px)
 {
    .downarrow
    {
        height: 5vh;
        left: 48%;
-       top: 74vh; 
+       top: 74vh;
    }
    .buttonca
    {
@@ -102,12 +109,12 @@ input
     {
 
         left: 41%;
-        top: 51vh;
+        top: 84vh;
     }
     .buttonca
     {
-        left: 34%;
-        top: 5%; 
+        left: 30%;
+        top: 350px;
     }
     .sorry
     {
@@ -118,6 +125,6 @@ input
     .formEmail
     {
       top:4%;
-      left:25%; 
+      left:25%;
     }
 }

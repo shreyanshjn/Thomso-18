@@ -17,6 +17,20 @@ export default class Card extends React.Component {
       seconds: ''
     };
   }
+  componentDidMount() {
+    if (this.props.data && this.props.data.created_time) {
+      const created_time = this.props.data.created_time
+      const d = new Date(created_time)
+      this.setState({
+        date: d.getDate(),
+        month: d.getMonth(),
+        year: d.getFullYear(),
+        hours: d.getHours(),
+        minutes: d.getMinutes(),
+        seconds: d.getSeconds()
+      });
+    }
+  }
   render() {
     const { date, month, year, hours, minutes, seconds } = this.state
     return (

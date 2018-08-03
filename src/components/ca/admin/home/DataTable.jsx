@@ -34,7 +34,9 @@ export default class DataTable extends React.Component {
         FetchApi('GET','/api/ca/admin/participants', null, authtoken)
             .then((result) => {
                 console.log(result, 'Participant List')
-                this.setState({ participants: result.data });
+                if (result && result.data) {
+                    this.setState({ participants: result.data });
+                }
             })
             .catch(error => {
                 if(error.response && error.response.status === 401) {
@@ -106,10 +108,11 @@ export default class DataTable extends React.Component {
     
 
     render() {
-      var data  = this.state.participants;
+      let data  = this.state.participants;
       console.log(data);
       return (
         <div>
+            {this.state.message}
             <div>
                 <input id="myInput" type="text" onChange={(e) => this.handleFilter(e)} placeholder="Type here to search..." />
             </div>

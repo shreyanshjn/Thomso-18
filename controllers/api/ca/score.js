@@ -57,7 +57,7 @@ exports.getNew = function(req, res) {
                                     }
                                 }
                                 if ( x === parseData.posts.data.length - 1) {
-                                    totalScore = totalScore + eachUser.referrals*25;
+                                    totalScore = totalScore + eachUser.referrals*25 + eachUser.bonus;
                                     var updateData = {
                                         score: totalScore,
                                         likes: totalLikes,

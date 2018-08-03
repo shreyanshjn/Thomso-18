@@ -71,7 +71,6 @@ export default class AdminIndex extends React.Component{
                         <Route exact path="/ca/admin/logout" render={ () => <LogoutIndex updateRoutes={this.handleUpdate}/> } />
                         <Route exact path="/ca/admin" component={HomeIndex} />
                     </div>
-
                 :
                     <div>
                         <Route exact path="/ca/admin/register" component={RegisterIndex} />

@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat");
-.celebrityMain
+.beta-home-celebrityMain
 {
     margin-top:24vh;
     vertical-align:center;
@@ -10,7 +9,7 @@
     font-family:Montserrat;
     font-size:15px;
 }
-.hoverEffect
+.beta-home-hoverEffect
 {
     margin:15px;
     height:38vh;
@@ -19,7 +18,7 @@
     font-family:Montserrat;
     border-radius:10px;
 }
-.celebrityMain > div >p
+.beta-home-celebrityMain > div >p
 {
     position:absolute;
     bottom:-8vh;
@@ -27,23 +26,23 @@
     font-size:14px;
     text-align:center;
 }
-.farhan
+.beta-home-farhan
 {
     left:11%;
 }
-.nucleya
+.beta-home-nucleya
 {
     left:20%;
 }
-.sunidhi
+.beta-home-sunidhi
 {
     left:6%;
 }
-.nucleya
+.beta-home-nucleya
 {
     left:31%;
 }
-.celebImage
+.beta-home-celebImage
 {
     position: absolute;
     left: 0%;
@@ -53,66 +52,62 @@
     border-radius:10px;
     transition:0.2s;
 }
-.hoverEffect:hover  .celebImage
+.beta-home-hoverEffect:hover  .beta-home-celebImage
 {
     filter:blur(1px);
 }
-.hoverEffect:hover  .middle
+.beta-home-hoverEffect:hover  .beta-home-middle
 {
     opacity:1;
 }
-.middle
+.beta-home-middle
 {
     opacity:0;
     position:absolute;
-    bottom: 5%;
+    bottom: 21%;
     left:10%;
     transition:0.2s;
     text-align: center;
 }
 @media only screen and (max-width: 768px) {
-    .celebrityMain
+    .beta-home-celebrityMain
     {
         flex-direction:column;
         margin-top:10vh;
     }
-    .celebrityMain > div
+    .beta-home-celebrityMain > div
     {
         margin:18px;
         height:18vh;
         width:30vw;
         position:relative;
     }
-    .celebrityMain > div >p
+    .beta-home-celebrityMain > div >p
     {
         position:absolute;
         bottom:-5vh;
         font-size:8px;
         text-align:center;
     }
-    .farhan
+    .beta-home-farhan
     {
         left:17%;
     }
-    .nucleya
+    .beta-home-nucleya
     {
         left:20%;
         bottom:-4vh;
     }
-    .sunidhi
+    .beta-home-sunidhi
     {
         left:2%;
     }
-    .box
-    {
-        width:25vw;
-    }
-    .celebImage
+    .beta-home-celebImage
     {
         height:18vh;
         width:30vw;
     }
-    .middle
+    .beta-home-middle
     {
        font-size:8px;
        top:30%;
@@ -120,36 +115,36 @@
 }
 @media (min-width: 1920px) and (max-width: 2560px)
 {
-    .celebrityMain
+    .beta-home-celebrityMain
     {
         margin-top:26vh;
     }
-    .celebrityMain > div >p
+    .beta-home-celebrityMain > div >p
     {
         font-family:Montserrat;
         font-size:26px;
         text-align:center;
         bottom:-10vh
     }
-    .sunidhi
+    .beta-home-sunidhi
     {
         left:0%;
         text-align:left;
         width:100%;
     }
-    .farhan
+    .beta-home-farhan
     {
         left:8%;
     }
-    .nucleya
+    .beta-home-nucleya
     {
         left:27%;
     }
-    .hoverEffect
+    .beta-home-hoverEffect
     {
         margin:50px;
     }
-    .middle
+    .beta-home-middle
     {
         font-size:22px;
         opacity:0;

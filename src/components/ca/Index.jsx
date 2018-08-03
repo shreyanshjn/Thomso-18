@@ -68,7 +68,7 @@ export default class CAIndex extends React.Component {
     this.state = {
       userData: "",
       isAuthenticated: false,
-      string: window.location.pathname.substring(4)
+      string: window.location.pathname.substring(4, 9)
     };
     this.Auth = new AuthService();
     this.handleUpdate = this.handleUpdate.bind(this);
@@ -111,7 +111,7 @@ export default class CAIndex extends React.Component {
               <Route path="/ca/" render={props => (<Sidebar {...props} userData={this.state.userData} />)} />
             }
             <Route exact path="/ca/logout" render={props => (<LogoutIndex {...props} updateRoutes={this.handleUpdate} />)} />
-            <Route exact path="/ca/leaderboard" component={LeaderboardIndex} />
+            <Route exact path="/ca/leaderboard" render={props => (<LeaderboardIndex {...props} userData={this.state.userData} />)} />
             <Route exact path="/ca/timeline" component={TimelineIndex} />
             <Route exact path="/ca/contact" render={props => (<ContactIndex {...props} userData={this.state.userData} />)} />
             <Route exact path="/ca/ideas" component={IdeasIndex} />

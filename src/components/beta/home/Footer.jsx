@@ -22,21 +22,20 @@ class Footer extends Component {
            days=0;  
         }
         return (
-            <div className="footer-main">
-                <div className="countdown">
-                    <p className="thomso">THOMSO'18 COUNTDOWN</p><br />
-                    <p className="daysleft"><span className="days">{days}</span> <span className="left">DAYS LEFT</span></p>
+            <div className="beta-footer-main">
+                <div className="beta-footer-countdown">
+                    <p className="beta-footer-thomso">THOMSO'18 COUNTDOWN</p><br />
+                    <p className="daysleft"><span className="beta-footer-days">{days}</span> <span className="beta-footer-left">DAYS LEFT</span></p>
                 </div>
-                <div className="icons">
-                    <p className="follow">FOLLOW US </p>
-                    <div className="mainIcons">
-                        <div className="fbdiv">  <a href="https://www.facebook.com/thomsoiitroorkee/" target="_blank" rel="noopener noreferrer"> <img src={fblogo} className="iconsImage" alt="fblogo" /></a></div>
-                        <div className="instadiv"><a href="https://www.instagram.com/thomso.IITR/" target="_blank" rel="noopener noreferrer"><img src={inlogo} className="iconsImage" alt="inlogo" /></a></div>
-                        <div className="ytdiv"><a href="https://www.youtube.com/user/iitrthomso" target="_blank" rel="noopener noreferrer"><img src={ytlogo} className="iconsImage" alt="ytlogo" /></a></div>
-                        <div className="linkediv"><a href="https://www.linkedin.com/company/thomso-iit-roorkee-official" target="_blank" rel="noopener noreferrer"> <img src={iglogo} className="iconsImage" alt="lilogo" /></a></div>
-                        </div>
-                    </div>
-                </div>
+                <div className="beta-footer-icons">
+                    <p className="beta-footer-follow">FOLLOW US </p>
+                    <div className="beta-footer-mainIcons">
+                        <div className="beta-footer-fbdiv">  <a href="https://www.facebook.com/thomsoiitroorkee/" target="_blank" rel="noopener noreferrer"> <img src={fblogo} className="beta-footer-iconsImage" alt="fblogo" /></a></div>
+                        <div className="beta-footer-instadiv"><a href="https://www.instagram.com/thomso.IITR/" target="_blank" rel="noopener noreferrer"><img src={inlogo} className="beta-footer-iconsImage" alt="inlogo" /></a></div>
+                        <div className="beta-footer-ytdiv"><a href="https://www.youtube.com/user/iitrthomso" target="_blank" rel="noopener noreferrer"><img src={ytlogo} className="beta-footer-iconsImage" alt="ytlogo" /></a></div>
+                        <div className="beta-footer-linkediv"><a href="https://www.linkedin.com/company/thomso-iit-roorkee-official" target="_blank" rel="noopener noreferrer"> <img src={iglogo} className="beta-footer-iconsImage" alt="lilogo" /></a></div>
+                    </div> </div>
+            </div>
         );
     }
 }

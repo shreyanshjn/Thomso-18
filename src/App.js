@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "./App.css";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Loadable from 'react-loadable';
 
@@ -60,8 +61,8 @@ class App extends Component {
           <Route path="/ca/" component={CAIndex} />
 
           <Route path="/verifyCerti/" component={VerifyCerti} />
-          <Route path="/policy" component={Policy}/>
-          <Route path="/terms" component={Terms}/>
+          <Route path="/policy" component={Policy} />
+          <Route path="/terms" component={Terms} />
         </Switch>
       </BrowserRouter>
     );
