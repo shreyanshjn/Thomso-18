@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './src/css/Footfall.css';
-import diagram from './src/img/diagram-01.png';
+import diagram from './src/img/diagram.png';
 class Footfall extends Component {
     render() {
         return (

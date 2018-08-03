@@ -1,12 +1,12 @@
 import React from "react";
 import './src/css/Wisca.css';
 import LoginDivCompo from './LoginDivCompo.jsx';
-import img1 from './img/certi-01.png';
-import img2 from './img/ticket-01.png';
-import img3 from './img/tshirt-01.png';
-import img4 from './img/gift-01.png';
-import img5 from './img/medal-01.png';
-import img6 from './img/social media-01.png';
+import img1 from './img/certi.png';
+import img2 from './img/ticket.png';
+import img3 from './img/tshirt.png';
+import img4 from './img/gift.png';
+import img5 from './img/medal.png';
+import img6 from './img/socialmedia.png';
 export default class Wisca extends React.Component{
   render(){
     let a="Certificate of Appreciation";
