@@ -1,7 +1,7 @@
 
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
-.Login-diva{
+.login-diva{
   height: 110px;
   width: 520px;
   display: flex;
@@ -12,18 +12,18 @@
   vertical-align: middle;
   font-family: Montserrat;
 }
-.Login-divb{
+.login-divb{
   height:51px;
   width: 51px;
   display: flex;
   flex-direction: column;
   justify-content:flex-start;
 }
-.Login-divb img{
+.login-divb img{
   height: 51px;
   width:51px;
 }
-.Login-divc{
+.login-divc{
   font-size: 12px;
   vertical-align: middle;
   margin-left: 10%;
@@ -37,7 +37,7 @@
 }
 
 @media screen and (max-width:768px){
-  .Login-diva{
+  .login-diva{
     height: 30px;
     width: 300px;
     display: flex;
@@ -49,19 +49,19 @@
     margin-bottom: 30px;
     font-family: Montserrat;
   }
-  .Login-divb{
+  .login-divb{
     height:30px;
     width: 30px;
     display: flex;
     flex-direction: column;
     justify-content:flex-start;
   }
-  .Login-divb img{
+  .login-divb img{
     height: 30px;
     width:30px;
   }
 
-  .Login-divc{
+  .login-divc{
 
     font-size: 8px;
     vertical-align: middle;
@@ -77,7 +77,7 @@
 }
 
 @media (min-width: 1920px) and (max-width: 2560px){
-  .Login-diva{
+  .login-diva{
     height: 110px;
     width: 100%;
     display: flex;
@@ -88,18 +88,18 @@
     font-weight: bold;
     vertical-align: middle;
   }
-  .Login-divb{
+  .login-divb{
     height:51px;
     width: 51px;
     display: flex;
     flex-direction: column;
     justify-content:flex-start;
   }
-  .Login-divb img{
+  .login-divb img{
     height: 51px;
     width:51px;
   }
-  .Login-divc{
+  .login-divc{
     font-size: 22px;
     vertical-align: middle;
     margin-left: 10%;
