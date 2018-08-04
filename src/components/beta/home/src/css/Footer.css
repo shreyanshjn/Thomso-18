@@ -1,3 +1,10 @@
+.quizardy-footer{
+  display: flex;
+  flex-direction: row;
+}
+
+
+
 .beta-footer-main
 {
     color:white;
