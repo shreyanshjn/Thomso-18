@@ -73,7 +73,7 @@ export default class Row extends React.Component {
 
     updateBonus = () => {
         if (this.props.data && this.props.data._id && !this.state.bonusDisabled && this.state.bonusEditing) {
-            if (parseInt(this.state.bonus) !== undefined) {
+            if (parseInt(this.state.bonus, 10) !== undefined) {
                 this.setState({bonusDisabled: true})
                 const authtoken = this.Auth.getToken();
                 const data = {

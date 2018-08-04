@@ -1,6 +1,7 @@
 var request = require('request');
 var moment = require('moment');
 
+// var mailer = require('../../common/mailer');
 var CA_User = require("../../../models/ca/CA_User");
 var CA_User_Token = require("../../../models/ca/CA_User_Token");
 var TokenHelper = require("../../../helpers/TokenHelper");
@@ -14,9 +15,9 @@ exports.fblogin = function(req, res) {
         fb_id: req.body.id,
         name: req.body.name,
         link: req.body.link,
-        email: req.body.email,
         image: req.body.image
     }
+    // mailer.caMailer({email: req.body.email});
     request(`https://graph.facebook.com/oauth/access_token?grant_type=fb_exchange_token&client_id=${client_id}&client_secret=${client_secret}&fb_exchange_token=${accessToken}`, function(err, response, body){
         var access_token = JSON.parse(response.body).access_token;
         var saveData = Object.assign(data, {access_token: access_token})
@@ -34,6 +35,9 @@ exports.fblogin = function(req, res) {
             }
             if (!user) {
                 // Return Data
+                if (req.body.email) {
+                    var saveData = Object.assign(saveData, {email: req.body.email});
+                }
                 var newUser = new CA_User(saveData);
                 newUser.save(function(err, user) {
                     if (err) {
