@@ -43,10 +43,17 @@ const Policy = Loadable({
   loader: () => import("./components/common/policy"),
   loading: () =><Loader />
 })
+
 const Terms = Loadable({
   loader:() =>import("./components/common/thomsoterms"),
   loading:() => <Loader />
 })
+
+const ZonalsIndex = Loadable({
+  loader:() =>import("./components/zonal/Index"),
+  loading:() => <Loader />
+})
+
 class App extends Component {
   render() {
     return (
@@ -59,6 +66,8 @@ class App extends Component {
           <Route exact path="/faq" component={FAQIndex} />
 
           <Route path="/ca/" component={CAIndex} />
+
+          <Route path="/zonals" component={ZonalsIndex} />
 
           <Route path="/verifyCerti/" component={VerifyCerti} />
           <Route path="/policy" component={Policy} />

@@ -170,7 +170,7 @@ export default class IdeaContainer extends React.Component {
                                         <div>{this.props.data.body}</div> : null
                                 }
                                 <input disabled={!this.state.editing || this.state.submitDisabed} value={this.state.comment} name='comment' onChange={this.onChange} />
-                                <button onClick={() => this.switchEdit()}> {this.state.editing ? 'Cancel': 'Edit'} </button>
+                                <button disabled={this.state.deleteDisabled} onClick={() => this.switchEdit()}> {this.state.editing ? 'Cancel': 'Edit'} </button>
                                 {this.state.editing ?
                                     <React.Fragment>
                                         <button disabled={this.state.submitDisabed} onClick={() => this.submitComment()}> Submit </button>

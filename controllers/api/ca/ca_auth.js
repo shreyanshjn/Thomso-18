@@ -37,7 +37,6 @@ exports.fblogin = function(req, res) {
                 var newUser = new CA_User(saveData);
                 newUser.save(function(err, user) {
                     if (err) {
-                        console.log(err);
                         return res.status(400).send({success: false, msg: 'Unable to Add User'});
                     }
                     var newToken = {
@@ -45,6 +44,7 @@ exports.fblogin = function(req, res) {
                         user_id: newUser._id,
                         token: TokenHelper.generateUserToken(req.body.id, req.body.email),
                         expirationTime: moment().day(30),
+                        updated_date: new Date()
                     };
                     CA_User_Token.findOneAndUpdate({ fb_id: req.body.id }, newToken, { upsert: true, new:true })
                     .exec(function(err, token) {
@@ -72,6 +72,7 @@ exports.fblogin = function(req, res) {
                             user_id: user._id,
                             token: TokenHelper.generateUserToken(req.body.id, req.body.email),
                             expirationTime: moment().day(30),
+                            updated_date: new Date(),
                         };
                         CA_User_Token.findOneAndUpdate({ fb_id: req.body.id }, newToken, { upsert: true, new:true })
                         .exec(function(err, token) {
@@ -87,6 +88,7 @@ exports.fblogin = function(req, res) {
                         user_id: user._id,
                         token: TokenHelper.generateUserToken(req.body.id, req.body.email),
                         expirationTime: moment().day(30),
+                        updated_date: new Date(),
                     };
                     CA_User_Token.findOneAndUpdate({ fb_id: req.body.id }, newToken, { upsert: true, new:true })
                     .exec(function(err, token) {
@@ -141,7 +143,8 @@ exports.fbRegister = function(req, res) {
             branch: req.body.branch,
             address: req.body.address,
             why: req.body.why,
-            created: true
+            created: true,
+            updated_date: new Date()
         }
         if (data.name && data.contact && data.email && data.gender && data.college && data.state && data.branch && data.address && data.why) {
             CA_User.findOneAndUpdate({fb_id: req.locals.fb_id}, data, { new:true })
@@ -155,6 +158,7 @@ exports.fbRegister = function(req, res) {
                     user_id: user._id,
                     token: TokenHelper.generateUserToken(req.body.id, req.body.email),
                     expirationTime: moment().day(30),
+                    updated_date: new Date()
                 };
                 CA_User_Token.findOneAndUpdate({ fb_id: req.locals.fb_id }, newToken, { upsert: true, new:true })
                 .exec(function(err, token) {

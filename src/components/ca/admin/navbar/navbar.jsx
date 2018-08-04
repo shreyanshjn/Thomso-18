@@ -5,13 +5,13 @@ import './navbar.css';
 export default class Navbar extends React.Component{
 render(){
     return(
-        <div className="nav">
-      <ul>
-        <li><Link to="/ca/admin/" className="active" >Home</Link></li>
-        <li><Link to="/ca/admin/ideas" >Ideas</Link></li>
-        <li><Link to="/ca/admin/logout">Logout</Link></li>
-      </ul>
-    </div>
+      <div className="ca-admin-nav">
+        <ul>
+          <li><Link to="/ca/admin/" className="active" >Home</Link></li>
+          <li><Link to="/ca/admin/ideas" >Ideas</Link></li>
+          <li><Link to="/ca/admin/logout">Logout</Link></li>
+        </ul>
+      </div>
     )
-}
+  }
 }

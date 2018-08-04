@@ -6,7 +6,7 @@ import Loadable from "react-loadable";
 import Loader from "../common/loader";
 const Loading = ({ error }) => {
   if (error) {
-    return console.log(error);
+    return <div>Error loading component</div>;
   } else {
     return <Loader />;
   }
