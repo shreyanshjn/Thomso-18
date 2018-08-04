@@ -7,14 +7,25 @@ export default class Row extends React.Component {
         super();
         this.state = {
             blocked: false,
-            isDisabled: false
+            bonus: 0,
+            isDisabled: false,
+            bonusEditing: false,
+            bonusDisabled: false
         };
         this.Auth = new AuthService();
     }
 
     componentDidMount() {
-        if (this.props.data && this.props.data.blocked !== undefined) {
-            this.setState({blocked: this.props.data.blocked})
+        if (this.props.data) {
+            let blocked = false
+            let bonus = 0
+            if (this.props.data.blocked !== undefined) {
+                blocked = this.props.data.blocked
+            }
+            if (this.props.data.bonus !== undefined) {
+                bonus = this.props.data.bonus
+            }
+            this.setState({blocked, bonus})
         }
     }
 
@@ -36,6 +47,56 @@ export default class Row extends React.Component {
         }
     }
 
+    onChange = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;
+        this.setState({[name]: value});
+    }
+
+    toggleEdit = () => {
+        if (!this.state.bonusDisabled) {
+            if (this.state.bonusEditing) {
+                if (this.props.data) {
+                    let bonus = 0
+                    if (this.props.data.bonus !== undefined) {
+                        bonus = this.props.data.bonus
+                    }
+                    this.setState({bonusEditing: false, bonus})
+                } else {
+                    this.setState({bonusEditing: false})
+                }
+            } else {
+                this.setState({bonusEditing: true})
+            }
+        }
+    }
+
+    updateBonus = () => {
+        if (this.props.data && this.props.data._id && !this.state.bonusDisabled && this.state.bonusEditing) {
+            if (parseInt(this.state.bonus) !== undefined) {
+                this.setState({bonusDisabled: true})
+                const authtoken = this.Auth.getToken();
+                const data = {
+                    bonus: this.state.bonus,
+                    id: this.props.data._id
+                }
+                console.log(authtoken)
+                FetchApi('PUT', `/api/ca/admin/bonus`, data , authtoken)
+                    .then(r => {
+                        if (r && r.data && r.data.success && r.data.body && r.data.body.bonus !== undefined) {
+                            this.setState({bonusEditing: false, bonusDisabled: false, bonus: r.data.body.bonus})
+                        } else {
+                            this.setState({bonusDisabled: false})
+                        }
+                    })
+                    .catch(e => {
+                        this.setState({bonusDisabled: false})
+                    });
+            }
+        }
+        
+    }
+
     render(){
         return (
             <React.Fragment>
@@ -47,9 +108,23 @@ export default class Row extends React.Component {
                         <td style={{textAlign: 'center'}}>{this.props.data.likes ? this.props.data.likes : 0}</td>
                         <td style={{textAlign: 'center'}}>{this.props.data.shares ? this.props.data.shares : 0}</td>
                         <td style={{textAlign: 'center'}}>{this.props.data.score ? this.props.data.score : 0}</td>
+                        <td style={{textAlign: 'center'}}>{this.props.data.referrals ? this.props.data.referrals : 0}</td>
                         <td style={{textAlign: 'center'}}>{(this.props.data.ideas && this.props.data.ideas.length) ? this.props.data.ideas.length : 'None'}</td>
-                        <td style={{textAlign: 'center'}}>{this.props.data.bonus ? this.props.data.bonus : 0}</td>
-                        <td style={{textAlign: 'center'}}>Update Bonus</td>
+                        <td style={{textAlign: 'center'}}>
+                            <input 
+                                type="number" 
+                                name="bonus" 
+                                autoComplete="off" 
+                                value={this.state.bonus} 
+                                onChange={this.onChange}
+                                disabled={!this.state.bonusEditing}
+                            />
+                            <button disabled={this.setState.bonusDisabled} onClick={ () => this.toggleEdit() }>{this.state.bonusEditing ? 'Cancel': 'Edit'}</button>
+                            {this.state.bonusEditing ?
+                                <button disabled={this.setState.bonusDisabled} onClick={ () => this.updateBonus() }>Update</button>
+                                : null
+                            }
+                        </td>
                         <td style={{textAlign: 'center'}}>
                             <button onClick={this.switchBlock} disabled={this.state.isDisabled}>
                                 {this.state.blocked ? 'Unblock' : 'Block' }

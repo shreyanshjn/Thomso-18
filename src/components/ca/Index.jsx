@@ -89,7 +89,6 @@ export default class CAIndex extends React.Component {
   }
 
   handleUpdate = isAuthenticated => {
-    console.log(isAuthenticated, "isAuthenticated");
     this.setState({ isAuthenticated });
   };
 

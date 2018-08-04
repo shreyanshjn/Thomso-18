@@ -27,4 +27,6 @@ router.delete('/idea/:id', adminControls.deleteIdea);
 
 router.put('/block/:id', adminControls.blockUser);
 
+router.put('/bonus', adminControls.putBonus);
+
 module.exports = router;

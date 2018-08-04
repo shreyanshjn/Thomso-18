@@ -64,7 +64,7 @@ export default class LeaderboardIndex extends React.Component {
 
                             {this.props.userData ?
                             <tr className="ca-leader-rank">
-                                <th>{this.state.rank}</th>
+                                <th>{this.props.userData.blocked ? 'Blocked' : this.state.rank}</th>
                                 <th>{this.props.userData.name ? this.props.userData.name : null}</th> 
                                 <th className="ca-leader-downarrows" onClick={() => this.setState({isExpanded: !this.state.isExpanded})}>{this.props.userData.college ? this.props.userData.college : null}</th>
                                 <th className="ca-leader-mobile">{this.props.userData.likes ? this.props.userData.likes : 0}</th>

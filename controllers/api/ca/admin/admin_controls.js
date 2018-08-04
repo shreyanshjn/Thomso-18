@@ -12,7 +12,7 @@ var Ideas = require('../../../../models/ca/CA_Idea');
 /* GET ALL Users */
 exports.getParticipant = function(req, res) {
   Users.find({created:true})
-  .select('ca_id name gender image email branch contact college state address why link blocked')
+  .select('ca_id name gender image email contact branch college state address why link blocked')
   .exec(function (err, allUsers) {
     if (err) return res.status(400).send({success:false, msg:'Unable to GET Participants', error:err});
     res.json(allUsers);
@@ -22,7 +22,7 @@ exports.getParticipant = function(req, res) {
 /* GET ALL Users */
 exports.getScoreList = function(req, res) {
   Users.find({created:true})
-  .select('ca_id name gender likes shares score ideas bonus blocked')
+  .select('ca_id name gender likes shares score ideas bonus referrals blocked')
   .exec(function (err, allUsers) {
     if (err) return res.status(400).send({success:false, msg:'Unable to GET Score', error:err});
     res.json(allUsers);
@@ -96,6 +96,25 @@ exports.blockUser = function(req, res) {
         });
     } else {
         return res.status(400).send({success:false, msg:'No User ID Specified'});
+    }
+};
+
+/* Update Bonus */
+exports.putBonus = function(req, res) {
+    if (req.body.id && req.body.bonus !== undefined) {
+        var updateData = {
+            bonus: req.body.bonus
+        }
+        Users.findOneAndUpdate({ _id:req.body.id }, updateData, { new:true })
+        .select('bonus')
+        .exec(function(err, bonus) {
+            if(err){
+                return res.status(400).send({success:false, msg:'Cannot Update bonus', error:err});
+            }
+            return res.json({success:true, msg:'Successfully Updated', body: bonus});
+        });
+    } else {
+        return res.status(400).send({success:false, msg:'Invalid Params'});
     }
 };
 
