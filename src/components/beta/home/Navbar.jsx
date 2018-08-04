@@ -57,31 +57,31 @@ class Navbar extends Component {
                     CA PORTAL
                     </Link>
                 </li>
-                {/*     <li>
-              <Link to="" className={(this.state.activeState === "linkZonals") ? "linkZonals" : null}
+                 {/*<li>
+                      <Link to="" className={(this.state.activeState === "linkZonals") ? "linkZonals" : null}
                     onClick={() => {
                                     this.setActive("linkZonals");
                     }}>
                     ZONALS
                 </Link>
-                </li>
+                </li> */}
                 <li className="dropdown">
-                    <Link to="" className={(this.state.activeState === "linkEvents") ? "linkEvents" : null}
+                    <Link to="" className={(this.state.activeState === "quizardy") ? "linkEvents" : null}
                     onClick={() => {
-                                    this.setActive("linkEvents");
+                                    this.setActive("quizardy");
                     }}>EVENTS</Link>
                   <div className="beta-navbar-dropdown-content">
-                    <Link to="" className={(this.state.activeState === "linkEventson") ? "linkEventson" : null}
+                      <Link to="../quizardy" className={(this.state.activeState === "quizardy") ? "linkEventson" : null}
                     onClick={() => {
-                                    this.setActive("linkEventson");
-                    }}>ONLINE EVENTS</Link>
-                    <Link to="" className={(this.state.activeState === "linkEventsoff") ? "linkEventsoff" : null}
+                                    this.setActive("quizardy");
+                    }}>QUIZARDY</Link>
+            {/*  <Link to="" className={(this.state.activeState === "linkEventsoff") ? "linkEventsoff" : null}
                     onClick={() => {
                                     this.setActive("linkEventsoff");
-                    }}>OFFLINE EVENTS</Link>
+                    }}>OFFLINE EVENTS</Link>*/}
                   </div>
                 </li>
-                <li>
+                {/*    <li>
                   <Link to="" className={(this.state.activeState === "linkTeam") ? "linkTeam" : null}
                     onClick={() => {
                                     this.setActive("linkTeam");
