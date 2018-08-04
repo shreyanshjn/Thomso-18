@@ -104,6 +104,7 @@ export default class CAIndex extends React.Component {
   render() {
     return (
       <React.Fragment >
+        <Route exact path="/ca/loader" component={Loader} />
         <Route path="/ca/admin" component={AdminIndex} />
         {this.state.isAuthenticated ? (
           <div>
@@ -116,6 +117,7 @@ export default class CAIndex extends React.Component {
             <Route exact path="/ca/contact" render={props => (<ContactIndex {...props} userData={this.state.userData} />)} />
             <Route exact path="/ca/ideas" component={IdeasIndex} />
             <Route exact path="/ca/" component={HomeIndex} />
+            
           </div>
         ) : (
             <div>
