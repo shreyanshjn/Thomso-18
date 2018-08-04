@@ -140,7 +140,6 @@ exports.getLeaderboard = function (req, res) {
         .sort({ 'score': -1 })
         .limit(10)
         .exec(function (err, allUsers) {
-            console.log(allUsers);
             if (err) {
                 return res.status(400).send({ success: false, msg: 'Cannot GET Leaders', error: err });
             }
