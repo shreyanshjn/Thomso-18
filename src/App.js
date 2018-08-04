@@ -3,7 +3,7 @@ import "./App.css";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Loadable from 'react-loadable';
 
-import Loader from "./components/common/loader";
+import Loader from "./components/common/Loader";
 // Beta route not being used currently
 // const BetaIndex = Loadable({
 //   loader: () => import('./components/beta/Index'),
@@ -44,12 +44,12 @@ const VerifyCerti = Loadable({
 });
 
 const Policy = Loadable({
-  loader: () => import("./components/common/policy"),
+  loader: () => import("./components/common/Policy"),
   loading: () =><Loader />
 })
 
 const Terms = Loadable({
-  loader:() =>import("./components/common/thomsoterms"),
+  loader:() =>import("./components/common/Terms"),
   loading:() => <Loader />
 })
 // const ZonalsIndex = Loadable({

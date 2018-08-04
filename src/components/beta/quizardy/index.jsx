@@ -7,64 +7,61 @@ import Footer from './Footer';
 import Navbar from '../home/Navbar';
 import './Index.css';
 export default class QuizardyIndex extends React.Component{
-    constructor()
-    {
+    constructor() {
         super();
         this.state={
             isNavbar:true
 
         }
     }
-  render(){
-    let options = {
-        sectionClassName: 'section',
-        anchors: ['home', 'aboutUs', 'footfall', 'celebrity', 'contactUs'],
-        scrollBar: false,
-        navigation: false,
-        verticalAlign: false,
-        sectionPaddingTop: '0px',
-        slidesNavPosition: 'bottom',
-        arrowNavigation: true
-    };
-    return(
-    <div>
-
-
-        <div className="quizardy-mobile">
-            <Navbar />
-        </div>
-          <SectionsContainer {...options}>
-              <Section>
-                  <div className="quizardy-parent">
-                  <div className="quizardy-child">
-                              <div className="body">
-                                      <div className="arrowmove">
-                                          <a href="#aboutUs" address="true">
-                                              <img src={arrow} className="quizardy-opening-downarrow" alt=
-                                                  "a" />
-                                          </a>
-                                      </div>
-                                      <a href="https://dare2compete.com/o/quizardry-thomso-iit-roorkee-indian-institute-of-technology-iit-roorkee-64347" target="_blank"><button className="quizardy-button quizardy-opening-button">REGISTER</button></a>
-                              </div>
-                  </div>
+    componentWillMount() {
+        window.location.hash = "#home";
+    }
+    render(){
+        let options = {
+            sectionClassName: 'section',
+            anchors: ['home', 'aboutUs', 'footfall', 'celebrity', 'contactUs'],
+            scrollBar: false,
+            navigation: false,
+            verticalAlign: false,
+            sectionPaddingTop: '0px',
+            slidesNavPosition: 'bottom',
+            arrowNavigation: true
+        };
+        return(
+            <div>
+                <div className="quizardy-mobile">
+                    <Navbar />
                 </div>
-              </Section>
+                <SectionsContainer {...options}>
+                    <Section>
+                        <div className="quizardy-parent">
+                            <div className="quizardy-child">
+                                <div className="body">
+                                    <div className="arrowmove">
+                                        <a href="#aboutUs" address="true">
+                                            <img src={arrow} className="quizardy-opening-downarrow" alt="a" />
+                                        </a>
+                                    </div>
+                                    <a href="https://dare2compete.com/o/quizardry-thomso-iit-roorkee-indian-institute-of-technology-iit-roorkee-64347" target="_blank" rel="noopener noreferrer"><button className="quizardy-button quizardy-opening-button">REGISTER</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </Section>
 
-              <Section>
-                  <div>
-                  <div className="quizardy-desktop">
-                      <Navbar /> 
-                  </div>
-                <div className="quizardy-parent-body">
-                  <Instructions />
-                  <Footer />
-              </div>
-          </div>
-              </Section>
-          </SectionsContainer>
-
-
-    </div>
-  );
-  }
+                    <Section>
+                        <div>
+                        <div className='quizardy-desktop'>
+                            <Navbar /> 
+                        </div>
+                        <div className="quizardy-parent-body">
+                            <Instructions />
+                            <Footer />
+                        </div>
+                        </div>
+                    </Section>
+                </SectionsContainer>
+            </div>
+        );
+    }
 }

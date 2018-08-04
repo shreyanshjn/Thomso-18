@@ -6,7 +6,7 @@ export default class Row extends React.Component {
                 {this.props.data ? 
                     <tr style={this.props.data.blocked ? {color: 'red'} : {color: 'black'}}>
                         <td style={{textAlign: 'center'}}>
-                            <a href={this.props.data.link ? this.props.data.link : '#'} target="_blank">
+                            <a href={this.props.data.link ? this.props.data.link : '#'} target="_blank" rel="noopener noreferrer">
                                 {this.props.data.ca_id ? this.props.data.ca_id : '--'}
                             </a>
                         </td>

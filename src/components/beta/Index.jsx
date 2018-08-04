@@ -3,7 +3,7 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import Loadable from "react-loadable";
-import Loader from "../common/loader";
+import Loader from "../common/Loader";
 const Loading = ({ error }) => {
   if (error) {
     return <div>Error loading component</div>;

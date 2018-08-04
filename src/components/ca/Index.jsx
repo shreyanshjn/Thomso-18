@@ -7,7 +7,7 @@ import AuthService from "../../handlers/ca/AuthService";
 import FetchApi from '../../utils/FetchAPI';
 
 // import LoginIndex from './login/Index';
-import Loader from "../common/loader";
+import Loader from "../common/Loader";
 
 const Loading = ({ error }) => {
   if (error) {
@@ -114,6 +114,7 @@ export default class CAIndex extends React.Component {
             <Route exact path="/ca/contact" render={props => (<ContactIndex {...props} userData={this.state.userData} />)} />
             <Route exact path="/ca/ideas" component={IdeasIndex} />
             <Route exact path="/ca/" component={HomeIndex} />
+            
           </div>
         ) : (
             <div>
