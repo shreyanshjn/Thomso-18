@@ -10,7 +10,7 @@ export default class IdeasIndex extends React.Component {
         this.state = {
             ideas: [],
             message: '',
-            showDeleted: false
+            showDeleted: true
         };
         this.Auth = new AuthService();
     }
@@ -19,13 +19,11 @@ export default class IdeasIndex extends React.Component {
         const authtoken = this.Auth.getToken();
         FetchApi('GET','/api/ca/admin/ideas', null, authtoken)
             .then((result) => {
-                console.log(result, 'Ideas List');
                 if (result && result.data) {
                     this.setState({ ideas: result.data });
                 }
             })
             .catch(error => {
-                console.log(error)
                 if(error.response && error.response.status === 401) {
                     this.setState({ message: 'Token Expired' });
                     this.props.history.push('/ca/admin/logout');

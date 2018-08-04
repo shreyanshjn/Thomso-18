@@ -1,14 +1,28 @@
-import React from 'react';
-import DelhiZone from './delhi/DelhiZone';
-import './src/css/Index.css';
-export default class ZonalsIndex extends React.Component{
-    render(){
-        return (
-            <div className="zonals-indexmain">
-                <DelhiZone />
-                <div>first layer</div>
-            </div>
-        )
-    }
+import React from "react";
+import { Route } from "react-router-dom";
+import Loadable from "react-loadable";
+import Loader from "../common/loader";
+const Loading = ({ error }) => {
+  if (error) {
+    return <div>Error loading component</div>;
+  } else {
+    return <Loader />;
+  }
+};
+
+const AdminIndex = Loadable({
+  loader: () => import("./admin/Index"),
+  loading: Loading
+});
+
+export default class ZonalsIndex extends React.Component {
+  render() {
+    return (
+      <React.Fragment>
+        {console.log('hello')}
+        <Route path="/zonals/admin" component={AdminIndex} />
+      </React.Fragment>
+    );
+  }
 }
 

@@ -11,8 +11,7 @@ import Loader from "../common/loader";
 
 const Loading = ({ error }) => {
   if (error) {
-    console.log(error);
-    return <h3>Error loading component</h3>;
+    return <div>Error loading component</div>;
   } else {
     return <Loader />;
   }
@@ -90,7 +89,6 @@ export default class CAIndex extends React.Component {
   }
 
   handleUpdate = isAuthenticated => {
-    console.log(isAuthenticated, "isAuthenticated");
     this.setState({ isAuthenticated });
   };
 

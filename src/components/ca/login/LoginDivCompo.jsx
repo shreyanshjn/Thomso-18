@@ -9,7 +9,7 @@ export default class LoginDivCompo extends React.Component{
 
       <div className="login-diva">
 
-      <div className="Login-divb">
+      <div className="login-divb">
         <img src={this.props.image} alt="logindiv"/>
       </div>
       <div className="login-divc">

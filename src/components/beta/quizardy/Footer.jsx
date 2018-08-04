@@ -1,10 +1,10 @@
 import React from 'react';
 
 import './Footer.css';
-import fblogo from '../home/src/img/fbicon-01.png';
-import inlogo from '../home/src/img/ig icon-01.png';
-import ytlogo from '../home/src/img/yt icon-01.png';
-import iglogo from '../home/src/img/in icon-01.png';
+import fblogo from '../home/src/img/fbicon.png';
+import inlogo from '../home/src/img/igicon.png';
+import ytlogo from '../home/src/img/yticon.png';
+import iglogo from '../home/src/img/inicon.png';
 
 
 export default class Footer extends React.Component{

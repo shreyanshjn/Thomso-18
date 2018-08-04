@@ -1,7 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600");
-
 .cards{
-	background-image: url("../../beta/home/src/img/dashboard\ bg-01.jpg");
+	background-image: url("../../beta/home/src/img/dashboard.jpg");
 	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -14,7 +12,7 @@
 }
 @media screen and (max-width:768px){
 	.cards{
-		width: calc(100% - 80px);
+		width: calc(100% - 81px);
 	} 
 }
 .maindiv
@@ -89,7 +87,7 @@ height:100%;
   }
 .share-toggle:before {
 
-    background-image: url("../img/share-01.png");
+    background-image: url("../img/shareicon.png");
   	color: #3498db;
   }
 .share-toggle.share-expanded:before {
@@ -161,42 +159,3 @@ height:100%;
 .share-toggle:hover{
 	cursor: pointer;
 }
-
-/*
-*  Basic Reset
-*/
-
-*,
-*:after,
-*:before {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
-/**
- * Basics Styles
- */
-html {
-	font-size: 62.5%;
-}
-body {
-
-	font-family: Montserrat;
-
-	font-size: 1.6em;
-	line-height: 1.6;
-	color: #000000;
-}
-
-a {
-	text-decoration: none;
-	color: #3498db;
-}
-a:hover {
-		color: #2980b9;
-	}
-
-/**
- * Helpers
- */

@@ -1,6 +1,6 @@
 import React , { Component } from 'react';
 import { SectionsContainer, Section } from 'react-fullpage';
-import logo from './src/img/thomso main-01.png';
+import logo from './src/img/thomsomain.png';
 import arrow from './src/img/arrow.svg';
 import './src/css/Main.css';
 import Footer from './Footer';

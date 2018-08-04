@@ -18,6 +18,7 @@ router.post('/auth/login', adminAuth.login);
 router.use('/', CAAdminTokenMiddleware.verify);
 
 router.get('/participants', adminControls.getParticipant);
+router.get('/score', adminControls.getScoreList);
 router.get('/exportToCSV', adminControls.exportToCSV);
 
 router.get('/ideas', adminControls.getIdeas);
@@ -25,5 +26,7 @@ router.put('/idea/:id', adminControls.putIdea);
 router.delete('/idea/:id', adminControls.deleteIdea);
 
 router.put('/block/:id', adminControls.blockUser);
+
+router.put('/bonus', adminControls.putBonus);
 
 module.exports = router;

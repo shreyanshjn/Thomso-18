@@ -16,9 +16,9 @@ export default class Form extends React.Component {
             isIncrease: false,
             isVisible: false
         }
+        this.baseState = this.state
         this.Auth = new AuthService()
     }
-
     onChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;
@@ -38,6 +38,7 @@ export default class Form extends React.Component {
                         if (r.data.success && r.data.body) {
                             this.props.addIdea(r.data.body);
                             this.setState({ isDisabled: false })
+                            this.setState(this.baseState)
                         } else {
                             this.setState({ isVisible: true, errors: 'Cannot add Idea' })
                             timeout = setTimeout(() => this.setState({ isVisible: false, isDisabled: false }), 3000)
@@ -71,13 +72,13 @@ export default class Form extends React.Component {
     render() {
         const { title, body, errors, isVisible } = this.state;
         return (
-            <form className="form-idea" onSubmit={this.onSubmit} noValidate>
+            <form className="ca-idea-form" onSubmit={this.onSubmit} noValidate>
                 {isVisible ? errors : null}
-                <div className="heading">
+                <div className="ca-idea-heading" >
                     <h2>Share your ideas</h2>
-                </div>
-                <div className="ideasubject">
-                    <span className="dot ideasub"></span>
+                </div >
+                <div className="ca-idea-subject">
+                    <span className="ca-idea-dot ca-idea-subject-child"></span>
                     <input
                         id="inputSubject"
                         type="text"
@@ -91,12 +92,12 @@ export default class Form extends React.Component {
                         required
                     />
                 </div>
-                <div className="details_idea">
+                <div className="ca-idea-details">
                     <textarea
                         id="inputIdea"
                         placeholder="More details about your idea"
                         name="body"
-                        rows="1"
+                        rows="2"
                         value={body}
                         autoCorrect="off"
                         autoComplete="off"
@@ -106,9 +107,9 @@ export default class Form extends React.Component {
                         required
                     />
                 </div>
-                <div className="submit">
-                    <button type="submit" disabled={this.state.isDisabled} >Submit</button>
+                <div className="ca-idea-submit">
+                    <button type="ca-idea-submit" disabled={this.state.isDisabled} >Submit</button>
                 </div>
-            </form>)
+            </form >)
     }
 }

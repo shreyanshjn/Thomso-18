@@ -22,12 +22,10 @@ export default class HomeIndex extends React.Component {
         let feedObject = {
             method: 'share',
         };
-        if (postId) {
+        if (postId && window.FB) {
             feedObject['href'] = `https://www.facebook.com/thomsoiitroorkee/posts/${postId}`;
             feedObject['link'] = `https://www.facebook.com/thomsoiitroorkee/posts/${postId}`;
-            console.log(feedObject)
             window.FB.ui(feedObject, r => {
-                console.log(r)
                 if (r && !r.error_code) {
                     this.setState({ isVisible: true, message: 'Post shared successfully' });
                     setTimeout(() => this.setState({ isVisible: false }), 3000);
@@ -48,11 +46,13 @@ export default class HomeIndex extends React.Component {
     }
 
     componentDidMount() {
-        window.FB.init({
-            appId: process.env.REACT_APP_FB_ID,
-            status: true,
-            xfbml: true
-        });
+        if (window.FB) {
+            window.FB.init({
+                appId: process.env.REACT_APP_FB_ID,
+                status: true,
+                xfbml: true
+            });
+        }
 
         const authtoken = this.Auth.getToken();
         FetchApi('GET', '/api/ca/posts', null, authtoken)

@@ -2,7 +2,7 @@
 
 
 .sponsors-main{
-  background-image: url("../home/src/img/background.jpg");
+  background-image: url("../home/src/img/background.jpeg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -84,17 +84,15 @@
   padding-left: 1%;
 }
 .sponsors-navdiv{
-  background-image: url("../home/src/img/background.jpg");
-
+  background-image: url("../home/src/img/background.jpeg");
   background-repeat: no-repeat;
-background-position: center;
-background-size: cover;
-background-attachment: fixed;
-height: 100px;
-margin: auto;
-
-position: fixed;
-width: 100%;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100px;
+  margin: auto;
+  position: fixed;
+  width: 100%;
 }
 .sponsors-imgdiv h4{
   font-family:  Montserrat;
