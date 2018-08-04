@@ -50,13 +50,21 @@ exports.postIdea = function (req, res) {
             title: req.body.title,
             body: req.body.body
         }
-        console.log('Creating');
         var newIdea = new Ideas(newData);
         newIdea.save(function (err, idea) {
             if (err) {
                 return res.status(400).send({ success: false, msg: 'Unable to Add Idea' });
+            } else if (idea._id) {
+                Users.update({ _id: req.locals._id }, { $addToSet: {ideas: idea._id} })
+                .exec(function (err) {
+                    if (err) {
+                        return res.status(400).send({ success: false, msg: 'Cannot Append Idea', error: err });
+                    }
+                    return res.json({ success: true, msg: 'Idea Successfully Posted', body: idea });
+                })
+            } else {
+                return res.status(400).send({ success: false, msg: 'Idea ID Not Found', body: idea });
             }
-            return res.json({ success: true, msg: 'Idea Successfully Posted', body: idea });
         });
     } else {
         return res.status(400).send({ success: false, msg: 'Invalid Params' });

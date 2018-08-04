@@ -11,7 +11,7 @@ var ZonalsAdminTokenMiddleware = require("../../../middlewares/zonals/admin/Toke
 // Routes
 
 // -> /zonals/admin/auth
-router.post('/auth/register', adminAuth.register);
+// router.post('/auth/register', adminAuth.register);
 router.post('/auth/login', adminAuth.login);
 
 // -> /zonals/admin

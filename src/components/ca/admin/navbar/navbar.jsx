@@ -7,8 +7,9 @@ render(){
     return(
       <div className="ca-admin-nav">
         <ul>
-          <li><Link to="/ca/admin/" className="active" >Home</Link></li>
-          <li><Link to="/ca/admin/ideas" >Ideas</Link></li>
+          <li><Link to="/ca/admin/" className="active">Home</Link></li>
+          <li><Link to="/ca/admin/ideas">Ideas</Link></li>
+          <li><Link to="/ca/admin/controls">Controls</Link></li>
           <li><Link to="/ca/admin/logout">Logout</Link></li>
         </ul>
       </div>

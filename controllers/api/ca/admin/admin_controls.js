@@ -12,9 +12,19 @@ var Ideas = require('../../../../models/ca/CA_Idea');
 /* GET ALL Users */
 exports.getParticipant = function(req, res) {
   Users.find({created:true})
-  .select('address name fb_id college contact branch ca_id state image gender email why blocked')
+  .select('ca_id name gender image email branch contact college state address why link blocked')
   .exec(function (err, allUsers) {
     if (err) return res.status(400).send({success:false, msg:'Unable to GET Participants', error:err});
+    res.json(allUsers);
+  });
+};
+
+/* GET ALL Users */
+exports.getScoreList = function(req, res) {
+  Users.find({created:true})
+  .select('ca_id name gender likes shares score ideas bonus blocked')
+  .exec(function (err, allUsers) {
+    if (err) return res.status(400).send({success:false, msg:'Unable to GET Score', error:err});
     res.json(allUsers);
   });
 };
