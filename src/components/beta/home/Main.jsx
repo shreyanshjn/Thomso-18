@@ -49,14 +49,6 @@ export default class Main extends Component {
                             "width": 0,
                             "color": "#000000"
                             },
-                            "polygon": {
-                            "nb_sides": 5
-                            },
-                            "image": {
-                            "src": "svg/github.svg",
-                            "width": 1,
-                            "height": 1
-                            }
                         },
                         "opacity": {
                             "value": 0.5,

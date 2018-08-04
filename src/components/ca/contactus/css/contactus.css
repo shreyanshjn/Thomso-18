@@ -7,7 +7,7 @@
     display: flex;
     flex-direction: column;
 }
-.contact-parent{
+.ca-contact-parent{
     width: 76%;
     min-height: 100vh;
     margin-left: auto;
@@ -19,26 +19,30 @@
     background-size: cover;
     color: white;
 }
-.incontact{
+.ca-contact-child{
     display: flex;
     width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
-.incontact_one{
+.ca-contact-child-first{
     width:30%;
     padding: 10px;
 }
-.incontact_two{
+.ca-contact-child-second{
     width:30%;
     padding: 10px;
 }
-.incontact_three{
+.ca-contact-child-third{
     width: 30%;
     padding: 10px;
 }
-.image_one{
+.ca-contact-child-fourth{
+    width: 30%;
+    padding: 10px;
+}
+.ca-contact-image_one{
     background-image: url("../../../beta//home/src/img/harshit.jpg");
     box-shadow: 2px 2px 7px 2px rgba(55,55,55,.5);
     background-position: center center;
@@ -53,28 +57,29 @@
     opacity: 0.8;
     transition: all 0.5s;
 }
-.image_two{
+.ca-contact-image_two{
     background-image: url("../../../beta//home/src/img/niranjan.jpg");
     box-shadow: 2px 2px 7px 2px rgba(55,55,55,.5);
     height:300px;
     width: auto;
     display: flex;
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     border-radius: 2px;
     opacity: 0.8;
     transition: all 0.5s;
 }
-.image_one:hover {
+.ca-contact-image_one:hover {
     opacity: 1;
 }
-.image_two:hover {
+.ca-contact-image_two:hover {
     opacity: 1;
 }
-.image_three:hover {
+.ca-contact-image_three:hover {
     opacity: 1;
 }
-.image_three{
+.ca-contact-image_three{
     background-image: url("../../../beta//home/src/img/nikhilsir.jpg");
     box-shadow: 2px 2px 7px 2px rgba(55,55,55,.5);
     height:300px;
@@ -87,7 +92,7 @@
     opacity: 0.8;
     transition: all 0.5s;
 }
-.image_four{
+.ca-contact-image_four{
     background-image: url("../../../beta//home/src/img/prashantsir.jpg");
     box-shadow: 2px 2px 7px 2px rgba(55,55,55,.5);
     background-position: center center;
@@ -100,100 +105,125 @@
     opacity: 0.8;
     transition: all 0.5s;
 }
-.image_four:hover {
+.ca-contact-image_four:hover {
     opacity: 1;
 }
-.details_one{
+.ca-contact-details{
     width: auto;
     box-shadow: 2px 2px 7px 2px rgba(55,55,55,1);
     display: flex;
     flex-direction: column;
 }
-.name{
+.ca-contact-details-name{
     padding:10px 0 0 20px;
 }
-.name h2{
+.ca-contact-details-name h2{
     font-size: 16px;
     font-weight: 600;
 }
-.post{
+.ca-contact-details-post{
     margin-top: 10px;
     padding-left: 20px;
 }
-.post h2{
+.ca-contact-details-post h2{
     font-size: 12px;
     font-weight: 600;
 }
-.gmail{
+.ca-contact-details-gmail{
     margin-top: 10px;
     padding-left: 20px;
 }
-.gmail img{
+.ca-contact-details-gmail img{
     height: 18px;
     width: auto;
     padding: 5px 5px 0 5px;
 }
-.gmail span{
+.ca-contact-details-gmail span{
     font-size: 14px;
     font-family: Montserrat;
     padding-left:10px; 
 }
-.call{
+.ca-contact-details-call{
     margin-top: 10px;
     padding-left: 20px;
+    padding-bottom: 20px;
 }
-.call img{
+.ca-contact-details-call img{
     height: 16px;
     width: auto;
     padding: 5px 5px 0 5px;
 }
-.call span{
+.ca-contact-details-call span{
     font-size: 14px;
     font-family: Montserrat;
     padding-left: 10px;
 }
 @media screen and (max-width:1096px){
-    .contact-parent{
+    .ca-contact-parent{
         display: flex;
         flex-direction: column;
     }
-    .incontact{
+    .ca-contact-child{
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .incontact_one{
+    .ca-contact-child-first{
         width:60%;
         padding: 10px;
     }
-    .incontact_two{
+    .ca-contact-child-second{
         width:60%;
         padding: 10px;
     }
-    .incontact_three{
+    .ca-contact-child-third{
+        width: 60%;
+        padding: 10px;
+    }
+    .ca-contact-child-fourth{
         width: 60%;
         padding: 10px;
     }
 }
-@media screen and (max-width:769px){
-    .contact-parent{
-        width: calc(100% - 80px);
+@media screen and (max-width:768px){
+    .ca-contact-parent{
+        width: calc(100% - 81px);
     }
-    .incontact_one{
+    .ca-contact-image_one{
+        background-position: 10% 10%;
+    }
+    .ca-contact-image_second{
+        background-position: 10% 10%;
+    }
+    .ca-contact-image_third{
+        background-position: 10% 10%;
+    }
+    .ca-contact-image_fourth{
+        background-position: 10% 10%;
+    }
+    .ca-contact-child-first{
         width:90%;
         padding: 10px;
+        margin-top: 50px;
     }
-    .incontact_two{
+    .ca-contact-child-second{
         width:90%;
         padding: 10px;
+        margin-top: 50px;
     }
-    .incontact_three{
+    .ca-contact-child-third{
         width: 90%;
         padding: 10px;
+        margin-top: 50px;
+    }
+    .ca-contact-child-fourth{
+        width: 90%;
+        padding: 10px;
+        margin-top: 50px;
     }
 }
 @media screen and (max-width:403px){
-    .gmail span{
+    .ca-contact-details-gmail span{
         font-size: 10px;
     }
 }

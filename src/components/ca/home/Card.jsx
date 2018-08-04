@@ -23,7 +23,7 @@ export default class Card extends React.Component {
       const d = new Date(created_time)
       this.setState({
         date: d.getDate(),
-        month: d.getMonth(),
+        month: d.getMonth() + 1,
         year: d.getFullYear(),
         hours: d.getHours(),
         minutes: d.getMinutes(),
@@ -53,7 +53,7 @@ export default class Card extends React.Component {
                 </div>
                 <div className="card__meta">
                   <div>
-                    <span className="posted">Posted on</span><span className="date">{date}-{month + 1}-{year}</span>
+                    <span className="posted">Posted on</span><span className="date">{date}-{month}-{year}</span>
                   </div>
                   <div>
                     <span className="time">Time</span><span className="hms">{hours}:{minutes}:{seconds}</span>

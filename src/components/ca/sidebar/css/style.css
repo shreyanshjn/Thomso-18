@@ -1,6 +1,6 @@
 .sidenav {
     height: 100%;
-    width: 24.13vw;
+    width: 20.13vw;
     position: fixed;
     z-index: 301;
     top: 0;
@@ -28,10 +28,6 @@
         font-size: 0;
         padding-left: 36px;
     }
-    .sidenav.collapseSide .sideNavItem > i{
-        visibility: visible;
-        font-size: 24px;
-    }
     .sidenav.collapseSide > .sidebar-user > .text{
         font-size: 14px;
     }
@@ -43,62 +39,63 @@
         color: #46698b;
         display: block;
         cursor: pointer;
+        margin-top: 10px;
     }
-    .sidenav > .thomso > .activeSideItem, .sidenav .sideNavItem:hover , .sidenav .sideNavItem:active, .sidenav .sideNavItem:focus{
+    .sidenav > .sidebar-contents > .activeSideItem, .sidenav .sideNavItem:hover , .sidenav .sideNavItem:active, .sidenav .sideNavItem:focus{
         background-color:#F1F2F1;
         text-decoration: none;
         text-transform: none;
     }
-    .sidenav > .thomso > .activeSideItem > .posts > .p-logo svg .postpath{
+    .sidenav > .sidebar-contents > .activeSideItem > .sidebar-posts > .sidebar-svg-logo svg .postpath{
         fill: red;
     }
-    .sidenav > .thomso > .activeSideItem > .leaderboard > .p-logo svg .leaderpath{
+    .sidenav > .sidebar-contents > .activeSideItem > .sidebar-leaderboard > .sidebar-svg-logo svg .leaderpath{
         fill: green;
     }
-    .sidenav > .thomso > .activeSideItem > .ideas > .p-logo svg .bulbpath{
+    .sidenav > .sidebar-contents > .activeSideItem > .sidebar-ideas > .sidebar-svg-logo svg .bulbpath{
         fill: yellow;
     }
-    .sidenav > .thomso > .activeSideItem > .certificate > .p-logo svg .certificatepath{
+    .sidenav > .sidebar-contents > .activeSideItem > .sidebar-certificate > .sidebar-svg-logo svg .certificatepath{
         fill:orange;
     }
-    .sidenav > .thomso > .activeSideItem > .guide > .p-logo svg .guidepath{
+    .sidenav > .sidebar-contents > .activeSideItem > .sidebar-guide > .sidebar-svg-logo svg .guidepath{
         fill: purple;
     }
-    .sidenav > .thomso > .activeSideItem > .ca-sidebar-contactus > .p-logo svg .contactpath{
+    .sidenav > .sidebar-contents > .activeSideItem > .sidebar-contactus > .sidebar-svg-logo svg .contactpath{
         fill: blue;
     }
-    .sidenav > .thomso > .activeSideItem > .ca-sidebar-logout > .p-logo svg .logoutpath{
+    .sidenav > .sidebar-contents > .activeSideItem > .sidebar-logout > .sidebar-svg-logo svg .logoutpath{
         fill: red;
     }
-    .p-logo svg{
+    .sidebar-svg-logo svg{
         padding: 0 0 0 5px;
     }
-    .sidenav .sideNavItem:hover .p-logo svg .bulbpath{
+    .sidenav .sideNavItem:hover .sidebar-svg-logo svg .bulbpath{
         fill: yellow;
     }
-    .sidenav .sideNavItem:hover .p-logo svg .leaderpath{
+    .sidenav .sideNavItem:hover .sidebar-svg-logo svg .leaderpath{
         fill:green;
     }
-    .sidenav .sideNavItem:hover .p-logo svg .guidepath{
+    .sidenav .sideNavItem:hover .sidebar-svg-logo svg .guidepath{
         fill:purple;
     }
-    .sidenav .sideNavItem:hover .p-logo svg .certificatepath{
+    .sidenav .sideNavItem:hover .sidebar-svg-logo svg .certificatepath{
         fill:orange;
     }
-    .sidenav .sideNavItem:hover .p-logo svg .contactpath{
+    .sidenav .sideNavItem:hover .sidebar-svg-logo svg .contactpath{
         fill:blue;
     }
-    .sidenav .sideNavItem:hover .p-logo svg .logoutpath{
+    .sidenav .sideNavItem:hover .sidebar-svg-logo svg .logoutpath{
         fill:red;
     }
-    .sidenav .sideNavItem:hover .p-logo svg .postpath{
+    .sidenav .sideNavItem:hover .sidebar-svg-logo svg .postpath{
         fill:red;
     }
-    .referral:hover .p-logo svg .referralpath{
+    .referral:hover .sidebar-svg-logo svg .referralpath{
         cursor: pointer;
         fill: red;
     }
-    .thomso{
+    .sidebar-contents{
         padding: 15px 0px;
     }
     .hand{
@@ -114,7 +111,7 @@
         text-align: center;
     }
 
-    .hand:hover .p-logo svg .handpath{
+    .hand:hover .sidebar-svg-logo svg .handpath{
         cursor: pointer;
         fill: yellow;
     }
@@ -131,26 +128,26 @@
         border-radius: 50%;
         padding: 0 5px 0 5px;
     }
-    .sidebar-user > .details{
+    .sidebar-user > .sidebar-user-details{
         display: flex;
         flex-direction: column;
         font-family: Montserrat;
         transition: all 0.2s;
     }
-    .sidebar-user > .details > .text {
+    .sidebar-user > .sidebar-user-details > .text {
         font-weight: bold;
         padding: 0 5px 0 5px;
         font-size: 16px;
         font-weight: 600;
         letter-spacing: 1px;
     }
-    .sidebar-user > .details > .cname{
+    .sidebar-user > .sidebar-user-details > .cname{
         padding: 0 5px 0 5px;
         font-size: 12px;
         font-weight: 600;
     }
     
-    .line{
+    .sidebar-line{
         height:1px;
         background-color:#BEBEBE;
         margin: 10px 0 10px 0;
@@ -159,23 +156,23 @@
         display: flex;
         flex-direction: row;
     }
-    .p-logo{
+    .sidebar-svg-logo{
         width: 15%;
     }
-    .p-logo img{
+    .sidebar-svg-logo img{
         height: 18px;
         width: auto;
         transition: all 0.5s;
         padding: 0 5px;
     }
-    .p-name{
+    .sidebar-navitem-name{
         width: 85%;
         font-size: 12px;
         letter-spacing: 2px;
         padding: 0 5px;
         font-weight: 600;
     }
-    .days{
+    .sidebar-days{
         width: 85%;
         font-size: 14px;
         letter-spacing: 2px;
@@ -183,26 +180,20 @@
         font-weight: 600;
         height: 100%;
     }
-    .inhand{
+    .sidebar-hand-child{
         width: 100%;
     }
-    .re{
-        margin-top: 20px;
-    }
-    .re .p-name{
-        letter-spacing: 2px;
-    }
-    .sidebar-user > .likeshare{
+    .sidebar-user > .sidebar-like-share-score{
         display: flex;
         flex-direction: column;
     }
-    .inls{
+    .sidebar-like-share-score-child{
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
         padding: 10px 0 10px 0;
     }
-    .inn_likes{
+    .sidebar-likes-child{
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
@@ -210,22 +201,22 @@
         font-weight: 600;
         letter-spacing: 2px;
     }
-    .plikes{
+    .sidebar-likes-number{
         font-size: 12px;
         font-weight: 600;
         letter-spacing: 2px;
         padding: 5px 0;
     }
-    .change{
+    .sidebar-likes-shares-score-data{
         padding-left: 8px;
     }
-    .n_score > .inn_likes > img{
+    .sidebar-score > .sidebar-likes-child > img{
         padding-right: 8px;
     }
-    .n_shares > .inn_likes > img{
+    .sidebar-shares > .sidebar-likes-child > img{
         padding-right: 8px;
     }
-    .inn_likes img{
+    .sidebar-likes-child img{
         height: 14px;
         width: auto;
         padding-top: 1px;
@@ -234,11 +225,11 @@
         font-size: 1vw;
         min-font-size: 12px;
     }
-    .update{
+    .sidebar-updatenews{
         font-size: 10px;
         color: rgb(117, 154, 230);
     }
-    .n-likes > .inn_likes div{
+    .sidebar-likes > .sidebar-likes-child div{
         padding: 0 5px;
     }
 }
@@ -254,10 +245,6 @@
         font-size: 0;
         padding-left: 36px;
     }
-    .sidenav.collapseSide .sideNavItem > i{
-        visibility: visible;
-        font-size: 24px;
-    }
     .sidenav.collapseSide > .sidebar-user > .text{
         font-size: 12px;
     }
@@ -269,77 +256,80 @@
         color: #46698b;
         display: block;
         cursor: pointer;
+        margin-top: 10px;
     }
-    .sidenav > .thomso > .activeSideItem, .sidenav .sideNavItem:hover , .sidenav .sideNavItem:active, .sidenav .sideNavItem:focus{
+    .sidenav > .sidebar-contents > .activeSideItem, .sidenav .sideNavItem:hover , .sidenav .sideNavItem:active, .sidenav .sideNavItem:focus{
         background-color:#F1F2F1;
         text-decoration: none;
         text-transform: none;
     }
-    .sidenav > .thomso > .activeSideItem > .posts > .p-logo svg .postpath{
+    .sidenav > .sidebar-contents > .activeSideItem > .sidebar-posts > .sidebar-svg-logo svg .postpath{
         fill: red;
     }
-    .sidenav > .thomso > .activeSideItem > .leaderboard > .p-logo svg .leaderpath{
+    .sidenav > .sidebar-contents > .activeSideItem > .sidebar-leaderboard > .sidebar-svg-logo svg .leaderpath{
         fill: green;
     }
-    .sidenav > .thomso > .activeSideItem > .ideas > .p-logo svg .bulbpath{
+    .sidenav > .sidebar-contents > .activeSideItem > .sidebar-ideas > .sidebar-svg-logo svg .bulbpath{
         fill: yellow;
     }
-    .sidenav > .thomso > .activeSideItem > .certificate > .p-logo svg .certificatepath{
+    .sidenav > .sidebar-contents > .activeSideItem > .sidebar-certificate > .sidebar-svg-logo svg .certificatepath{
         fill:orange;
     }
-    .sidenav > .thomso > .activeSideItem > .guide > .p-logo svg .guidepath{
+    .sidenav > .sidebar-contents > .activeSideItem > .sidebar-guide > .sidebar-svg-logo svg .guidepath{
         fill: purple;
     }
-    .sidenav > .thomso > .activeSideItem > .ca-sidebar-contactus > .p-logo svg .contactpath{
+    .sidenav > .sidebar-contents > .activeSideItem > .sidebar-contactus > .sidebar-svg-logo svg .contactpath{
         fill: blue;
     }
-    .sidenav > .thomso > .activeSideItem > .ca-sidebar-logout > .p-logo svg .logoutpath{
+    .sidenav > .sidebar-contents > .activeSideItem > .sidebar-logout > .sidebar-svg-logo svg .logoutpath{
         fill: red;
     }
-    .p-logo svg{
+    .sidebar-svg-logo svg{
         padding: 0 0 0 5px;
+        height: 16px;
+        width: auto;
     }
-    .sidenav .sideNavItem:hover .p-logo svg .bulbpath{
+    .sidenav .sideNavItem:hover .sidebar-svg-logo svg .bulbpath{
         fill: yellow;
     }
-    .sidenav .sideNavItem:hover .p-logo svg .leaderpath{
+    .sidenav .sideNavItem:hover .sidebar-svg-logo svg .leaderpath{
         fill:green;
     }
-    .sidenav .sideNavItem:hover .p-logo svg .guidepath{
+    .sidenav .sideNavItem:hover .sidebar-svg-logo svg .guidepath{
         fill:purple;
     }
-    .sidenav .sideNavItem:hover .p-logo svg .certificatepath{
+    .sidenav .sideNavItem:hover .sidebar-svg-logo svg .certificatepath{
         fill:orange;
     }
-    .sidenav .sideNavItem:hover .p-logo svg .contactpath{
+    .sidenav .sideNavItem:hover .sidebar-svg-logo svg .contactpath{
         fill:blue;
     }
-    .sidenav .sideNavItem:hover .p-logo svg .logoutpath{
+    .sidenav .sideNavItem:hover .sidebar-svg-logo svg .logoutpath{
         fill:red;
     }
-    .sidenav .sideNavItem:hover .p-logo svg .postpath{
+    .sidenav .sideNavItem:hover .sidebar-svg-logo svg .postpath{
         fill:red;
     }
-    .referral:hover .p-logo svg .referralpath{
+    .referral:hover .sidebar-svg-logo svg .referralpath{
         cursor: pointer;
         fill: red;
     }
-    .thomso{
-        padding: 10px 0px;
+    .sidebar-contents{
+        padding: 0px 0px;
     }
-    .hand{
+    .sidebar-hand{
         margin-top: 60px;
         cursor: pointer;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
     }
-    .hand div{
+    .sidebar-hand div{
         display: flex;
         flex-direction: row;
     }
 
-    .hand:hover .p-logo svg .handpath{
+    .sidebar-hand:hover .sidebar-svg-logo svg .handpath{
         cursor: pointer;
         fill: yellow;
     }
@@ -356,26 +346,33 @@
         border-radius: 50%;
         padding: 0 5px 0 5px;
     }
-    .sidebar-user > .details{
+    .sidebar-user > .sidebar-user-details{
         display: flex;
         flex-direction: column;
         font-family: Montserrat;
         transition: all 0.2s;
     }
-    .sidebar-user > .details > .text {
+    .sidebar-user > .sidebar-user-details > .text {
         font-weight: bold;
         padding: 0 5px 0 5px;
         font-size: 12px;
         font-weight: 600;
         letter-spacing: 1px;
     }
-    .sidebar-user > .details > .cname{
+    .sidebar-user > .sidebar-user-details > .cname{
         padding: 0 5px 0 5px;
         font-size: 10px;
         font-weight: 600;
     }
-    
-    .line{
+    .sidebar-hand .sidebar-svg-logo {
+        width: 15%;
+        display: flex;
+        justify-content: flex-end
+    }
+    .sidebar-hand .sidebar-svg-logo svg{
+        margin: 5px;
+    }
+    .sidebar-line{
         height:1px;
         background-color:#BEBEBE;
         margin: 10px 0 10px 0;
@@ -384,47 +381,34 @@
         display: flex;
         flex-direction: row;
     }
-    .p-logo{
-        width: 15%;
-    }
-    .p-logo img{
-        height: 18px;
-        width: auto;
-        transition: all 0.5s;
-        padding: 0 5px;
-    }
-    .p-name{
+    .sidebar-navitem-name{
         width: 85%;
-        font-size: 10px;
-        letter-spacing: 2px;
-        padding: 0 5px;
+        font-size: 12px;
+        letter-spacing: 1px;
+        padding: 0 15px;
     }
-    .days{
-        width: 85%;
+    .sidebar-hand-days{
+        width: fit-content;
         font-size: 14px;
         letter-spacing: 2px;
         padding: 5px;
         font-weight: 600;
         height: 100%;
     }
-    .inhand{
+    .sidebar-hand-child{
         width: 100%;
     }
-    .re{
-        margin-top: 20px;
-    }
-
-    .sidebar-user > .likeshare{
+    .sidebar-user > .sidebar-like-share-score{
         display: flex;
         flex-direction: column;
     }
-    .inls{
+    .sidebar-like-share-score-child{
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
         padding: 10px 0 10px 0;
     }
-    .inn_likes{
+    .sidebar-likes-child{
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
@@ -432,22 +416,22 @@
         font-weight: 600;
         letter-spacing: 2px;
     }
-    .plikes{
+    .sidebar-likes-number{
         font-size: 12px;
         font-weight: 600;
         letter-spacing: 2px;
         padding: 5px 0;
     }
-    .change{
+    .sidebar-likes-shares-score-data{
         padding-left: 8px;
     }
-    .n_score > .inn_likes > img{
+    .sidebar-score > .sidebar-likes-child > img{
         padding-right: 8px;
     }
-    .n_shares > .inn_likes > img{
+    .sidebar-shares > .sidebar-likes-child > img{
         padding-right: 8px;
     }
-    .inn_likes img{
+    .sidebar-likes-child img{
         height: 14px;
         width: auto;
         margin-top:3px; 
@@ -456,7 +440,6 @@
         font-size: 1vw;
         min-font-size: 12px;
     }
-
     .sidenav.collapseSide{
         width: 70px;
         min-width: 70px;
@@ -469,28 +452,25 @@
         visibility: visible;
         font-size: 18px;
     }
-    .update{
+    .sidebar-updatenews{
         font-size: 10px;
         color: #58595B;
     }
-    .n-likes > .inn_likes div{
+    .sidebar-likes > .sidebar-likes-child div{
         padding: 0 5px;
     }
 }
 
 @media screen and (max-width: 768px) {
     .sidenav{
-        width: 80px;
-        min-width: 80px;
-        padding: 20px 20px 20px 20px;
+        width: 60px;
+        min-width: 60px;
+        padding: 20px 10px 20px 10px;
     }
     .sidenav .sideNavItem {
         font-size: 0;
-        padding:5px 10px 5px 5px;
-    }
-    .sidenav .sideNavItem > i{
-        visibility: visible;
-        font-size: 16px;
+        margin-top: 10px;
+        padding:10px 10px 10px 5px;
     }
     .sidebar-user > .text{
         font-size: 0;
@@ -505,65 +485,81 @@
     .sidenav.collapseSide .sideNavItem {
         font-size: 0;
         padding-left: 10px;
+        margin-top: 10px;
     }
-    .sidenav.collapseSide .sideNavItem > i{
-        visibility: visible;
-        font-size: 14px;
+    .sidebar-line{
+        display: none;
     }
-    .p-logo Bulb{
-        height: 24px;
+    .sidebar-user > .image {
+        height: 40px;
+        width: auto;
+        border-radius: 50%;
+        padding: 0 5px 0 5px;
+    }
+    .sidebar-user > .sidebar-user-details{
+        display: none;
+    }
+    .sidebar-svg-logo{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .sidebar-svg-logo svg{
+        height: 18px;
         width: auto;
     }
-    .sidebar-user > .details{
+    .sidebar-navitem-name{
         display: none;
     }
-    .p-name{
-        display: none;
+    .sidebar-score{
+        margin-top: 5px;
     }
-    .inls{
+    .sidebar-shares{
+        margin-top: 5px;
+    }
+    .sidebar-like-share-score-child{
         display: flex;
         flex-direction: column;
+        margin-top: 15px;
     }
-    .hand{
+    .sidebar-hand{
         display: flex;
         flex-direction: column;
         margin-top: 25px;
         transition: all 0.2s;
         height: 100%;
     }
-    .line{
+    .sidebar-line{
         height:1px;
         background-color:#BEBEBE;
         border: 50%;
     }
-    .plikes{
+    .sidebar-likes-number{
         display: none;
         transition: all 0.2s;
     }
-    .n_score > .inn_likes > img{
+    .sidebar-score > .sidebar-likes-child > img{
         padding-right: 0px;
     }
-    .n_shares > .inn_likes > img{
+    .sidebar-shares > .sidebar-likes-child > img{
         padding-right: 0px;
     }
-    .change{
+    .sidebar-likes-shares-score-data{
         padding-left:0px; 
     }
-    .hand div{
+    .sidebar-hand div{
         display: flex;
         flex-direction: column;
     }
-    .hand .p-logo{
+    .sidebar-hand .sidebar-svg-logo{
         display: block;
         text-align: center;
         width: 100%;
     }
-    .days{
+    .sidebar-hand-days{
         display: block;
         text-align: center;
         font-size: 10px;
-    }
-    .re{
-        margin-top: 0px;
     }
 }

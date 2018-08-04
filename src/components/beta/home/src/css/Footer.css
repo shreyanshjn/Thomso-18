@@ -60,6 +60,9 @@
     border-radius:50%;
     transition: 0.5s;
 }
+.common-cursor{
+  cursor : default;
+}
 @media screen and (min-width: 768px)
 {
     .beta-footer-fbdiv:hover,.beta-footer-ytdiv:hover,.beta-footer-instadiv:hover,.beta-footer-linkediv:hover
@@ -83,6 +86,9 @@
     .beta-footer-linkediv:hover
     {
         background:#007bb5;
+    }
+    .common-cursor{
+      cursor : default;
     }
 }
 @media only screen and (max-width: 768px) {
@@ -165,6 +171,9 @@
     {
         font-size:0px;
     }
+    .common-cursor{
+      cursor : default;
+    }
 }
 @media (min-width: 1920px) and (max-width: 2560px)
 {
@@ -208,6 +217,9 @@
     .beta-footer-mainIcons
     {
        margin-top:6px;
+    }
+    .common-cursor{
+      cursor : default;
     }
 
 }

@@ -1,40 +1,43 @@
 import React from 'react';
+import { Link } from 'react-router-dom' ;
+
 import "./css/register.css";
 import img from "./img/logo.png";
 import AuthService from '../../../handlers/ca/AuthService';
 import FetchApi from '../../../utils/FetchAPI';
 import validateInput from '../../../utils/validation/loginValidation';
 
-const options = [
-    { value: 'Arunachal Pradesh', label: 'Arunachal Pradesh' },
-    { value: 'Assam', label: 'Assam' },
-    { value: 'Bihar', label: 'Bihar' },
-    { value: 'Chhattisgarh', label: 'Chattisgarh' },
-    { value: 'Goa', label: 'Goa' },
-    { value: 'Gujarat', label: 'Gujarat' },
-    { value: 'Haryana', label: 'Haryana' },
-    { value: 'Himachal Pradesh', label: 'Himachal Pradesh' },
-    { value: 'Jammu and Kashmir', label: 'Jammu and Kashmir' },
-    { value: 'Jharkhand', label: 'Jharkhand' },
-    { value: 'Karnataka', label: 'Karnataka' },
-    { value: 'Kerala', label: 'Kerala' },
-    { value: 'Madhya Pradesh', label: 'Madhya Pradesh' },
-    { value: 'Maharashtra', label: 'Maharashtra' },
-    { value: 'Manipur', label: 'Manipur' },
-    { value: 'Meghalaya', label: 'Meghalaya' },
-    { value: 'Mizoram', label: 'Mizoram' },
-    { value: 'Nagaland', label: 'Nagaland' },
-    { value: 'Odisha', label: 'Odisha' },
-    { value: 'Punjab', label: 'Punjab' },
-    { value: 'Rajasthan', label: 'Rajasthan' },
-    { value: 'Sikkim', label: 'Sikkim' },
-    { value: 'Tamil Nadu', label: 'Tamil Nadu' },
-    { value: 'Telangana', label: 'Telangana' },
-    { value: 'Tripura', label: 'Tripura' },
-    { value: 'Uttar Pradesh', label: 'Uttar Pradesh' },
-    { value: 'Uttarakhand', label: 'Uttarakhand' },
-    { value: 'West Bengal', label: 'West Bengal' }
-];
+// const options = [
+//     { value: 'Arunachal Pradesh', label: 'Arunachal Pradesh' },
+//     { value: 'Assam', label: 'Assam' },
+//     { value: 'Bihar', label: 'Bihar' },
+//     { value: 'Chhattisgarh', label: 'Chattisgarh' },
+//     { value: 'Goa', label: 'Goa' },
+//     { value: 'Gujarat', label: 'Gujarat' },
+//     { value: 'Haryana', label: 'Haryana' },
+//     { value: 'Himachal Pradesh', label: 'Himachal Pradesh' },
+//     { value: 'Jammu and Kashmir', label: 'Jammu and Kashmir' },
+//     { value: 'Jharkhand', label: 'Jharkhand' },
+//     { value: 'Karnataka', label: 'Karnataka' },
+//     { value: 'Kerala', label: 'Kerala' },
+//     { value: 'Madhya Pradesh', label: 'Madhya Pradesh' },
+//     { value: 'Maharashtra', label: 'Maharashtra' },
+//     { value: 'Manipur', label: 'Manipur' },
+//     { value: 'Meghalaya', label: 'Meghalaya' },
+//     { value: 'Mizoram', label: 'Mizoram' },
+//     { value: 'Nagaland', label: 'Nagaland' },
+//     { value: 'Odisha', label: 'Odisha' },
+//     { value: 'Punjab', label: 'Punjab' },
+//     { value: 'Rajasthan', label: 'Rajasthan' },
+//     { value: 'Sikkim', label: 'Sikkim' },
+//     { value: 'Tamil Nadu', label: 'Tamil Nadu' },
+//     { value: 'Telangana', label: 'Telangana' },
+//     { value: 'Tripura', label: 'Tripura' },
+//     { value: 'Uttar Pradesh', label: 'Uttar Pradesh' },
+//     { value: 'Uttarakhand', label: 'Uttarakhand' },
+//     { value: 'West Bengal', label: 'West Bengal' }
+// ];
+
 export default class RegisterIndex extends React.Component {
     constructor() {
         super();
@@ -78,7 +81,11 @@ export default class RegisterIndex extends React.Component {
 
     onChange = (e) => {
         const name = e.target.name;
-        const value = e.target.value;
+        let value = e.target.value;
+        if (name === 'contact' && value) {
+          value = value.trim()
+          value = value.substring(0, 10)
+        }
         this.setState({ [name]: value });
     }
 
@@ -101,7 +108,7 @@ export default class RegisterIndex extends React.Component {
                 .catch(e => {
                     console.log(e)
                 });
-        } else if (check.errors) {
+        } else if (check.errors !== {}) {
             this.setState({ errors: check.errors })
         } else {
             this.setState({ errors: 'Fields cannot be empty' })
@@ -109,28 +116,28 @@ export default class RegisterIndex extends React.Component {
     }
 
     render() {
-        const { name, contact, email, gender, college, state, branch, address, why, errors, selectedOption } = this.state;
+        const { name, contact, email, gender, college, state, branch, address, why, errors } = this.state;
         return (
             <div className="register-parent">
                 <div className="register-child">
                     <div className="register-heading">
                         <div className="r-logo">
-                            <img src={img} alt="r-logo" />
+                            <Link to="/"><img src={img} alt="r-logo" /></Link>
                         </div>
                         <div className="vertical_line">
                         </div>
-                        <div className="register-ca">
+                        <div className="register-ca common-cursor">
                             <h1>Campus<br /> Ambassador</h1>
                         </div>
                     </div>
                     <div className="register-form">
                         <form onSubmit={this.onSubmit}>
-                            {/* {errors ?
+                            {errors ?
                                 <div>
                                     {errors}
                                 </div>
                                 : null
-                            } */}
+                            }
                             <div className="form-heading">
                                 <h2>CA Registration form</h2>
                             </div>
@@ -147,17 +154,17 @@ export default class RegisterIndex extends React.Component {
                                         autoComplete="off"
                                         autoCapitalize="on"
                                         onChange={this.onChange}
+                                        spellcheck="false"
                                         required
                                     />
                                 </div>
                                 <div className="form-contactnumber">
                                     <label htmlFor="inputContact">Contact Number</label>
-                                    <input
+                                  <input
                                         id="inputContact"
                                         type="number"
                                         placeholder="Contact Number"
                                         name="contact"
-                                        maxLength="10"
                                         autoCorrect="off"
                                         autoComplete="off"
                                         autoCapitalize="on"
@@ -176,9 +183,11 @@ export default class RegisterIndex extends React.Component {
                                         placeholder="Your Email"
                                         name="email"
                                         autoCorrect="off"
+                                        autoComplete="off"
                                         autoCapitalize="off"
                                         value={email}
                                         onChange={this.onChange}
+                                        spellcheck="false"
                                         required
                                     />
                                 </div>

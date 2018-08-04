@@ -12,9 +12,19 @@ var Ideas = require('../../../../models/ca/CA_Idea');
 /* GET ALL Users */
 exports.getParticipant = function(req, res) {
   Users.find({created:true})
-  .select('address name fb_id college contact branch ca_id state image gender email why blocked')
+  .select('ca_id name gender image email contact branch college state address why link blocked')
   .exec(function (err, allUsers) {
-    if (err) return next(err);
+    if (err) return res.status(400).send({success:false, msg:'Unable to GET Participants', error:err});
+    res.json(allUsers);
+  });
+};
+
+/* GET ALL Users */
+exports.getScoreList = function(req, res) {
+  Users.find({created:true})
+  .select('ca_id name gender likes shares score ideas bonus referrals blocked')
+  .exec(function (err, allUsers) {
+    if (err) return res.status(400).send({success:false, msg:'Unable to GET Score', error:err});
     res.json(allUsers);
   });
 };
@@ -23,7 +33,7 @@ exports.getParticipant = function(req, res) {
 exports.getIdeas = function(req, res) {
   Ideas.find()
     .populate('user', 'name image ca_id')
-    .select('title body comment deleted')
+    .select('title body comment deleted updated_date')
     .sort({'updated_date': -1})
     .exec(function(err, allIdeas) {
       if(err){
@@ -57,12 +67,13 @@ exports.deleteIdea = function(req, res) {
         var updateData = {
             deleted: req.body.deleted
         }
-        Ideas.update({ _id:req.params.id }, updateData)
-        .exec(function(err) {
+        Ideas.findOneAndUpdate({ _id: req.params.id }, updateData, { new:true })
+        .select('deleted')
+        .exec(function(err, idea) {
             if(err){
-                return res.status(400).send({success:false, msg:'Cannot Delete Idea', error:err});
+                return res.status(400).send({success:false, msg:'Cannot Switch Delete', error:err});
             }
-            return res.json({success:true, msg:'Successfully Deleted'});
+            return res.json({success:true, msg:'Delete Switch Success', body: idea});
         });
     } else {
         return res.status(400).send({success:false, msg:'No Post ID Specified'});
@@ -85,6 +96,25 @@ exports.blockUser = function(req, res) {
         });
     } else {
         return res.status(400).send({success:false, msg:'No User ID Specified'});
+    }
+};
+
+/* Update Bonus */
+exports.putBonus = function(req, res) {
+    if (req.body.id && req.body.bonus !== undefined) {
+        var updateData = {
+            bonus: req.body.bonus
+        }
+        Users.findOneAndUpdate({ _id:req.body.id }, updateData, { new:true })
+        .select('bonus')
+        .exec(function(err, bonus) {
+            if(err){
+                return res.status(400).send({success:false, msg:'Cannot Update bonus', error:err});
+            }
+            return res.json({success:true, msg:'Successfully Updated', body: bonus});
+        });
+    } else {
+        return res.status(400).send({success:false, msg:'Invalid Params'});
     }
 };
 

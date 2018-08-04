@@ -2,14 +2,14 @@ import React from 'react'
 import { Route } from 'react-router-dom';
 import Loadable from 'react-loadable';
 
-import Loader from "../../common/loader";
+import Loader from "../../common/Loader";
 import AuthService from '../../../handlers/ca/admin/AuthService';
 
 // import LoginIndex from './login/Index';
 
 const Loading = ({ error }) => {
     if (error) {
-      return console.log(error);
+      return <div>Error loading component</div>;
     } else {
       return <Loader />;
     }
@@ -34,6 +34,7 @@ const LoginIndex = Loadable({
     loader: () => import('./login/Index'),
     loading: Loading,
 });
+
 const NavbarIndex = Loadable({
     loader: () => import('./navbar/Index'),
     loading: Loading,
@@ -43,6 +44,12 @@ const IdeasIndex = Loadable({
     loader: () => import('./ideas/Index'),
     loading: Loading,
 });
+
+const ControlsIndex = Loadable({
+    loader: () => import('./controls/Index'),
+    loading: Loading,
+});
+
 export default class AdminIndex extends React.Component{
     constructor() {
         super();
@@ -63,11 +70,12 @@ export default class AdminIndex extends React.Component{
 
     render(){
         return(
-            <div>
+            <React.Fragment>
                 {this.state.isAuthenticated ? 
                     <div>
                         <Route path="/ca/admin" component={NavbarIndex} />
                         <Route exact path="/ca/admin/ideas" component={IdeasIndex} />
+                        <Route exact path="/ca/admin/controls" component={ControlsIndex} />
                         <Route exact path="/ca/admin/logout" render={ () => <LogoutIndex updateRoutes={this.handleUpdate}/> } />
                         <Route exact path="/ca/admin" component={HomeIndex} />
                     </div>
@@ -77,7 +85,7 @@ export default class AdminIndex extends React.Component{
                         <Route exact path="/ca/admin" render={ () => <LoginIndex updateRoutes={this.handleUpdate}/> } />
                     </div>
                 }
-            </div>
+            </React.Fragment>
         )
     }
 }
