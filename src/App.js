@@ -47,6 +47,10 @@ const Terms = Loadable({
   loader:() =>import("./components/common/thomsoterms"),
   loading:() => <Loader />
 })
+const ZonalsIndex = Loadable({
+    loader:() =>import("./components/zonal/Index"),
+  loading:() => <Loader />
+})
 class App extends Component {
   render() {
     return (
@@ -57,6 +61,7 @@ class App extends Component {
           <Route exact path="/sponsors" component={SponsorsIndex} />
           <Route exact path="/team" component={TeamIndex} />
           <Route exact path="/faq" component={FAQIndex} />
+          <Route exact path="/zonals" component={ZonalsIndex} />
 
           <Route path="/ca/" component={CAIndex} />
 
