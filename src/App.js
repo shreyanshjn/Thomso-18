@@ -23,6 +23,10 @@ const SponsorsIndex = Loadable({
   loader: () => import("./components/beta/sponsors/Index"),
   loading: () => <Loader />
 });
+const QuizardyIndex = Loadable({
+  loader: () => import("./components/beta/quizardy/index"),
+  loading: () => <Loader />
+});
 
 const TeamIndex = Loadable({
   loader: () => import("./components/beta/team/Index"),
@@ -59,6 +63,7 @@ class App extends Component {
           {/* <Route path="/beta" component={BetaIndex} /> */}
           <Route exact path="/" component={HomeIndex} />
           <Route exact path="/sponsors" component={SponsorsIndex} />
+          <Route exact path="/quizardy" component={QuizardyIndex} />
           <Route exact path="/team" component={TeamIndex} />
           <Route exact path="/faq" component={FAQIndex} />
           <Route exact path="/zonals" component={ZonalsIndex} />

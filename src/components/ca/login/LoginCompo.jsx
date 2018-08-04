@@ -7,13 +7,13 @@ export default class LoginCompo extends React.Component{
     return(
     <div>
 
-      <div className="Login-div2">
+      <div className="login-div2">
 
       <div className="Login-div3">
         <img src={this.props.image} alt="div3image"/>
       </div>
-      <div className="Login-div4">
-        <p>{this.props.data}</p>{this.props.heading}
+      <div className="login-div4">
+       <p className="login-para">{this.props.heading}</p> {this.props.data}
       </div>
     </div>
 
