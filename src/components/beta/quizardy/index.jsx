@@ -4,7 +4,17 @@ import './quizardy.css';
 import arrow from '../home/src/img/arrow.svg';
 import Instructions from './Instructions';
 import Footer from './Footer';
+import Navbar from '../home/Navbar';
+import './Index.css';
 export default class QuizardyIndex extends React.Component{
+    constructor()
+    {
+        super();
+        this.state={
+            isNavbar:true
+
+        }
+    }
   render(){
     let options = {
         sectionClassName: 'section',
@@ -20,7 +30,9 @@ export default class QuizardyIndex extends React.Component{
     <div>
 
 
-
+        <div className="quizardy-mobile">
+            <Navbar />
+        </div>
           <SectionsContainer {...options}>
               <Section>
                   <div className="quizardy-parent">
@@ -39,10 +51,15 @@ export default class QuizardyIndex extends React.Component{
               </Section>
 
               <Section>
+                  <div>
+                  <div className="quizardy-desktop">
+                      <Navbar /> 
+                  </div>
                 <div className="quizardy-parent-body">
                   <Instructions />
                   <Footer />
-                </div>
+              </div>
+          </div>
               </Section>
           </SectionsContainer>
 

@@ -1,23 +1,23 @@
 
 .quizardy-footer{
-  display: flex;
-  flex-direction: row;
-  position: absolute;
-  top: 80%;
-  width: 90%;
-  padding-left: 10%;
-  padding-bottom: 1%;
-  font-family:  Montserrat;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 80%;
+    width: 90%;
+    padding-left: 10%;
+    padding-bottom: 1%;
+    font-family:  Montserrat;
 
 }
 .quizardy-footer-logo{
-  width: 35%;
-  position: relative;
+    width: 35%;
+    position: relative;
 }
 .quizardy-footer-address{
-  color: white;
-  width:27%;
-  text-align: center;
+    color: white;
+    width:27%;
+    text-align: center;
 }
 
 .quizardy-footer-icons
@@ -42,9 +42,8 @@
 .quizardy-footer-follow
 {
     text-align:left;
-    width: 22%;
+    width: 100%;
     padding-left: 15px;
-    padding-bottom: 10px;
 }
 
 .quizardy-footer-fbdiv, .quizardy-footer-ytdiv , .quizardy-footer-instadiv , .quizardy-footer-linkediv
@@ -56,7 +55,7 @@
     transition: 0.5s;
 }
 .common-cursor{
-  cursor : default;
+    cursor : default;
 }
 
 .quizardy-footer-fbdiv:hover,.quizardy-footer-ytdiv:hover,.quizardy-footer-instadiv:hover,.quizardy-footer-linkediv:hover
@@ -83,101 +82,131 @@
 }
 
 .quizardy-footer-contact{
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  color: white;
-  align-items: center;
-  width: 40%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    align-items: center;
+    width: 40%;
 }
 
 .quizardy-footer-contact-info{
-  display: flex;
-  flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
 .quizardy-footer-contact1{
-  padding-left: 10%;
+    padding-left: 10%;
 }
 .quizardy-footer-contact2{
-  padding-left: 10%;
+    padding-left: 10%;
 }
 @media (max-width: 768px){
-.quizardy-footer{
-  font-size: 8px;
-  flex-direction: column;
-  top: 70%;
-}
-.quizardy-footer-iconsImage
-{
-    width:20px;
-    height:20px;
-}
-.quizardy-footer-logo{
-  width: 40%;
-  position: relative;
-  height: 50px;
-  margin-top: 15px;
-}
-.quizardy-footer-contact{
-  display: flex;
-  flex-direction: column;
-  color: white;
-  text-align: left;
-  align-items: flex-start;
-  width: 40%;
-}
-.quizardy-footer-contact1{
-  padding-left: 0%;
-}
-.quizardy-footer-contact2{
-  padding-left: 8%;
-}
-.quizardy-footer-address{
-  color: white;
-  width:27%;
-  text-align: left;
-}
-.quizardy-footer-fbdiv, .quizardy-footer-ytdiv , .quizardy-footer-instadiv , .quizardy-footer-linkediv
-{
-    width:15px;
-    height:40px;
-    margin-left:14px;
-    border-radius:50%;
-    transition: 0.5s;
-}
-.quizardy-footer-icons
-{
-    width:100%;
-    float:right;
-    position: absolute;
-    right: 4vw;
-    top: 0;
-}
-.quizardy-footer-icons p{
-  margin: 0px;
-  width: 100%;
-  padding: 0px;
-  padding-left: 15px;
-  padding-bottom: 10px;
-}
-.quizardy-footer-follow
-{
-    text-align:left;
-    width: 0%;
-    padding-left: 15px;
-    padding-bottom: 10px;
-}
-
+    .quizardy-parent-footer
+    {
+        display:flex;
+        flex-direction:column;
+    }
+    .quizardy-footer{
+        font-size: 8px;
+        flex-direction: row;
+        justify-content:space-around;
+        top: 75%;
+    }
+    .quizardy-footer-iconsImage
+    {
+        width:20px;
+        height:20px;
+    }
+    .quizardy-footer-logo{
+        width: 40%;
+        position: relative;
+        height: 50px;
+        margin-top: 15px;
+    }
+    .quizardy-footer-contact{
+        display: flex;
+        flex-direction: column;
+        color: white;
+        text-align: left;
+        align-items: flex-start;
+        width: 40%;
+    }
+    .quizardy-footer-contact1{
+        padding-left: 0%;
+    }
+    .quizardy-footer-contact2{
+        padding-left: 8%;
+    }
+    .quizardy-footer-address{
+        color: white;
+        width:27%;
+        text-align: left;
+    }
+    .quizardy-footer-fbdiv, .quizardy-footer-ytdiv , .quizardy-footer-instadiv , .quizardy-footer-linkediv
+    {
+        width:15px;
+        height:40px;
+        margin-left:14px;
+        border-radius:50%;
+        transition: 0.5s;
+    }
+    .quizardy-footer-icons
+    {
+        left: 82%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        top: 77vh;
+    }
+    .quizardy-footer-icons p{
+        margin: 0px;
+        width: 100%;
+        padding: 0px;
+        padding-left: 15px;
+        padding-bottom: 10px;
+        width: 125%;
+        font-size: 11px;
+        text-align: center;
+    }
+    .quizardy-footer-follow
+    {
+        text-align:left;
+        width: 0%;
+        padding-left: 15px;
+        padding-bottom: 10px;
+    }
+    .quizardy-footer-mobile
+    {
+        display:none;
+    }
+    .quizardy-footer-desktop
+    {
+        position:absolute;
+        display:flex;
+       top:10vh; 
+        justify-content:center;
+        
+    
+    }
 }
 @media (min-width: 1920px) and (max-width: 2560px){
-  .quizardy-footer-follow
-  {
-      text-align:left;
-      width: 40%;
-      padding-left: 15px;
-      margin-top: 0px;
+    .quizardy-footer-follow
+    {
+        text-align:left;
+        width: 40%;
+        padding-left: 15px;
+        margin-top: 0px;
 
-  }
+    }
 
 
+}
+@media only screen and (min-width:768px)
+{
+   .quizardy-footer-desktop
+   {
+      display:none;
+     
+   }
+ 
 }
