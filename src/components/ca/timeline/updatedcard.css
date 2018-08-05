@@ -13,7 +13,8 @@
 }
 @media screen and (max-width:768px){
 	.cards{
-		width: calc(100% - 81px);
+		width: calc(100% - 56px);
+		overflow-x: hidden;
 	}
 }
 .maindiv

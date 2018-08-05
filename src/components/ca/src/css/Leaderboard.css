@@ -81,7 +81,7 @@
 }
 @media only screen and (max-width: 768px) {
     .ca-leader-indexMain{
-        width: calc(100% - 81px);
+        width: calc(100% - 56px);
     }
     .ca-leader-maintable
     {
