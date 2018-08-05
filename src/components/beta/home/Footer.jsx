@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './src/css/Footer.css';
-import fblogo from './src/img/fbicon-01.png';
-import inlogo from './src/img/ig icon-01.png';
-import ytlogo from './src/img/yt icon-01.png';
-import iglogo from './src/img/in icon-01.png';
+import fblogo from './src/img/fbicon.png';
+import inlogo from './src/img/igicon.png';
+import ytlogo from './src/img/yticon.png';
+import iglogo from './src/img/inicon.png';
 class Footer extends Component {
     constructor(props) {
         super(props);
@@ -19,16 +19,16 @@ class Footer extends Component {
         let days = Math.floor(distance / (1000 * 60 * 60 * 24));
         if(days<0)
         {
-           days=0;  
+           days=0;
         }
         return (
             <div className="beta-footer-main">
                 <div className="beta-footer-countdown">
-                    <p className="beta-footer-thomso">THOMSO'18 COUNTDOWN</p><br />
-                    <p className="daysleft"><span className="beta-footer-days">{days}</span> <span className="beta-footer-left">DAYS LEFT</span></p>
+                    <p className="beta-footer-thomso common-cursor">THOMSO'18 COUNTDOWN</p><br />
+                    <p className="daysleft common-cursor"><span className="beta-footer-days">{days}</span> <span className="beta-footer-left">DAYS LEFT</span></p>
                 </div>
                 <div className="beta-footer-icons">
-                    <p className="beta-footer-follow">FOLLOW US </p>
+                    <p className="beta-footer-follow common-cursor">FOLLOW US </p>
                     <div className="beta-footer-mainIcons">
                         <div className="beta-footer-fbdiv">  <a href="https://www.facebook.com/thomsoiitroorkee/" target="_blank" rel="noopener noreferrer"> <img src={fblogo} className="beta-footer-iconsImage" alt="fblogo" /></a></div>
                         <div className="beta-footer-instadiv"><a href="https://www.instagram.com/thomso.IITR/" target="_blank" rel="noopener noreferrer"><img src={inlogo} className="beta-footer-iconsImage" alt="inlogo" /></a></div>

@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom' ;
+
 import "./css/register.css";
 import img from "./img/logo.png";
 import AuthService from '../../../handlers/ca/AuthService';
@@ -79,7 +81,11 @@ export default class RegisterIndex extends React.Component {
 
     onChange = (e) => {
         const name = e.target.name;
-        const value = e.target.value;
+        let value = e.target.value;
+        if (name === 'contact' && value) {
+          value = value.trim()
+          value = value.substring(0, 10)
+        }
         this.setState({ [name]: value });
     }
 
@@ -102,7 +108,7 @@ export default class RegisterIndex extends React.Component {
                 .catch(e => {
                     console.log(e)
                 });
-        } else if (check.errors) {
+        } else if (check.errors !== {}) {
             this.setState({ errors: check.errors })
         } else {
             this.setState({ errors: 'Fields cannot be empty' })
@@ -110,28 +116,28 @@ export default class RegisterIndex extends React.Component {
     }
 
     render() {
-        const { name, contact, email, gender, college, state, branch, address, why, errors, selectedOption } = this.state;
+        const { name, contact, email, gender, college, state, branch, address, why, errors } = this.state;
         return (
             <div className="register-parent">
                 <div className="register-child">
                     <div className="register-heading">
                         <div className="r-logo">
-                            <img src={img} alt="r-logo" />
+                            <Link to="/"><img src={img} alt="r-logo" /></Link>
                         </div>
                         <div className="vertical_line">
                         </div>
-                        <div className="register-ca">
+                        <div className="register-ca common-cursor">
                             <h1>Campus<br /> Ambassador</h1>
                         </div>
                     </div>
                     <div className="register-form">
                         <form onSubmit={this.onSubmit}>
-                            {/* {errors ?
+                            {errors ?
                                 <div>
                                     {errors}
                                 </div>
                                 : null
-                            } */}
+                            }
                             <div className="form-heading">
                                 <h2>CA Registration form</h2>
                             </div>
@@ -148,17 +154,17 @@ export default class RegisterIndex extends React.Component {
                                         autoComplete="off"
                                         autoCapitalize="on"
                                         onChange={this.onChange}
+                                        spellcheck="false"
                                         required
                                     />
                                 </div>
                                 <div className="form-contactnumber">
                                     <label htmlFor="inputContact">Contact Number</label>
-                                    <input
+                                  <input
                                         id="inputContact"
                                         type="number"
                                         placeholder="Contact Number"
                                         name="contact"
-                                        maxLength="10"
                                         autoCorrect="off"
                                         autoComplete="off"
                                         autoCapitalize="on"
@@ -177,9 +183,11 @@ export default class RegisterIndex extends React.Component {
                                         placeholder="Your Email"
                                         name="email"
                                         autoCorrect="off"
+                                        autoComplete="off"
                                         autoCapitalize="off"
                                         value={email}
                                         onChange={this.onChange}
+                                        spellcheck="false"
                                         required
                                     />
                                 </div>

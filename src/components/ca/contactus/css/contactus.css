@@ -14,7 +14,7 @@
     font-family: Montserrat;
     display: flex;
     align-items: center;
-    background-image: url("../../../beta/home/src/img/dashboard\ bg-01.jpg");
+    background-image: url("../../../beta/home/src/img/dashboard.jpg");
     background-attachment: fixed;
     background-size: cover;
     color: white;
@@ -93,7 +93,7 @@
     transition: all 0.5s;
 }
 .ca-contact-image_four{
-    background-image: url("../../../beta//home/src/img/prashantsir.jpeg");
+    background-image: url("../../../beta//home/src/img/prashantsir.jpg");
     box-shadow: 2px 2px 7px 2px rgba(55,55,55,.5);
     background-position: center center;
     height:300px;

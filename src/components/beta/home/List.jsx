@@ -31,14 +31,19 @@ class List extends Component {
                 </li>
                 {/*       <li>
           <a href="">ZONALS</a>
-        </li>
+        </li>*/}
         <li>
-          <a href="">ONLINE EVENTS</a>
+            <Link to="../quizardy" className={(this.state.activeStateLink === "quizardy") ? "list-quiz-link" : null}
+                onClick={()=>{
+                this.setActiveLink("quizardy")
+                }}>
+                QUIZARDY
+            </Link>
         </li>
-        <li>
+        {/*<li>
           <a href="">OFFINE EVENTS</a>
-        </li>
-        <li>
+        </li>*/}
+        {/* <li>
           <a href="">TEAM CONTACT</a>
         </li>*/}
         <li>

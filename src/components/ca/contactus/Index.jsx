@@ -25,11 +25,11 @@ export default class ContactIndex extends React.Component {
                                     <h2>EVENTS AND MANAGEMENT</h2>
                                 </div>
                                 <div className="ca-contact-details-gmail">
-                                    <img src={gmail} />
+                                    <img src={gmail} alt="email"/>
                                     <span>harshit.thomso@gmail.com</span>
                                 </div>
                                 <div className="ca-contact-details-call">
-                                    <img src={call} />
+                                    <img src={call} alt="mobile"/>
                                     <span>+91-9340043505</span>
                                 </div>
                             </div>
@@ -47,17 +47,17 @@ export default class ContactIndex extends React.Component {
                                     <h2>PUBLIC RELATIONS</h2>
                                 </div>
                                 <div className="ca-contact-details-gmail">
-                                    <img src={gmail} />
+                                    <img src={gmail} alt="email"/>
                                     <span>Niranjan98.thomso@gmail.com</span>
                                 </div>
                                 <div className="ca-contact-details-call">
-                                    <img src={call} />
+                                    <img src={call} alt="mobile"/>
                                     <span>+91-7023511775</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    {(this.props.userData && this.props.userData.gender !== "female") ?
+                    {(this.props.userData && this.props.userData.gender === "female") ?
                         <div className="ca-contact-child-third">
                             <div className="ca-contact-child-wrapper flex_column">
                                 <div className="ca-contact-image_three">
@@ -70,11 +70,11 @@ export default class ContactIndex extends React.Component {
                                         <h2>TECHNICAL HEAD</h2>
                                     </div>
                                     <div className="ca-contact-details-gmail">
-                                        <img src={gmail} />
+                                        <img src={gmail} alt="email"/>
                                         <span>nikhil.thomso@gmail.com</span>
                                     </div>
                                     <div className="ca-contact-details-call">
-                                        <img src={call} />
+                                        <img src={call} alt="mobile"/>
                                         <span>+91-9116891112</span>
                                     </div>
                                 </div>
@@ -93,11 +93,11 @@ export default class ContactIndex extends React.Component {
                                         <h2>TECHNICAL HEAD</h2>
                                     </div>
                                     <div className="ca-contact-details-gmail">
-                                        <img src={gmail} />
+                                        <img src={gmail} alt="email"/>
                                         <span>prashant.thomso@gmail.com</span>
                                     </div>
                                     <div className="ca-contact-details-call">
-                                        <img src={call} />
+                                        <img src={call} alt="mobile"/>
                                         <span>+91-8840592467</span>
                                     </div>
                                 </div>

@@ -4,26 +4,26 @@ var User = require("../../../../models/ca/CA_Admin");
 var CA_Admin_Token = require("../../../../models/ca/CA_Admin_Token");
 var TokenHelper = require("../../../../helpers/TokenHelper");
 
-exports.register = function(req, res) {
-    if (req.body.username) {
-        req.body.username = req.body.username.toLowerCase();
-        req.body.username = req.body.username.trim()
-    }
-    if (!req.body.username || !req.body.password) {
-        res.json({success: false, msg: 'Please pass username and password.'});
-    } else {
-        var newUser = new User({
-            username: req.body.username,
-            password: req.body.password
-        });
-        newUser.save(function(err) {
-            if (err) {
-                return res.json({success: false, msg: 'Username already exists.'});
-            }
-            res.json({success: true, msg: 'Successfully created new user.'});
-        });
-    }
-};
+// exports.register = function(req, res) {
+//     if (req.body.username) {
+//         req.body.username = req.body.username.toLowerCase();
+//         req.body.username = req.body.username.trim()
+//     }
+//     if (!req.body.username || !req.body.password) {
+//         res.json({success: false, msg: 'Please pass username and password.'});
+//     } else {
+//         var newUser = new User({
+//             username: req.body.username,
+//             password: req.body.password
+//         });
+//         newUser.save(function(err) {
+//             if (err) {
+//                 return res.json({success: false, msg: 'Username already exists.'});
+//             }
+//             res.json({success: true, msg: 'Successfully created new user.'});
+//         });
+//     }
+// };
 
 exports.login = function(req, res) {
     if (req.body.username) {
@@ -45,6 +45,7 @@ exports.login = function(req, res) {
                 if (isMatch && !err) {
                     User.updateOne({username: req.body.username},
                         {
+                            updated_date: new Date(),
                             $push: {
                                 last_ip: {
                                     $each: [ ip ],
@@ -60,6 +61,7 @@ exports.login = function(req, res) {
                                 user_id: user._id,
                                 token: TokenHelper.generateAdminToken(req.body.username),
                                 expirationTime: moment().day(30),
+                                updated_date: new Date()
                             };
                             CA_Admin_Token.findOneAndUpdate({ username: req.body.username }, newToken, { upsert: true, new:true })
                             .exec(function(err, token) {

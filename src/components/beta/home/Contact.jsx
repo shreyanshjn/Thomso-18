@@ -4,7 +4,7 @@ class Contact extends Component {
     render() {
         return (
             <div className="beta-home-contactMain">
-                <div className="beta-home-contactus">
+                <div className="beta-home-contactUs">
                     <h1 className="beta-home-top">Contacts</h1>
                     <table className="beta-home-contact-table">
                         <tbody>

@@ -64,7 +64,7 @@ export default class Form extends React.Component {
     }
 
     handleEvent = event => {
-        if (event.key == 'Enter') {
+        if (event.key === 'Enter') {
             console.log('enter press here! ')
 
         }

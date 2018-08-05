@@ -4,6 +4,7 @@ var cors = require('cors');
 var corsOptions = require('./config/cors');
 // Routes
 var caRoutes = require('./ca/routes');
+var zonalsRoutes = require('./zonals/routes');
 var bookRoutes = require('./book/routes');
 
 // Controllers
@@ -16,6 +17,7 @@ var verifyCerti = require('../controllers/api/Certificates/verifyCertificates');
 router.use('/api/ca', caRoutes);
 router.use('/api/book', bookRoutes);
 router.use('/api/certiVerify', cors(corsOptions),  verifyCerti.certi_verify );
+router.use('/api/zonals', zonalsRoutes);
 // -> /*
 router.get('/*', viewController);
 

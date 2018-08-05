@@ -4,9 +4,9 @@ var Users = require('../../../models/ca/CA_User');
 
 exports.getNew = function(req, res) {
     Users.find()
-    .select('access_token fb_id referrals')
+    .select('access_token fb_id referrals bonus')
     .exec(function (err, allUsers) {
-        if (err) return next(err);
+        if (err) return res.status(400).send({success:false, msg:'Unable to GET Users', error:err});
         if (allUsers.length > 0) {
             var allUsersResponseCounter = 0;
             function updateAllUsersResponseCounter() {

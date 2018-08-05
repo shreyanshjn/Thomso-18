@@ -1,6 +1,7 @@
 var request = require('request');
 var moment = require('moment');
 
+// var mailer = require('../../common/mailer');
 var CA_User = require("../../../models/ca/CA_User");
 var CA_User_Token = require("../../../models/ca/CA_User_Token");
 var TokenHelper = require("../../../helpers/TokenHelper");
@@ -14,9 +15,9 @@ exports.fblogin = function(req, res) {
         fb_id: req.body.id,
         name: req.body.name,
         link: req.body.link,
-        email: req.body.email,
         image: req.body.image
     }
+    // mailer.caMailer({email: req.body.email});
     request(`https://graph.facebook.com/oauth/access_token?grant_type=fb_exchange_token&client_id=${client_id}&client_secret=${client_secret}&fb_exchange_token=${accessToken}`, function(err, response, body){
         var access_token = JSON.parse(response.body).access_token;
         var saveData = Object.assign(data, {access_token: access_token})
@@ -34,10 +35,12 @@ exports.fblogin = function(req, res) {
             }
             if (!user) {
                 // Return Data
+                if (req.body.email) {
+                    var saveData = Object.assign(saveData, {email: req.body.email});
+                }
                 var newUser = new CA_User(saveData);
                 newUser.save(function(err, user) {
                     if (err) {
-                        console.log(err);
                         return res.status(400).send({success: false, msg: 'Unable to Add User'});
                     }
                     var newToken = {
@@ -45,6 +48,7 @@ exports.fblogin = function(req, res) {
                         user_id: newUser._id,
                         token: TokenHelper.generateUserToken(req.body.id, req.body.email),
                         expirationTime: moment().day(30),
+                        updated_date: new Date()
                     };
                     CA_User_Token.findOneAndUpdate({ fb_id: req.body.id }, newToken, { upsert: true, new:true })
                     .exec(function(err, token) {
@@ -72,6 +76,7 @@ exports.fblogin = function(req, res) {
                             user_id: user._id,
                             token: TokenHelper.generateUserToken(req.body.id, req.body.email),
                             expirationTime: moment().day(30),
+                            updated_date: new Date(),
                         };
                         CA_User_Token.findOneAndUpdate({ fb_id: req.body.id }, newToken, { upsert: true, new:true })
                         .exec(function(err, token) {
@@ -87,6 +92,7 @@ exports.fblogin = function(req, res) {
                         user_id: user._id,
                         token: TokenHelper.generateUserToken(req.body.id, req.body.email),
                         expirationTime: moment().day(30),
+                        updated_date: new Date(),
                     };
                     CA_User_Token.findOneAndUpdate({ fb_id: req.body.id }, newToken, { upsert: true, new:true })
                     .exec(function(err, token) {
@@ -141,7 +147,8 @@ exports.fbRegister = function(req, res) {
             branch: req.body.branch,
             address: req.body.address,
             why: req.body.why,
-            created: true
+            created: true,
+            updated_date: new Date()
         }
         if (data.name && data.contact && data.email && data.gender && data.college && data.state && data.branch && data.address && data.why) {
             CA_User.findOneAndUpdate({fb_id: req.locals.fb_id}, data, { new:true })
@@ -155,6 +162,7 @@ exports.fbRegister = function(req, res) {
                     user_id: user._id,
                     token: TokenHelper.generateUserToken(req.body.id, req.body.email),
                     expirationTime: moment().day(30),
+                    updated_date: new Date()
                 };
                 CA_User_Token.findOneAndUpdate({ fb_id: req.locals.fb_id }, newToken, { upsert: true, new:true })
                 .exec(function(err, token) {

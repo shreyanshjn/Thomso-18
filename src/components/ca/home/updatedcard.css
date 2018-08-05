@@ -1,5 +1,5 @@
 .cards{
-	background-image: url("../../beta/home/src/img/dashboard\ bg-01.jpg");
+	background-image: url("../../beta/home/src/img/dashboard.jpg");
 	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -87,7 +87,7 @@ height:100%;
   }
 .share-toggle:before {
 
-    background-image: url("../img/share-01.png");
+    background-image: url("../img/shareicon.png");
   	color: #3498db;
   }
 .share-toggle.share-expanded:before {

@@ -1,19 +1,18 @@
 import React from 'react';
 import './src/css/Wisca.css';
-import LoginDivCompo from './LoginDivCompo.jsx';
 export default class Contact extends React.Component{
   render(){
 
     return(
       <div>
-        <div className="Login-Wisca-MAINDIV">
-      <div className="Login-Wisca-Heading">
+        <div className="login-wisca-MAINDIV">
+      <div className="login-wisca-Heading">
         CONTACT US
       </div>
-      <div className="Login-Contact-contactMain">
+      <div className="login-contact-contactMain">
 
-          <div className="Login-Contact-contactus">
-              <h2 className="Login-Contact-top">CONTACTS</h2>
+          <div className="login-contact-contactus">
+              <h2 className="login-contact-top">CONTACTS</h2>
               <table>
                   <tbody>
                       <tr>
@@ -54,12 +53,12 @@ export default class Contact extends React.Component{
                   </tbody>
               </table>
           </div>
-          <div className="Login-Contact-address">
-              <h2 className="Login-Contact-top">ADDRESS</h2>
+          <div className="login-contact-address">
+              <h2 className="login-contact-top">ADDRESS</h2>
               Thomso Office<br/>
               Multi Activity Center,<br/>
               Indian Institute of Technology, Roorkee<br/>
-            <div className="Login-Contact-email"> <h2>EMAIL </h2>
+            <div className="login-contact-email"> <h2>EMAIL </h2>
               thomso@iitr.ac.in
           </div>
           </div>

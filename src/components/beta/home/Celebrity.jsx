@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import nucleya from './src/img/nucleya-01.jpg';
-import farhan  from './src/img/farhan-01.jpg';
-import sunidhi from './src/img/sunidhi-01.jpg';
+import nucleya from './src/img/nucleya.jpg';
+import farhan  from './src/img/farhan.jpg';
+import sunidhi from './src/img/sunidhi.jpg';
 import './src/css/Celebrity.css';
 class Celebrity extends Component {
     constructor(props)

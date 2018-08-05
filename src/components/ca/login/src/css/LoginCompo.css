@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
 
-.Login-div2{
+.login-div2{
   height: 110px;
   width: 100%;
   display: flex;
@@ -13,19 +13,19 @@
   font-weight: bold;
   vertical-align: middle;
 }
-.Login-div3{
+.login-div3{
   height:51px;
   width: 51px;
   display: flex;
   flex-direction: column;
   justify-content:flex-start;
 }
-.Login-div3 img{
+.login-div3 img{
   height: 51px;
   width:51px;
 }
 
-.Login-div4{
+.login-div4{
   margin-left: 30px;
   height: 51px;
   width:84%;
@@ -34,16 +34,18 @@
   justify-content:flex-start;
   font-family: Montserrat;
 }
-.Login-div4 p{
+.login-para{
   font-family: Montserrat;
   font-size: 12px;
   font-weight: bold;
   vertical-align: middle;
   margin: 0px;
+  color:black;
+  text-align: left;
 }
 @media screen and (max-width:768px){
 
-  .Login-div2{
+  .login-div2{
     height: 110px;
     width: 300px;
     display: flex;
@@ -54,18 +56,18 @@
     font-weight: bold;
     vertical-align: middle;
   }
-  .Login-div3{
+  .login-div3{
     height:40px;
     width: 40px;
     display: flex;
     flex-direction: column;
     justify-content:flex-start;
   }
-  .Login-div3 img{
+  .login-div3 img{
     height: 40px;
     width:40px;
   }
-  .Login-div4{
+  .login-div4{
     margin-left: 30px;
     height: 40px;
     display: flex;
@@ -73,7 +75,7 @@
     justify-content:flex-start;
     font-family: Montserrat;
   }
-  .Login-div4 p{
+  .login-div4 p{
     font-family: Montserrat;
     font-size: 8px;
     font-weight: bold;
@@ -83,7 +85,7 @@
 }
 
 @media (min-width: 1920px) and (max-width: 2560px){
-  .Login-div2{
+  .login-div2{
     height: 110px;
     width: 100%;
     display: flex;
@@ -94,19 +96,19 @@
     vertical-align: middle;
     margin-bottom: 4%;
   }
-  .Login-div3{
+  .login-div3{
     height:51px;
     width: 51px;
     display: flex;
     flex-direction: column;
     justify-content:flex-start;
   }
-  .Login-div3 img{
+  .login-div3 img{
     height: 51px;
     width:51px;
   }
 
-  .Login-div4{
+  .login-div4{
     margin-left: 30px;
     height: 51px;
     width: 100%;
@@ -115,7 +117,7 @@
     justify-content:flex-start;
     font-family: Montserrat;
   }
-  .Login-div4 p{
+  .login-div4 p{
     font-family: Montserrat;
     font-size: 22px;
     font-weight: bold;

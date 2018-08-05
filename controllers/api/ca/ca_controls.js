@@ -14,7 +14,7 @@ exports.getPosts = function (req, res) {
             var fb_auth_token = user.access_token;
             //171774543014513
             request(`https://graph.facebook.com/v3.1/171774543014513?fields=posts.limit(100){created_time,id,full_picture,message,link}&access_token=${fb_auth_token}`, function (err, response, body) {
-                if (err) return res.status(400).send({ success: false, msg: 'Facebook returend error.', error: err });;
+                if (err) return res.status(400).send({ success: false, msg: 'Facebook returend error.', error: err });
                 if (response.statusCode) {
                     return res.status(response.statusCode).send(body);
                 }
@@ -29,10 +29,10 @@ exports.getUserPosts = function (req, res) {
     })
         .select('access_token')
         .exec(function (err, user) {
-            if (err) return next(err);
+            if (err) return res.status(400).send({ success: false, msg: 'Unable to find user.' });
             var fb_auth_token = user.access_token;
             request(`https://graph.facebook.com/v3.1/me?fields=posts.limit(100){created_time,id,full_picture,message,link,likes.limit(0).summary(true)}&access_token=${fb_auth_token}`, function (err, response, body) {
-                if (err) return next(err);
+                if (err) return res.status(400).send({ success: false, msg: 'Facebook returend error.', error: err });
                 if (response.statusCode) {
                     return res.status(response.statusCode).send(body);
                 }
@@ -50,13 +50,21 @@ exports.postIdea = function (req, res) {
             title: req.body.title,
             body: req.body.body
         }
-        console.log('Creating');
         var newIdea = new Ideas(newData);
         newIdea.save(function (err, idea) {
             if (err) {
                 return res.status(400).send({ success: false, msg: 'Unable to Add Idea' });
+            } else if (idea._id) {
+                Users.update({ _id: req.locals._id }, { $addToSet: {ideas: idea._id} })
+                .exec(function (err) {
+                    if (err) {
+                        return res.status(400).send({ success: false, msg: 'Cannot Append Idea', error: err });
+                    }
+                    return res.json({ success: true, msg: 'Idea Successfully Posted', body: idea });
+                })
+            } else {
+                return res.status(400).send({ success: false, msg: 'Idea ID Not Found', body: idea });
             }
-            return res.json({ success: true, msg: 'Idea Successfully Posted', body: idea });
         });
     } else {
         return res.status(400).send({ success: false, msg: 'Invalid Params' });
@@ -78,7 +86,6 @@ exports.getIdea = function (req, res) {
 
 /* Update Idea */
 exports.putIdea = function (req, res) {
-    console.log('put');
     if (req.params.id) {
         if (req.body.title) {
             req.body.title = req.body.title.trim();
@@ -88,7 +95,8 @@ exports.putIdea = function (req, res) {
         }
         var updateData = {
             title: req.body.title,
-            body: req.body.body
+            body: req.body.body,
+            updated_date: new Date()
         }
         if (req.body.title && req.body.body) {
             Ideas.findOneAndUpdate({ fb_id: req.locals.fb_id, _id: req.params.id }, updateData, { new: true })
@@ -132,7 +140,6 @@ exports.getLeaderboard = function (req, res) {
         .sort({ 'score': -1 })
         .limit(10)
         .exec(function (err, allUsers) {
-            console.log(allUsers);
             if (err) {
                 return res.status(400).send({ success: false, msg: 'Cannot GET Leaders', error: err });
             }
