@@ -1,7 +1,7 @@
 var request = require('request');
 var moment = require('moment');
 
-// var mailer = require('../../common/mailer');
+var mailer = require('../../common/mailer');
 var CA_User = require("../../../models/ca/CA_User");
 var CA_User_Token = require("../../../models/ca/CA_User_Token");
 var TokenHelper = require("../../../helpers/TokenHelper");
@@ -16,8 +16,7 @@ exports.fblogin = function(req, res) {
         name: req.body.name,
         link: req.body.link,
         image: req.body.image
-    }
-    // mailer.caMailer({email: req.body.email});
+    };
     request(`https://graph.facebook.com/oauth/access_token?grant_type=fb_exchange_token&client_id=${client_id}&client_secret=${client_secret}&fb_exchange_token=${accessToken}`, function(err, response, body){
         var access_token = JSON.parse(response.body).access_token;
         var saveData = Object.assign(data, {access_token: access_token})
@@ -157,20 +156,27 @@ exports.fbRegister = function(req, res) {
                 if(err){
                     return res.status(400).send({success:false, msg:'Error Creating User', error:err});
                 }
-                var newToken = {
-                    fb_id: req.locals.fb_id,
-                    user_id: user._id,
-                    token: TokenHelper.generateUserToken(req.body.id, req.body.email),
-                    expirationTime: moment().day(30),
-                    updated_date: new Date()
-                };
-                CA_User_Token.findOneAndUpdate({ fb_id: req.locals.fb_id }, newToken, { upsert: true, new:true })
-                .exec(function(err, token) {
-                    if (err) {
-                        return res.status(400).send({success: false, msg: 'Unable Create Token'});
+                if (user) {
+                    var newToken = {
+                        fb_id: req.locals.fb_id,
+                        user_id: user._id,
+                        token: TokenHelper.generateUserToken(req.body.id, req.body.email),
+                        expirationTime: moment().day(30),
+                        updated_date: new Date()
+                    };
+                    CA_User_Token.findOneAndUpdate({ fb_id: req.locals.fb_id }, newToken, { upsert: true, new:true })
+                        .exec(function(err, token) {
+                            if (err) {
+                                return res.status(400).send({success: false, msg: 'Unable Create Token'});
+                            }
+                            res.json({success: true, msg: 'User Created', token: token.token, new: true, body:user});
+                        });
+                    if(user.email) {
+                        mailer.caMailer(user.email);
                     }
-                    res.json({success: true, msg: 'User Created', token: token.token, new: true, body:user});
-                });
+                } else {
+                    return res.status(400).send({success:false, msg:'Unable to find user'});
+                }
             })
         } else {
             res.status(400).send({success:false, msg:'Invalid Data'});

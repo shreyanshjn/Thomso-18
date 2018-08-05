@@ -9,10 +9,12 @@ var caAdminRoutes = require('./admin/routes');
 var caAuth = require('../../controllers/api/ca/ca_auth');
 var caScore = require('../../controllers/api/ca/score');
 var caControls = require('../../controllers/api/ca/ca_controls');
+var caTempCnt = require('../../controllers/api/ca/ca_temp_register');
 
 // CORS Config
-var corsOptions = require('../config/cors')
+var corsOptions = require('../config/cors');
 
+// Middleware
 var CAUserTokenMiddleware = require("../../middlewares/ca/user/TokenMiddleware");
 
 // Routes
@@ -24,6 +26,7 @@ router.use('/admin', cors(corsOptions), caAdminRoutes);
 router.get('/score', caScore.getNew);
 
 // -> /ca/auth
+router.post('/tempRegister', cors(corsOptions), caTempCnt.ca_temp_register);
 router.post('/auth/fblogin', cors(corsOptions), caAuth.fblogin);
 router.post('/auth/fbRegister', cors(corsOptions), CAUserTokenMiddleware.verify, caAuth.fbRegister);
 router.get('/auth/fbData', cors(corsOptions), CAUserTokenMiddleware.verify, caAuth.getData);

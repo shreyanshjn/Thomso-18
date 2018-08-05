@@ -17,6 +17,8 @@ router.post('/auth/login', adminAuth.login);
 // -> /ca/admin
 router.use('/', CAAdminTokenMiddleware.verify);
 
+router.get('/tempUsers', adminControls.getTempUsers);
+
 router.get('/participants', adminControls.getParticipant);
 router.get('/score', adminControls.getScoreList);
 router.get('/exportToCSV', adminControls.exportToCSV);

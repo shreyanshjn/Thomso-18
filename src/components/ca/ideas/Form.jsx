@@ -16,7 +16,6 @@ export default class Form extends React.Component {
             isIncrease: false,
             isVisible: false
         }
-        this.baseState = this.state
         this.Auth = new AuthService()
     }
     onChange = (e) => {
@@ -33,12 +32,10 @@ export default class Form extends React.Component {
             this.setState({ isDisabled: true })
             FetchApi('POST', '/api/ca/idea', data, authtoken)
                 .then(r => {
-                    console.log(r)
                     if (r && r.data) {
                         if (r.data.success && r.data.body) {
                             this.props.addIdea(r.data.body);
-                            this.setState({ isDisabled: false })
-                            this.setState(this.baseState)
+                            this.setState({ isDisabled: false, title: '', body: '', errors: ''})
                         } else {
                             this.setState({ isVisible: true, errors: 'Cannot add Idea' })
                             timeout = setTimeout(() => this.setState({ isVisible: false, isDisabled: false }), 3000)
@@ -49,7 +46,6 @@ export default class Form extends React.Component {
                     }
                 })
                 .catch(e => {
-                    console.log(e);
                     this.setState({ isVisible: true, errors: 'Error adding idea' })
                     timeout = setTimeout(() => this.setState({ isVisible: false, isDisabled: false }), 3000)
                 });
@@ -63,12 +59,6 @@ export default class Form extends React.Component {
         clearTimeout(timeout)
     }
 
-    handleEvent = event => {
-        if (event.key === 'Enter') {
-            console.log('enter press here! ')
-
-        }
-    }
     render() {
         const { title, body, errors, isVisible } = this.state;
         return (
@@ -103,7 +93,6 @@ export default class Form extends React.Component {
                         autoComplete="off"
                         autoCapitalize="on"
                         onChange={this.onChange}
-                        onKeyPress={() => this.handleEvent}
                         required
                     />
                 </div>

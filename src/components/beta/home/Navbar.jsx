@@ -69,7 +69,7 @@ class Navbar extends Component {
                     <Link to="" className={(this.state.activeState === "quizardy") ? "linkEvents" : null}
                     onClick={() => {
                                     this.setActive("quizardy");
-                    }}>EVENTS</Link>
+                    }}>ONLINE EVENTS</Link>
                   <div className="beta-navbar-dropdown-content">
                       <Link to="../quizardy" className={(this.state.activeState === "quizardy") ? "linkEventson" : null}
                     onClick={() => {
