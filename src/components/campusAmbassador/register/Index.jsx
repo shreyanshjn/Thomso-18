@@ -1,42 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom' ;
-
-import "./css/register.css";
 import img from "./img/logo.png";
-import AuthService from '../../../handlers/ca/AuthService';
 import FetchApi from '../../../utils/FetchAPI';
 import validateInput from '../../../utils/validation/loginValidation';
-
-// const options = [
-//     { value: 'Arunachal Pradesh', label: 'Arunachal Pradesh' },
-//     { value: 'Assam', label: 'Assam' },
-//     { value: 'Bihar', label: 'Bihar' },
-//     { value: 'Chhattisgarh', label: 'Chattisgarh' },
-//     { value: 'Goa', label: 'Goa' },
-//     { value: 'Gujarat', label: 'Gujarat' },
-//     { value: 'Haryana', label: 'Haryana' },
-//     { value: 'Himachal Pradesh', label: 'Himachal Pradesh' },
-//     { value: 'Jammu and Kashmir', label: 'Jammu and Kashmir' },
-//     { value: 'Jharkhand', label: 'Jharkhand' },
-//     { value: 'Karnataka', label: 'Karnataka' },
-//     { value: 'Kerala', label: 'Kerala' },
-//     { value: 'Madhya Pradesh', label: 'Madhya Pradesh' },
-//     { value: 'Maharashtra', label: 'Maharashtra' },
-//     { value: 'Manipur', label: 'Manipur' },
-//     { value: 'Meghalaya', label: 'Meghalaya' },
-//     { value: 'Mizoram', label: 'Mizoram' },
-//     { value: 'Nagaland', label: 'Nagaland' },
-//     { value: 'Odisha', label: 'Odisha' },
-//     { value: 'Punjab', label: 'Punjab' },
-//     { value: 'Rajasthan', label: 'Rajasthan' },
-//     { value: 'Sikkim', label: 'Sikkim' },
-//     { value: 'Tamil Nadu', label: 'Tamil Nadu' },
-//     { value: 'Telangana', label: 'Telangana' },
-//     { value: 'Tripura', label: 'Tripura' },
-//     { value: 'Uttar Pradesh', label: 'Uttar Pradesh' },
-//     { value: 'Uttarakhand', label: 'Uttarakhand' },
-//     { value: 'West Bengal', label: 'West Bengal' }
-// ];
+import Popup from '../popup/Index';
+import "./css/register.css";
 
 export default class RegisterIndex extends React.Component {
     constructor() {
@@ -54,29 +22,6 @@ export default class RegisterIndex extends React.Component {
             errors: '',
             selectedOption: null
         }
-        this.Auth = new AuthService()
-    }
-    handleChange = (selectedOption) => {
-        this.setState({ selectedOption });
-    }
-    componentWillMount() {
-        if (this.props.userData) {
-            if (this.props.userData.email) {
-                this.setState({
-                    name: this.props.userData.name,
-                    email: this.props.userData.email,
-                })
-            } else {
-                this.setState({
-                    name: this.props.userData.name,
-                })
-            }
-            if (!this.props.userData.fb_id) {
-                this.props.history.push('/ca/')
-            }
-        } else {
-            this.props.history.push('/ca/')
-        }
     }
 
     onChange = (e) => {
@@ -92,21 +37,23 @@ export default class RegisterIndex extends React.Component {
     onSubmit = (e) => {
         e.preventDefault();
         const { name, contact, email, gender, college, state, branch, address, why } = this.state;
-        let data = { name, contact, email, gender, college, state, branch, address, why }
+        const data = { name, contact, email, gender, college, state, branch, address, why }
         const check = validateInput(email, 'email')
         if (name && contact && email && gender && college && state && branch && address && why && check.isValid) {
-            const tempToken = this.Auth.getTempToken()
-            FetchApi('POST', '/api/ca/auth/fbRegister', data, tempToken)
+            FetchApi('POST', '/api/ca/tempRegister', data)
                 .then(r => {
-                    if (r && r.data && r.data.body) {
-                        this.Auth.setToken(r.data.token)
-                        this.props.updateRoutes(true)
-                        this.props.setUserData(r.data.body)
-                        this.props.history.push('/ca/')
+                    if (r && r.data && this.popup) {
+                        if (r.data.success === true) {
+                            this.popup.show(['You have been successfully registered.', `Confirmation message has been sent to ${this.state.email ? this.state.email : 'your email'}.`], '/CampusAmbassador')
+                        } else {
+                            this.setState({ errors: 'This email is already registered' })
+                            this.popup.show([`This email is already registered.`, `Confirmation message has been sent to ${this.state.email ? this.state.email : 'your email'}.`])
+                        }
                     }
                 })
                 .catch(e => {
                     console.log(e)
+                    this.popup.show('Something went wrong.')
                 });
         } else if (check.errors && check.errors.email) {
             this.setState({ errors: check.errors.email })
@@ -119,6 +66,7 @@ export default class RegisterIndex extends React.Component {
         const { name, contact, email, gender, college, state, branch, address, why, errors } = this.state;
         return (
             <div className="register-parent">
+                <Popup onRef={ref => (this.popup = ref)}/>
                 <div className="register-child">
                     <div className="register-heading">
                         <div className="r-logo">
@@ -133,7 +81,7 @@ export default class RegisterIndex extends React.Component {
                     <div className="register-form">
                         <form onSubmit={this.onSubmit}>
                             {errors ?
-                                <div>
+                                <div style={{textAlign: 'center', color: 'red', fontWeight: '600'}}>
                                     {errors}
                                 </div>
                                 : null
@@ -313,11 +261,10 @@ export default class RegisterIndex extends React.Component {
                             <div className="register">
                                 <button type="submit">Register</button>
                             </div>
-
                         </form>
                     </div>
-                </div >
-            </div >
+                </div>
+            </div>
         );
     }
 }
