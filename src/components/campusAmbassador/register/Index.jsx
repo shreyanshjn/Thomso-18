@@ -29,16 +29,35 @@ export default class RegisterIndex extends React.Component {
         let value = e.target.value;
         if (name === 'contact' && value) {
           value = value.trim()
-          value = value.substring(0, 10)
+          value = value.substring(0, 12)
         }
         this.setState({ [name]: value });
     }
 
     onSubmit = (e) => {
         e.preventDefault();
-        const { name, contact, email, gender, college, state, branch, address, why } = this.state;
+        let { name, contact, email, gender, college, state, branch, address, why } = this.state;
+        if (name) {
+            name = name.trim()
+        }
+        if (contact) {
+            contact = contact.trim()
+        }
+        if (college) {
+            college = college.trim()
+        }
+        if (branch) {
+            branch = branch.trim()
+        }
+        if (address) {
+            address = address.trim()
+        }
+        if (why) {
+            why = why.trim()
+        }
         const data = { name, contact, email, gender, college, state, branch, address, why }
         const check = validateInput(email, 'email')
+
         if (name && contact && email && gender && college && state && branch && address && why && check.isValid) {
             FetchApi('POST', '/api/ca/tempRegister', data)
                 .then(r => {
@@ -66,7 +85,7 @@ export default class RegisterIndex extends React.Component {
         const { name, contact, email, gender, college, state, branch, address, why, errors } = this.state;
         return (
             <div className="register-parent">
-                <Popup onRef={ref => (this.popup = ref)}/>
+                <Popup {...this.props} onRef={ref => (this.popup = ref)}/>
                 <div className="register-child">
                     <div className="register-heading">
                         <div className="r-logo">

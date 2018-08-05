@@ -46,9 +46,9 @@ export default class Popup extends React.Component {
     render() {
         let message
         if (this.state.msg && typeof(this.state.msg) === "object" && this.state.msg.length > 0) {
-            message = this.state.msg.map(eachMsg => {
+            message = this.state.msg.map((eachMsg, index) => {
                 if (typeof(eachMsg) === "string") {
-                    return <p> {eachMsg} </p>
+                    return <p key={index+'popupmsg'}> {eachMsg} </p>
                 }
                 return null
             })

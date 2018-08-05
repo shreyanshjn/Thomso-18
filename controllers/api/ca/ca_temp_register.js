@@ -46,11 +46,11 @@ exports.ca_temp_register = function(req, res) {
             var newUser = new Temp_User(data);
             newUser.save(function(err) {
                 if (err) {
-                    mailer.caTempMailer(data.email);
+                    mailer.caTempMailer(data);
                     return res.json({success: false, msg: 'Username already exists.'});
                 }
                 res.json({success: true, msg: 'Successfully created new user.'});
-                mailer.caTempMailer(data.email);
+                mailer.caTempMailer(data);
             });
         } else {
             res.status(400).send({success:false, msg:'Invalid Data'});

@@ -30,7 +30,6 @@ class Celebrity extends Component {
                     <div className="beta-home-middle">
                             <div className="beta-home-text">"The energy of the crowd kept me charged. Loved the electrifying atmosphere of IIT roorkee"</div>
                     </div>
-
                 </div> 
                 <div className="beta-home-hoverEffect"> 
                     <img src={sunidhi} alt="sunidhi" className="beta-home-celebImage"/>
@@ -38,8 +37,6 @@ class Celebrity extends Component {
                     <div className="beta-home-middle">
                             <div className="beta-home-text">"It was a lovely experience.The crowd was great."</div>
                     </div>
-
-
                 </div> 
             </div>
         );

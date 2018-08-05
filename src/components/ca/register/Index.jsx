@@ -91,7 +91,25 @@ export default class RegisterIndex extends React.Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        const { name, contact, email, gender, college, state, branch, address, why } = this.state;
+        let { name, contact, email, gender, college, state, branch, address, why } = this.state;
+        if (name) {
+            name = name.trim()
+        }
+        if (contact) {
+            contact = contact.trim()
+        }
+        if (college) {
+            college = college.trim()
+        }
+        if (branch) {
+            branch = branch.trim()
+        }
+        if (address) {
+            address = address.trim()
+        }
+        if (why) {
+            why = why.trim()
+        }
         let data = { name, contact, email, gender, college, state, branch, address, why }
         const check = validateInput(email, 'email')
         if (name && contact && email && gender && college && state && branch && address && why && check.isValid) {
