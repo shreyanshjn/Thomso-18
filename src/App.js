@@ -9,6 +9,11 @@ import Loader from "./components/common/Loader";
 //   loader: () => import('./components/beta/Index'),
 //   loading: () => <div>Loading BetaIndex</div>,
 // });
+const ZonalsForm = Loadable({
+  loader: () => import('./components/zonal/common/zonalsform'),
+  loading: () => <Loader />,
+});
+
 const CAIndex = Loadable({
   loader: () => import('./components/ca/Index'),
   loading: () => <Loader />,
@@ -45,12 +50,12 @@ const VerifyCerti = Loadable({
 
 const Policy = Loadable({
   loader: () => import("./components/common/Policy"),
-  loading: () =><Loader />
+  loading: () => <Loader />
 })
 
 const Terms = Loadable({
-  loader:() =>import("./components/common/Terms"),
-  loading:() => <Loader />
+  loader: () => import("./components/common/Terms"),
+  loading: () => <Loader />
 })
 // const ZonalsIndex = Loadable({
 //     loader:() =>import("./components/zonal/Index"),
@@ -70,9 +75,9 @@ class App extends Component {
 
           <Route path="/ca/" component={CAIndex} />
 
-         {/* <Route path="/zonals" component={ZonalsIndex} /> */}
+          <Route path="/zonals" component={ZonalsForm} />
 
-          <Route path="/verifyCerti/" component={VerifyCerti} />
+          < Route path="/verifyCerti/" component={VerifyCerti} />
           <Route path="/policy" component={Policy} />
           <Route path="/terms" component={Terms} />
         </Switch>
