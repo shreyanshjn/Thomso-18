@@ -1,72 +1,51 @@
-.zonals-scene
-{
-    background-image:url('../img/backgroundEle.png');
-    background-size:100% 55%;
-    background-position:center center;
-    background-attachment:fixed;
-    height:100vh;
-    background-repeat:no-repeat;
-    overflow-x:hidden;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    background-color:rgba(0,120,150,1);
-}
 .zonals-india-gate
 {
     height:auto;
     width:100%;
     max-width:28vw;
-    margin-top:20%;
-    position:relative;
-    /* top:6vh; */
-    /* position:absolute; */
-    /* left:30%; */
-}
-.zonals-zones
-{
-    display:flex;
-    justify-content:center;
-    margin-top:0;
-    color:white;
 }
 .zonals-cloud-one
 {
-   position:absolute;
-   left:61vw;
-   top:24vh;
+   position:absolute; 
+   left:29vw;
+   top:30vh;
+   z-index:-1;
 }
 .zonals-cloud-two
 {
-   position:absolute;
-   left:28vw;
-   top:24vh;
+   position:absolute; 
+   left:37vw;
+   top:5vh;
 }
 .zonals-cloud-three
 {
-   position:absolute;
-   left:35vw;
-   top:7vh;
+   position:absolute; 
+   left:57vw;
+   top:21vh;
 }
-@media only screen and (max-width:768px)
+.zonals-scene
 {
-   .zonals-india-gate
-   {
-       max-width:60vw; 
-   }
-   /* .zonals-cloud-three ,.zonals-cloud-one , .zonals-cloud-two */
-   /* { */
-   /*     max-width:50px; */
-   /*     height:auto; */
-   /* } */
-   .zonals-zones
-   {
-       font-size:18px;
-   } 
-   .zonals-screen
-   {
-      background-size:20% 25%;
-   
-   }
+   display:flex;
+   flex-direction:column;
+   justify-content:center;
+   align-items:center;
+   height:100vh;
+   background-color:rgba(57, 125, 162, 0.9) ;
+   background-image:url('../img/backgroundEle.png');
+   background-size:100% 55%;
+   background-opacity:0.12;
+   background-position:center center;
+   background-attachment:fixed;
+   background-repeat:no-repeat;
+   position:relative;
+}
+.zonals-zones
+{
+  text-align:center;
+  color:white;  
+}
+.zonals-delhi-logo
+{
+   width:13vw;
+   height:14vh;
 }

@@ -1,0 +1,17 @@
+.zonal-common-section2
+{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+    background:url('../img/back.jpg');
+    background-position:center;
+    background-size:cover;
+    height:100vh;
+}
+.zonals-common-sectioncomp2
+{
+    display:flex;
+    justify-content:space-around;
+}
+
+

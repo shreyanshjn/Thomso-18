@@ -1,0 +1,18 @@
+.zonal-common-comp2-head
+{ 
+  background:#164851;
+  padding:20px;
+  width:18vw;
+  height:12vh; 
+  border-radius:12px;
+  box-shadow:3px 3px 3px 3px #164851;
+  color:white;
+}
+.zonals-comp2-inside
+{
+  display:flex;
+  justify-content:center;
+  margin-top:auto;
+  height:100%;
+  align-items:center;
+}
