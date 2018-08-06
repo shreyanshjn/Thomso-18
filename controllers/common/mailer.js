@@ -77,7 +77,7 @@ var caTempMailer = function(user) {
                                                         <br>
                                                         <br> Congratulations, you have successfully registered as the Campus Ambassador for Thomso’18.
                                                         <br> We cordially welcome you to Thomso family as an official member.
-                                                        <br> Thank you for signing up at Thomso’18.
+                                                        <br> This is a temporary registration, sign up again as a campus ambassador in a week  on our website to get access to personalised scoreboard and gain incentives like free tickets to Thomso.
                                                         <br>
                                                         <br> For any queries, reach out to us at <a href="mailto:info.thomso18@gmail.com" target="_blank">info.thomso18@gmail.com</a>
                                                     </p>

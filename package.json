@@ -22,7 +22,6 @@
     "react-fullpage": "^0.1.18",
     "react-helmet": "^5.2.0",
     "react-loadable": "^5.4.0",
-    "react-particles-js": "^2.3.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
     "serve-favicon": "^2.5.0"

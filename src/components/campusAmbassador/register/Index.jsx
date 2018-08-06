@@ -240,7 +240,7 @@ export default class RegisterIndex extends React.Component {
                                     </select>
                                 </div>
                                 <div className="form-branch">
-                                    <label htmlFor="inputBranch">Branch</label>
+                                    <label htmlFor="inputBranch">Branch and Year</label>
                                     <input
                                         id="inputBranch"
                                         type="text"

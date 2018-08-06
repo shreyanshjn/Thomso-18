@@ -58,7 +58,7 @@ exports.getNew = function(req, res) {
                                 }
                                 if ( x === parseData.posts.data.length - 1) {
                                     var bonus = 0;
-                                    if (eachUser.bonus > 0) {
+                                    if (typeof(eachUser.bonus) === "number") {
                                         bonus = eachUser.bonus;
                                     }
                                     totalScore = totalScore + eachUser.referrals*25 + bonus;
