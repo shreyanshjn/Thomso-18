@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom' ;
+import { Link } from 'react-router-dom';
 
 import "./css/register.css";
 import img from "./img/logo.png";
@@ -83,8 +83,8 @@ export default class RegisterIndex extends React.Component {
         const name = e.target.name;
         let value = e.target.value;
         if (name === 'contact' && value) {
-          value = value.trim()
-          value = value.substring(0, 10)
+            value = value.trim()
+            value = value.substring(0, 10)
         }
         this.setState({ [name]: value });
     }
@@ -160,7 +160,7 @@ export default class RegisterIndex extends React.Component {
                                 </div>
                                 <div className="form-contactnumber">
                                     <label htmlFor="inputContact">Contact Number</label>
-                                  <input
+                                    <input
                                         id="inputContact"
                                         type="number"
                                         placeholder="Contact Number"
