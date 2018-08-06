@@ -2,6 +2,7 @@ import React from 'react';
 import AccountFields from './Fields/accountfield'
 import Confirmation from './Fields/confirmation'
 import Success from './Fields/success'
+import './zonals.css'
 
 export default class ZonalsForm extends React.Component {
     constructor() {
@@ -10,7 +11,9 @@ export default class ZonalsForm extends React.Component {
             step: 1,
             name: '',
             email: '',
-            password: ''
+            collegename: '',
+            contactnumber: '',
+            branch_and_year: ''
         };
     }
 
@@ -33,7 +36,6 @@ export default class ZonalsForm extends React.Component {
         this.nextStep()
     }
     render() {
-        console.log(this.state.step)
         switch (this.state.step) {
             case 1:
                 return <AccountFields fieldValues={this.state}

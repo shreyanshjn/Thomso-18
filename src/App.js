@@ -9,8 +9,8 @@ import Loader from "./components/common/Loader";
 //   loader: () => import('./components/beta/Index'),
 //   loading: () => <div>Loading BetaIndex</div>,
 // });
-const ZonalsForm = Loadable({
-  loader: () => import('./components/zonal/common/zonalsform'),
+const ZonalsRegister = Loadable({
+  loader: () => import('./components/zonal/common/zonalsregistration'),
   loading: () => <Loader />,
 });
 
@@ -75,7 +75,7 @@ class App extends Component {
 
           <Route path="/ca/" component={CAIndex} />
 
-          <Route path="/zonals" component={ZonalsForm} />
+          <Route path="/zonals" component={ZonalsRegister} />
 
           < Route path="/verifyCerti/" component={VerifyCerti} />
           <Route path="/policy" component={Policy} />

@@ -6,7 +6,9 @@ export default class AccountFields extends React.Component {
         this.state = {
             name: '',
             email: '',
-            password: ''
+            collegename: '',
+            contactnumber: '',
+            branch_and_year: ''
         }
     }
     onChange = (e) => {
@@ -19,7 +21,9 @@ export default class AccountFields extends React.Component {
         var data = {
             name: this.state.name,
             email: this.state.email,
-            password: this.state.password
+            collegename: this.state.collegename,
+            contactnumber: this.state.contactnumber,
+            branch_and_year: this.state.branch_and_year
         }
         this.props.saveValues(data)
         this.props.nextStep()
@@ -31,26 +35,44 @@ export default class AccountFields extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className="zonals-delhi-form-div">
                 <form onSubmit={this.saveAndContinue}>
-                    <label>Name</label>
-                    <input type="text"
-                        value={this.state.name}
-                        name="name"
-                        onChange={this.onChange} />
-                    <label>Password</label>
-                    <input type="password"
-                        name="password"
-                        value={this.state.password}
-                        onChange={this.onChange} />
-
-                    <label>Email</label>
-                    <input type="email"
-                        name="email"
-                        value={this.state.email}
-                        onChange={this.onChange} />
-
-                    <button type='submit'>Save and Continue</button>
+                    <div className="zonals-delhi-form-fields">
+                        <input type="text"
+                            value={this.state.name}
+                            name="name"
+                            onChange={this.onChange}
+                            placeholder="Your Name"
+                            required />
+                        <input type="email"
+                            name="email"
+                            value={this.state.email}
+                            onChange={this.onChange}
+                            placeholder="Your Email ID"
+                            required />
+                        <input type="number"
+                            name="contactnumber"
+                            value={this.state.contactnumber}
+                            onChange={this.onChange}
+                            placeholder="Contact Number"
+                            maxLength="10"
+                            required />
+                        <input type="text"
+                            value={this.state.collegename}
+                            name="collegename"
+                            onChange={this.onChange}
+                            placeholder="Your College Name"
+                            required />
+                        <input type="text"
+                            name="branch_and_year"
+                            value={this.state.branch_and_year}
+                            onChange={this.onChange}
+                            placeholder="Your Branch and Year"
+                            required />
+                    </div>
+                    <div className="zonals-delhi-form-button">
+                        <button type='submit'>NEXT</button>
+                    </div>
                 </form>
             </div >
         );
