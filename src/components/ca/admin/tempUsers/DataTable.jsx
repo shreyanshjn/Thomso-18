@@ -58,7 +58,8 @@ export default class DataTable extends React.Component {
             <table>
                 <thead>
                     <tr>
-                        <th style={{width:"10vw"}}>Name</th>
+                        <th style={{width:"2vw"}}>Index</th>
+                        <th style={{width:"8vw"}}>Name</th>
                         <th style={{width:"5vw"}}>Gender</th>
                         <th style={{width:"13vw"}}>Email</th>
                         <th style={{width:"5vw"}}>Mobile</th>
@@ -70,7 +71,7 @@ export default class DataTable extends React.Component {
                     </tr>
                 </thead>
                 <tbody id="myTable">
-                    {data.map((data,i)=> <Row key={i} data={data} />)}
+                    {data.map((data,i)=> <Row key={i} index={i} data={data} />)}
                 </tbody>
             </table>
         </div>

@@ -201,10 +201,16 @@ export default class RegisterIndex extends React.Component {
                                         required
                                     >
                                         <option value="" disabled="true"> College State </option>
+                                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                        <option value="Andhra Pradesh">Andhra Pradesh</option>
                                         <option value="Arunachal Pradesh">Arunachal Pradesh</option>
                                         <option value="Assam">Assam</option>
                                         <option value="Bihar">Bihar</option>
+                                        <option value="Chandigarh">Chandigarh</option>
                                         <option value="Chhattisgarh">Chhattisgarh</option>
+                                        <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+                                        <option value="Daman and Diu">Daman and Diu</option>
+                                        <option value="Delhi">Delhi</option>
                                         <option value="Goa">Goa</option>
                                         <option value="Gujarat">Gujarat</option>
                                         <option value="Haryana">Haryana</option>
@@ -213,13 +219,15 @@ export default class RegisterIndex extends React.Component {
                                         <option value="Jharkhand">Jharkhand</option>
                                         <option value="Karnataka">Karnataka</option>
                                         <option value="Kerala">Kerala</option>
+                                        <option value="Lakshadweep">Lakshadweep</option>
                                         <option value="Madhya Pradesh">Madhya Pradesh</option>
                                         <option value="Maharashtra">Maharashtra</option>
-                                        <option value="Maharashtra">Manipur</option>
+                                        <option value="Manipur">Manipur</option>
                                         <option value="Meghalaya">Meghalaya</option>
                                         <option value="Mizoram">Mizoram</option>
                                         <option value="Nagaland">Nagaland</option>
                                         <option value="Odisha">Odisha</option>
+                                        <option value="Puducherry">Puducherry</option>
                                         <option value="Punjab">Punjab</option>
                                         <option value="Rajasthan">Rajasthan</option>
                                         <option value="Sikkim">Sikkim</option>
@@ -248,7 +256,7 @@ export default class RegisterIndex extends React.Component {
                                 </div>
                             </div>
                             <div className="form-add-child">
-                                <label htmlFor="inputAddress">Address</label>
+                                <label htmlFor="inputAddress">Present College Address</label>
                                 <input
                                     id="inputAddress"
                                     type="text"
@@ -266,7 +274,7 @@ export default class RegisterIndex extends React.Component {
                                 <label htmlFor="inputWhy">Why should we choose you?</label>
                                 <textarea
                                     id="inputWhy"
-                                    placeholder="Your Answer"
+                                    placeholder="Mention your POR, Achievements, etc..."
                                     name="why"
                                     autoCorrect="off"
                                     autoComplete="off"

@@ -5,6 +5,7 @@ export default class Row extends React.Component {
             <React.Fragment>
                 {this.props.data ? 
                     <tr>
+                        <td style={{textAlign: 'center'}}>{(this.props.index !== undefined) ? (this.props.index + 1) : '--'}</td>
                         <td style={{textAlign: 'center'}}>{this.props.data.name ? this.props.data.name : '--'}</td>
                         <td style={{textAlign: 'center'}}>{this.props.data.gender ? this.props.data.gender : '--'}</td>
                         <td style={{textAlign: 'center'}}>{this.props.data.email ? this.props.data.email : '--'}</td>

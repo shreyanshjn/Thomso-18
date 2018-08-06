@@ -28,7 +28,7 @@ export default class CampusIndex extends React.Component {
                         <Section>
                             <div className="ca-opening-button-parent">
                                 <Link to="/CampusAmbassador/register">
-                                    <button className="ca-opening-button">Login/Register</button>
+                                    <button className="ca-opening-button">Register</button>
                                 </Link>
                                 <div>
                                     <a href="#Wisca" address="true">

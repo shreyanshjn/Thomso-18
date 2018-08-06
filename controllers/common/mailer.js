@@ -79,10 +79,10 @@ var caTempMailer = function(user) {
                                                         <br> We cordially welcome you to Thomso family as an official member.
                                                         <br> Thank you for signing up at Thomso’18.
                                                         <br>
-                                                        <br> For any queries, reach out to us at <a href="mailto:thomso@yahoo.com" target="_blank">thomso@yahoo.com</a>
+                                                        <br> For any queries, reach out to us at <a href="mailto:info.thomso18@gmail.com" target="_blank">info.thomso18@gmail.com</a>
                                                     </p>
                                                     <br>
-                                                    <p style="font-family:Avenir,Helvetica,sans-serif;color:#74787e;margin-top:0;text-align:left;margin-bottom:10px;line-height:20px;font-size:13px">Thanks
+                                                    <p style="font-family:Avenir,Helvetica,sans-serif;color:#74787e;margin-top:0;text-align:left;margin-bottom:10px;line-height:20px;font-size:13px">Regards
                                                         <br> Team Thomso
                                                     </p>
                                                     <br>
