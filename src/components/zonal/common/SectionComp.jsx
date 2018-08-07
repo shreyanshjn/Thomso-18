@@ -5,10 +5,10 @@ export default class SectionComp extends React.Component {
         return (
             <div className="zonals-common-comp1">
                 <div className="zonal-common-comp1-heading">
-                    HEADING
+                    {this.props.heading}
                 </div>
                 <div className="zonal-common-comp1-content">
-                    CONTENT
+                    {this.props.content} 
                 </div>
                 <div className="zonal-common-comp1-register">
                     REGISTER NOW

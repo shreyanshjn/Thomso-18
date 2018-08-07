@@ -13,5 +13,23 @@
     display:flex;
     justify-content:space-around;
 }
-
-
+.zonals-comp-tgt-dance
+{
+    display:none;
+    transition:all 2s;
+} 
+.zonals-comp-tgt-sing
+{
+    display:none;
+    transition:all 2s;
+} 
+.zonals-comp-tgt-mic
+{
+    display:none;
+    transition:all 2s;
+} 
+.zonals-comp-tgt-natak
+{
+    display:none;
+    transition:all 2s;
+} 
