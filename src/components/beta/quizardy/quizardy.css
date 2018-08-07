@@ -1,5 +1,6 @@
 .quizardy-parent{
     height: 100vh;
+    overflow-y: hidden;
 
 }
 .quizardy-parent-body{
@@ -8,12 +9,14 @@
     position: relative;
     align-items: center;
     font-family:  Montserrat;
+    overflow-y: hidden;
+
 }
 .quizardy-parent-innerbody{
     position: absolute;
     height: 80vh;
     /* width: 100%; */
-    top: 18%;
+    top: 15vh;
     left: 10%;
     line-height: 1.8;
     right: 10%;
@@ -22,7 +25,7 @@
 .quizardy-child{
     background: url('./quiz.jpg');
     background-size: 100% 100%;
-    height: 100vh;
+    height: 102vh;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -34,7 +37,8 @@
     display: flex;
     width: 100%;
     flex-direction: column;
-    align-items: center
+    align-items: center;
+
 }
 .quizardy-opening-button {
     cursor: pointer;

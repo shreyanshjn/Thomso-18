@@ -6,7 +6,7 @@
     flex-direction: row;
     position: absolute;
     font-size: 13px;
-    top: 76%;
+    top: 59vh;
     width: 100%;
     /* padding-left: 10%; */
     padding-bottom: 1%;
@@ -20,7 +20,6 @@
 .quizardy-footer-address{
     color: white;
     width:33%;
-    text-align: center;
 }
 
 .quizardy-footer-icons
@@ -113,7 +112,7 @@
         flex-direction:column;
     }
     .quizardy-footer{
-        font-size: 8px;
+        font-size: 11px;
         flex-direction: row;
         justify-content:space-around;
         top: 57vh;
@@ -136,6 +135,8 @@
         color: white;
         text-align: left;
         align-items: flex-start;
+        width: auto;
+
     }
     .quizardy-footer-contact1{
         padding-left: 0%;
@@ -146,11 +147,12 @@
     .quizardy-footer-address{
         color: white;
         text-align: left;
+        width: inherit;
     }
     .quizardy-footer-fbdiv, .quizardy-footer-ytdiv , .quizardy-footer-instadiv , .quizardy-footer-linkediv
     {
-        width:15px;
-        height:40px;
+        width:20px;
+        height:20px;
         margin-left:14px;
         border-radius:50%;
         transition: 0.5s;
@@ -171,7 +173,7 @@
         width: 100%;
         padding: 0px;
 
-        font-size: 9px;
+        font-size: 11px;
         text-align: center;
     }
     .quizardy-footer-follow
@@ -220,10 +222,10 @@
   }
 
   .quizardy-footer{
-      font-size: 8px;
+      font-size: 11px;
       flex-direction: row;
       justify-content:space-around;
-      top: 64vh;
+      top: 60vh;
   }
 
   .quizardy-footer-mainIcons {
@@ -239,13 +241,25 @@
 @media (min-width: 1920px) and (max-width: 2560px){
     .quizardy-footer-follow
     {
-        text-align:left;
-        width: 40%;
-        padding-left: 15px;
+        text-align:center;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
         margin-top: 0px;
 
     }
-
+    .quizardy-footer{
+      font-size: 20px;
+      top: 62vh;
+    }
+    .quizardy-footer-mainIcons {
+    margin-top: 30px;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    }
+    .quizardy-footer-logo{
+      width: 62%;
+    }
 
 }
 @media only screen and (min-width:1068px)

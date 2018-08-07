@@ -15,8 +15,9 @@ font-family:  Montserrat;
   /* left: 10%; */
   line-height: 1.8;
   /* right: 10%; */
-  padding: 20px;
-  font-size: 12px;
+  padding: 5px 20px 5px 20px;
+  font-size: 14px;
+
 }
 .instructions-heading{
   text-align: center;
@@ -42,18 +43,21 @@ font-family:  Montserrat;
     line-height: 1.8;
     /* right: 10%; */
     padding: 20px;
-    font-size: 8px;
+    font-size: 14px;
+    height: 50vh;
+    overflow: scroll;
+    overflow-x: hidden;
   }
 .instructions-heading{
     text-align: center;
-    font-size: 10px;
+    font-size: 18px;
     font-weight:200;
 
   }
 }
 @media (min-width: 1920px) and (max-width: 2560px){
 .instructions-child{
-  font-size: 24px;
+  font-size: 20px;
   }
 .instructions-heading{
   font-size: 30px;
