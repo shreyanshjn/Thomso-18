@@ -12,3 +12,18 @@
     border-radius:20px;
     box-shadow:4px 4px 4px 4px #24989a;
 }
+.zonal-comp1-button
+{
+    background:white;
+    padding:10px;
+    color:black;
+    border-radius:10px;
+    cursor:pointer;
+}
+@media only screen and (max-white:768px)
+{
+    .zonals-common-comp1
+    {
+        height:70vh;
+    }
+}

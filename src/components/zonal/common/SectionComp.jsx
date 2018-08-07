@@ -11,9 +11,11 @@ export default class SectionComp extends React.Component {
                     {this.props.content} 
                 </div>
                 <div className="zonal-common-comp1-register">
-                    REGISTER NOW
+                    <button className="zonal-comp1-button">REGISTER NOW</button>
                 </div>
             </div>
         );
     }
 }
+
+

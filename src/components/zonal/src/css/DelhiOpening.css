@@ -49,3 +49,10 @@
    width:13vw;
    height:14vh;
 }
+@media only screen and (max-width:768px)
+{
+ .zonals-india-gate
+{
+    max-width:83vw;
+}
+}

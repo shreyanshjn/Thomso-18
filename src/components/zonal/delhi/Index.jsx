@@ -25,8 +25,6 @@ export default class DelhiIndex extends Component {
                     <DelhiOpening />
                 </Section>
                      <SectionSecond /> 
-                <Section>
-                </Section>
 
             </SectionsContainer>
         );

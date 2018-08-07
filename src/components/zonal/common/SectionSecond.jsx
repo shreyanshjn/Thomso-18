@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SectionComp2 from './SectionComp2';
 import SectionComp from './SectionComp';
+
 import '../src/css/SecondSection.css';
 export default class SectionSecond extends Component {
     constructor()
@@ -47,7 +48,6 @@ export default class SectionSecond extends Component {
                                this.setActive("tgt-sing")}} >
                         <SectionComp2 dataOptions="TGT SINGING"/>
                     </div>
-
                     <div  className={(this.state.activeState === "tgt-dance") ?"zonals-comp-border": null} style={{cursor:"pointer"}}
                             onClick={()=>{
                                this.setActive("tgt-mic")}} >
