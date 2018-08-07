@@ -13,14 +13,14 @@
   font-family: Montserrat;
 }
 .login-divb{
-  height:51px;
+  height:auto;
   width: 51px;
   display: flex;
   flex-direction: column;
   justify-content:flex-start;
 }
 .login-divb img{
-  height: 51px;
+  height: auto;
   width:51px;
 }
 .login-divc{
@@ -36,7 +36,7 @@
   font-weight: bold;
 }
 
-@media screen and (max-width:768px){
+@media screen and (max-width:1068px){
   .login-diva{
     height: 30px;
     width: 300px;
@@ -50,14 +50,14 @@
     font-family: Montserrat;
   }
   .login-divb{
-    height:30px;
+    height:auto;
     width: 30px;
     display: flex;
     flex-direction: column;
     justify-content:flex-start;
   }
   .login-divb img{
-    height: 30px;
+    height: auto;
     width:30px;
   }
 
@@ -89,14 +89,14 @@
     vertical-align: middle;
   }
   .login-divb{
-    height:51px;
+    height:auto;
     width: 51px;
     display: flex;
     flex-direction: column;
     justify-content:flex-start;
   }
   .login-divb img{
-    height: 51px;
+    height: auto;
     width:51px;
   }
   .login-divc{
