@@ -6,11 +6,13 @@ import Navbar from './Navbar';
 import FullSection from './FullSection';
 
 let initialized = false;
+
 export default class Main extends Component {
     componentDidMount() {
+        initialized = false;
         setTimeout( () => this.initParticle(), 100 );
         let check = setInterval( () => {
-            this.initParticle()
+            this.initParticle(check)
         }, 1000)
     }
 
@@ -130,8 +132,9 @@ export default class Main extends Component {
                 },
                 "retina_detect": true
             }, function() {
-                console.log('callback - particles.js config loaded');
-                clearInterval(check);
+                if (check) {
+                    clearInterval(check)
+                }
             });
         }
     }

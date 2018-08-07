@@ -117,6 +117,7 @@ exports.fbRegister = function(req, res) {
         }
         if (req.body.email) {
             req.body.email = req.body.email.trim();
+            req.body.email = req.body.email.toLowerCase();
         }
         if (req.body.gender) {
             req.body.gender = req.body.gender.trim();

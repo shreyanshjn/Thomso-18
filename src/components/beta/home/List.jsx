@@ -51,7 +51,7 @@ class List extends Component {
                 onClick={()=>{
                 this.setActiveLink("list-spons-ca")
                 }}>
-                OUR SPONSERS
+                OUR SPONSORS
             </Link>
         </li>
         {/* <li>
