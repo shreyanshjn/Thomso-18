@@ -52,11 +52,13 @@ export default class QuizardyIndex extends React.Component{
                     <Section>
                         <div>
                         <div className='quizardy-desktop'>
-                            <Navbar /> 
+                            <Navbar />
                         </div>
                         <div className="quizardy-parent-body">
+                          <div className="quizardy-parent-innerbody">
                             <Instructions />
                             <Footer />
+                          </div>
                         </div>
                         </div>
                     </Section>

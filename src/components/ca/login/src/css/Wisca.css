@@ -65,24 +65,24 @@
     padding-right: 10%;
     margin-top: 13%;
     position: relative;
-
+    overflow-x: hidden;
     margin-left:1.7%;
 
 }
-@media screen and (max-width:768px){
+@media screen and (max-width:1068px){
   .login-wisca-Heading{
 
     font-size: 12px;
-    font-weight:bold;
-    padding-bottom: 15%;
+    font-weight:bold; 
     text-align: center;
     font-family: Montserrat
 
   }
   .login-wisca-MAINDIV{
 
-    margin-top:50%;
+    margin-top:24vh;
     padding-left:10%;
+    overflow-x: hidden;
   }
   .login-wisca-main{
     display: block;

@@ -1,33 +1,37 @@
 
 .quizardy-footer{
+      display: -ms-flexbox;
     display: flex;
+    -ms-flex-direction: row;
     flex-direction: row;
     position: absolute;
-    top: 80%;
-    width: 90%;
-    padding-left: 10%;
+    font-size: 13px;
+    top: 59vh;
+    width: 100%;
+    /* padding-left: 10%; */
     padding-bottom: 1%;
-    font-family:  Montserrat;
+    font-family: Montserrat;
 
 }
 .quizardy-footer-logo{
-    width: 35%;
+    width: 33%;
     position: relative;
 }
 .quizardy-footer-address{
     color: white;
-    width:27%;
-    text-align: center;
+    width:33%;
 }
 
 .quizardy-footer-icons
 {
-    width:50%;
-    float:right;
+    width: 100%;
+    /* float: right; */
     position: absolute;
-    right: 4vw;
-    top: 0;
+    /* right: 4vw; */
+    padding: 0px;
+    top: 0px;
     color: white;
+    text-align: center;
 }
 .quizardy-footer-iconsImage
 {
@@ -36,14 +40,15 @@
 }
 .quizardy-footer-mainIcons
 {
-    margin-top:2px;
+    margin-top:20px;
     display:inline-flex;
 }
 .quizardy-footer-follow
 {
-    text-align:left;
+
     width: 100%;
-    padding-left: 15px;
+    margin: 0px;
+
 }
 
 .quizardy-footer-fbdiv, .quizardy-footer-ytdiv , .quizardy-footer-instadiv , .quizardy-footer-linkediv
@@ -87,7 +92,7 @@
     text-align: center;
     color: white;
     align-items: center;
-    width: 40%;
+    width: 33%;
 }
 
 .quizardy-footer-contact-info{
@@ -100,17 +105,17 @@
 .quizardy-footer-contact2{
     padding-left: 10%;
 }
-@media (max-width: 768px){
+@media (max-width: 1068px){
     .quizardy-parent-footer
     {
         display:flex;
         flex-direction:column;
     }
     .quizardy-footer{
-        font-size: 8px;
+        font-size: 11px;
         flex-direction: row;
         justify-content:space-around;
-        top: 75%;
+        top: 57vh;
     }
     .quizardy-footer-iconsImage
     {
@@ -118,10 +123,11 @@
         height:20px;
     }
     .quizardy-footer-logo{
-        width: 40%;
+        width: 100%;
         position: relative;
         height: 50px;
-        margin-top: 15px;
+        top:70vh;
+        text-align: center;
     }
     .quizardy-footer-contact{
         display: flex;
@@ -129,7 +135,8 @@
         color: white;
         text-align: left;
         align-items: flex-start;
-        width: 40%;
+        width: auto;
+
     }
     .quizardy-footer-contact1{
         padding-left: 0%;
@@ -139,40 +146,41 @@
     }
     .quizardy-footer-address{
         color: white;
-        width:27%;
         text-align: left;
+        width: inherit;
     }
     .quizardy-footer-fbdiv, .quizardy-footer-ytdiv , .quizardy-footer-instadiv , .quizardy-footer-linkediv
     {
-        width:15px;
-        height:40px;
+        width:20px;
+        height:20px;
         margin-left:14px;
         border-radius:50%;
         transition: 0.5s;
     }
     .quizardy-footer-icons
     {
-        left: 82%;
+        position: absolute;
         display: flex;
         justify-content: center;
         flex-direction: column;
-        top: 77vh;
+        top:0;
+        right: 0;
+        float: none;
+        text-align: center;
     }
     .quizardy-footer-icons p{
         margin: 0px;
         width: 100%;
         padding: 0px;
-        padding-left: 15px;
-        padding-bottom: 10px;
-        width: 125%;
+
         font-size: 11px;
         text-align: center;
     }
     .quizardy-footer-follow
     {
-        text-align:left;
+
         width: 0%;
-        padding-left: 15px;
+
         padding-bottom: 10px;
     }
     .quizardy-footer-mobile
@@ -181,32 +189,85 @@
     }
     .quizardy-footer-desktop
     {
-        position:absolute;
+
         display:flex;
-       top:10vh; 
+
         justify-content:center;
-        
-    
+
+
+    }
+    .quizardy-footer-mainIcons
+    {
+      margin-top: 10px;
+      margin-left: auto;
+      width: 22%;
+      margin-right: auto;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      display: flex;
+      justify-content: space-evenly;
+      text-align: center;
+    }
+    .quizardy-footer-fbdiv, .quizardy-footer-ytdiv , .quizardy-footer-instadiv , .quizardy-footer-linkediv{
+      margin-left: 0px;
     }
 }
+@media (max-width: 768px){
+  .quizardy-footer-logo{
+      width: 100%;
+      position: relative;
+      height: 50px;
+      top:77vh;
+      text-align: center;
+  }
+
+  .quizardy-footer{
+      font-size: 11px;
+      flex-direction: row;
+      justify-content:space-around;
+      top: 60vh;
+  }
+
+  .quizardy-footer-mainIcons {
+    width: 39%;
+  }
+
+
+
+
+
+}
+
 @media (min-width: 1920px) and (max-width: 2560px){
     .quizardy-footer-follow
     {
-        text-align:left;
-        width: 40%;
-        padding-left: 15px;
+        text-align:center;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
         margin-top: 0px;
 
     }
-
+    .quizardy-footer{
+      font-size: 20px;
+      top: 62vh;
+    }
+    .quizardy-footer-mainIcons {
+    margin-top: 30px;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    }
+    .quizardy-footer-logo{
+      width: 62%;
+    }
 
 }
-@media only screen and (min-width:768px)
+@media only screen and (min-width:1068px)
 {
    .quizardy-footer-desktop
    {
       display:none;
-     
+
    }
- 
+
 }
