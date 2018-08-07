@@ -9,6 +9,16 @@
     align-items: center;
     font-family:  Montserrat;
 }
+.quizardy-parent-innerbody{
+    position: absolute;
+    height: 80vh;
+    /* width: 100%; */
+    top: 18%;
+    left: 10%;
+    line-height: 1.8;
+    right: 10%;
+    /* padding: 20px; */
+}
 .quizardy-child{
     background: url('./quiz.jpg');
     background-size: 100% 100%;
@@ -65,5 +75,15 @@
         background-attachment: fixed;
         background-position:center;
     }
-    
+    .quizardy-parent-innerbody{
+        position: absolute;
+        height: 80vh;
+        /* width: 100%; */
+        top: 13vh;
+        left: 10%;
+        line-height: 1.8;
+        right: 10%;
+        /* padding: 20px; */
+    }
+
 }
