@@ -44,7 +44,7 @@
 
     .beta-home-contactUs , .beta-home-address
     {
-        font-size:25px;
+        font-size:19px;
     }
     .beta-home-contactUs
     {
@@ -56,13 +56,12 @@
       margin-top:28vh;
       font-size:26px;
     }
-    .beta-home-top
+    .beta-home-top, .beta-home-address
     {
-    font-weight:500;
+    font-weight:400;
 
     }
-    .beta-home-top
-    {
-     font-weight:500;
+    .email > h1{
+        font-weight:400;
     }
 }

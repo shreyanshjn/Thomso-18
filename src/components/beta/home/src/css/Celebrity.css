@@ -121,23 +121,24 @@
     .beta-home-celebrityMain > div >p
     {
         font-family:Montserrat;
-        font-size:26px;
+        font-size:19px;
         text-align:center;
-        bottom:-10vh
+        bottom:-8vh;
+        letter-spacing: 5px;
     }
     .beta-home-sunidhi
     {
-        left:0%;
+        left:-5%;
         text-align:left;
         width:100%;
     }
     .beta-home-farhan
     {
-        left:8%;
+        left:3%;
     }
     .beta-home-nucleya
     {
-        left:27%;
+        left:23%;
     }
     .beta-home-hoverEffect
     {
@@ -145,11 +146,18 @@
     }
     .beta-home-middle
     {
-        font-size:22px;
+        font-size:21px;
         opacity:0;
         position:absolute;
-        bottom: 5%;
+        bottom: 10%;
         transition:0.2s;
         text-align: center;
+        width:252.94px;
     }
+     .beta-home-celebImage
+    {
+        height:37vh;
+        width:auto;
+    }
+    
 }

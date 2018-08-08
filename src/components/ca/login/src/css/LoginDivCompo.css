@@ -92,8 +92,11 @@
     height:51px;
     width: 51px;
     display: flex;
+    font-weight: 400;
     flex-direction: column;
     justify-content:flex-start;
+  }.login-divc{
+    font-weight: 500;
   }
   .login-divb img{
     height: 51px;
