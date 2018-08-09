@@ -1,5 +1,19 @@
 import React from 'react';
-
+import Slide from "./effects/slide"
+const duration = 400
+const defaultone = {
+    transition: `all ${duration}ms ease-in-out`,
+    position: 'absolute',
+    top: '100px',
+    width: '700px',
+    height: '392px'
+};
+const styleone = {
+    entering: { opacity: 0 },
+    entered: { opacity: 1 },
+    exiting: { opacity: 1 },
+    exited: { opacity: 0 }
+}
 export default class AccountFields extends React.Component {
     constructor() {
         super();
@@ -8,7 +22,8 @@ export default class AccountFields extends React.Component {
             email: '',
             collegename: '',
             contactnumber: '',
-            branch_and_year: ''
+            branch_and_year: '',
+            var: true
         }
     }
     onChange = (e) => {
@@ -43,32 +58,32 @@ export default class AccountFields extends React.Component {
                             name="name"
                             onChange={this.onChange}
                             placeholder="Your Name"
-                            required />
+                        />
                         <input type="email"
                             name="email"
                             value={this.state.email}
                             onChange={this.onChange}
                             placeholder="Your Email ID"
-                            required />
+                        />
                         <input type="number"
                             name="contactnumber"
                             value={this.state.contactnumber}
                             onChange={this.onChange}
                             placeholder="Contact Number"
                             maxLength="10"
-                            required />
+                        />
                         <input type="text"
                             value={this.state.collegename}
                             name="collegename"
                             onChange={this.onChange}
                             placeholder="Your College Name"
-                            required />
+                        />
                         <input type="text"
                             name="branch_and_year"
                             value={this.state.branch_and_year}
                             onChange={this.onChange}
                             placeholder="Your Branch and Year"
-                            required />
+                        />
                     </div>
                     <div className="zonals-delhi-form-button">
                         <button type='submit'>NEXT</button>

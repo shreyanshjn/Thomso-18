@@ -1,9 +1,8 @@
 import React from 'react';
 import AccountFields from './Fields/accountfield'
-import Confirmation from './Fields/confirmation'
+import ZonalsEvents from './Fields/zonals-events'
 import Success from './Fields/success'
 import './zonals.css'
-
 export default class ZonalsForm extends React.Component {
     constructor() {
         super();
@@ -13,7 +12,9 @@ export default class ZonalsForm extends React.Component {
             email: '',
             collegename: '',
             contactnumber: '',
-            branch_and_year: ''
+            branch_and_year: '',
+            checked: false,
+            tushar: true
         };
     }
 
@@ -23,13 +24,17 @@ export default class ZonalsForm extends React.Component {
 
     nextStep = () => {
         this.setState({
-            step: this.state.step + 1
+            step: this.state.step + 1,
+            checked: true,
+            tushar: false
         })
     }
 
     previousStep = () => {
         this.setState({
-            step: this.state.step - 1
+            step: this.state.step - 1,
+            checked: true,
+            tushar: true
         })
     }
     submitRegistration = () => {
@@ -42,7 +47,7 @@ export default class ZonalsForm extends React.Component {
                     nextStep={this.nextStep}
                     saveValues={this.saveValues} />
             case 2:
-                return <Confirmation fieldValues={this.state}
+                return <ZonalsEvents fieldValues={this.state}
                     previousStep={this.previousStep}
                     submitRegistration={this.submitRegistration} />
             case 3:

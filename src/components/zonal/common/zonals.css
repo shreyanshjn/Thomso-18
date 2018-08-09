@@ -13,9 +13,27 @@
     width: 55%;
     margin: auto;
 }
+.zonals-delhi-rightslide{
+    display: flex;
+    flex-direction: row;
+    width: 55%; 
+}
 .zonals-delhi-logo{
+    margin-left: auto;
+    margin-right: auto;
     width: 50%;
-    background: rgba(0,0,0,0.35);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: rgba(0,0,0,0.3);
+}
+.zonals-delhi-logo-child{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: rgba(0,0,0,0.3);
 }
 .zonals-delhi-form-div{
     background: rgba(0,0,0,0.25);
@@ -58,18 +76,18 @@
     font-family: Montserrat;
     border: 1px solid #2C2C2C;
 }
-.zonals-delhi-confirmation{
+.zonals-delhi-events{
     position: relative;
     background: rgba(0,0,0,0.25);
     width: 50%;
     box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.3);
     height: 361px;
 }
-.zonals-delhi-confirmation-details{
+.zonals-delhi-events-details{
     display: flex;
     flex-direction: column;
 }
-.zonals-delhi-confirmation-button{
+.zonals-delhi-events-button{
     width: 100%;
     position:absolute;
     bottom: 0px;
@@ -77,7 +95,7 @@
     flex-direction: row;
     justify-content: space-between;
 }
-.zonals-delhi-confirmation-button button{
+.zonals-delhi-events-button button{
     width: 50%;
     cursor: pointer;
     background: #2C2C2C;
@@ -89,17 +107,50 @@
     font-family: Montserrat;
     border: 1px solid #2C2C2C;
 }
-.zonals-delhi-confirmation-details-heading{
+.zonals-delhi-register-astro{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.zonals-delhi-register-astro img{
+    height: 325px;
+    width: auto;
+    margin-top:0; 
+}
+.zonals-delhi-register-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.zonals-delhi-register-button button{
+    cursor: pointer;
+    opacity: 0.8;
+    width: 70%;
+    cursor: pointer;
+    background: #9E9E9E;
+    padding: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bolder;
+    color: white;
+    font-size: 24px;
+    letter-spacing: 1px;
+    font-family: Montserrat;
+    border: 1px solid #9E9E9E;
+}
+.zonals-delhi-events-details-heading{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     font-family: Montserrat;
 }
-.zonals-delhi-confirmation-details-heading h3{
+.zonals-delhi-events-details-heading h3{
     color: white;                   
     font-size: 26px;
 }
-.zonals-delhi-confirmation-details-child{
+.zonals-delhi-events-details-child{
     color: white;
     padding: 10px;
     display: flex;
