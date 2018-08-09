@@ -3,23 +3,10 @@ import $ from 'jquery'
 
 import AuthService from '../../../../handlers/ca/admin/AuthService';
 import FetchApi from '../../../../utils/FetchAPI';
+import downloadCSV from '../../../../utils/JSONtoCSV';
 import Row from './Row';
-// import FetchDb from '../../../../utils/FetchDb';
-// var fs = require('fs');
-// var csv_export=require('csv-export');
-// var csv2json = require('csv2json');
-
-
-
 
 export default class DataTable extends React.Component {
-    //  blockHandler=element=>{
-    //    if (element.fb_id) {
-    //     // console.log(element.fb_id);
-    //     // If response
-    //    }
-    // }
-
     constructor() {
         super();
         this.state = {
@@ -48,54 +35,6 @@ export default class DataTable extends React.Component {
             });
     }
 
-    // convertAndDownloadCsv = function (data) {
-    //     if (data && data.length > 0) {
-    //         var csvData = csv2json.csvProcessor({
-    //             data: data,
-    //             quotes: '',
-    //             del: ';'
-    //         });
-    //         var filename = "participants.csv";
-    //         var blob = new Blob([csvData], { type: 'text/csv;charset=utf-8;' });
-    //         if (navigator.msSaveBlob) {
-    //             navigator.msSaveBlob(blob, filename);
-    //         } else {
-    //             var link = document.createElement("a");
-    //             if (link.download !== undefined) {
-    //                 var url = URL.createObjectURL(blob);
-    //                 link.setAttribute("href", url);
-    //                 link.setAttribute("download", filename);
-    //                 link.style.visibility = 'hidden';
-    //                 document.body.appendChild(link);
-    //                 link.click();
-    //                 document.body.removeChild(link);
-    //             }
-    //         }
-    //     }
-    // }
-
-    // handleDownload(){
-    //     const authtoken = this.Auth.getToken();
-    //     FetchApi('GET','/api/ca/admin/exportToCSV', null, authtoken)
-    //         .then((result) => {
-    //             console.log(result.data.data, 'export');
-    //             var fetchedData  = result.data.data;
-    //             // console.log(fetchedData);
-    //             // console.log(typeof this.convertAndDownloadCsv);
-    //             this.convertAndDownloadCsv(fetchedData);
-
-    //             // csv_export.export(result.data.data,function(buffer){
-    //             //     fs.writeFileSync('./data.csv',buffer);
-    //             //   });
-    //         })
-    //         .catch(error => {
-    //             if(error){
-    //                 console.log(error, 'export error');
-    //             }
-    //         }
-    //     );
-    // }
-
     handleFilter(e){
         e.preventDefault();
         $("#myInput").on("keyup", function() {
@@ -105,18 +44,22 @@ export default class DataTable extends React.Component {
             });
         });
     }
-    
+
+    download = () => {
+        if (this.state.participants && this.state.participants.length > 0) {
+            downloadCSV({data: this.state.participants, filename: 'ca_registrations.csv'})
+        }
+    }
 
     render() {
       let data  = this.state.participants;
-      console.log(data);
       return (
         <div>
             {this.state.message}
             <div>
                 <input id="myInput" type="text" onChange={(e) => this.handleFilter(e)} placeholder="Type here to search..." />
             </div>
-            {/* <button onClick={()=>this.handleDownload()} >Download Users</button> */}
+            <button onClick={this.download}> Download </button>
             <table>
                 <thead>
                     <tr>

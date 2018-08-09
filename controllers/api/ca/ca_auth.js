@@ -35,7 +35,7 @@ exports.fblogin = function(req, res) {
             if (!user) {
                 // Return Data
                 if (req.body.email) {
-                    var saveData = Object.assign(saveData, {email: req.body.email});
+                    saveData = Object.assign(saveData, {email: req.body.email});
                 }
                 var newUser = new CA_User(saveData);
                 newUser.save(function(err, user) {
