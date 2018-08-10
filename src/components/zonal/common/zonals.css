@@ -6,12 +6,15 @@
     height: 100vh;
     background-position: center;
     font-family: Montserrat;
+    overflow: hidden;
 }
 .zonals-delhi-child{
     display: flex;
     flex-direction: row;
     width: 55%;
     margin: auto;
+    position: relative;
+    height: 100%;
 }
 .zonals-delhi-rightslide{
     display: flex;
@@ -21,7 +24,7 @@
 .zonals-delhi-logo{
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -37,7 +40,7 @@
 }
 .zonals-delhi-form-div{
     background: rgba(0,0,0,0.25);
-    width: 50%;
+    width: 100%;
     box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.3);
 }
 .zonals-delhi-form-div form{

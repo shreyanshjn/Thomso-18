@@ -18,7 +18,6 @@ const Slide = ({
                             ...slidestyle[state],
                         }}
                     >
-                        {console.log(state)}
                         {children}
                     </div>
                 )

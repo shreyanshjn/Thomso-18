@@ -10,7 +10,7 @@ const defaultstyleone = {
     transition: `all ${duration}ms ease-in-out`,
     position: 'absolute',
     top: '100px',
-    width: '100%',
+    width: '50%',
     height: '392px'
 };
 
@@ -19,21 +19,51 @@ const defaultstyletwo = {
     position: 'absolute',
     opacity: 0,
     top: '100px',
-    width: '700px'
+    width: '50%',
 };
 const lstyles = {
-    entering: { opacity: 0, left: '600px' },
-    entered: { opacity: 1, left: '700px' },
-    exiting: { opacity: 1, left: '500px' },
+    entering: { opacity: 0, left: '190px' },
+    entered: { opacity: 1, left: '400px' },
+    exiting: { opacity: 1, left: '0px' },
     exited: { opacity: 0 }
 }
 const zonalslogo = {
     entering: { opacity: 0 },
-    entered: { opacity: 1, left: '500px' },
-    exiting: { opacity: 1, left: '300px' },
+    entered: { opacity: 1, left: '190px' },
+    exiting: { opacity: 1, left: '0px' },
     exited: { opacity: 1 }
 }
 
+// const defaultstyleone = {
+//     transition: `all ${duration}ms ease-in-out`,
+//     position: 'absolute',
+//     top: '100px',
+//     width: '50%',
+//     marginLeft: 'auto',
+//     marginRight: 'auto',
+//     height: '392px'
+// };
+
+// const defaultstyletwo = {
+//     transition: `all ${duration}ms ease-in-out`,
+//     position: 'absolute',
+//     opacity: 0,
+//     top: '100px',
+//     width: '100%',
+//     height: '392px'
+// };
+// const lstyles = {
+//     entering: { opacity: 0, left: '100px' },
+//     entered: { opacity: 1, left: '392px' },
+//     exiting: { opacity: 1, left: '0px' },
+//     exited: { opacity: 0 }
+// }
+// const zonalslogo = {
+//     entering: { opacity: 0 },
+//     entered: { opacity: 1, left: '190px' },
+//     exiting: { opacity: 1, left: '0px' },
+//     exited: { opacity: 1 }
+// }
 export default class ZonalsFooter extends React.Component {
     constructor() {
         super();
