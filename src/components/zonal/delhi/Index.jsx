@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import DelhiOpening from './DelhiOpening.jsx';
 import SectionSecond from '../common/SectionSecond';
 import { SectionsContainer, Section } from 'react-fullpage';
+import ZonalsFooter from '../common/zonalsregistration';
 export default class DelhiIndex extends Component {
     constructor()
     {
@@ -10,7 +11,7 @@ export default class DelhiIndex extends Component {
     render() {
         let options = {
             sectionClassName: 'section',
-            anchors: ['home', 'aboutUs', 'footfall', 'celebrity', 'contactUs'],
+            anchors: ['home', 'about', 'register'],
             scrollBar: false,
             navigation: false,
             verticalAlign: false,
@@ -21,7 +22,15 @@ export default class DelhiIndex extends Component {
         return (
             <SectionsContainer {...options}>
                 <Section>
-                    <DelhiOpening />
+                    <div style={{overflow:'hidden'}}>
+                        <DelhiOpening />
+                    </div>
+                </Section>
+                <Section>
+                    <SectionSecond /> 
+                </Section>
+                <Section>
+                    <ZonalsFooter />
                 </Section>
                 <Section>
                     <SectionSecond /> 

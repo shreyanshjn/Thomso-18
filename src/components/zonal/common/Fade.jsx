@@ -6,7 +6,7 @@ const duration = 400;
 const defaultStyle = {
     transition: `opacity ${duration}ms `,
     opacity: 0,
-    height:100,
+    height:80,
 }
 
 const transitionStyles = {

@@ -13,10 +13,9 @@
     padding:20px 2vw 0 2vw;
     display: flex;
     flex-direction: column;
-    min-width: 200px;
     font-family: Montserrat;
     color: #58595B;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 @media screen and (min-width:1400px){
 
@@ -98,20 +97,22 @@
     .sidebar-contents{
         padding: 15px 0px;
     }
-    .hand{
-        margin-top: 50px;
+    .sidebar-hand{
+        margin-top: 30vh;
         cursor: pointer;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
     }
-    .hand div{
+    .sidebar-hand-child{
         display: flex;
-        flex-direction: row;
-        text-align: center;
+        width: fit-content;
+        align-content: center;
     }
-
-    .hand:hover .sidebar-svg-logo svg .handpath{
+    .sidebar-hand .sidebar-svg-logo{
+        padding: 10px;
+    }
+    .sidebar-hand:hover .sidebar-svg-logo svg .handpath{
         cursor: pointer;
         fill: yellow;
     }
@@ -172,16 +173,14 @@
         padding: 0 5px;
         font-weight: 600;
     }
-    .sidebar-days{
+    .sidebar-hand-days{
         width: 85%;
+        margin-top: 10px;
         font-size: 14px;
         letter-spacing: 2px;
         padding: 5px;
         font-weight: 600;
         height: 100%;
-    }
-    .sidebar-hand-child{
-        width: 100%;
     }
     .sidebar-user > .sidebar-like-share-score{
         display: flex;
@@ -236,7 +235,6 @@
 
 
 @media screen and (max-width: 1400px){
-
     .sidenav.collapseSide{
         width: 100px;
         min-width: 100px;
@@ -318,7 +316,7 @@
         padding: 0px 0px;
     }
     .sidebar-hand{
-        margin-top: 60px;
+        margin-top: 100px;
         cursor: pointer;
         display: flex;
         flex-direction: row;
@@ -367,7 +365,7 @@
     .sidebar-hand .sidebar-svg-logo {
         width: 15%;
         display: flex;
-        justify-content: flex-end
+        justify-content: flex-end;
     }
     .sidebar-hand .sidebar-svg-logo svg{
         margin: 5px;
@@ -460,17 +458,21 @@
         padding: 0 5px;
     }
 }
-
+@media screen and (max-width:1000px) and (min-width:768px){
+    .sidebar-likes-number{
+        font-size: 10px;
+    }
+}
 @media screen and (max-width: 768px) {
     .sidenav{
-        width: 60px;
-        min-width: 60px;
+        width: 35px;
+        min-width: 35px;
         padding: 20px 10px 20px 10px;
     }
     .sidenav .sideNavItem {
         font-size: 0;
-        margin-top: 10px;
-        padding:10px 10px 10px 5px;
+        margin-top: 5px;
+        padding:0px 10px 10px 5px;
     }
     .sidebar-user > .text{
         font-size: 0;
@@ -494,7 +496,7 @@
         height: 40px;
         width: auto;
         border-radius: 50%;
-        padding: 0 5px 0 5px;
+        padding: 0 0px 0 0px;
     }
     .sidebar-user > .sidebar-user-details{
         display: none;
@@ -508,6 +510,7 @@
     .sidebar-svg-logo svg{
         height: 18px;
         width: auto;
+        margin-top: 50%;
     }
     .sidebar-navitem-name{
         display: none;
@@ -538,6 +541,9 @@
     .sidebar-likes-number{
         display: none;
         transition: all 0.2s;
+    }
+    .sidebar-likes > .sidebar-likes-child > img{
+        padding-right: 2px;
     }
     .sidebar-score > .sidebar-likes-child > img{
         padding-right: 0px;

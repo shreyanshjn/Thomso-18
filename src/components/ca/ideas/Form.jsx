@@ -62,13 +62,6 @@ export default class Form extends React.Component {
     componentWillUnmount() {
         clearTimeout(timeout)
     }
-
-    handleEvent = event => {
-        if (event.key === 'Enter') {
-            console.log('enter press here! ')
-
-        }
-    }
     render() {
         const { title, body, errors, isVisible } = this.state;
         return (

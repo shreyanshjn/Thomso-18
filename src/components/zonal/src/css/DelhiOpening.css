@@ -1,7 +1,7 @@
 .zonals-parallax-layer1 , .zonals-parallax-layer2 ,.zonals-parallax-layer3, .zonals-parallax-layer4 , .zonals-parallax-layer5
 {
-   height:96vh;
-   width:96vw;
+   height:100vh;
+   width:100vw;
 }
 .zonals-parallax-layer1-main-child
 {
@@ -10,9 +10,13 @@
 }
 .zonals-parallax-layer1-main-child ,.zonals-parallax-layer2-main-child,.zonals-parallax-layer3-main-child ,.zonals-parallax-layer4-main-child ,.zonals-parallax-layer5-main-child
 {
-
-    height:96vh;
-    width:96vw;
+    height:100vh;
+    width:100vw;
+}
+.zonals-parallax-layer1
+{
+    z-index:12;
+    cursor:pointer;
 }
 .zonals-delhi-iitrlogo
 {
@@ -24,7 +28,6 @@
 {
    display:flex;
    justify-content:center;
-   align-items:center;
 }
 .zonals-india-gate
 {
@@ -56,9 +59,8 @@
    left:39%;
    top:6%;
 }
-.zonals-scene
+.main-zonals-div
 {
-   height:100vh;
    background-color:rgba(57, 125, 162, 0.9) ;
    background-image:url('../img/backgroundEle.png');
    background-size:100% 55%;
@@ -67,12 +69,14 @@
    background-attachment:fixed;
    background-repeat:no-repeat;
    position:relative;
+   height:100vh;
 }
-.zonals-delhi-logo
+.zonals-delhi-side-logo
 {
     max-width: 29%;
     height: auto;
     width: 9%;
+    cursor:pointer;
 }
 .zonals-layer2-h1
 {
@@ -85,9 +89,9 @@
     {
         max-width:54vw;
     }
-    .zonals-delhi-logo
+    .zonals-delhi-side-logo
     {
-        width:30%;
+        width:50%;
     }
     .zonals-delhi-iitrlogo
     {
@@ -97,7 +101,7 @@
     {
         font-size:24px;
     }
-    .zonals-scene
+    .main-zonals-div
     {
         background-size:100% auto;
     }
@@ -105,5 +109,32 @@
     {
         height:34px;
         width:auto;
+    }
+ .parallax-layer5-child
+{
+   top:21%;
+}
+ .parallax-layer3-child
+ {
+    top:32%; 
+    left:60%;
+ }
+ .parallax-layer4-child
+ {
+     top:31%;
+     left:22%;
+ 
+ }
+.zonals-parallax-layer2-main-child
+{
+
+     margin-top:18vh;
+}
+}
+@media only screen and (min-width:768px)
+{
+    .zonals-parallax-layer2-main-child
+    {
+        align-items:center;
     }
 }

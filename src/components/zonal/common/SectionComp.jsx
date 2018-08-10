@@ -4,7 +4,6 @@ export default class SectionComp extends React.Component {
     render() {
         return (
             <div className={`zonals-common-comp1 ${this.props.Name}`}>
-                <div className="zonals-common-comp1-cover">
                     <div className="zonal-common-comp1-heading">
                         {this.props.heading}
                     </div>
@@ -14,7 +13,6 @@ export default class SectionComp extends React.Component {
                     <div className="zonal-common-comp1-register">
                         <button className="zonal-comp1-button">REGISTER</button>
                     </div>
-                </div>
             </div>
         );
     }

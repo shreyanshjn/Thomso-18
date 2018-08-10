@@ -42,19 +42,11 @@
     width:80%;
     margin:auto; 
 }
-    .zonals-common-comp1-cover
-    {
-       overflow:scroll;
-    }
-@media only screen and (max-white:768px)
+@media only screen and (max-width:768px)
 {
-    .zonals-common-comp1
-    {
-        height:70vh;
-        overflow-y:hidden;
-    }
     .zonal-common-comp1-content
     {
-       font-size:15px;
+       font-size:10px;
+       overflow-y:scroll;
     }
 }
