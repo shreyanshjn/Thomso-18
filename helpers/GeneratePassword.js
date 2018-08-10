@@ -15,17 +15,17 @@ exports.generatePassword = function(length) {
 }
 
 exports.generateHash = function(password) {
-    bcrypt.genSalt(10, function (err, salt) {
-        if (err) {
-            console.log(err);
-            return false;
-        }
-        bcrypt.hash(password, salt, null, function (err, hash) {
+    return new Promise(function(resolve, reject) {
+        bcrypt.genSalt(10, function (err, salt) {
             if (err) {
-                console.log(err);
-                return false;
+                return reject('Error Generating Salt');
             }
-            return hash;
+            bcrypt.hash(password, salt, null, function (err, hash) {
+                if (err) {
+                    return reject('Error Generating Hash');
+                }
+                return resolve(hash);
+            });
         });
-    });
+    })
 }

@@ -31,7 +31,7 @@ router.post('/auth/fbRegister', cors(corsOptions), CAUserTokenMiddleware.verify,
 router.get('/auth/fbData', cors(corsOptions), CAUserTokenMiddleware.verify, caAuth.getData);
 
 // -> /ca/temp
-router.get('/temp', cors(corsOptions), cors(corsOptions), tempCARoutes);
+router.use('/temp', cors(corsOptions), tempCARoutes);
 
 // -> /ca
 router.use('/', cors(corsOptions), CAUserTokenMiddleware.verify);

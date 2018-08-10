@@ -55,26 +55,33 @@ exports.ca_temp_register = function(req, res) {
                 }
                 var newPass = Generator.generatePassword(10);
                 if (newPass) {
-                    var newHash = Generator.generateHash(newPass);
-                    if (newHash) {
-                        var updateData = {
-                            password: newHash
-                        };
-                        Temp_User.update({ email: req.body.email }, updateData)
-                            .exec(function(err) {
-                                if (err) {
-                                    return res.status(400).send({success: false, msg: 'Unable Update Hash'});
-                                }
-                                res.json({success: true, msg: 'Successfully Registered', email: user.email});
-                                mailer.caTempRegister({
-                                    name: data.name,
-                                    email: data.email,
-                                    password: newPass
-                                });
-                            });
-                    } else {
+                    var generateHash = Generator.generateHash(newPass);
+                    generateHash.then(
+                        function(newHash) {
+                            if (newHash) {
+                                var updateData = {
+                                    password: newHash
+                                };
+                                Temp_User.update({ email: req.body.email }, updateData)
+                                    .exec(function(err) {
+                                        if (err) {
+                                            return res.status(400).send({success: false, msg: 'Unable Update Hash'});
+                                        }
+                                        res.json({success: true, msg: 'Successfully Registered'});
+                                        mailer.caTempRegister({
+                                            name: data.name,
+                                            email: data.email,
+                                            password: newPass
+                                        });
+                                    });
+                            } else {
+                                res.status(400).send({success:false, msg:'Promise Failed'});
+                            }
+                        }
+                    )
+                    .catch( function(err) {
                         res.status(400).send({success:false, msg:'Failed to generate new hash'});
-                    }
+                    })
                 } else {
                     res.status(400).send({success:false, msg:'Failed to generate new password'});
                 }
@@ -97,57 +104,37 @@ exports.ca_temp_login = function(req, res) {
             Temp_User.findOne({
                 email: req.body.email
             })
-            .select('email temp_password verified password')
+            .select('email verified password')
             .exec(function(err, user) {
                 if (err) res.status(401).send({success: false, msg: 'Authentication failed. Error.'});
                 if (!user) {
                     res.status(401).send({success: false, msg: 'Authentication failed. User not found.'});
                 } else {
-                    if (user.verified) {
-                        user.comparePassword(req.body.password, function (err, isMatch) {
-                            if (isMatch && !err) {
-                                var newToken = {
-                                    email: req.body.email,
-                                    user_id: user._id,
-                                    token: TokenHelper.generateUserToken(email, user._id),
-                                    expirationTime: moment().day(30),
-                                    updated_date: new Date()
-                                };
-                                CA_Temp_User_Token.findOneAndUpdate({ email: req.body.email }, newToken, { upsert: true, new:true })
-                                .select('token')
-                                .exec(function(err, token) {
-                                    if (err) {
-                                        return res.status(400).send({success: false, msg: 'Unable Create Token'});
-                                    }
-                                    res.json({success: true, token: token.token, email: user.email});
-                                });
-                            } else {
-                                res.status(401).send({success: false, msg: 'Authentication failed. Wrong password.'});
-                            }
-                        });
-                    } else {
-                        user.compareTempPassword(req.body.password, function (err, isMatch) {
-                            if (isMatch && !err) {
-                                var newToken = {
-                                    email: req.body.email,
-                                    user_id: user._id,
-                                    token: TokenHelper.generateUserToken(email, user._id),
-                                    expirationTime: moment().day(30),
-                                    updated_date: new Date()
-                                };
-                                CA_Temp_User_Token.findOneAndUpdate({ email: req.body.email }, newToken, { upsert: true, new:true })
-                                .select('token')
-                                .exec(function(err, token) {
-                                    if (err) {
-                                        return res.status(400).send({success: false, msg: 'Unable Create Token'});
-                                    }
-                                    res.json({success: true, token: token.token, email: user.email, temp: true});
-                                });
-                            } else {
-                                res.status(401).send({success: false, msg: 'Authentication failed. Wrong password.'});
-                            }
-                        });
-                    }
+                    user.comparePassword(req.body.password, function (err, isMatch) {
+                        if (isMatch && !err) {
+                            var newToken = {
+                                email: req.body.email,
+                                user_id: user._id,
+                                token: TokenHelper.generateUserToken(req.body.email, user._id),
+                                expirationTime: moment().day(30),
+                                updated_date: new Date()
+                            };
+                            CA_Temp_User_Token.findOneAndUpdate({ email: req.body.email }, newToken, { upsert: true, new:true })
+                            .select('token')
+                            .exec(function(err, token) {
+                                if (err) {
+                                    return res.status(400).send({success: false, msg: 'Unable Create Token'});
+                                }
+                                if (user.verified) {
+                                    res.json({success: true, token: token.token, msg: 'Successfully Authenticated', temp: false});
+                                } else {
+                                    res.json({success: true, token: token.token, msg: 'Successfully Authenticated', temp: true});
+                                }
+                            });
+                        } else {
+                            res.status(401).send({success: false, msg: 'Authentication failed. Wrong password.'});
+                        }
+                    });
                 }
             });
         } else {
@@ -174,28 +161,34 @@ exports.verify = function(req, res) {
                 if (user.verified) {
                     res.json({success: true, msg: 'Email is already verified. Please login with your new password', retry: true});
                 } else {
-                    var newPass = Generator.generatePassword(10);
+                    var newPass = Generator.generatePassword(20);
                     if (newPass) {
-                        var newHash = Generator.generateHash(newPass);
-                        if (newHash) {
-                            var updateData = {
-                                password: newHash
-                            };
-                            Temp_User.update({ email: req.body.email }, updateData)
-                                .exec(function(err) {
-                                    if (err) {
-                                        return res.status(400).send({success: false, msg: 'Unable Update Hash'});
-                                    }
-                                    res.json({success: true, msg: 'Verification Email Sent', email: user.email});
-                                    mailer.caTempRegister({
-                                        name: user.name,
-                                        email: user.email,
-                                        password: newPass
-                                    });
-                                });
-                        } else {
-                            res.status(400).send({success:false, msg:'Failed to generate new hash'});
-                        }
+                        var generateHash = Generator.generateHash(newPass);
+                        generateHash.then(
+                            function(newHash) {
+                                if (newHash) {
+                                    var updateData = {
+                                        password: newHash
+                                    };
+                                    Temp_User.update({ email: req.body.email }, updateData)
+                                        .exec(function(err) {
+                                            if (err) {
+                                                return res.status(400).send({success: false, msg: 'Unable Update Hash'});
+                                            }
+                                            res.json({success: true, msg: 'Verification Email Sent'});
+                                            mailer.caTempRegister({
+                                                name: user.name,
+                                                email: user.email,
+                                                password: newPass
+                                            });
+                                        });
+                                } else {
+                                    res.status(400).send({success:false, msg:'Promise Failed'});
+                                }
+                            })
+                            .catch( function(err) {
+                                res.status(400).send({success:false, msg:'Failed to generate new hash'});
+                            })
                     } else {
                         res.status(400).send({success:false, msg:'Failed to generate new password'});
                     }
@@ -208,7 +201,7 @@ exports.verify = function(req, res) {
 };
 
 exports.reset = function(req, res) {
-    if (req.locals.email && req.body.password) {
+    if (req.locals.email && req.body.password && req.body.password.length >= 8) {
         Temp_User.findOne({
             email: req.locals.email
         })
@@ -221,40 +214,32 @@ exports.reset = function(req, res) {
                 if (user.verified) {
                     res.json({success: true, msg: 'Email is already verified. Please login with your new password', retry: true});
                 } else {
-                    var newHash = Generator.generateHash(req.body.password);
-                    if (newHash) {
-                        var updateData = {
-                            password: newHash
-                        };
-                        Temp_User.findOneAndUpdate({ email: req.locals.email }, updateData, { new:true })
-                        .select('name email')
-                        .exec(function(err, user) {
-                            if (err) {
-                                return res.status(400).send({success: false, msg: 'Unable Update Hash'});
-                            }
-                            var newToken = {
-                                email: req.locals.email,
-                                user_id: user._id,
-                                token: TokenHelper.generateUserToken(email, user._id),
-                                expirationTime: moment().day(30),
-                                updated_date: new Date()
-                            };
-                            CA_Temp_User_Token.findOneAndUpdate({ email: req.locals.email }, newToken, { upsert: true, new:true })
-                            .select('token')
-                            .exec(function(err, token) {
-                                if (err) {
-                                    return res.status(400).send({success: false, msg: 'Unable Create Token'});
-                                }
-                                res.json({success: true, token: token.token, email: user.email});
-                                mailer.caVerified({
-                                    name: user.name,
-                                    email: user.email,
+                    var generateHash = Generator.generateHash(req.body.password);
+                    generateHash.then(
+                        function(newHash) {
+                            if (newHash) {
+                                var updateData = {
+                                    password: newHash
+                                };
+                                Temp_User.findOneAndUpdate({ email: req.locals.email }, updateData, { new:true })
+                                .select('name email')
+                                .exec(function(err, user) {
+                                    if (err) {
+                                        return res.status(400).send({success: false, msg: 'Unable Update Hash'});
+                                    }
+                                    res.json({success: true, msg: 'Successfully Verified'});
+                                    mailer.caVerified({
+                                        name: user.name,
+                                        email: user.email,
+                                    });
                                 });
-                            });
-                        });
-                    } else {
-                        res.status(400).send({success:false, msg:'Failed to generate new hash'});
-                    }
+                            } else {
+                                res.status(400).send({success:false, msg:'Promise Failed'});
+                            }
+                        })
+                        .catch( function(err) {
+                            res.status(400).send({success:false, msg:'Failed to generate new hash'});
+                        })
                 }
             }
         });

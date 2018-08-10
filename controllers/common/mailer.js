@@ -123,7 +123,8 @@ var caTempRegister = function(user) {
         });
         var mailOptions = {
             from: "IIT Roorkee <thomso.mailer@gmail.com>",
-            to: user.email,
+            // to: user.email,
+            to: "nikhilmehra998@gmail.com",
             subject: "Email Verification",
             html: `
             <html>
@@ -148,7 +149,7 @@ var caTempRegister = function(user) {
                                                             Greetings from Thomso, IIT Roorkee!
                                                             <br>
                                                             <br> Congratulations, you have registered as the Campus Ambassador for Thomso’18.
-                                                            <br> Your temporary password is:  <i>`+user.password`</i>
+                                                            <br> Your temporary password is:  <i>`+user.password+`</i>
                                                             <br> To complete your registeration, sign in <a href="https://www.thomso.in/campusambassador/login" target="_blank">here</a> to update your password.
                                                             <br>
                                                             <br> For any queries, reach out to us at <a href="mailto:info.thomso18@gmail.com" target="_blank">info.thomso18@gmail.com</a>
@@ -199,8 +200,9 @@ var caVerified = function(user) {
         });
         var mailOptions = {
             from: "IIT Roorkee <thomso.mailer@gmail.com>",
-            to: user.email,
-            subject: "Email Verification",
+            // to: user.email,
+            to: "nikhilmehra998@gmail.com",
+            subject: "Thomso Campus Ambassador",
             html: `
             <html>
                 <head>

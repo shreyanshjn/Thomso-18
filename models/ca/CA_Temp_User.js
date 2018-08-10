@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var bcrypt = require('bcrypt-nodejs');
 
 var UserSchema = new mongoose.Schema({
     name: {
@@ -11,9 +12,6 @@ var UserSchema = new mongoose.Schema({
         required: true
     },
     password: {
-        type: String
-    },
-    temp_password: {
         type: String
     },
     verified: {
@@ -55,15 +53,6 @@ var UserSchema = new mongoose.Schema({
 
 UserSchema.methods.comparePassword = function (passw, cb) {
     bcrypt.compare(passw, this.password, function (err, isMatch) {
-        if (err) {
-            return cb(err);
-        }
-        cb(null, isMatch);
-    });
-};
-
-UserSchema.methods.compareTempPassword = function (passw, cb) {
-    bcrypt.compare(passw, this.temp_password, function (err, isMatch) {
         if (err) {
             return cb(err);
         }
