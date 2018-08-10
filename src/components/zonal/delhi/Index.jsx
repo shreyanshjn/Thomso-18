@@ -20,12 +20,12 @@ export default class DelhiIndex extends Component {
         };
         return (
             <SectionsContainer {...options}>
-
                 <Section>
                     <DelhiOpening />
                 </Section>
-                     <SectionSecond /> 
-
+                <Section>
+                    <SectionSecond /> 
+                </Section>
             </SectionsContainer>
         );
     }

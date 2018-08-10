@@ -12,6 +12,10 @@
     border-radius:20px;
     box-shadow:4px 4px 4px 4px #24989a;
 }
+.zonals-common-comp1 > div
+{
+    opacity:0;
+}
 .zonal-comp1-button
 {
     background:white;
@@ -20,10 +24,37 @@
     border-radius:10px;
     cursor:pointer;
 }
+.zonals-comp-dance-transform
+{
+  width:80%;
+  height:60vh;
+  position:absolute;
+  top:0px;
+  right:13%;
+}
+.zonals-comp-dance-transform > div
+{
+   opacity:1;
+   transition:opacity 3s;
+}
+.zonal-common-comp1-content
+{
+    width:80%;
+    margin:auto; 
+}
+    .zonals-common-comp1-cover
+    {
+       overflow:scroll;
+    }
 @media only screen and (max-white:768px)
 {
     .zonals-common-comp1
     {
         height:70vh;
+        overflow-y:hidden;
+    }
+    .zonal-common-comp1-content
+    {
+       font-size:15px;
     }
 }

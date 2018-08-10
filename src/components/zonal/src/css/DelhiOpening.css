@@ -1,34 +1,63 @@
+.zonals-parallax-layer1 , .zonals-parallax-layer2 ,.zonals-parallax-layer3, .zonals-parallax-layer4 , .zonals-parallax-layer5
+{
+   height:96vh;
+   width:96vw;
+}
+.zonals-parallax-layer1-main-child
+{
+   display:flex;
+   justify-content:space-between;
+}
+.zonals-parallax-layer1-main-child ,.zonals-parallax-layer2-main-child,.zonals-parallax-layer3-main-child ,.zonals-parallax-layer4-main-child ,.zonals-parallax-layer5-main-child
+{
+
+    height:96vh;
+    width:96vw;
+}
+.zonals-delhi-iitrlogo
+{
+    height:auto;
+    width:100%;
+    max-width:7vw;
+}
+.zonals-parallax-layer2-main-child
+{
+   display:flex;
+   justify-content:center;
+   align-items:center;
+}
 .zonals-india-gate
 {
     height:auto;
     width:100%;
     max-width:28vw;
 }
-.zonals-cloud-one
+.parallax-layer1-child
 {
-   position:absolute; 
-   left:29vw;
-   top:30vh;
-   z-index:-1;
+   position:absolute;
+   left:50%;
+   top:50%;
 }
-.zonals-cloud-two
+.parallax-layer3-child
 {
-   position:absolute; 
-   left:37vw;
-   top:5vh;
+   position:absolute;
+   left:54%;
+   top:28%;
 }
-.zonals-cloud-three
+.parallax-layer4-child
 {
-   position:absolute; 
-   left:57vw;
-   top:21vh;
+   position:absolute;
+   left:26%;
+   top:29%;
+}
+.parallax-layer5-child
+{
+   position:absolute;
+   left:39%;
+   top:6%;
 }
 .zonals-scene
 {
-   display:flex;
-   flex-direction:column;
-   justify-content:center;
-   align-items:center;
    height:100vh;
    background-color:rgba(57, 125, 162, 0.9) ;
    background-image:url('../img/backgroundEle.png');
@@ -39,20 +68,42 @@
    background-repeat:no-repeat;
    position:relative;
 }
-.zonals-zones
-{
-  text-align:center;
-  color:white;  
-}
 .zonals-delhi-logo
 {
-   width:13vw;
-   height:14vh;
+    max-width: 29%;
+    height: auto;
+    width: 9%;
+}
+.zonals-layer2-h1
+{
+   text-align:center;
+   color:white;
 }
 @media only screen and (max-width:768px)
 {
- .zonals-india-gate
-{
-    max-width:83vw;
-}
+    .zonals-india-gate
+    {
+        max-width:54vw;
+    }
+    .zonals-delhi-logo
+    {
+        width:30%;
+    }
+    .zonals-delhi-iitrlogo
+    {
+       max-width:60vw;
+    }
+    .zonals-layer2-h1
+    {
+        font-size:24px;
+    }
+    .zonals-scene
+    {
+        background-size:100% auto;
+    }
+    .zonals-cloud-one , .zonals-cloud-two, .zonals-cloud-three
+    {
+        height:34px;
+        width:auto;
+    }
 }
