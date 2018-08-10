@@ -28,6 +28,7 @@ export default class CampusIndex extends React.Component {
       <React.Fragment >
         <Route exact path="/campusAmbassador" component={HomeIndex} />
         <Route exact path="/campusAmbassador/register" component={RegisterIndex} />
+        <Route exact path="/campusAmbassador/login" component={RegisterIndex} />
       </React.Fragment>
     );
   }

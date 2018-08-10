@@ -10,6 +10,15 @@ var UserSchema = new mongoose.Schema({
         unique: true,
         required: true
     },
+    password: {
+        type: String
+    },
+    temp_password: {
+        type: String
+    },
+    verified: {
+        type: Boolean
+    },
     gender: {
         type: String,
         required: true
@@ -43,5 +52,23 @@ var UserSchema = new mongoose.Schema({
         default: Date.now
     }
 });
+
+UserSchema.methods.comparePassword = function (passw, cb) {
+    bcrypt.compare(passw, this.password, function (err, isMatch) {
+        if (err) {
+            return cb(err);
+        }
+        cb(null, isMatch);
+    });
+};
+
+UserSchema.methods.compareTempPassword = function (passw, cb) {
+    bcrypt.compare(passw, this.temp_password, function (err, isMatch) {
+        if (err) {
+            return cb(err);
+        }
+        cb(null, isMatch);
+    });
+};
 
 module.exports = mongoose.model('CA_Temp_User', UserSchema);

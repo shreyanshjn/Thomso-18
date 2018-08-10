@@ -59,7 +59,7 @@ export default class RegisterIndex extends React.Component {
         const check = validateInput(email, 'email')
 
         if (name && contact && email && gender && college && state && branch && address && why && check.isValid) {
-            FetchApi('POST', '/api/ca/tempRegister', data)
+            FetchApi('POST', '/api/ca/temp/auth/register', data)
                 .then(r => {
                     if (r && r.data && this.popup) {
                         if (r.data.success === true) {
