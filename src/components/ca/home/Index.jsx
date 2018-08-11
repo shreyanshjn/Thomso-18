@@ -53,7 +53,6 @@ export default class HomeIndex extends React.Component {
                 xfbml: true
             });
         }
-
         const authtoken = this.Auth.getToken();
         FetchApi('GET', '/api/ca/posts', null, authtoken)
             .then((result) => {

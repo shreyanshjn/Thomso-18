@@ -14,14 +14,14 @@
   vertical-align: middle;
 }
 .login-div3{
-  height:51px;
+  height:auto;
   width: 51px;
   display: flex;
   flex-direction: column;
   justify-content:flex-start;
 }
 .login-div3 img{
-  height: 51px;
+  height: auto;
   width:51px;
 }
 
@@ -43,7 +43,7 @@
   color:black;
   text-align: left;
 }
-@media screen and (max-width:768px){
+@media screen and (max-width:1068px){
 
   .login-div2{
     height: 110px;
@@ -57,14 +57,14 @@
     vertical-align: middle;
   }
   .login-div3{
-    height:40px;
+    height:auto;
     width: 40px;
     display: flex;
     flex-direction: column;
     justify-content:flex-start;
   }
   .login-div3 img{
-    height: 40px;
+    height: auto;
     width:40px;
   }
   .login-div4{

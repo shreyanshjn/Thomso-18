@@ -2,6 +2,8 @@ import React from 'react';
 import DataRow from './DataRow';
 import AuthService from '../../../handlers/ca/AuthService';
 import FetchApi from '../../../utils/FetchAPI';
+import { addTopic } from '../../../utils/firebasePush';
+
 import '../src/css/Leaderboard.css';
 export default class LeaderboardIndex extends React.Component {
     constructor() {
@@ -35,6 +37,9 @@ export default class LeaderboardIndex extends React.Component {
                 }
             })
             .catch(e => console.log(e));
+        setTimeout(() => {
+            addTopic('random');
+        }, 1000);
     }
 
     render() {

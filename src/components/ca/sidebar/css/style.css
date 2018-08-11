@@ -98,7 +98,8 @@
         padding: 15px 0px;
     }
     .sidebar-hand{
-        margin-top: 30vh;
+        position: absolute;
+        bottom: 5vh;
         cursor: pointer;
         display: flex;
         flex-direction: row;

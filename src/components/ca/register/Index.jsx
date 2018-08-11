@@ -99,7 +99,25 @@ export default class RegisterIndex extends React.Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        const { name, contact, email, gender, college, state, branch, address, why } = this.state;
+        let { name, contact, email, gender, college, state, branch, address, why } = this.state;
+        if (name) {
+            name = name.trim()
+        }
+        if (contact) {
+            contact = contact.trim()
+        }
+        if (college) {
+            college = college.trim()
+        }
+        if (branch) {
+            branch = branch.trim()
+        }
+        if (address) {
+            address = address.trim()
+        }
+        if (why) {
+            why = why.trim()
+        }
         let data = { name, contact, email, gender, college, state, branch, address, why }
         const check = validateInput(email, 'email')
         if (name && contact && email && gender && college && state && branch && address && why && check.isValid) {
@@ -231,10 +249,16 @@ export default class RegisterIndex extends React.Component {
                                         required
                                     >
                                         <option value="" disabled="true"> College State </option>
+                                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                        <option value="Andhra Pradesh">Andhra Pradesh</option>
                                         <option value="Arunachal Pradesh">Arunachal Pradesh</option>
                                         <option value="Assam">Assam</option>
                                         <option value="Bihar">Bihar</option>
+                                        <option value="Chandigarh">Chandigarh</option>
                                         <option value="Chhattisgarh">Chhattisgarh</option>
+                                        <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+                                        <option value="Daman and Diu">Daman and Diu</option>
+                                        <option value="Delhi">Delhi</option>
                                         <option value="Goa">Goa</option>
                                         <option value="Gujarat">Gujarat</option>
                                         <option value="Haryana">Haryana</option>
@@ -243,13 +267,15 @@ export default class RegisterIndex extends React.Component {
                                         <option value="Jharkhand">Jharkhand</option>
                                         <option value="Karnataka">Karnataka</option>
                                         <option value="Kerala">Kerala</option>
+                                        <option value="Lakshadweep">Lakshadweep</option>
                                         <option value="Madhya Pradesh">Madhya Pradesh</option>
                                         <option value="Maharashtra">Maharashtra</option>
-                                        <option value="Maharashtra">Manipur</option>
+                                        <option value="Manipur">Manipur</option>
                                         <option value="Meghalaya">Meghalaya</option>
                                         <option value="Mizoram">Mizoram</option>
                                         <option value="Nagaland">Nagaland</option>
                                         <option value="Odisha">Odisha</option>
+                                        <option value="Puducherry">Puducherry</option>
                                         <option value="Punjab">Punjab</option>
                                         <option value="Rajasthan">Rajasthan</option>
                                         <option value="Sikkim">Sikkim</option>
@@ -262,7 +288,7 @@ export default class RegisterIndex extends React.Component {
                                     </select>
                                 </div>
                                 <div className="form-branch">
-                                    <label htmlFor="inputBranch">Branch</label>
+                                    <label htmlFor="inputBranch">Branch and Year</label>
                                     <input
                                         id="inputBranch"
                                         type="text"

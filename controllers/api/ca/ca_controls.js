@@ -135,7 +135,7 @@ exports.deleteIdea = function (req, res) {
 
 /* GET Leaderboard */
 exports.getLeaderboard = function (req, res) {
-    Users.find({ blocked: false })
+    Users.find({ blocked: { $ne: true } })
         .select('name likes college score referrals shares')
         .sort({ 'score': -1 })
         .limit(10)
@@ -150,7 +150,8 @@ exports.getLeaderboard = function (req, res) {
 /* GET Rank */
 exports.getRank = function (req, res) {
     Users.findOne({
-        fb_id: req.locals.fb_id
+        fb_id: req.locals.fb_id,
+        blocked: { $ne: true }
     })
         .select('score')
         .exec(function (err, user) {

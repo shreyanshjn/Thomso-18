@@ -1,5 +1,7 @@
 var Users = require('../../../../models/ca/CA_User');
 var Ideas = require('../../../../models/ca/CA_Idea');
+var TempUsers =  require('../../../../models/ca/CA_Temp_User');
+
 // const fs = require('fs');
 // const moment = require('moment');
 // const json2csv = require('json2csv').parse;
@@ -117,6 +119,16 @@ exports.putBonus = function(req, res) {
         return res.status(400).send({success:false, msg:'Invalid Params'});
     }
 };
+
+/* GET All Temp Users */
+exports.getTempUsers = function(req, res) {
+    TempUsers.find()
+    .exec(function (err, allUsers) {
+      if (err) return res.status(400).send({success:false, msg:'Unable to GET Participants', error:err});
+      res.json(allUsers);
+    });
+};
+  
 
 exports.exportToCSV = function(req, res) {
     // var filename   = "participant.csv";

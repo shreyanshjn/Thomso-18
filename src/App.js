@@ -3,6 +3,8 @@ import "./App.css";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Loadable from 'react-loadable';
 
+import { firebaseInit } from './utils/firebasePush';
+
 import Loader from "./components/common/Loader";
 // Beta route not being used currently
 // const BetaIndex = Loadable({
@@ -66,6 +68,9 @@ const ZonalsIndex = Loadable({
   loading:() => <Loader />
 })
 class App extends Component {
+  componentDidMount() {
+    firebaseInit()
+  }
   render() {
     return (
       <BrowserRouter>

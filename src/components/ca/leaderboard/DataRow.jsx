@@ -12,23 +12,20 @@ export default class DataRow extends Component {
         return (
             <React.Fragment>
                 <tr>
-                    {console.log('test')}
                     <td>{this.props.index+1}</td>
                     <td>{this.props.data ? this.props.data.name : '-'}</td>
-                <td className="ca-leader-downarrows" onClick={() => this.setState({isExpanded: !this.state.isExpanded})}>{this.props.data ? this.props.data.college : '-'}</td>
-                <td className="ca-leader-mobile">{this.props.data.likes}</td>
-                <td className="ca-leader-mobile">{this.props.data.shares}</td>
-                <td className="ca-leader-mobile">{this.props.data.score}</td>
-
-            </tr>
-
-            {this.state.isExpanded ?
+                    <td className="ca-leader-downarrows" onClick={() => this.setState({isExpanded: !this.state.isExpanded})}>{this.props.data ? this.props.data.college : '-'}</td>
+                    <td className="ca-leader-mobile">{this.props.data.likes}</td>
+                    <td className="ca-leader-mobile">{this.props.data.shares}</td>
+                    <td className="ca-leader-mobile">{this.props.data.score}</td>
+                </tr>
+                {this.state.isExpanded ?
                     <tr>
                         <td className="ca-leader-desktop">{this.props.data ? `Likes ${this.props.data.likes}` : '-'}</td>
                         <td className="ca-leader-desktop">{this.props.data ? `Shares ${this.props.data.shares}` : '-'}</td>
                         <td className="ca-leader-desktop">{this.props.data ? `Scores ${this.props.data.score}` : '-'}</td>
                     </tr>
-                    : null}
+                : null}
                 </React.Fragment>
         );
     }

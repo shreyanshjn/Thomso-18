@@ -19,11 +19,13 @@ export default class LoginIndex extends React.Component {
     }
 
     componentDidMount() {
-        window.FB.init({
-            appId: process.env.REACT_APP_FB_ID,
-            status: true,
-            xfbml: true
-        });
+        if (window.FB) {
+            window.FB.init({
+                appId: process.env.REACT_APP_FB_ID,
+                status: true,
+                xfbml: true
+            });
+        }
     }
 
     facebookLogin() {
