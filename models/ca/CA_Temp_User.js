@@ -15,7 +15,8 @@ var UserSchema = new mongoose.Schema({
         type: String
     },
     verified: {
-        type: Boolean
+        type: Boolean,
+        default: false
     },
     gender: {
         type: String,

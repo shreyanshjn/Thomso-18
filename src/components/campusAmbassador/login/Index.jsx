@@ -56,11 +56,11 @@ export default class LoginIndex extends React.Component {
                             if (r.data.success) {
                                 this.Auth.setToken(r.data.token)
                                 if (r.data.temp) {
-                                    this.Auth.setTemp()
                                     this.props.updateRoutes(true, true)
                                     this.props.history.push('/CampusAmbassador/reset')
                                 } else {
                                     this.props.updateRoutes(true)
+                                    this.props.setUserData(r.data.body)
                                     this.props.history.push('/CampusAmbassador')
                                 }
                             } else {

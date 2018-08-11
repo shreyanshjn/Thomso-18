@@ -104,7 +104,7 @@ exports.ca_temp_login = function(req, res) {
             Temp_User.findOne({
                 email: req.body.email
             })
-            .select('email verified password')
+            .select('name email verified password gender')
             .exec(function(err, user) {
                 if (err) res.status(401).send({success: false, msg: 'Authentication failed. Error.'});
                 if (!user) {
@@ -115,6 +115,7 @@ exports.ca_temp_login = function(req, res) {
                             var newToken = {
                                 email: req.body.email,
                                 user_id: user._id,
+                                verified: user.verified,
                                 token: TokenHelper.generateUserToken(req.body.email, user._id),
                                 expirationTime: moment().day(30),
                                 updated_date: new Date()
@@ -125,10 +126,17 @@ exports.ca_temp_login = function(req, res) {
                                 if (err) {
                                     return res.status(400).send({success: false, msg: 'Unable Create Token'});
                                 }
+                                var body = {
+                                    _id: user._id,
+                                    email: user.email,
+                                    verfied: user.verfied,
+                                    name: user.name,
+                                    gender: user.gender
+                                }
                                 if (user.verified) {
-                                    res.json({success: true, token: token.token, msg: 'Successfully Authenticated', temp: false});
+                                    res.json({success: true, token: token.token, msg: 'Successfully Authenticated', temp: false, body: body});
                                 } else {
-                                    res.json({success: true, token: token.token, msg: 'Successfully Authenticated', temp: true});
+                                    res.json({success: true, token: token.token, msg: 'Successfully Authenticated', temp: true, body: body});
                                 }
                             });
                         } else {
@@ -219,15 +227,16 @@ exports.reset = function(req, res) {
                         function(newHash) {
                             if (newHash) {
                                 var updateData = {
-                                    password: newHash
+                                    password: newHash,
+                                    verified: true
                                 };
                                 Temp_User.findOneAndUpdate({ email: req.locals.email }, updateData, { new:true })
-                                .select('name email')
+                                .select('name email verfied gender')
                                 .exec(function(err, user) {
                                     if (err) {
                                         return res.status(400).send({success: false, msg: 'Unable Update Hash'});
                                     }
-                                    res.json({success: true, msg: 'Successfully Verified'});
+                                    res.json({success: true, msg: 'Successfully Verified', body: user});
                                     mailer.caVerified({
                                         name: user.name,
                                         email: user.email,

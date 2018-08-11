@@ -42,8 +42,8 @@ export default class LoginIndex extends React.Component {
                     .then(r => {
                         if (r && r.data) {
                             if (r.data.success) {
-                                this.Auth.setVertfied();
                                 this.props.updateRoutes(true)
+                                this.props.setUserData(r.data.body)
                                 this.props.history.push('/CampusAmbassador')
                             } else {
                                 this.setState({

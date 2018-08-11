@@ -207,6 +207,8 @@ exports.getData = function(req, res) {
         } else {
             if (user.created) {
                 res.json({success: true, msg:'User Data Found', body:user});
+            } else {
+                res.json({success: true, msg:'User Not Created'});
             }
         }
     });

@@ -2,6 +2,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 import Loadable from "react-loadable";
 
+import FetchApi from '../../utils/FetchAPI';
 import AuthService from '../../handlers/ca/temp/AuthService';
 import Loader from "../common/Loader";
 
@@ -43,43 +44,51 @@ export default class CampusIndex extends React.Component {
     super();
     this.state = {
       isAuthenticated: false,
-      isTemp: true
+      isTemp: true,
+      userData: ""
     }
     this.Auth = new AuthService();
   }
 
   componentWillMount() {
     const isAuthenticated = this.Auth.hasToken();
-    const isTemp = this.Auth.isTemp();
-    console.log(isTemp, "isTemp");
     console.log(isAuthenticated, "isAuthenticated");
     if (isAuthenticated) {
-      // const token = this.Auth.getToken()
-      // FetchApi('GET', '/api/ca/auth/fbData', null, token)
-      //   .then(r => {
-      //     if (r && r.data && r.data.body) {
-            this.setState({ 
-              isAuthenticated,
-              isTemp
-              // userData: r.data.body
-            });
-        //   }
-        // })
-        // .catch(e => console.log(e));
+      const token = this.Auth.getToken()
+      FetchApi('GET', '/api/ca/temp/info', null, token)
+        .then(r => {
+          if (r && r.data && r.data.body) {
+            if (r.data.body.verified) {
+              this.handleUpdate(true)
+            } else {
+              this.handleUpdate(true, true)
+              this.props.history.push('/CampusAmbassador/reset')
+            }
+          }
+        })
+        .catch(e => {
+          console.log(e)
+        });
     }
   }
 
   handleUpdate = (isAuthenticated, isTemp) => {
     this.setState({ isAuthenticated, isTemp });
   };
-  
+
+  setUserData = data => {
+    this.setState({
+      userData: data
+    });
+  };
+
   render() {
     return (
       <React.Fragment >
         {this.state.isAuthenticated ? 
           <React.Fragment>
             {this.state.isTemp ? 
-              <Route exact path="/campusAmbassador/*" render={props => (<ResetIndex {...props} updateRoutes={this.handleUpdate} />)} />
+              <Route exact path="/campusAmbassador/*" render={props => (<ResetIndex {...props} updateRoutes={this.handleUpdate} />)} setUserData={this.setUserData} />
               :
               <React.Fragment>
                 <Route exact path="/campusAmbassador" component={HomeIndex} />
@@ -91,7 +100,7 @@ export default class CampusIndex extends React.Component {
           <React.Fragment>
             <Route exact path="/campusAmbassador" component={HomeIndex} />
             <Route exact path="/campusAmbassador/register" component={RegisterIndex} />
-            <Route exact path="/campusAmbassador/login" render={props => (<LoginIndex {...props} updateRoutes={this.handleUpdate} />)} />
+            <Route exact path="/campusAmbassador/login" render={props => (<LoginIndex {...props} updateRoutes={this.handleUpdate} setUserData={this.setUserData} />)} />
           </React.Fragment>
         }
       </React.Fragment>

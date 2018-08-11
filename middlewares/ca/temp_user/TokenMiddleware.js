@@ -9,11 +9,10 @@ exports.verifyTemp = (req, res, next) => {
         CA_User_Token.findOne({
             token: authHeader
         }, function(err, user) {
-            if (err) {res.status(403).send(
-                {success: false, msg: 'Token Error'});
-        };
-            if (!user) {
-                res.status(403).send({success: false, msg: 'Invalid Token'});
+            if (err) {
+                res.status(403).send({success: false, msg: 'Token Error'});
+            } else if (!user) {
+                res.status(403).send({success: false, msg: 'User Not Found'});
             } else if (moment() > user.expirationTime) {
                 // If token expired
                 res.status(403).json({ success: false, message: 'Token Expired' });
@@ -37,10 +36,9 @@ exports.verify = (req, res, next) => {
         CA_User_Token.findOne({
             token: authHeader
         }, function(err, user) {
-            if (err) {res.status(403).send(
-                {success: false, msg: 'Token Error'});
-            };
-            if (!user) {
+            if (err) {
+                res.status(403).send({success: false, msg: 'Token Error'});
+            } else if (!user) {
                 res.status(403).send({success: false, msg: 'Invalid Token'});
             } else if (moment() > user.expirationTime) {
                 // If token expired
