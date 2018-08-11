@@ -149,7 +149,7 @@ var caTempRegister = function(user) {
                                                             Greetings from Thomso, IIT Roorkee!
                                                             <br>
                                                             <br> Congratulations, you have registered as the Campus Ambassador for Thomso’18.
-                                                            <br> Your temporary password is:  <i>`+user.password+`</i>
+                                                            <br> Your temporary password is: <i><b>`+user.password+`<b></i>
                                                             <br> To complete your registeration, sign in <a href="https://www.thomso.in/campusambassador/login" target="_blank">here</a> to update your password.
                                                             <br>
                                                             <br> For any queries, reach out to us at <a href="mailto:info.thomso18@gmail.com" target="_blank">info.thomso18@gmail.com</a>
@@ -225,9 +225,9 @@ var caVerified = function(user) {
                                                         <p style="font-family:Avenir,Helvetica,sans-serif;width:fit-content;text-align:justify;color:#74787e;margin-top:0;text-align:left;margin-bottom:10px;line-height:20px;font-size:13px">
                                                             Greetings from Thomso, IIT Roorkee!
                                                             <br>
-                                                            <br> Congratulations, you have successfully registered as the Campus Ambassador for Thomso’18.
+                                                            <br> Congratulations, you have been successfully registered as the Campus Ambassador for Thomso’18.
                                                             <br> Your account has been verified.
-                                                            <br> We cordially welcome you to Thomso family as an official member.
+                                                            <br> We cordially welcome you to The Thomso family as an official member of Thomso 18'.
                                                             <br>
                                                             <br> For any queries, reach out to us at <a href="mailto:info.thomso18@gmail.com" target="_blank">info.thomso18@gmail.com</a>
                                                         </p>

@@ -63,10 +63,9 @@ export default class RegisterIndex extends React.Component {
                 .then(r => {
                     if (r && r.data && this.popup) {
                         if (r.data.success === true) {
-                            this.popup.show(['You have been successfully registered.', `Confirmation message has been sent to ${this.state.email ? this.state.email : 'your email'}.`], '/CampusAmbassador')
+                            this.popup.show(['Thank you for registering as CA.', `Verification email has been sent to ${this.state.email ? this.state.email : 'your email'}.`], '/CampusAmbassador')
                         } else {
                             this.setState({ errors: 'This email is already registered' })
-                            this.popup.show([`This email is already registered.`, `Confirmation message has been sent to ${this.state.email ? this.state.email : 'your email'}.`])
                         }
                     }
                 })
