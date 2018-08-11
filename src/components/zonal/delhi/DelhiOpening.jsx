@@ -7,17 +7,10 @@ import logo from '../src/img/logo.png';
 import iitrlogo from '../src/img/iitrlogo.png';
 import { Link } from 'react-router-dom' ;
 export default class DelhiOpening extends Component {
-    constructor(props) {
-        super(props);
-        this.state={
-            scene:0
-        }
-    }
     componentDidMount()
     {
-        if(!scene)
-        {
-            var scene = document.getElementById('scene');
+        const scene = document.getElementById('delhi-zonals-parallax');
+        if (scene) {
             var parallaxInstance = new Parallax(scene);
         }
     }
@@ -32,7 +25,7 @@ export default class DelhiOpening extends Component {
                         <img src={iitrlogo} className="zonals-delhi-iitrlogo" alt="iitrlogo" />
                     </div>
                 </div>
-                <div id="scene" className="zonals-scene">
+                <div id="delhi-zonals-parallax" className="zonals-scene">
 
                     <div className="zonals-parallax-layer1">
                     </div>

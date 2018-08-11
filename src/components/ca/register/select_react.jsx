@@ -60,9 +60,6 @@ const customStyles = {
 }
 
 export default class CreatableSingle extends Component {
-    constructor() {
-        super();
-    }
     handleChange = (newValue, actionMeta) => {
         console.group('Value Changed');
         console.log(newValue);

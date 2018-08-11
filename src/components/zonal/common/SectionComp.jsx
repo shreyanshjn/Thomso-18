@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../src/css/SectionComp.css';
 export default class SectionComp extends React.Component {
     render() {

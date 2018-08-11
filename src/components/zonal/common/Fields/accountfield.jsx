@@ -1,19 +1,18 @@
 import React from 'react';
-import Slide from "./effects/slide"
-const duration = 400
-const defaultone = {
-    transition: `all ${duration}ms ease-in-out`,
-    position: 'absolute',
-    top: '100px',
-    width: '700px',
-    height: '392px'
-};
-const styleone = {
-    entering: { opacity: 0 },
-    entered: { opacity: 1 },
-    exiting: { opacity: 1 },
-    exited: { opacity: 0 }
-}
+// const duration = 400
+// const defaultone = {
+//     transition: `all ${duration}ms ease-in-out`,
+//     position: 'absolute',
+//     top: '100px',
+//     width: '700px',
+//     height: '392px'
+// };
+// const styleone = {
+//     entering: { opacity: 0 },
+//     entered: { opacity: 1 },
+//     exiting: { opacity: 1 },
+//     exited: { opacity: 0 }
+// }
 export default class AccountFields extends React.Component {
     constructor() {
         super();

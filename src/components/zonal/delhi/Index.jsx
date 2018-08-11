@@ -5,10 +5,6 @@ import { SectionsContainer, Section } from 'react-fullpage';
 import ZonalsFooter from '../common/zonalsregistration';
 import Footer from '../common/Footer';
 export default class DelhiIndex extends Component {
-    constructor()
-    {
-        super();
-    }
     render() {
         let options = {
             sectionClassName: 'section',

@@ -1,5 +1,5 @@
 import Transition from 'react-transition-group/Transition';
-import React, { Component } from 'react';
+import React from 'react';
 
 const duration = 400;
 

@@ -14,7 +14,7 @@ export default class Footer extends React.Component {
             MULTI ACTIVITY CENTER, <br />
             INDIAN INSTITUTE OF TECHNOLOGY, ROORKEE
             </div>
-            <div className="zonals-footer-follow">
+            <div className="zonals-footer-follow zonals-footer-desktop-view">
                 <div className="zonals-footer-text-p">
                     FOLLOW US
                 </div>
