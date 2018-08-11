@@ -15,3 +15,10 @@
     font-family:Montserrat;
     font-size:45px;
 }
+@media only screen and (max-width:768px)
+{
+    .campusAmb-post-index-main
+    {
+        width: calc(100% - 56px);
+    }
+}

@@ -89,7 +89,6 @@ export default class CampusIndex extends React.Component {
   render() {
     return (
       <React.Fragment >
-          {console.log(this.state, 'this.state')}
         {this.state.isAuthenticated ? 
           <React.Fragment>
             {this.state.isTemp ? 
@@ -100,7 +99,6 @@ export default class CampusIndex extends React.Component {
                 <Route exact path="/campusAmbassador/leaderboard" render={props => (<LeaderboardIndex {...props} userData={this.state.userData} />) } />
                 <Route exact path="/campusAmbassador/contact" render={props => (<ContactIndex {...props} userData={this.state.userData} />)}/>
                 <Route exact path="/campusAmbassador/guidelines" component={GuideIndex} />
-                <Route exact path="/campusAmbassador/posts" component={PostIndex} />
                 <Route exact path="/campusAmbassador" component={PostIndex} />
               </React.Fragment>
             }

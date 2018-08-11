@@ -1,51 +1,51 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import IntegrationReactSelect from './select_react';
+// import IntegrationReactSelect from './select_react';
 import "./css/register.css";
 import img from "./img/logo.png";
 import AuthService from '../../../handlers/ca/AuthService';
 import FetchApi from '../../../utils/FetchAPI';
 import validateInput from '../../../utils/validation/loginValidation';
 
-const options = [
-    { label: 'Afghanistan' },
-    { label: 'Aland Islands' },
-    { label: 'Albania' },
-    { label: 'Algeria' },
-    { label: 'American Samoa' },
-    { label: 'Andorra' },
-    { label: 'Angola' },
-    { label: 'Anguilla' },
-    { label: 'Antarctica' },
-    { label: 'Antigua and Barbuda' },
-    { label: 'Argentina' },
-    { label: 'Armenia' },
-    { label: 'Aruba' },
-    { label: 'Australia' },
-    { label: 'Austria' },
-    { label: 'Azerbaijan' },
-    { label: 'Bahamas' },
-    { label: 'Bahrain' },
-    { label: 'Bangladesh' },
-    { label: 'Barbados' },
-    { label: 'Belarus' },
-    { label: 'Belgium' },
-    { label: 'Belize' },
-    { label: 'Benin' },
-    { label: 'Bermuda' },
-    { label: 'Bhutan' },
-    { label: 'Bolivia, Plurinational State of' },
-    { label: 'Bonaire, Sint Eustatius and Saba' },
-    { label: 'Bosnia and Herzegovina' },
-    { label: 'Botswana' },
-    { label: 'Bouvet Island' },
-    { label: 'Brazil' },
-    { label: 'British Indian Ocean Territory' },
-    { label: 'Brunei Darussalam' },
-].map(suggestion => ({
-    value: suggestion.label,
-    label: suggestion.label,
-}));
+// const options = [
+//     { label: 'Afghanistan' },
+//     { label: 'Aland Islands' },
+//     { label: 'Albania' },
+//     { label: 'Algeria' },
+//     { label: 'American Samoa' },
+//     { label: 'Andorra' },
+//     { label: 'Angola' },
+//     { label: 'Anguilla' },
+//     { label: 'Antarctica' },
+//     { label: 'Antigua and Barbuda' },
+//     { label: 'Argentina' },
+//     { label: 'Armenia' },
+//     { label: 'Aruba' },
+//     { label: 'Australia' },
+//     { label: 'Austria' },
+//     { label: 'Azerbaijan' },
+//     { label: 'Bahamas' },
+//     { label: 'Bahrain' },
+//     { label: 'Bangladesh' },
+//     { label: 'Barbados' },
+//     { label: 'Belarus' },
+//     { label: 'Belgium' },
+//     { label: 'Belize' },
+//     { label: 'Benin' },
+//     { label: 'Bermuda' },
+//     { label: 'Bhutan' },
+//     { label: 'Bolivia, Plurinational State of' },
+//     { label: 'Bonaire, Sint Eustatius and Saba' },
+//     { label: 'Bosnia and Herzegovina' },
+//     { label: 'Botswana' },
+//     { label: 'Bouvet Island' },
+//     { label: 'Brazil' },
+//     { label: 'British Indian Ocean Territory' },
+//     { label: 'Brunei Darussalam' },
+// ].map(suggestion => ({
+//     value: suggestion.label,
+//     label: suggestion.label,
+// }));
 
 export default class RegisterIndex extends React.Component {
     constructor() {
@@ -238,8 +238,23 @@ export default class RegisterIndex extends React.Component {
                             </div>
                             <div className="form-college-child">
                                 <label htmlFor="inputCollege">College</label>
-                                <IntegrationReactSelect options={options} />
+                                <input
+                                    id="inputCollege"
+                                    type="text"
+                                    placeholder="College Name"
+                                    name="college"
+                                    autoCorrect="off"
+                                    autoComplete="off"
+                                    autoCapitalize="on"
+                                    value={college}
+                                    onChange={this.onChange}
+                                    required
+                                />
                             </div>
+                            {/* <div className="form-college-child">
+                                <label htmlFor="inputCollege">College</label>
+                                <IntegrationReactSelect options={options} />
+                            </div> */}
                             <div className="form-first-child">
                                 <div className="form-state">
                                     <label htmlFor="inputState">College State</label>

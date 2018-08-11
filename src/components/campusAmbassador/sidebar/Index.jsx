@@ -2,16 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./css/style.css";
 import boy from "./img/boy.png";
-import like from "./img/like.png"
-import share from "./img/share.png"
-import score from "./img/star.png"
+import girl from "./img/girl.png";
+// import like from "./img/like.png"
+// import share from "./img/share.png"
+// import score from "./img/star.png"
 import Post from "./Svg/Post"
-import Referral from "./Svg/Referral"
+// import Referral from "./Svg/Referral"
 import Leader from "./Svg/Leader"
 import Guide from "./Svg/Guide"
 import Contact from "./Svg/Contact"
 import Logout from "./Svg/Logout"
-import Bulb from "./Svg/Bulb"
+// import Bulb from "./Svg/Bulb"
 import Hand from "./Svg/Hand"
 
 // import logoUser from '../common/images/user.svg';
@@ -30,8 +31,19 @@ export default class Sidebar extends React.Component {
     }
   }
 
-  setActive(state) {
-    this.setState({ activeState: state });
+  componentDidMount() {
+    const countDownDate = new Date("Oct 25, 2018 00:00:00").getTime();
+    const now = new Date().getTime();
+    const distance = countDownDate - now;
+    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    if (days < 0) {
+      days = 0;
+    }
+    this.setState({days})
+  }
+
+  setActive(activeState) {
+    this.setState({ activeState });
   }
 
   copytoclipboard = () => {
@@ -39,25 +51,24 @@ export default class Sidebar extends React.Component {
     Field.execCommand('copy');
     Field.remove()
   }
-  render() {
-    let countDownDate = new Date("Oct 25, 2018 00:00:00").getTime();
-    let now = new Date().getTime();
-    let distance = countDownDate - now;
-    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    if (days < 0) {
-      days = 0;
-    }
 
+  render() {
     return (
       <div>
-        {console.log(this.props.userData, 'UserData')}
         <div
           id="mySidenav"
           className="sidenav"
-          style={(this.props.userData && this.props.userData.gender === "female") ? { backgroundColor: 'Pink' } : { backgroundColor: 'white' }}
+          style={{ backgroundColor: 'white' }}
         >
           <div className="campusAmb-sidebar-user">
-            <img src={(this.props.userData && this.props.userData.image) ? this.props.userData.image : boy} className="image" alt="dataImg" />
+            {(this.props.userData && this.props.userData.image) ? <img src={this.props.userData.image} className="image" alt="User" /> : 
+              <React.Fragment>
+                {(this.props.userData && this.props.userData.gender === 'female') ? 
+                  <img src={girl} className="image" alt="User" /> :
+                  <img src={boy} className="image" alt="User" />
+                }
+              </React.Fragment>}
+            
             <div className="campusAmb-sidebar-user-details">
               <div className="text">{this.props.userData ? this.props.userData.name : "User"}</div>
               <div className="cname">{this.props.userData ? this.props.userData.college : "-"}</div>
@@ -67,14 +78,14 @@ export default class Sidebar extends React.Component {
           </div>
           <div className="campusAmb-sidebar-contents">
             <Link
-              to="/CampusAmbassador/posts"
+              to="/CampusAmbassador/"
               className={
-                (this.state.activeState === "posts")
+                (this.state.activeState === "home")
                   ? "sideNavItem activeSideItem"
                   : "sideNavItem"
               }
               onClick={() => {
-                this.setActive("posts");
+                this.setActive("home");
               }}
             >
               <div className="campusAmb-sidebar-posts flex_row">
@@ -82,7 +93,7 @@ export default class Sidebar extends React.Component {
                   <Post />
                 </div>
                 <div className="campusAmb-sidebar-navitem-name">
-                  POSTS
+                  HOME
                 </div>
               </div>
             </Link>
@@ -225,7 +236,7 @@ export default class Sidebar extends React.Component {
                 <Hand />
               </div>
               <div className="campusAmb-sidebar-hand-days">
-                {days} DAYS LEFT
+                {this.state.days} DAYS LEFT
             </div>
             </div>
           </div>

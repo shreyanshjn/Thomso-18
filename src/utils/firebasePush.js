@@ -10,31 +10,32 @@ firebase.initializeApp(config);
 
 export const addTopic = (topic) => {
     const token = localStorage.getItem('notificationToken');
-        if (topic && token) {
-            let notifArray = localStorage.getItem('notifications');
-            if (notifArray && notifArray.length > 0 ) {
-                if (notifArray.indexOf(topic) === -1) {
-                    notifArray.push(topic);
-                    localStorage.setItem('notifications', notifArray);
-                } else {
-                    return false
-                }
+    console.log(topic, token);
+    if (topic && token) {
+        let notifArray = localStorage.getItem('notifications');
+        if (notifArray && notifArray.length > 0 ) {
+            if (notifArray.indexOf(topic) === -1) {
+                notifArray.push(topic);
+                localStorage.setItem('notifications', notifArray);
             } else {
-                localStorage.setItem('notifications', [topic]);
+                return false
             }
-            FetchApi('POST','/api/notification', {
-                topic: topic,
-                token: token
-            })
-                .then(result => {
-                    console.log(`Subscribed to ${topic}`, result);
-                })
-                .catch(error => {
-                    console.log(error);
-                });
         } else {
-            console.log('Invalid Token/Topic')
-        };
+            localStorage.setItem('notifications', [topic]);
+        }
+        FetchApi('POST','/api/notification', {
+            topic: topic,
+            token: token
+        })
+            .then(result => {
+                console.log(`Subscribed to ${topic}`, result);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    } else {
+        console.log('Invalid Token/Topic')
+    };
 };
 
 export const firebaseInit = () => {
