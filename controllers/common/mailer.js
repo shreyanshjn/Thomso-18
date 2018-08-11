@@ -123,8 +123,8 @@ var caTempRegister = function(user) {
         });
         var mailOptions = {
             from: "IIT Roorkee <thomso.mailer@gmail.com>",
-            // to: user.email,
-            to: "nikhilmehra998@gmail.com",
+            to: user.email,
+            // to: "nikhilmehra998@gmail.com",
             subject: "Email Verification",
             html: `
             <html>
@@ -200,8 +200,8 @@ var caVerified = function(user) {
         });
         var mailOptions = {
             from: "IIT Roorkee <thomso.mailer@gmail.com>",
-            // to: user.email,
-            to: "nikhilmehra998@gmail.com",
+            to: user.email,
+            // to: "nikhilmehra998@gmail.com",
             subject: "Thomso Campus Ambassador",
             html: `
             <html>

@@ -5,7 +5,7 @@ exports.getData = function(req, res) {
     Temp_User.findOne({
         email: req.locals.email
     })
-    .select('name email gender verified')
+    .select('name email gender verified ca_id')
     .exec(function(err, user) {
         if (err) {
             return res.status(400).send({

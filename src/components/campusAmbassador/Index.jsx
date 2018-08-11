@@ -73,7 +73,7 @@ export default class CampusIndex extends React.Component {
   }
 
   handleUpdate = (isAuthenticated, isTemp) => {
-    this.setState({ isAuthenticated, isTemp });
+    this.setState({ isAuthenticated, isTemp })
   };
 
   setUserData = data => {
@@ -88,7 +88,7 @@ export default class CampusIndex extends React.Component {
         {this.state.isAuthenticated ? 
           <React.Fragment>
             {this.state.isTemp ? 
-              <Route exact path="/campusAmbassador/*" render={props => (<ResetIndex {...props} updateRoutes={this.handleUpdate} />)} setUserData={this.setUserData} />
+              <Route exact path="/campusAmbassador/*" render={props => (<ResetIndex {...props} updateRoutes={this.handleUpdate} setUserData={this.setUserData} />)} />
               :
               <React.Fragment>
                 <Route exact path="/campusAmbassador" component={HomeIndex} />

@@ -14,6 +14,9 @@ var UserSchema = new mongoose.Schema({
     password: {
         type: String
     },
+    ca_id: {
+        type: String
+    },
     verified: {
         type: Boolean,
         default: false

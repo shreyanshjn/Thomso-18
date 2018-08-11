@@ -124,6 +124,9 @@ export default class RegisterIndex extends React.Component {
                     }
                 })
                 .catch(e => {
+                    if (e.response && e.response.status === 400 && e.response.data && e.response.data.emailerr) {
+                        this.setState({ errors: 'Email Already Exists' })
+                    }
                     console.log(e)
                 });
         } else if (check.errors && check.errors.email) {
@@ -151,7 +154,7 @@ export default class RegisterIndex extends React.Component {
                     <div className="register-form">
                         <form onSubmit={this.onSubmit}>
                             {errors ?
-                                <div>
+                                <div style={{textAlign: 'center',  color: 'red', fontWeight: '600'}}>
                                     {errors}
                                 </div>
                                 : null

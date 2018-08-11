@@ -9,7 +9,7 @@ import Popup from '../popup/Index';
 import img from "../register/img/logo.png";
 import "../register/css/register.css";
 
-export default class LoginIndex extends React.Component {
+export default class ResetIndex extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -54,6 +54,7 @@ export default class LoginIndex extends React.Component {
                         }
                     })
                     .catch(e => {
+                        console.log(e)
                         this.setState({ disabled: false, errors: 'Something went wrong' })
                     });
             } else if (check.errors && check.errors.password) {
