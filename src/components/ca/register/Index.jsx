@@ -1,48 +1,56 @@
 import React from 'react';
-import { Link } from 'react-router-dom' ;
-
+import { Link } from 'react-router-dom';
+import IntegrationReactSelect from './select_react';
 import "./css/register.css";
 import img from "./img/logo.png";
 import AuthService from '../../../handlers/ca/AuthService';
 import FetchApi from '../../../utils/FetchAPI';
 import validateInput from '../../../utils/validation/loginValidation';
 
-// const options = [
-//     { value: 'Arunachal Pradesh', label: 'Arunachal Pradesh' },
-//     { value: 'Assam', label: 'Assam' },
-//     { value: 'Bihar', label: 'Bihar' },
-//     { value: 'Chhattisgarh', label: 'Chattisgarh' },
-//     { value: 'Goa', label: 'Goa' },
-//     { value: 'Gujarat', label: 'Gujarat' },
-//     { value: 'Haryana', label: 'Haryana' },
-//     { value: 'Himachal Pradesh', label: 'Himachal Pradesh' },
-//     { value: 'Jammu and Kashmir', label: 'Jammu and Kashmir' },
-//     { value: 'Jharkhand', label: 'Jharkhand' },
-//     { value: 'Karnataka', label: 'Karnataka' },
-//     { value: 'Kerala', label: 'Kerala' },
-//     { value: 'Madhya Pradesh', label: 'Madhya Pradesh' },
-//     { value: 'Maharashtra', label: 'Maharashtra' },
-//     { value: 'Manipur', label: 'Manipur' },
-//     { value: 'Meghalaya', label: 'Meghalaya' },
-//     { value: 'Mizoram', label: 'Mizoram' },
-//     { value: 'Nagaland', label: 'Nagaland' },
-//     { value: 'Odisha', label: 'Odisha' },
-//     { value: 'Punjab', label: 'Punjab' },
-//     { value: 'Rajasthan', label: 'Rajasthan' },
-//     { value: 'Sikkim', label: 'Sikkim' },
-//     { value: 'Tamil Nadu', label: 'Tamil Nadu' },
-//     { value: 'Telangana', label: 'Telangana' },
-//     { value: 'Tripura', label: 'Tripura' },
-//     { value: 'Uttar Pradesh', label: 'Uttar Pradesh' },
-//     { value: 'Uttarakhand', label: 'Uttarakhand' },
-//     { value: 'West Bengal', label: 'West Bengal' }
-// ];
+const options = [
+    { label: 'Afghanistan' },
+    { label: 'Aland Islands' },
+    { label: 'Albania' },
+    { label: 'Algeria' },
+    { label: 'American Samoa' },
+    { label: 'Andorra' },
+    { label: 'Angola' },
+    { label: 'Anguilla' },
+    { label: 'Antarctica' },
+    { label: 'Antigua and Barbuda' },
+    { label: 'Argentina' },
+    { label: 'Armenia' },
+    { label: 'Aruba' },
+    { label: 'Australia' },
+    { label: 'Austria' },
+    { label: 'Azerbaijan' },
+    { label: 'Bahamas' },
+    { label: 'Bahrain' },
+    { label: 'Bangladesh' },
+    { label: 'Barbados' },
+    { label: 'Belarus' },
+    { label: 'Belgium' },
+    { label: 'Belize' },
+    { label: 'Benin' },
+    { label: 'Bermuda' },
+    { label: 'Bhutan' },
+    { label: 'Bolivia, Plurinational State of' },
+    { label: 'Bonaire, Sint Eustatius and Saba' },
+    { label: 'Bosnia and Herzegovina' },
+    { label: 'Botswana' },
+    { label: 'Bouvet Island' },
+    { label: 'Brazil' },
+    { label: 'British Indian Ocean Territory' },
+    { label: 'Brunei Darussalam' },
+].map(suggestion => ({
+    value: suggestion.label,
+    label: suggestion.label,
+}));
 
 export default class RegisterIndex extends React.Component {
     constructor() {
         super();
         this.state = {
-            name: '',
             contact: '',
             email: '',
             gender: '',
@@ -83,8 +91,8 @@ export default class RegisterIndex extends React.Component {
         const name = e.target.name;
         let value = e.target.value;
         if (name === 'contact' && value) {
-          value = value.trim()
-          value = value.substring(0, 10)
+            value = value.trim()
+            value = value.substring(0, 10)
         }
         this.setState({ [name]: value });
     }
@@ -181,7 +189,7 @@ export default class RegisterIndex extends React.Component {
                                 </div>
                                 <div className="form-contactnumber">
                                     <label htmlFor="inputContact">Contact Number</label>
-                                  <input
+                                    <input
                                         id="inputContact"
                                         type="number"
                                         placeholder="Contact Number"
@@ -230,18 +238,7 @@ export default class RegisterIndex extends React.Component {
                             </div>
                             <div className="form-college-child">
                                 <label htmlFor="inputCollege">College</label>
-                                <input
-                                    id="inputCollege"
-                                    type="text"
-                                    placeholder="College Name"
-                                    name="college"
-                                    autoCorrect="off"
-                                    autoComplete="off"
-                                    autoCapitalize="on"
-                                    value={college}
-                                    onChange={this.onChange}
-                                    required
-                                />
+                                <IntegrationReactSelect options={options} />
                             </div>
                             <div className="form-first-child">
                                 <div className="form-state">

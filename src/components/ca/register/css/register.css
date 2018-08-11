@@ -389,7 +389,7 @@ input[type=number]::-webkit-outer-spin-button {
     }
     .register-form form{
         margin-top: 20px;
-        width: 50%;
+        width: 70%;
     }
     .form-first-child{
         display: flex;

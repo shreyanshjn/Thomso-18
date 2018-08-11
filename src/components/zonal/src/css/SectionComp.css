@@ -1,0 +1,52 @@
+.zonals-common-comp1
+{
+    display:flex;
+    flex-direction:column;
+    background:#24989a;
+    color:white;
+    width:80%;
+    align-items:center; 
+    height:60vh;
+    margin:auto;
+    justify-content:space-around;
+    border-radius:20px;
+    box-shadow:4px 4px 4px 4px #24989a;
+}
+.zonals-common-comp1 > div
+{
+    opacity:0;
+}
+.zonal-comp1-button
+{
+    background:white;
+    padding:10px;
+    color:black;
+    border-radius:10px;
+    cursor:pointer;
+}
+.zonals-comp-dance-transform
+{
+  width:80%;
+  height:60vh;
+  position:absolute;
+  top:0px;
+  right:13%;
+}
+.zonals-comp-dance-transform > div
+{
+   opacity:1;
+   transition:opacity 3s;
+}
+.zonal-common-comp1-content
+{
+    width:80%;
+    margin:auto; 
+}
+@media only screen and (max-width:768px)
+{
+    .zonal-common-comp1-content
+    {
+       font-size:10px;
+       overflow-y:scroll;
+    }
+}
