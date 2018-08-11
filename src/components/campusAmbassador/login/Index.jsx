@@ -75,7 +75,11 @@ export default class LoginIndex extends React.Component {
                         }
                     })
                     .catch(e => {
-                        this.setState({ disabled: false, loginErrors: 'Something went wrong' })
+                        if (e.response && e.response.notExists) {
+                            this.setState({ disabled: false, loginErrors: 'Email does not exists. Please Register' })
+                        } else {
+                            this.setState({ disabled: false, loginErrors: 'Something went wrong' })
+                        }
                     });
             } else if (check.errors && check.errors.email) {
                 this.setState({ loginErrors: check.errors.email })

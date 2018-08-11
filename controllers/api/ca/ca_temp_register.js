@@ -163,9 +163,9 @@ exports.verify = function(req, res) {
         })
         .select('email name verified')
         .exec(function(err, user) {
-            if (err) res.status(401).send({success: false, msg: 'Error.'});
+            if (err) res.status(400).send({success: false, msg: 'Error.'});
             if (!user) {
-                res.status(401).send({success: false, msg: 'Email not found.'});
+                res.status(400).send({success: false, msg: 'Email not found.', notExists: true});
             } else {
                 if (user.verified) {
                     res.json({success: true, msg: 'Email is already verified. Please login with your new password', retry: true});

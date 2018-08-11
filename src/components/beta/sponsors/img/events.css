@@ -1,5 +1,4 @@
-::-webkit-scrollbar { 
-    /* display: none;  */
+/* ::-webkit-scrollbar { 
     width: 5px;
     background: #000308;
     border-radius: 10px;
@@ -13,7 +12,7 @@
 ::-webkit-scrollbar-thumb{
     background: #444348;
     border-radius: 10px;
-}
+} */
 @font-face {
     font-family: "nikhil";
     src: url('../fonts/nikhil.ttf') format("truetype");

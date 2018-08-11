@@ -1,20 +1,18 @@
 .instructions-parent{
-background-color: #060606 ;
-height: 100vh;
-position: relative;
-align-items: center;
-font-family:  Montserrat;
+
+  background-color: #855888;
+  height: 100vh;
+  position: relative;
+  align-items: center;
+  font-family:  Montserrat;
 }
 .instructions-child{
-  background: #03122d;
+  background: #6B396F;
   -webkit-box-shadow: inset 0 0 30px #246476;
-  box-shadow: inset 0 0 30px #246476;
-  color: white;
+  box-shadow: inset 0 0 30px #2D062F;
+  color: #ffe936;
   position: absolute;
-  /* top: 18%; */
-  /* left: 10%; */
   line-height: 1.8;
-  /* right: 10%; */
   padding: 5px 20px 5px 20px;
   font-size: 14px;
 
@@ -26,29 +24,26 @@ font-family:  Montserrat;
 
 }
 @media (max-width: 1068px){
-.instructions-parent{
-  background-color: #060606 ;
-  height: 100vh;
-  position: relative;
-  align-items: center;
-  font-family:  Montserrat;
+  .instructions-parent{
+    background-color: #060606 ;
+    height: 100vh;
+    position: relative;
+    align-items: center;
+    font-family:  Montserrat;
   }
-.instructions-child{
-    background: #03122d;
-    box-shadow:  inset 0 0 30px #246476;
-    color:white;
+  .instructions-child{
+    background: #6B396F;
+    box-shadow:  inset 0 0 30px #2D062F;
+    color:#ffe936;
     position: absolute;
-    /* top: 15%;
-    left: 11%; */
     line-height: 1.8;
-    /* right: 10%; */
     padding: 20px;
     font-size: 14px;
     height: 50vh;
     overflow: scroll;
     overflow-x: hidden;
   }
-.instructions-heading{
+  .instructions-heading{
     text-align: center;
     font-size: 18px;
     font-weight:200;
@@ -56,10 +51,10 @@ font-family:  Montserrat;
   }
 }
 @media (min-width: 1920px) and (max-width: 2560px){
-.instructions-child{
-  font-size: 20px;
+  .instructions-child{
+    font-size: 20px;
   }
-.instructions-heading{
-  font-size: 30px;
-}
+  .instructions-heading{
+    font-size: 30px;
+  }
 }
