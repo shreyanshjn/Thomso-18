@@ -3,6 +3,7 @@ import DelhiOpening from './DelhiOpening.jsx';
 import SectionSecond from '../common/SectionSecond';
 import { SectionsContainer, Section } from 'react-fullpage';
 import ZonalsFooter from '../common/zonalsregistration';
+import Footer from '../common/Footer';
 export default class DelhiIndex extends Component {
     constructor()
     {
@@ -31,11 +32,9 @@ export default class DelhiIndex extends Component {
                 </Section>
                 <Section>
                     <ZonalsFooter />
+                    <Footer />
                 </Section>
-                <Section>
-                    <SectionSecond /> 
-                </Section>
-            </SectionsContainer>
+        </SectionsContainer>
         );
     }
 }

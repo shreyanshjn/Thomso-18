@@ -34,7 +34,8 @@ class Footer extends Component {
                         <div className="beta-footer-instadiv"><a href="https://www.instagram.com/thomso.IITR/" target="_blank" rel="noopener noreferrer"><img src={inlogo} className="beta-footer-iconsImage" alt="inlogo" /></a></div>
                         <div className="beta-footer-ytdiv"><a href="https://www.youtube.com/user/iitrthomso" target="_blank" rel="noopener noreferrer"><img src={ytlogo} className="beta-footer-iconsImage" alt="ytlogo" /></a></div>
                         <div className="beta-footer-linkediv"><a href="https://www.linkedin.com/company/thomso-iit-roorkee-official" target="_blank" rel="noopener noreferrer"> <img src={iglogo} className="beta-footer-iconsImage" alt="lilogo" /></a></div>
-                    </div> </div>
+                    </div> 
+                </div>
             </div>
         );
     }
