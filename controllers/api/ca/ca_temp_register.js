@@ -231,7 +231,7 @@ exports.reset = function(req, res) {
                                     if (error) {
                                         return res.status(400).send({success: false, msg: 'Unable Create ID'});
                                     }
-                                    var ca_id = "TH18" + cnt.seq;
+                                    var ca_id = "TH"+ 180000 + cnt.seq;
                                     var updateData = {
                                         password: newHash,
                                         verified: true,

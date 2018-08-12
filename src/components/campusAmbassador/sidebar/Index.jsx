@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./css/style.css";
 import boy from "./img/boy.png";
 import girl from "./img/girl.png";
+import {addTopic} from '../../../utils/firebasePush';
 // import like from "./img/like.png"
 // import share from "./img/share.png"
 // import score from "./img/star.png"
@@ -16,6 +17,8 @@ import Logout from "./Svg/Logout"
 import Hand from "./Svg/Hand"
 
 // import logoUser from '../common/images/user.svg';
+
+let addTopicTimeout;
 
 export default class Sidebar extends React.Component {
   constructor(props) {
@@ -31,7 +34,15 @@ export default class Sidebar extends React.Component {
     }
   }
 
+  componentWillMount() {
+    clearTimeout(addTopicTimeout)
+  }
+
   componentDidMount() {
+    addTopicTimeout = setTimeout(() => {
+      addTopic('tempCA');
+    }, 2000)
+
     const countDownDate = new Date("Oct 25, 2018 00:00:00").getTime();
     const now = new Date().getTime();
     const distance = countDownDate - now;
