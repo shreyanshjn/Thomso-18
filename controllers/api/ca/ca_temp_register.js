@@ -112,6 +112,7 @@ exports.ca_temp_login = function(req, res) {
                     res.status(400).send({success: false, msg: 'Authentication failed. User not found.', notExists: true});
                 } else {
                     user.comparePassword(req.body.password, function (err, isMatch) {
+                        console.log(user);
                         if (isMatch && !err) {
                             var newToken = {
                                 email: req.body.email,
@@ -237,6 +238,12 @@ exports.reset = function(req, res) {
                                         verified: true,
                                         ca_id: ca_id
                                     };
+                                    CA_Temp_User_Token.update({ email: req.locals.email }, {verified: true})
+                                    .exec(function (err) {
+                                            if (err) {
+                                                console.log(err)
+                                            }
+                                    })
                                     Temp_User.findOneAndUpdate({ email: req.locals.email }, updateData, { new:true })
                                     .select('name email verfied gender ca_id')
                                     .exec(function(err, user) {
@@ -255,6 +262,12 @@ exports.reset = function(req, res) {
                                     password: newHash,
                                     verified: true,
                                 };
+                                CA_Temp_User_Token.update({ email: req.locals.email }, {verified: true})
+                                .exec(function (err) {
+                                        if (err) {
+                                            console.log(err)
+                                        }
+                                })
                                 Temp_User.findOneAndUpdate({ email: req.locals.email }, updateData, { new:true })
                                 .select('name email verfied gender ca_id')
                                 .exec(function(err, user) {
