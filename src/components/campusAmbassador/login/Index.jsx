@@ -74,8 +74,14 @@ export default class LoginIndex extends React.Component {
                         }
                     })
                     .catch(e => {
-                        if (e.response && e.response.notExists) {
-                            this.setState({ disabled: false, loginErrors: 'Email does not exists. Please Register' })
+                        if (e.response && e.response.data) {
+                            if (e.response.data.notExists) {
+                                this.setState({ disabled: false, loginErrors: 'Email does not exists. Please Register' })
+                            }  else if (e.response.data.mismatch) {
+                                this.setState({ disabled: false, loginErrors: 'Password did not match' })
+                            } else {
+                                this.setState({ disabled: false, loginErrors: 'Something went wrong' })
+                            }
                         } else {
                             this.setState({ disabled: false, loginErrors: 'Something went wrong' })
                         }
@@ -125,9 +131,7 @@ export default class LoginIndex extends React.Component {
                                 }
                             }
                         })
-                        .catch(e => {
-                            this.setState({ disabled: false, verificationErrors: 'Something went wrong' })
-                        });
+                        .catch(e => this.setState({ disabled: false, verificationErrors: 'Something went wrong' }))
                 } else if (check.errors && check.errors.email) {
                     this.setState({ verificationErrors: check.errors.email })
                 } else {

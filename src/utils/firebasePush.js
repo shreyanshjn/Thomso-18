@@ -12,17 +12,21 @@ firebase.initializeApp(config);
 export const addTopic = (topic) => {
     const token = localStorage.getItem('notificationToken');
     if (topic && token) {
-        let notifArray = localStorage.getItem('notifications').split(',');
-        if (notifArray && notifArray.length > 0 ) {
-            if (notifArray.indexOf(topic) === -1) {
-                notifArray.push(topic);
-                localStorage.setItem('notifications', notifArray);
-            } else {
-                return false
+        let notifArray = localStorage.getItem('notifications')
+        if (notifArray) {
+            notifArray = notifArray.split(',')
+            if ( notifArray.length > 0 ) {
+                if (notifArray.indexOf(topic) === -1) {
+                    notifArray.push(topic);
+                    localStorage.setItem('notifications', notifArray);
+                } else {
+                    return false
+                }
             }
         } else {
             localStorage.setItem('notifications', [topic]);
         }
+        
         FetchApi('POST','/api/notification', {
             topic: topic,
             token: token

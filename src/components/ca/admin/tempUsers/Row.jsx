@@ -6,6 +6,7 @@ export default class Row extends React.Component {
                 {this.props.data ? 
                     <tr style={(this.props.data && this.props.data.verified) ? {color: 'black'} : {color: 'red'}} >
                         <td style={{textAlign: 'center'}}>{(this.props.index !== undefined) ? (this.props.index + 1) : '--'}</td>
+                        <td style={{textAlign: 'center'}}>{this.props.data.ca_id ? this.props.data.ca_id : '--'}</td>
                         <td style={{textAlign: 'center'}}>{this.props.data.name ? this.props.data.name : '--'}</td>
                         <td style={{textAlign: 'center'}}>{this.props.data.gender ? this.props.data.gender : '--'}</td>
                         <td style={{textAlign: 'center'}}>{this.props.data.email ? this.props.data.email : '--'}</td>

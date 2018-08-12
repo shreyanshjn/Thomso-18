@@ -107,9 +107,9 @@ exports.ca_temp_login = function(req, res) {
             })
             .select('name email verified password gender ca_id')
             .exec(function(err, user) {
-                if (err) res.status(401).send({success: false, msg: 'Authentication failed. Error.'});
+                if (err) res.status(400).send({success: false, msg: 'Authentication failed. Error.'});
                 if (!user) {
-                    res.status(401).send({success: false, msg: 'Authentication failed. User not found.'});
+                    res.status(400).send({success: false, msg: 'Authentication failed. User not found.', notExists: true});
                 } else {
                     user.comparePassword(req.body.password, function (err, isMatch) {
                         if (isMatch && !err) {
@@ -141,7 +141,7 @@ exports.ca_temp_login = function(req, res) {
                                 }
                             });
                         } else {
-                            res.status(401).send({success: false, msg: 'Authentication failed. Wrong password.'});
+                            res.status(400).send({success: false, msg: 'Authentication failed. Wrong password.', mismatch: true});
                         }
                     });
                 }
@@ -214,7 +214,7 @@ exports.reset = function(req, res) {
         Temp_User.findOne({
             email: req.locals.email
         })
-        .select('email temp_password verified')
+        .select('email ca_id verified')
         .exec(function(err, user) {
             if (err) res.status(401).send({success: false, msg: 'Error.'});
             if (!user) {
@@ -226,7 +226,7 @@ exports.reset = function(req, res) {
                     var generateHash = Generator.generateHash(req.body.password);
                     generateHash.then(
                         function(newHash) {
-                            if (newHash) {
+                            if (newHash && !user.ca_id) {
                                 Counter.findByIdAndUpdate({_id: 'ca_temp_id'}, {$inc: { seq: 1} }, {upsert: true, new: true}, function(error, cnt)   {
                                     if (error) {
                                         return res.status(400).send({success: false, msg: 'Unable Create ID'});
@@ -250,6 +250,23 @@ exports.reset = function(req, res) {
                                         });
                                     });
                                 })
+                            } else if (newHash && user.ca_id) {
+                                var updateData = {
+                                    password: newHash,
+                                    verified: true,
+                                };
+                                Temp_User.findOneAndUpdate({ email: req.locals.email }, updateData, { new:true })
+                                .select('name email verfied gender ca_id')
+                                .exec(function(err, user) {
+                                    if (err) {
+                                        return res.status(400).send({success: false, msg: 'Unable Update Hash'});
+                                    }
+                                    res.json({success: true, msg: 'Successfully Updated Password', body: user});
+                                    mailer.caVerified({
+                                        name: user.name,
+                                        email: user.email,
+                                    });
+                                });
                             } else {
                                 res.status(400).send({success:false, msg:'Promise Failed'});
                             }

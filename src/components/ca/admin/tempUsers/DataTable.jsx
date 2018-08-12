@@ -64,6 +64,7 @@ export default class DataTable extends React.Component {
                 <thead>
                     <tr>
                         <th style={{width:"2vw"}}>Index</th>
+                        <th style={{width:"2vw"}}>ID</th>
                         <th style={{width:"8vw"}}>Name</th>
                         <th style={{width:"5vw"}}>Gender</th>
                         <th style={{width:"13vw"}}>Email</th>
@@ -71,7 +72,7 @@ export default class DataTable extends React.Component {
                         <th style={{width:"10vw"}}>Branch</th>
                         <th style={{width:"12vw"}}>College</th>
                         <th style={{width:"8vw"}}>State</th>
-                        <th style={{width:"17vw"}}>Address</th>
+                        <th style={{width:"15vw"}}>Address</th>
                         <th style={{width:"15vw"}}>Why?</th>
                     </tr>
                 </thead>
