@@ -28,7 +28,7 @@ export const addTopic = (topic) => {
             token: token
         })
             .then(result => {
-                console.log(`Subscribed to ${topic}`, result);
+                console.log(`Subscribed to ${topic}`);
             })
             .catch(error => {
                 console.log(error);

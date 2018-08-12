@@ -10,7 +10,7 @@ import './Index.css';
 
 let addTopicTimeout;
 
-export default class QuizardyIndex extends React.Component{
+export default class QuizardryIndex extends React.Component{
     constructor() {
         super();
         this.state={
