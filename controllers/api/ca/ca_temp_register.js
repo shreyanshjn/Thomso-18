@@ -54,7 +54,7 @@ exports.ca_temp_register = function(req, res) {
                 if (err) {
                     return res.json({success: false, msg: 'Username already exists.'});
                 }
-                var newPass = Generator.generatePassword(10);
+                var newPass = Generator.generatePassword(20);
                 if (newPass) {
                     var generateHash = Generator.generateHash(newPass);
                     generateHash.then(

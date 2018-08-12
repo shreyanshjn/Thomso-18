@@ -1,4 +1,5 @@
-import firebase from 'firebase';
+import firebase from 'firebase/app';
+import 'firebase/messaging';
 import FetchApi from './FetchAPI';
 
 const config = {
@@ -10,9 +11,8 @@ firebase.initializeApp(config);
 
 export const addTopic = (topic) => {
     const token = localStorage.getItem('notificationToken');
-    console.log(topic, token);
     if (topic && token) {
-        let notifArray = localStorage.getItem('notifications');
+        let notifArray = localStorage.getItem('notifications').split(',');
         if (notifArray && notifArray.length > 0 ) {
             if (notifArray.indexOf(topic) === -1) {
                 notifArray.push(topic);

@@ -71,7 +71,6 @@ export default class LoginIndex extends React.Component {
                                     verificationAlerts: ''
                                 })
                             }
-                            console.log(r)
                         }
                     })
                     .catch(e => {
