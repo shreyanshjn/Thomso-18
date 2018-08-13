@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import DelhiOpening from './DelhiOpening.jsx';
 import SectionSecond from '../common/SectionSecond';
 import { SectionsContainer, Section } from 'react-fullpage';
-import ZonalsFooter from '../common/zonalsregistration';
 import Footer from '../common/Footer';
+import ZonalsForm from '../common/ZonalsForm';
 export default class DelhiIndex extends Component {
     render() {
         let options = {
@@ -27,7 +27,7 @@ export default class DelhiIndex extends Component {
                     <SectionSecond /> 
                 </Section>
                 <Section>
-                    <ZonalsFooter />
+                    <ZonalsForm />
                     <Footer />
                 </Section>
         </SectionsContainer>

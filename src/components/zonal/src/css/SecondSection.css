@@ -12,4 +12,20 @@
 {
     display:flex;
     justify-content:space-around;
+    z-index:20;
+}
+
+@media (min-width: 1920px) and (max-width: 2560px)
+{
+    .zonals-common-sectioncomp2
+    {
+        margin-top:180px;
+    }
+}
+@media (max-width:768px)
+{
+    .zonals-common-sectioncomp2
+    {
+        margin-top:-60vw;
+    }
 }
