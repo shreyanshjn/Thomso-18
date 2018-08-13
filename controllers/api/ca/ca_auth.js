@@ -35,12 +35,12 @@ exports.fblogin = function(req, res) {
             if (!user) {
                 // Return Data
                 if (req.body.email) {
-                    var saveData = Object.assign(saveData, {email: req.body.email});
+                    saveData = Object.assign(saveData, {email: req.body.email});
                 }
                 var newUser = new CA_User(saveData);
                 newUser.save(function(err, user) {
                     if (err) {
-                        return res.status(400).send({success: false, msg: 'Unable to Add User'});
+                        return res.status(400).send({success: false, emailerr: true, msg: 'Unable to Add User'});
                     }
                     var newToken = {
                         fb_id: req.body.id,
@@ -117,6 +117,7 @@ exports.fbRegister = function(req, res) {
         }
         if (req.body.email) {
             req.body.email = req.body.email.trim();
+            req.body.email = req.body.email.toLowerCase();
         }
         if (req.body.gender) {
             req.body.gender = req.body.gender.trim();
@@ -154,7 +155,7 @@ exports.fbRegister = function(req, res) {
             .select('name gender image email ca_id likes shares referrals score notification blocked link college')
             .exec(function(err, user) {
                 if(err){
-                    return res.status(400).send({success:false, msg:'Error Creating User', error:err});
+                    return res.status(400).send({success:false, msg:'Error Creating User', emailerr: true, error:err});
                 }
                 if (user) {
                     var newToken = {
@@ -206,6 +207,8 @@ exports.getData = function(req, res) {
         } else {
             if (user.created) {
                 res.json({success: true, msg:'User Data Found', body:user});
+            } else {
+                res.json({success: true, msg:'User Not Created'});
             }
         }
     });

@@ -57,7 +57,6 @@ export default class TimelineIndex extends React.Component {
             .then((result) => {
                 if (result.data && result.data.posts && result.data.posts.data && result.data.posts.data.length > 0 && !unmount) {
                     this.setState({ posts: result.data.posts.data });
-                    console.log(result, 'Posts')
                 }
             })
             .catch(error => {

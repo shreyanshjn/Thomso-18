@@ -69,7 +69,7 @@ export default class AdminIndex extends React.Component{
                     </div>
                 :
                     <div>
-                        <Route exact path="/zonals/admin/register" component={RegisterIndex} />
+                        {/* <Route exact path="/zonals/admin/register" component={RegisterIndex} /> */}
                         <Route exact path="/zonals/admin" render={ () => <LoginIndex updateRoutes={this.handleUpdate}/> } />
                     </div>
                 }

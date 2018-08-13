@@ -1,13 +1,28 @@
 import React from 'react';
+import { Link } from 'react-router-dom' ;
+import { SectionsContainer, Section } from 'react-fullpage';
+
 import Wisca from '../../ca/login/Wisca.jsx';
 import Roles from '../../ca/login/Roles.jsx';
 import Contact from '../../ca/login/Contact.jsx';
-import { Link } from 'react-router-dom' ;
 import CalandingNavbar from "../../ca/login/CaLanding";
-import { SectionsContainer, Section } from 'react-fullpage';
+import {addTopic} from '../../../utils/firebasePush';
 import arrow from '../../ca/login/src/img/arrow.svg';
 import '../../ca/login/src/css/Main.css';
-export default class CampusIndex extends React.Component {
+
+let addTopicTimeout;
+
+export default class HomeIndex extends React.Component {
+    componentDidMount() {
+        addTopicTimeout = setTimeout(() => {
+            addTopic('tempCA');
+        }, 2000)
+    }
+
+    componentWillMount() {
+        clearTimeout(addTopicTimeout)
+    }
+
     render() {
         let options = {
             sectionClassName: 'section',
@@ -27,9 +42,14 @@ export default class CampusIndex extends React.Component {
                     <div className="ca-opening-child-middle">
                         <Section>
                             <div className="ca-opening-button-parent">
-                                <Link to="/CampusAmbassador/register">
-                                    <button className="ca-opening-button">Register</button>
-                                </Link>
+                                <div>
+                                        <Link to="/CampusAmbassador/login">
+                                            <button className="ca-opening-button">Login</button>
+                                        </Link>
+                                        <Link to="/CampusAmbassador/register" style={{marginLeft: '3vw'}}>
+                                            <button className="ca-opening-button">Register</button>
+                                        </Link>
+                                </div>
                                 <div>
                                     <a href="#Wisca" address="true">
                                         <img src={arrow} className="ca-opening-downarrow" alt=

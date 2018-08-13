@@ -1,5 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom' ;
+import { Link } from 'react-router-dom';
+
+import CollegeSelect from './CollegeSelect';
+import StateSelect from './StateSelect';
 import img from "./img/logo.png";
 import FetchApi from '../../../utils/FetchAPI';
 import validateInput from '../../../utils/validation/loginValidation';
@@ -59,14 +62,13 @@ export default class RegisterIndex extends React.Component {
         const check = validateInput(email, 'email')
 
         if (name && contact && email && gender && college && state && branch && address && why && check.isValid) {
-            FetchApi('POST', '/api/ca/tempRegister', data)
+            FetchApi('POST', '/api/ca/temp/auth/register', data)
                 .then(r => {
                     if (r && r.data && this.popup) {
                         if (r.data.success === true) {
-                            this.popup.show(['You have been successfully registered.', `Confirmation message has been sent to ${this.state.email ? this.state.email : 'your email'}.`], '/CampusAmbassador')
+                            this.popup.show(['Thank you for registering as CA.', `Verification email has been sent to ${this.state.email ? this.state.email : 'your email'}.`], '/CampusAmbassador')
                         } else {
                             this.setState({ errors: 'This email is already registered' })
-                            this.popup.show([`This email is already registered.`, `Confirmation message has been sent to ${this.state.email ? this.state.email : 'your email'}.`])
                         }
                     }
                 })
@@ -82,7 +84,7 @@ export default class RegisterIndex extends React.Component {
     }
 
     render() {
-        const { name, contact, email, gender, college, state, branch, address, why, errors } = this.state;
+        const { name, contact, email, gender, branch, address, why, errors } = this.state;
         return (
             <div className="register-parent">
                 <Popup {...this.props} onRef={ref => (this.popup = ref)}/>
@@ -176,71 +178,15 @@ export default class RegisterIndex extends React.Component {
                             </div>
                             <div className="form-college-child">
                                 <label htmlFor="inputCollege">College</label>
-                                <input
-                                    id="inputCollege"
-                                    type="text"
-                                    placeholder="College Name"
-                                    name="college"
-                                    autoCorrect="off"
-                                    autoComplete="off"
-                                    autoCapitalize="on"
-                                    value={college}
-                                    onChange={this.onChange}
-                                    required
-                                />
+                                <CollegeSelect onChange={college => this.setState({college})}/>
                             </div>
                             <div className="form-first-child">
                                 <div className="form-state">
                                     <label htmlFor="inputState">College State</label>
-                                    <select
-                                        className="form-state-select"
-                                        id="state"
-                                        name="state"
-                                        value={state}
-                                        onChange={this.onChange}
-                                        required
-                                    >
-                                        <option value="" disabled="true"> College State </option>
-                                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
-                                        <option value="Andhra Pradesh">Andhra Pradesh</option>
-                                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-                                        <option value="Assam">Assam</option>
-                                        <option value="Bihar">Bihar</option>
-                                        <option value="Chandigarh">Chandigarh</option>
-                                        <option value="Chhattisgarh">Chhattisgarh</option>
-                                        <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
-                                        <option value="Daman and Diu">Daman and Diu</option>
-                                        <option value="Delhi">Delhi</option>
-                                        <option value="Goa">Goa</option>
-                                        <option value="Gujarat">Gujarat</option>
-                                        <option value="Haryana">Haryana</option>
-                                        <option value="Himachal Pradesh">Himachal Pradesh</option>
-                                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
-                                        <option value="Jharkhand">Jharkhand</option>
-                                        <option value="Karnataka">Karnataka</option>
-                                        <option value="Kerala">Kerala</option>
-                                        <option value="Lakshadweep">Lakshadweep</option>
-                                        <option value="Madhya Pradesh">Madhya Pradesh</option>
-                                        <option value="Maharashtra">Maharashtra</option>
-                                        <option value="Manipur">Manipur</option>
-                                        <option value="Meghalaya">Meghalaya</option>
-                                        <option value="Mizoram">Mizoram</option>
-                                        <option value="Nagaland">Nagaland</option>
-                                        <option value="Odisha">Odisha</option>
-                                        <option value="Puducherry">Puducherry</option>
-                                        <option value="Punjab">Punjab</option>
-                                        <option value="Rajasthan">Rajasthan</option>
-                                        <option value="Sikkim">Sikkim</option>
-                                        <option value="Tamil Nadu">Tamil Nadu</option>
-                                        <option value="Telangana">Telangana</option>
-                                        <option value="Tripura">Tripura</option>
-                                        <option value="Uttar Pradesh">Uttar Pradesh</option>
-                                        <option value="Uttarakhand">Uttarakhand</option>
-                                        <option value="West Bengal">West Bengal</option>
-                                    </select>
+                                    <StateSelect onChange={state => this.setState({state})}/>
                                 </div>
                                 <div className="form-branch">
-                                    <label htmlFor="inputBranch">Branch</label>
+                                    <label htmlFor="inputBranch">Branch and Year</label>
                                     <input
                                         id="inputBranch"
                                         type="text"

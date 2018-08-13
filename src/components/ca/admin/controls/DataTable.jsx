@@ -42,7 +42,6 @@ export default class DataTable extends React.Component {
             });
         });
     }
-    
 
     render() {
         let data  = this.state.participants;

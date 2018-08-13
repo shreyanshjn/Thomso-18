@@ -3,6 +3,7 @@ import $ from 'jquery'
 
 import AuthService from '../../../../handlers/ca/admin/AuthService';
 import FetchApi from '../../../../utils/FetchAPI';
+import downloadCSV from '../../../../utils/JSONtoCSV';
 import Row from './Row';
 
 export default class DataTable extends React.Component {
@@ -20,7 +21,6 @@ export default class DataTable extends React.Component {
         const authtoken = this.Auth.getToken();
         FetchApi('GET','/api/ca/admin/tempUsers', null, authtoken)
             .then((result) => {
-                console.log(result, 'Participant List')
                 if (result && result.data) {
                     this.setState({ participants: result.data });
                 }
@@ -45,20 +45,26 @@ export default class DataTable extends React.Component {
         });
     }
     
+    download = () => {
+        if (this.state.participants && this.state.participants.length > 0) {
+            downloadCSV({data: this.state.participants, filename: 'temp_registrations.csv'})
+        }
+    }
 
     render() {
       let data  = this.state.participants;
-      console.log(data);
       return (
         <div>
             {this.state.message}
             <div>
                 <input id="myInput" type="text" onChange={(e) => this.handleFilter(e)} placeholder="Type here to search..." />
             </div>
+            <button onClick={this.download}> Download </button>
             <table>
                 <thead>
                     <tr>
                         <th style={{width:"2vw"}}>Index</th>
+                        <th style={{width:"2vw"}}>ID</th>
                         <th style={{width:"8vw"}}>Name</th>
                         <th style={{width:"5vw"}}>Gender</th>
                         <th style={{width:"13vw"}}>Email</th>
@@ -66,7 +72,7 @@ export default class DataTable extends React.Component {
                         <th style={{width:"10vw"}}>Branch</th>
                         <th style={{width:"12vw"}}>College</th>
                         <th style={{width:"8vw"}}>State</th>
-                        <th style={{width:"17vw"}}>Address</th>
+                        <th style={{width:"15vw"}}>Address</th>
                         <th style={{width:"15vw"}}>Why?</th>
                     </tr>
                 </thead>

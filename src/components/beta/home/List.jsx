@@ -33,11 +33,11 @@ class List extends Component {
           <a href="">ZONALS</a>
         </li>*/}
         <li>
-            <Link to="../quizardy" className={(this.state.activeStateLink === "quizardy") ? "list-quiz-link" : null}
+            <Link to="../quizardry" className={(this.state.activeStateLink === "quizardry") ? "list-quiz-link" : null}
                 onClick={()=>{
-                this.setActiveLink("quizardy")
+                this.setActiveLink("quizardry")
                 }}>
-                QUIZARDY
+                QUIZARDRY
             </Link>
         </li>
         {/*<li>
@@ -51,7 +51,7 @@ class List extends Component {
                 onClick={()=>{
                 this.setActiveLink("list-spons-ca")
                 }}>
-                OUR SPONSERS
+                OUR SPONSORS
             </Link>
         </li>
         {/* <li>

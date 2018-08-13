@@ -53,13 +53,11 @@ export default class HomeIndex extends React.Component {
                 xfbml: true
             });
         }
-
         const authtoken = this.Auth.getToken();
         FetchApi('GET', '/api/ca/posts', null, authtoken)
             .then((result) => {
                 if (result.data && result.data.posts && result.data.posts.data && result.data.posts.data.length > 0 && !unmount) {
                     this.setState({ posts: result.data.posts.data });
-                    // console.log(result, 'Posts')
                 }
             })
             .catch(error => {

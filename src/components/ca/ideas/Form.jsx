@@ -58,7 +58,6 @@ export default class Form extends React.Component {
     componentWillUnmount() {
         clearTimeout(timeout)
     }
-
     render() {
         const { title, body, errors, isVisible } = this.state;
         return (
