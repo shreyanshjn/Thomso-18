@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./css/style.css";
 import boy from "./img/boy.png";
 import girl from "./img/girl.png";
-import {addTopic} from '../../../utils/firebasePush';
+import {addCATopic} from '../../../utils/firebasePush';
 // import like from "./img/like.png"
 // import share from "./img/share.png"
 // import score from "./img/star.png"
@@ -40,7 +40,7 @@ export default class Sidebar extends React.Component {
 
   componentDidMount() {
     addTopicTimeout = setTimeout(() => {
-      addTopic('tempCA');
+      addCATopic('tempCA');
     }, 2000)
 
     const countDownDate = new Date("Oct 25, 2018 00:00:00").getTime();

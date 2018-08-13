@@ -52,6 +52,14 @@ var UserSchema = new mongoose.Schema({
     create_date: {
         type: Date,
         default: Date.now
+    },
+    notification: {
+        token: {
+            type: String
+        },
+        last_update: {
+            type: Date
+        }
     }
 });
 

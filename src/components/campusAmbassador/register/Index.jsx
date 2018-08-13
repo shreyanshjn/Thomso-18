@@ -225,7 +225,7 @@ export default class RegisterIndex extends React.Component {
                                     autoCorrect="off"
                                     autoComplete="off"
                                     autoCapitalize="on"
-                                    rows="1"
+                                    rows="2"
                                     value={why}
                                     onChange={this.onChange}
                                     required
