@@ -2,7 +2,7 @@
 { 
   background:#164851;
   padding:20px;
-  width:18vw;
+  width:12vw;
   height:12vh; 
   border-radius:12px;
   box-shadow:0px 1px 3px 3px #164851;
@@ -24,7 +24,7 @@
 {
    .zonal-common-comp2-head
    {
-      width:8vw;
+      width:5vw;
       height:5vh;
    }
    .zonals-comp2-inside
