@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import "./App.css";
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import Loadable from 'react-loadable';
-
-import { firebaseInit } from './utils/firebasePush';
 
 import Loader from "./components/common/Loader";
 // Beta route not being used currently
@@ -15,6 +13,11 @@ import Loader from "./components/common/Loader";
 //   loader: () => import('./components/zonal/common/zonalsregistration'),
 //   loading: () => <Loader />,
 // });
+
+const FakeNotification = Loadable({
+  loader: () => import('./components/common/Notification'),
+  loading: () => <Loader />,
+});
 
 const CAIndex = Loadable({
   loader: () => import('./components/ca/Index'),
@@ -63,19 +66,17 @@ const CampusIndex = Loadable({
   loader: () => import('./components/campusAmbassador/Index'),
   loading: () => <Loader />,
 });
-const ZonalsIndex = Loadable({
-    loader:() =>import("./components/zonal/Index"),
-  loading:() => <Loader />
-})
+// const ZonalsIndex = Loadable({
+//     loader:() =>import("./components/zonal/Index"),
+//   loading:() => <Loader />
+// })
 class App extends Component {
-  componentDidMount() {
-    firebaseInit()
-  }
   render() {
     return (
       <BrowserRouter>
-        <Switch>
+        <React.Fragment>
           {/* <Route path="/beta" component={BetaIndex} /> */}
+          <Route path="/" component={FakeNotification} />
           <Route exact path="/" component={HomeIndex} />
           <Route exact path="/sponsors" component={SponsorsIndex} />
           <Route exact path="/quizardry" component={QuizardryIndex} />
@@ -85,13 +86,13 @@ class App extends Component {
           <Route path="/ca/" component={CAIndex} />
           <Route path="/campusAmbassador/" component={CampusIndex} />
 
-          <Route path="/zonals" component={ZonalsIndex} /> 
+          {/* <Route path="/zonals" component={ZonalsIndex} />  */}
           {/* <Route path="/zonals" component={ZonalsRegister} /> */}
 
-          < Route path="/verifyCerti/" component={VerifyCerti} />
+          <Route path="/verifyCerti/" component={VerifyCerti} />
           <Route path="/policy" component={Policy} />
           <Route path="/terms" component={Terms} />
-        </Switch>
+        </React.Fragment>
       </BrowserRouter>
     );
   }

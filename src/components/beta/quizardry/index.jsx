@@ -19,6 +19,7 @@ export default class QuizardryIndex extends React.Component{
     }
 
     componentDidMount() {
+
         addTopicTimeout = setTimeout(() => {
             addTopic('quizardry');
         }, 2000)

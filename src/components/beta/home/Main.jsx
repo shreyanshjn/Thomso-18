@@ -4,7 +4,6 @@ import './src/css/Main.css';
 import Footer from './Footer';
 import Navbar from './Navbar';
 import FullSection from './FullSection';
-
 let initialized = false;
 
 export default class Main extends Component {
@@ -142,7 +141,7 @@ export default class Main extends Component {
         return (
             <div className="middlesection">
                 <Helmet>
-                    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
+                    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
                 </Helmet>
                     <div id="home-particles-js" style={{
                         height: '100vh',
@@ -151,7 +150,7 @@ export default class Main extends Component {
                         width: '100vw',
                     }}>
                 </div>
-                <Navbar /> 
+                <Navbar />
                 <FullSection />
                 <Footer />
             </div>
