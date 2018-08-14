@@ -23,6 +23,9 @@
     height:auto;
     width:100%;
     max-width:7vw;
+    position:absolute;
+    right:0;
+    padding:10px;
 }
 .zonals-parallax-layer2-main-child
 {
@@ -77,6 +80,7 @@
     height: auto;
     width: 9%;
     cursor:pointer;
+    padding:10px;
 }
 .zonals-layer2-h1
 {
@@ -95,7 +99,7 @@
     }
     .zonals-delhi-iitrlogo
     {
-       max-width:60vw;
+       max-width:19vw;
     }
     .zonals-layer2-h1
     {

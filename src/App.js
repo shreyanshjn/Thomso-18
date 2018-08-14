@@ -11,11 +11,6 @@ import Loader from "./components/common/Loader";
 //   loader: () => import('./components/beta/Index'),
 //   loading: () => <div>Loading BetaIndex</div>,
 // });
-const ZonalsRegister = Loadable({
-  loader: () => import('./components/zonal/common/zonalsregistration'),
-  loading: () => <Loader />,
-});
-
 const CAIndex = Loadable({
   loader: () => import('./components/ca/Index'),
   loading: () => <Loader />,
@@ -86,7 +81,6 @@ class App extends Component {
           <Route path="/campusAmbassador/" component={CampusIndex} />
 
           <Route path="/zonals" component={ZonalsIndex} /> 
-          <Route path="/zonals" component={ZonalsRegister} />
 
           < Route path="/verifyCerti/" component={VerifyCerti} />
           <Route path="/policy" component={Policy} />

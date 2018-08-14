@@ -9,32 +9,70 @@
     height:60vh;
     margin:auto;
     justify-content:space-around;
-    border-radius:20px;
+    border-radius:5px;
     box-shadow:4px 4px 4px 4px #24989a;
+    font-family:Montserrat;
 }
 .zonals-common-comp1 > div
 {
     opacity:0;
 }
+.zonal-common-comp1-heading >div
+{
+   font-weight:bolder;
+   font-size:20px;
+}
+.zonal-common-comp1-register
+{
+   display:flex;
+   justify-content:center;
+   width:100%;
+}
+.zonal-common-comp1-register >div
+{
+   width:15%;
+}
+.zonal-common-comp1-register-child1
+{
+    display:flex;
+    jsutify-content:flex-start;
+}
+.zonal-common-comp1-register-child2
+{
+    display:flex;
+    justify-content:flex-end;
+}
 .zonal-comp1-button
 {
-    background:white;
-    padding:10px;
-    color:black;
-    border-radius:10px;
-    cursor:pointer;
+    background: white;
+    padding: 8px;
+    color: black;
+    cursor: pointer;
+    border: 2px solid white;
+    border-radius: 50px;
+    font-family:Montserrat;
+}
+.zonal-comp1-button-rulebook
+{
+    background: white;
+    padding: 8px;
+    color: black;
+    cursor: pointer;
+    border: 2px solid white;
+    border-radius: 50px;
+    font-family:Montserrat;
 }
 .zonals-comp-dance-transform
 {
-  width:80%;
-  height:70vh;
-  position:absolute;
-  top:10px;
-  right:10%;
+    width: 63%;
+    height: 29vw;
+    position: absolute;
+    top: 70px;
+    right: 19%;
 }
 .zonals-comp-dance-transform > div
 {
-   opacity:1;
+    opacity:1;
    transition:opacity 3s;
 }
 .zonal-common-comp1-content
@@ -45,15 +83,19 @@
 {
     .zonal-common-comp1-content
     {
-       font-size:10px;
+       font-size:15px;
        overflow-y:scroll;
     }
     .zonals-comp-dance-transform
     {
         width:80%;
-        height:60vh;
+        height:55vh;
         position:absolute;
-        top:0px;
+        top:3vh;
         right:10%;
+    }
+    .zonals-comp-dance-transform
+    {
+        font-size:18px;   
     }
 }

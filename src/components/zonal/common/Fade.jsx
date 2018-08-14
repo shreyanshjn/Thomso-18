@@ -1,7 +1,7 @@
 import Transition from 'react-transition-group/Transition';
 import React from 'react';
 
-const duration = 400;
+const duration = 200;
 
 const defaultStyle = {
     transition: `opacity ${duration}ms `,
@@ -17,8 +17,8 @@ const transitionStyles = {
 };
 const Fade = ({in: inProp, children }) => (
     <Transition in={inProp} timeout={{
-     enter:700,
-     exit:400,
+     enter:500,
+     exit:300,
     }}>
         {(state) => (
             <div style={{

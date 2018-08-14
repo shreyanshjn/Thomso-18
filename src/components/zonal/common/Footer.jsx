@@ -10,10 +10,10 @@ export default class Footer extends React.Component {
             <div className="zonals-footer-main-div">
                 <div className="zonals-footer-address">
                     <p style={{margin:'0'}}>
-                        Address<br />
+                        <span className="address-name-zonals">Address</span><br/>
                         Thomso Office <br />
                         Multi Activity Center, <br />
-                        Indian Institute Of Technology, Roorkee
+                        Indian Institute Of Technology, <br />Roorkee
                     </p>
                 </div>
             <div className="zonals-footer-follow ">
@@ -28,15 +28,27 @@ export default class Footer extends React.Component {
                 </div> 
             </div>
             <div className="zonals-footer-contact">
-                <div>
-                    CONTACT
-                </div>
-                <div>
+                <div className="zonals-contact-name">
                     <div>
-                        Harshit:- 9340043505
+                        CONTACT
                     </div>
-                    <div>
-                        Abhay:- 9131700765
+                </div>
+                <div className="zonals-contact-person">
+                    <div className="zonals-contact-person-child">
+                        <div>
+                            Harshit
+                        </div>
+                        <div>
+                           +91-9340043505
+                        </div>
+                    </div>
+                    <div className="zonals-contact-person-child">
+                        <div>
+                            Abhay
+                        </div>
+                        <div>
+                            +91-9131700765
+                        </div>
                     </div>
                 </div>
             </div>
