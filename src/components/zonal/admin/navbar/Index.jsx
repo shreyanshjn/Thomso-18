@@ -7,8 +7,10 @@ render(){
     return(
       <div className="zonals-admin-nav">
         <ul>
-          <li><Link to="/zonals/admin/" className="active">Home</Link></li>
+          <li><Link to="/zonals/admin/">Home</Link></li>
           <li><Link to="/zonals/admin/delhi">Delhi</Link></li>
+          <li><Link to="/zonals/admin/jaipur">Jaipur</Link></li>
+          <li><Link to="/zonals/admin/lucknow">Lucknow</Link></li>
           <li><Link to="/zonals/admin/logout">Logout</Link></li>
         </ul>
       </div>

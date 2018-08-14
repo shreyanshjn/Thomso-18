@@ -3,7 +3,7 @@ var router = express.Router();
 
 // Controllers
 var adminAuth = require('../../../controllers/api/zonals/admin/admin_auth');
-// var adminControls = require('../../../controllers/api/ca/admin/admin_controls');
+var adminControls = require('../../../controllers/api/zonals/admin/admin_controls');
 
 // Middlewares
 var ZonalsAdminTokenMiddleware = require("../../../middlewares/zonals/admin/TokenMiddleware");
@@ -16,5 +16,8 @@ router.post('/auth/login', adminAuth.login);
 
 // -> /zonals/admin
 router.use('/', ZonalsAdminTokenMiddleware.verify);
+router.get('/delhi', adminControls.getDelhiUsers);
+router.get('/jaipur', adminControls.getJaipurUsers);
+router.get('/lucknow', adminControls.getLucknowUsers);
 
 module.exports = router;

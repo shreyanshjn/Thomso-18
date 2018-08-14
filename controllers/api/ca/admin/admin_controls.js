@@ -129,7 +129,6 @@ exports.getTempUsers = function(req, res) {
       res.json(allUsers);
     });
 };
-  
 
 exports.exportToCSV = function(req, res) {
     // var filename   = "participant.csv";

@@ -6,6 +6,7 @@ var cors = require('cors');
 var zonalsAdminRoutes = require('./admin/routes');
 
 // Controllers
+var zonalsControl = require('../../controllers/api/zonals/register');
 
 
 // CORS Config
@@ -16,7 +17,16 @@ var corsOptions = require('../config/cors')
 // -> /zonals/admin
 router.use('/admin', cors(corsOptions), zonalsAdminRoutes);
 
-// -> /ca
+// -> /zonals
 router.use('/', cors(corsOptions));
+
+// -> /zonals/delhi
+router.post('/delhi', cors(corsOptions), zonalsControl.register_delhi);
+
+// -> /zonals/jaipur
+router.post('/jaipur', cors(corsOptions), zonalsControl.register_jaipur);
+
+// -> /zonals/lucknow
+router.post('/lucknow', cors(corsOptions), zonalsControl.register_lucknow);
 
 module.exports = router;

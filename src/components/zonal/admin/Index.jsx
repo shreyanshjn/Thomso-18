@@ -20,10 +20,10 @@ const LogoutIndex = Loadable({
     loading: Loading,
 });
 
-const RegisterIndex = Loadable({
-    loader: () => import('./register/Index'),
-    loading: Loading,
-});
+// const RegisterIndex = Loadable({
+//     loader: () => import('./register/Index'),
+//     loading: Loading,
+// });
 
 const HomeIndex = Loadable({
     loader: () => import('./home/Index'),
@@ -37,6 +37,11 @@ const LoginIndex = Loadable({
 
 const NavbarIndex = Loadable({
     loader: () => import('./navbar/Index'),
+    loading: Loading,
+});
+
+const TableIndex = Loadable({
+    loader: () => import('./table/Index'),
     loading: Loading,
 });
 
@@ -60,20 +65,23 @@ export default class AdminIndex extends React.Component{
 
     render(){
         return(
-            <div>
+            <React.Fragment>
                 {this.state.isAuthenticated ? 
-                    <div>
+                    <React.Fragment>
                         <Route path="/zonals/admin" component={NavbarIndex} />
-                        <Route exact path="/zonals/admin/logout" render={ () => <LogoutIndex updateRoutes={this.handleUpdate}/> } />
+                        <Route exact path="/zonals/admin/logout" render={ (props) => <LogoutIndex {...props} updateRoutes={this.handleUpdate}/> } />
                         <Route exact path="/zonals/admin" component={HomeIndex} />
-                    </div>
+                        <Route exact path="/zonals/admin/delhi" render={ (props) => <TableIndex {...props} city='delhi' /> } />
+                        <Route exact path="/zonals/admin/jaipur" render={ (props) => <TableIndex {...props} city='jaipur' /> } />
+                        <Route exact path="/zonals/admin/lucknow" render={ (props) => <TableIndex {...props} city='lucknow' /> } />
+                    </React.Fragment>
                 :
-                    <div>
+                    <React.Fragment>
                         {/* <Route exact path="/zonals/admin/register" component={RegisterIndex} /> */}
-                        <Route exact path="/zonals/admin" render={ () => <LoginIndex updateRoutes={this.handleUpdate}/> } />
-                    </div>
+                        <Route exact path="/zonals/admin" render={ (props) => <LoginIndex updateRoutes={this.handleUpdate}/> } />
+                    </React.Fragment>
                 }
-            </div>
+            </React.Fragment>
         )
     }
 }
