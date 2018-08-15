@@ -14,7 +14,6 @@ export default class DelhiEvents extends React.Component {
             radiochecksinging: false,
             radiocheckdancing: false,
             radiocheckopenmic: false,
-            isHidden:true
         }
     }
     changeState = () => {
@@ -24,9 +23,6 @@ export default class DelhiEvents extends React.Component {
         e.preventDefault()
         let events = [this.state.selectedOptionDrama, this.state.selectedOptionTgt]
         this.props.selectedevents(events)
-        this.setState({
-           isHidden:!this.state.isHidden
-        })
     }
     handleOptionChangeDrama = (changeEvent) => {
         this.setState({
@@ -42,7 +38,7 @@ export default class DelhiEvents extends React.Component {
         return (
             <React.Fragment>
                 <form className={this.props.var ? "register-zonals-form-events inactive" : "register-zonals-form-events active"} onSubmit={this.onSubmit}>
-                        <p className={this.state.isHidden ? "form-submitted-popup-hide": "form-submitted-popup"}>FORM HAS BEEN SUBMITTED</p>
+                        {/* <p className={this.state.isHidden ? "form-submitted-popup-hide": "form-submitted-popup"}>FORM HAS BEEN SUBMITTED</p> */}
                     <div className={this.props.var ? "register-zonals-form-events-parent inactive" : "register-zonals-form-events-parent"}>
                         <div className="register-zonals-form-events-firstchild">
                             <div className="register-zonals-form-events-drama">
@@ -75,7 +71,7 @@ export default class DelhiEvents extends React.Component {
                         </div>
                     </div>
                     <div className={this.props.var ? "register-zonals-form-events-button inactive" : "register-zonals-form-events-button"}>
-                        <button onClick={() => this.changeState()}>BACK</button>
+                        <div onClick={() => this.changeState()}>BACK</div>
                         <button type="submit">SUBMIT</button>
                     </div>
                 </form>

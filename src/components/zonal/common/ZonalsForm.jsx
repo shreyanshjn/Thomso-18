@@ -39,7 +39,7 @@ class ZonalsForm extends React.Component {
                     <div className="zonalsform-main-child">
                         <div className="astro-image-zonals-div">
                             <div>
-                                <img src={astro} alt="astro" className="astro-image-zonals" />
+                                <img src={astro} alt="astro" className="astro-image-zonals astro-bounce" />
                             </div>
                         </div>
                         <div className="register-zonals-form-div">

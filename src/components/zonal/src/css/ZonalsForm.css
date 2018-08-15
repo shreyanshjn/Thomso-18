@@ -30,11 +30,18 @@
     width: 50%;
     overflow: hidden;
 }
+@keyframes astro-move {
+    0%   {right: 0px;top:0px;}
+    50% {right:30px ;top:20px;}
+    100% {right: 0px;top:0px;}
+}
 .astro-image-zonals
 {
-    width:100%;
+    width:90%;
     height: auto;
-    margin-top: 33px;
+    margin-top: 20px;
+    position: relative;
+    animation: astro-move 2s infinite;
 }
 .astro-image-zonals-div image{
     margin-top: 33px;
@@ -43,13 +50,17 @@
 {
    display:flex;
    background-color:rgba(55, 90, 117,0.6);
-   flex-direction:column;
+   flex-direction:row;
    height:380px;
-   width:300px;
+   width:50%;
 }
 .astro-image-zonals-div div{
-    height: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 }
+
 .register-zonals-form-div
 {
    background-color:rgba(55, 90, 117,0.3);
