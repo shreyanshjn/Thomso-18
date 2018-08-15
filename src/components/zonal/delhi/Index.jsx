@@ -19,18 +19,18 @@ export default class DelhiIndex extends Component {
         return (
             <SectionsContainer {...options}>
                 <Section>
-                    <div style={{overflow:'hidden'}}>
+                    <div style={{ overflow: 'hidden' }}>
                         <DelhiOpening />
                     </div>
                 </Section>
                 <Section>
-                    <SectionSecond /> 
+                    <SectionSecond />
                 </Section>
                 <Section>
                     <ZonalsForm />
                     <Footer />
                 </Section>
-        </SectionsContainer>
+            </SectionsContainer>
         );
     }
 }

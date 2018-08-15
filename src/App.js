@@ -11,10 +11,6 @@ import Loader from "./components/common/Loader";
 //   loader: () => import('./components/beta/Index'),
 //   loading: () => <div>Loading BetaIndex</div>,
 // });
-// const ZonalsRegister = Loadable({
-//   loader: () => import('./components/zonal/common/zonalsregistration'),
-//   loading: () => <Loader />,
-// });
 
 const CAIndex = Loadable({
   loader: () => import('./components/ca/Index'),
@@ -63,10 +59,10 @@ const CampusIndex = Loadable({
   loader: () => import('./components/campusAmbassador/Index'),
   loading: () => <Loader />,
 });
-// const ZonalsIndex = Loadable({
-//     loader:() =>import("./components/zonal/Index"),
-//   loading:() => <Loader />
-// })
+const ZonalsIndex = Loadable({
+  loader: () => import("./components/zonal/Index"),
+  loading: () => <Loader />
+})
 class App extends Component {
   componentDidMount() {
     firebaseInit()
@@ -85,8 +81,7 @@ class App extends Component {
           <Route path="/ca/" component={CAIndex} />
           <Route path="/campusAmbassador/" component={CampusIndex} />
 
-          {/* <Route path="/zonals" component={ZonalsIndex} />  */}
-          {/* <Route path="/zonals" component={ZonalsRegister} /> */}
+          <Route path="/zonals" component={ZonalsIndex} />
 
           < Route path="/verifyCerti/" component={VerifyCerti} />
           <Route path="/policy" component={Policy} />
