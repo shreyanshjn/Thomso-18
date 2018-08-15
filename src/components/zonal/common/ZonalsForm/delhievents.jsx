@@ -71,7 +71,7 @@ export default class DelhiEvents extends React.Component {
                         </div>
                     </div>
                     <div className={this.props.var ? "register-zonals-form-events-button inactive" : "register-zonals-form-events-button"}>
-                        <div onClick={() => this.changeState()}>BACK</div>
+                        <button onClick={() => this.changeState()}>BACK</button>
                         <button type="submit">SUBMIT</button>
                     </div>
                 </form>
