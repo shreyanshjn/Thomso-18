@@ -1,6 +1,5 @@
 import React from 'react';
 import '../zonals.css';
-import Popup from '../../../common/popup/Index';
 
 export default class DelhiEvents extends React.Component {
     constructor() {
@@ -14,15 +13,20 @@ export default class DelhiEvents extends React.Component {
             radiochecknatak: false,
             radiochecksinging: false,
             radiocheckdancing: false,
-            radiocheckopenmic: false
+            radiocheckopenmic: false,
+            isHidden:true
         }
     }
-    changeState = (e) => {
+    changeState = () => {
+        this.props.function()
+    }
+    onSubmit = (e) => {
         e.preventDefault()
         let events = [this.state.selectedOptionDrama, this.state.selectedOptionTgt]
         this.props.selectedevents(events)
-        this.popup.show(['Thank you for registering as CA.'])
-        this.props.function()
+        this.setState({
+           isHidden:!this.state.isHidden
+        })
     }
     handleOptionChangeDrama = (changeEvent) => {
         this.setState({
@@ -37,8 +41,8 @@ export default class DelhiEvents extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <Popup {...this.props} onRef={ref => (this.popup = ref)} />
-                <form className={this.props.var ? "register-zonals-form-events inactive" : "register-zonals-form-events active"} onSubmit={this.changeState}>
+                <form className={this.props.var ? "register-zonals-form-events inactive" : "register-zonals-form-events active"} onSubmit={this.onSubmit}>
+                        <p className={this.state.isHidden ? "form-submitted-popup-hide": "form-submitted-popup"}>FORM HAS BEEN SUBMITTED</p>
                     <div className={this.props.var ? "register-zonals-form-events-parent inactive" : "register-zonals-form-events-parent"}>
                         <div className="register-zonals-form-events-firstchild">
                             <div className="register-zonals-form-events-drama">
@@ -46,7 +50,7 @@ export default class DelhiEvents extends React.Component {
                             </div>
                             <div className={this.state.check ? "register-zonals-form-events-dramachild" : "register-zonals-form-events-dramachild low-opacity"}>
                                 <div>
-                                    <span><input onChange={this.handleOptionChangeDrama} type="radio" name="abhivyakti" value="abhivyakti" checked={this.state.selectedOptionDrama === 'abhivyakti'} disabled={!this.state.check} /></span><span>Abhivyakti</span>
+                                    <span><input onChange={this.handleOptionChangeDrama} type="radio" name="abhivyakti" value="abhivyakti" checked={this.state.selectedOptionDrama === 'abhivyakti'} disabled={!this.state.check} /></span><span>Mr & Miss Thomso</span>
                                 </div>
                                 <div>
                                     <span><input onChange={this.handleOptionChangeDrama} type="radio" name="natak" value="natak" checked={this.state.selectedOptionDrama === 'natak'} disabled={!this.state.check} /></span><span>Natak</span>

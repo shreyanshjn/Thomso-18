@@ -1,7 +1,20 @@
+.form-submitted-popup-hide
+{
+    opacity:0;
+    transition:all 0.2s;
+    margin:4px;
+}
+.form-submitted-popup
+{
+    opacity:1;
+    transition:all 0.2s;
+    margin:4px;
+    color:wheat;
+}
 .zonalsForm-main-div
 {
     display:flex;
-    flex-direction:row;
+    flex-direction:column;
     justify-content:center;
     align-items:center;
     background:url('../img/back.jpg');
@@ -58,7 +71,7 @@
     position: absolute;
 }
 .register-zonals-form-events-parent{
-    padding: 25px 10px 0px 10px; 
+    padding: 0px 10px 0px 10px; 
     height: calc(100% - 25px);
 }
 .register-zonals-form-events-drama{

@@ -7,6 +7,7 @@ import PersonalDetails from "./ZonalsForm/personaldetails"
 class ZonalsForm extends React.Component {
     constructor() {
         super();
+        this.isHidden = React.createRef();
         this.state = {
             name: "",
             email: "",
@@ -35,18 +36,18 @@ class ZonalsForm extends React.Component {
     render() {
         return (
             <div className="zonalsForm-main-div">
-                <div className="zonalsform-main-child">
-                    <div className="astro-image-zonals-div">
-                        <div>
-                            <img src={astro} alt="astro" className="astro-image-zonals" />
+                    <div className="zonalsform-main-child">
+                        <div className="astro-image-zonals-div">
+                            <div>
+                                <img src={astro} alt="astro" className="astro-image-zonals" />
+                            </div>
+                        </div>
+                        <div className="register-zonals-form-div">
+                            <PersonalDetails statevalues={this.stateValues} function={this.changeState} var={this.state.variable} />
+                            <DelhiEvents ref={this.isHidden} selectedevents={this.selected} function={this.changeState} var={this.state.variable} hiding={this.state.isHidden} />
                         </div>
                     </div>
-                    <div className="register-zonals-form-div">
-                        <PersonalDetails statevalues={this.stateValues} function={this.changeState} var={this.state.variable} />
-                        <DelhiEvents selectedevents={this.selected} function={this.changeState} var={this.state.variable} />
-                    </div>
                 </div>
-            </div>
         );
     }
 }

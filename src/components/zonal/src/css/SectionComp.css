@@ -19,19 +19,19 @@
 }
 .zonal-common-comp1-heading >div
 {
-   font-weight:bolder;
-   font-size:20px;
+    font-weight:bolder;
+    font-size:20px;
 }
 .zonal-common-comp1-register
 {
-   display:flex;
-   justify-content:center;
-   width:100%;
+    display:flex;
+    justify-content:center;
+    width:100%;
 }
 .zonal-common-comp1-register >div
 {
-   width:15%;
-   z-index:200;
+    width:15%;
+    z-index:200;
 }
 .zonal-common-comp1-register-child1
 {
@@ -74,7 +74,7 @@
 .zonals-comp-dance-transform > div
 {
     opacity:1;
-   transition:opacity 3s;
+    transition:opacity 3s;
 }
 .zonal-common-comp1-content
 {
@@ -84,8 +84,8 @@
 {
     .zonal-common-comp1-content
     {
-       font-size:15px;
-       overflow-y:scroll;
+        font-size:15px;
+        overflow-y:scroll;
     }
     .zonals-comp-dance-transform
     {
@@ -98,5 +98,9 @@
     .zonals-comp-dance-transform
     {
         font-size:18px;   
+    }
+    .zonal-common-comp1-register >div
+    {
+        width:35%;
     }
 }
