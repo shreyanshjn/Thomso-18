@@ -112,7 +112,6 @@ exports.ca_temp_login = function(req, res) {
                     res.status(400).send({success: false, msg: 'Authentication failed. User not found.', notExists: true});
                 } else {
                     user.comparePassword(req.body.password, function (err, isMatch) {
-                        console.log(user);
                         if (isMatch && !err) {
                             var newToken = {
                                 email: req.body.email,

@@ -33,12 +33,20 @@ var register = function(req, res, city) {
         };
         if (data.name && data.college && data.email && data.branch && data.contact && data.city && typeof(data.events) === "object" && data.events.length > 0 ) {
             var newUser = new Zonal_User(data);
-            newUser.save(function(err) {
+            newUser.save(function(err, saved) {
                 if (err) {
+                    return res.json({success: false, msg: 'Username already exists.'});
+                } else if (!saved) {
                     return res.json({success: false, msg: 'Username already exists.'});
                 } else {
                     res.json({success: true, msg: 'User Created.'});
-                    // mailer
+                    if (saved.tz_id && saved.email && saved.name) {
+                        mailer.zonalsLucknow({
+                            zn_id: saved.tz_id,
+                            email: saved.email,
+                            name: saved.name
+                        })
+                    }
                 }
             });
         } else {

@@ -4,6 +4,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Loadable from 'react-loadable';
 
 import Loader from "./components/common/Loader";
+
 // Beta route not being used currently
 // const BetaIndex = Loadable({
 //   loader: () => import('./components/beta/Index'),

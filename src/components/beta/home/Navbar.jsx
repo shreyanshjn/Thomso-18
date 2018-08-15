@@ -50,7 +50,7 @@ class Navbar extends Component {
             <div className="beta-navbar-int-ctos">
               <ul id="beta-navbar-options-hide">
                 <li>
-                    <Link to="../ca/" className={(this.state.activeState === "ca/") ? "linkCaportal" : null}
+                    <Link to="../campusambassador/" className={(this.state.activeState === "campusambassador/") ? "linkCaportal" : null}
                     onClick={() => {
                                     this.setActive("linkCaportal");
                     }}>
