@@ -15,11 +15,13 @@ export default class DelhiEvents extends React.Component {
             radiocheckopenmic: false
         }
     }
-    changeState = (e) => {
+    changeState = () => {
+        this.props.function()
+    }
+    onSubmit = (e) => {
         e.preventDefault()
         let events = [this.state.selectedOptionDrama, this.state.selectedOptionTgt]
         this.props.selectedevents(events)
-        this.props.function()
     }
     handleOptionChangeDrama = (changeEvent) => {
         this.setState({
@@ -34,7 +36,7 @@ export default class DelhiEvents extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <form className={this.props.var ? "register-zonals-form-events inactive" : "register-zonals-form-events active"} onSubmit={this.changeState}>
+                <form className={this.props.var ? "register-zonals-form-events inactive" : "register-zonals-form-events active"} onSubmit={this.onSubmit}>
                     <div className={this.props.var ? "register-zonals-form-events-parent inactive" : "register-zonals-form-events-parent"}>
                         <div className="register-zonals-form-events-firstchild">
                             <div className="register-zonals-form-events-drama">
