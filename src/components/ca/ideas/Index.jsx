@@ -27,7 +27,6 @@ export default class IdeasIndex extends React.Component {
     }
     addIdea = idea => {
         const newIdeas = [idea, ...this.state.ideas]
-        console.log(newIdeas, 'newIdeas')
         this.setState({ ideas: newIdeas })
     }
     updateIdea = (index, idea) => {

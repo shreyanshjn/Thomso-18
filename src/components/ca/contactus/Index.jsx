@@ -22,7 +22,7 @@ export default class ContactIndex extends React.Component {
                                     <h2>Harshit kanakariya</h2>
                                 </div>
                                 <div className="ca-contact-details-post">
-                                    <h2>EVENTS AND MANAGEMENT</h2>
+                                    <h2>PUBLIC RELATIONS</h2>
                                 </div>
                                 <div className="ca-contact-details-gmail">
                                     <img src={gmail} alt="email"/>

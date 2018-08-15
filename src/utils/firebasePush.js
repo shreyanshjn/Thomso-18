@@ -1,4 +1,5 @@
-import firebase from 'firebase';
+import firebase from 'firebase/app';
+import 'firebase/messaging';
 import FetchApi from './FetchAPI';
 
 const config = {
@@ -8,26 +9,71 @@ const config = {
 const publicVapidKey = 'BDnyI9swBVVfXCK_V1bN4y2KEWpfFvkAlAiLv9l4sNQ3VgVn_t63nhSPzza7IQaAFqGlOwUmhFLeBhliWujzVhg';
 firebase.initializeApp(config);
 
+export const checkInArray = topic => {
+    let array = localStorage.getItem('notifications')
+    if (array) {
+        array = array.split(',')
+        if (array.length > 0 && array.indexOf(topic) === -1) {
+            return {inArray: false, isArray: true, array}
+        } else {
+            return {inArray: true}
+        }
+    } else {
+        return {inArray: false, isArray: false}
+    }
+}
+
 export const addTopic = (topic) => {
     const token = localStorage.getItem('notificationToken');
     if (topic && token) {
-        FetchApi('POST','/api/notification', {
-            topic: topic,
-            token: token
-        })
-            .then(result => {
-                let notifArray = localStorage.getItem('notifications');
-                if (notifArray && notifArray.length > 0) {
-                    notifArray.push(topic);
-                    localStorage.setItem('notifications', notifArray);
-                } else {
-                    localStorage.setItem('notifications', [topic]);
-                }
-                console.log(`Subscribed to ${topic}`, result);
+        const check = checkInArray(topic)
+        if ( check && check.inArray === false) {
+            FetchApi('POST','/api/notification', {
+                topic: topic,
+                token: token
             })
-            .catch(error => {
-                console.log(error);
-            });
+                .then(result => {
+                    if (check.isArray && check.array.length > 0) {
+                        const notifArray = check.array.push(topic)
+                        localStorage.setItem('notifications', notifArray)
+                    } else {
+                        localStorage.setItem('notifications', [topic])
+                    }
+                    console.log(`Subscribed to ${topic}`)
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+        }
+    } else {
+        console.log('Invalid Token/Topic')
+    };
+};
+
+export const addCATopic = (topic) => {
+    const token = localStorage.getItem('notificationToken');
+    const auth_token = localStorage.getItem('temp_ca_auth_token')
+    if (topic && token) {
+        const check = checkInArray(topic)
+        if ( check.inArray === false) {
+            FetchApi('POST','/api/notification/ca', {
+                topic: topic,
+                token: token
+            }, auth_token)
+                .then(result => {
+                    if (check.isArray && check.array.length > 0) {
+                        let notifArray = check.array
+                        notifArray.push(topic)
+                        localStorage.setItem('notifications', notifArray)
+                    } else {
+                        localStorage.setItem('notifications', [topic])
+                    }
+                    console.log(`Subscribed to ${topic}`)
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+        }
     } else {
         console.log('Invalid Token/Topic')
     };

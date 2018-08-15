@@ -123,8 +123,8 @@ var caTempRegister = function(user) {
         });
         var mailOptions = {
             from: "IIT Roorkee <thomso.mailer@gmail.com>",
-            // to: user.email,
-            to: "nikhilmehra998@gmail.com",
+            to: user.email,
+            // to: "nikhilmehra998@gmail.com",
             subject: "Email Verification",
             html: `
             <html>
@@ -144,19 +144,18 @@ var caTempRegister = function(user) {
                                                     <div style="font-family:Avenir,Helvetica,sans-serif;margin:0px 0;overflow:hidden">
                                                         <img src="https://thomso.in/logo.png" alt="logo" style="min-width:80px;width:10vw;height:auto">
                                                         <h5 style="font-family:Avenir,Helvetica,sans-serif;color:#222222;font-weight:600;margin-bottom:10px;font-size:14px">Dear
-                                                            <span style="font-family:Avenir,Helvetica,sans-serif;color:#5288d5">`+user.name+`</span>,</h5>
+                                                            <span style="font-family:Avenir,Helvetica,sans-serif;color:#5288d5">${user.name}</span>,</h5>
                                                         <p style="font-family:Avenir,Helvetica,sans-serif;width:fit-content;text-align:justify;color:#74787e;margin-top:0;text-align:left;margin-bottom:10px;line-height:20px;font-size:13px">
                                                             Greetings from Thomso, IIT Roorkee!
                                                             <br>
-                                                            <br> Congratulations, you have registered as the Campus Ambassador for Thomso’18.
-                                                            <br> Your temporary password is:  <i>`+user.password+`</i>
-                                                            <br> To complete your registeration, sign in <a href="https://www.thomso.in/campusambassador/login" target="_blank">here</a> to update your password.
+                                                            <br>Congratulations, you have registered as the Campus Ambassador for Thomso’18.
+                                                            <br>Your temporary password is <i><b>${user.password}<b></i><br>To complete your registeration, sign in <a href="https://www.thomso.in/campusambassador/login" target="_blank">here</a> to update your password.
                                                             <br>
-                                                            <br> For any queries, reach out to us at <a href="mailto:info.thomso18@gmail.com" target="_blank">info.thomso18@gmail.com</a>
+                                                            <br>For any queries, reach out to us at <a href="mailto:info.thomso18@gmail.com" target="_blank">info.thomso18@gmail.com</a>
                                                         </p>
                                                         <br>
                                                         <p style="font-family:Avenir,Helvetica,sans-serif;color:#74787e;margin-top:0;text-align:left;margin-bottom:10px;line-height:20px;font-size:13px">Regards
-                                                            <br> Team Thomso
+                                                            <br>Team Thomso
                                                         </p>
                                                         <br>
                                                     </div>
@@ -200,8 +199,8 @@ var caVerified = function(user) {
         });
         var mailOptions = {
             from: "IIT Roorkee <thomso.mailer@gmail.com>",
-            // to: user.email,
-            to: "nikhilmehra998@gmail.com",
+            to: user.email,
+            // to: "nikhilmehra998@gmail.com",
             subject: "Thomso Campus Ambassador",
             html: `
             <html>
@@ -225,9 +224,9 @@ var caVerified = function(user) {
                                                         <p style="font-family:Avenir,Helvetica,sans-serif;width:fit-content;text-align:justify;color:#74787e;margin-top:0;text-align:left;margin-bottom:10px;line-height:20px;font-size:13px">
                                                             Greetings from Thomso, IIT Roorkee!
                                                             <br>
-                                                            <br> Congratulations, you have successfully registered as the Campus Ambassador for Thomso’18.
+                                                            <br> Congratulations, you have been successfully registered as the Campus Ambassador for Thomso’18.
                                                             <br> Your account has been verified.
-                                                            <br> We cordially welcome you to Thomso family as an official member.
+                                                            <br> We cordially welcome you to The Thomso family as an official member of Thomso 18'.
                                                             <br>
                                                             <br> For any queries, reach out to us at <a href="mailto:info.thomso18@gmail.com" target="_blank">info.thomso18@gmail.com</a>
                                                         </p>

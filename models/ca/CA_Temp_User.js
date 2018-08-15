@@ -14,6 +14,9 @@ var UserSchema = new mongoose.Schema({
     password: {
         type: String
     },
+    ca_id: {
+        type: String
+    },
     verified: {
         type: Boolean,
         default: false
@@ -49,6 +52,14 @@ var UserSchema = new mongoose.Schema({
     create_date: {
         type: Date,
         default: Date.now
+    },
+    notification: {
+        token: {
+            type: String
+        },
+        last_update: {
+            type: Date
+        }
     }
 });
 

@@ -1,13 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom' ;
+import { SectionsContainer, Section } from 'react-fullpage';
+
 import Wisca from '../../ca/login/Wisca.jsx';
 import Roles from '../../ca/login/Roles.jsx';
 import Contact from '../../ca/login/Contact.jsx';
-import { Link } from 'react-router-dom' ;
 import CalandingNavbar from "../../ca/login/CaLanding";
-import { SectionsContainer, Section } from 'react-fullpage';
 import arrow from '../../ca/login/src/img/arrow.svg';
 import '../../ca/login/src/css/Main.css';
-export default class CampusIndex extends React.Component {
+
+export default class HomeIndex extends React.Component {
+
     render() {
         let options = {
             sectionClassName: 'section',

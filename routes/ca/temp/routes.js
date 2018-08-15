@@ -18,6 +18,9 @@ router.post('/auth/verify', tempAuth.verify);
 router.post('/auth/reset', TempCATokenMiddleware.verifyTemp, tempAuth.reset);
 
 // -> /ca/temp/info
-router.get('/info', TempCATokenMiddleware.verify, tempControls.getData);
+router.get('/info', TempCATokenMiddleware.verifyTemp, tempControls.getData);
+
+// -> /ca/temp/posts
+router.get('/posts', TempCATokenMiddleware.verify, tempControls.getPosts);
 
 module.exports = router;

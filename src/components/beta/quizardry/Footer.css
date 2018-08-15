@@ -5,7 +5,7 @@
     -ms-flex-direction: row;
     flex-direction: row;
     position: absolute;
-    font-size: 13px;
+    font-size: 14px;
     top: 59vh;
     width: 100%;
     /* padding-left: 10%; */
@@ -20,14 +20,15 @@
 .quizardy-footer-address{
     color: white;
     width:33%;
+    text-align: center;
 }
 
 .quizardy-footer-icons
 {
     width: 100%;
-    /* float: right; */
+
     position: absolute;
-    /* right: 4vw; */
+
     padding: 0px;
     top: 0px;
     color: white;
@@ -164,8 +165,9 @@
         justify-content: center;
         flex-direction: column;
         top:0;
-        right: 0;
+        margin:auto;
         float: none;
+        font-size: 11px;
         text-align: center;
     }
     .quizardy-footer-icons p{
@@ -179,8 +181,8 @@
     .quizardy-footer-follow
     {
 
-        width: 0%;
-
+        width: 100%;
+        text-align: center;
         padding-bottom: 10px;
     }
     .quizardy-footer-mobile
@@ -198,12 +200,11 @@
     }
     .quizardy-footer-mainIcons
     {
-      margin-top: 10px;
+      margin-top: 0px;
       margin-left: auto;
       width: 22%;
       margin-right: auto;
-      display: -ms-inline-flexbox;
-      display: inline-flex;
+
       display: flex;
       justify-content: space-evenly;
       text-align: center;
@@ -228,13 +229,9 @@
       top: 60vh;
   }
 
-  .quizardy-footer-mainIcons {
+   .quizardy-footer-mainIcons {
     width: 39%;
   }
-
-
-
-
 
 }
 

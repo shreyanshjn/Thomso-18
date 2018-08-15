@@ -9,7 +9,7 @@ import Popup from '../popup/Index';
 import img from "../register/img/logo.png";
 import "../register/css/register.css";
 
-export default class LoginIndex extends React.Component {
+export default class ResetIndex extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -54,6 +54,7 @@ export default class LoginIndex extends React.Component {
                         }
                     })
                     .catch(e => {
+                        console.log(e)
                         this.setState({ disabled: false, errors: 'Something went wrong' })
                     });
             } else if (check.errors && check.errors.password) {
@@ -69,10 +70,11 @@ export default class LoginIndex extends React.Component {
     render() {
         const { password, confirmpassword, errors, disabled } = this.state;
         return (
-            <div className="register-parent">
+            <div className="register-parent-reset">
                 <Popup {...this.props} onRef={ref => (this.popup = ref)}/>
-                <div className="register-child">
-                    <div className="register-heading">
+                <div className="register-child-reset">
+                    <div className="register-heading-reset">
+                      <div className="campusAmb-navbar-div">
                         <div className="r-logo">
                             <Link to="/"><img src={img} alt="r-logo" /></Link>
                         </div>
@@ -80,6 +82,12 @@ export default class LoginIndex extends React.Component {
                         </div>
                         <div className="register-ca common-cursor">
                             <h1>Campus<br /> Ambassador</h1>
+                        </div>
+                        </div>
+                        <div className="campusAmb-reset-logout-parent">
+                            <Link to="/CampusAmbassador/logout" className="campusAmb-reset-logout">
+                            LOGOUT
+                            </Link>
                         </div>
                     </div>
                     <div className="register-form">
@@ -112,7 +120,7 @@ export default class LoginIndex extends React.Component {
                                     <input
                                         id="confirmpassword" 
                                         type="password" 
-                                        placeholder="Password" 
+                                        placeholder="Confirm Password" 
                                         name="confirmpassword" 
                                         autoCorrect="off" 
                                         autoComplete="off" 

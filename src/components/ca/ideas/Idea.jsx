@@ -62,13 +62,11 @@ export default class IdeasIndex extends React.Component {
         title = title.trim()
         body = body.trim()
         const data = { title, body }
-        console.log(data)
         if (title && body && this.props.data && this.props.data._id) {
             this.setState({ isDisabled: true })
             const authtoken = this.Auth.getToken()
             FetchApi('PUT', `/api/ca/idea/${this.props.data._id}`, data, authtoken)
                 .then(r => {
-                    console.log(r)
                     if (r && r.data && r.data.success && r.data.body) {
                         this.props.updateIdea(this.props.index, r.data.body)
                         this.setState({ isDisabled: false, isEditing: false })
@@ -89,13 +87,11 @@ export default class IdeasIndex extends React.Component {
     }
 
     deleteIdea() {
-        console.log('here', this.state.isDisabled)
         if (!this.state.isDisabled && this.props.data && this.props.data._id) {
             this.setState({ isDisabled: true })
             const authtoken = this.Auth.getToken()
             FetchApi('DELETE', `/api/ca/idea/${this.props.data._id}`, null, authtoken)
                 .then(r => {
-                    console.log(r)
                     if (r && r.data && r.data.success) {
                         this.setState({ isDeleted: true })
                         this.props.deleteIdea(this.props.index)

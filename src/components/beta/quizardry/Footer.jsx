@@ -21,7 +21,7 @@ export default class Footer extends React.Component{
             </div>
             <div className="quizardy-footer-logo quizardy-footer-mobile">
                 <div className="quizardy-footer-icons">
-                    <p className="quizardy-footer-follow common-cursor"><b>Follow Us </b></p>
+                    <div className="quizardy-footer-follow common-cursor"><b>Follow Us </b></div>
                     <div className="quizardy-footer-mainIcons">
                         <div className="quizardy-footer-fbdiv">  <a href="https://www.facebook.com/thomsoiitroorkee/" target="_blank" rel="noopener noreferrer"> <img src={fblogo} className="quizardy-footer-iconsImage" alt="fblogo" /></a></div>
                         <div className="quizardy-footer-instadiv"><a href="https://www.instagram.com/thomso.IITR/" target="_blank" rel="noopener noreferrer"><img src={inlogo} className="quizardy-footer-iconsImage" alt="inlogo" /></a></div>
@@ -51,7 +51,7 @@ export default class Footer extends React.Component{
             </div>
             <div className="quizardy-footer-logo quizardy-footer-desktop">
                 <div className="quizardy-footer-icons">
-                    <p className="quizardy-footer-follow common-cursor"><b>Follow Us </b></p>
+                    <div className="quizardy-footer-follow common-cursor"><b>Follow Us </b></div>
                     <div className="quizardy-footer-mainIcons">
                         <div className="quizardy-footer-fbdiv">  <a href="https://www.facebook.com/thomsoiitroorkee/" target="_blank" rel="noopener noreferrer"> <img src={fblogo} className="quizardy-footer-iconsImage" alt="fblogo" /></a></div>
                         <div className="quizardy-footer-instadiv"><a href="https://www.instagram.com/thomso.IITR/" target="_blank" rel="noopener noreferrer"><img src={inlogo} className="quizardy-footer-iconsImage" alt="inlogo" /></a></div>
