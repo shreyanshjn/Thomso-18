@@ -23,7 +23,7 @@
     height:100vh;
     position: relative;
 }
-.zonalsform-main-child{
+.zonalsform-main-child {
     display: flex;
     flex-direction: row;
     height: 380px;
@@ -48,11 +48,11 @@
 }
 .astro-image-zonals-div
 {
-   display:flex;
-   background-color:rgba(55, 90, 117,0.6);
-   flex-direction:row;
-   height:380px;
-   width:50%;
+    display:flex;
+    background-color:rgba(55, 90, 117,0.6);
+    flex-direction:row;
+    height:380px;
+    width:50%;
 }
 .astro-image-zonals-div div{
     height: 90%;
@@ -63,9 +63,9 @@
 
 .register-zonals-form-div
 {
-   background-color:rgba(55, 90, 117,0.3);
-   width:50%;
-   position: relative;
+    background-color:rgba(55, 90, 117,0.3);
+    width:50%;
+    position: relative;
 }
 .register-zonals-form-secondchild button{
     width: 100%;
@@ -125,8 +125,7 @@
 }
 .register-zonals-form-events-dramachild div:nth-child(2){
     padding-bottom: 10px;
-}
-
+} 
 .register-zonals-form-events-tgt{
     padding: 10px;
     font-weight: 600;
@@ -201,31 +200,31 @@
 }
 .register-zonals-form
 {
-   display:block;
-   height: 100%;
+    display:block;
+    height: 100%;
 }
 .register-zonals-form >input
 {
-   padding:12px;
-   margin-bottom:12px;
-   margin-top:12px;
-   margin-left: 23px;
-   width:80%;
-   background-color:rgba(55,90,117,0.3);
-   border:1px solid rgba(255,255,255,0.3);
-   color:white;
+    padding:12px;
+    margin-bottom:12px;
+    margin-top:12px;
+    margin-left: 23px;
+    width:80%;
+    background-color:rgba(55,90,117,0.3);
+    border:1px solid rgba(255,255,255,0.3);
+    color:white;
 }
 .register-zonals-form >input::placeholder
 {
-   color:white;
+    color:white;
 }
 .register-zonals-form-events
 {
-   background-color:rgba(55, 90, 117,0.3);
-   width:100%;
-   position: relative;
-   height: 100%;
-   font-family: Montserrat;
+    background-color:rgba(55, 90, 117,0.3);
+    width:100%;
+    position: relative;
+    height: 100%;
+    font-family: Montserrat;
 }
 .active{
     height: 100%;
@@ -234,10 +233,10 @@
 }
 .register-zonals-form > .zonals-submit-form
 {
-  background:rgba(44, 44, 44, 1); 
-  margin:0;
-  margin-top:12px;
-  width:100%;
+    background:rgba(44, 44, 44, 1); 
+    margin:0;
+    margin-top:12px;
+    width:100%;
 }
 .register-zonals-form-events-firstchild{
     border: 1px solid white;
@@ -296,5 +295,49 @@
     .register-zonals-form-div{
         height: 100%;
         width: 100%;
+    }
+}
+@media (min-width: 1920px) and (max-width: 2560px)
+{
+    .zonalsform-main-child 
+    {
+        height: 500px;
+        width: 50%;
+    }
+    .astro-image-zonals-div
+    {
+        height:500px;
+        width:45%;
+    }
+    .register-zonals-form-events-parent{
+        padding: 60px 10px 0px 10px; 
+    }
+    .register-zonals-form-firstchild input{
+        margin-top: 12px;
+        padding: 20px; 
+        font-size:12px;
+    }
+    .register-zonals-form-firstchild input::placeholder{
+        font-size:12px;
+    }
+    .register-zonals-form-events-button button{
+        display:inline-flex;
+        width: 50%;
+        color: white;
+        cursor: pointer;
+        background: rgba(44, 44, 44, 1);
+        font-size: 24px;
+        font-family: Montserrat;
+        letter-spacing: 2px;
+        font-weight: 600;
+        padding: 5px;
+        border: 1px solid rgba(44, 44, 44, 1);
+        justify-content:center;
+    }
+    .register-zonals-form-events-firstchild{
+        border: 1px solid white;
+        border-radius: 2px;
+        color: white;
+        margin-top:30px;
     }
 }
