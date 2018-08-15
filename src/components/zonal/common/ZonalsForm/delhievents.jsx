@@ -52,7 +52,7 @@ export default class DelhiEvents extends React.Component {
         return (
             <React.Fragment>
                 <form className={this.props.var ? "register-zonals-form-events inactive" : "register-zonals-form-events active"} onSubmit={this.onSubmit}>
-                        {this.props.errors ? <p className="form-submitted-popup">{this.props.errors}</p> : <p className="form-submitted-popup-hide"> Nothing </p>}
+                        {this.props.errors ? <p className="form-submitted-popup">{this.props.errors}</p> : <p className="form-submitted-popup-hide">&nbsp;</p>}
                     <div className={this.props.var ? "register-zonals-form-events-parent inactive" : "register-zonals-form-events-parent"}>
                         <div className="register-zonals-form-events-firstchild">
                             <div className="register-zonals-form-events-drama">

@@ -85,7 +85,7 @@ class ZonalsForm extends React.Component {
     }
     render() {
         return (
-            <div className="zonalsForm-main-div">
+            <div id="thomso-zonals-registration-form-lucknow" className="zonalsForm-main-div">
                     <div className="zonalsform-main-child">
                         <div className="astro-image-zonals-div">
                             <div>
