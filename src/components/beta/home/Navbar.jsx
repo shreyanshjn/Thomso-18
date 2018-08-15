@@ -93,6 +93,22 @@ class Navbar extends Component {
                                     this.setActive("linkSponsors");
                     }}>OUR SPONSORS</Link>
                 </li>
+                <li className="dropdown">
+                    <Link to="" className={(this.state.activeState === "lucknow") ? "linkLucknow" : null}
+                    onClick={() => {
+                                    this.setActive("lucknow");
+                    }}>ZONALS</Link>
+                  <div className="beta-navbar-dropdown-content">
+                      <Link to="../../zonals/lucknow" className={(this.state.activeState === "lucknow") ? "linkLucknow" : null}
+                    onClick={() => {
+                                    this.setActive("lucknow");
+                    }}>LUCKNOW</Link>
+            {/*  <Link to="" className={(this.state.activeState === "linkEventsoff") ? "linkEventsoff" : null}
+                    onClick={() => {
+                                    this.setActive("linkEventsoff");
+                    }}>OFFLINE EVENTS</Link>*/}
+                  </div>
+                </li>
                 {/* <li>
                   <Link to="" className={(this.state.activeState === "linkFaq") ? "linkFaq" : null}
                     onClick={() => {

@@ -7,11 +7,15 @@ import logo from '../src/img/logo.png';
 import iitrlogo from '../src/img/iitrlogo.png';
 import { Link } from 'react-router-dom' ;
 export default class DelhiOpening extends Component {
-    componentDidMount()
-    {
+    componentDidMount() {
         const scene = document.getElementById('delhi-zonals-parallax');
         if (scene) {
-            var parallaxInstance = new Parallax(scene);
+            this.parallaxInstance = new Parallax(scene);
+        }
+    }
+    componentWillUnmount() {
+        if (this.parallaxInstance) {
+            this.parallaxInstance.destroy()
         }
     }
     render() {
@@ -30,9 +34,9 @@ export default class DelhiOpening extends Component {
                     <div className="zonals-parallax-layer1">
                     </div>
 
-                    <div  data-depth="0.6" className="zonals-parallax-layer3">
+                    <div  data-depth="0.3" className="zonals-parallax-layer3">
                         <div className="zonals-parallax-layer3-main-child">
-                            <div data-depth="0.7" className="parallax-layer3-child"> 
+                            <div className="parallax-layer3-child"> 
                                 <img src={cloud} alt="cloud"  className="zonals-cloud-two"/>
                             </div>
                         </div>
@@ -55,7 +59,7 @@ export default class DelhiOpening extends Component {
                         </div>
                     </div>
 
-                    <div  data-depth="0.2"className="zonals-parallax-layer5">
+                    <div  data-depth="0.6"className="zonals-parallax-layer5">
                         <div className="zonals-parallax-layer5-main-child">
                             <div data-depth="0.6" className="parallax-layer5-child"> 
                                 <img src={cloud} alt="cloud"  className="zonals-cloud-three"/>
