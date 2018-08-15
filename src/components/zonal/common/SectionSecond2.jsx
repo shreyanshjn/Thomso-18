@@ -7,7 +7,6 @@ export default class SectionSecond2 extends Component {
 	constructor()
 	{
 		super();
-		{
 		this.state={
 			activeState:"tgt-dance",
 			dance:"Are you passionate about dancing? Do you have tingling sensations run down your feet when you hear music? Then come let yourself loose and dance to express. Come get lost amid the likes of yourself and prove that you aren’t a cent less than anyone. Let the flair of your dance moves hypnotize the eyes and let your expressions win the hearts. For those who believe that dance is a poem of which each movement is a word, come, exhibit your skills here" ,
@@ -16,7 +15,6 @@ export default class SectionSecond2 extends Component {
 			natak:"You don't need a stage when your skills can catch the eyes of the passersby from the streets. Nukkad Natak is a street play competition of Dramatics which effectively combines the live performances of the artists with the live audiences. Not only it offers avenues for wholesome entertainment but also outlines captivating issues which are socially relevant. The main endeavor is to convey a social message in an entertaining environment by the means of chants, drums and catchy slogans. Come and be a part of the Street Play Saga",
 			mrthomso:"Talent is entrusted to a man as a treasure which must not be squandered. Do you have a flair towards the extraordinary? Do you have the motivation to transform your talent into genius? This Thomso, we offer you a chance to spread your wings and explore your talents in front of a captivating audience. This event has its participants showcasing their superfluity of talents, be it singing, dancing, comedy, magic or any quirky thing you are passionately curious about. So get all riled up, practice, perfect and work your way towards glory in this gem of an event."
 		} 
-		}
    
     }
     onClick(state)

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom' ;
 import '../src/css/SectionComp.css';
 export default class SectionComp extends React.Component {
     render() {
