@@ -31,6 +31,7 @@
 .zonal-common-comp1-register >div
 {
    width:15%;
+   z-index:200;
 }
 .zonal-common-comp1-register-child1
 {

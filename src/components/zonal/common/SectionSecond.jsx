@@ -30,14 +30,11 @@ export default class SectionSecond extends Component {
         return (
             <div className="zonal-common-section2"> 
                 <div style={{position:'relative'}}>
-                    <Fade style={{height:'100vh'}}in={this.state.activeState === "tgt-dance"}> <SectionComp Name="zonals-comp-dance-transform" heading="TGT-DANCE" content={this.state.dance}/></Fade>
-                    <Fade in={this.state.activeState === "tgt-sing"}> <SectionComp Name="zonals-comp-dance-transform"  heading="TGT-SING" 
-                            content={this.state.sing}/></Fade>
-                    <Fade in={this.state.activeState === "tgt-mic"}> <SectionComp Name="zonals-comp-dance-transform" heading="TGT-MIC" content={this.state.mic}/></Fade>
-                    <Fade in={this.state.activeState === "tgt-natak"}> <SectionComp Name="zonals-comp-dance-transform" heading="TGT-NATAK" 
-                            content={this.state.natak}/></Fade>
-                    <Fade in={this.state.activeState === "abhivyakti"}> <SectionComp Name="zonals-comp-dance-transform" heading="ABHIVYAKTI"
-                            content={this.state.abhivyakti}/></Fade>
+                    <Fade in={this.state.activeState === "tgt-dance"}> <SectionComp Name="zonals-comp-dance-transform" heading="TGT-DANCE" content={this.state.dance} downloadPdf="DanceRule.pdf" /></Fade>
+                    <Fade in={this.state.activeState === "tgt-sing"}> <SectionComp Name="zonals-comp-dance-transform"  heading="TGT-SING" content={this.state.sing} downloadPdf="SingRule.pdf" /></Fade>
+                    <Fade in={this.state.activeState === "tgt-mic"}> <SectionComp Name="zonals-comp-dance-transform" heading="TGT-MIC" content={this.state.mic} downloadPdf="MicRule.pdf" /></Fade>
+                    <Fade in={this.state.activeState === "tgt-natak"}> <SectionComp Name="zonals-comp-dance-transform" heading="TGT-NATAK" content={this.state.natak} downloadPdf="NatakRule.pdf" /></Fade>
+                    <Fade in={this.state.activeState === "abhivyakti"}> <SectionComp Name="zonals-comp-dance-transform" heading="ABHIVYAKTI" content={this.state.abhivyakti} downloadPdf="Anhivyakti.pdf"/></Fade>
                 </div>
 
                 <div className="zonals-common-sectioncomp2">

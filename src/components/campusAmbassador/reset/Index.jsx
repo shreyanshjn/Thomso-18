@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom' ;
 import AuthService from '../../../handlers/ca/temp/AuthService';
 import FetchApi from '../../../utils/FetchAPI';
 import validateInput from '../../../utils/validation/loginValidation';
-import Popup from '../popup/Index';
+import Popup from '../../common/popup/Index';
 
 import img from "../register/img/logo.png";
 import "../register/css/register.css";

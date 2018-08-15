@@ -59,8 +59,8 @@ const CampusIndex = Loadable({
   loading: () => <Loader />,
 });
 const ZonalsIndex = Loadable({
-    loader:() =>import("./components/zonal/Index"),
-  loading:() => <Loader />
+  loader: () => import("./components/zonal/Index"),
+  loading: () => <Loader />
 })
 class App extends Component {
   componentDidMount() {
@@ -79,8 +79,10 @@ class App extends Component {
 
           <Route path="/ca/" component={CAIndex} />
           <Route path="/campusAmbassador/" component={CampusIndex} />
-          <Route path="/zonals" component={ZonalsIndex} /> 
-          <Route path="/verifyCerti/" component={VerifyCerti} />
+
+          <Route path="/zonals" component={ZonalsIndex} />
+
+          < Route path="/verifyCerti/" component={VerifyCerti} />
           <Route path="/policy" component={Policy} />
           <Route path="/terms" component={Terms} />
         </Switch>

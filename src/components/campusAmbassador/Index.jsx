@@ -64,9 +64,9 @@ export default class CampusIndex extends React.Component {
         .then(r => {
           if (r && r.data && r.data.body) {
             if (r.data.body.verified) {
-              this.setState({ isAuthenticated: true, isTemp:false, userData: r.data.body });
+              this.setState({ isAuthenticated: true, isTemp: false, userData: r.data.body });
             } else {
-              this.setState({ isAuthenticated: true, isTemp:true })
+              this.setState({ isAuthenticated: true, isTemp: true })
               this.props.history.push('/CampusAmbassador/reset')
             }
           }
@@ -89,15 +89,15 @@ export default class CampusIndex extends React.Component {
   render() {
     return (
       <React.Fragment >
-        {this.state.isAuthenticated ? 
+        {this.state.isAuthenticated ?
           <React.Fragment>
-            {this.state.isTemp ? 
+            {this.state.isTemp ?
               <Route exact path="/campusAmbassador/*" render={props => (<ResetIndex {...props} updateRoutes={this.handleUpdate} setUserData={this.setUserData} />)} />
               :
               <React.Fragment>
                 <Route path="/campusAmbassador" render={props => (<Sidebar {...props} userData={this.state.userData} />)} />
-                <Route exact path="/campusAmbassador/leaderboard" render={props => (<LeaderboardIndex {...props} userData={this.state.userData} />) } />
-                <Route exact path="/campusAmbassador/contact" render={props => (<ContactIndex {...props} userData={this.state.userData} />)}/>
+                <Route exact path="/campusAmbassador/leaderboard" render={props => (<LeaderboardIndex {...props} userData={this.state.userData} />)} />
+                <Route exact path="/campusAmbassador/contact" render={props => (<ContactIndex {...props} userData={this.state.userData} />)} />
                 <Route exact path="/campusAmbassador/guidelines" component={GuideIndex} />
                 <Route exact path="/campusAmbassador" component={PostIndex} />
               </React.Fragment>

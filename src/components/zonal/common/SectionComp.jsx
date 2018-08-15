@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom' ;
 import '../src/css/SectionComp.css';
 export default class SectionComp extends React.Component {
     render() {
@@ -20,7 +21,7 @@ export default class SectionComp extends React.Component {
                         </div>
                         <div className="zonal-common-comp1-register-child2">
                             <div>
-                                <button className="zonal-comp1-button-rulebook">RULEBOOK</button>
+                                <a href={`/pdf/zonals/${this.props.downloadPdf}`}> <abbr title="Click to download"><button className="zonal-comp1-button-rulebook">RULEBOOK</button></abbr></a>
                             </div>
                         </div>
                     </div>

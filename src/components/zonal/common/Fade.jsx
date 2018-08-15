@@ -5,15 +5,15 @@ const duration = 200;
 
 const defaultStyle = {
     transition: `opacity ${duration}ms `,
-    opacity: 0,
-    height:100,
+    opacity:0,
+    height:100
 }
 
 const transitionStyles = {
-    entering: { opacity: 0 },
-    entered:  { opacity: 1 },
+    entering: { opacity: 0},
+    entered:  { opacity: 1, zIndex:10 },
     exiting:  { opacity: 1 },
-    exited:   {opacity :0},
+    exited:   {opacity :0, zIndex: 0 },
 };
 const Fade = ({in: inProp, children }) => (
     <Transition in={inProp} timeout={{
