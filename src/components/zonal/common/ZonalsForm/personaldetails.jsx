@@ -14,7 +14,11 @@ export default class PersonalDetails extends React.Component {
     }
     onChange = (e) => {
         const name = e.target.name;
-        const value = e.target.value;
+        let value = e.target.value;
+        if (name === 'contact' && value) {
+            value = value.trim()
+            value = value.substring(0, 12)
+        }
         this.setState({ [name]: value });
     }
     changeForm = (e) => {
@@ -22,19 +26,25 @@ export default class PersonalDetails extends React.Component {
         this.props.statevalues(this.state)
         this.props.function()
     }
+    componentDidMount() {
+        this.props.onRef(this)
+    }
+    componentWillUnmount() {
+        this.props.onRef(undefined)
+    }
     render() {
         return (
             <React.Fragment>
                 <form className={this.props.var ? "register-zonals-form" : "register-zonals-form inactive"} onSubmit={this.changeForm}>
                     <div className="register-zonals-form-firstchild">
-                        <input onChange={this.onChange} type="text" name="name" value={this.state.name} autoComplete="off" placeholder="Name" /><br />
-                        <input onChange={this.onChange} type="email" name="email" value={this.state.email} autoComplete="off" placeholder="Email" /><br />
-                        <input onChange={this.onChange} type="number" name="contact" value={this.state.contact} autoComplete="off" placeholder="Contact Number" /><br />
-                        <input onChange={this.onChange} type="text" name="college" value={this.state.college} autoComplete="off" placeholder="College Name" /><br />
-                        <input onChange={this.onChange} type="text" name="branch" value={this.state.branch} autoComplete="off" placeholder="Branch Name and year" /><br />
+                        <input onChange={this.onChange} type="text" name="name" value={this.state.name} autoComplete="off" placeholder="Name" required /><br />
+                        <input onChange={this.onChange} type="email" name="email" value={this.state.email} autoComplete="off" placeholder="Email" required /><br />
+                        <input onChange={this.onChange} type="number" name="contact" value={this.state.contact} autoComplete="off" placeholder="Contact Number" required /><br />
+                        <input onChange={this.onChange} type="text" name="college" value={this.state.college} autoComplete="off" placeholder="College Name" required /><br />
+                        <input onChange={this.onChange} type="text" name="branch" value={this.state.branch} autoComplete="off" placeholder="Branch Name and year" required /><br />
                     </div>
                     <div className="register-zonals-form-secondchild">
-                        <button type="submit" >NEXT</button>
+                        <button type="submit">NEXT</button>
                     </div>
                 </form>
             </React.Fragment>

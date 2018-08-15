@@ -35,11 +35,11 @@ var register = function(req, res, city) {
             var newUser = new Zonal_User(data);
             newUser.save(function(err, saved) {
                 if (err) {
-                    return res.json({success: false, msg: 'Username already exists.'});
+                    return res.json({success: false, msg: 'Error', error: err});
                 } else if (!saved) {
-                    return res.json({success: false, msg: 'Username already exists.'});
+                    return res.json({success: false, msg: 'Email already exists.'});
                 } else {
-                    res.json({success: true, msg: 'User Created.'});
+                    res.json({success: true, msg: 'Successfully Registered'});
                     if (saved.tz_id && saved.email && saved.name) {
                         mailer.zonalsLucknow({
                             zn_id: saved.tz_id,

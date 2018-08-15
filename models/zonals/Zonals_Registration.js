@@ -1,9 +1,10 @@
 var mongoose = require('mongoose');
 
+var Counter = require("../counters/Counter");
+
 var UserSchema = new mongoose.Schema({
     tz_id: {
-        type: Number,
-        required: true
+        type: String
     },
     city: {
         type: String,
@@ -45,7 +46,7 @@ UserSchema.pre('save', function (next) {
     Counter.findByIdAndUpdate({_id: 'zonal_id'}, {$inc: { seq: 1} }, {upsert: true, new: true}, function(error, cnt)   {
         if(error)
             return next(error);
-        doc.tz_id = "TZ18" + (1000 + cnt.seq);
+        doc.tz_id = "TZ-18" + (1000 + cnt.seq);
         next();
     })
 });

@@ -9,19 +9,27 @@ export default class DelhiEvents extends React.Component {
             selectedOptionTgt: '',
             check: false,
             tgt: false,
-            radiocheckabhivyakti: false,
-            radiochecknatak: false,
-            radiochecksinging: false,
-            radiocheckdancing: false,
-            radiocheckopenmic: false,
         }
     }
     changeState = () => {
-        this.props.function()
+        let events = []
+        if (this.state.check && this.state.selectedOptionDrama) {
+            events.push(this.state.selectedOptionDrama)
+        }
+        if (this.state.tgt && this.state.selectedOptionTgt) {
+            events.push(this.state.selectedOptionTgt)
+        }
+        this.props.function(events)
     }
     onSubmit = (e) => {
         e.preventDefault()
-        let events = [this.state.selectedOptionDrama, this.state.selectedOptionTgt]
+        let events = []
+        if (this.state.check && this.state.selectedOptionDrama) {
+            events.push(this.state.selectedOptionDrama)
+        }
+        if (this.state.tgt && this.state.selectedOptionTgt) {
+            events.push(this.state.selectedOptionTgt)
+        }
         this.props.selectedevents(events)
     }
     handleOptionChangeDrama = (changeEvent) => {
@@ -34,11 +42,17 @@ export default class DelhiEvents extends React.Component {
             selectedOptionTgt: changeEvent.target.value
         });
     }
+    componentDidMount() {
+        this.props.onRef(this)
+    }
+    componentWillUnmount() {
+        this.props.onRef(undefined)
+    }
     render() {
         return (
             <React.Fragment>
                 <form className={this.props.var ? "register-zonals-form-events inactive" : "register-zonals-form-events active"} onSubmit={this.onSubmit}>
-                        {/* <p className={this.state.isHidden ? "form-submitted-popup-hide": "form-submitted-popup"}>FORM HAS BEEN SUBMITTED</p> */}
+                        {this.props.errors ? <p className="form-submitted-popup">{this.props.errors}</p> : <p className="form-submitted-popup-hide"> Nothing </p>}
                     <div className={this.props.var ? "register-zonals-form-events-parent inactive" : "register-zonals-form-events-parent"}>
                         <div className="register-zonals-form-events-firstchild">
                             <div className="register-zonals-form-events-drama">
@@ -46,7 +60,7 @@ export default class DelhiEvents extends React.Component {
                             </div>
                             <div className={this.state.check ? "register-zonals-form-events-dramachild" : "register-zonals-form-events-dramachild low-opacity"}>
                                 <div>
-                                    <span><input onChange={this.handleOptionChangeDrama} type="radio" name="abhivyakti" value="abhivyakti" checked={this.state.selectedOptionDrama === 'abhivyakti'} disabled={!this.state.check} /></span><span>Mr & Miss Thomso</span>
+                                    <span><input onChange={this.handleOptionChangeDrama} type="radio" name="mr_ms_thomso" value="mr_ms_thomso" checked={this.state.selectedOptionDrama === 'mr_ms_thomso'} disabled={!this.state.check} /></span><span>Mr & Miss Thomso</span>
                                 </div>
                                 <div>
                                     <span><input onChange={this.handleOptionChangeDrama} type="radio" name="natak" value="natak" checked={this.state.selectedOptionDrama === 'natak'} disabled={!this.state.check} /></span><span>Natak</span>

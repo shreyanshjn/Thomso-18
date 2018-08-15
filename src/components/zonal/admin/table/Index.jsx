@@ -17,7 +17,7 @@ export default class CityIndex extends React.Component {
     componentDidMount() {
         if (this.props.city) { 
             const authtoken = this.Auth.getToken();
-            FetchApi('GET',`/api/ca/admin/zonals/delhi/${this.props.city}`, null, authtoken)
+            FetchApi('GET',`/api/zonals/admin/${this.props.city}`, null, authtoken)
                 .then((result) => {
                     if (result && result.data) {
                         this.setState({ participants: result.data });
@@ -37,7 +37,7 @@ export default class CityIndex extends React.Component {
         return (
             <div>
                 {this.state.message}
-                <DataTable data={this.state.participants} />
+                <DataTable participants={this.state.participants} />
             </div>
         )
     }
