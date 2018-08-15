@@ -23,8 +23,8 @@
     animation-name: fadeIn;
     -webkit-backface-visibility: visible !important;
     backface-visibility: visible !important;
-    width: 320px;
-    height: 83.75px;
+    width: 280px;
+    height: 83.578px;
     padding: 12px;
     background-color: white;
     -webkit-box-shadow: 0 1px 1px 1px rgba(0,0,0,0.3);
@@ -33,9 +33,10 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    position: relative;
-    top: 8px;
-    left: 2px;
+    position: fixed;
+    top: 1%;
+    left: 6%;
+    z-index: 59;
 }
  .Notification-div-O .Notification-div-S {
     display: none;
@@ -84,6 +85,8 @@
  .Notification-div-O .Notification-div-C .Notification-div-T p {
     cursor: default;
     font-size: 12px;
+    color: black;
+    text-align: left;
     margin-bottom: 1.4em;
     min-height: 1.2em;
 }
@@ -123,4 +126,17 @@
     -webkit-transition: background-color 0.1s linear;
     transition: background-color 0.1s linear;
     cursor: default;
+}
+@media only screen and (max-width:768px)
+{
+  .Notification-div-O{
+    width: 255px;
+  }
+}
+@media only screen and (min-width:1920px) and (max-width:2560px)
+{
+  .Notification-div-O{
+    width: 300px;
+    height: 100px;
+  }
 }
