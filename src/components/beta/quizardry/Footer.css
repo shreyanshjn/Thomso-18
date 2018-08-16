@@ -18,7 +18,7 @@
     position: relative;
 }
 .quizardy-footer-address{
-    color: white;
+    color: black;
     width:33%;
     text-align: center;
 }
@@ -31,7 +31,7 @@
 
     padding: 0px;
     top: 0px;
-    color: white;
+    color: black;
     text-align: center;
 }
 .quizardy-footer-iconsImage
@@ -91,7 +91,7 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    color: white;
+    color: black;
     align-items: center;
     width: 33%;
 }
@@ -133,7 +133,7 @@
     .quizardy-footer-contact{
         display: flex;
         flex-direction: column;
-        color: white;
+        color: black;
         text-align: left;
         align-items: flex-start;
         width: auto;
@@ -146,7 +146,7 @@
         padding-left: 8%;
     }
     .quizardy-footer-address{
-        color: white;
+        color: black;
         text-align: left;
         width: inherit;
     }

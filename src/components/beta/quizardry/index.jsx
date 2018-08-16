@@ -36,7 +36,9 @@ export default class QuizardryIndex extends React.Component{
                     <Navbar />
                 </div>
                 <div className="quizardy-parent">
+                  <div className="quizardy-navbar">
                     <Navbar />
+                  </div>
                     <div className="quizardy-child">
                             <div className="quizardy-flexcenter">
                                 <a href="https://dare2compete.com/o/quizardry-thomso-iit-roorkee-indian-institute-of-technology-iit-roorkee-64347" target="_blank" rel="noopener noreferrer"><button className="quizardy-button quizardy-opening-button">Dare2Complete</button></a>
