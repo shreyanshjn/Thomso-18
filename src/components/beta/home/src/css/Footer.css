@@ -186,17 +186,17 @@
 {
     .beta-footer-thomso
     {
-        font-size:26px;
+        font-size:20px;
         font-family:Montserrat;
     }
     .beta-footer-days
     {
-        font-size:36px;
+        font-size:24px;
         font-family:Montserrat;
     }
     .beta-footer-left
     {
-        font-size:21px;
+        font-size:18px;
         font-family:Montserrat;
     }
     .beta-footer-main
@@ -206,7 +206,7 @@
     }
     .beta-footer-follow
     {
-        font-size:27px;
+        font-size:20px;
         font-family:Montserrat;
     }
     .beta-footer-iconsImage
@@ -229,4 +229,5 @@
       cursor : default;
     }
 
+    
 }

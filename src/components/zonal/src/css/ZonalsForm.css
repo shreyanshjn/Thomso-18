@@ -26,8 +26,8 @@
 .zonalsform-main-child {
     display: flex;
     flex-direction: row;
-    height: 380px;
-    width: 50%;
+    height: 460px;
+    width: 60%;
     overflow: hidden;
 }
 @keyframes astro-move {
@@ -51,7 +51,7 @@
     display:flex;
     background-color:rgba(55, 90, 117,0.6);
     flex-direction:row;
-    height:380px;
+    height:460px;
     width:50%;
 }
 .astro-image-zonals-div div{
@@ -172,10 +172,10 @@
     flex-direction: column;
     width: 80%;
     margin: auto;
-    padding-top:10px; 
+    padding-top:25px; 
 }
 .register-zonals-form-firstchild input{
-    margin-top: 12px;
+    margin-top: 20px;
     box-sizing: border-box;
     padding: 9px; 
     font-family: Montserrat;
@@ -310,15 +310,15 @@
         width:45%;
     }
     .register-zonals-form-events-parent{
-        padding: 60px 10px 0px 10px; 
+        padding: 10px 10px 0px 10px; 
     }
     .register-zonals-form-firstchild input{
         margin-top: 12px;
-        padding: 20px; 
-        font-size:12px;
+        padding: 16px; 
+        font-size:16px;
     }
     .register-zonals-form-firstchild input::placeholder{
-        font-size:12px;
+        font-size:16px;
     }
     .register-zonals-form-events-button button{
         display:inline-flex;
@@ -338,6 +338,6 @@
         border: 1px solid white;
         border-radius: 2px;
         color: white;
-        margin-top:30px;
+        margin-top:20px;
     }
 }

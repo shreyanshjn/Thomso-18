@@ -19,7 +19,7 @@ export default class Wisca extends React.Component{
     <div className="login-wisca-fullpage">
       <div className="login-wisca-MAINDIV">
 
-                <div className="login-wisca-Heading">
+                <div className="login-wisca-Heading" id="login-wisca-Heading">
                   WHY BECOME CA?
                 </div>
                 <div className="login-wisca-main">

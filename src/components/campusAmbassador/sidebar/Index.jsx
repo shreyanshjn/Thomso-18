@@ -168,7 +168,7 @@ export default class Sidebar extends React.Component {
                 </div>
               </div> 
             </Link>*/}
-            <Link
+            {/* <Link
               to="/CampusAmbassador/events"
               className={
                 this.state.activeState === "events"
@@ -187,7 +187,7 @@ export default class Sidebar extends React.Component {
                   EVENTS
                 </div>
               </div>
-            </Link>
+            </Link> */}
             <Link
               to="/CampusAmbassador/contact"
               className={

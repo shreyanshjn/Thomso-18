@@ -9,17 +9,11 @@ export default class DelhiEvents extends React.Component {
             selectedOptionTgt: '',
             check: false,
             tgt: false,
+            mrmsthomso: false
         }
     }
     changeState = () => {
-        let events = []
-        if (this.state.check && this.state.selectedOptionDrama) {
-            events.push(this.state.selectedOptionDrama)
-        }
-        if (this.state.tgt && this.state.selectedOptionTgt) {
-            events.push(this.state.selectedOptionTgt)
-        }
-        this.props.function(events)
+        this.props.function()
     }
     onSubmit = (e) => {
         e.preventDefault()
@@ -29,6 +23,9 @@ export default class DelhiEvents extends React.Component {
         }
         if (this.state.tgt && this.state.selectedOptionTgt) {
             events.push(this.state.selectedOptionTgt)
+        }
+        if (this.state.mrmsthomso) {
+            events.push('Mr Mrs Thomso')
         }
         this.props.selectedevents(events)
     }
@@ -60,10 +57,10 @@ export default class DelhiEvents extends React.Component {
                             </div>
                             <div className={this.state.check ? "register-zonals-form-events-dramachild" : "register-zonals-form-events-dramachild low-opacity"}>
                                 <div>
-                                    <span><input onChange={this.handleOptionChangeDrama} type="radio" name="mr_ms_thomso" value="mr_ms_thomso" checked={this.state.selectedOptionDrama === 'mr_ms_thomso'} disabled={!this.state.check} /></span><span>Mr & Miss Thomso</span>
+                                    <span><input onChange={this.handleOptionChangeDrama} type="radio" name="abhiviyakti" value="abhiviyakti" checked={this.state.selectedOptionDrama === 'abhiviyakti'} disabled={!this.state.check} /></span><span>Abhivyakti</span>
                                 </div>
                                 <div>
-                                    <span><input onChange={this.handleOptionChangeDrama} type="radio" name="natak" value="natak" checked={this.state.selectedOptionDrama === 'natak'} disabled={!this.state.check} /></span><span>Natak</span>
+                                    <span><input onChange={this.handleOptionChangeDrama} type="radio" name="natak" value="nukkadnatak" checked={this.state.selectedOptionDrama === 'nukkadnatak'} disabled={!this.state.check} /></span><span>Natak</span>
                                 </div>
                             </div>
                         </div>
@@ -81,6 +78,11 @@ export default class DelhiEvents extends React.Component {
                                 <div>
                                     <span><input onChange={this.handleOptionChangeTgt} type="radio" name="openmic" value="openmic" checked={this.state.selectedOptionTgt === 'openmic'} disabled={!this.state.tgt} /></span><span>Open mic</span>
                                 </div>
+                            </div>
+                        </div>
+                        <div className="register-zonals-form-events-secondchild">
+                            <div className="register-zonals-form-events-tgt">
+                                <span><input type="checkbox" onClick={() => this.setState({ mrmsthomso: !this.state.mrmsthomso })} name="mrmsthomso" value="mrmsthomso" /></span><span>Mr & Ms Thomso</span>
                             </div>
                         </div>
                     </div>

@@ -29,7 +29,7 @@ export default class DataTable extends React.Component {
                 <input id="myInput" type="text" onChange={(e) => this.handleFilter(e)} placeholder="Type here to search..." />
             </div>
             <button onClick={this.download}> Download </button>
-            <table>
+            <table style={{borderCollapse: 'collapse'}}>
                 <thead>
                     <tr>
                         <th style={{width:"5vw"}}>Index</th>
