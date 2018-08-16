@@ -6,6 +6,7 @@ import '../src/css/LucknowOpening.css';
 import logo from '../src/img/logo.png'; 
 import iitrlogo from '../src/img/iitrlogo.png';
 import { Link } from 'react-router-dom' ;
+import arrow from '../src/img/arrow.svg';
 
 export default class LucknowOpening extends Component {
     componentDidMount()
@@ -20,6 +21,11 @@ export default class LucknowOpening extends Component {
             this.parallaxInstance.destroy()
         }
     }
+    scrollToRegister = () => {
+        const height = window.innerHeight
+        const push = 1*height
+        window.scroll({top: push, behavior: "smooth"});
+    }
     render() {
         return (
             <div className="main-zonals-div">
@@ -30,6 +36,15 @@ export default class LucknowOpening extends Component {
                         <img src={iitrlogo} className="zonals-lucknow-iitrlogo" alt="iitrlogo" />
                     </div>
                 </div>
+                    <div data-depth="0" className="zonals-parallax-layer7">
+                        <div className="zonals-parallax-layer7-main-child-lucknow">
+                            <div className="zonals-layer7-arrowmove">
+                                <a href="#aboutUs" address="true">
+                                    <img src={arrow} onClick={() => this.scrollToRegister()} className="zonals-layer7-downarrow" alt="arrow"/>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 <div id="lucknow-zonals-parallax" className="zonals-scene">
 
                     <div className="zonals-parallax-layer1">
@@ -45,7 +60,7 @@ export default class LucknowOpening extends Component {
                         </div>
                     </div>
 
-                    <div  data-depth="0.4"className="zonals-parallax-layer4">
+                    <div  data-depth="0.4" className="zonals-parallax-layer4">
                         <div className="zonals-parallax-layer4-main-child-lucknow">
                             <div data-depth="0.4" className="parallax-layer4-child-lucknow"> 
                                 <img src={cloud} alt="cloud"  className="zonals-cloud-one"/>
@@ -53,13 +68,13 @@ export default class LucknowOpening extends Component {
                         </div>
                     </div>
 
-                    <div  data-depth="0.6"className="zonals-parallax-layer5">
+                    <div  data-depth="0.6" className="zonals-parallax-layer5">
                         <div className="zonals-parallax-layer5-main-child-lucknow">
                             <div data-depth="0.6" className="parallax-layer5-child-lucknow"> 
                                 <img src={cloud} alt="cloud"  className="zonals-cloud-three"/>
                             </div>
                         </div>
-                        <div  data-depth="0.3"className="zonals-parallax-layer6">
+                        <div  data-depth="0.3" className="zonals-parallax-layer6">
                             <div className="zonals-parallax-layer6-main-child-lucknow">
                                 <div data-depth="0.4" className="parallax-layer6-child-lucknow"> 
                                     <img src={cloud} alt="cloud"  className="zonals-cloud-six"/>
