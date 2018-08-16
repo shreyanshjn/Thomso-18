@@ -13,20 +13,20 @@
     display:flex;
     justify-content:space-around;
     z-index:20;
-    margin-top:-3vh;
+    margin-top:-22vh;
 }
 
 @media (min-width: 1920px) and (max-width: 2560px)
 {
     .zonals-common-sectioncomp2
     {
-        margin-top:180px;
+        margin-top:-20vh;
     }
 }
 @media (max-width:768px)
 {
     .zonals-common-sectioncomp2
     {
-        margin-top:-60vw;
+        margin-top:-50vh;
     }
 }

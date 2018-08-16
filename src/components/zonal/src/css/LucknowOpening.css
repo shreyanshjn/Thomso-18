@@ -143,6 +143,28 @@
    text-align:center;
    color:white;
 }
+.zonals-layer7-arrowmove
+{
+   position:absolute;
+   top:90%;
+   z-index:2000;
+   cursor:pointer;
+}
+.zonals-parallax-layer7
+{
+  height:0;
+}
+.zonals-parallax-layer7-main-child-lucknow
+{
+   display:flex;
+   justify-content:center;
+   align-items:center;
+   cursor:pointer;
+}
+.zonals-layer7-downarrow
+{
+   cursor:pointer;
+}
 @media only screen and (max-width:768px)
 {
     .zonals-lucknow-gate
