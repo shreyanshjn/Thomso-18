@@ -33,7 +33,7 @@ class ZonalsForm extends React.Component {
         this.setState({ variable: !this.state.variable })
     }
     setEvents = events => {
-        this.setState({events: events, variable: !this.state.variable})
+        this.setState({ variable: !this.state.variable })
     }
     stateValues = (value) => {
         this.setState(value)
