@@ -52,6 +52,10 @@ const Terms = Loadable({
   loader:() =>import("./components/common/Terms"),
   loading:() => <Loader />
 })
+const Error404 = Loadable({
+  loader:() =>import("./components/common/Errorpage"),
+  loading:() => <Loader />
+})
 // const ZonalsIndex = Loadable({
 //     loader:() =>import("./components/zonal/Index"),
 //   loading:() => <Loader />
@@ -73,7 +77,6 @@ class App extends Component {
           <Route exact path="/quizardy" component={QuizardyIndex} />
           <Route exact path="/team" component={TeamIndex} />
           <Route exact path="/faq" component={FAQIndex} />
-
           <Route path="/ca/" component={CAIndex} />
           <Route path="/campusAmbassador/" component={CampusIndex} />
 
@@ -82,6 +85,7 @@ class App extends Component {
           <Route path="/verifyCerti/" component={VerifyCerti} />
           <Route path="/policy" component={Policy} />
           <Route path="/terms" component={Terms} />
+          <Route component={Error404} />
         </Switch>
       </BrowserRouter>
     );
