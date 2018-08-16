@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import "./App.css";
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Loadable from 'react-loadable';
 
 import Loader from "./components/common/Loader";
@@ -76,22 +76,26 @@ class App extends Component {
     return (
       <BrowserRouter>
         <React.Fragment>
-          {/* <Route path="/beta" component={BetaIndex} /> */}
           <Route path="/" component={FakeNotification} />
-          <Route exact path="/" component={HomeIndex} />
-          <Route exact path="/sponsors" component={SponsorsIndex} />
-          <Route exact path="/quizardry" component={QuizardryIndex} />
-          <Route exact path="/team" component={TeamIndex} />
-          <Route exact path="/faq" component={FAQIndex} />
-          <Route path="/ca/" component={CAIndex} />
-          <Route path="/campusAmbassador/" component={CampusIndex} />
+          <Switch>
+            <React.Fragment>
+              {/* <Route path="/beta" component={BetaIndex} /> */}
+              <Route exact path="/" component={HomeIndex} />
+              <Route exact path="/sponsors" component={SponsorsIndex} />
+              <Route exact path="/quizardry" component={QuizardryIndex} />
+              <Route exact path="/team" component={TeamIndex} />
+              <Route exact path="/faq" component={FAQIndex} />
+              <Route path="/ca/" component={CAIndex} />
+              <Route path="/campusAmbassador/" component={CampusIndex} />
 
-          <Route path="/zonals" component={ZonalsIndex} />
+              <Route path="/zonals" component={ZonalsIndex} />
 
-          <Route path="/verifyCerti/" component={VerifyCerti} />
-          <Route path="/policy" component={Policy} />
-          <Route path="/terms" component={Terms} />
-          <Route component={Error404} />
+              <Route path="/verifyCerti/" component={VerifyCerti} />
+              <Route path="/policy" component={Policy} />
+              <Route path="/terms" component={Terms} />
+              {/* <Route component={Error404} /> */}
+            </React.Fragment>
+          </Switch>
         </React.Fragment>
       </BrowserRouter>
     );

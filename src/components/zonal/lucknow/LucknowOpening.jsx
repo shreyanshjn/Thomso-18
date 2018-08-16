@@ -39,9 +39,7 @@ export default class LucknowOpening extends Component {
                     <div data-depth="0" className="zonals-parallax-layer7">
                         <div className="zonals-parallax-layer7-main-child-lucknow">
                             <div className="zonals-layer7-arrowmove">
-                                <a href="#aboutUs" address="true">
-                                    <img src={arrow} onClick={() => this.scrollToRegister()} className="zonals-layer7-downarrow" alt="arrow"/>
-                                </a>
+                                <img src={arrow} onClick={() => this.scrollToRegister()} className="zonals-layer7-downarrow" alt="arrow"/>
                             </div>
                         </div>
                     </div>
