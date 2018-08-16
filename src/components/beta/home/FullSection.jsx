@@ -29,7 +29,7 @@ export default class FullSection extends Component {
                             <img src={logo} alt="logo" className="mainlogo" height="200px" />
                             <div className="arrowmove">
                                 <a href="#aboutUs" address="true">
-                                    <img src={arrow} className="downarrow bounce" alt="a" />
+                                    <img src={arrow} className="betahomedownarrow bounce" alt="a" />
                                 </a>
                             </div>
                         </div>
