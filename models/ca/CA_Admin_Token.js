@@ -3,7 +3,6 @@ var mongoose = require('mongoose');
 var UserSchema = new mongoose.Schema({
     username: {
         type: String,
-        unique: true,
         required: true
     },
     user_id: {
@@ -20,7 +19,8 @@ var UserSchema = new mongoose.Schema({
     },
     updated_date: {
         type: Date,
-        default: Date.now
+        default: Date.now,
+        required: true
     }
 });
 

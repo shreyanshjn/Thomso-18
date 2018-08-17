@@ -46,7 +46,7 @@ UserSchema.pre('save', function (next) {
     Counter.findByIdAndUpdate({_id: 'zonal_id'}, {$inc: { seq: 1} }, {upsert: true, new: true}, function(error, cnt)   {
         if(error)
             return next(error);
-        doc.tz_id = "TZ-" + (18000 + cnt.seq);
+        doc.tz_id = "TZ-" + (180000 + cnt.seq);
         next();
     })
 });

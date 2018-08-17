@@ -113,31 +113,49 @@ exports.ca_temp_login = function(req, res) {
                 } else {
                     user.comparePassword(req.body.password, function (err, isMatch) {
                         if (isMatch && !err) {
-                            var newToken = {
-                                email: req.body.email,
-                                user_id: user._id,
-                                verified: user.verified,
-                                token: TokenHelper.generateUserToken(req.body.email, user._id),
-                                expirationTime: moment().day(30),
-                                updated_date: new Date()
-                            };
-                            CA_Temp_User_Token.findOneAndUpdate({ email: req.body.email }, newToken, { upsert: true, new:true })
-                            .select('token')
-                            .exec(function(err, token) {
+                            CA_Temp_User_Token.find({ email: req.body.email }).sort({'updated_date': 1}).exec(function(err, tokens) {
                                 if (err) {
-                                    return res.status(400).send({success: false, msg: 'Unable Create Token'});
-                                }
-                                var body = {
-                                    _id: user._id,
-                                    email: user.email,
-                                    verfied: user.verfied,
-                                    name: user.name,
-                                    gender: user.gender
-                                }
-                                if (user.verified) {
-                                    res.json({success: true, token: token.token, msg: 'Successfully Authenticated', temp: false, body: body});
+                                    return res.status(400).send({success: false, msg: 'Unable To find token'});
                                 } else {
-                                    res.json({success: true, token: token.token, msg: 'Successfully Authenticated', temp: true, body: body});
+                                    var genratedToken = TokenHelper.generateUserToken(req.body.email, user._id);
+                                    var newToken = {
+                                        email: req.body.email,
+                                        user_id: user._id,
+                                        verified: user.verified,
+                                        token: genratedToken,
+                                        expiration_time: moment().day(30),
+                                        updated_date: new Date()
+                                    };
+                                    var body = {
+                                        _id: user._id,
+                                        email: user.email,
+                                        verfied: user.verfied,
+                                        name: user.name,
+                                        gender: user.gender
+                                    }
+                                    if (tokens.length > 2 && tokens[0]) {
+                                        CA_Temp_User_Token.update({ _id: tokens[0]._id }, newToken)
+                                            .exec(function(err) {
+                                                if (err) {
+                                                    return res.status(400).send({success: false, msg: 'Unable Create Token'});
+                                                }
+                                                if (user.verified) {
+                                                    return res.json({success: true, token: genratedToken, msg: 'Successfully Authenticated', temp: false, body: body});
+                                                }
+                                                res.json({success: true, token: genratedToken, msg: 'Successfully Authenticated', temp: true, body: body});
+                                            });
+                                    } else {
+                                        var addToken = new CA_Temp_User_Token(newToken);
+                                        addToken.save(function(err) {
+                                            if (err) {
+                                                return res.status(400).send({success: false, msg: 'Token Already Exists'});
+                                            }
+                                            if (user.verified) {
+                                                return res.json({success: true, token: genratedToken, msg: 'Successfully Authenticated', temp: false, body: body});
+                                            }
+                                            res.json({success: true, token: genratedToken, msg: 'Successfully Authenticated', temp: true, body: body});
+                                        });
+                                    }
                                 }
                             });
                         } else {
@@ -237,7 +255,7 @@ exports.reset = function(req, res) {
                                         verified: true,
                                         ca_id: ca_id
                                     };
-                                    CA_Temp_User_Token.update({ email: req.locals.email }, {verified: true})
+                                    CA_Temp_User_Token.update({ email: req.locals.email }, {verified: true}, {multi: true})
                                     .exec(function (err) {
                                             if (err) {
                                                 console.log(err)
@@ -261,7 +279,7 @@ exports.reset = function(req, res) {
                                     password: newHash,
                                     verified: true,
                                 };
-                                CA_Temp_User_Token.update({ email: req.locals.email }, {verified: true})
+                                CA_Temp_User_Token.update({ email: req.locals.email }, {verified: true}, {multi: true})
                                 .exec(function (err) {
                                         if (err) {
                                             console.log(err)
