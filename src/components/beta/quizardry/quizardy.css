@@ -109,3 +109,8 @@
     text-align: center;
     }
 }
+@media (min-width: 1920px) and (max-width: 2560px){
+  .quizardy-navbar{
+    height: 160px;
+  }
+}
