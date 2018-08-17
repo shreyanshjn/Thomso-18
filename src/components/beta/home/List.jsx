@@ -21,7 +21,7 @@ class List extends Component {
         return (
             <ul className="beta-home-list">
                 <li>
-                    <Link to="../ca" className={(this.state.activeStateLink
+                    <Link to="../campusambassador" className={(this.state.activeStateLink
                         === "list-ca-link") ? "list-ca-link" : null } 
                         onClick={()=>{
                             this.setActiveLink("list-ca-link")
