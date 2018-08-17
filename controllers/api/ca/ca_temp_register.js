@@ -231,12 +231,18 @@ exports.reset = function(req, res) {
                                     if (error) {
                                         return res.status(400).send({success: false, msg: 'Unable Create ID'});
                                     }
-                                    var ca_id = "TH18" + cnt.seq;
+                                    var ca_id = "TH"+ (180000 + cnt.seq);
                                     var updateData = {
                                         password: newHash,
                                         verified: true,
                                         ca_id: ca_id
                                     };
+                                    CA_Temp_User_Token.update({ email: req.locals.email }, {verified: true})
+                                    .exec(function (err) {
+                                            if (err) {
+                                                console.log(err)
+                                            }
+                                    })
                                     Temp_User.findOneAndUpdate({ email: req.locals.email }, updateData, { new:true })
                                     .select('name email verfied gender ca_id')
                                     .exec(function(err, user) {
@@ -255,6 +261,12 @@ exports.reset = function(req, res) {
                                     password: newHash,
                                     verified: true,
                                 };
+                                CA_Temp_User_Token.update({ email: req.locals.email }, {verified: true})
+                                .exec(function (err) {
+                                        if (err) {
+                                            console.log(err)
+                                        }
+                                })
                                 Temp_User.findOneAndUpdate({ email: req.locals.email }, updateData, { new:true })
                                 .select('name email verfied gender ca_id')
                                 .exec(function(err, user) {

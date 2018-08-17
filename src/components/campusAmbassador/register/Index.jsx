@@ -6,7 +6,7 @@ import StateSelect from './StateSelect';
 import img from "./img/logo.png";
 import FetchApi from '../../../utils/FetchAPI';
 import validateInput from '../../../utils/validation/loginValidation';
-import Popup from '../popup/Index';
+import Popup from '../../common/popup/Index';
 import "./css/register.css";
 
 export default class RegisterIndex extends React.Component {
@@ -31,8 +31,8 @@ export default class RegisterIndex extends React.Component {
         const name = e.target.name;
         let value = e.target.value;
         if (name === 'contact' && value) {
-          value = value.trim()
-          value = value.substring(0, 12)
+            value = value.trim()
+            value = value.substring(0, 12)
         }
         this.setState({ [name]: value });
     }
@@ -87,7 +87,7 @@ export default class RegisterIndex extends React.Component {
         const { name, contact, email, gender, branch, address, why, errors } = this.state;
         return (
             <div className="register-parent">
-                <Popup {...this.props} onRef={ref => (this.popup = ref)}/>
+                <Popup {...this.props} onRef={ref => (this.popup = ref)} />
                 <div className="register-child">
                     <div className="register-heading">
                         <div className="r-logo">
@@ -102,7 +102,7 @@ export default class RegisterIndex extends React.Component {
                     <div className="register-form">
                         <form onSubmit={this.onSubmit}>
                             {errors ?
-                                <div style={{textAlign: 'center', color: 'red', fontWeight: '600'}}>
+                                <div style={{ textAlign: 'center', color: 'red', fontWeight: '600' }}>
                                     {errors}
                                 </div>
                                 : null
@@ -129,7 +129,7 @@ export default class RegisterIndex extends React.Component {
                                 </div>
                                 <div className="form-contactnumber">
                                     <label htmlFor="inputContact">Contact Number</label>
-                                  <input
+                                    <input
                                         id="inputContact"
                                         type="number"
                                         placeholder="Contact Number"
@@ -178,12 +178,12 @@ export default class RegisterIndex extends React.Component {
                             </div>
                             <div className="form-college-child">
                                 <label htmlFor="inputCollege">College</label>
-                                <CollegeSelect onChange={college => this.setState({college})}/>
+                                <CollegeSelect onChange={college => this.setState({ college })} />
                             </div>
                             <div className="form-first-child">
                                 <div className="form-state">
                                     <label htmlFor="inputState">College State</label>
-                                    <StateSelect onChange={state => this.setState({state})}/>
+                                    <StateSelect onChange={state => this.setState({ state })} />
                                 </div>
                                 <div className="form-branch">
                                     <label htmlFor="inputBranch">Branch and Year</label>
@@ -225,7 +225,7 @@ export default class RegisterIndex extends React.Component {
                                     autoCorrect="off"
                                     autoComplete="off"
                                     autoCapitalize="on"
-                                    rows="1"
+                                    rows="2"
                                     value={why}
                                     onChange={this.onChange}
                                     required

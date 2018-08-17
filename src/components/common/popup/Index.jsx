@@ -56,21 +56,23 @@ export default class Popup extends React.Component {
             message = <p> {this.state.msg} </p>
         }
         return (
-            <React.Fragment>
-                {this.state.close ?
-                        null :
-                        <div className="campus-popup-main-div" >
-                            <div className="campus-popup">
-                                <div className="campus-popup-msg">
-                                    {message ? message : null}
-                                    <div>
-                                        <button onClick={this.confirm}>OK</button>
+            <div id="popup-main-common-div">
+                <React.Fragment>
+                    {this.state.close ?
+                            null :
+                            <div className="campus-popup-main-div" >
+                                <div className="campus-popup">
+                                    <div className="campus-popup-msg">
+                                        {message ? message : null}
+                                        <div>
+                                            <button onClick={this.confirm}>OK</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                }
-            </React.Fragment>
+                    }
+                </React.Fragment>
+            </div>
         );
     }
 }

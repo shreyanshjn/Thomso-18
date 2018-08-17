@@ -3,12 +3,14 @@ import { Link } from "react-router-dom";
 import "./css/style.css";
 import boy from "./img/boy.png";
 import girl from "./img/girl.png";
+import { addCATopic } from '../../../utils/firebasePush';
 // import like from "./img/like.png"
 // import share from "./img/share.png"
 // import score from "./img/star.png"
 import Post from "./Svg/Post"
 // import Referral from "./Svg/Referral"
 import Leader from "./Svg/Leader"
+import Events from "./Svg/Events"
 import Guide from "./Svg/Guide"
 import Contact from "./Svg/Contact"
 import Logout from "./Svg/Logout"
@@ -17,21 +19,30 @@ import Hand from "./Svg/Hand"
 
 // import logoUser from '../common/images/user.svg';
 
+let addTopicTimeout;
+
 export default class Sidebar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       referral: 'AVSHFSAD',
-      activeState: window.location.pathname.substring(4)
+      activeState: window.location.pathname.substring(18)
     };
-    if (!window.location.pathname.substring(4)) {
+    if (!window.location.pathname.substring(18)) {
       this.state = {
         activeState: "home"
       };
     }
   }
+  componentWillMount() {
+    clearTimeout(addTopicTimeout)
+  }
 
   componentDidMount() {
+    addTopicTimeout = setTimeout(() => {
+      addCATopic('tempCA');
+    }, 2000)
+
     const countDownDate = new Date("Oct 25, 2018 00:00:00").getTime();
     const now = new Date().getTime();
     const distance = countDownDate - now;
@@ -39,11 +50,11 @@ export default class Sidebar extends React.Component {
     if (days < 0) {
       days = 0;
     }
-    this.setState({days})
+    this.setState({ days })
   }
 
-  setActive(activeState) {
-    this.setState({ activeState });
+  setActive(state) {
+    this.setState({ activeState: state });
   }
 
   copytoclipboard = () => {
@@ -61,14 +72,14 @@ export default class Sidebar extends React.Component {
           style={{ backgroundColor: 'white' }}
         >
           <div className="campusAmb-sidebar-user">
-            {(this.props.userData && this.props.userData.image) ? <img src={this.props.userData.image} className="image" alt="User" /> : 
+            {(this.props.userData && this.props.userData.image) ? <img src={this.props.userData.image} className="image" alt="User" /> :
               <React.Fragment>
-                {(this.props.userData && this.props.userData.gender === 'female') ? 
+                {(this.props.userData && this.props.userData.gender === 'female') ?
                   <img src={girl} className="image" alt="User" /> :
                   <img src={boy} className="image" alt="User" />
                 }
               </React.Fragment>}
-            
+
             <div className="campusAmb-sidebar-user-details">
               <div className="text">{this.props.userData ? this.props.userData.name : "User"}</div>
               <div className="cname">{this.props.userData ? this.props.userData.college : "-"}</div>
@@ -133,7 +144,7 @@ export default class Sidebar extends React.Component {
                   <Guide />
                 </div>
                 <div className="campusAmb-sidebar-navitem-name">
-                    GUIDELINES
+                  GUIDELINES
                 </div>
               </div>
             </Link>
@@ -158,22 +169,22 @@ export default class Sidebar extends React.Component {
               </div> 
             </Link>*/}
             {/* <Link
-              to="/ca/certificate"
+              to="/CampusAmbassador/events"
               className={
-                this.state.activeState === "certificate"
+                this.state.activeState === "events"
                   ? "sideNavItem activeSideItem"
                   : "sideNavItem"
               }
               onClick={() => {
-                this.setActive("certificate");
+                this.setActive("events");
               }}
             >
-              <div className="campusAmb-sidebar-certificate flex_row">
+              <div className="campusAmb-sidebar-events flex_row">
                 <div className="campusAmb-sidebar-svg-logo">
-                  <Certificate /> 
+                  <Events />
                 </div>
                 <div className="campusAmb-sidebar-navitem-name">
-                  CERTIFICATE
+                  EVENTS
                 </div>
               </div>
             </Link> */}

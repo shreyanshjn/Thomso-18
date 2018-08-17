@@ -1,12 +1,16 @@
 .zonal-common-comp2-head
 { 
-  background:#164851;
+  background:#164851d4;
   padding:20px;
-  width:18vw;
-  height:12vh; 
-  border-radius:12px;
-  box-shadow:0px 1px 3px 3px #164851;
+  width:12vw;
+  height:10vh; 
+  box-shadow:0px 1px 1px 3px #164851;
   color:white;
+}
+.zonal-common-comp2-head:hover
+{
+    background:#164851;
+    transition:background 0.5s;
 }
 .zonals-comp2-inside
 {
@@ -18,18 +22,19 @@
 }
 .zonals-comp-border
 {
+   background:#164851;
    border:2px solid white;
 }
 @media only screen and (max-width:768px)
 {
    .zonal-common-comp2-head
    {
-      width:8vw;
-      height:5vh;
+      width:5vw;
+      height:1vh;
    }
    .zonals-comp2-inside
    {
-     font-size:14px;
+     font-size:8px;
      text-align:center;
    } 
 }

@@ -4,7 +4,6 @@ import './quizardy.css';
 import Instructions from './Instructions';
 import Footer from './Footer';
 import Navbar from '../home/Navbar';
-import Notification from '../../common/Notification';
 import { addTopic } from '../../../utils/firebasePush';
 
 import './Index.css';

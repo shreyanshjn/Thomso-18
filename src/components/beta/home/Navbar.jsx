@@ -50,7 +50,7 @@ class Navbar extends Component {
             <div className="beta-navbar-int-ctos">
               <ul id="beta-navbar-options-hide">
                 <li>
-                    <Link to="../ca/" className={(this.state.activeState === "ca/") ? "linkCaportal" : null}
+                    <Link to="../campusambassador/" className={(this.state.activeState === "campusambassador/") ? "linkCaportal" : null}
                     onClick={() => {
                                     this.setActive("linkCaportal");
                     }}>
@@ -92,6 +92,22 @@ class Navbar extends Component {
                     onClick={() => {
                                     this.setActive("linkSponsors");
                     }}>OUR SPONSORS</Link>
+                </li>
+                <li className="dropdown">
+                    <Link to="" className={(this.state.activeState === "lucknow") ? "linkLucknow" : null}
+                    onClick={() => {
+                                    this.setActive("lucknow");
+                    }}>ZONALS</Link>
+                  <div className="beta-navbar-dropdown-content">
+                      <Link to="../../zonals/lucknow" className={(this.state.activeState === "lucknow") ? "linkLucknow" : null}
+                    onClick={() => {
+                                    this.setActive("lucknow");
+                    }}>LUCKNOW</Link>
+            {/*  <Link to="" className={(this.state.activeState === "linkEventsoff") ? "linkEventsoff" : null}
+                    onClick={() => {
+                                    this.setActive("linkEventsoff");
+                    }}>OFFLINE EVENTS</Link>*/}
+                  </div>
                 </li>
                 {/* <li>
                   <Link to="" className={(this.state.activeState === "linkFaq") ? "linkFaq" : null}

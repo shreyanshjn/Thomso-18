@@ -36,7 +36,7 @@
     position: fixed;
     top: 1%;
     left: 6%;
-    z-index: 59;
+    z-index: 1000;
 }
  .Notification-div-O .Notification-div-S {
     display: none;
