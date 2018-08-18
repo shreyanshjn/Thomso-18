@@ -8,8 +8,7 @@ export default class DelhiEvents extends React.Component {
             selectedOptionDrama: '',
             selectedOptionTgt: '',
             check: false,
-            tgt: false,
-            mrmsthomso: false
+            tgt: false
         }
     }
     changeState = () => {
@@ -23,9 +22,6 @@ export default class DelhiEvents extends React.Component {
         }
         if (this.state.tgt && this.state.selectedOptionTgt) {
             events.push(this.state.selectedOptionTgt)
-        }
-        if (this.state.mrmsthomso) {
-            events.push('Mr Mrs Thomso')
         }
         this.props.selectedevents(events)
     }
@@ -53,7 +49,7 @@ export default class DelhiEvents extends React.Component {
                     <div className={this.props.var ? "register-zonals-form-events-parent inactive" : "register-zonals-form-events-parent"}>
                         <div className="register-zonals-form-events-firstchild">
                             <div className="register-zonals-form-events-drama">
-                                <span><input type="checkbox" onClick={() => this.setState({ check: !this.state.check })} name="drama" value="drama" /></span><span>Drama</span>
+                                <span><input type="checkbox" onClick={() => this.setState({ check: !this.state.check })} checked={this.state.check} name="drama" value="drama" /></span><span>Drama</span>
                             </div>
                             <div className={this.state.check ? "register-zonals-form-events-dramachild" : "register-zonals-form-events-dramachild low-opacity"}>
                                 <div>
@@ -66,7 +62,7 @@ export default class DelhiEvents extends React.Component {
                         </div>
                         <div className="register-zonals-form-events-secondchild">
                             <div className="register-zonals-form-events-tgt">
-                                <span><input type="checkbox" onClick={() => this.setState({ tgt: !this.state.tgt })} name="tgt" value="tgt" /></span><span>Tgt</span>
+                                <span><input type="checkbox" onClick={() => this.setState({ tgt: !this.state.tgt })} checked={this.state.tgt} name="tgt" value="tgt" /></span><span>Tgt</span>
                             </div>
                             <div className={this.state.tgt ? "register-zonals-form-events-tgtchild" : "register-zonals-form-events-tgtchild low-opacity"}>
                                 <div>
@@ -78,11 +74,6 @@ export default class DelhiEvents extends React.Component {
                                 <div>
                                     <span><input onChange={this.handleOptionChangeTgt} type="radio" name="openmic" value="openmic" checked={this.state.selectedOptionTgt === 'openmic'} disabled={!this.state.tgt} /></span><span>Open mic</span>
                                 </div>
-                            </div>
-                        </div>
-                        <div className="register-zonals-form-events-secondchild">
-                            <div className="register-zonals-form-events-tgt">
-                                <span><input type="checkbox" onClick={() => this.setState({ mrmsthomso: !this.state.mrmsthomso })} name="mrmsthomso" value="mrmsthomso" /></span><span>Mr & Ms Thomso</span>
                             </div>
                         </div>
                     </div>

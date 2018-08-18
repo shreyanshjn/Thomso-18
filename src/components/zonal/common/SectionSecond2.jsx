@@ -49,21 +49,23 @@ export default class SectionSecond2 extends Component {
                             <SectionComp2 dataOptions="TGT SINGING" nameofclass={(this.state.activeState === "tgt-sing") ?"zonals-comp-border": null} />
                     </div>
                    <div  style={{cursor:"pointer"}}
-                            onClick={()=>{
-                                this.onClick("tgt-mic")}} >
-                                <SectionComp2  dataOptions="TGT OPEN MIC" nameofclass={(this.state.activeState === "tgt-mic") ?"zonals-comp-border": null}/>
+                        onClick={()=>{
+                            this.onClick("tgt-mic")}} >
+                            <SectionComp2  dataOptions="TGT OPEN MIC" nameofclass={(this.state.activeState === "tgt-mic") ?"zonals-comp-border": null}/>
                    </div>
 
-                            <div style={{cursor:"pointer"}}
+                    <div style={{cursor:"pointer"}}
+                        onClick={()=>{
+                            this.onClick("tgt-natak")}} >
+                            <SectionComp2  dataOptions="NUKKAD NATAK" nameofclass={(this.state.activeState === "tgt-natak") ?"zonals-comp-border": null}/>
+                    </div>
+                   {this.props.city === 'lucknow' ? 
+                    <div  style={{cursor:"pointer"}}
                                 onClick={()=>{
-                                    this.onClick("tgt-natak")}} >
-                                    <SectionComp2  dataOptions="NUKKAD NATAK" nameofclass={(this.state.activeState === "tgt-natak") ?"zonals-comp-border": null}/>
-                                </div>
-                   <div  style={{cursor:"pointer"}}
-                            onClick={()=>{
-                                this.onClick("mrthomso")}} >
-                                <SectionComp2  dataOptions="MR & MISS THOMSO" nameofclass={(this.state.activeState === "mrthomso") ?"zonals-comp-border": null}/>
-                   </div>
+                                    this.onClick("mrthomso")}} >
+                                    <SectionComp2  dataOptions="MR & MISS THOMSO" nameofclass={(this.state.activeState === "mrthomso") ?"zonals-comp-border": null}/>
+                    </div>
+                   : null }
                             </div>
                         </div>
         );

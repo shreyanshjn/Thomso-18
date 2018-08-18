@@ -35,17 +35,25 @@ var register = function(req, res, city) {
             var newUser = new Zonal_User(data);
             newUser.save(function(err, saved) {
                 if (err) {
-                    return res.json({success: false, msg: 'Error', error: err});
+                    return res.json({success: false, msg: 'Email already exists', already: true});
                 } else if (!saved) {
-                    return res.json({success: false, msg: 'Email already exists.'});
+                    return res.json({success: false, msg: 'Unable to save'});
                 } else {
                     res.json({success: true, msg: 'Successfully Registered'});
                     if (saved.tz_id && saved.email && saved.name) {
-                        mailer.zonalsLucknow({
-                            zn_id: saved.tz_id,
-                            email: saved.email,
-                            name: saved.name
-                        })
+                        if (city === 'Lucknow') {
+                            mailer.zonalsLucknow({
+                                zn_id: saved.tz_id,
+                                email: saved.email,
+                                name: saved.name
+                            })
+                        } else if (city === 'Delhi') {
+                            mailer.zonalsDelhi({
+                                zn_id: saved.tz_id,
+                                email: saved.email,
+                                name: saved.name
+                            })
+                        }
                     }
                 }
             });

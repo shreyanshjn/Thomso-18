@@ -27,7 +27,7 @@ export default class SectionComp extends React.Component {
                         {this.props.downloadPdf ?
                             <div className="zonal-common-comp1-register-child2">
                                 <div>
-                                    <a href={`/pdf/zonals/${this.props.downloadPdf}`}> <abbr title="Click to download"><button className="zonal-comp1-button">RULEBOOK</button></abbr></a>
+                                    <a href={`/pdf/zonals/${this.props.downloadPdf}`} target="_blank"> <abbr title="Click to download"><button className="zonal-comp1-button">RULEBOOK</button></abbr></a>
                                 </div>
                             </div>
                             : null}
