@@ -54,6 +54,23 @@ class List extends Component {
                 OUR SPONSORS
             </Link>
         </li>
+        <li>
+            <Link to="../../zonals/delhi" className={(this.state.activeStateLink === "zonals-delhi") ? "list-zonals-link" : null }
+                onClick={()=>{
+                this.setActiveLink("list-zonals-delhi")
+                }}>
+                DELHI-ZONALS
+            </Link>
+         </li>
+         <li>
+            <Link to="../../zonals/lucknow" className={(this.state.activeStateLink === "zonals-lucknow") ? "list-zonals-lucknow" : null }
+                onClick={()=>{
+                this.setActiveLink("list-zonals-lucknow")
+                }}>
+                LUCKNOW-ZONALS
+            </Link>
+        </li>
+
         {/* <li>
           <a href="">FAQs</a>
         </li>*/}
