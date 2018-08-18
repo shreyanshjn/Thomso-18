@@ -14,7 +14,7 @@ import Events from "./Svg/Events"
 import Guide from "./Svg/Guide"
 import Contact from "./Svg/Contact"
 import Logout from "./Svg/Logout"
-// import Bulb from "./Svg/Bulb"
+import Bulb from "./Svg/Bulb"
 import Hand from "./Svg/Hand"
 
 // import logoUser from '../common/images/user.svg';
@@ -148,7 +148,7 @@ export default class Sidebar extends React.Component {
                 </div>
               </div>
             </Link>
-            {/*  <Link
+             <Link
               to="/CampusAmbassador/ideas"
               className={
                 this.state.activeState === "ideas"
@@ -167,7 +167,7 @@ export default class Sidebar extends React.Component {
                   IDEAS
                 </div>
               </div> 
-            </Link>*/}
+            </Link>
             {/* <Link
               to="/CampusAmbassador/events"
               className={

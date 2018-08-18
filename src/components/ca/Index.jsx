@@ -41,6 +41,7 @@ const LeaderboardIndex = Loadable({
   loader: () => import("./leaderboard/Index"),
   loading: Loading
 });
+
 const ContactIndex = Loadable({
   loader: () => import("./contactus/Index"),
   loading: Loading

@@ -19,7 +19,7 @@ export default class DataTable extends React.Component {
 
     componentDidMount() {
         const authtoken = this.Auth.getToken();
-        FetchApi('GET','/api/ca/admin/tempUsers', null, authtoken)
+        FetchApi('GET','/api/ca/admin/temp/participants', null, authtoken)
             .then((result) => {
                 if (result && result.data) {
                     this.setState({ participants: result.data });
