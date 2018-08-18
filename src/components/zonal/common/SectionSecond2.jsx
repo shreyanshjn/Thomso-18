@@ -65,12 +65,11 @@ export default class SectionSecond2 extends Component {
                                  <SectionComp2  dataOptions="MR & MISS THOMSO" nameofclass={(this.state.activeState === "mrthomso") ?"zonals-comp-border": null}/>
                            </div>
                        : null }
-                       {this.props.city === 'lucknow' ? 
                       <div style={{cursor:"pointer"}}
                           onClick={()=>{
                               this.onClick("abhivyakti")}}>
                                                <SectionComp2  dataOptions="ABHIVYAKTI" nameofclass={(this.state.activeState === "abhivyakti") ?"zonals-comp-border": null}/>
-                                    </div> : null }
+                                    </div>
                     </div>
              </div>
         );

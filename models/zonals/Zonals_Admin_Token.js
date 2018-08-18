@@ -24,4 +24,4 @@ var UserSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('Zonals_Admin_Token', UserSchema);
+module.exports = mongoose.model('Zonals_Admins_Token', UserSchema);

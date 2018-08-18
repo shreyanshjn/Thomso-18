@@ -72,6 +72,7 @@ class ZonalsForm extends React.Component {
                         }
                     })
                     .catch(() => {
+                        this.setState({ errors: 'Something went wrong' })
                         this.setState({ submitDisabled: false })
                     });
             } else if (check.errors && check.errors.email) {

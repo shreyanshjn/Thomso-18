@@ -27,4 +27,4 @@ var UserSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('CA_Temp_User_Token', UserSchema);
+module.exports = mongoose.model('CA_Temp_Users_Token', UserSchema);
