@@ -36,7 +36,17 @@ var UserSchema = new mongoose.Schema({
     },
     event:[{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Main_Event'
+        ref: 'Event_Schema'
+    }],
+    team:[{
+        event:{
+            type:mongoose.Schema.Types.ObjectId,
+            ref:'Event_Schema'
+        },
+        members:[{
+            type:mongoose.Schema.Types.ObjectId,
+            ref:'Main_User'
+        }]
     }],
     verified: {
         type: Boolean,

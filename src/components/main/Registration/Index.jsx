@@ -3,6 +3,8 @@ import FetchApi from "../../../utils/FetchAPI";
 import CollegeSelect from "../../campusAmbassador/register/CollegeSelect";
 import StateSelect from "../../campusAmbassador/register/StateSelect";
 import validateInput from '../../../utils/validation/loginValidation';
+import AuthService from '../../../handlers/main/AuthService';
+
 // import Popup from '../../common/popup/Index';
 
 export default class RegisterIndex extends React.Component{
@@ -23,6 +25,7 @@ export default class RegisterIndex extends React.Component{
             confirmPassword:'',
             selectedOption: null
         }
+        this.Auth = new AuthService();
     }
 
     onChange = (e)=>{
@@ -50,15 +53,16 @@ export default class RegisterIndex extends React.Component{
                 FetchApi('POST', '/api/main/auth/register', data)
                 .then(res => {
                     if(res && res.data){
-                        if(res.data.success === true)
+                        if(res.data.success === true){
+                            this.Auth.setToken(res.data.token);
                             this.props.history.push('/main/verify');
+                        }
                         else
-                            this.setState({errors: 'This email is already registered'})
+                            this.setState({errors: res.data.msg})
                     }
                 })
                 .catch(e=>{
-                    console.log(e)
-                    this.setState({errors: e})
+                    this.setState({errors: "hello"})
                     // this.popup.show('Something  went wrong.')
                 });
             }

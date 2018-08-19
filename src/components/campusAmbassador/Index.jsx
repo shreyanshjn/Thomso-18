@@ -83,7 +83,6 @@ export default class CampusIndex extends React.Component {
 
   componentWillMount() {
     const isAuthenticated = this.Auth.hasToken();
-    console.log(isAuthenticated, "isAuthenticated");
     if (isAuthenticated) {
       const token = this.Auth.getToken()
       FetchApi('GET', '/api/ca/temp/info', null, token)

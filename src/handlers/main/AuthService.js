@@ -19,6 +19,5 @@ export default class AuthService extends React.Component{
 
     setToken(token) {
         localStorage.setItem('main_auth_token', token);
-        this.removeTempToken()
     }
 }

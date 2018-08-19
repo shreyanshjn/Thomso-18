@@ -1,6 +1,7 @@
 import React from "react";
 import FetchApi from "../../../utils/FetchAPI";
 import validateInput from '../../../utils/validation/loginValidation';
+import AuthService from '../../../handlers/main/AuthService';
 
 
 export default class VerifyIndex extends React.Component{
@@ -11,6 +12,7 @@ export default class VerifyIndex extends React.Component{
             otp:'',
             disabled: false
         }
+        this.Auth = new AuthService();
     }
 
     onChange = (e) => {
@@ -23,34 +25,23 @@ export default class VerifyIndex extends React.Component{
         e.preventDefault();
         if (!this.state.disabled) {
             let {otp} = this.state;
-            let email = "prashantverma1223@gmail.com";
             if (otp) otp = otp.trim()
-            const data = {email, otp};
-            console.log(data);
-
-            const check = validateInput(email, 'email');
-            if (check.isValid) {
-                this.setState({
-                    disabled: true
+            const data = {otp};
+            const token = this.Auth.getToken()
+            this.setState({
+                disabled: true
+            })
+            FetchApi('POST', '/api/main/auth/verify', data, token)
+                .then( res => {
+                    this.setState({disabled:false});
+                    if(res && res.data && res.data.success){
+                        this.setState({errors:res.data.msg});}
+                    else
+                        this.setState({errors:res.data.msg});
                 })
-                FetchApi('POST', '/api/main/auth/verify', data)
-                    .then( res => {
-                        this.setState({disabled:false});
-                        if(res && res.data)
-                            console.log(res.data);
-                        else
-                            this.setState({errors:'Incorrect OTP.'});
-                    })
-                    .catch(err => {
-                        console.log(err);
-                        this.setState({errors:'Something Went Wrong.', disabled:false});
-                    })
-            }
-            else if (check.errors && check.errors.email) {
-                this.setState({ errors: check.errors.email })
-            } else {
-                this.setState({ errors: 'Fields cannot be empty' })
-            }
+                .catch(err => {
+                    this.setState({errors:'lssddsds', disabled:false});
+                })
         }
     }
 
@@ -58,7 +49,7 @@ export default class VerifyIndex extends React.Component{
         const {otp, errors, disabled}  =this.state;
         return (
             <div>
-                <h1> Please enter OTP sent to your email.  </h1>
+                <h1> Please verify your account.  </h1>
                 <form onSubmit={this.onSubmit}>
                     {errors ? 
                         <div style={{color:'red', fontSize:'22px'}}> {errors} </div>
