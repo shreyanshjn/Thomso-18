@@ -9,6 +9,7 @@ var mailer = require('../../common/mailer');
 
 exports.participant_registration = function(req, res){
     if(req.body){
+        
         if(req.body.name){
             req.body.name = req.body.name.trim();
         }
@@ -45,9 +46,11 @@ exports.participant_registration = function(req, res){
             college: req.body.college,
             state: req.body.state,
             branch: req.body.branch,
-            address: req.body.address
+            address: req.body.address,
+            password:req.body.password
         };
-        if (data.name && data.otp && data.contact && data.email && data.gender && data.college && data.state && data.branch && data.address && data.password ) {
+        console.log(data);
+        if (data.name && data.contact && data.email && data.gender && data.college && data.state && data.branch && data.address && data.password ) {
             var newUser = Main_User(data);
             newUser.save(function(err){
                 if(err)
@@ -83,21 +86,19 @@ exports.participant_registration = function(req, res){
             });
         }
         else{
-            res.status(400).send({success:false,msg:'Invalid Data'});
+            res.status(401).send({success:false,msg:'Invalid Data'});
         }
     }
     else{
-        res.status(400).send({success:false,msg:'Invalid Data'});
+        res.status(401).send({success:false,msg:'Invalid Data'});
     }
 };
 
 exports.verifyOTP = function(req, res){
+    
     if(req.body.email && req.body.otp){
         req.body.email = req.body.email.toLowerCase();
         req.body.email = req.body.email.trim();
-        if(req.body.referred_by){
-            req.body.referred_by = "TH" + req.body.referred_by;
-        }
         Main_User.findOne({
             email: req.body.email
         })
@@ -123,20 +124,12 @@ exports.verifyOTP = function(req, res){
                                 referred_by: req.body.referred_by,
                                 thomso_id: thomso_id
                             };
-                            if(req.body.referred_by){
-                                Temp_User.update({ ca_id:req.body.referred_by},{$inc: { referrals: 1} }, {upsert: true, new: true})
-                                .exec(function(err){
-                                    if(err) 
-                                        return res.json({status:401, success:false, msg:'unabel to increase referral of ca id'});
-                                })
-                            }
-                            
                             Main_User_Token.update({ email:req.body.email}, {verified: true}, {multi:true})
                             .exec(function(err){
                                 if(err) 
                                     return res.json({status:400, success:false, msg:'unabel to create token user'});
                             })
-                            Main_User.findOneAndUpdate({email: req.body.email}, updateData), {new:true}
+                            Main_User.findOneAndUpdate({email: req.body.email}, updateData)
                             .select('name email verified gender thomso_id')
                             .exec(function(err, parti){
                                 if(err){

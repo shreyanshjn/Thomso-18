@@ -70,7 +70,12 @@ const CampusIndex = Loadable({
 const ZonalsIndex = Loadable({
   loader: () => import("./components/zonal/Index"),
   loading: () => <Loader />
+});
+const MainIndex = Loadable({
+  loader: () => import("./components/main/Index"),
+  loading: () => <Loader />
 })
+
 class App extends Component {
   render() {
     return (
@@ -93,6 +98,8 @@ class App extends Component {
               <Route path="/verifyCerti/" component={VerifyCerti} />
               <Route path="/policy" component={Policy} />
               <Route path="/terms" component={Terms} />
+              <Route path="/main/" component={MainIndex} />
+
               {/* <Route component={Error404} /> */}
             </React.Fragment>
           </Switch>

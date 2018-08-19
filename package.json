@@ -36,6 +36,7 @@
     "build": "node scripts/customized-config build",
     "serve": "node ./bin/www",
     "https": "node ./bin/ww2",
+    "httpsn": "nodemon ./bin/ww2",
     "server": "nodemon ./bin/www",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"

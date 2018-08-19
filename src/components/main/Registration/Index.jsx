@@ -1,9 +1,9 @@
 import React from "react";
-import {Link} from "react-router-dom";
 import FetchApi from "../../../utils/FetchAPI";
 import CollegeSelect from "../../campusAmbassador/register/CollegeSelect";
 import StateSelect from "../../campusAmbassador/register/StateSelect";
 import validateInput from '../../../utils/validation/loginValidation';
+// import Popup from '../../common/popup/Index';
 
 export default class RegisterIndex extends React.Component{
     constructor(){
@@ -37,6 +37,38 @@ export default class RegisterIndex extends React.Component{
 
     onSubmit = (e) => {
         e.preventDefault();
+        let {name, email, gender, contact, college, state, branch, address, referred_by, password, confirmPassword}  =this.state;
+        if (name) name = name.trim()
+        if (contact) contact = contact.trim()
+        if (college) college = college.trim()
+        if (branch) branch = branch.trim()
+        if (address) address = address.trim()
+        if(password === confirmPassword){
+            const data = {name, email, gender, branch, contact, college, state, address, referred_by, password}
+            const check = validateInput(email, 'email');
+            if(email){
+                FetchApi('POST', '/api/main/auth/register', data)
+                .then(res => {
+                    if(res && res.data){
+                        if(res.data.success === true)
+                            this.props.history.push('/main/verify');
+                        else
+                            this.setState({errors: 'This email is already registered'})
+                    }
+                })
+                .catch(e=>{
+                    console.log(e)
+                    this.setState({errors: e})
+                    // this.popup.show('Something  went wrong.')
+                });
+            }
+            else if(check.errors && check.errors.email)
+                this.setState({errors:check.errors.email})
+            else
+                this.setState({errors:'Field cannot be empty'})
+        }
+        else
+            this.setState({errors:"Password didn't matched!!"})            
     }
 
     render(){
@@ -129,8 +161,8 @@ export default class RegisterIndex extends React.Component{
                         <label htmlFor="inputBranch">Branch and Year</label>
                         <input
                             id="inputBranch"
-                            type="text"
-                            placeholder="Branch Name"
+                            // type="text"
+                            // placeholder="Branch Name"
                             name="branch"
                             autoCorrect="off"
                             autoComplete="off"
@@ -161,7 +193,7 @@ export default class RegisterIndex extends React.Component{
                             id="inputRefferedBy"
                             type="text"
                             placeholder="Referral CA ID"
-                            name="text"
+                            name="referred_by"
                             autoCorrect="off"
                             autoComplete="off"
                             autoCapitalize="off"

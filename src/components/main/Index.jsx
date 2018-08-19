@@ -19,10 +19,10 @@ const RegisterIndex = Loadable({
     loading: Loading
 });
 
-const LoginIndex = Loadable({
-    loader: ()=>import("./Login/Index"),
-    loading: Loading
-});
+// const LoginIndex = Loadable({
+//     loader: ()=>import("./Login/Index"),
+//     loading: Loading
+// });
 
 const VerifyIndex = Loadable({
     loader: ()=>import("./Verify/Index"),
@@ -37,29 +37,13 @@ export default class MainIndex extends React.Component{
         }
         this.Auth = new AuthService();
     }
-
-    componentWillMount(){
-
-    }
-
     render(){
         return(
             <React.Fragment>
-                {this.state.isAuthenticated ?
-                <React.Fragment>
-                    {this.state.isTemp ? 
-                        <Route exact path="/main/*" render={props=>(<VerifyIndex {...props} updateRoutes={this.handleUpdate} setUserData={this.setUserData} />)}/>
-                    :
-                        <Route exact path="/main" render={props=>(<Details {...props} userData={this.state.userData} />)} />
-                    }
-                </React.Fragment>
-                :
-                <React.Fragment>
-                    <Route exact path="/main" component={HomeIndex} />
-                    <Route exact path="/main/register" component={RegisterIndex} />
-                    <Route exact path="/main/login" render={props => {<LoginIndex {...props} updateRoutes={this.handleUpdate} setUserData={this.setUserData} />} } />
-                </React.Fragment>
-                }
+                    <Route exact path="/main" component={RegisterIndex} />
+                    <Route exact path="/main/verify" component={VerifyIndex} />
+
+                    {/* <Route exact path="/main/login" render={props => {<LoginIndex {...props} updateRoutes={this.handleUpdate} setUserData={this.setUserData} />} } /> */}
             </React.Fragment>
         )
     }

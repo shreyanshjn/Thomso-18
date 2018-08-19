@@ -6,9 +6,9 @@ var participantRegister = require('../../controllers/api/main/participant_regist
 router.use('/', cors(corsOptions));
 
 
-// /main/registrations
+// /main/auth
 router.post('/auth/register', participantRegister.participant_registration);
-router.post('/auth/verify', participantRegister.participant_registration);
-router.post('/auth/login', participantRegister.participant_registration);
+router.post('/auth/verify', participantRegister.verifyOTP);
+router.post('/auth/login', participantRegister.participant_login);
 
 module.exports = router;
