@@ -174,9 +174,6 @@ exports.participant_login = function(req, res) {
                 if (err) res.status(400).send({success: false, msg: 'Authentication failed. Error.'});
                 if (!user) {
                     res.status(400).send({success: false, msg: 'Authentication failed. User not found.', notExists: true});
-                }
-                else if(!user.verified){
-                    res.status(400).send({success: false, msg: 'OOPs, Your account is not verified. Please, verify your account.'});                    
                 } else {
                     user.comparePassword(req.body.password, function (err, isMatch) {
                         if (isMatch && !err) {
@@ -217,7 +214,10 @@ exports.participant_login = function(req, res) {
                                             if (err) {
                                                 return res.status(400).send({success: false, msg: 'Token Already Exists'});
                                             }
+                                            if (user.verified) {
                                                 return res.json({success: true, token: genratedToken, msg: 'Successfully Authenticated', temp: false, body: body});
+                                            }
+                                            res.json({success: true, token: genratedToken, msg: 'Successfully Authenticated', temp: true, body: body});
                                         });
                                     }
                                 }
