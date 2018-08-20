@@ -60,6 +60,25 @@ var UserSchema = new mongoose.Schema({
         last_update: {
             type: Date
         }
+    },
+    ideas: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'CA_Temp_Idea'
+    }],
+    bonus: {
+        type: Number,
+        default: 0
+    },
+    score: {
+        type: Number,
+        default: 0
+    },
+    referrals: {
+        type: Number,
+        default: 0
+    },
+    image: {
+        type: String,
     }
 });
 

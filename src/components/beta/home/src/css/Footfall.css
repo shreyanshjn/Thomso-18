@@ -88,32 +88,32 @@
     .beta-footfall-box
     {
         padding:20px;
-        margin:38px;
+        margin:40px;
         font-size:40px;
-        width: 316px;
-        height: 153px;
+        width: 280px;
+        height: 144px;
         border-radius:10px;
     }
     .beta-footfall-first
     {
-        font-size: 71px;
+        font-size: 50px;
         font-family:Montserrat;
     }
     .beta-footfall-second
     {
-        font-size:27px;
+        font-size:20px;
         font-family:Montserrat;
 
     }
     .beta-footfall-aboveImage
     {
-        width: 319px;
+        width: 289px;
         top: -5vh;
         left: 6%;
     }
     .beta-footfall-downImage
     {
-        width:326px;
+        width:290px;
         bottom:-5.5vh;
         left:4%;
     }

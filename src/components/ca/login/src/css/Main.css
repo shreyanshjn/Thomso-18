@@ -34,7 +34,7 @@
     flex-direction: column;
     display: flex;
     align-items: center;
-    top:15%;
+    top:15%;    
 }
 .ca-opening-button
 {
@@ -45,7 +45,7 @@
     font-family: Montserrat;
     font-weight: 600;
     color: white;
-    border: 0px;
+        border: 0px;
     background: rgba(255,255,255,0.4);
     border-radius: 5px;
 }

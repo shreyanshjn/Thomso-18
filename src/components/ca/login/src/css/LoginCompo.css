@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: row;
   justify-content:flex-start;
-  background: ;
+  
   font-size: 12px;
   font-weight: bold;
   vertical-align: middle;
@@ -51,8 +51,7 @@
     display: flex;
     flex-direction: row;
     justify-content:flex-start;
-    background: ;
-    font-size: 8px;
+     font-size: 8px;
     font-weight: bold;
     vertical-align: middle;
   }
@@ -104,8 +103,10 @@
     justify-content:flex-start;
   }
   .login-div3 img{
-    height: 51px;
-    width:51px;
+    height: auto;
+    width:65px;
+    padding-top:17px;
+
   }
 
   .login-div4{
@@ -116,11 +117,12 @@
     flex-direction: column;
     justify-content:flex-start;
     font-family: Montserrat;
+    font-weight: normal;
   }
   .login-div4 p{
     font-family: Montserrat;
     font-size: 22px;
-    font-weight: bold;
+    font-weight: 500;
     vertical-align: middle;
     margin: 0px;
   }

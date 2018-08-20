@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import LucknowOpening from './LucknowOpening.jsx';
 import SectionSecond2 from '../common/SectionSecond2';
 import Footer from '../common/Footer';
-import ZonalsForm from '../common/ZonalsForm';
+import ZonalsFormLucknow from '../common/ZonalsFormLucknow';
 
 export default class LucknowIndex extends Component {
     render() {
@@ -11,9 +11,9 @@ export default class LucknowIndex extends Component {
                 <div style={{overflow:'hidden'}}>
                     <LucknowOpening />
                 </div>
-                <SectionSecond2 /> 
-                <ZonalsForm />
-                <Footer />
+                <SectionSecond2 city='lucknow'/> 
+                <ZonalsFormLucknow />
+                <Footer city='lucknow' />
             </div>
         );
     }

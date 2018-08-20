@@ -99,14 +99,14 @@ class Navbar extends Component {
                                     this.setActive("lucknow");
                     }}>ZONALS</Link>
                   <div className="beta-navbar-dropdown-content">
-                      <Link to="../../zonals/lucknow" className={(this.state.activeState === "lucknow") ? "linkLucknow" : null}
-                    onClick={() => {
-                                    this.setActive("lucknow");
-                    }}>LUCKNOW</Link>
-            {/*  <Link to="" className={(this.state.activeState === "linkEventsoff") ? "linkEventsoff" : null}
-                    onClick={() => {
-                                    this.setActive("linkEventsoff");
-                    }}>OFFLINE EVENTS</Link>*/}
+                    <Link to="../../zonals/delhi" className={(this.state.activeState === "delhi") ? "linkLucknow" : null}
+                      onClick={() => {
+                        this.setActive("delhi");
+                      }}>DELHI</Link>
+                    <Link to="../../zonals/lucknow" className={(this.state.activeState === "lucknow") ? "linkLucknow" : null}
+                      onClick={() => {
+                                      this.setActive("lucknow");
+                      }}>LUCKNOW</Link>
                   </div>
                 </li>
                 {/* <li>

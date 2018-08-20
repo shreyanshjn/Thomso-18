@@ -4,10 +4,17 @@
 
 }
 
-
+.quizardy-navbar{
+  background-color: rgba(84, 86, 91, 0.5);
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 100px;
+}
 
 .quizardy-parent-body{
-    background-color: #8e6391 ;
+    background-image: linear-gradient(to left bottom, #595b5e, #767e81, #95a3a2, #bac9c0, #e9eedd);
+
     height: 100vh;
     position: relative;
     align-items: center;
@@ -26,7 +33,7 @@
 @media only screen and (min-width:768px)
 {
 .quizardy-child{
-    background: url('./marvel.png');
+    background: url('./gotweb.jpg');
     background-size: 100% 100%;
     height: 100vh;
     background-repeat: no-repeat;
@@ -75,11 +82,14 @@
     height: 100vh;
     overflow-y: hidden;
     background-color: #552458;
-    background: url('./marvel2.jpg');
+    background: url('./gotphone.jpg');
     background-size:100% 100%;
     background-repeat: no-repeat;
     background-color: #552458;
     background-position:center;
+  }
+  .quizardy-navbar{
+    height: 80px;
   }
 
   .quizardy-parent-innerbody{
@@ -92,10 +102,15 @@
     right: 10%;
     }
   .quizardy-button {
-    margin-top: 79vh;
+    margin-top: 90vh;
     }
   .quizardy-flexcenter{
     width: 100%;
     text-align: center;
     }
+}
+@media (min-width: 1920px) and (max-width: 2560px){
+  .quizardy-navbar{
+    height: 160px;
+  }
 }

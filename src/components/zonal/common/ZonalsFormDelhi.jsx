@@ -2,8 +2,8 @@ import React from 'react';
 
 import FetchApi from '../../../utils/FetchAPI';
 import validateInput from '../../../utils/validation/loginValidation';
-import DelhiEvents from "./ZonalsForm/delhievents"
-import PersonalDetails from "./ZonalsForm/personaldetails"
+import DelhiEvents from "./ZonalsForm/DelhiEvents"
+import PersonalDetails from "./ZonalsForm/PersonalDetails"
 
 import '../src/css/ZonalsForm.css';
 import astro from "../../beta/home/src/img/astro.png"
@@ -51,14 +51,14 @@ class ZonalsForm extends React.Component {
             if (name && contact && college && branch && check.isValid && events && events.length > 0) {
                 const data = { name, email, contact, college, branch, events }
                 this.setState({ submitDisabled: true })
-                FetchApi('POST', '/api/zonals/lucknow', data)
+                FetchApi('POST', '/api/zonals/delhi', data)
                     .then(res => {
                         if (res && res.data) {
                             if (res.data.success) {
                                 // this.props.history.push("/zonals/admin")
                                 this.setState({ errors: "", name: "", email: "", contact: "", college: "", branch: "", events: [], variable: true })
                                 this.personalDetails.setState({ name: "", email: "", contact: "", college: "", branch: "" })
-                                this.delhiEvents.setState({ selectedOptionDrama: "", selectedOptionTgt: "", check: false, tgt: false })
+                                this.delhiEvents.setState({ selectedOptionTgt: "", nukkad: false, tgt: false })
                             } else {
                                 this.setState({ errors: res.data.msg })
                             }
@@ -66,6 +66,7 @@ class ZonalsForm extends React.Component {
                         }
                     })
                     .catch(() => {
+                        this.setState({ errors: 'Something went wrong' })
                         this.setState({ submitDisabled: false })
                     });
             } else if (check.errors && check.errors.email) {

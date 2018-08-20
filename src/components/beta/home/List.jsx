@@ -21,7 +21,7 @@ class List extends Component {
         return (
             <ul className="beta-home-list">
                 <li>
-                    <Link to="../ca" className={(this.state.activeStateLink
+                    <Link to="../campusambassador" className={(this.state.activeStateLink
                         === "list-ca-link") ? "list-ca-link" : null } 
                         onClick={()=>{
                             this.setActiveLink("list-ca-link")
@@ -54,6 +54,23 @@ class List extends Component {
                 OUR SPONSORS
             </Link>
         </li>
+        <li>
+            <Link to="../../zonals/delhi" className={(this.state.activeStateLink === "zonals-delhi") ? "list-zonals-link" : null }
+                onClick={()=>{
+                this.setActiveLink("list-zonals-delhi")
+                }}>
+                DELHI-ZONALS
+            </Link>
+         </li>
+         <li>
+            <Link to="../../zonals/lucknow" className={(this.state.activeStateLink === "zonals-lucknow") ? "list-zonals-lucknow" : null }
+                onClick={()=>{
+                this.setActiveLink("list-zonals-lucknow")
+                }}>
+                LUCKNOW-ZONALS
+            </Link>
+        </li>
+
         {/* <li>
           <a href="">FAQs</a>
         </li>*/}

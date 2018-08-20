@@ -1,20 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./css/style.css";
+// import "../../ca/sidebar/css/style.css";
 import boy from "./img/boy.png";
 import girl from "./img/girl.png";
 import { addCATopic } from '../../../utils/firebasePush';
-// import like from "./img/like.png"
+import ReferralPoint from "./Svg/Referralpoint";
+import Bonus from "./Svg/Bonus";
 // import share from "./img/share.png"
-// import score from "./img/star.png"
+import score from "./img/star.png"
 import Post from "./Svg/Post"
 // import Referral from "./Svg/Referral"
 import Leader from "./Svg/Leader"
-import Events from "./Svg/Events"
+// import Events from "./Svg/Events"
 import Guide from "./Svg/Guide"
 import Contact from "./Svg/Contact"
 import Logout from "./Svg/Logout"
-// import Bulb from "./Svg/Bulb"
+import Bulb from "./Svg/Bulb"
 import Hand from "./Svg/Hand"
 
 // import logoUser from '../common/images/user.svg';
@@ -87,6 +89,56 @@ export default class Sidebar extends React.Component {
           </div>
           <div className="campusAmb-sidebar-line">
           </div>
+          <div className="campusAmb-sidebar-like-share-score">
+            <div className="campusAmb-sidebar-like-share-score-child">
+              <div className="campusAmb-sidebar-likes">
+                <div className="campusAmb-sidebar-likes-child">
+                  <div className="campusAmb-sidebar-likes-grandchild">
+                    <div>
+                      {this.props.userData ? this.props.userData.likes : "0"}
+                    </div>
+                    <div className="campusAmb-sidebar-svg-logo">
+                      <ReferralPoint />
+                    </div>
+                  </div>
+                </div>
+                <div className="campusAmb-sidebar-likes-number">
+                  REFFERALS
+                </div>
+              </div>
+              <div className="campusAmb-sidebar-shares">
+                <div className="campusAmb-sidebar-likes-child">
+                  <div className="campusAmb-sidebar-likes-shares-score-data">
+                    {this.props.userData ? this.props.userData.shares : "0"}
+                  </div>
+                  <div className="campusAmb-sidebar-svg-logo">
+                    <Bonus />
+                  </div>
+                </div>
+                <div className="campusAmb-sidebar-likes-number">
+                  BONUS
+                </div>
+              </div>
+              {this.props.userData && this.props.userData.score ?
+                <div className="campusAmb-sidebar-score">
+                  <div className="campusAmb-sidebar-likes-child">
+                    <div className="campusAmb-sidebar-likes-shares-score-data">
+                      {this.props.userData ? this.props.userData.score : "0"}
+                    </div>
+                    <img src={score} alt="score" />
+                  </div>
+                  <div className="campusAmb-sidebar-likes-number">
+                    SCORES
+                </div>
+                </div> : null}
+
+            </div>
+            <div className="campusAmb-sidebar-updatenews">
+              *Scores will be updated at 12 am
+            </div>
+          </div>
+          <div className="campusAmb-sidebar-line">
+          </div>
           <div className="campusAmb-sidebar-contents">
             <Link
               to="/CampusAmbassador/"
@@ -148,7 +200,7 @@ export default class Sidebar extends React.Component {
                 </div>
               </div>
             </Link>
-            {/*  <Link
+            <Link
               to="/CampusAmbassador/ideas"
               className={
                 this.state.activeState === "ideas"
@@ -166,8 +218,8 @@ export default class Sidebar extends React.Component {
                 <div className="campusAmb-sidebar-navitem-name">
                   IDEAS
                 </div>
-              </div> 
-            </Link>*/}
+              </div>
+            </Link>
             {/* <Link
               to="/CampusAmbassador/events"
               className={

@@ -3,7 +3,6 @@ var mongoose = require('mongoose');
 var UserSchema = new mongoose.Schema({
     email: {
         type: String,
-        unique: true,
         required: true
     },
     user_id: {
@@ -23,8 +22,9 @@ var UserSchema = new mongoose.Schema({
     },
     updated_date: {
         type: Date,
-        default: Date.now
+        default: Date.now,
+        required: true
     }
 });
 
-module.exports = mongoose.model('CA_Temp_User_Token', UserSchema);
+module.exports = mongoose.model('CA_Temp_Users_Token', UserSchema);

@@ -148,6 +148,7 @@
         font-size: 16px;
         font-weight: 600;
         letter-spacing: 1px;
+        text-transform: capitalize;
     }
     .campusAmb-sidebar-user > .campusAmb-sidebar-user-details > .cname{
         padding: 0 5px 0 5px;
@@ -211,7 +212,7 @@
     .campusAmb-sidebar-likes-number{
         font-size: 12px;
         font-weight: 600;
-        letter-spacing: 2px;
+        letter-spacing: 0.5px;
         padding: 5px 0;
     }
     .campusAmb-sidebar-likes-shares-score-data{
@@ -294,7 +295,7 @@
         fill: #4C8AE5;
     }
     .campusAmb-sidebar-svg-logo svg{
-        padding: 0 5px 0 5px;
+        padding: 0 3px 0 3px;
         height: auto;
         width: 16px;
     }
@@ -371,6 +372,7 @@
         font-size: 12px;
         font-weight: 600;
         letter-spacing: 1px;
+        text-transform: capitalize;
     }
     .campusAmb-sidebar-user > .campusAmb-sidebar-user-details > .cname{
         padding: 0 5px 0 5px;
@@ -430,10 +432,15 @@
         font-weight: 600;
         letter-spacing: 2px;
     }
+    .campusAmb-sidebar-likes-grandchild{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
     .campusAmb-sidebar-likes-number{
         font-size: 12px;
         font-weight: 600;
-        letter-spacing: 2px;
+        letter-spacing: 0.5px;
         padding: 5px 0;
     }
     .campusAmb-sidebar-likes-shares-score-data{
@@ -488,7 +495,7 @@
     .sidenav .sideNavItem {
         font-size: 0;
         margin-top: 5px;
-        padding:0px 10px 10px 5px;
+        padding:0px 5px 10px 5px;
     }
     .campusAmb-sidebar-user > .text{
         font-size: 0;
@@ -509,7 +516,7 @@
         display: none;
     }
     .campusAmb-sidebar-user > .image {
-        height: 40px;
+        height: 35px;
         width: auto;
         border-radius: 50%;
         padding: 0 0px 0 0px;

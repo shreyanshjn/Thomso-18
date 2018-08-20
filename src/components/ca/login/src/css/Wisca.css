@@ -160,12 +160,15 @@
   }
   .login-wisca-Heading{
 
-    font-size: 40px;
-    font-weight:bold;
-    padding-bottom: 10%;
+    font-size: 50px;
+    font-weight:500;
+    padding-bottom: 5%;
     text-align: center;
     font-family: Montserrat
 
+  }
+  #login-wisca-Heading{
+    padding-bottom: 13%;
   }
   .login-contact-contactMain{
     display: flex;
@@ -178,30 +181,39 @@
     flex-direction: column;
     justify-content:flex-start;
     font-size: 22px;
-    font-weight: bold;
+    font-weight: normal;
     color: black;
     line-height: 1.6;
     font-family: Montserrat;
     width: 50%;
+  }
+  .login-contact-contactus > h2{
+    font-weight: 500;
   }
   .login-contact-address{
     display: flex;
     flex-direction: column;
     justify-content:flex-start;
     font-size: 22px;
-    font-weight: bold;
+    font-weight: normal;
     color: black;
     font-family: Montserrat;
     margin-left: 10%;
     line-height: 1.6;
   }
+  .login-contact-address > h2{
+    font-weight: 500;
+  }
   .login-wisca-MAINDIV{
       padding-left: 15%;
       padding-right: 10%;
-      margin-top: 15%;
+      margin-top: 10%;
       position: relative;
-
-      margin-left:1.7%;
-
+  }
+  .login-contact-email >h2{
+    font-weight: 500;
+  }
+  .login-contact-email{
+    font-weight:normal;
   }
 }

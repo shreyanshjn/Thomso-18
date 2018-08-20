@@ -1,6 +1,8 @@
 var request = require('request');
 var Temp_User = require('../../../models/ca/CA_Temp_User');
 
+var Ideas = require('../../../models/ca/CA_Temp_Idea');
+
 // Get User Data
 exports.getData = function(req, res) {
     Temp_User.findOne({
@@ -37,5 +39,96 @@ exports.getPosts = function (req, res) {
     } else {
         res.status(400).send({ success: false, msg: 'Token Not Found' });
     }
-    
+};
+
+/* Create Idea */
+exports.postIdea = function (req, res) {
+    if (req.body && req.body.title && req.body.body && req.locals._id) {
+        var newData = {
+            user: req.locals._id,
+            email: req.locals.email,
+            title: req.body.title,
+            body: req.body.body
+        }
+        var newIdea = new Ideas(newData);
+        newIdea.save(function (err, idea) {
+            if (err) {
+                return res.status(400).send({ success: false, msg: 'Unable to Add Idea' });
+            } else if (idea._id) {
+                Temp_User.update({ _id: req.locals._id }, { $addToSet: {ideas: idea._id} })
+                .exec(function (err) {
+                    if (err) {
+                        return res.status(400).send({ success: false, msg: 'Cannot Append Idea', error: err });
+                    }
+                    return res.json({ success: true, msg: 'Idea Successfully Posted', body: idea });
+                })
+            } else {
+                return res.status(400).send({ success: false, msg: 'Idea ID Not Found', body: idea });
+            }
+        });
+    } else {
+        return res.status(400).send({ success: false, msg: 'Invalid Params' });
+    }
+};
+
+/* Read All Ideas */
+exports.getIdea = function (req, res) {
+    Ideas.find({ email: req.locals.email, deleted: { $ne: true } })
+        .select('title body comment updated_date')
+        .sort({ 'updated_date': -1 })
+        .exec(function (err, allIdeas) {
+            if (err) {
+                return res.status(400).send({ success: false, msg: 'Cannot GET Ideas', error: err });
+            }
+            res.json({ success: true, msg: 'Ideas', body: allIdeas });
+        })
+};
+
+/* Update Idea */
+exports.putIdea = function (req, res) {
+    if (req.params.id) {
+        if (req.body.title) {
+            req.body.title = req.body.title.trim();
+        }
+        if (req.body.body) {
+            req.body.body = req.body.body.trim();
+        }
+        var updateData = {
+            title: req.body.title,
+            body: req.body.body,
+            updated_date: new Date()
+        }
+        if (req.body.title && req.body.body) {
+            Ideas.findOneAndUpdate({ email: req.locals.email, _id: req.params.id }, updateData, { new: true })
+                .select('title body comment')
+                .exec(function (err, idea) {
+                    if (err) {
+                        return res.status(400).send({ success: false, msg: 'Cannot Update Idea', error: err });
+                    }
+                    return res.json({ success: true, msg: 'Successfully Updated', body: idea });
+                })
+        } else {
+            return res.status(400).send({ success: false, msg: 'Invalid Data' });
+        }
+    } else {
+        return res.status(400).send({ success: false, msg: 'No Post ID Specified' });
+    }
+};
+
+/* Remove Idea */
+exports.deleteIdea = function (req, res) {
+    if (req.params.id) {
+        var updateData = {
+            deleted: true
+        };
+        Ideas.update({ email: req.locals.email, _id: req.params.id }, updateData)
+            .exec(function (err) {
+                if (err) {
+                    return res.status(400).send({ success: false, msg: 'Cannot Delete Idea', error: err });
+                }
+                return res.json({ success: true, msg: 'Successfully Deleted' });
+            })
+    } else {
+        return res.status(400).send({ success: false, msg: 'No Post ID Specified' });
+    }
 };
