@@ -57,7 +57,7 @@ export default class VerifyIndex extends React.Component{
                     null}
                     <div>
                         <div>
-                            <label htmlFor="inputOTP"> Enter OTP</label>
+                            <label htmlFor="inputOTP"> Enter OTP 1511</label>
                             <input
                                 id="inputOTP"
                                 type="text"

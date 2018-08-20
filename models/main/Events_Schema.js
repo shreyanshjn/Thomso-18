@@ -1,6 +1,10 @@
 var mongoose = require('mongoose');
 
 var UserSchema = new mongoose.Schema({
+    event_id:{
+        type:String,
+        required:true
+    },
     name:{
         type:String,
         required:true
