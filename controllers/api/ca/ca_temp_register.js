@@ -105,7 +105,7 @@ exports.ca_temp_login = function(req, res) {
             Temp_User.findOne({
                 email: req.body.email
             })
-            .select('name email verified password gender ca_id')
+            .select('name email verified password gender ca_id bonus referrals score')
             .exec(function(err, user) {
                 if (err) res.status(400).send({success: false, msg: 'Authentication failed. Error.'});
                 if (!user) {
@@ -262,7 +262,7 @@ exports.reset = function(req, res) {
                                             }
                                     })
                                     Temp_User.findOneAndUpdate({ email: req.locals.email }, updateData, { new:true })
-                                    .select('name email verfied gender ca_id')
+                                    .select('name email verfied gender ca_id bonus referrals score')
                                     .exec(function(err, user) {
                                         if (err) {
                                             return res.status(400).send({success: false, msg: 'Unable Update Hash'});
@@ -286,7 +286,7 @@ exports.reset = function(req, res) {
                                         }
                                 })
                                 Temp_User.findOneAndUpdate({ email: req.locals.email }, updateData, { new:true })
-                                .select('name email verfied gender ca_id')
+                                .select('name email verfied gender ca_id bonus referrals score')
                                 .exec(function(err, user) {
                                     if (err) {
                                         return res.status(400).send({success: false, msg: 'Unable Update Hash'});

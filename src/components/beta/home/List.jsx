@@ -47,11 +47,11 @@ class List extends Component {
           <a href="">TEAM CONTACT</a>
         </li>*/}
         <li>
-            <Link to="./sponsors" className={(this.state.activeStateLink === "sponsors") ? "list-spons-link" : null }
+            <Link to="./associate" className={(this.state.activeStateLink === "linkAssociate") ? "list-spons-link" : null }
                 onClick={()=>{
-                this.setActiveLink("list-spons-ca")
+                this.setActiveLink("linkAssociate")
                 }}>
-                OUR SPONSORS
+                ASSOCIATE WITH US
             </Link>
         </li>
         <li>

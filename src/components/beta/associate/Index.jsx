@@ -50,7 +50,7 @@ export default class RegisterIndex extends React.Component {
                 .then(r => {
                     if (r && r.data && this.popup) {
                         if (r.data.success === true) {
-                            this.popup.show(['Thank you for associating with us', `Verification email has been sent to ${this.state.email ? this.state.email : 'your email'}.`])
+                            this.popup.show(['Thank you for associating with us', ``])
                             this.setState({
                                 name: '',
                                 contact: '',
@@ -80,15 +80,20 @@ export default class RegisterIndex extends React.Component {
             <div className="register-parent">
                 <Popup {...this.props} onRef={ref => (this.popup = ref)} />
                 <div className="register-child">
-                    <div className="register-heading">
-                        <div className="r-logo">
-                            <Link to="/"><img src={img} alt="r-logo" /></Link>
+                    <div className="register-child-child">
+                        <div className="register-heading">
+                            <div className="r-logo">
+                                <Link to="/"><img src={img} alt="r-logo" /></Link>
+                            </div>
+                            <div className="vertical_line">
+                            </div>
+                            <div className="register-ca common-cursor" style={{ margin: 'auto 0' }}>
+                                <h1 style={{ marginTop: '0' }} >ASSOCIATE</h1>
+                            </div>
                         </div>
-                        <div className="vertical_line">
-                        </div>
-                        <div className="register-ca common-cursor" style={{ margin: 'auto 0' }}>
-                            <h1 style={{ marginTop: '0' }} >ASSOCIATE</h1>
-                        </div>
+                        <Link to="/sponsors" className="register-ca common-cursor register-ca-spons">
+                            <h1 style={{ marginTop: '0' }} >Our Sponsors</h1>
+                        </Link>
                     </div>
                     <div className="register-form">
                         <form onSubmit={this.onSubmit}>
