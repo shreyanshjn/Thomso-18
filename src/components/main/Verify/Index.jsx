@@ -35,12 +35,12 @@ export default class VerifyIndex extends React.Component{
                 .then( res => {
                     this.setState({disabled:false});
                     if(res && res.data && res.data.success){
-                        this.setState({errors:res.data.msg});}
+                        this.props.history.push('/main')}
                     else
                         this.setState({errors:res.data.msg});
                 })
                 .catch(err => {
-                    this.setState({errors:'lssddsds', disabled:false});
+                    this.setState({errors:'Please Register', disabled:false});
                 })
         }
     }

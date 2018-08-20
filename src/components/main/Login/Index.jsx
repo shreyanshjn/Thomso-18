@@ -5,8 +5,8 @@ import validateInput from '../../../utils/validation/loginValidation';
 import AuthService from '../../../handlers/main/AuthService';
 
 export default class LoginIndex extends React.Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             errors: '',
             email: '',
@@ -36,8 +36,8 @@ export default class LoginIndex extends React.Component{
                     if(res && res.data){
                         if(res.data.success){
                             this.Auth.setToken(res.data.token)
-                            // this.props.updateRoutes(true)
-                            // this.props.setUserData(res.data.body)
+                            this.props.updateRoutes(true)
+                            this.props.setUserData(res.data.body)
                             this.props.history.push('/main')
                         }
                         else{

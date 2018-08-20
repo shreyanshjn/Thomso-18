@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 // import FetchApi from "../../../utils/FetchAPI";
 
 export default class HomeIndex extends React.Component{
@@ -6,6 +8,14 @@ export default class HomeIndex extends React.Component{
         return (
             <div>
                hello
+               <br></br>
+                <Link to="/main/register">
+                    register
+                </Link>
+                <br/>
+                <Link to="/main/login">
+                    Login
+                </Link>
             </div>
         );
     }
