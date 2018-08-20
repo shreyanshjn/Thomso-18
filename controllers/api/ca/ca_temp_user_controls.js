@@ -8,7 +8,7 @@ exports.getData = function(req, res) {
     Temp_User.findOne({
         email: req.locals.email
     })
-    .select('name email gender verified ca_id')
+    .select('name email gender verified ca_id bonus referrals score')
     .exec(function(err, user) {
         if (err) {
             return res.status(400).send({
@@ -131,4 +131,41 @@ exports.deleteIdea = function (req, res) {
     } else {
         return res.status(400).send({ success: false, msg: 'No Post ID Specified' });
     }
+};
+
+/* GET Leaderboard */
+exports.getLeaderboard = function (req, res) {
+    Temp_User.find({ blocked: { $ne: true } })
+        .select('name college score')
+        .sort({ 'score': -1 })
+        .limit(10)
+        .exec(function (err, allUsers) {
+            if (err) {
+                return res.status(400).send({ success: false, msg: 'Cannot GET Leaders', error: err });
+            }
+            res.json(allUsers);
+        })
+};
+
+/* GET Rank */
+exports.getRank = function (req, res) {
+    Temp_User.findOne({
+        email: req.locals.email,
+        verified: true
+    })
+        .select('score')
+        .exec(function (err, user) {
+            if (err) return res.status(400).send({ success: false, msg: 'Cannot Find User' });
+            var score = user.score;
+            if (score !== undefined) {
+                Temp_User.count({ "score": { "$gt": score } }, function (err, rank) {
+                    if (err) {
+                        res.status(400).send({ success: false, msg: 'Rank Undefined', error: err });
+                    }
+                    return res.json({ success: true, msg: 'Your CA Rank', rank: rank + 1 });
+                })
+            } else {
+                return res.status(400).send({ success: false, msg: 'Error Reading Score' });
+            }
+        })
 };

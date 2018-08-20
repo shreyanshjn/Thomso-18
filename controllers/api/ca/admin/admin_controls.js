@@ -215,17 +215,35 @@ exports.unverifyTempUser = function(req, res) {
 /* Update Bonus */
 exports.putTempBonus = function(req, res) {
     if (req.body.id && req.body.bonus !== undefined) {
-        var updateData = {
+        var updateBonus = {
             bonus: req.body.bonus
         }
-        TempUsers.findOneAndUpdate({ _id:req.body.id }, updateData, { new:true })
-        .select('bonus')
-        .exec(function(err, bonus) {
-            if(err){
-                return res.status(400).send({success:false, msg:'Cannot Update bonus', error:err});
-            }
-            return res.json({success:true, msg:'Successfully Updated', body: bonus});
-        });
+        TempUsers.findOneAndUpdate({ _id:req.body.id }, updateBonus, { new:true })
+            .select('bonus referrals')
+            .exec(function(err, oldScore) {
+                if(err){
+                    return res.status(400).send({success:false, msg:'Cannot Update bonus', error:err});
+                } else {
+                    var score = 0;
+                    if (typeof(oldScore.bonus) === "number") {
+                        score = score + bonus
+                    }
+                    if (typeof(oldScore.referrals) === "number") {
+                        score = score + 50*( Math.exp(-oldScore.referrals) + 1 )/2;
+                    }
+                    var updateScore = {
+                        score: score
+                    }
+                    TempUsers.findOneAndUpdate({ _id:req.body.id }, updateScore, { new:true })
+                        .select('bonus referrals score')
+                        .exec(function(err, newScore) {
+                            if(err){
+                                return res.status(400).send({success:false, msg:'Cannot Update Score', error:err});
+                            }
+                            return res.json({success:true, msg:'Successfully Updated', body: newScore});
+                        });
+                }
+            });
     } else {
         return res.status(400).send({success:false, msg:'Invalid Params'});
     }
