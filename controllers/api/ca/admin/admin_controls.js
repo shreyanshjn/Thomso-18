@@ -226,10 +226,10 @@ exports.putTempBonus = function(req, res) {
                 } else {
                     var score = 0;
                     if (typeof(oldScore.bonus) === "number") {
-                        score = score + bonus
+                        score = score + oldScore.bonus
                     }
                     if (typeof(oldScore.referrals) === "number") {
-                        score = score + 50*( Math.exp(-oldScore.referrals) + 1 )/2;
+                        score = score + 50*oldScore.referrals;
                     }
                     var updateScore = {
                         score: score
