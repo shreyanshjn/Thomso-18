@@ -69,8 +69,19 @@
     .sidenav > .campusAmb-sidebar-contents > .activeSideItem > .campusAmb-sidebar-events > .campusAmb-sidebar-svg-logo svg .eventspath{
         fill: #4C8AE5;
     }
+    .campusAmb-sidebar-likes-child{
+        display: flex;
+        flex-direction: row;
+    }
+    .campusAmb-sidebar-likes-grandchild{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
     .campusAmb-sidebar-svg-logo svg{
-        padding: 0 5px 0 5px;
+        padding: 0 3px 0 3px;
+        height: auto;
+        width: 16px;
     }
     .sidenav .sideNavItem:hover .campusAmb-sidebar-svg-logo svg .bulbpath{
         fill: yellow;
@@ -167,12 +178,6 @@
     }
     .campusAmb-sidebar-svg-logo{
         width: 15%;
-    }
-    .campusAmb-sidebar-svg-logo img{
-        height: 18px;
-        width: auto;
-        transition: all 0.5s;
-        padding: 0 5px;
     }
     .campusAmb-sidebar-navitem-name{
         width: 85%;
@@ -478,7 +483,7 @@
         color: #58595B;
     }
     .campusAmb-sidebar-likes > .campusAmb-sidebar-likes-child div{
-        padding: 0 5px;
+        padding: 0 0px;
     }
 }
 @media screen and (max-width:1000px) and (min-width:768px){
@@ -511,6 +516,9 @@
         font-size: 0;
         padding-left: 10px;
         margin-top: 10px;
+    }
+    .campusAmb-sidebar-likes-grandchild-number{
+        margin-top: 13px;
     }
     .campusAmb-sidebar-line{
         display: none;

@@ -13,9 +13,9 @@ export default class DataRow extends Component {
             <React.Fragment>
                 <tr>
                     <td>{this.props.index + 1}</td>
-                    <td>{this.props.data ? this.props.data.name : '-'}</td>
+                    <td className="campusAmb-leader-desktop-name">{this.props.data ? this.props.data.name : '-'}</td>
                     <td className="campusAmb-leader-desktop">{this.props.data.college}</td>
-                    <td className="campusAmb-leader-desktop">{this.props.data.scores}</td>
+                    <td className="campusAmb-leader-desktop">{this.props.data.score}</td>
                 </tr>
             </React.Fragment>
         );

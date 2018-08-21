@@ -39,6 +39,9 @@
 .campusAmb-leader-rank th:nth-child(4){
     width: 17.5%;
 }
+.campusAmb-leader-desktop-name{
+    text-transform: capitalize;
+}
 .campusAmb-leader-heading > th,td {
     padding: 10px;
     text-align: left;
@@ -53,6 +56,9 @@
     padding: 20px;
     text-align: left;
     word-wrap:break-word;
+}
+.campusAmb-leader-rank{
+    padding-top:20px; 
 }
 .campusAmb-leader-rank >th
 {

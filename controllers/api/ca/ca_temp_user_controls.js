@@ -4,25 +4,25 @@ var Temp_User = require('../../../models/ca/CA_Temp_User');
 var Ideas = require('../../../models/ca/CA_Temp_Idea');
 
 // Get User Data
-exports.getData = function(req, res) {
+exports.getData = function (req, res) {
     Temp_User.findOne({
         email: req.locals.email
     })
-    .select('name email gender verified ca_id bonus referrals score')
-    .exec(function(err, user) {
-        if (err) {
-            return res.status(400).send({
-                success:false,
-                msg: 'Unable to connect to database. Please try again.',
-                error: err
-            })
-        }
-        if (!user) {
-            return res.status(400).send({success: false, msg: 'User not found'});
-        } else {
-            res.json({success: true, msg:'User Data Found', body:user});
-        }
-    });
+        .select('name email gender verified ca_id bonus referrals score college')
+        .exec(function (err, user) {
+            if (err) {
+                return res.status(400).send({
+                    success: false,
+                    msg: 'Unable to connect to database. Please try again.',
+                    error: err
+                })
+            }
+            if (!user) {
+                return res.status(400).send({ success: false, msg: 'User not found' });
+            } else {
+                res.json({ success: true, msg: 'User Data Found', body: user });
+            }
+        });
 };
 
 /* GET all Posts */
@@ -55,13 +55,13 @@ exports.postIdea = function (req, res) {
             if (err) {
                 return res.status(400).send({ success: false, msg: 'Unable to Add Idea' });
             } else if (idea._id) {
-                Temp_User.update({ _id: req.locals._id }, { $addToSet: {ideas: idea._id} })
-                .exec(function (err) {
-                    if (err) {
-                        return res.status(400).send({ success: false, msg: 'Cannot Append Idea', error: err });
-                    }
-                    return res.json({ success: true, msg: 'Idea Successfully Posted', body: idea });
-                })
+                Temp_User.update({ _id: req.locals._id }, { $addToSet: { ideas: idea._id } })
+                    .exec(function (err) {
+                        if (err) {
+                            return res.status(400).send({ success: false, msg: 'Cannot Append Idea', error: err });
+                        }
+                        return res.json({ success: true, msg: 'Idea Successfully Posted', body: idea });
+                    })
             } else {
                 return res.status(400).send({ success: false, msg: 'Idea ID Not Found', body: idea });
             }

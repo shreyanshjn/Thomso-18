@@ -7,6 +7,7 @@ import girl from "./img/girl.png";
 import { addCATopic } from '../../../utils/firebasePush';
 import ReferralPoint from "./Svg/Referralpoint";
 import Bonus from "./Svg/Bonus";
+import Score from "./Svg/Score";
 // import share from "./img/share.png"
 import score from "./img/star.png"
 import Post from "./Svg/Post"
@@ -94,8 +95,8 @@ export default class Sidebar extends React.Component {
               <div className="campusAmb-sidebar-likes">
                 <div className="campusAmb-sidebar-likes-child">
                   <div className="campusAmb-sidebar-likes-grandchild">
-                    <div>
-                      {this.props.userData ? this.props.userData.likes : "0"}
+                    <div className="campusAmb-sidebar-likes-grandchild-number">
+                      {this.props.userData ? this.props.userData.referrals : "0"}
                     </div>
                     <div className="campusAmb-sidebar-svg-logo">
                       <ReferralPoint />
@@ -108,8 +109,8 @@ export default class Sidebar extends React.Component {
               </div>
               <div className="campusAmb-sidebar-shares">
                 <div className="campusAmb-sidebar-likes-child">
-                  <div className="campusAmb-sidebar-likes-shares-score-data">
-                    {this.props.userData ? this.props.userData.shares : "0"}
+                  <div className="campusAmb-sidebar-likes-grandchild-number">
+                    {this.props.userData ? this.props.userData.bonus : "0"}
                   </div>
                   <div className="campusAmb-sidebar-svg-logo">
                     <Bonus />
@@ -122,10 +123,12 @@ export default class Sidebar extends React.Component {
               {this.props.userData && this.props.userData.score ?
                 <div className="campusAmb-sidebar-score">
                   <div className="campusAmb-sidebar-likes-child">
-                    <div className="campusAmb-sidebar-likes-shares-score-data">
+                    <div className="campusAmb-sidebar-likes-grandchild-number">
                       {this.props.userData ? this.props.userData.score : "0"}
                     </div>
-                    <img src={score} alt="score" />
+                    <div className="campusAmb-sidebar-svg-logo">
+                      <Score />
+                    </div>
                   </div>
                   <div className="campusAmb-sidebar-likes-number">
                     SCORES
@@ -133,9 +136,9 @@ export default class Sidebar extends React.Component {
                 </div> : null}
 
             </div>
-            <div className="campusAmb-sidebar-updatenews">
+            {/* <div className="campusAmb-sidebar-updatenews">
               *Scores will be updated at 12 am
-            </div>
+            </div> */}
           </div>
           <div className="campusAmb-sidebar-line">
           </div>

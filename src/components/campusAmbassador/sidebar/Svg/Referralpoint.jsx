@@ -4,7 +4,7 @@ class ReferralPoint extends Component {
     render() {
         return (
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="114.104px" height="130.791px" viewBox="0 0 153.397 130.791" enable-background="new 0 0 153.397 130.791"
+	 width="114.104px" height="130.791px" viewBox="0 0 153.397 130.791" enableBackground="new 0 0 153.397 130.791"
 	 space="preserve">
 <g id="bg">
 </g> 

@@ -20,10 +20,10 @@ const CAIndex = Loadable({
   loader: () => import('./components/ca/Index'),
   loading: () => <Loader />,
 });
-const ParticipantIndex = Loadable({
-  loader: () => import('./components/participants/Index'),
-  loading: () => <Loader />,
-});
+// const ParticipantIndex = Loadable({
+//   loader: () => import('./components/participants/Index'),
+//   loading: () => <Loader />,
+// });
 const FAQIndex = Loadable({
   loader: () => import("./components/beta/faq/Index"),
   loading: () => <Loader />
@@ -97,7 +97,7 @@ class App extends Component {
               <Route exact path="/faq" component={FAQIndex} />
               <Route path="/ca/" component={CAIndex} />
               <Route path="/campusAmbassador/" component={CampusIndex} />
-              <Route path="/participants/" component={ParticipantIndex} />
+              {/* <Route path="/participants/" component={ParticipantIndex} /> */}
               <Route path="/zonals" component={ZonalsIndex} />
 
               <Route path="/verifyCerti/" component={VerifyCerti} />
