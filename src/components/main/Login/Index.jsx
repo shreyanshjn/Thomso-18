@@ -34,6 +34,7 @@ export default class LoginIndex extends React.Component{
                 FetchApi('POST','/api/main/auth/login',data)
                 .then( res => {
                     if(res && res.data){
+                        // console.log(res.data)
                         if(res.data.success){
                             this.Auth.setToken(res.data.token)
                             this.props.updateRoutes(true)

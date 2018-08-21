@@ -1,23 +1,23 @@
 var request = require('request');
 var Main_User = require('../../../models/main/Main_User');
-var Event_Schema = require('../../../models/main/Events_Schema');
+var EventSchema = require('../../../models/main/Events_Schema');
 
 
 exports.addEvent = function(req, res) {
    if(req && req.body){
        if(req.body.event_id)req.body.event_id = req.body.event_id.trim();
        if(req.body.name)req.body.name = req.body.name.trim();
-
+        console.log(req.body)
        var data = {
-           event_id : req.body.event_id,
-           name : req.data.name
+           event_id :req.body.event_id,
+           name : req.body.name
        }
        if(data.event_id && data.name){
-           var newEvent = new Event_Schema(data);
+           var newEvent = new EventSchema(data);
            newEvent.save(function(err){
                if(err)
                     res.json({success:false, msg:'unable to add event'});
-                res.jso({success:true, msg:'event added'});
+                res.json({success:true, msg:'event added'});
            })
        }
    }
@@ -31,7 +31,7 @@ exports.removeEvent = function(req, res) {
             event_id : req.body.event_id,
         }
         if(data.event_id){
-            Event_Schema.remove({event_id:data.event_id})
+            EventSchema.remove({event_id:data.event_id})
             .exec(function(err){
                 if(err)
                     res.json({success:false, msg:'unable to delete event'});
@@ -43,30 +43,41 @@ exports.removeEvent = function(req, res) {
     }
 };
 
+exports.fetchEvent = function(req, res) {
+        EventSchema.find()
+        .select('event_id name')
+        .exec(function(err, result){
+            if(err)
+                res.json({success:false, msg:'unable to fetch event'});
+            res.json({success:true, msg:'event fetched', event : result});
+        });
+};
+
+
 exports.addParticipant = function(req, res){
     if(req && req.body){
-        if(req.body.event_id)req.body.event_id = req.body.event_id.trim();
-        if(req.body.thomso_id)req.body.thomso_id = req.body.thomso_id.trim();
- 
-        var data = {
+        var updateData = {
             event_id : req.body.event_id,
-            thomso_id : req.data.thomso_id
-        }
-        if(data.event_id && data.thomso_id){
-            Event_Schema.findOneAndUpdate(
-                {event_id:data.event_id},
-                {$addToSet:{users:data.thomso_id}}
+            email: req.locals.email
+        };
+        if(updateData.event_id){
+            EventSchema.findOneAndUpdate(
+                {event_id:req.body.event_id},
+                {$addToSet:{users:req.locals._id}}
             )
-            .exec(function(err){
-                if(err)
-                    res.json({success:false, msg:'unable to add participant'});
-                Main_User.findOneAndUpdate(
-                    {thomso_id:data.thomso_id},
-                    {$addToSet:{event:data.event_id}}
+            .exec(function(err, result){
+                if(err){
+                    return res.status(400).send({success:false, msg:'unable to add participant'}); 
+                }
+                console.log("123")
+                Main_User.update(
+                    {email:updateData.email},
+                    {$addToSet:{event:result._id}}
                 ) 
                 .exec(function(err){
-                    if(err)
-                        return res.json({success:false, msg:'unable to add event'});
+                    if(err){
+                        return res.status(400).send({success:false, msg:'unable to add event'});
+                    }
                     res.json({success:true, msg:'event added in participant'});
                 });            
             });
@@ -78,24 +89,24 @@ exports.addParticipant = function(req, res){
 
 exports.removeParticipant = function(req, res){
     if(req && req.body){
-        if(req.body.event_id)req.body.event_id = req.body.event_id.trim();
-        if(req.body.thomso_id)req.body.thomso_id = req.body.thomso_id.trim();
- 
+        // console.log(req.body)
+        // console.log(req.locals)
         var data = {
             event_id : req.body.event_id,
-            thomso_id : req.data.thomso_id
+            email : req.locals.email,
+            _id:req.locals._id
         }
-        if(data.event_id && data.thomso_id){
-            Event_Schema.findOneAndUpdate(
-                {event_id:data.event_id},
-                {$pull:{users:data.thomso_id}}
-            )
-            .exec(function(err){
-                if(err)
-                    res.json({success:false, msg:'unable to remove participant'});
+        if(data.event_id && data.email && data._id){
+            EventSchema.findOneAndUpdate({ event_id: data.event_id }, {$pull:{users:data._id}})
+            .select('name')
+            .exec(function(err, user){
+                if(err){
+                    // console.log(err)
+                    return res.state(400).send({success:false, msg:'unable to remove participant'});}
+                    // console.log(user)
                 Main_User.findOneAndUpdate(
-                    {thomso_id:data.thomso_id},
-                    {$pull:{event:data.event_id}}
+                    {email:data.email},
+                    {$pull:{event:user._id}}
                 ) 
                 .exec(function(err){
                     if(err)

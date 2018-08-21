@@ -3,11 +3,14 @@ var mongoose = require('mongoose');
 var UserSchema = new mongoose.Schema({
     event_id:{
         type:String,
-        required:true
+        unique:true,
+        required:true,
+
     },
     name:{
         type:String,
-        required:true
+        required:true,
+        unique:true
     },
     users : [{
         type:mongoose.Schema.Types.ObjectId,
@@ -18,4 +21,4 @@ var UserSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('Event_Schema',UserSchema);
+module.exports = mongoose.model('Events_Schema',UserSchema);

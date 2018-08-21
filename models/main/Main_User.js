@@ -36,7 +36,7 @@ var UserSchema = new mongoose.Schema({
     },
     event:[{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Event_Schema'
+        ref: 'Events_Schema'
     }],
     verified: {
         type: Boolean,

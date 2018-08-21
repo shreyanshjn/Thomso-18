@@ -21,8 +21,9 @@ router.post('/auth/login' , participantRegister.participant_login);
 router.get('/user', MainUserTokenMiddleware.verifyUser , participantControl.userInfo);
 
 // /main/event  --->  move to main admin
-router.post('/addEvent' ,MainUserTokenMiddleware.verify, eventControl.addEvent);
-router.post('/removeEvent' , MainUserTokenMiddleware.verify,eventControl.removeEvent);
+router.post('/addEvent' , eventControl.addEvent);
+router.delete('/removeEvent' , MainUserTokenMiddleware.verify,eventControl.removeEvent);
+router.get('/fetchEvent' , eventControl.fetchEvent);
 
 
 // /main/event

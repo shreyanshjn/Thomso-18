@@ -5,8 +5,8 @@ import AuthService from '../../../handlers/main/AuthService';
 
 
 export default class VerifyIndex extends React.Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             errors:'',
             otp:'',

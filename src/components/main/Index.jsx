@@ -42,6 +42,11 @@ const LogoutIndex = Loadable({
     loading: Loading
 });
 
+const EventIndex = Loadable({
+    loader: ()=>import("./Event/Index"),
+    loading: Loading
+});
+
 export default class MainIndex extends React.Component{
     constructor(){
         super();
@@ -92,10 +97,11 @@ export default class MainIndex extends React.Component{
                 {this.state.isAuthenticated ?
                     <React.Fragment>
                         {!this.state.verified ?
-                        <Route exact path="/main/verify" component={VerifyIndex} />
+                        <Route exact path="/main/verify" render={props => (<VerifyIndex {...props} userData={this.state.userData} />)} />
                         :
                         <React.Fragment>
-                            <Route path="/main" render={props => (<Sidebar {...props} userData={this.state.userData} />)} />
+                            <Route exact path ="/main" render={props => (<Sidebar {...props} userData={this.state.userData} />)} />
+                            <Route exact path="/main/event" render={props => (<EventIndex {...props} userData={this.state.userData} />)} />
                         </React.Fragment>
                         }
                         <Route exact path="/main/logout" render={props => (<LogoutIndex {...props} updateRoutes={this.handleUpdate} />)} />
@@ -104,6 +110,7 @@ export default class MainIndex extends React.Component{
                     :
                     <React.Fragment>
                         <Route exact path="/main" component={HomeIndex} />
+                        <Route exact path="/main/event" component={EventIndex} />
                         <Route exact path="/main/register" component={RegisterIndex} />
                         <Route exact path="/main/login" render={props => (<LoginIndex {...props} updateRoutes={this.handleUpdate} setUserData={this.setUserData} />)} />
                      </React.Fragment>

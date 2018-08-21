@@ -19,7 +19,7 @@ exports.verifyUser = (req, res, next) => {
                 res.status(403).json({ success: false, message: 'Token Expired' });
             } else {
                 req.locals = {
-                    _id: user.user_id,
+                    _id: user._id,
                     email: user.email
                 };
                 next();
@@ -46,8 +46,8 @@ exports.verify = (req, res, next) => {
                 res.status(403).json({ success: false, message: 'Token Expired' });
             } else if (user.verified) {
                 req.locals = {
-                    _id: user.user_id,
-                    email: user.email
+                    _id: user._id,
+                    email: user.email,
                 };
                 next();
             } else {
