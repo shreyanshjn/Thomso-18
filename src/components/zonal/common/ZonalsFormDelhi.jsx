@@ -55,10 +55,11 @@ class ZonalsForm extends React.Component {
                     .then(res => {
                         if (res && res.data) {
                             if (res.data.success) {
-                                // this.props.history.push("/zonals/admin")
+                                this.props.showModal();
                                 this.setState({ errors: "", name: "", email: "", contact: "", college: "", branch: "", events: [], variable: true })
                                 this.personalDetails.setState({ name: "", email: "", contact: "", college: "", branch: "" })
                                 this.delhiEvents.setState({ selectedOptionTgt: "", nukkad: false, tgt: false })
+
                             } else {
                                 this.setState({ errors: res.data.msg })
                             }

@@ -131,7 +131,12 @@ exports.ca_temp_login = function (req, res) {
                                             email: user.email,
                                             verfied: user.verfied,
                                             name: user.name,
-                                            gender: user.gender
+                                            gender: user.gender,
+                                            ca_id: user.ca_id,
+                                            bonus: user.bonus,
+                                            referrals: user.referrals,
+                                            score: user.score,
+                                            college: user.college
                                         }
                                         if (tokens.length > 2 && tokens[0]) {
                                             CA_Temp_User_Token.update({ _id: tokens[0]._id }, newToken)

@@ -9,9 +9,9 @@ import ReferralPoint from "./Svg/Referralpoint";
 import Bonus from "./Svg/Bonus";
 import Score from "./Svg/Score";
 // import share from "./img/share.png"
-import score from "./img/star.png"
+// import score from "./img/star.png"
 import Post from "./Svg/Post"
-// import Referral from "./Svg/Referral"
+import Referral from "./Svg/Referral"
 import Leader from "./Svg/Leader"
 // import Events from "./Svg/Events"
 import Guide from "./Svg/Guide"
@@ -263,6 +263,24 @@ export default class Sidebar extends React.Component {
                 </div>
               </div>
             </Link>
+            {(this.props.userData && this.props.userData.ca_id) ?
+              <div
+                className="sideNavItem re"
+              >
+                <div className="referral flex_row" title="Click to copy">
+                  <div className="campusAmb-sidebar-svg-logo">
+                    <Referral />
+                  </div>
+                  <div className="campusAmb-sidebar-navitem-name" onClick={() => {
+                    if (navigator && navigator.clipboard) {
+                      navigator.clipboard.writeText(this.props.userData.ca_id)
+                    }
+                  }}>
+                    REFERRAL CODE : <span id="ca-referral-code">{this.props.userData.ca_id}</span>
+                  </div>
+                </div>
+              </div>
+              : null}
             <Link
               to="/CampusAmbassador/logout"
               className={
@@ -283,18 +301,6 @@ export default class Sidebar extends React.Component {
                 </div>
               </div>
             </Link>
-            {/*<div
-              className="sideNavItem re"
-            >
-              <div onClick={() => { window.location.href = this.props.userData.link }} className="referral flex_row" title="Click to copy">
-                <div className="campusAmb-sidebar-svg-logo">
-                  <Referral />
-                </div>
-                <div className="campusAmb-sidebar-navitem-name">
-                  VISIT FACEBOOK PROFILE
-                </div>
-              </div>
-            </div>*/}
           </div>
           <div className="campusAmb-sidebar-hand flex_row">
             <div className="campusAmb-sidebar-hand-child">
