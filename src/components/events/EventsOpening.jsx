@@ -58,7 +58,7 @@ class EventsOpening extends Component {
                     <div className="events-opening-main-div events-in-desktop">
                         <div className="events-opening-column1">
                             {e1.map(e => 
-                                <div className={(this.state.showModal==true) ? "events-opening-decrease-opacity" :null} key={e.id} onClick={() => this.showEventModal(e.id)}>
+                                <div className={(this.state.showModal==true) ? "events-opening-decrease-opacity" :null} key={e.id} onClick={() => this.showEventModal(e.id)} style={{overflow:"hidden"}}>
                                     <figure className="nik-custom-effect-glass black_white_new events-figure">
                                         <img   src={`/img/main/events/${e.image}`} alt={e.name} className="events-images-opening-main"/>
                                         <figcaption>
@@ -71,7 +71,7 @@ class EventsOpening extends Component {
                         </div>
                         <div className="events-opening-column2">
                             {e2.map(e => 
-                                <div  className={(this.state.showModal==true) ? "events-opening-decrease-opacity" :null} key={e.id} onClick={() => this.showEventModal(e.id)}>
+                                <div  className={(this.state.showModal==true) ? "events-opening-decrease-opacity" :null} key={e.id} onClick={() => this.showEventModal(e.id)} style={{overflow:"hidden"}}>
                                     <figure className="nik-custom-effect-glass black_white_new events-figure">
                                         <img src={`/img/main/events/${e.image}`} alt={e.name} className="events-images-opening-main"/>
                                         <figcaption>
@@ -84,7 +84,7 @@ class EventsOpening extends Component {
                         </div>
                         <div className="events-opening-column3">
                             {e3.map(e => 
-                                <div  className={(this.state.showModal==true) ? "events-opening-decrease-opacity" :null} key={e.id} onClick={() => this.showEventModal(e.id)}>
+                                <div  className={(this.state.showModal==true) ? "events-opening-decrease-opacity" :null} key={e.id} onClick={() => this.showEventModal(e.id)} style={{overflow:"hidden"}}>
                                     <figure className="nik-custom-effect-glass black_white_new events-figure">
                                         <img src={`/img/main/events/${e.image}`} alt={e.name} className="events-images-opening-main"/>
                                         <figcaption>
