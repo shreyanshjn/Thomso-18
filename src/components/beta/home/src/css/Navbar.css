@@ -65,7 +65,6 @@
 .beta-navbar-active {
     transition: all 2s ease-in-out;
 }
-
 .beta-home-navbar {
     display: flex;
     flex-direction: row;

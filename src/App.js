@@ -71,6 +71,10 @@ const ZonalsIndex = Loadable({
   loader: () => import("./components/zonal/Index"),
   loading: () => <Loader />
 })
+const Events= Loadable({
+    loader: () => import("./components/events/Index"),
+    loading: () => <Loader />
+})
 class App extends Component {
   render() {
     return (
@@ -93,6 +97,7 @@ class App extends Component {
               <Route path="/verifyCerti/" component={VerifyCerti} />
               <Route path="/policy" component={Policy} />
               <Route path="/terms" component={Terms} />
+              <Route path="/events" component={Events} />
               {/* <Route component={Error404} /> */}
             </React.Fragment>
           </Switch>

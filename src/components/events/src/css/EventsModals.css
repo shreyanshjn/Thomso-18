@@ -1,0 +1,112 @@
+.events-modals-heading
+{
+    height:"10%";
+    display:"flex";
+    justifyContent:"space-between";
+    borderBottom: "white 1px solid";
+}
+.events-custom-selection
+{
+    color:white;
+    text-decoration:none;
+    padding:6px;
+}
+.events-modal-button
+{
+    text-decoration:none;
+    color:white;
+    padding:13px;
+    border:2px solid white;
+}
+.events-text-scroll-cont
+{
+    color:white;  
+}
+.events-modals-events-opening
+{
+    position:fixed;
+    height:100vh;
+    width:100%;
+    z-index:100;
+    overflow:auto;
+}
+@media only screen and (min-width:768px)
+{
+    .events-modala-main-child
+    {
+        display:flex;
+        flex-direction:column;
+    }
+    .events-modala-second-child
+    {
+        display:flex;
+        justify-content:space-around;
+        margin-top:20px;
+    }
+    .events-list-child
+    {
+        width:20%; 
+    }
+    .events-list-child > ul
+    {
+        list-style-type:none;
+    }
+    .events-list-child > ul >li
+    {
+        margin-bottom: 20px;
+        padding: 11px;
+        border: 2px solid white;
+    }
+    .events-list-child > ul >li:hover
+    {
+        cursor:pointer;
+    }
+    .events-details-images-main-div
+    {
+        width:70%; 
+    }
+    .events-dropdown
+    {
+        display:none;
+    }
+    .events-details-image
+    {
+        display:"flex";
+        width:"40%";
+        align-items:center;
+        text-align:center;
+        margin-right:7%;
+        margin-top:5%;
+    }
+    .events-modal-close
+    {
+        color:white;    
+        text-decoration:none;
+        margin-right:5%;
+        display:flex;
+        align-items:center;
+    }
+    .events-modals-last-arrow
+    {
+        margin-right:10%;
+        margin-left:30%; 
+    }
+    .events-text-child
+    {
+        display:flex;
+        align-items:center; 
+        height:100%;
+    }
+    .events-details-parent
+    {
+        display:flex;
+        height:55vh;
+    }
+}
+@media only screen and (max-width:768px)
+{
+    .events-list-child
+    {
+        display:none;
+    }
+}
