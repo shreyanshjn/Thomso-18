@@ -9,7 +9,7 @@ var UserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    email : {
+    email: {
         type: String,
         unique: true,
         required: true
@@ -23,57 +23,61 @@ var UserSchema = new mongoose.Schema({
         required: true
     },
     college: {
-        type:String,
+        type: String,
         required: true,
     },
     state: {
-        type:String,
+        type: String,
         required: true
     },
     address: {
-        type:String,
-        required:true
+        type: String,
+        required: true
     },
-    event:[{
+    event: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Events_Schema'
     }],
+    primary_event: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Events_Schema'
+    },
     verified: {
         type: Boolean,
-        default:false
+        default: false
     },
-    image:{
-        type:String
+    image: {
+        type: String
     },
-    password:{
-        type:String,
+    password: {
+        type: String,
         required: true
     },
-    created_date:{
-        type:Date,
-        default:Date.now
+    created_date: {
+        type: Date,
+        default: Date.now
     },
-    state:{
-        type:String
+    state: {
+        type: String
     },
-    branch:{
-        type:String,
-        required:true
+    branch: {
+        type: String,
+        required: true
     },
-    referred_by:{
-        type:String
+    referred_by: {
+        type: String
     },
-    otp:{
-        type:String
+    otp: {
+        type: String
     }
 });
 
-UserSchema.methods.comparePassword = function(pass, callback){
-    bcryt.compare(pass,this.password, function(err, isMatch){
-        if(err)
+UserSchema.methods.comparePassword = function (pass, callback) {
+    bcryt.compare(pass, this.password, function (err, isMatch) {
+        if (err)
             return callback(err);
         callback(null, isMatch);
     });
 };
 
-module.exports = mongoose.model('Main_User',UserSchema);
+module.exports = mongoose.model('Main_User', UserSchema);

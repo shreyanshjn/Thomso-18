@@ -1,0 +1,69 @@
+.participant-profile-parent{
+    width:calc(100% - 25.60vw);
+    margin-left: auto;
+    font-family: Montserrat;
+    padding: 10px;
+    height: 100%;
+}
+.participant-profile-child-details{
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    border: 1px solid black;
+    border-radius: 2px;
+    margin-top: 15vh;
+}
+.college{
+    display: flex;
+    flex-direction: row;
+}
+.participant-profile-child-left{
+    width: 60%;
+    padding-right: 10px;
+}
+.participant-profile-child-right{
+    width: 40%;
+}
+.participant-profile-child-left-details{
+    padding-top: 10px;
+}
+.participant-profile-child-left-details span{
+    padding: 5px;
+}
+.participant-somedetails-some{
+    font-size: 14px;
+}
+.participant-somedetails{
+    text-transform: capitalize;
+    font-size: 14px;
+}
+.participant-profile-label{
+    color: blue;
+}
+.participant-profile-events{
+    background: green;
+    height: 100%;
+}
+.participant-profile-event-heading{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 5px;
+    color: white;
+    font-weight: 600;
+}
+@media screen and (max-width:768px){
+    .participant-profile-parent{
+        width: calc(100% - 75px);
+    }
+    .participant-profile-child-details{
+        display: flex;
+        flex-direction: column;
+    }
+    .participant-profile-child-right{
+        margin-top: 20px;
+        width: 100%;
+        height: 100px;
+    }
+}

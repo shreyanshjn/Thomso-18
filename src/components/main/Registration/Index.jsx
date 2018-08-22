@@ -1,17 +1,23 @@
 import React from "react";
 import FetchApi from "../../../utils/FetchAPI";
+import img from "../../campusAmbassador/register/img/logo.png"
 import CollegeSelect from "../../campusAmbassador/register/CollegeSelect";
 import StateSelect from "../../campusAmbassador/register/StateSelect";
 import validateInput from '../../../utils/validation/loginValidation';
 import AuthService from '../../../handlers/main/AuthService';
+import "../../campusAmbassador/register/css/register.css";
+import { Link } from 'react-router-dom';
+import "./style.css"
+import Primary_eventsSelect from "./Primary_eventsSelect";
+
 
 // import Popup from '../../common/popup/Index';
 
-export default class RegisterIndex extends React.Component{
-    constructor(){
+export default class RegisterIndex extends React.Component {
+    constructor() {
         super();
         this.state = {
-            name:'',
+            name: '',
             contact: '',
             email: '',
             gender: '',
@@ -20,226 +26,258 @@ export default class RegisterIndex extends React.Component{
             branch: '',
             address: '',
             errors: '',
-            referred_by:'',
-            password:'',
-            confirmPassword:'',
+            primary_events: '',
+            referred_by: '',
+            password: '',
+            confirmPassword: '',
             selectedOption: null
         }
         this.Auth = new AuthService();
     }
 
-    onChange = (e)=>{
+    onChange = (e) => {
         const name = e.target.name;
         let value = e.target.value;
-        if(name === 'contact' && value){
+        if (name === 'contact' && value) {
             value = value.trim();
-            value = value.substring(0,12)
+            value = value.substring(0, 12)
         }
-        this.setState({ [name]: value});
+        this.setState({ [name]: value });
     }
 
     onSubmit = (e) => {
         e.preventDefault();
-        let {name, email, gender, contact, college, state, branch, address, referred_by, password, confirmPassword}  =this.state;
+        let { name, email, gender, contact, college, state, branch, address, referred_by, password, confirmPassword } = this.state;
         if (name) name = name.trim()
         if (contact) contact = contact.trim()
         if (college) college = college.trim()
         if (branch) branch = branch.trim()
         if (address) address = address.trim()
-        if(password === confirmPassword){
-            const data = {name, email, gender, branch, contact, college, state, address, referred_by, password}
-            const check = validateInput(email, 'email');
-            if(email){
+        if (password === confirmPassword) {
+            const data = { name, email, gender, branch, contact, college, state, address, referred_by, password }
+            const check = validateInput(data)
+            if (name && gender && branch && contact && college && state && address && check.isValid) {
                 FetchApi('POST', '/api/main/auth/register', data)
-                .then(res => {
-                    if(res && res.data){
-                        if(res.data.success === true){
-                            this.Auth.setToken(res.data.token);
-                            this.props.history.push('/main/verify');
+                    .then(res => {
+                        if (res && res.data) {
+                            if (res.data.success === true) {
+                                this.Auth.setToken(res.data.token);
+                                this.props.updateRoutes(true, false);
+                            }
+                            else
+                                this.setState({ errors: res.data.msg })
                         }
-                        else
-                            this.setState({errors: res.data.msg})
-                    }
-                })
-                .catch(e=>{
-                    this.setState({errors: "hello"})
-                    // this.popup.show('Something  went wrong.')
-                });
+                    })
+                    .catch(e => {
+                        this.setState({ errors: "hello" })
+                        // this.popup.show('Something  went wrong.')
+                    });
+            } else if (check.errors && check.errors.email) {
+                this.setState({ errors: check.errors.email })
+            } else if (check.errors && check.errors.password) {
+                this.setState({ errors: check.errors.password })
+            } else {
+                this.setState({ errors: 'Fields cannot be empty' })
             }
-            else if(check.errors && check.errors.email)
-                this.setState({errors:check.errors.email})
-            else
-                this.setState({errors:'Field cannot be empty'})
         }
         else
-            this.setState({errors:"Password didn't matched!!"})            
+            this.setState({ errors: "Password didn't matched!!" })
     }
 
-    render(){
-        const {name, contact, email, gender, branch, address, errors, referred_by, password, confirmPassword} = this.state;
-        return(
-            <div>
-                <h1>Register Here...</h1>
-                <form onSubmit={this.onSubmit}>
-                    {errors ? 
-                    <div style={{ color:'red', fontSize:'22px', fontWeight:'600'}}>
-                        {errors}
-                    </div>
-                    : 
-                    null
-                    }
-
-                    <div>
-                        <div>
-                            <label htmlFor="inputName"> Name </label>
-                            <input
-                                id="inputName"
-                                type="text"
-                                placeholder="Your Name"
-                                name="name"
-                                value={name}
-                                autoComplete="off"
-                                autoCorrect="off"
-                                autoCapitalize="off"
-                                onChange={this.onChange}
-                                spellCheck="false"
-                                required
-                                 />
+    render() {
+        const { name, contact, email, gender, branch, address, errors, referred_by, password, confirmPassword } = this.state;
+        return (
+            <div className="register-parent">
+                <div className="register-child">
+                    <div className="register-heading">
+                        <div className="r-logo">
+                            <Link to="/"><img src={img} alt="r-logo" /></Link>
+                        </div>
+                        <div className="vertical_line">
+                        </div>
+                        <div className="register-ca common-cursor">
+                            <h1>Campus<br /> Ambassador</h1>
                         </div>
                     </div>
-                    <div>
-                        <label htmlFor="inputEmail">Email</label>
-                        <input
-                            id="inputEmail"
-                            type="email"
-                            placeholder="Your Email"
-                            name="email"
-                            autoCorrect="off"
-                            autoComplete="off"
-                            autoCapitalize="off"
-                            value={email}
-                            onChange={this.onChange}
-                            spellCheck="false"
-                            required
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="inputGender">Gender</label>
-                        <select
-                            id="inputGender"
-                            name="gender"
-                            value={gender}
-                            onChange={this.onChange}
-                            required
-                        >
-                            <option value="" disabled="true"> Gender </option>
-                            <option value="male"> Male </option>
-                            <option value="female"> Female </option>
-                            <option value="other"> Other </option>
-                        </select>
-                    </div>
-                    <div>
-                        <label htmlFor="inputContact">Contact Number</label>
-                        <input
-                            id="inputContact"
-                            type="number"
-                            placeholder="Contact Number"
-                            name="contact"
-                            autoCorrect="off"
-                            autoComplete="off"
-                            autoCapitalize="on"
-                            value={contact}
-                            onChange={this.onChange}
-                            required
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="inputCollege">College</label>
-                        <CollegeSelect onChange={college => this.setState({ college })} />
-                    </div>
-                    <div>
-                        <label htmlFor="inputState">College State</label>
-                        <StateSelect onChange={state => this.setState({ state })} />
-                    </div>
-                    <div>
-                        <label htmlFor="inputBranch">Branch and Year</label>
-                        <input
-                            id="inputBranch"
-                            // type="text"
-                            // placeholder="Branch Name"
-                            name="branch"
-                            autoCorrect="off"
-                            autoComplete="off"
-                            autoCapitalize="on"
-                            value={branch}
-                            onChange={this.onChange}
-                            required
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="inputAddress">Present College Address</label>
-                        <input
-                            id="inputAddress"
-                            type="text"
-                            placeholder="Address Name"
-                            name="address"
-                            autoCorrect="off"
-                            autoComplete="off"
-                            autoCapitalize="on"
-                            value={address}
-                            onChange={this.onChange}
-                            required
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="inputRefferedBy">Referral</label>
-                        <input
-                            id="inputRefferedBy"
-                            type="text"
-                            placeholder="Referral CA ID"
-                            name="referred_by"
-                            autoCorrect="off"
-                            autoComplete="off"
-                            autoCapitalize="off"
-                            value={referred_by}
-                            onChange={this.onChange}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="inputPassword">Password</label>
-                        <input
-                            id="inputPassword"
-                            type="password"
-                            placeholder="Password"
-                            name="password"
-                            autoCorrect="off"
-                            autoComplete="off"
-                            autoCapitalize="off"
-                            value={password}
-                            onChange={this.onChange}
-                            required
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="inputCPassword">Confrim Password</label>
-                        <input
-                            id="inputCPassword"
-                            type="password"
-                            placeholder="Confrim Password"
-                            name="confirmPassword"
-                            autoCorrect="off"
-                            autoComplete="off"
-                            autoCapitalize="off"
-                            value={confirmPassword}
-                            onChange={this.onChange}
-                            required
-                        />
-                    </div>
-                    <div>
-                        <button type="submit">Register</button>
-                    </div>
-                </form>
-            </div>
+                    <div className="register-form">
+                        <form onSubmit={this.onSubmit}>
+                            {errors ?
+                                <div style={{ color: 'red', height: '10px', fontSize: '14px', fontWeight: '600' }}>
+                                    {errors}
+                                </div>
+                                :
+                                null
+                            }
+                            <div className="form-heading">
+                                <h2>Registration form</h2>
+                            </div>
+                            <div className="main-form-first-child">
+                                <div className="main-form-first-grandchild">
+                                    <div className="form-name">
+                                        <label htmlFor="inputName">Name</label>
+                                        <input
+                                            id="inputName"
+                                            type="text"
+                                            placeholder="Your Name"
+                                            name="name"
+                                            value={name}
+                                            autoCorrect="off"
+                                            autoComplete="off"
+                                            autoCapitalize="on"
+                                            onChange={this.onChange}
+                                            spellCheck="false"
+                                            required
+                                        />
+                                    </div>
+                                    <div className="form-contactnumber">
+                                        <label htmlFor="inputContact">Contact Number</label>
+                                        <input
+                                            id="inputContact"
+                                            type="number"
+                                            placeholder="Contact Number"
+                                            name="contact"
+                                            autoCorrect="off"
+                                            autoComplete="off"
+                                            autoCapitalize="on"
+                                            value={contact}
+                                            onChange={this.onChange}
+                                            required
+                                        />
+                                    </div>
+                                </div>
+                                <div className="main-form-first-grandchild">
+                                    <div className="form-email">
+                                        <label htmlFor="inputEmail">Email</label>
+                                        <input
+                                            id="inputEmail"
+                                            type="email"
+                                            placeholder="Your Email"
+                                            name="email"
+                                            autoCorrect="off"
+                                            autoComplete="off"
+                                            autoCapitalize="off"
+                                            value={email}
+                                            onChange={this.onChange}
+                                            spellCheck="false"
+                                            required
+                                        />
+                                    </div>
+                                    <div className="form-gender">
+                                        <label htmlFor="inputGender">Gender</label>
+                                        <select
+                                            id="inputGender"
+                                            name="gender"
+                                            value={gender}
+                                            onChange={this.onChange}
+                                            required
+                                        >
+                                            <option value="" disabled="true"> Gender </option>
+                                            <option value="male"> Male </option>
+                                            <option value="female"> Female </option>
+                                            <option value="other"> Other </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div className="form-college-child">
+                                    <label htmlFor="inputCollege">College</label>
+                                    <CollegeSelect onChange={college => this.setState({ college })} />
+                                </div>
+                                <div className="main-form-second-grandchild">
+                                    <div className="form-state">
+                                        <label htmlFor="inputState">College State</label>
+                                        <StateSelect onChange={state => this.setState({ state })} />
+                                    </div>
+                                    <div className="form-branch">
+                                        <label htmlFor="inputBranch">Branch and Year</label>
+                                        <input
+                                            id="inputBranch"
+                                            type="text"
+                                            placeholder="Branch Name"
+                                            name="branch"
+                                            autoCorrect="off"
+                                            autoComplete="off"
+                                            autoCapitalize="on"
+                                            value={branch}
+                                            onChange={this.onChange}
+                                            required
+                                        />
+                                    </div>
+                                </div>
+                                <div className="form-add-child">
+                                    <label htmlFor="inputAddress">Present College Address</label>
+                                    <input
+                                        id="inputAddress"
+                                        type="text"
+                                        placeholder="Address Name"
+                                        name="address"
+                                        autoCorrect="off"
+                                        autoComplete="off"
+                                        autoCapitalize="on"
+                                        value={address}
+                                        onChange={this.onChange}
+                                        required
+                                    />
+                                </div>
+                                <div className="main-form-second-grandchild">
+                                    <div className="form-referral">
+                                        <label htmlFor="inputRefferedBy">Referral</label>
+                                        <input
+                                            id="inputRefferedBy"
+                                            type="text"
+                                            placeholder="Referral Code"
+                                            name="referred_by"
+                                            autoCorrect="off"
+                                            autoComplete="off"
+                                            autoCapitalize="off"
+                                            value={referred_by}
+                                            onChange={this.onChange}
+                                        />
+                                    </div>
+                                    <div className="form-primary_events">
+                                        <label htmlFor="inputState">Primary Events</label>
+                                        <Primary_eventsSelect onChange={primary_events => this.setState({ primary_events })} />
+                                    </div>
+                                </div>
+                                <div className="main-form-second-grandchild">
+                                    <div className="form-password">
+                                        <label htmlFor="inputPassword">Password</label>
+                                        <input
+                                            id="inputPassword"
+                                            type="password"
+                                            placeholder="Password"
+                                            name="password"
+                                            autoCorrect="off"
+                                            autoComplete="off"
+                                            autoCapitalize="off"
+                                            value={password}
+                                            onChange={this.onChange}
+                                            required
+                                        />
+                                    </div>
+                                    <div className="form-confirmpassword">
+                                        <label htmlFor="inputCPassword">Confirm Password</label>
+                                        <input
+                                            id="inputCPassword"
+                                            type="password"
+                                            placeholder="Confirm Password"
+                                            name="confirmPassword"
+                                            autoCorrect="off"
+                                            autoComplete="off"
+                                            autoCapitalize="off"
+                                            value={confirmPassword}
+                                            onChange={this.onChange}
+                                            required
+                                        />
+                                    </div>
+                                </div>
+                                <div className="main-register">
+                                    <button type="submit">Register</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div >
+                </div>
+            </div >
         );
     }
 
