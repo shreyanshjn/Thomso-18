@@ -14,7 +14,7 @@ const convertArrayOfObjectsToCSV = args => {
     result = '';
     result += keys.join(columnDelimiter);
     result += lineDelimiter;
-
+    console.log(data)
     data.forEach(item => {
         ctr = 0;
         keys.forEach(key => {

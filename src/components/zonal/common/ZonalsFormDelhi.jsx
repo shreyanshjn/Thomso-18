@@ -26,13 +26,7 @@ class ZonalsForm extends React.Component {
     handleChange(event) {
         this.setState({ value: event.target.value });
     }
-    changeForm() {
-        this.setState({ variable: !this.state.variable })
-    }
     changeState = () => {
-        this.setState({ variable: !this.state.variable })
-    }
-    setEvents = events => {
         this.setState({ variable: !this.state.variable })
     }
     stateValues = (value) => {
@@ -40,7 +34,7 @@ class ZonalsForm extends React.Component {
     }
     selected = events => {
         if (!this.state.submitDisabled) {
-            let {name, email, contact, college, branch} = this.state;
+            let { name, email, contact, college, branch } = this.state;
             if (name) {
                 name = name.trim()
             }
@@ -55,16 +49,17 @@ class ZonalsForm extends React.Component {
             }
             const check = validateInput(email, 'email')
             if (name && contact && college && branch && check.isValid && events && events.length > 0) {
-                const data = {name, email, contact, college, branch, events}
-                this.setState({submitDisabled: true})
+                const data = { name, email, contact, college, branch, events }
+                this.setState({ submitDisabled: true })
                 FetchApi('POST', '/api/zonals/delhi', data)
                     .then(res => {
                         if (res && res.data) {
                             if (res.data.success) {
-                                // this.props.history.push("/zonals/admin")
+                                this.props.showModal();
                                 this.setState({ errors: "", name: "", email: "", contact: "", college: "", branch: "", events: [], variable: true })
-                                this.personalDetails.setState({ name: "", email: "", contact: "", college: "", branch: ""})
-                                this.delhiEvents.setState({ selectedOptionDrama: "", selectedOptionTgt: "", check: false, tgt: false})
+                                this.personalDetails.setState({ name: "", email: "", contact: "", college: "", branch: "" })
+                                this.delhiEvents.setState({ selectedOptionTgt: "", nukkad: false, tgt: false })
+
                             } else {
                                 this.setState({ errors: res.data.msg })
                             }
@@ -87,18 +82,18 @@ class ZonalsForm extends React.Component {
     render() {
         return (
             <div id="thomso-zonals-registration-form-lucknow" className="zonalsForm-main-div">
-                    <div className="zonalsform-main-child">
-                        <div className="astro-image-zonals-div">
-                            <div>
-                                <img src={astro} alt="astro" className="astro-image-zonals astro-bounce" />
-                            </div>
-                        </div>
-                        <div className="register-zonals-form-div">
-                            <PersonalDetails onRef={ref => (this.personalDetails = ref)} statevalues={this.stateValues} function={this.changeState} var={this.state.variable} />
-                            <DelhiEvents onRef={ref => (this.delhiEvents = ref)} errors={this.state.errors} selectedevents={this.selected} function={this.setEvents} var={this.state.variable} hiding={this.state.isHidden} />
+                <div className="zonalsform-main-child">
+                    <div className="astro-image-zonals-div">
+                        <div>
+                            <img src={astro} alt="astro" className="astro-image-zonals astro-bounce" />
                         </div>
                     </div>
+                    <div className="register-zonals-form-div">
+                        <PersonalDetails onRef={ref => (this.personalDetails = ref)} statevalues={this.stateValues} function={this.changeState} var={this.state.variable} />
+                        <DelhiEvents onRef={ref => (this.delhiEvents = ref)} errors={this.state.errors} selectedevents={this.selected} function={this.changeState} var={this.state.variable} hiding={this.state.isHidden} />
+                    </div>
                 </div>
+            </div>
         );
     }
 }
