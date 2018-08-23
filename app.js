@@ -38,6 +38,10 @@ app.get("/static/*.js", function(req, res, next) {
   next();
 });
 
+app.get("/pdf/*", function(req, res){
+  res.sendFile(req.url);
+});
+
 // app.get('/static/*.css', function (req, res, next) {
 //   req.url = req.url + '.gz';
 //   res.set('Content-Encoding', 'gzip');

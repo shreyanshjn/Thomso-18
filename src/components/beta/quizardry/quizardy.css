@@ -1,11 +1,9 @@
 .quizardy-parent{
     height: 100vh;
     overflow-y: hidden;
-
 }
 
 .quizardy-navbar{
-  background-color: rgba(84, 86, 91, 0.5);
   position: fixed;
   z-index: 100;
   width: 100%;
@@ -33,7 +31,7 @@
 @media only screen and (min-width:768px)
 {
 .quizardy-child{
-    background: url('./gotweb.jpg');
+    background: url('./maraudersmap.jpeg');
     background-size: 100% 100%;
     height: 100vh;
     background-repeat: no-repeat;
@@ -44,7 +42,7 @@
     margin-top:70vh;
 }
 .quizardy-flexcenter {
-    float: right;
+    margin:auto;
     width: 50%;
     text-align: center;
 }
@@ -81,12 +79,12 @@
   .quizardy-parent {
     height: 100vh;
     overflow-y: hidden;
-    background-color: #552458;
-    background: url('./gotphone.jpg');
-    background-size:100% 100%;
+    background: url('./maraudersmap.jpeg');
+    background-size:140% 100%;
+    background-position: center;
     background-repeat: no-repeat;
-    background-color: #552458;
     background-position:center;
+    background-color:#190801;
   }
   .quizardy-navbar{
     height: 80px;

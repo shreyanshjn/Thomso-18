@@ -1,16 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./css/style.css";
+// import "../../ca/sidebar/css/style.css";
 import boy from "./img/boy.png";
 import girl from "./img/girl.png";
 import { addCATopic } from '../../../utils/firebasePush';
-// import like from "./img/like.png"
+import ReferralPoint from "./Svg/Referralpoint";
+import Bonus from "./Svg/Bonus";
+import Score from "./Svg/Score";
 // import share from "./img/share.png"
 // import score from "./img/star.png"
 import Post from "./Svg/Post"
-// import Referral from "./Svg/Referral"
+import Referral from "./Svg/Referral"
 import Leader from "./Svg/Leader"
-import Events from "./Svg/Events"
+// import Events from "./Svg/Events"
 import Guide from "./Svg/Guide"
 import Contact from "./Svg/Contact"
 import Logout from "./Svg/Logout"
@@ -85,6 +88,60 @@ export default class Sidebar extends React.Component {
               <div className="cname">{this.props.userData ? this.props.userData.college : "-"}</div>
             </div>
           </div>
+          {this.props.userData && this.props.userData.score ?
+          <div className="campusAmb-sidebar-line">
+          </div>
+          : null}
+          <div className="campusAmb-sidebar-like-share-score">
+            {this.props.userData && this.props.userData.score ?
+              <div className="campusAmb-sidebar-like-share-score-child">
+                <div className="campusAmb-sidebar-likes">
+                  <div className="campusAmb-sidebar-likes-child">
+                    <div className="campusAmb-sidebar-likes-grandchild">
+                      <div className="campusAmb-sidebar-likes-grandchild-number">
+                        {this.props.userData ? this.props.userData.referrals : "0"}
+                      </div>
+                      <div className="campusAmb-sidebar-svg-logo">
+                        <ReferralPoint />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="campusAmb-sidebar-likes-number">
+                    REFFERALS
+                  </div>
+                </div>
+                <div className="campusAmb-sidebar-shares">
+                  <div className="campusAmb-sidebar-likes-child">
+                    <div className="campusAmb-sidebar-likes-grandchild-number">
+                      {this.props.userData ? this.props.userData.bonus : "0"}
+                    </div>
+                    <div className="campusAmb-sidebar-svg-logo">
+                      <Bonus />
+                    </div>
+                  </div>
+                  <div className="campusAmb-sidebar-likes-number">
+                    BONUS
+                  </div>
+                </div>
+                <div className="campusAmb-sidebar-score">
+                  <div className="campusAmb-sidebar-likes-child">
+                    <div className="campusAmb-sidebar-likes-grandchild-number">
+                      {this.props.userData ? this.props.userData.score : "0"}
+                    </div>
+                    <div className="campusAmb-sidebar-svg-logo">
+                      <Score />
+                    </div>
+                  </div>
+                  <div className="campusAmb-sidebar-likes-number">
+                    SCORE
+                </div>
+                </div>
+              </div>
+            : null}
+            {/* <div className="campusAmb-sidebar-updatenews">
+              *Scores will be updated at 12 am
+            </div> */}
+          </div>
           <div className="campusAmb-sidebar-line">
           </div>
           <div className="campusAmb-sidebar-contents">
@@ -148,7 +205,7 @@ export default class Sidebar extends React.Component {
                 </div>
               </div>
             </Link>
-             <Link
+            <Link
               to="/CampusAmbassador/ideas"
               className={
                 this.state.activeState === "ideas"
@@ -166,7 +223,7 @@ export default class Sidebar extends React.Component {
                 <div className="campusAmb-sidebar-navitem-name">
                   IDEAS
                 </div>
-              </div> 
+              </div>
             </Link>
             {/* <Link
               to="/CampusAmbassador/events"
@@ -208,6 +265,30 @@ export default class Sidebar extends React.Component {
                 </div>
               </div>
             </Link>
+            {(this.props.userData && this.props.userData.ca_id) ?
+              <div
+                className="sideNavItem re"
+              >
+                <div className="referral flex_row" title="Click to copy">
+                  <div className="campusAmb-sidebar-svg-logo">
+                    <Referral />
+                  </div>
+                  <div className="campusAmb-sidebar-navitem-name" onClick={() => {
+                    const el = document.createElement('textarea');
+                    el.value = this.props.userData.ca_id;
+                    el.setAttribute('readonly', '');
+                    el.style.position = 'absolute';
+                    el.style.left = '-9999px';
+                    document.body.appendChild(el);
+                    el.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(el);
+                  }}>
+                    REFERRAL CODE : <span id="ca-referral-code">{this.props.userData.ca_id}</span>
+                  </div>
+                </div>
+              </div>
+              : null}
             <Link
               to="/CampusAmbassador/logout"
               className={
@@ -228,18 +309,6 @@ export default class Sidebar extends React.Component {
                 </div>
               </div>
             </Link>
-            {/*<div
-              className="sideNavItem re"
-            >
-              <div onClick={() => { window.location.href = this.props.userData.link }} className="referral flex_row" title="Click to copy">
-                <div className="campusAmb-sidebar-svg-logo">
-                  <Referral />
-                </div>
-                <div className="campusAmb-sidebar-navitem-name">
-                  VISIT FACEBOOK PROFILE
-                </div>
-              </div>
-            </div>*/}
           </div>
           <div className="campusAmb-sidebar-hand flex_row">
             <div className="campusAmb-sidebar-hand-child">

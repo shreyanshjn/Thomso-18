@@ -5,9 +5,8 @@ export default class DelhiEvents extends React.Component {
     constructor() {
         super();
         this.state = {
-            selectedOptionDrama: '',
             selectedOptionTgt: '',
-            check: false,
+            nukkad: false,
             tgt: false
         }
     }
@@ -17,18 +16,13 @@ export default class DelhiEvents extends React.Component {
     onSubmit = (e) => {
         e.preventDefault()
         let events = []
-        if (this.state.check && this.state.selectedOptionDrama) {
-            events.push(this.state.selectedOptionDrama)
+        if (this.state.nukkad) {
+            events.push('Nukkad Natak')
         }
         if (this.state.tgt && this.state.selectedOptionTgt) {
             events.push(this.state.selectedOptionTgt)
         }
         this.props.selectedevents(events)
-    }
-    handleOptionChangeDrama = (changeEvent) => {
-        this.setState({
-            selectedOptionDrama: changeEvent.target.value
-        });
     }
     handleOptionChangeTgt = (changeEvent) => {
         this.setState({
@@ -43,21 +37,13 @@ export default class DelhiEvents extends React.Component {
     }
     render() {
         return (
-            <React.Fragment>
+              <React.Fragment>
                 <form className={this.props.var ? "register-zonals-form-events inactive" : "register-zonals-form-events active"} onSubmit={this.onSubmit}>
                         {this.props.errors ? <p className="form-submitted-popup">{this.props.errors}</p> : <p className="form-submitted-popup-hide">&nbsp;</p>}
                     <div className={this.props.var ? "register-zonals-form-events-parent inactive" : "register-zonals-form-events-parent"}>
                         <div className="register-zonals-form-events-firstchild">
                             <div className="register-zonals-form-events-drama">
-                                <span><input type="checkbox" onClick={() => this.setState({ check: !this.state.check })} checked={this.state.check} name="drama" value="drama" /></span><span>Drama</span>
-                            </div>
-                            <div className={this.state.check ? "register-zonals-form-events-dramachild" : "register-zonals-form-events-dramachild low-opacity"}>
-                                <div>
-                                    <span><input onChange={this.handleOptionChangeDrama} type="radio" name="abhiviyakti" value="abhiviyakti" checked={this.state.selectedOptionDrama === 'abhiviyakti'} disabled={!this.state.check} /></span><span>Abhivyakti</span>
-                                </div>
-                                <div>
-                                    <span><input onChange={this.handleOptionChangeDrama} type="radio" name="natak" value="nukkadnatak" checked={this.state.selectedOptionDrama === 'nukkadnatak'} disabled={!this.state.check} /></span><span>Natak</span>
-                                </div>
+                                <span><input type="checkbox" onClick={() => this.setState({ nukkad: !this.state.nukkad })} checked={this.state.nukkad} name="nukkad" value="nukkad" /></span><span>Nukkad Natak</span>
                             </div>
                         </div>
                         <div className="register-zonals-form-events-secondchild">

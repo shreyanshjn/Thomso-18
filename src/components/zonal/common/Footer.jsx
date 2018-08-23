@@ -35,22 +35,6 @@ export default class Footer extends React.Component {
                 </div>
                 {this.props.city === 'lucknow' ?
                     <div className="zonals-contact-person">
-                        {/* <div className="zonals-contact-person-child">
-                            <div>
-                                Harshit
-                            </div>
-                            <div>
-                            +91-9340043505
-                            </div>
-                        </div>
-                        <div className="zonals-contact-person-child">
-                            <div>
-                                Abhay
-                            </div>
-                            <div>
-                                +91-9131700765
-                            </div>
-                        </div> */}
                         <div className="zonals-contact-person-child">
                             <div>
                                 Rohit
@@ -82,7 +66,7 @@ export default class Footer extends React.Component {
                         </div>
                         <div className="zonals-contact-person-child">
                             <div>
-                                Abay
+                                Abhay
                             </div>
                             <div>
                                 +91-9131700765

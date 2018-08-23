@@ -9,8 +9,8 @@ export default class LeaderboardIndex extends React.Component {
         super();
         this.state = {
             users: null,
-            isExpandable:true,
-            hide:true,
+            isExpandable: true,
+            hide: true,
             rank: '-'
         }
         this.Auth = new AuthService();
@@ -29,7 +29,7 @@ export default class LeaderboardIndex extends React.Component {
             .catch(e => console.log(e));
         FetchApi('GET', '/api/ca/rank', null, authtoken)
             .then(r => {
-                if (r && r.data && r.data.success === true ) {
+                if (r && r.data && r.data.success === true) {
                     this.setState({ rank: r.data.rank })
                 } else {
                     console.log(r)
@@ -49,11 +49,11 @@ export default class LeaderboardIndex extends React.Component {
                     return null;
                 }) : null} */}
                 <div className="ca-leader-maintable">
-                    <table className="ca-leaderboard-table"> 
+                    <table className="ca-leaderboard-table">
                         <tbody>
                             <tr className="ca-leader-heading">
                                 <th>Rank</th>
-                                <th>Name</th> 
+                                <th>Name</th>
                                 <th>Institute</th>
                                 <th className="ca-leader-mobile">Likes</th>
                                 <th className="ca-leader-mobile">Shares</th>
@@ -64,21 +64,21 @@ export default class LeaderboardIndex extends React.Component {
                             }) : null}
 
                             {this.props.userData ?
-                            <tr className="ca-leader-rank">
-                                <th>{this.props.userData.blocked ? 'Blocked' : this.state.rank}</th>
-                                <th>{this.props.userData.name ? this.props.userData.name : null}</th> 
-                                <th className="ca-leader-downarrows" onClick={() => this.setState({isExpanded: !this.state.isExpanded})}>{this.props.userData.college ? this.props.userData.college : null}</th>
-                                <th className="ca-leader-mobile">{this.props.userData.likes ? this.props.userData.likes : 0}</th>
-                                <th className="ca-leader-mobile">{this.props.userData.shares ? this.props.userData.shares : 0}</th>
-                                <th className="ca-leader-mobile">{this.props.userData.score ? this.props.userData.score : 0}</th>
-                            </tr> : null}
+                                <tr className="ca-leader-rank">
+                                    <th>{this.props.userData.blocked ? 'Blocked' : this.state.rank}</th>
+                                    <th>{this.props.userData.name ? this.props.userData.name : null}</th>
+                                    <th className="ca-leader-downarrows" onClick={() => this.setState({ isExpanded: !this.state.isExpanded })}>{this.props.userData.college ? this.props.userData.college : null}</th>
+                                    <th className="ca-leader-mobile">{this.props.userData.likes ? this.props.userData.likes : 0}</th>
+                                    <th className="ca-leader-mobile">{this.props.userData.shares ? this.props.userData.shares : 0}</th>
+                                    <th className="ca-leader-mobile">{this.props.userData.score ? this.props.userData.score : 0}</th>
+                                </tr> : null}
                             {this.state.isExpanded ?
-                                    <tr className="ca-leader-rank-mobile">
-                                    <td className="ca-leader-desktop">{this.props.userData.likes ? `Likes ${this.props.userData.likes}` :`Likes 0`}</td>
-                                    <td className="ca-leader-desktop">{this.props.userData.shares ? `Shares ${this.props.userData.shares}` :`Shares 0`}</td>
-                                    <td className="ca-leader-desktop">{this.props.userData.score ? `Score ${this.props.userData.score}` :`Score 0` }</td>
+                                <tr className="ca-leader-rank-mobile">
+                                    <td className="ca-leader-desktop">{this.props.userData.likes ? `Likes ${this.props.userData.likes}` : `Likes 0`}</td>
+                                    <td className="ca-leader-desktop">{this.props.userData.shares ? `Shares ${this.props.userData.shares}` : `Shares 0`}</td>
+                                    <td className="ca-leader-desktop">{this.props.userData.score ? `Score ${this.props.userData.score}` : `Score 0`}</td>
                                 </tr>
-                            : null}
+                                : null}
                         </tbody>
                     </table>
                 </div>

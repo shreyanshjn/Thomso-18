@@ -11,6 +11,10 @@ import '../../ca/login/src/css/Main.css';
 
 export default class HomeIndex extends React.Component {
 
+    componentWillMount() {
+        window.location.hash = "";
+    }
+
     render() {
         let options = {
             sectionClassName: 'section',

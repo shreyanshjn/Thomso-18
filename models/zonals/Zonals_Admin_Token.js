@@ -2,8 +2,7 @@ var mongoose = require('mongoose');
 
 var UserSchema = new mongoose.Schema({
     username: {
-        type: String,
-        unique: true
+        type: String
     },
     user_id: {
         type: mongoose.Schema.Types.ObjectId,
@@ -24,4 +23,4 @@ var UserSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('Zonals_Admin_Token', UserSchema);
+module.exports = mongoose.model('Zonal_Admins_Token', UserSchema);

@@ -79,6 +79,9 @@ var UserSchema = new mongoose.Schema({
     },
     image: {
         type: String,
+    },
+    blocked: {
+        type: Boolean
     }
 });
 
