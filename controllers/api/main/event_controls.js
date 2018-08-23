@@ -1,4 +1,3 @@
-var request = require('request');
 var Main_User = require('../../../models/main/Main_User');
 var EventSchema = require('../../../models/main/Events_Schema');
 

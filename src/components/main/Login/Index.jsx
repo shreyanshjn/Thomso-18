@@ -34,19 +34,17 @@ export default class LoginIndex extends React.Component {
                 FetchApi('POST', '/api/main/auth/login', data)
                     .then(res => {
                         if (res && res.data) {
-                            // console.log(res.data)
                             if (res.data.success) {
                                 this.Auth.setToken(res.data.token)
                                 this.props.updateRoutes(true, true)
                                 this.props.setUserData(res.data.body)
                                 this.props.history.push('/main')
-                            }
-                            else {
-                                if (!res.data.otpVerified) {
-                                    // this.props.updateRoutes(true, true)
+                            } else {
+                                if (res.data.notVerified) {
+                                    this.Auth.setToken(res.data.token)
+                                    this.props.updateRoutes(true, false)
                                     this.props.history.push('/main/verify')
-                                }
-                                else if (res.data.notExists) {
+                                } else if (res.data.notExists) {
                                     this.setState({ disabled: false, errors: 'Email does not exists. Please Register' })
                                 } else if (res.data.mismatch) {
                                     this.setState({ disabled: false, errors: 'Password did not match' })
@@ -66,8 +64,7 @@ export default class LoginIndex extends React.Component {
                             this.setState({ disabled: false, errors: 'Something went wrong' })
                         }
                     });
-            }
-            else if (check.errors && check.errors.email) {
+            } else if (check.errors && check.errors.email) {
                 this.setState({ errors: check.errors.email })
             } else if (check.errors && check.errors.password) {
                 this.setState({ errors: check.errors.password })

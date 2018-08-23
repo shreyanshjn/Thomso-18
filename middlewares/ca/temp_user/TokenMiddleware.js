@@ -15,7 +15,7 @@ exports.verifyTemp = (req, res, next) => {
                 res.status(403).send({success: false, msg: 'User Not Found'});
             } else if (moment() > user.expirationTime) {
                 // If token expired
-                res.status(403).json({ success: false, message: 'Token Expired' });
+                res.status(403).send({ success: false, message: 'Token Expired' });
             } else {
                 req.locals = {
                     _id: user.user_id,
@@ -25,7 +25,7 @@ exports.verifyTemp = (req, res, next) => {
             }
         });
     } else {
-        res.status(401).json({ message: 'Token Not Found' })
+        res.status(401).send({ message: 'Token Not Found' })
     }
 }
 
@@ -42,7 +42,7 @@ exports.verify = (req, res, next) => {
                 res.status(403).send({success: false, msg: 'Invalid Token'});
             } else if (moment() > user.expirationTime) {
                 // If token expired
-                res.status(403).json({ success: false, message: 'Token Expired' });
+                res.status(403).send({ success: false, message: 'Token Expired' });
             } else if (user.verified) {
                 req.locals = {
                     _id: user.user_id,
@@ -50,10 +50,10 @@ exports.verify = (req, res, next) => {
                 };
                 next();
             } else {
-                res.status(403).json({ success: false, message: 'User Not Verified' });
+                res.status(403).send({ success: false, message: 'User Not Verified' });
             }
         });
     } else {
-        res.status(401).json({ message: 'Token Not Found' })
+        res.status(401).send({ message: 'Token Not Found' })
     }
 }

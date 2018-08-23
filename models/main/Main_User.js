@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var bcryt = require('bcrypt-nodejs');
+var bcrypt = require('bcrypt-nodejs');
 
 var UserSchema = new mongoose.Schema({
     thomso_id: {
@@ -39,8 +39,7 @@ var UserSchema = new mongoose.Schema({
         ref: 'Events_Schema'
     }],
     primary_event: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Events_Schema'
+        type: String
     },
     verified: {
         type: Boolean,
@@ -71,9 +70,28 @@ var UserSchema = new mongoose.Schema({
         type: String
     }
 });
+UserSchema.pre('save', function (next) {
+    var user = this;
+    if (this.isModified('password') || this.isNew) {
+        bcrypt.genSalt(10, function (err, salt) {
+            if (err) {
+                return next(err);
+            }
+            bcrypt.hash(user.password, salt, null, function (err, hash) {
+                if (err) {
+                    return next(err);
+                }
+                user.password = hash;
+                next();
+            });
+        });
+    } else {
+        return next();
+    }
+});
 
 UserSchema.methods.comparePassword = function (pass, callback) {
-    bcryt.compare(pass, this.password, function (err, isMatch) {
+    bcrypt.compare(pass, this.password, function (err, isMatch) {
         if (err)
             return callback(err);
         callback(null, isMatch);

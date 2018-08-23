@@ -26,7 +26,7 @@ export default class RegisterIndex extends React.Component {
             branch: '',
             address: '',
             errors: '',
-            primary_events: '',
+            primary_event: '',
             referred_by: '',
             password: '',
             confirmPassword: '',
@@ -47,16 +47,20 @@ export default class RegisterIndex extends React.Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        let { name, email, gender, contact, college, state, branch, address, referred_by, password, confirmPassword } = this.state;
+        let { name, email, gender, contact, college, state, branch, address, referred_by, password, confirmPassword, primary_event } = this.state;
         if (name) name = name.trim()
+        if (email) email = email.trim()
+        if (gender) gender = gender.trim()
         if (contact) contact = contact.trim()
         if (college) college = college.trim()
         if (branch) branch = branch.trim()
         if (address) address = address.trim()
+        if (referred_by) referred_by = referred_by.trim()
+        if (primary_event) primary_event = primary_event.trim()
         if (password === confirmPassword) {
-            const data = { name, email, gender, branch, contact, college, state, address, referred_by, password }
+            const data = { name, email, gender, contact, college, state, branch, address, referred_by, password, primary_event }
             const check = validateInput(data)
-            if (name && gender && branch && contact && college && state && address && check.isValid) {
+            if (name && gender && branch && contact && college && state && address && primary_event && check.isValid) {
                 FetchApi('POST', '/api/main/auth/register', data)
                     .then(res => {
                         if (res && res.data) {
@@ -69,8 +73,7 @@ export default class RegisterIndex extends React.Component {
                         }
                     })
                     .catch(e => {
-                        this.setState({ errors: "hello" })
-                        // this.popup.show('Something  went wrong.')
+                        this.setState({ errors: "Something went wrong." })
                     });
             } else if (check.errors && check.errors.email) {
                 this.setState({ errors: check.errors.email })
@@ -235,7 +238,7 @@ export default class RegisterIndex extends React.Component {
                                     </div>
                                     <div className="form-primary_events">
                                         <label htmlFor="inputState">Primary Events</label>
-                                        <Primary_eventsSelect onChange={primary_events => this.setState({ primary_events })} />
+                                        <Primary_eventsSelect onChange={primary_event => this.setState({ primary_event })} />
                                     </div>
                                 </div>
                                 <div className="main-form-second-grandchild">

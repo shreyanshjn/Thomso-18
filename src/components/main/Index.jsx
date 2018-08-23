@@ -70,7 +70,7 @@ export default class MainIndex extends React.Component {
                 .then(r => {
                     if (r && r.data && r.data.body) {
                         console.log(r.data);
-                        if (r.data.body.verified) {
+                        if (r.data.isVerified) {
                             this.setState({ isAuthenticated: true, verified: true, userData: r.data.body });
                         } else {
                             this.setState({ isAuthenticated: true, verified: false })
@@ -89,7 +89,6 @@ export default class MainIndex extends React.Component {
     };
 
     setUserData = data => {
-        console.log(data)
         this.setState({
             userData: data
         });
@@ -101,7 +100,7 @@ export default class MainIndex extends React.Component {
                 {this.state.isAuthenticated ?
                     <React.Fragment>
                         {!this.state.verified ?
-                            <Route path="/main" render={props => (<VerifyIndex {...props} userData={this.state.userData} updateRoutes={this.handleUpdate} setUserData={this.setUserData} />)} />
+                            <Route exact path="/main/verify" render={props => (<VerifyIndex {...props} userData={this.state.userData} updateRoutes={this.handleUpdate} setUserData={this.setUserData} />)} />
                             :
                             <React.Fragment>
                                 {console.log(this.state.userData)}

@@ -17,8 +17,9 @@ router.post('/auth/verify', MainUserTokenMiddleware.verifyUser, participantRegis
 router.post('/auth/login' , participantRegister.participant_login);
 
 
-// /main/control
+// /main/
 router.get('/user', MainUserTokenMiddleware.verifyUser , participantControl.userInfo);
+router.get('/events' , MainUserTokenMiddleware.verify, participantControl.getUserEvents);
 
 // /main/event  --->  move to main admin
 router.post('/addEvent' , eventControl.addEvent);

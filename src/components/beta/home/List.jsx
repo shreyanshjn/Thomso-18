@@ -55,6 +55,14 @@ class List extends Component {
             </Link>
         </li>
         <li>
+            <Link to="./main" className={(this.state.activeStateLink === "main") ? "list-spons-link" : null }
+                onClick={()=>{
+                this.setActiveLink("main")
+                }}>
+                ASSOCIATE WITH US
+            </Link>
+        </li>
+        <li>
             <Link to="../../zonals/delhi" className={(this.state.activeStateLink === "zonals-delhi") ? "list-zonals-link" : null }
                 onClick={()=>{
                 this.setActiveLink("list-zonals-delhi")

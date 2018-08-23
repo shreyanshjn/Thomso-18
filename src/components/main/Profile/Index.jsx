@@ -12,9 +12,27 @@ export default class Profile extends React.Component {
             event_id: '',
             event_name: '',
             error: '',
-            disabled: true
+            disabled: true,
+            events: []
         }
         this.Auth = new AuthService();
+    }
+
+    componentDidMount() {
+        const isAuthenticated = this.Auth.hasToken();
+        console.log(isAuthenticated, "isAuthenticated");
+        if (isAuthenticated) {
+            const token = this.Auth.getToken()
+            FetchApi('GET', '/api/main/events', null, token)
+                .then(r => {
+                    if (r && r.data && r.data.body) {
+                        this.setState({ events: r.data.body })
+                    }
+                })
+                .catch(e => {
+                    console.log(e)
+                });
+        }
     }
 
     onChange1 = (e) => {
@@ -101,9 +119,9 @@ export default class Profile extends React.Component {
                         <div className="participant-profile-child-left-details">
                             <span className="participant-profile-label">Email:</span><span>{this.props.userData.email ? this.props.userData.email : null}</span>
                         </div>
-                        {(this.props.userData && this.props.userData.event && this.props.userData.event.length !== 0) ? <div className="participant-profile-child-left-details">
-                            <span className="participant-profile-label">Primary event :</span><span></span>
-                        </div> : null}
+                        <div className="participant-profile-child-left-details">
+                            <span className="participant-profile-label">Primary event :</span>{(this.props.userData && this.props.userData.primary_event) ? this.props.userData.primary_event: null}<span></span>
+                        </div>
                     </div>
                     <div className="participant-profile-child-right">
                         <div className="participant-profile-events">
@@ -111,8 +129,8 @@ export default class Profile extends React.Component {
                                 Your Events
                             </div>
                             <div className="participant-profile-event-details">
-                                {this.props.userData.event ? this.props.userData.event.map((data, i) => {
-                                    return <li value={data.event_id} key={data._id} onClick={this.onChange}>{data.event_id}{data.name} </li>
+                                {this.state.events ? this.state.events.map((data, i) => {
+                                    return <li>{data.event_id}{data.name} </li>
                                 })
                                     : null}
                             </div>

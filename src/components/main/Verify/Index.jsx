@@ -1,8 +1,6 @@
 import React from "react";
 import FetchApi from "../../../utils/FetchAPI";
-import validateInput from '../../../utils/validation/loginValidation';
 import AuthService from '../../../handlers/main/AuthService';
-
 
 export default class VerifyIndex extends React.Component {
     constructor(props) {
@@ -26,24 +24,26 @@ export default class VerifyIndex extends React.Component {
         if (!this.state.disabled) {
             let { otp } = this.state;
             if (otp) otp = otp.trim()
-            const data = { otp };
-            console.log(data)
+            const data = { otp }
             const token = this.Auth.getToken()
             this.setState({
                 disabled: true
             })
             FetchApi('POST', '/api/main/auth/verify', data, token)
                 .then(res => {
-                    this.setState({ disabled: false });
-                    console.log(this.props)
-                    if (res && res.data && res.data.success) {
-                        console.log(res.data)
-
-                        this.props.setUserData(res.data.body)
-                        this.props.updateRoutes(true, true)
-                        this.props.history.push('/main')
+                    if (res && res.data) {
+                        if (res.data.success === true) {
+                            if (res.data.body) {
+                                this.props.setUserData(res.data.body);
+                            }
+                            this.props.updateRoutes(true, true)
+                            this.Auth.setToken(res.data.token);
+                            this.props.history.push('/main')
+                        } else {
+                            this.setState({ errors: res.data.msg, disabled: false })
+                        }
                     } else {
-                        this.setState({ errors: 'res.data.msg ' });
+                        this.setState({ errors: 'Something Went Wrong', disabled: false });
                     }
                 })
                 .catch(err => {
