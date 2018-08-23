@@ -17,6 +17,7 @@
     color:white;
     padding:13px;
     border:2px solid white;
+    border-radius:15px;
 }
 .events-text-scroll-cont
 {
@@ -29,6 +30,14 @@
     width:100%;
     z-index:100;
     overflow:auto;
+}
+.events-modal-close
+{
+    color:white;    
+    text-decoration:none;
+    margin-right:5%;
+    display:flex;
+    align-items:center;
 }
 @media only screen and (min-width:768px)
 {
@@ -78,14 +87,6 @@
         margin-right:7%;
         margin-top:5%;
     }
-    .events-modal-close
-    {
-        color:white;    
-        text-decoration:none;
-        margin-right:5%;
-        display:flex;
-        align-items:center;
-    }
     .events-modals-last-arrow
     {
         margin-right:10%;
@@ -108,5 +109,12 @@
     .events-list-child
     {
         display:none;
+    }
+}
+@media (min-width: 1920px) and (max-width: 2560px)
+{
+    .events-details-image
+    {
+        margin-top:14%;
     }
 }

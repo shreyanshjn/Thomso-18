@@ -129,35 +129,35 @@ export const EventDetails =
         subevents:
         [
         {
-            id: '5_2',
+            id: '5_1',
             name: "Thomso's Got Talent",
             content: "Talent is entrusted to a man as a treasure which must not be squandered. Do you have a flair towards the extraordinary? Do you have the motivation to transform your talent into genius? This Thomso, we offer you a chance to spread your wings and explore your talents in front of a captivating audience. This event has its participants showcasing their superfluity of talents, be it singing, dancing, comedy, magic or any quirky thing you are passionately curious about. So get all riled up, practice, perfect and work your way towards glory in this gem of an event.",
             rulebook: "thomso_got_talent.pdf",
             image: "tgt.JPG",
         },
         {
-            id: '5_3',
+            id: '5_2',
             name: "Seiger",
             content:"Seiger is IIT Roorkee’s own rendition of the very (in)famous TV show, Roadies! Come and try your best not to embarrass yourself as our own Raghu goes full-throttle on you!",
             rulebook: "edited_seiger.pdf",
             image: "seiger.jpg",
         },
         {
-            id: '5_4',
+            id: '5_3',
             name: "Treasure Hunt",
             content: "This time it’s not about you, it’s not even about your team, it’s about what defines you and your team.It’s not for the faint hearted but only for the fierce ones who can make their way through anything.Starting with the dose of awesomeness the Mafioso&#39;s will have to rise through the war of grilling rounds.If you think that your team have, what it takes to be triumphed, then get your guns ready for the sheer breath-taking thrill of the treasure hunt. For where your treasure is, there will your heart be also.The Campus Treasure Hunt is waiting for you. May the odds be ever in your favour!" ,
             rulebook: "treasure_hunt.pdf",
             image: "treasure_hunt.jpg",
         },
         {
-            id: '5_5',
+            id: '5_4',
             name: "Street Soccer",
             content: "Street soccer is an informal game of soccer played in the street. A more happening and exciting version of the formal game, the main objective of both the games remains the same. The players aim to score goals by advancing the ball down the field into the opposing team's goal. And the team with the maximum goals win." ,
             rulebook: "street_soccer.pdf",
             image: "street_soccer.jpg",
         },
         {
-            id: '5_6',
+            id: '5_5',
             name: "Scavenger Hunt",
             content: "A game typically played in extensive outdoor area in which participants have to collect a number of miscellaneous objects. Organisers prepare a list defining items which the participant have to seek or gather. The team which returns first with all the items becomes the winner." ,
             rulebook: "scavenger_hunt.pdf",

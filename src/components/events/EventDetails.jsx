@@ -13,28 +13,27 @@ export default class EventDetail extends React.Component{
     }
     registerEvent(eventId, id){
         this.setState({wait: true, disabled: true});
-        let data = {
-            event: eventId,
-            subevent: id
-        }
     }
     handleChange(id){
-        console.log(id);
-        let filteredData = this.props.subevents.filter(s => s.id === id);
-        console.log(filteredData);
-        console.log(this.props.data);
+        const filteredData = this.props.subevents.filter(s => s.id === id);
         this.setState({data: filteredData[0]});
     }
+    componentWillMount(){
+        if (this.props.detail && this.props.detail.subevents) {
+            const filteredData = this.props.detail.subevents.filter(e => e.id === this.props.id);
+            if (filteredData) {
+                this.setState({data: filteredData[0]});
+            }
+        }
+    }
     componentWillReceiveProps(nextProps){
-        console.log(nextProps);
-        let filteredData = nextProps.detail.subevents.filter(e => e.id === nextProps.id);
+        const filteredData = nextProps.detail.subevents.filter(e => e.id === nextProps.id);
         this.setState({data: filteredData[0]});
     }
     render(){
-        // console.log(this.props);
         return(
             <div className="events-details-images-main-div">
-                <p style={{fontSize:"2em", color:"white", textAlign:"center", margin:"0px"}}>{this.state.data && this.state.data.name}</p>                                
+                <p style={{fontSize:"2em", color:"white", textAlign:"center", margin:"0px"}}>{this.state.data && this.state.data.name}</p>
                 <div className="events-dropdown">
                     <select style={{width:"100%", background:"transparent", color:"white"}} onChange={(e) => this.handleChange(e.target.value)}>
                         {this.props.subevents.map(s => 
@@ -45,7 +44,7 @@ export default class EventDetail extends React.Component{
                 {this.state.data ? 
                 <div className="events-details-parent">
                     <div className="events-details-image">
-                        <img src={`/img/main/events/events/${this.state.data.image}`} style={{maxHeight: "240px"}}/>
+                        <img alt="thomso-events-images" src={`/img/main/events/events/${this.state.data.image}`} style={{maxHeight: "240px"}}/>
                     </div>
                     <div className="events-text-scroll-cont">
                     <p className="events-text-child">{this.state.data.content}</p>

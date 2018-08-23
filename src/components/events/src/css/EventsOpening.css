@@ -9,6 +9,10 @@
         font-family:Montserrat;
     }
 }
+.hide-scroll-events
+{
+    overflow:hidden;
+}
 .events-opening-column1,.events-opening-column2,.events-opening-column3
 {
     width:30%;
