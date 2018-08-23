@@ -4,6 +4,7 @@ var cors = require('cors');
 var corsOptions = require('./config/cors');
 // Routes
 var caRoutes = require('./ca/routes');
+var betaRoutes = require('./beta/routes');
 var notificationRoutes = require('./notification/routes');
 var zonalsRoutes = require('./zonals/routes');
 var mainRoutes = require('./main/routes');
@@ -15,6 +16,7 @@ var verifyCerti = require('../controllers/api/Certificates/verifyCertificates');
 
 // -> /api
 router.use('/api/ca', caRoutes);
+router.use('/api/beta', betaRoutes);
 router.use('/api/notification', notificationRoutes);
 router.use('/api/certiVerify', cors(corsOptions),  verifyCerti.certi_verify );
 router.use('/api/zonals', zonalsRoutes);

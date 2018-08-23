@@ -35,7 +35,7 @@ export default class Popup extends React.Component {
         })
     }
     confirm = () => {
-        if (this.state.url && typeof(this.state.url) === "string") {
+        if (this.state.url && typeof (this.state.url) === "string") {
             this.props.history.push('/CampusAmbassador')
         } else {
             this.setState({
@@ -45,31 +45,31 @@ export default class Popup extends React.Component {
     }
     render() {
         let message
-        if (this.state.msg && typeof(this.state.msg) === "object" && this.state.msg.length > 0) {
+        if (this.state.msg && typeof (this.state.msg) === "object" && this.state.msg.length > 0) {
             message = this.state.msg.map((eachMsg, index) => {
-                if (typeof(eachMsg) === "string") {
-                    return <p key={index+'popupmsg'}> {eachMsg} </p>
+                if (typeof (eachMsg) === "string") {
+                    return <p key={index + 'popupmsg'}> {eachMsg} </p>
                 }
                 return null
             })
-        } else if (this.state.msg && typeof(this.state.msg) === "string") {
+        } else if (this.state.msg && typeof (this.state.msg) === "string") {
             message = <p> {this.state.msg} </p>
         }
         return (
             <div id="popup-main-common-div">
                 <React.Fragment>
                     {this.state.close ?
-                            null :
-                            <div className="campus-popup-main-div" >
-                                <div className="campus-popup">
-                                    <div className="campus-popup-msg">
-                                        {message ? message : null}
-                                        <div>
-                                            <button onClick={this.confirm}>OK</button>
-                                        </div>
+                        null :
+                        <div className="campus-popup-main-div" >
+                            <div className="campus-popup">
+                                <div className="campus-popup-msg">
+                                    {message ? message : null}
+                                    <div>
+                                        <button onClick={this.confirm}>OK</button>
                                     </div>
                                 </div>
                             </div>
+                        </div>
                     }
                 </React.Fragment>
             </div>
