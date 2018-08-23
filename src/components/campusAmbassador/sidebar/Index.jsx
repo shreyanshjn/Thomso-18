@@ -88,39 +88,41 @@ export default class Sidebar extends React.Component {
               <div className="cname">{this.props.userData ? this.props.userData.college : "-"}</div>
             </div>
           </div>
+          {this.props.userData && this.props.userData.score ?
           <div className="campusAmb-sidebar-line">
           </div>
+          : null}
           <div className="campusAmb-sidebar-like-share-score">
-            <div className="campusAmb-sidebar-like-share-score-child">
-              <div className="campusAmb-sidebar-likes">
-                <div className="campusAmb-sidebar-likes-child">
-                  <div className="campusAmb-sidebar-likes-grandchild">
+            {this.props.userData && this.props.userData.score ?
+              <div className="campusAmb-sidebar-like-share-score-child">
+                <div className="campusAmb-sidebar-likes">
+                  <div className="campusAmb-sidebar-likes-child">
+                    <div className="campusAmb-sidebar-likes-grandchild">
+                      <div className="campusAmb-sidebar-likes-grandchild-number">
+                        {this.props.userData ? this.props.userData.referrals : "0"}
+                      </div>
+                      <div className="campusAmb-sidebar-svg-logo">
+                        <ReferralPoint />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="campusAmb-sidebar-likes-number">
+                    REFFERALS
+                  </div>
+                </div>
+                <div className="campusAmb-sidebar-shares">
+                  <div className="campusAmb-sidebar-likes-child">
                     <div className="campusAmb-sidebar-likes-grandchild-number">
-                      {this.props.userData ? this.props.userData.referrals : "0"}
+                      {this.props.userData ? this.props.userData.bonus : "0"}
                     </div>
                     <div className="campusAmb-sidebar-svg-logo">
-                      <ReferralPoint />
+                      <Bonus />
                     </div>
                   </div>
-                </div>
-                <div className="campusAmb-sidebar-likes-number">
-                  REFFERALS
-                </div>
-              </div>
-              <div className="campusAmb-sidebar-shares">
-                <div className="campusAmb-sidebar-likes-child">
-                  <div className="campusAmb-sidebar-likes-grandchild-number">
-                    {this.props.userData ? this.props.userData.bonus : "0"}
-                  </div>
-                  <div className="campusAmb-sidebar-svg-logo">
-                    <Bonus />
+                  <div className="campusAmb-sidebar-likes-number">
+                    BONUS
                   </div>
                 </div>
-                <div className="campusAmb-sidebar-likes-number">
-                  BONUS
-                </div>
-              </div>
-              {this.props.userData && this.props.userData.score ?
                 <div className="campusAmb-sidebar-score">
                   <div className="campusAmb-sidebar-likes-child">
                     <div className="campusAmb-sidebar-likes-grandchild-number">
@@ -131,11 +133,11 @@ export default class Sidebar extends React.Component {
                     </div>
                   </div>
                   <div className="campusAmb-sidebar-likes-number">
-                    SCORES
+                    SCORE
                 </div>
-                </div> : null}
-
-            </div>
+                </div>
+              </div>
+            : null}
             {/* <div className="campusAmb-sidebar-updatenews">
               *Scores will be updated at 12 am
             </div> */}
@@ -272,9 +274,15 @@ export default class Sidebar extends React.Component {
                     <Referral />
                   </div>
                   <div className="campusAmb-sidebar-navitem-name" onClick={() => {
-                    if (navigator && navigator.clipboard) {
-                      navigator.clipboard.writeText(this.props.userData.ca_id)
-                    }
+                    const el = document.createElement('textarea');
+                    el.value = this.props.userData.ca_id;
+                    el.setAttribute('readonly', '');
+                    el.style.position = 'absolute';
+                    el.style.left = '-9999px';
+                    document.body.appendChild(el);
+                    el.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(el);
                   }}>
                     REFERRAL CODE : <span id="ca-referral-code">{this.props.userData.ca_id}</span>
                   </div>

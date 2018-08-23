@@ -23,15 +23,15 @@ export default class LeaderboardIndex extends React.Component {
                 }
             })
             .catch(e => console.log(e));
-        FetchApi('GET', '/api/ca/temp/rank', null, authtoken)
-            .then(r => {
-                if (r && r.data && r.data.success === true) {
-                    this.setState({ rank: r.data.rank })
-                } else {
-                    console.log(r)
-                }
-            })
-            .catch(e => console.log(e));
+        // FetchApi('GET', '/api/ca/temp/rank', null, authtoken)
+        //     .then(r => {
+        //         if (r && r.data && r.data.success === true) {
+        //             this.setState({ rank: r.data.rank })
+        //         } else {
+        //             console.log(r)
+        //         }
+        //     })
+        //     .catch(e => console.log(e));
     }
     render() {
         return (
@@ -48,13 +48,13 @@ export default class LeaderboardIndex extends React.Component {
                             {this.state.users ? this.state.users.map((user, index) => {
                                 return <DataRow key={`leader${index}`} data={user} index={index} />
                             }) : null}
-                            {this.props.userData ?
+                            {/* {this.props.userData ?
                                 <tr className="campusAmb-leader-rank">
                                     <th>{this.props.userData.blocked ? 'Blocked' : this.state.rank}</th>
                                     <th>{this.props.userData.name ? this.props.userData.name : null}</th>
                                     <th className="campusAmb-leader-desktop">{this.props.userData.college ? this.props.userData.college : 0}</th>
                                     <th className="campusAmb-leader-desktop">{this.props.userData.score ? this.props.userData.score : 0}</th>
-                                </tr> : null}
+                                </tr> : null} */}
                         </tbody>
                     </table>
                 </div>

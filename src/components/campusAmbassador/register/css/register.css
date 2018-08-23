@@ -6,7 +6,7 @@
     background-size: cover;
     background-position: center center;
     display: flex;
-    height: 100vh;
+    height: 100%;
     font-family: Montserrat;
     color: white;
     min-height:100vh;
@@ -69,7 +69,33 @@
     margin-top: 35px;
     background-color: white;
     width: 1px;
+}.form-contactnumber{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
 }
+.form-contactnumber label{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-weight: 600;
+    font-size: 12px;
+}
+.form-contactnumber input{
+    font-size: 14px;
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: #BEBEBE ;
+    font-family: Montserrat;
+    background: none;
+    color: white;
+    padding: 5px;
+}
+.form-contactnumber input::placeholder{
+     color: white;
+     text-align: center;
+}
+.form-contactnumber input:focus::-webkit-input-placeholder { color:transparent; }
 .r-logo{
     padding: 10px;
 }
@@ -126,6 +152,7 @@
     justify-content: space-around;
     font-weight: 600;
     font-size: 12px;
+    margin-bottom: 9px;
 }
 .form-name input{
     font-size: 14px;
@@ -153,6 +180,7 @@
     justify-content: space-around;
     font-weight: 600;
     font-size: 12px;
+    margin-bottom: 9px;
 }
 .form-contactnumber input{
     font-size: 14px;
@@ -180,6 +208,7 @@
     justify-content: space-around;
     font-weight: 600;
     font-size: 12px;
+    margin-bottom: 9px;
 }
 .form-gender{
     display: flex;
@@ -192,6 +221,7 @@
     justify-content: space-around;
     font-weight: 600;
     font-size: 12px;
+    margin-bottom: 9px;
 }
 .form-email input{
     font-size: 14px;
@@ -267,6 +297,7 @@
     justify-content: space-around;
     font-weight: 600;
     font-size: 12px;
+    margin-bottom: 9px;
 }
 .form-branch{
     display: flex; 
@@ -296,24 +327,6 @@
     text-align: center;
 }
 .form-branch input:focus::-webkit-input-placeholder { color:transparent; }
-.form-state select{
-    font-size: 14px;
-    outline: 0;
-    border-width: 0 0 2px;
-    border-color: #BEBEBE ;
-    font-family: Montserrat;
-    background: none;
-    color: white;
-    padding: 5px 5px 3px 5px;
-}
-.form-state select::placeholder{
-    color: white;
-    text-align: center;
-}
-.form-state select option{
-    color: #58595B;
-}
-.form-state .form-state-select:focus::-webkit-.form-state-select-placeholder { color:transparent; }
 .form-add-child{
     display: flex;
     flex-direction: column;
@@ -327,6 +340,7 @@
     justify-content: space-around;
     font-weight: 600;
     font-size: 12px;
+    margin-top: 9px;
 }
 .form-add-child input{
     font-size: 14px;
@@ -363,6 +377,7 @@ input[type=number]::-webkit-outer-spin-button {
     justify-content: space-around;
     font-weight: 600;
     font-size: 12px;
+    margin-bottom: 9px;
 }
 .form-inwhy-child textarea{
     overflow: hidden;

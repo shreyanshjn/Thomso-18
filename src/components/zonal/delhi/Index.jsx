@@ -14,7 +14,7 @@ export default class DelhiIndex extends Component {
                     <DelhiOpening />
                 </div>
                 <SectionSecond2 city='delhi' />
-                <ZonalsFormDelhi showModal={() => this.popup.show(['Congratulations!', `You have been successfully registered for Thomso18 Karwan.`, `Confirmation email has been sent to your inbox`])} />
+                <ZonalsFormDelhi showModal={() => this.popup.show(['Congratulations!', `You have been successfully registered for Karwaan, Thomso18.`, `Confirmation email has been sent to your inbox`])} />
                 <Footer city='delhi' />
             </div>
         );

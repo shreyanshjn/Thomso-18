@@ -135,7 +135,7 @@ exports.deleteIdea = function (req, res) {
 
 /* GET Leaderboard */
 exports.getLeaderboard = function (req, res) {
-    Temp_User.find({ blocked: { $ne: true } })
+    Temp_User.find({ verified: true, blocked: { $ne: true } })
         .select('name college score')
         .sort({ 'score': -1 })
         .limit(10)
@@ -158,7 +158,7 @@ exports.getRank = function (req, res) {
             if (err) return res.status(400).send({ success: false, msg: 'Cannot Find User' });
             var score = user.score;
             if (score !== undefined) {
-                Temp_User.count({ "score": { "$gt": score } }, function (err, rank) {
+                Temp_User.count({ "score": { "$gt": score }, verified: true }, function (err, rank) {
                     if (err) {
                         res.status(400).send({ success: false, msg: 'Rank Undefined', error: err });
                     }
