@@ -36,10 +36,11 @@ var UserSchema = new mongoose.Schema({
     },
     event: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Events_Schema'
+        ref: 'Thomso_Event'
     }],
     primary_event: {
-        type: String
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Thomso_Event'
     },
     verified: {
         type: Boolean,

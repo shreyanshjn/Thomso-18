@@ -1,36 +1,46 @@
 var Main_User = require('../../../models/main/Main_User');
-var EventSchema = require('../../../models/main/Events_Schema');
-
+var EventSchema = require('../../../models/main/Thomso_Event');
 
 exports.addEvent = function(req, res) {
-   if(req && req.body){
-       if(req.body.event_id)req.body.event_id = req.body.event_id.trim();
-       if(req.body.name)req.body.name = req.body.name.trim();
-        console.log(req.body)
-       var data = {
-           event_id :req.body.event_id,
-           name : req.body.name
-       }
-       if(data.event_id && data.name){
-           var newEvent = new EventSchema(data);
-           newEvent.save(function(err){
-               if(err)
-                    res.json({success:false, msg:'unable to add event'});
-                res.json({success:true, msg:'event added'});
-           })
-       }
-   }
+    if(req && req.body){
+        if(req.body.event_id)req.body.event_id = req.body.event_id.trim();
+        if(req.body.name)req.body.name = req.body.name.trim();
+        var isPrimary = false;
+        if(req.body.isPrimary) isPrimary = true;
+        var data = {
+            event_id :req.body.event_id,
+            name : req.body.name,
+            isPrimary: isPrimary
+        }
+        if(data.event_id && data.name){
+            var newEvent = new EventSchema(data);
+            newEvent.save(function(err){
+                if(err) {
+                    return res.json({success:false, msg:'Unable to add event'})
+                };
+                res.json({success:true, msg:'Event added'});
+            })
+        }
+    }
+};
+
+exports.getEvents = function(req, res) {
+    EventSchema.find({isPrimary: true})
+        .select('name')
+        .exec(function(err, result){
+            if(err) {
+                return res.json({success:false, msg:'Unable to fetch event'});
+            }
+            res.json({success:true, msg:'event fetched', body: result});
+        });
 };
 
 exports.removeEvent = function(req, res) {
     if(req && req.body){
-        if(req.body.event_id)req.body.event_id = req.body.event_id.trim();
+        if(req.body.event_id) req.body.event_id = req.body.event_id.trim();
  
-        var data = {
-            event_id : req.body.event_id,
-        }
-        if(data.event_id){
-            EventSchema.remove({event_id:data.event_id})
+        if(req.body.event_id){
+            EventSchema.remove({event_id:req.body.event_id})
             .exec(function(err){
                 if(err)
                     res.json({success:false, msg:'unable to delete event'});
@@ -68,7 +78,6 @@ exports.addParticipant = function(req, res){
                 if(err){
                     return res.status(400).send({success:false, msg:'unable to add participant'}); 
                 }
-                console.log("123")
                 Main_User.update(
                     {email:updateData.email},
                     {$addToSet:{event:result._id}}

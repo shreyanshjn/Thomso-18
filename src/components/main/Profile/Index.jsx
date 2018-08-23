@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import FetchApi from "../../../utils/FetchAPI";
 import AuthService from '../../../handlers/main/AuthService';
 import "../src/css/profile.css"
@@ -12,6 +11,7 @@ export default class Profile extends React.Component {
             event_id: '',
             event_name: '',
             error: '',
+            isPrimary: false,
             disabled: true,
             events: []
         }
@@ -43,19 +43,15 @@ export default class Profile extends React.Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        let { event_id, event_name } = this.state;
-        let name = event_name
-        const data = { event_id, name }
-        console.log(data)
+        let { event_id, event_name, isPrimary } = this.state;
+        const data = { event_id, name: event_name, isPrimary }
         FetchApi('POST', '/api/main/addEvent', data)
             .then(res => {
                 if (res && res.data) {
-                    console.log(res.data)
                     if (res.data.success) {
                         this.setState({ error: res.data.msg })
                     }
                     else {
-
                         this.setState({
                             disabled: false,
                             error: res.data.msg
@@ -93,7 +89,7 @@ export default class Profile extends React.Component {
 
 
     render() {
-        const { error, event_id, event_name, disabled } = this.state;
+        const { error, event_id, event_name, isPrimary,  disabled } = this.state;
         return (
             <div className="participant-profile-parent">
                 <div className="participant-profile-child-details">
@@ -137,12 +133,12 @@ export default class Profile extends React.Component {
                         </div>
                     </div>
                 </div>
-                {/* <div>
+                <div>
                     {error ? <div style={{ color: 'red', fontSize: '22px' }}>{error}</div> : null}
 
                     <br /><br /><br />
 
-                    {this.props.userData.event[0] ?
+                    {(this.props.userData.event && this.props.userData.event.length > 0) ?
                         <div>click to select event to deletes
                         <form onSubmit={this.onRemove}>
                                 <button type="submit" disabled={disabled}>Delete Event</button>
@@ -153,11 +149,11 @@ export default class Profile extends React.Component {
                     <form onSubmit={this.onSubmit}>
                         <div>
                             <div>
-                                <label htmlFor="inputEmail">Event id</label>
+                                <label htmlFor="inputID">Event id</label>
                                 <input
                                     name="event_id"
                                     type="text"
-                                    id="inputEmail"
+                                    id="inputID"
                                     placeholder="event_id"
                                     value={event_id}
                                     onChange={this.onChange1}
@@ -169,9 +165,9 @@ export default class Profile extends React.Component {
                                 />
                             </div>
                             <div>
-                                <label htmlFor="inputPassword">Name</label>
+                                <label htmlFor="inputName">Name</label>
                                 <input
-                                    id="inputPassword"
+                                    id="inputName"
                                     type="text"
                                     name="event_name"
                                     onChange={this.onChange1}
@@ -182,11 +178,20 @@ export default class Profile extends React.Component {
                                 />
                             </div>
                             <div>
-                                <button type="submit"  >Add event</button>
+                                <label htmlFor="inputPrimary">Primary</label>
+                                <input
+                                    id="inputPrimary"
+                                    type="checkbox"
+                                    onChange={() => this.setState({isPrimary: !this.state.isPrimary})}
+                                    value={isPrimary}
+                                />
+                            </div>
+                            <div>
+                                <button type="submit">Add event</button>
                             </div>
                         </div>
                     </form>
-                </div > */}
+                </div >
             </div>
         );
     }

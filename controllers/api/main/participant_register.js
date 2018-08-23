@@ -3,6 +3,7 @@ var Main_User = require('../../../models/main/Main_User');
 var Main_User_Token = require('../../../models/main/Main_User_Token');
 var Temp_User = require('../../../models/ca/CA_Temp_User');
 var Counter = require('../../../models/counters/Counter');
+var EventSchema = require('../../../models/main/Thomso_Event');
 var TokenHelper = require('../../../helpers/TokenHelper');
 var Generator = require("../../../helpers/GeneratePassword");
 var mailer = require('../../common/mailer');
@@ -55,7 +56,7 @@ exports.participant_registration = function (req, res) {
             address: req.body.address,
             primary_event: req.body.primary_event,
             password: req.body.password,
-            reffered_by: req.body.referred_by,
+            referred_by: req.body.referred_by,
             otp: '1511'
         };
         if (data.name && data.contact && data.email && data.gender && data.college && data.state && data.branch && data.address && data.primary_event && data.password) {
@@ -101,7 +102,7 @@ exports.verifyOTP = function (req, res) {
         Main_User.findOne({
             email: req.locals.email
         })
-            .select('email verified otp referred_by thomso_id')
+            .select('email verified otp referred_by thomso_id primary_event')
             .exec(function (err, user) {
                 if (err) res.json({ success: false, msg: 'Error' });
                 if (!user) res.json({ success: false, msg: 'User not found' });
@@ -140,7 +141,16 @@ exports.verifyOTP = function (req, res) {
                                                     if (error) {
                                                         return res.json({ success: false, msg: 'Unable To Add Referrals' });
                                                     }
-                                                    res.json({ success: true, body: parti, msg: 'Successfully verified' });
+                                                    EventSchema.update(
+                                                        {event_id:user.primary_event},
+                                                        {$addToSet:{users:req.locals._id}}
+                                                    )
+                                                    .exec(function(err){
+                                                        if (err) {
+                                                            return res.json({ success: false, msg: 'Unable To Add Event' });
+                                                        }
+                                                        res.json({ success: true, body: parti, msg: 'Successfully verified' });
+                                                    })
                                                 })
                                             } else {
                                                 res.json({ success: true, body: parti, msg: 'Successfully verified' });
@@ -229,6 +239,7 @@ exports.participant_login = function (req, res) {
                                             college: user.college,
                                             address: user.address,
                                             contact: user.contact,
+                                            primary_event: user.primary_event
                                         }
                                         if (tokens.length > 2 && tokens[0]) {
                                             Main_User_Token.update({ _id: tokens[0]._id }, newToken)

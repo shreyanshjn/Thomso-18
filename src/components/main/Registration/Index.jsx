@@ -8,7 +8,7 @@ import AuthService from '../../../handlers/main/AuthService';
 import "../../campusAmbassador/register/css/register.css";
 import { Link } from 'react-router-dom';
 import "./style.css"
-import Primary_eventsSelect from "./Primary_eventsSelect";
+import EventsSelect from "./EventsSelect";
 
 
 // import Popup from '../../common/popup/Index';
@@ -67,6 +67,7 @@ export default class RegisterIndex extends React.Component {
                             if (res.data.success === true) {
                                 this.Auth.setToken(res.data.token);
                                 this.props.updateRoutes(true, false);
+                                this.props.history.push('/main/verify')
                             }
                             else
                                 this.setState({ errors: res.data.msg })
@@ -83,8 +84,9 @@ export default class RegisterIndex extends React.Component {
                 this.setState({ errors: 'Fields cannot be empty' })
             }
         }
-        else
+        else {
             this.setState({ errors: "Password didn't matched!!" })
+        }
     }
 
     render() {
@@ -238,7 +240,7 @@ export default class RegisterIndex extends React.Component {
                                     </div>
                                     <div className="form-primary_events">
                                         <label htmlFor="inputState">Primary Events</label>
-                                        <Primary_eventsSelect onChange={primary_event => this.setState({ primary_event })} />
+                                        <EventsSelect onChange={primary_event => this.setState({ primary_event })} />
                                     </div>
                                 </div>
                                 <div className="main-form-second-grandchild">

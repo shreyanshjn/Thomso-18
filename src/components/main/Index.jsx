@@ -63,7 +63,7 @@ export default class MainIndex extends React.Component {
 
     componentWillMount() {
         const isAuthenticated = this.Auth.hasToken();
-        console.log(isAuthenticated, "isAuthenticated");
+        console.log(isAuthenticated,  "isAuthenticated");
         if (isAuthenticated) {
             const token = this.Auth.getToken()
             FetchApi('GET', '/api/main/user', null, token)
@@ -103,7 +103,6 @@ export default class MainIndex extends React.Component {
                             <Route exact path="/main/verify" render={props => (<VerifyIndex {...props} userData={this.state.userData} updateRoutes={this.handleUpdate} setUserData={this.setUserData} />)} />
                             :
                             <React.Fragment>
-                                {console.log(this.state.userData)}
                                 <Route path="/main" render={props => (<SidebarIndex {...props} userData={this.state.userData} />)} />
                                 <Route exact path="/main" render={props => (<Profile {...props} userData={this.state.userData} />)} />
                                 <Route exact path="/main/event" render={props => (<EventIndex {...props} userData={this.state.userData} />)} />

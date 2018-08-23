@@ -1,41 +1,7 @@
 import React, { Component } from 'react';
-
 import Select from 'react-select';
 
-const options = [
-    "Step Up",
-    "Foot Loose",
-    "Nukkad Natak",
-    "Abhivyakti",
-    "Battle of Band",
-    "Sargam",
-    "Food Fiesta",
-    "Thomso's Got Talent",
-    "Seiger",
-    "Treasure Hunt",
-    "16 Frames",
-    "Box Office",
-    "Vogue",
-    "Mr & Ms Thoms",
-    "Campus Diva",
-    "Apocalypes",
-    "Queen's Gambit",
-    "Snooker Elit",
-    "Street Soccer",
-    "Art Talkies",
-    "Naqaab",
-    "Paint Fiesta",
-    "Literati",
-    "Spin A yarn",
-    "Auction frenzy",
-    "Mark Sense",
-    "Quriosity",
-    "Telly Sporcle",
-    "Informals (Others)",
-].map(state => ({
-    value: state,
-    label: state,
-}));
+import FetchApi from "../../../utils/FetchAPI";
 
 const customStyles = {
     option: (base, state) => ({
@@ -97,6 +63,29 @@ const customStyles = {
 }
 
 export default class Primary_eventsSelect extends Component {
+    constructor() {
+        super();
+        this.state = {
+            events: []
+        }
+    }
+
+    componentWillMount() {
+        FetchApi('GET', '/api/main/primary')
+            .then(res => {
+                if (res && res.data && res.data.success === true && res.data.body && res.data.body.length > 0) {
+                    const events = res.data.body.map(event => ({
+                        value: event._id,
+                        label: event.name,
+                    }));
+                    this.setState({events: events})
+                }
+            })
+            .catch(e => {
+                console.log(e)
+            });
+    }
+
     handleChange = (newValue) => {
         if (newValue && newValue.value) {
             this.props.onChange(newValue.value);
@@ -109,7 +98,7 @@ export default class Primary_eventsSelect extends Component {
                 styles={customStyles}
                 isClearable
                 onChange={this.handleChange}
-                options={options}
+                options={this.state.events}
             />
         );
     }
