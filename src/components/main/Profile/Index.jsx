@@ -35,35 +35,6 @@ export default class Profile extends React.Component {
         }
     }
 
-    onChange1 = (e) => {
-        const name = e.target.name;
-        let value = e.target.value;
-        this.setState({ [name]: value });
-    }
-
-    onSubmit = (e) => {
-        e.preventDefault();
-        let { event_id, event_name, isPrimary } = this.state;
-        const data = { event_id, name: event_name, isPrimary }
-        FetchApi('POST', '/api/main/addEvent', data)
-            .then(res => {
-                if (res && res.data) {
-                    if (res.data.success) {
-                        this.setState({ error: res.data.msg })
-                    }
-                    else {
-                        this.setState({
-                            disabled: false,
-                            error: res.data.msg
-                        })
-                    }
-                }
-            })
-            .catch(e => {
-                this.setState({ error: e.response.msg })
-            });
-    }
-
     onChange = (e) => {
         let value = e.target.value;
         this.setState({ event_id: value, disabled: false });
@@ -89,6 +60,7 @@ export default class Profile extends React.Component {
 
 
     render() {
+        const { error, event_id, event_name, isPrimary,  disabled } = this.state;
         return (
             <div className="participant-profile-parent">
                 <div className="participant-profile-child-details">

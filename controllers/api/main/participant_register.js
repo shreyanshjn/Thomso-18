@@ -43,11 +43,11 @@ exports.participant_registration = function (req, res) {
         if (data.name && data.contact && data.email && data.gender && data.college && data.state && data.branch && data.address && data.primary_event && data.password) {
             var newUser = Main_User(data);
             newUser.save(function(err){
-                if(err)
-                    return res.json({ success: false, msg: 'Username already exist'});
-                var otp = '1511';    
+                if(err) return res.json({ success: false, msg: 'Username already exist'});
+                var otp = Generator.generateOTP();    
                 var generateHash = Generator.generateHash(req.body.password);
-                generateHash.then(function(newHash){
+                if(otp && generateHash){
+                    generateHash.then(function(newHash){
                         if(newHash){
                             var updateData = {
                                 password: newHash,
@@ -57,29 +57,30 @@ exports.participant_registration = function (req, res) {
                             .exec(function(err){
                                 if(err) return res.status(400).send({success:false,msg:'Unable To Register'})
                                 var genratedToken = TokenHelper.generateUserToken( "data.email",data.email);
-                                var newToken = {
-                                    email: req.body.email,
-                                    verified: false,
-                                    token: genratedToken,
-                                    expiration_time: moment().day(30),
-                                    updated_date: new Date()
-                                };
-                                var addToken = new Main_User_Token(newToken);
-                                addToken.save(function(err) {
-                                    if (err) {
-                                        return res.json({success: false, msg: 'Token Already Exists'});
-                                    }
-                                    mailer.participantRegister({
-                                        name:data.name,
-                                        email:data.email,
-                                        otp:otp
+                                if(genratedToken){
+                                    var newToken = {
+                                        email: req.body.email,
+                                        verified: false,
+                                        token: genratedToken,
+                                        expiration_time: moment().day(30),
+                                        updated_date: new Date()
+                                    };
+                                    var addToken = new Main_User_Token(newToken);
+                                    addToken.save(function(err) {
+                                        if (err)  return res.json({success: false, msg: 'Token Already Exists'});
+                                        mailer.participantRegister({
+                                            name:data.name,
+                                            email:data.email,
+                                            otp:otp
+                                        });
+                                        res.json({success:true, token:genratedToken, msg:'Successfully Registered!!'});
                                     });
-                                    res.json({success:true, token:genratedToken, msg:'Successfully Registered!!'});
-                                });
+                                } else return res.status(400).send({success: false, msg: 'Unable To generate token'});
                             });
                         }
                     });
-                });
+                }else return res.status(400).send({success: false, msg: 'Unable To generate token'});
+            });
         }
     }
 };

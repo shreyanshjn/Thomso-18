@@ -1,13 +1,17 @@
 import React from 'react';
 import AuthService from "../../../../handlers/main/admin/AuthService";
 import FetchApi from "../../../../utils/FetchAPI";
-import DataTable from './DataTable';
 
 export default class HomeIndex extends React.Component {
     constructor() {
         super();
         this.state = {
-            
+            event_id: '',
+            event_name: '',
+            error: '',
+            isPrimary: false,
+            disabled: true,
+            events: []
         };
         this.Auth = new AuthService();
     }
@@ -40,7 +44,9 @@ export default class HomeIndex extends React.Component {
                     }
                 })
                 .catch(e => {
-                    this.setState({ error: e.response.msg })
+                    if(e && e.response && e.response.data && e.response.data.msg)
+                        this.setState({ error: e.response.data.msg })
+                    else this.setState({ error: "something went wrong" })
                 });
         }
     }

@@ -38,7 +38,6 @@ router.get('/primary', eventControl.getEvents);
 router.get('/events' , MainUserTokenMiddleware.verify, participantControl.getUserEvents);
 
 // -> /main/event  --->  move to main admin
-router.post('/addEvent' , eventControl.addEvent);
 router.delete('/removeEvent' , MainUserTokenMiddleware.verify,eventControl.removeEvent);
 router.get('/fetchEvent' , eventControl.fetchEvent);
 

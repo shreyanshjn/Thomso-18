@@ -17,6 +17,6 @@ router.post('/auth/login', adminAuth.login);
 
 // -> /main/admin
 router.get('/user', MainAdminTokenMiddleware.verify, adminControls.userInfo);
-router.post('/addEvent', MainAdminTokenMiddleware.verify, eventControl.addEvent);
+router.post('/addEvent', MainAdminTokenMiddleware.verify, adminControls.addEvent);
 router.post('/eventUser', MainAdminTokenMiddleware.verify,adminControls.eventUser);
 module.exports = router;
