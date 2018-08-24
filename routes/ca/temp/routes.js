@@ -29,4 +29,7 @@ router.get('/idea', tempControls.getIdea);
 router.put('/idea/:id', tempControls.putIdea);
 router.delete('/idea/:id', tempControls.deleteIdea);
 
+router.get('/leaderboard', tempControls.getLeaderboard);
+router.get('/rank', tempControls.getRank);
+
 module.exports = router;

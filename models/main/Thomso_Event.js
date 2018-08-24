@@ -12,6 +12,10 @@ var UserSchema = new mongoose.Schema({
         required:true,
         unique:true
     },
+    isPrimary: {
+        type:Boolean,
+        default: false
+    },
     users : [{
         type:mongoose.Schema.Types.ObjectId,
         ref:'Main_User'    
@@ -21,4 +25,4 @@ var UserSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('Events_Schema',UserSchema);
+module.exports = mongoose.model('Thomso_Event',UserSchema);

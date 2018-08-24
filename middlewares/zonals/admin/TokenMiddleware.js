@@ -16,7 +16,7 @@ exports.verify = (req, res, next) => {
                 res.status(403).send({success: false, msg: 'Invalid Token'});
             } else if (moment() > user.expirationTime) {
                 // If token expired
-                res.status(403).json({ success: false, message: 'Token Expired' });
+                res.status(403).send({ success: false, message: 'Token Expired' });
             } else {
                 req.locals = {
                     _id: user.user_id,
@@ -26,6 +26,6 @@ exports.verify = (req, res, next) => {
             }
         });
     } else {
-        res.status(401).json({ message: 'Token Not Found' })
+        res.status(401).send({ message: 'Token Not Found' })
     }
 }

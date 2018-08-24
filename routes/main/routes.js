@@ -21,8 +21,10 @@ router.post('/auth/resetEmail' , participantRegister.reset_password_email);
 router.post('/auth/resetPassword' , participantRegister.reset_password);
 
 
-// /main/control
+// /main/
 router.get('/user', MainUserTokenMiddleware.verifyUser , participantControl.userInfo);
+router.get('/primary', eventControl.getEvents);
+router.get('/events' , MainUserTokenMiddleware.verify, participantControl.getUserEvents);
 
 // /main/event  --->  move to main admin
 router.post('/addEvent' , eventControl.addEvent);
