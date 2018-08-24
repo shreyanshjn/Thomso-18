@@ -53,9 +53,12 @@ var UserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    created_date: {
-        type: Date,
-        default: Date.now
+    tempPassword:{
+        type:String
+    },
+    created_date:{
+        type:Date,
+        default:Date.now
     },
     state: {
         type: String
@@ -93,6 +96,15 @@ UserSchema.pre('save', function (next) {
 
 UserSchema.methods.comparePassword = function (pass, callback) {
     bcrypt.compare(pass, this.password, function (err, isMatch) {
+        if (err)
+            return callback(err);
+        callback(null, isMatch);
+    });
+};
+
+UserSchema.methods.compareTempPassword = function (pass, callback) {
+    bcrypt.compare(pass, this.tempPassword, function (err, isMatch) {
+        console.log(this.tempPassword, pass)
         if (err)
             return callback(err);
         callback(null, isMatch);

@@ -14,7 +14,6 @@ exports.verifyUser = (req, res, next) => {
             } else if (!user) {
                 res.status(403).send({success: false, msg: 'User Not Found'});
             } else if (moment() > user.expirationTime) {
-                // If token expired
                 res.status(403).send({ success: false, message: 'Token Expired' });
             } else {
                 req.locals = {

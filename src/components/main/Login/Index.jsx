@@ -64,7 +64,7 @@ export default class LoginIndex extends React.Component {
                     })
                     .catch(e => {
                         if (e.response && e.response.data) {
-                            this.setState({ disabled: false, errors: e.response })
+                            this.setState({ disabled: false, errors: e.response.data.msg })
                         } else {
                             this.setState({ disabled: false, errors: 'Something went wrong' })
                         }
@@ -91,7 +91,7 @@ export default class LoginIndex extends React.Component {
                         <div className="vertical_line">
                         </div>
                         <div className="register-ca common-cursor">
-                            <h1>Pariciapant<br /> Login</h1>
+                            <h1>Paricipant<br /> Login</h1>
                         </div>
                     </div>
                     <div className="register-form">
@@ -137,7 +137,11 @@ export default class LoginIndex extends React.Component {
                                 </div>
                             </div>
                             <div style={{marginTop: '10px', fontSize: '0.8em', textAlign: 'center'}}>* Forgot Password? Click 
-                                <span style={{color: 'cyan', cursor: 'pointer'}} > here </span>
+                                <span style={{color: 'cyan', cursor: 'pointer'}} > 
+                                    <Link to="/main/resetPasswordEmail">
+                                        here
+                                    </Link>
+                                </span>
                                 to reset
                             </div>
                             <div className="register">

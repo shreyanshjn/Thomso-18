@@ -27,6 +27,11 @@ router.post('/auth/register', participantRegister.participant_registration);
 router.post('/auth/verify', MainUserTokenMiddleware.verifyUser, participantRegister.verifyOTP);
 router.post('/auth/login' , participantRegister.participant_login);
 
+// -> /main/resetPassword
+router.post('/auth/resetEmail' , participantRegister.reset_password_email);
+router.post('/auth/resetPassword' , participantRegister.reset_password);
+
+
 // -> /main/
 router.get('/user', MainUserTokenMiddleware.verifyUser , participantControl.userInfo);
 router.get('/primary', eventControl.getEvents);
