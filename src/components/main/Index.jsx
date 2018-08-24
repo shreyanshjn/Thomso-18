@@ -19,7 +19,7 @@ const AdminIndex = Loadable({
 });
 
 const RegisterIndex = Loadable({
-    loader: () => import("./Registration/Index"),
+    loader: () => import("./registration/Index"),
     loading: Loading
 });
 const SidebarIndex = Loadable({
@@ -27,41 +27,46 @@ const SidebarIndex = Loadable({
     loading: Loading
 });
 const LoginIndex = Loadable({
-    loader: () => import("./Login/Index"),
+    loader: () => import("./login/Index"),
     loading: Loading
 });
 
 const VerifyIndex = Loadable({
-    loader: () => import("./Verify/Index"),
+    loader: () => import("./verify/Index"),
     loading: Loading
 });
 const HomeIndex = Loadable({
-    loader: () => import("./Home/Index"),
+    loader: () => import("./home/Index"),
+    loading: Loading
+});
+
+const ContactIndex = Loadable({
+    loader: () => import("../campusAmbassador/contactus/Index"),
     loading: Loading
 });
 
 const Profile = Loadable({
-    loader: () => import("./Profile/Index"),
+    loader: () => import("./profile/Index"),
     loading: Loading
 });
 
 const LogoutIndex = Loadable({
-    loader: () => import("./Logout/Index"),
+    loader: () => import("./logout/Index"),
     loading: Loading
 });
 
 const EventIndex = Loadable({
-    loader: () => import("./Event/Index"),
+    loader: () => import("./event/Index"),
     loading: Loading
 });
 
 const ResetPasswordEmailIndex = Loadable({
-    loader: ()=>import("./ResetPasswordEmail/Index"),
+    loader: ()=>import("./resetPasswordEmail/Index"),
     loading: Loading
 });
 
 const ResetPasswordIndex = Loadable({
-    loader: ()=>import("./ResetPassword/Index"),
+    loader: ()=>import("./resetPassword/Index"),
     loading: Loading
 });
 
@@ -121,6 +126,7 @@ export default class MainIndex extends React.Component{
                             <React.Fragment>
                                 <Route path="/main" render={props => (<SidebarIndex {...props} userData={this.state.userData} />)} />
                                 <Route exact path="/main" render={props => (<Profile {...props} userData={this.state.userData} />)} />
+                                <Route exact path="/main/contact" render={props => (<ContactIndex {...props} userData={this.state.userData} />)} />
                                 <Route exact path="/main/event" render={props => (<EventIndex {...props} userData={this.state.userData} />)} />
                             </React.Fragment>
                         }

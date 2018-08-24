@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom' ;
 
-// import {Route} from "react-router-dom";
 import FetchApi from "../../../utils/FetchAPI";
 import validateInput from '../../../utils/validation/loginValidation';
 import AuthService from '../../../handlers/main/AuthService';
@@ -86,7 +85,7 @@ export default class LoginIndex extends React.Component {
                 <div className="register-child">
                     <div className="register-heading">
                         <div className="r-logo">
-                            <Link to="/"><img src={img} alt="r-logo" /></Link>
+                            <Link to="/main"><img src={img} alt="r-logo" /></Link>
                         </div>
                         <div className="vertical_line">
                         </div>
@@ -137,10 +136,8 @@ export default class LoginIndex extends React.Component {
                                 </div>
                             </div>
                             <div style={{marginTop: '10px', fontSize: '0.8em', textAlign: 'center'}}>* Forgot Password? Click 
-                                <span style={{color: 'cyan', cursor: 'pointer'}} > 
-                                    <Link to="/main/resetPasswordEmail">
-                                        here
-                                    </Link>
+                                <span style={{color: 'cyan', cursor: 'pointer'}} onClick={() => this.props.history.push('/main/resetPasswordEmail')}> 
+                                    &nbsp;here&nbsp;
                                 </span>
                                 to reset
                             </div>
