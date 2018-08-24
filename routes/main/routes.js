@@ -37,11 +37,8 @@ router.get('/user', MainUserTokenMiddleware.verifyUser , participantControl.user
 router.get('/primary', eventControl.getEvents);
 router.get('/events' , MainUserTokenMiddleware.verify, participantControl.getUserEvents);
 
-// -> /main/event  --->  move to main admin
 router.delete('/removeEvent' , MainUserTokenMiddleware.verify,eventControl.removeEvent);
-router.get('/fetchEvent' , eventControl.fetchEvent);
 
-// -> /main/event
 router.post('/addParticipant' , MainUserTokenMiddleware.verify, eventControl.addParticipant);
 router.post('/removeParticipant', MainUserTokenMiddleware.verify , eventControl.removeParticipant);
 

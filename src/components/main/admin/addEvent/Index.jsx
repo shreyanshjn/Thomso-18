@@ -24,16 +24,21 @@ export default class HomeIndex extends React.Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        const isAuthenticated = this.Auth.hasToken();
         let { event_id, event_name, isPrimary } = this.state;
+        if (event_id) event_id = event_id.trim();
+        if (event_name) event_name = event_name.trim();
         const data = { event_id, name: event_name, isPrimary }
-        if (isAuthenticated) {
+        if (data.event_id && data.name && typeof(data.isPrimary) === "boolean") {
             const token = this.Auth.getToken()
+            this.setState({disabled: true})
             FetchApi('POST', '/api/main/addEvent', data, token)
                 .then(res => {
                     if (res && res.data) {
                         if (res.data.success) {
-                            this.setState({ error: res.data.msg })
+                            this.setState({ 
+                                disabled: false,
+                                error: res.data.msg
+                            })
                         }
                         else {
                             this.setState({
@@ -45,8 +50,8 @@ export default class HomeIndex extends React.Component {
                 })
                 .catch(e => {
                     if(e && e.response && e.response.data && e.response.data.msg)
-                        this.setState({ error: e.response.data.msg })
-                    else this.setState({ error: "something went wrong" })
+                        this.setState({ disabled: false, error: e.response.data.msg })
+                    else this.setState({ disabled: false, error: "something went wrong" })
                 });
         }
     }
@@ -101,7 +106,7 @@ export default class HomeIndex extends React.Component {
                                 />
                             </div>
                             <div>
-                                <button type="submit">Add event</button>
+                                <button type="submit" disabled={disabled}>Add event</button>
                             </div>
                         </div>
                     </form>

@@ -72,6 +72,7 @@
     .events-modala-second-child
     {
         display:flex;
+        height: 65vh;
         justify-content:space-around;
         margin-top:14px;
     }

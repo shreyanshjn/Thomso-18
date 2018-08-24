@@ -6,9 +6,7 @@ exports.getEvents = function(req, res) {
         EventSchema.find({isPrimary: true})
         .select('name')
         .exec(function(err, result){
-            if(err) {
-                return res.status(400).send({success:false, msg:'Unable to fetch event'});
-            }
+            if(err) return res.status(400).send({success:false, msg:'Unable to fetch event'});
             if(result) res.json({success:true, msg:'event fetched', body: result});
             else return res.status(400).send({success:false, msg:'Unable to fetch event'});
         });
@@ -19,34 +17,16 @@ exports.getEvents = function(req, res) {
 exports.removeEvent = function(req, res) {
     if(req && req.body){
         if(req.body.event_id) req.body.event_id = req.body.event_id.trim();
- 
+
         if(req.body.event_id){
             EventSchema.remove({event_id:req.body.event_id})
             .exec(function(err){
-                if(err)
-                    return res.status(400).send({success:false, msg:'unable to delete event'});
+                if(err) return res.status(400).send({success:false, msg:'unable to delete event'});
                 res.json({success:true, msg:'event deleted'});
             });
-        }
-        else
-            return res.status(400).send({success:false,msg:'Something went wrong'});
-    }
+        } else return res.status(400).send({success:false,msg:'Invalid Event ID'});
+    } else return res.status(400).send({success:false,msg:'Invalid Data'});
 };
-
-exports.fetchEvent = function(req, res) {
-    if(req){
-        EventSchema.find()
-        .select('event_id name')
-        .exec(function(err, result){
-            if(err)
-                return res.status(400).send({success:false, msg:'unable to fetch event'});
-                if(result) res.json({success:true, msg:'event fetched', event : result});
-                else res.json({success:false, msg:'No results Found'});
-        });
-    }
-    else return res.status(400).send({success:false,msg:'Something went wrong'});
-};
-
 
 exports.addParticipant = function(req, res){
     if(req && req.body){
@@ -100,8 +80,8 @@ exports.removeParticipant = function(req, res){
             .select('name')
             .exec(function(err, user){
                 if(err){
-                    return res.state(400).send({success:false, msg:'unable to remove participant'});}
-                    // console.log(user)
+                    return res.state(400).send({success:false, msg:'unable to remove participant'});
+                }
                 Main_User.findOneAndUpdate(
                     {email:data.email},
                     {$pull:{event:user._id}}
@@ -111,7 +91,6 @@ exports.removeParticipant = function(req, res){
                     res.json({success:true, msg:'event removes from participant'});
                 });            
             });
-        }
-        else return res.status(400).send({success:false,msg:'Something went wrong'});
-    }else return res.status(400).send({success:false,msg:'Invalid Data'});
+        } else return res.status(400).send({success:false,msg:'Invalid Event ID'});
+    } else return res.status(400).send({success:false,msg:'Invalid Data'});
 }

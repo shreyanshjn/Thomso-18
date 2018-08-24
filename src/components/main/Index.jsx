@@ -55,11 +55,6 @@ const LogoutIndex = Loadable({
     loading: Loading
 });
 
-const EventIndex = Loadable({
-    loader: () => import("./event/Index"),
-    loading: Loading
-});
-
 const ResetPasswordEmailIndex = Loadable({
     loader: ()=>import("./resetPasswordEmail/Index"),
     loading: Loading
@@ -130,7 +125,6 @@ export default class MainIndex extends React.Component{
                                 <Route path="/main" render={props => (<SidebarIndex {...props} userData={this.state.userData} />)} />
                                 <Route exact path="/main" render={props => (<Profile {...props} userData={this.state.userData} />)} />
                                 <Route exact path="/main/contact" render={props => (<ContactIndex {...props} userData={this.state.userData} />)} />
-                                <Route exact path="/main/event" render={props => (<EventIndex {...props} userData={this.state.userData} />)} />
                             </React.Fragment>
                         }
                         <Route exact path="/main/logout" render={props => (<LogoutIndex {...props} updateRoutes={this.handleUpdate} />)} />
@@ -138,7 +132,6 @@ export default class MainIndex extends React.Component{
                     :
                     <React.Fragment>
                         <Route exact path="/main" component={HomeIndex} />
-                        <Route exact path="/main/event" component={EventIndex} />
                         <Route exact path="/main/register" render={props => (<RegisterIndex {...props} updateRoutes={this.handleUpdate} />)} />
                         <Route exact path="/main/resetPassword" component={ResetPasswordIndex} />
                         <Route exact path="/main/resetPasswordEmail" component={ResetPasswordEmailIndex} />

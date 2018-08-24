@@ -60,7 +60,6 @@ export default class Profile extends React.Component {
 
 
     render() {
-        const { error, event_id, event_name, isPrimary,  disabled } = this.state;
         return (
             <div className="participant-profile-parent">
                 <div className="participant-profile-child-details">
