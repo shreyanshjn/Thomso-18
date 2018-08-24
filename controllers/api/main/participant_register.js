@@ -93,11 +93,6 @@ exports.participant_registration = function(req, res){
                                         email:data.email,
                                         otp:otp
                                     });
-                                    mailer.participantRegister({
-                                        name:data.name,
-                                        email:data.email,
-                                        otp:otp
-                                    });
                                 });
                         }
                         else{
@@ -185,6 +180,56 @@ exports.verifyOTP = function(req, res){
             }
         });
     }
+    else {
+        res.status(400).send({success:false, msg:'Invalid Data'});
+    }
+}
+
+exports.reset_password_email = function(req, res){
+    if(req && req.body && req.body.email){
+        req.body.email = req.body.email.trim();
+        // var newPass = Generator.generatePassword(20);
+        var newPass = "prash";
+            if (newPass) {
+                var generateHash = Generator.generateHash(newPass);
+                generateHash.then(
+                    function(newHash) {
+                        if (newHash) {
+                            var updateData = {
+                                tempPassword: newHash
+                            };
+                            if(updateData.tempPassword){
+                                Main_User.findOneAndUpdate({email:req.body.email}, updateData)
+                                .select('name email')
+                                .exec( function(err, result){
+                                    if(err) return res.status(400).send({ success: false, msg:"Email Doesn't exist"})
+                                    mailer.participantResetPassword({
+                                        name:result.name,
+                                        email:result.email,
+                                        password:newPass
+                                    });
+                                    res.json({status:200, success:true, msg:'Email sent'})
+                                })
+                            }else{
+                                res.status(400).send({success:false, msg:'Something went wrong'});   
+                            }
+                        }
+                        else{
+                            res.status(400).send({success:false, msg:'Unable To create hash'});   
+                        }
+                    })
+                }
+            }
+    else {
+        res.status(400).send({success:false, msg:'Invalid Data'});
+    }
+}
+
+exports.reset_password = function(req, res){
+    if(req && req.body && req.body.email){
+        req.body.email = req.body.email.trim();
+        
+            }
     else {
         res.status(400).send({success:false, msg:'Invalid Data'});
     }

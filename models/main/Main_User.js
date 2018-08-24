@@ -49,6 +49,9 @@ var UserSchema = new mongoose.Schema({
         type:String,
         required: true
     },
+    tempPassword:{
+        type:String
+    },
     created_date:{
         type:Date,
         default:Date.now
