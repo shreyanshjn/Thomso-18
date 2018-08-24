@@ -65,11 +65,11 @@ export default class HomeIndex extends React.Component{
 
                 <br/>
                 select event to add, if there is no event first go to /main and add events , then register
-                {event.map((data,i) => {
+                { (event && event.length) ? event.map((data,i) => {
                      <br/>
-                     return <li value={data.event_id} onClick={this.onChange}>{data.event_id}{data.name} </li>
+                     return <li value={data.event_id} onClick={this.onChange} key={i}>{data.event_id}{data.name} </li>
                  } ) 
-                 }
+                 : null}
 
                   <form onSubmit={this.onAdd}>
                         <button type="submit"  disabled={disabled}>Add Event</button> 

@@ -43,7 +43,7 @@ exports.removeEvent = function(req, res) {
             EventSchema.remove({event_id:req.body.event_id})
             .exec(function(err){
                 if(err)
-                    res.json({success:false, msg:'unable to delete event'});
+                    return res.json({success:false, msg:'unable to delete event'});
                 res.json({success:true, msg:'event deleted'});
             });
         }
@@ -53,13 +53,16 @@ exports.removeEvent = function(req, res) {
 };
 
 exports.fetchEvent = function(req, res) {
+    if(req){
         EventSchema.find()
         .select('event_id name')
         .exec(function(err, result){
             if(err)
-                res.json({success:false, msg:'unable to fetch event'});
+                return res.json({success:false, msg:'unable to fetch event'});
             res.json({success:true, msg:'event fetched', event : result});
         });
+    }
+    else return res.status(400).send({success:false,msg:'Something went wrong'});
 };
 
 
@@ -109,7 +112,6 @@ exports.removeParticipant = function(req, res){
             .select('name')
             .exec(function(err, user){
                 if(err){
-                    // console.log(err)
                     return res.state(400).send({success:false, msg:'unable to remove participant'});}
                     // console.log(user)
                 Main_User.findOneAndUpdate(

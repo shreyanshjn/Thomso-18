@@ -91,11 +91,11 @@ exports.verifyOTP = function (req, res) {
         })
             .select('email verified otp referred_by thomso_id primary_event')
             .exec(function (err, user) {
-                if (err) res.json({ success: false, msg: 'Error' });
-                if (!user) res.json({ success: false, msg: 'User not found' });
+                if (err) return res.json({ success: false, msg: 'Error' });
+                if (!user) return res.json({ success: false, msg: 'User not found' });
                 else {
                     if (user.verified) {
-                        res.json({ success: true, msg: 'Email is Already Verified', already: true });
+                        return res.json({ success: true, msg: 'Email is Already Verified', already: true });
                     } else {
                         if (req.body.otp === user.otp) {
                             if (user.thomso_id) {
@@ -114,22 +114,22 @@ exports.verifyOTP = function (req, res) {
                                     Main_User_Token.update({ email: req.locals.email }, { verified: true }, { multi: true })
                                         .exec(function (err) {
                                             if (err) {
-                                                // console.log(err)
+                                                return console.log(err)
                                             }
                                         })
                                     Main_User.findOneAndUpdate({ email: req.locals.email }, updateData)
                                         .select(requiredVars)
                                         .exec(function (err, parti) {
-                                            if (err)  return res.json({ success: false, msg: 'Unable to Verify' });
+                                            if (err) return res.json({ success: false, msg: 'Unable to Verify' });
                                             if (user.referred_by) {
                                                 Temp_User.update({ ca_id: user.referred_by }, { $inc: { referrals: 1 } }, function (error) {
-                                                    if (error)  return res.json({ success: false, msg: 'Unable To Add Referrals' });
+                                                    if (error) return res.json({ success: false, msg: 'Unable To Add Referrals' });
                                                     EventSchema.update(
                                                         {event_id:user.primary_event},
                                                         {$addToSet:{users:req.locals._id}}
                                                     )
                                                     .exec(function(err){
-                                                        if (err)  return res.json({ success: false, msg: 'Unable To Add Event' });
+                                                        if (err) return res.json({ success: false, msg: 'Unable To Add Event' });
                                                         res.json({ success: true, body: parti, msg: 'Successfully verified' });
                                                     })
                                                 })
@@ -149,7 +149,7 @@ exports.verifyOTP = function (req, res) {
                                 };
                                 Main_User_Token.update({ email: req.locals.email }, { verified: true }, { multi: true })
                                     .exec(function (err) {
-                                        // if (err)  console.log(err)
+                                        if (err) return console.log(err)
                                     })
                                 Main_User.findOneAndUpdate({ email: req.locals.email }, updateData)
                                     .select(requiredVars)
@@ -234,12 +234,12 @@ exports.participant_login = function(req, res) {
                                         }
                                     }
                                 });
-                            } else  res.json({ success: false, msg: 'Authentication failed. Wrong password.', mismatch: true });
+                            } else return res.json({ success: false, msg: 'Authentication failed. Wrong password.', mismatch: true });
                         });
                     }
                 });
-        } else  res.status(400).send({ success: false, msg: 'Invalid Data' });
-    } else  res.status(400).send({ success: false, msg: 'Invalid Data' });
+        } else  return res.status(400).send({ success: false, msg: 'Invalid Data' });
+    } else  return res.status(400).send({ success: false, msg: 'Invalid Data' });
 };
 
 exports.reset_password = function(req, res){
@@ -311,8 +311,8 @@ exports.reset_password_email = function(req, res){
                             })
                         }else return res.json({success:false, msg:'Something went wrong'});   
                     }
-                    else res.status(400).send({success:false, msg:'Unable To create hash'});   
+                    else return res.status(400).send({success:false, msg:'Unable To create hash'});   
                 })
         }
-    } else  res.status(400).send({success:false, msg:'Invalid Data'});
+    } else  return res.status(400).send({success:false, msg:'Invalid Data'});
 }

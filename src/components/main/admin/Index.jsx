@@ -38,6 +38,11 @@ const NavbarIndex = Loadable({
     loading: Loading,
 });
 
+const AddEventIndex = Loadable({
+    loader: () => import('./addEvent/Index'),
+    loading: Loading,
+});
+
 
 export default class AdminIndex extends React.Component{
     constructor() {
@@ -63,6 +68,7 @@ export default class AdminIndex extends React.Component{
                 {this.state.isAuthenticated ? 
                     <React.Fragment>
                         <Route path="/main/admin" component={NavbarIndex} />
+                        <Route exact path="/main/admin/addEvent" component={AddEventIndex} />
                         <Route exact path="/main/admin/logout" render={ (props) => <LogoutIndex {...props} updateRoutes={this.handleUpdate}/> } />
                         <Route exact path="/main/admin" component={HomeIndex} />
                     </React.Fragment>

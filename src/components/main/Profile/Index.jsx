@@ -89,7 +89,6 @@ export default class Profile extends React.Component {
 
 
     render() {
-        const { error, event_id, event_name, isPrimary,  disabled } = this.state;
         return (
             <div className="participant-profile-parent">
                 <div className="participant-profile-child-details">
@@ -133,65 +132,6 @@ export default class Profile extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div>
-                    {error ? <div style={{ color: 'red', fontSize: '22px' }}>{error}</div> : null}
-
-                    <br /><br /><br />
-
-                    {(this.props.userData.event && this.props.userData.event.length > 0) ?
-                        <div>click to select event to deletes
-                        <form onSubmit={this.onRemove}>
-                                <button type="submit" disabled={disabled}>Delete Event</button>
-                            </form>
-                        </div>
-                        : <div>no event to delete first so to event page and register for events</div>}
-                    <h4> Add event here</h4>
-                    <form onSubmit={this.onSubmit}>
-                        <div>
-                            <div>
-                                <label htmlFor="inputID">Event id</label>
-                                <input
-                                    name="event_id"
-                                    type="text"
-                                    id="inputID"
-                                    placeholder="event_id"
-                                    value={event_id}
-                                    onChange={this.onChange1}
-                                    autoCapitalize="off"
-                                    autoCorrect="off"
-                                    autoComplete="off"
-                                    spellCheck="off"
-                                    required
-                                />
-                            </div>
-                            <div>
-                                <label htmlFor="inputName">Name</label>
-                                <input
-                                    id="inputName"
-                                    type="text"
-                                    name="event_name"
-                                    onChange={this.onChange1}
-                                    value={event_name}
-                                    autoComplete="off"
-                                    autoCapitalize="off"
-                                    required
-                                />
-                            </div>
-                            <div>
-                                <label htmlFor="inputPrimary">Primary</label>
-                                <input
-                                    id="inputPrimary"
-                                    type="checkbox"
-                                    onChange={() => this.setState({isPrimary: !this.state.isPrimary})}
-                                    value={isPrimary}
-                                />
-                            </div>
-                            <div>
-                                <button type="submit">Add event</button>
-                            </div>
-                        </div>
-                    </form>
-                </div >
             </div>
         );
     }

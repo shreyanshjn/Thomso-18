@@ -1,36 +1,51 @@
 import React from 'react';
-import axios from 'axios';
-
+import AuthService from "../../../../handlers/main/admin/AuthService";
+import FetchApi from "../../../../utils/FetchAPI";
+import DataTable from './DataTable';
 export default class HomeIndex extends React.Component {
     constructor() {
         super();
         this.state = {
-            quote: ''
+            userData:[],
+            errors:'',
+            isAuthenticated:false
         };
+        this.Auth = new AuthService();
     }
 
     componentDidMount() { 
-        axios({
-            method: 'GET',
-            url: `https://quotes.rest/qod`,
-            responseType: 'json'
-        })
-        .then(res => {
-            if (res.data && res.data.contents && res.data.contents.quotes && res.data.contents.quotes.length > 0) {
-                this.setState({quote: res.data.contents.quotes["0"]})
-            }
-        })
+        const isAuthenticated = this.Auth.hasToken();
+        console.log(isAuthenticated,  "isAuthenticated");
+        if (isAuthenticated) {
+            const token = this.Auth.getToken()
+            FetchApi('GET', '/api/main/admin/user', null, token)
+                .then(r => {
+                    if (r && r.data && r.data.body) {
+                        if (r.data.body) {
+                            this.setState({ userData:r.data });
+                        } else {
+                            this.setState({ errors:"Doesn't Able To Fetch" })
+                        }
+                    }
+                })
+                .catch(e => {
+                    if(e & e.response && e.response.data && e.response.data.msg) this.setState({errors:e.response.data.msg})
+                    else this.setState({errors:'Something Went Wrong'})
+                });
+        }
     }
 
     render(){
+        let {userData, errors} = this.state;
         return (
             <div>
-                {this.state.quote ?
-                <div style={{height: 'calc(100vh - 150px)', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
-                    <h1>{this.state.quote.quote}</h1>
-                    <h3> --{this.state.quote.author} </h3>
-                </div> : null}
+                {errors ?
+                <div style={{textAlign: 'center', color: 'red', fontWeight: '600'}}>
+                    {errors}
+                </div>
+                : null}
 
+                {(this.state.userData.body && this.state.userData.body.length) ? <DataTable participants={this.state.userData.body} /> :null}
             </div>
         )
     }
