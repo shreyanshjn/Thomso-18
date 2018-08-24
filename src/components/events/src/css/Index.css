@@ -2,5 +2,9 @@
 {
     display:flex;
     justify-content:center;
-    background:#000a0e;
+    background-image:url("../../../beta/home/src/img/background.jpeg");
+    background-size:cover;
+    background-attachment:fixed;
+    background-position:center center;
+    background-repeat:no-repeat;
 }

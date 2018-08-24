@@ -53,7 +53,7 @@ class EventsOpening extends Component {
                             <EventsModal history={this.props.history} id={this.state.eventId} modalClose={() => this.setState({showModal: false})} data={this.state.dataEvents ? this.state.dataEvents : null}/>                 
                         </div>
                         : null}
-                {(this.state.showModal===false)? <Navbar/>:null}
+                        {(this.state.showModal===false)?<Navbar background="true"/>:null}
                 <div style={{display:"flex",justifyContent:"center"}}>
                     <div className={(this.state.showModal===true)? "events-opening-main-div events-in-desktop":"events-opening-main-div events-in-desktop hide-scroll-events"}>
                         <div className="events-opening-column1">

@@ -31,7 +31,7 @@ class Navbar extends Component {
     render() {
     return (
       <div className="beta-navbar-contain">
-        <div className={this.state.hamburger? "beta-home-navbar":"beta-home-navbar beta-navbar-overlay beta-navbar-navbarToggle"}>
+        <div className={this.state.hamburger? "beta-home-navbar":"beta-home-navbar beta-navbar-overlay beta-navbar-navbarToggle"} id={(this.props.background==="true")?"background-image-gradient":null}>
           <div className="beta-navbar-t-logo">
               <Link to="./"> <img src={img} alt="" /></Link>
           </div>
