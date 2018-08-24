@@ -54,27 +54,36 @@ exports.addParticipant = function(req, res){
             event_id : req.body.event_id,
             email: req.locals.email
         };
-        if(updateData.event_id){
+        if (updateData.event_id) {
             EventSchema.findOneAndUpdate(
                 {event_id:req.body.event_id},
                 {$addToSet:{users:req.locals._id}}
             )
             .exec(function(err, result){
-                if(err) return res.status(400).send({success:false, msg:'unable to add participant'}); 
-                if(!result) return res.status(400).send({success:false, msg:'No Event Found'});
-                else{
+                if(err){
+                    return res.status(400).send({success:false, msg:'Unable to add participant'}); 
+                }
+                if (result) {
                     Main_User.update(
                         {email:updateData.email},
                         {$addToSet:{event:result._id}}
-                    ) 
+                    )
                     .exec(function(err){
-                        if(err) return res.status(400).send({success:false, msg:'unable to add event'});
-                        res.json({success:true, msg:'event added in participant'});
-                    });       
-                } 
+                        if(err){
+                            return res.status(400).send({success:false, msg:'Unable to add event'});
+                        }
+                        res.json({success:true, msg:'Event added in participant'});
+                    });
+                } else {
+                    return res.status(400).send({success:false,msg:'No such event Exists'});
+                }
             });
-        } else return res.status(400).send({success:false,msg:'Somethinf went wrong'});
-    } else return res.status(400).send({success:false,msg:'Invalid Data'});
+        } else {
+            return res.status(400).send({success:false,msg:'Event ID Not Found'});
+        }
+    } else {
+        return res.status(400).send({success:false,msg:'Invalid Data'});
+    }
 }
 
 exports.removeParticipant = function(req, res){

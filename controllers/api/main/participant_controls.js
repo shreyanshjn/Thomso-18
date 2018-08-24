@@ -4,6 +4,7 @@ exports.userInfo = function (req, res) {
     Main_User.findOne({
         email: req.locals.email
     })
+        .populate('primary_event', 'name')
         .select('name email gender thomso_id college address contact verified primary_event')
         .exec(function (err, user) {
             if (err) {
