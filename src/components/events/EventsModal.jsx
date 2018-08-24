@@ -67,9 +67,9 @@ export default class EventsModal extends React.Component{
                         <p style={{marginLeft: "50px", color:"white", fontSize:"2.5em", textAlign:"left"}}>
                             {this.state.data && this.state.data.name}
                         </p>
-                    <a href="" className="events-modal-close" onClick={() => this.props.modalClose()}>
+                    <span href="" className="events-modal-close" onClick={() => this.props.modalClose()}>
                         X
-                    </a>
+                    </span>
                 </div>
                 <div className="events-modala-second-child">
                     <div className="events-list-child">
@@ -77,7 +77,7 @@ export default class EventsModal extends React.Component{
                             {this.state.data && this.state.data.subevents.map(e => 
                                 <li key={e.id} onClick={() => {
                                     this.setState({subEventId: e.id})}}>
-                                    <a href="" className="events-custom-selection">{e.name}</a>
+                                    <span className="events-custom-selection">{e.name}</span>
                                 </li>
                             )}
                         </ul>
@@ -85,12 +85,12 @@ export default class EventsModal extends React.Component{
                     {this.state.data ? <EventDetail history={this.props.history} id={this.state.subEventId} detail={this.state.data} eventsId={this.state.eventId} subevents={this.state.data.subevents} data={this.props.data}/> : null }
                 </div>
                     <div className="events-modals-last-arrow" style={{display:"flex", justifyContent:"space-between", marginTop:"15px"}}>
-                        <a href="" className="arrow-button-events" onClick={() => this.prevCat(this.state.eventId)}>
+                        <p href="" className="arrow-button-events" onClick={() => this.prevCat(this.state.eventId)}>
                             <img src="/img/main/events/leftarrow.png" alt="left-arrow" width="15px" />
-                        </a>
-                        <a href="" className="arrow-button-events">
+                        </p>
+                        <p href="" className="arrow-button-events">
                             <img src="/img/main/events/rightarrow.png" alt="right-arrow" width="15px" onClick={() => this.nextCat(this.state.eventId)}/>
-                        </a>
+                        </p>
                     </div>
                     <hr style={{width:"98%",marginTop:"16px"}}/>
             </div>

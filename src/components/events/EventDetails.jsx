@@ -52,12 +52,6 @@ export default class EventDetail extends React.Component{
                 </div>: null}
                 {this.state.data && this.props.eventsId !== 9? 
                 <div style={{display:"flex", justifyContent:"space-around", height:"10%"}}>
-                    {this.state.registered ? 
-                        <a className="events-modal-button" style={{background: "#ffffff", color: '#000000'}} disabled={this.state.disabled}>Registered</a> 
-                        : 
-                        this.props.login ? <a className="events-modal-button" onClick={() => this.registerEvent(this.props.eventsId, this.props.id)}>
-                            {this.state.wait ? 'Please Wait..' : 'Register'}
-                        </a> : 
                         <a className="events-modal-button" href="/register">Login/Register</a>
                     }
                     <a href={`/pdf/events/${this.state.data.rulebook}`} className="events-modal-button" target="_blank">Rulebook</a>
