@@ -17,7 +17,6 @@
     color:white;
     padding:13px;
     border:2px solid white;
-    border-radius:15px;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -25,8 +24,8 @@
 }
 .events-modal-button:hover
 {
-   background-color:white;
-   color:black;
+    background-color:white;
+    color:black;
 }
 .arrow-button-events
 {
@@ -52,6 +51,13 @@
     align-items:center;
     cursor:pointer;
 }
+.events-modala-p
+{
+    margin-left:50px;
+    color:white;
+    font-size:2.5em; 
+    text-align:left;
+}
 @media only screen and (min-width:768px)
 {
     .events-modala-main-child
@@ -63,7 +69,7 @@
     {
         display:flex;
         justify-content:space-around;
-        margin-top:20px;
+        margin-top:14px;
     }
     .events-list-child
     {
@@ -110,7 +116,7 @@
     .events-modals-last-arrow
     {
         margin-right:10%;
-        margin-left:30%; 
+        margin-left:35%; 
     }
     .events-text-child
     {
@@ -126,6 +132,15 @@
 }
 @media only screen and (max-width:768px)
 {
+    .events-modala-p
+    {
+        margin-top:10px;
+        margin-bottom:10px;
+    }
+    .events-text-scroll-cont
+    {
+        width:50%;
+    }
     .events-list-child
     {
         display:none;
@@ -138,16 +153,40 @@
     {
         overflow:scroll;
         height:35vh;
+        width:90%;
+    }
+    .events-details-image
+    {
+        margin-top:0%;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .events-details-image > img
+    {
+        width:70%;
+    }
+    .events-text-child
+    {
     }
 }
 @media (min-width: 1920px) and (max-width: 2560px)
 {
     .events-details-image
     {
-        margin-top:14%;
+        margin-top:5%;
     }
     .events-modal-button
     {
         padding:25px;
+    }
+    .events-details-parent
+    {
+        height:35vh;
+    }
+    .events-modala-second-child
+    {
+        margin-top:20px;
     }
 }

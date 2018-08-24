@@ -54,47 +54,47 @@ class EventsOpening extends Component {
                         </div>
                         : null}
                         {(this.state.showModal===false)?<Navbar background="true"/>:null}
-                <div style={{display:"flex",justifyContent:"center"}}>
-                    <div className={(this.state.showModal===true)? "events-opening-main-div events-in-desktop":"events-opening-main-div events-in-desktop hide-scroll-events"}>
-                        <div className="events-opening-column1">
-                            {e1.map(e => 
-                                <div className={(this.state.showModal===true) ? "events-opening-decrease-opacity" :null} key={e.id} onClick={() => this.showEventModal(e.id)} style={{overflow:"hidden"}}>
-                                    <figure className="nik-custom-effect-glass black_white_new events-figure">
-                                        <img src={`/img/main/events/${e.image}`} alt={e.name} className="events-images-opening-main"/>
-                                        <figcaption>
-                                            <h2 className="events-images-opening-heading">{e.name}</h2>
-                                        </figcaption>
-                                    </figure>
+                        <div style={{display:"flex",justifyContent:"center"}}>
+                            <div className={(this.state.showModal===true)? "events-opening-main-div events-in-desktop":"events-opening-main-div events-in-desktop hide-scroll-events"}>
+                                <div className="events-opening-column1">
+                                    {e1.map(e => 
+                                        <div className={(this.state.showModal===true) ? "events-opening-decrease-opacity" :null} key={e.id} onClick={() => this.showEventModal(e.id)} style={{overflow:"hidden"}}>
+                                            <figure className="nik-custom-effect-glass black_white_new events-figure">
+                                                <img src={`/img/main/events/${e.image}`} alt={e.name} className="events-images-opening-main"/>
+                                                <figcaption>
+                                                    <h2 className="events-images-opening-heading">{e.name}</h2>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                    )}
                                 </div>
-                            )}
-                        </div>
-                        <div className="events-opening-column2">
-                            {e2.map(e => 
-                                <div  className={(this.state.showModal===true) ? "events-opening-decrease-opacity" :null} key={e.id} onClick={() => this.showEventModal(e.id)} style={{overflow:"hidden"}}>
-                                    <figure className="nik-custom-effect-glass black_white_new events-figure">
-                                        <img src={`/img/main/events/${e.image}`} alt={e.name} className="events-images-opening-main"/>
-                                        <figcaption>
-                                            <h2 className="events-images-opening-heading">{e.name}</h2>
-                                        </figcaption>
-                                    </figure>
+                                <div className="events-opening-column2">
+                                    {e2.map(e => 
+                                        <div  className={(this.state.showModal===true) ? "events-opening-decrease-opacity" :null} key={e.id} onClick={() => this.showEventModal(e.id)} style={{overflow:"hidden"}}>
+                                            <figure className="nik-custom-effect-glass black_white_new events-figure">
+                                                <img src={`/img/main/events/${e.image}`} alt={e.name} className="events-images-opening-main"/>
+                                                <figcaption>
+                                                    <h2 className="events-images-opening-heading">{e.name}</h2>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                    )}
                                 </div>
-                            )}
-                        </div>
-                        <div className="events-opening-column3">
-                            {e3.map(e => 
-                                <div  className={(this.state.showModal===true) ? "events-opening-decrease-opacity" :null} key={e.id} onClick={() => this.showEventModal(e.id)} style={{overflow:"hidden"}}>
-                                    <figure className="nik-custom-effect-glass black_white_new events-figure">
-                                        <img src={`/img/main/events/${e.image}`} alt={e.name} className="events-images-opening-main"/>
-                                        <figcaption>
-                                            <h2 className="events-images-opening-heading">{e.name}</h2>
-                                        </figcaption>
-                                    </figure>
+                                <div className="events-opening-column3">
+                                    {e3.map(e => 
+                                        <div  className={(this.state.showModal===true) ? "events-opening-decrease-opacity" :null} key={e.id} onClick={() => this.showEventModal(e.id)} style={{overflow:"hidden"}}>
+                                            <figure className="nik-custom-effect-glass black_white_new events-figure">
+                                                <img src={`/img/main/events/${e.image}`} alt={e.name} className="events-images-opening-main"/>
+                                                <figcaption>
+                                                    <h2 className="events-images-opening-heading">{e.name}</h2>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                    )}
                                 </div>
-                            )}
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
         );
     }
 }
