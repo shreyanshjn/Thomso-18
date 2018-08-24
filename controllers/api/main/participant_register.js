@@ -8,7 +8,7 @@ var TokenHelper = require('../../../helpers/TokenHelper');
 var Generator = require("../../../helpers/GeneratePassword");
 var mailer = require('../../common/mailer');
 
-var requiredVars = 'name email gender thomso_id college address contact verified primary_event';
+var requiredVars = 'name email gender thomso_id college address contact verified';
 
 exports.participant_registration = function (req, res) {
     if (req.body) {
@@ -118,6 +118,7 @@ exports.verifyOTP = function (req, res) {
                                             }
                                         })
                                     Main_User.findOneAndUpdate({ email: req.locals.email }, updateData)
+                                        .populate('primary_event', 'name')
                                         .select(requiredVars)
                                         .exec(function (err, parti) {
                                             if (err)  return res.json({ success: false, msg: 'Unable to Verify' });
@@ -152,6 +153,7 @@ exports.verifyOTP = function (req, res) {
                                         // if (err)  console.log(err)
                                     })
                                 Main_User.findOneAndUpdate({ email: req.locals.email }, updateData)
+                                    .populate('primary_event', 'name')
                                     .select(requiredVars)
                                     .exec(function (err, parti) {
                                         if (err) return res.json({ success: false, msg: 'Unable to Verify' });
@@ -180,6 +182,7 @@ exports.participant_login = function(req, res) {
             Main_User.findOne({
                 email: req.body.email
             })
+                .populate('primary_event', 'name')
                 .select('password ' + requiredVars)
                 .exec(function (err, user) {
                     if (err) return res.status(400).send({ success: false, msg: 'Authentication failed. Error.' });

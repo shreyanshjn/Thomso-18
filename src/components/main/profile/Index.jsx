@@ -116,7 +116,7 @@ export default class Profile extends React.Component {
                             <span className="participant-profile-label">Email:</span><span>{this.props.userData.email ? this.props.userData.email : null}</span>
                         </div>
                         <div className="participant-profile-child-left-details">
-                            <span className="participant-profile-label">Primary event :</span>{(this.props.userData && this.props.userData.primary_event) ? this.props.userData.primary_event: null}<span></span>
+                            <span className="participant-profile-label">Primary event :</span>{(this.props.userData && this.props.userData.primary_event && this.props.userData.primary_event.name) ? this.props.userData.primary_event.name: null}<span></span>
                         </div>
                     </div>
                     <div className="participant-profile-child-right">
