@@ -121,7 +121,10 @@ export default class MainIndex extends React.Component{
                 {this.state.isAuthenticated ?
                     <React.Fragment>
                         {!this.state.verified ?
-                            <Route exact path="/main/verify" render={props => (<VerifyIndex {...props} userData={this.state.userData} updateRoutes={this.handleUpdate} setUserData={this.setUserData} />)} />
+                            <React.Fragment>
+                                <Route exact path="/main" render={props => (<VerifyIndex {...props} userData={this.state.userData} updateRoutes={this.handleUpdate} setUserData={this.setUserData} />)} />
+                                <Route exact path="/main/verify" render={props => (<VerifyIndex {...props} userData={this.state.userData} updateRoutes={this.handleUpdate} setUserData={this.setUserData} />)} />
+                            </React.Fragment>
                             :
                             <React.Fragment>
                                 <Route path="/main" render={props => (<SidebarIndex {...props} userData={this.state.userData} />)} />
@@ -136,7 +139,7 @@ export default class MainIndex extends React.Component{
                     <React.Fragment>
                         <Route exact path="/main" component={HomeIndex} />
                         <Route exact path="/main/event" component={EventIndex} />
-                        <Route exact path="/main/register" component={RegisterIndex} />
+                        <Route exact path="/main/register" render={props => (<RegisterIndex {...props} updateRoutes={this.handleUpdate} />)} />
                         <Route exact path="/main/resetPassword" component={ResetPasswordIndex} />
                         <Route exact path="/main/resetPasswordEmail" component={ResetPasswordEmailIndex} />
                         <Route exact path="/main/login" render={props => (<LoginIndex {...props} updateRoutes={this.handleUpdate} setUserData={this.setUserData} />)} />

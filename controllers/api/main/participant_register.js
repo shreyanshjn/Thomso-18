@@ -99,6 +99,30 @@ exports.verifyOTP = function (req, res) {
                     } else {
                         if (req.body.otp === user.otp) {
                             if (user.thomso_id) {
+                                var newOtp = Generator.generateOTP();
+                                var updateData = {
+                                    otp: newOtp,
+                                    verified: true,
+                                };
+                                Main_User_Token.update({ email: req.locals.email }, { verified: true }, { multi: true })
+                                    .exec(function (err) {
+                                        if (err) {
+                                            console.log(err)
+                                        };
+                                    })
+                                Main_User.findOneAndUpdate({ email: req.locals.email }, updateData, { new: true })
+                                    .populate('primary_event', 'name')
+                                    .select(requiredVars)
+                                    .exec(function (err, parti) {
+                                        if (err) return res.json({ success: false, msg: 'Unable to Verify' });
+
+                                        res.json({ success: true, body: parti, msg: 'Successfully verified' });
+                                        // mailer.participantVerified({
+                                        //     name: parti.name,
+                                        //     email: parti.email
+                                        // });
+                                    });
+                            } else {
                                 Counter.findByIdAndUpdate({ _id: 'participant_id' }, { $inc: { seq: 1 } }, { upsert: true, new: true }, function (error, cnt) {
                                     if (error) {
                                         return res.status(400).send({ success: false, msg: 'Unable Create ID' });
@@ -108,16 +132,15 @@ exports.verifyOTP = function (req, res) {
                                     var updateData = {
                                         otp: newOtp,
                                         verified: true,
-                                        referred_by: user.referred_by,
                                         thomso_id: thomso_id
                                     };
                                     Main_User_Token.update({ email: req.locals.email }, { verified: true }, { multi: true })
                                         .exec(function (err) {
                                             if (err) {
-                                                // console.log(err)
+                                                console.log(err);
                                             }
                                         })
-                                    Main_User.findOneAndUpdate({ email: req.locals.email }, updateData)
+                                    Main_User.findOneAndUpdate({ email: req.locals.email }, updateData, { new: true })
                                         .populate('primary_event', 'name')
                                         .select(requiredVars)
                                         .exec(function (err, parti) {
@@ -134,36 +157,15 @@ exports.verifyOTP = function (req, res) {
                                                         res.json({ success: true, body: parti, msg: 'Successfully verified' });
                                                     })
                                                 })
-                                            } else  res.json({ success: true, body: parti, msg: 'Successfully verified' });
-
-                                            mailer.participantVerified({
-                                                name: parti.name,
-                                                email: parti.email
-                                            });
+                                            } else {
+                                                res.json({ success: true, body: parti, msg: 'Successfully verified' });
+                                            };
+                                            // mailer.participantVerified({
+                                            //     name: parti.name,
+                                            //     email: parti.email
+                                            // });
                                         });
                                 })
-                            } else {
-                                var newOtp = Generator.generateOTP();
-                                var updateData = {
-                                    otp: newOtp,
-                                    verified: true,
-                                };
-                                Main_User_Token.update({ email: req.locals.email }, { verified: true }, { multi: true })
-                                    .exec(function (err) {
-                                        // if (err)  console.log(err)
-                                    })
-                                Main_User.findOneAndUpdate({ email: req.locals.email }, updateData)
-                                    .populate('primary_event', 'name')
-                                    .select(requiredVars)
-                                    .exec(function (err, parti) {
-                                        if (err) return res.json({ success: false, msg: 'Unable to Verify' });
-
-                                        res.json({ success: true, body: parti, msg: 'Successfully verified' });
-                                        // mailer.participantVerified({
-                                        //     name: parti.name,
-                                        //     email: parti.email
-                                        // });
-                                    });
                             }
                         } else  return res.json({ success: false, msg: 'Incorrect OTP' })
                     }
@@ -228,7 +230,6 @@ exports.participant_login = function(req, res) {
                                         else {
                                             var addToken = new Main_User_Token(newToken);
                                             addToken.save(function (err) {
-                                                // console.log(err);
                                                 if (err) return res.status(400).send({ success: false, msg: 'Token Already Exists' });
                                                 
                                                 if (user.verified)  return res.json({ success: true, token: genratedToken, msg: 'Successfully Authenticated', body: body });
@@ -247,7 +248,6 @@ exports.participant_login = function(req, res) {
 
 exports.reset_password = function(req, res){
     if(req && req.body && req.body.email && req.body.tempPassword && req.body.password){
-        // console.log(req.body)
         Main_User.findOne({email:req.body.email})
             .select('tempPassword')
             .exec(function(err, result){
@@ -297,7 +297,7 @@ exports.reset_password_email = function(req, res){
                             tempPassword: newHash
                         };
                         if(updateData.tempPassword){
-                            Main_User.findOneAndUpdate({email:req.body.email}, updateData)
+                            Main_User.findOneAndUpdate({email:req.body.email}, updateData, { new: true })
                             .select('name email')
                             .exec( function(err,result){
                                 if(err) {return res.state(400).send({ success: false, msg:"Something Went Wrong"})}

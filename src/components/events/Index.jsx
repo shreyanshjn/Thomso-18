@@ -7,7 +7,7 @@ class EventsIndex extends Component {
     render() {
         return (
             <div className="index-main-div">
-                <EventsOpening />
+                <EventsOpening history={this.props.history} />
             </div>
         );
     }

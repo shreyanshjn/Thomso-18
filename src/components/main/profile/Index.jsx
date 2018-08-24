@@ -95,25 +95,25 @@ export default class Profile extends React.Component {
                 <div className="participant-profile-child-details">
                     <div className="participant-profile-child-left">
                         <div className="participant-profile-child-left-details">
-                            <span className="participant-profile-label">Name :</span><span className="participant-somedetails">{this.props.userData.name ? this.props.userData.name : null}</span>
+                            <span className="participant-profile-label">Name :</span><span className="participant-somedetails">{(this.props.userData && this.props.userData.name) ? this.props.userData.name : null}</span>
                         </div>
                         <div className="participant-profile-child-left-details">
-                            <span className="participant-profile-label">Thomso ID :</span><span className="participant-somedetails-some">{this.props.userData.thomso_id ? this.props.userData.thomso_id : null}</span>
+                            <span className="participant-profile-label">Thomso ID :</span><span className="participant-somedetails-some">{(this.props.userData && this.props.userData.thomso_id) ? this.props.userData.thomso_id : null}</span>
                         </div>
                         <div className="participant-profile-child-left-details">
-                            <span className="participant-profile-label">Gender :</span><span className="participant-somedetails">{this.props.userData.gender ? this.props.userData.gender : null}</span>
+                            <span className="participant-profile-label">Gender :</span><span className="participant-somedetails">{(this.props.userData && this.props.userData.gender) ? this.props.userData.gender : null}</span>
                         </div>
                         <div className="participant-profile-child-left-details college">
-                            <span className="participant-profile-label">College:</span><span className="participant-somedetails">{this.props.userData.college ? this.props.userData.college : null}</span>
+                            <span className="participant-profile-label">College:</span><span className="participant-somedetails">{(this.props.userData && this.props.userData.college) ? this.props.userData.college : null}</span>
                         </div>
                         <div className="participant-profile-child-left-details">
-                            <span className="participant-profile-label">Address :</span><span className="participant-somedetails">{this.props.userData.address ? this.props.userData.address : null}</span>
+                            <span className="participant-profile-label">Address :</span><span className="participant-somedetails">{(this.props.userData && this.props.userData.address) ? this.props.userData.address : null}</span>
                         </div>
                         <div className="participant-profile-child-left-details">
-                            <span className="participant-profile-label">Mobile :</span><span>{this.props.userData.contact ? this.props.userData.contact : null}</span>
+                            <span className="participant-profile-label">Mobile :</span><span>{(this.props.userData && this.props.userData.contact) ? this.props.userData.contact : null}</span>
                         </div>
                         <div className="participant-profile-child-left-details">
-                            <span className="participant-profile-label">Email:</span><span>{this.props.userData.email ? this.props.userData.email : null}</span>
+                            <span className="participant-profile-label">Email:</span><span>{(this.props.userData && this.props.userData.email) ? this.props.userData.email : null}</span>
                         </div>
                         <div className="participant-profile-child-left-details">
                             <span className="participant-profile-label">Primary event :</span>{(this.props.userData && this.props.userData.primary_event && this.props.userData.primary_event.name) ? this.props.userData.primary_event.name: null}<span></span>
@@ -138,7 +138,7 @@ export default class Profile extends React.Component {
 
                     <br /><br /><br />
 
-                    {(this.props.userData.event && this.props.userData.event.length > 0) ?
+                    {(this.props.userData && this.props.userData.event && this.props.userData.event.length > 0) ?
                         <div>click to select event to deletes
                         <form onSubmit={this.onRemove}>
                                 <button type="submit" disabled={disabled}>Delete Event</button>
