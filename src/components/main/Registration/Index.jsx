@@ -1,17 +1,15 @@
 import React from "react";
+import { Link } from 'react-router-dom';
+
 import FetchApi from "../../../utils/FetchAPI";
 import img from "../../campusAmbassador/register/img/logo.png"
 import CollegeSelect from "../../campusAmbassador/register/CollegeSelect";
 import StateSelect from "../../campusAmbassador/register/StateSelect";
 import validateInput from '../../../utils/validation/loginValidation';
 import AuthService from '../../../handlers/main/AuthService';
-import "../../campusAmbassador/register/css/register.css";
-import { Link } from 'react-router-dom';
-import "./style.css"
 import EventsSelect from "./EventsSelect";
 
-
-// import Popup from '../../common/popup/Index';
+import "../../campusAmbassador/register/css/register.css";
 
 export default class RegisterIndex extends React.Component {
     constructor() {
@@ -96,193 +94,190 @@ export default class RegisterIndex extends React.Component {
                 <div className="register-child">
                     <div className="register-heading">
                         <div className="r-logo">
-                            <Link to="/"><img src={img} alt="r-logo" /></Link>
+                            <Link to="/main"><img src={img} alt="r-logo" /></Link>
                         </div>
                         <div className="vertical_line">
                         </div>
                         <div className="register-ca common-cursor">
-                            <h1>Campus<br /> Ambassador</h1>
+                            <h1>Participant<br /> Registration</h1>
                         </div>
                     </div>
                     <div className="register-form">
                         <form onSubmit={this.onSubmit}>
                             {errors ?
-                                <div style={{ color: 'red', height: '10px', fontSize: '14px', fontWeight: '600' }}>
+                                <div style={{ textAlign: 'center', color: 'red', fontWeight: '600' }}>
                                     {errors}
                                 </div>
-                                :
-                                null
+                                : null
                             }
                             <div className="form-heading">
-                                <h2>Registration form</h2>
+                                <h2>Registration Here</h2>
                             </div>
-                            <div className="main-form-first-child">
-                                <div className="main-form-first-grandchild">
-                                    <div className="form-name">
-                                        <label htmlFor="inputName">Name</label>
-                                        <input
-                                            id="inputName"
-                                            type="text"
-                                            placeholder="Your Name"
-                                            name="name"
-                                            value={name}
-                                            autoCorrect="off"
-                                            autoComplete="off"
-                                            autoCapitalize="on"
-                                            onChange={this.onChange}
-                                            spellCheck="false"
-                                            required
-                                        />
-                                    </div>
-                                    <div className="form-contactnumber">
-                                        <label htmlFor="inputContact">Contact Number</label>
-                                        <input
-                                            id="inputContact"
-                                            type="number"
-                                            placeholder="Contact Number"
-                                            name="contact"
-                                            autoCorrect="off"
-                                            autoComplete="off"
-                                            autoCapitalize="on"
-                                            value={contact}
-                                            onChange={this.onChange}
-                                            required
-                                        />
-                                    </div>
-                                </div>
-                                <div className="main-form-first-grandchild">
-                                    <div className="form-email">
-                                        <label htmlFor="inputEmail">Email</label>
-                                        <input
-                                            id="inputEmail"
-                                            type="email"
-                                            placeholder="Your Email"
-                                            name="email"
-                                            autoCorrect="off"
-                                            autoComplete="off"
-                                            autoCapitalize="off"
-                                            value={email}
-                                            onChange={this.onChange}
-                                            spellCheck="false"
-                                            required
-                                        />
-                                    </div>
-                                    <div className="form-gender">
-                                        <label htmlFor="inputGender">Gender</label>
-                                        <select
-                                            id="inputGender"
-                                            name="gender"
-                                            value={gender}
-                                            onChange={this.onChange}
-                                            required
-                                        >
-                                            <option value="" disabled="true"> Gender </option>
-                                            <option value="male"> Male </option>
-                                            <option value="female"> Female </option>
-                                            <option value="other"> Other </option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div className="form-college-child">
-                                    <label htmlFor="inputCollege">College</label>
-                                    <CollegeSelect onChange={college => this.setState({ college })} />
-                                </div>
-                                <div className="main-form-second-grandchild">
-                                    <div className="form-state">
-                                        <label htmlFor="inputState">College State</label>
-                                        <StateSelect onChange={state => this.setState({ state })} />
-                                    </div>
-                                    <div className="form-branch">
-                                        <label htmlFor="inputBranch">Branch and Year</label>
-                                        <input
-                                            id="inputBranch"
-                                            type="text"
-                                            placeholder="Branch Name"
-                                            name="branch"
-                                            autoCorrect="off"
-                                            autoComplete="off"
-                                            autoCapitalize="on"
-                                            value={branch}
-                                            onChange={this.onChange}
-                                            required
-                                        />
-                                    </div>
-                                </div>
-                                <div className="form-add-child">
-                                    <label htmlFor="inputAddress">Present College Address</label>
+                            <div className="form-first-child">
+                                <div className="form-name">
+                                    <label htmlFor="inputName">Name</label>
                                     <input
-                                        id="inputAddress"
+                                        id="inputName"
                                         type="text"
-                                        placeholder="Address Name"
-                                        name="address"
+                                        placeholder="Your Name"
+                                        name="name"
+                                        value={name}
                                         autoCorrect="off"
                                         autoComplete="off"
                                         autoCapitalize="on"
-                                        value={address}
+                                        onChange={this.onChange}
+                                        spellCheck="false"
+                                        required
+                                    />
+                                </div>
+                                <div className="form-contactnumber">
+                                    <label htmlFor="inputContact">Contact Number</label>
+                                    <input
+                                        id="inputContact"
+                                        type="number"
+                                        placeholder="Contact Number"
+                                        name="contact"
+                                        autoCorrect="off"
+                                        autoComplete="off"
+                                        autoCapitalize="on"
+                                        value={contact}
                                         onChange={this.onChange}
                                         required
                                     />
                                 </div>
-                                <div className="main-form-second-grandchild">
-                                    <div className="form-referral">
-                                        <label htmlFor="inputRefferedBy">Referral</label>
-                                        <input
-                                            id="inputRefferedBy"
-                                            type="text"
-                                            placeholder="Referral Code"
-                                            name="referred_by"
-                                            autoCorrect="off"
-                                            autoComplete="off"
-                                            autoCapitalize="off"
-                                            value={referred_by}
-                                            onChange={this.onChange}
-                                        />
-                                    </div>
-                                    <div className="form-primary_events">
-                                        <label htmlFor="inputState">Primary Events</label>
-                                        <EventsSelect onChange={primary_event => this.setState({ primary_event })} />
-                                    </div>
+                            </div>
+                            <div className="form-first-child">
+                                <div className="form-email">
+                                    <label htmlFor="inputEmail">Email</label>
+                                    <input
+                                        id="inputEmail"
+                                        type="email"
+                                        placeholder="Your Email"
+                                        name="email"
+                                        autoCorrect="off"
+                                        autoComplete="off"
+                                        autoCapitalize="off"
+                                        value={email}
+                                        onChange={this.onChange}
+                                        spellCheck="false"
+                                        required
+                                    />
                                 </div>
-                                <div className="main-form-second-grandchild">
-                                    <div className="form-password">
-                                        <label htmlFor="inputPassword">Password</label>
-                                        <input
-                                            id="inputPassword"
-                                            type="password"
-                                            placeholder="Password"
-                                            name="password"
-                                            autoCorrect="off"
-                                            autoComplete="off"
-                                            autoCapitalize="off"
-                                            value={password}
-                                            onChange={this.onChange}
-                                            required
-                                        />
-                                    </div>
-                                    <div className="form-confirmpassword">
-                                        <label htmlFor="inputCPassword">Confirm Password</label>
-                                        <input
-                                            id="inputCPassword"
-                                            type="password"
-                                            placeholder="Confirm Password"
-                                            name="confirmPassword"
-                                            autoCorrect="off"
-                                            autoComplete="off"
-                                            autoCapitalize="off"
-                                            value={confirmPassword}
-                                            onChange={this.onChange}
-                                            required
-                                        />
-                                    </div>
-                                </div>
-                                <div className="main-register">
-                                    <button type="submit">Register</button>
+                                <div className="form-gender">
+                                    <label htmlFor="inputGender">Gender</label>
+                                    <select
+                                        id="inputGender"
+                                        name="gender"
+                                        value={gender}
+                                        onChange={this.onChange}
+                                        required
+                                    >
+                                        <option value="" disabled="true"> Gender </option>
+                                        <option value="male"> Male </option>
+                                        <option value="female"> Female </option>
+                                        <option value="other"> Other </option>
+                                    </select>
                                 </div>
                             </div>
+                            <div className="form-college-child">
+                                <label htmlFor="inputCollege">College</label>
+                                <CollegeSelect onChange={college => this.setState({ college })} />
+                            </div>
+                            <div className="form-first-child">
+                                <div className="form-state">
+                                    <label htmlFor="inputState">College State</label>
+                                    <StateSelect onChange={state => this.setState({ state })} />
+                                </div>
+                                <div className="form-branch">
+                                    <label htmlFor="inputBranch">Branch and Year</label>
+                                    <input
+                                        id="inputBranch"
+                                        type="text"
+                                        placeholder="Branch Name"
+                                        name="branch"
+                                        autoCorrect="off"
+                                        autoComplete="off"
+                                        autoCapitalize="on"
+                                        value={branch}
+                                        onChange={this.onChange}
+                                        required
+                                    />
+                                </div>
+                            </div>
+                            <div className="form-add-child">
+                                <label htmlFor="inputAddress">Present College Address</label>
+                                <input
+                                    id="inputAddress"
+                                    type="text"
+                                    placeholder="Address Name"
+                                    name="address"
+                                    autoCorrect="off"
+                                    autoComplete="off"
+                                    autoCapitalize="on"
+                                    value={address}
+                                    onChange={this.onChange}
+                                    required
+                                />
+                            </div>
+                            <div className="form-first-child">
+                                <div className="form-state">
+                                    <label htmlFor="inputEvents">Primary Events</label>
+                                    <EventsSelect onChange={primary_event => this.setState({ primary_event })} />
+                                </div>
+                                <div className="form-branch">
+                                    <label htmlFor="inputRefferedBy">Referral</label>
+                                    <input
+                                        id="inputRefferedBy"
+                                        type="text"
+                                        placeholder="Referral Code"
+                                        name="referred_by"
+                                        autoCorrect="off"
+                                        autoComplete="off"
+                                        autoCapitalize="off"
+                                        value={referred_by}
+                                        onChange={this.onChange}
+                                    />
+                                </div>
+                            </div>
+                            <div className="form-first-child">
+                                <div className="form-name">
+                                <label htmlFor="inputPassword">Password</label>
+                                    <input
+                                        id="inputPassword"
+                                        type="password"
+                                        placeholder="Password"
+                                        name="password"
+                                        autoCorrect="off"
+                                        autoComplete="off"
+                                        autoCapitalize="off"
+                                        value={password}
+                                        onChange={this.onChange}
+                                        required
+                                    />
+                                </div>
+                                <div className="form-contactnumber">
+                                    <label htmlFor="inputCPassword">Confirm Password</label>
+                                    <input
+                                        id="inputCPassword"
+                                        type="password"
+                                        placeholder="Confirm Password"
+                                        name="confirmPassword"
+                                        autoCorrect="off"
+                                        autoComplete="off"
+                                        autoCapitalize="off"
+                                        value={confirmPassword}
+                                        onChange={this.onChange}
+                                        required
+                                    />
+                                </div>
+                            </div>
+                            <div className="register">
+                                <button type="submit">Register</button>
+                            </div>
                         </form>
-                    </div >
+                    </div>
                 </div>
-            </div >
+            </div>
         );
     }
 

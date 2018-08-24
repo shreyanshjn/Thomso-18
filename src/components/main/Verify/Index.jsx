@@ -1,6 +1,11 @@
 import React from "react";
+import { Link } from 'react-router-dom' ;
+
 import FetchApi from "../../../utils/FetchAPI";
 import AuthService from '../../../handlers/main/AuthService';
+
+import img from "../../campusAmbassador/register/img/logo.png"
+import "../../campusAmbassador/register/css/register.css";
 
 export default class VerifyIndex extends React.Component {
     constructor(props) {
@@ -56,35 +61,57 @@ export default class VerifyIndex extends React.Component {
     render() {
         const { otp, errors, disabled } = this.state;
         return (
-            <div>
-                <h1> Please verify your account.  </h1>
-                <form onSubmit={this.onSubmit}>
-                    {errors ?
-                        <div style={{ color: 'red', fontSize: '22px' }}> {errors} </div>
-                        :
-                        null}
-                    <div>
-                        <div>
-                            <label htmlFor="inputOTP"> Enter OTP 1511</label>
-                            <input
-                                id="inputOTP"
-                                type="text"
-                                placeholder="OTP"
-                                name="otp"
-                                autoCorrect="off"
-                                autoComplete="off"
-                                autoCapitalize="off"
-                                value={otp}
-                                onChange={this.onChange}
-                                spellCheck="false"
-                                required
-                            />
+            <div className="register-parent">
+                <div className="register-child">
+                    <div className="register-child-child">
+                        <div className="register-heading">
+                            <div className="r-logo">
+                                <Link to="/"><img src={img} alt="r-logo" /></Link>
+                            </div>
+                            <div className="vertical_line">
+                            </div>
+                            <div className="register-ca common-cursor" style={{ margin: 'auto 0' }}>
+                                <h1 style={{ marginTop: '0' }} >VERIFY EMAIL</h1>
+                            </div>
                         </div>
-                        <div>
-                            <button type="submit" disabled={disabled}>Send Verification Email</button>
-                        </div>
+                        <Link to="/main/logout" className="register-ca common-cursor register-ca-spons">
+                            <h1 style={{ marginTop: '0', cursor: 'pointer' }} >Logout</h1>
+                        </Link>
                     </div>
-                </form>
+                    <div className="register-form">
+                        <form onSubmit={this.onSubmit}>
+                            {errors ?
+                                <div style={{textAlign: 'center', color: 'red', fontWeight: '600'}}>
+                                    {errors}
+                                </div>
+                                : null
+                            }
+                            <div className="form-heading">
+                                <h2>Please Verify Your Email</h2>
+                            </div>
+                            <div className="form-first-child">
+                                <div className="form-email">
+                                    <input
+                                        id="inputOTP"
+                                        type="text"
+                                        placeholder="Enter OTP 1511"
+                                        name="otp"
+                                        autoCorrect="off"
+                                        autoComplete="off"
+                                        autoCapitalize="off"
+                                        value={otp}
+                                        onChange={this.onChange}
+                                        spellCheck="false"
+                                        required
+                                    />
+                                </div>
+                            </div>
+                            <div className="register">
+                                <button type="submit" disabled={disabled}>Verify</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         );
     }

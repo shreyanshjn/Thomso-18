@@ -1,8 +1,13 @@
 import React from "react";
+import { Link } from 'react-router-dom' ;
+
 // import {Route} from "react-router-dom";
 import FetchApi from "../../../utils/FetchAPI";
 import validateInput from '../../../utils/validation/loginValidation';
 import AuthService from '../../../handlers/main/AuthService';
+
+import img from "../../campusAmbassador/register/img/logo.png"
+import "../../campusAmbassador/register/css/register.css";
 
 export default class LoginIndex extends React.Component {
     constructor(props) {
@@ -77,45 +82,70 @@ export default class LoginIndex extends React.Component {
     render() {
         const { email, password, errors, disabled } = this.state;
         return (
-            <div>
-                <h1> Login Here ...</h1>
-                <form onSubmit={this.onSubmit}>
-                    {errors ? <div style={{ coloe: 'red', fontSize: '22px' }}>{errors}</div> : null}
-                    <div>
-                        <div>
-                            <label htmlFor="inputEmail">Email</label>
-                            <input
-                                name="email"
-                                type="email"
-                                id="inputEmail"
-                                placeholder="Email"
-                                value={email}
-                                onChange={this.onChange}
-                                autoCapitalize="off"
-                                autoCorrect="off"
-                                autoComplete="off"
-                                spellCheck="off"
-                                required
-                            />
+            <div className="register-parent">
+                <div className="register-child">
+                    <div className="register-heading">
+                        <div className="r-logo">
+                            <Link to="/"><img src={img} alt="r-logo" /></Link>
                         </div>
-                        <div>
-                            <label htmlFor="inputPassword">Password</label>
-                            <input
-                                id="inputPassword"
-                                type="password"
-                                name="password"
-                                onChange={this.onChange}
-                                value={password}
-                                autoComplete="off"
-                                autoCapitalize="off"
-                                required
-                            />
+                        <div className="vertical_line">
                         </div>
-                        <div>
-                            <button type="submit" disabled={disabled} >Login</button>
+                        <div className="register-ca common-cursor">
+                            <h1>Pariciapant<br /> Login</h1>
                         </div>
                     </div>
-                </form>
+                    <div className="register-form">
+                        <form onSubmit={this.onSubmit}>
+                            {errors ?
+                                <div style={{textAlign: 'center', color: 'red', fontWeight: '600'}}>
+                                    {errors}
+                                </div>
+                                : null
+                            }
+                            <div className="form-heading">
+                                <h2>Participant Login</h2>
+                            </div>
+                            <div className="form-first-child">
+                                <div className="form-email">
+                                    <input
+                                        name="email"
+                                        type="email"
+                                        id="inputEmail"
+                                        placeholder="Email"
+                                        value={email}
+                                        onChange={this.onChange}
+                                        autoCapitalize="off"
+                                        autoCorrect="off"
+                                        autoComplete="off"
+                                        spellCheck="off"
+                                        required
+                                    />
+                                </div>
+                                <div className="form-contactnumber form-gender">
+                                    <input
+                                        id="inputPassword" 
+                                        type="password" 
+                                        placeholder="Password" 
+                                        name="password" 
+                                        autoCorrect="off" 
+                                        autoComplete="off" 
+                                        autoCapitalize="off" 
+                                        value={password} 
+                                        onChange={this.onChange} 
+                                        required
+                                    />
+                                </div>
+                            </div>
+                            <div style={{marginTop: '10px', fontSize: '0.8em', textAlign: 'center'}}>* Forgot Password? Click 
+                                <span style={{color: 'cyan', cursor: 'pointer'}} > here </span>
+                                to reset
+                            </div>
+                            <div className="register">
+                                <button type="submit" disabled={disabled}>Login</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         );
     }

@@ -92,7 +92,7 @@ export default class RegisterIndex extends React.Component {
                             </div>
                         </div>
                         <Link to="/sponsors" className="register-ca common-cursor register-ca-spons">
-                            <h1 style={{ marginTop: '0' }} >Our Sponsors</h1>
+                            <h1 style={{ marginTop: '0', cursor: 'pointer' }} >Our Sponsors</h1>
                         </Link>
                     </div>
                     <div className="register-form">
