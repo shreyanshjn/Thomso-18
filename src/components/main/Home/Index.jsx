@@ -16,6 +16,10 @@ export default class HomeIndex extends React.Component{
                 <Link to="/main/login">
                     Login
                 </Link>
+               <br></br>
+                <Link to="/main/resetPasswordEmail">
+                    Forget Password
+                </Link>
             </div>
         );
     }

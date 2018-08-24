@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import FetchApi from "../../../utils/FetchAPI";
 import validateInput from '../../../utils/validation/loginValidation';
+
 export default class ResetPasswordEmailIndex extends React.Component{
     constructor(){
         super();
@@ -28,18 +29,17 @@ export default class ResetPasswordEmailIndex extends React.Component{
                 FetchApi('POST','/api/main/auth/resetEmail',data)
                 .then( res => {
                     if(res && res.data){
-                     this.props.history.push('/main/resetPassword')
+                        if(res.data.success) this.props.history.push('/main/resetPassword')
+                        else this.setState({errors:res.data.msg})
                     }
                 })
                 .catch(e=>{
-                        this.setState({errors:e.response.data.msg})
+                    if(e && e.response && e.response.data && e.response.data.msg) this.setState({errors:e.response.data.msg})
+                    else this.setState({errors:"Something Went Wrong"})
                 });
             }
-            else if (check.errors && check.errors.email) {
-                this.setState({ errors: check.errors.email })
-            }else {
-                this.setState({ errors: 'Fields cannot be empty' })
-            }
+            else if (check.errors && check.errors.email)  this.setState({ errors: check.errors.email })
+            else  this.setState({ errors: 'Fields cannot be empty' })
         }
     }
 
@@ -48,7 +48,7 @@ export default class ResetPasswordEmailIndex extends React.Component{
         const {email, errors, disabled} = this.state;
         return(
             <div>
-                <h1> Login Here ...</h1>
+                <h1>Enter Email</h1>
                 <form onSubmit={this.onSubmit}>
                     {errors?<div style={{color:'red', fontSize:'22px'}}>{errors}</div>:null}
                     

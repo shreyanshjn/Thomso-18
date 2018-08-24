@@ -5,7 +5,6 @@ var UserSchema = new mongoose.Schema({
         type:String,
         unique:true,
         required:true,
-
     },
     name:{
         type:String,
@@ -19,10 +18,7 @@ var UserSchema = new mongoose.Schema({
     users : [{
         type:mongoose.Schema.Types.ObjectId,
         ref:'Main_User'    
-    }],
-    member:{
-        type:String
-    }
+    }]
 });
 
 module.exports = mongoose.model('Thomso_Event',UserSchema);

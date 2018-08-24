@@ -102,4 +102,13 @@ UserSchema.methods.comparePassword = function (pass, callback) {
     });
 };
 
+UserSchema.methods.compareTempPassword = function (pass, callback) {
+    bcrypt.compare(pass, this.tempPassword, function (err, isMatch) {
+        console.log(this.tempPassword, pass)
+        if (err)
+            return callback(err);
+        callback(null, isMatch);
+    });
+};
+
 module.exports = mongoose.model('Main_User', UserSchema);

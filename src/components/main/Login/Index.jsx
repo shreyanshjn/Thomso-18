@@ -59,7 +59,7 @@ export default class LoginIndex extends React.Component {
                     })
                     .catch(e => {
                         if (e.response && e.response.data) {
-                            this.setState({ disabled: false, errors: e.response })
+                            this.setState({ disabled: false, errors: e.response.data.msg })
                         } else {
                             this.setState({ disabled: false, errors: 'Something went wrong' })
                         }
