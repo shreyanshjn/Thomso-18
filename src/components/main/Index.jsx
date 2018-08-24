@@ -13,6 +13,11 @@ const Loading = ({ error }) => {
         return <Loader />;
 };
 
+const AdminIndex = Loadable({
+    loader: () => import("./admin/Index"),
+    loading: Loading
+});
+
 const RegisterIndex = Loadable({
     loader: () => import("./Registration/Index"),
     loading: Loading
@@ -97,6 +102,7 @@ export default class MainIndex extends React.Component {
     render() {
         return (
             <React.Fragment>
+                <Route path="/main/admin" component={AdminIndex} />
                 {this.state.isAuthenticated ?
                     <React.Fragment>
                         {!this.state.verified ?
