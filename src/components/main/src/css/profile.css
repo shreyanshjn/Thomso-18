@@ -2,27 +2,63 @@
     width:calc(100% - 25.60vw);
     margin-left: auto;
     font-family: Montserrat;
-    padding: 10px;
-    height: 100%;
+    padding:0 10px;
+    min-height: 100vh;
+    background-image:url('../img/trianglify.png');
+    background-position:center center;
+    background-attachment:fixed;
+    background-size:cover;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+.participant-child-get-seized
+{
+    display:flex;
+    justify-content: flex-start;
+    width: 80%;
+    color: white;
+    font-size: 35px;
 }
 .participant-profile-child-details{
     display: flex;
     flex-direction: row;
+    justify-content:space-around;
     padding: 30px;
     border: 1px solid black;
     border-radius: 2px;
-    margin-top: 15vh;
-}
-.college{
-    display: flex;
-    flex-direction: row;
+    width:80%;
+    background:white;
+    padding-bottom:10px;
 }
 .participant-profile-child-left{
-    width: 60%;
+    width: 40%;
     padding-right: 10px;
 }
 .participant-profile-child-right{
+    display:flex;
+    flex-direction:column;
     width: 40%;
+}
+.main-events-add-more-parent
+{
+   display:flex;
+   justify-content:center;
+   margin-top:10px;
+}
+.main-events-add-more
+{
+   border:1px solid black;
+   text-decoration:none;
+   color:black;
+   padding:4px 12px;
+   transition:all 0.3s;
+}
+.main-events-add-more:hover
+{
+   color:white;
+   background:black;
 }
 .participant-profile-child-left-details{
     padding-top: 10px;
@@ -30,19 +66,25 @@
 .participant-profile-child-left-details span{
     padding: 5px;
 }
-.participant-somedetails-some{
-    font-size: 14px;
-}
 .participant-somedetails{
     text-transform: capitalize;
     font-size: 14px;
+    margin:2px 0px;
+    border-bottom:1px solid black;
+    padding-bottom:2px;
+    color: rgba(0,0,0,0.5);
+    font-weight: bolder;
+    letter-spacing: 1px;
+    padding-bottom: 2px;
 }
 .participant-profile-label{
-    color: blue;
-}
+    margin:2px 0px;
+} 
 .participant-profile-events{
-    background: green;
+    background: white;
     height: 100%;
+    border:2px solid black;
+    overflow:auto;
 }
 .participant-profile-event-heading{
     width: 100%;
@@ -50,8 +92,32 @@
     flex-direction: row;
     justify-content: space-around;
     padding-top: 5px;
-    color: white;
     font-weight: 600;
+}
+.participant-profile-event-details
+{
+    display:flex;
+    justify-content: flex-start;
+    overflow-y: auto;
+    margin-top:1em;
+    margin-left:10px;
+}
+.participant-profile-table-events
+{
+    width:100%;
+}
+.table-child-one
+{
+    width:80%;
+}
+.table-child-two
+{
+    width:10%;
+}
+.main-events-bin
+{
+   height:16px;
+   width:auto;
 }
 @media screen and (max-width:768px){
     .participant-profile-parent{
@@ -65,5 +131,13 @@
         margin-top: 20px;
         width: 100%;
         height: 100px;
+    }
+    .participant-profile-child-left
+    {
+        width:100%;
+    }
+    .main-events-add-more-parent
+    {
+        height:40%;
     }
 }

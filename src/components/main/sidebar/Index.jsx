@@ -1,26 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./css/style.css";
-// import "../../ca/sidebar/css/style.css";
 import boy from "./img/boy.png";
 import girl from "./img/girl.png";
 import { addCATopic } from '../../../utils/firebasePush';
-// import ReferralPoint from "./Svg/Referralpoint";
-// import Bonus from "./Svg/Bonus";
-// import Score from "./Svg/Score";
-// import share from "./img/share.png"
-// import score from "./img/star.png"
-import Post from "./Svg/Post"
-// import Referral from "./Svg/Referral"
-// import Leader from "./Svg/Leader"
-import Events from "./Svg/Events"
-// import Guide from "./Svg/Guide"
-import Contact from "./Svg/Contact"
-import Logout from "./Svg/Logout"
-// import Bulb from "./Svg/Bulb"
-// import Hand from "./Svg/Hand"
-
-// import logoUser from '../common/images/user.svg';
+import Profile from "./Svg/Profile"
+import Events from "../../campusAmbassador/sidebar/Svg/Events"
+import Contact from "../../campusAmbassador/sidebar/Svg/Contact"
+import Logout from "../../campusAmbassador/sidebar/Svg/Logout"
+import Home from "./Svg/Home"
 
 let addTopicTimeout;
 
@@ -74,7 +62,7 @@ export default class Sidebar extends React.Component {
           className="sidenav"
           style={{ backgroundColor: 'white' }}
         >
-          <div className="campusAmb-sidebar-user">
+          <div className="main-sidebar-user">
             {(this.props.userData && this.props.userData.image) ? <img src={this.props.userData.image} className="image" alt="User" /> :
               <React.Fragment>
                 {(this.props.userData && this.props.userData.gender === 'female') ?
@@ -83,14 +71,14 @@ export default class Sidebar extends React.Component {
                 }
               </React.Fragment>}
 
-            <div className="campusAmb-sidebar-user-details">
+            <div className="main-sidebar-user-details">
               <div className="text">{this.props.userData ? this.props.userData.name : "User"}</div>
               <div className="cname">{this.props.userData ? this.props.userData.college : "-"}</div>
             </div>
           </div>
-          <div className="campusAmb-sidebar-line">
+          <div className="main-sidebar-line">
           </div>
-          <div className="campusAmb-sidebar-contents">
+          <div className="main-sidebar-contents">
             <Link
               to="/main/"
               className={
@@ -102,11 +90,11 @@ export default class Sidebar extends React.Component {
                 this.setActive("profile");
               }}
             >
-              <div className="campusAmb-sidebar-posts flex_row">
-                <div className="campusAmb-sidebar-svg-logo">
-                  <Post />
+              <div className="main-sidebar-profile flex_row">
+                <div className="main-sidebar-svg-logo">
+                  <Profile />
                 </div>
-                <div className="campusAmb-sidebar-navitem-name">
+                <div className="main-sidebar-navitem-name">
                   PROFILE
                 </div>
               </div>
@@ -115,11 +103,11 @@ export default class Sidebar extends React.Component {
               to="/"
               className="sideNavItem"
             >
-              <div className="campusAmb-sidebar-posts flex_row">
-                <div className="campusAmb-sidebar-svg-logo">
-                  <Post />
+              <div className="main-sidebar-profile flex_row">
+                <div className="main-sidebar-svg-logo">
+                  <Home />
                 </div>
-                <div className="campusAmb-sidebar-navitem-name">
+                <div className="main-sidebar-navitem-name">
                   HOME
                 </div>
               </div>
@@ -128,11 +116,11 @@ export default class Sidebar extends React.Component {
               to="/events"
               className="sideNavItem"
             >
-              <div className="campusAmb-sidebar-events flex_row">
-                <div className="campusAmb-sidebar-svg-logo">
+              <div className="main-sidebar-events flex_row">
+                <div className="main-sidebar-svg-logo">
                   <Events />
                 </div>
-                <div className="campusAmb-sidebar-navitem-name">
+                <div className="main-sidebar-navitem-name">
                   EVENTS
                 </div>
               </div>
@@ -148,11 +136,11 @@ export default class Sidebar extends React.Component {
                 this.setActive("contact");
               }}
             >
-              <div className="campusAmb-sidebar-contactus flex_row">
-                <div className="campusAmb-sidebar-svg-logo">
+              <div className="main-sidebar-contactus flex_row">
+                <div className="main-sidebar-svg-logo">
                   <Contact />
                 </div>
-                <div className="campusAmb-sidebar-navitem-name">
+                <div className="main-sidebar-navitem-name">
                   CONTACT US
                 </div>
               </div>
@@ -168,11 +156,11 @@ export default class Sidebar extends React.Component {
                 this.setActive("logout");
               }}
             >
-              <div className="campusAmb-sidebar-logout flex_row">
-                <div className="campusAmb-sidebar-svg-logo">
+              <div className="main-sidebar-logout flex_row">
+                <div className="main-sidebar-svg-logo">
                   <Logout />
                 </div>
-                <div className="campusAmb-sidebar-navitem-name">
+                <div className="main-sidebar-navitem-name">
                   LOGOUT
                 </div>
               </div>

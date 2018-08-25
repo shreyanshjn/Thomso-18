@@ -27,7 +27,7 @@
         font-size: 0;
         padding-left: 36px;
     }
-    .sidenav.collapseSide > .campusAmb-sidebar-user > .text{
+    .sidenav.collapseSide > .main-sidebar-user > .text{
         font-size: 14px;
     }
     .sidenav .sideNavItem {
@@ -40,81 +40,53 @@
         cursor: pointer;
         margin-top: 10px;
     }
-    .sidenav > .campusAmb-sidebar-contents > .activeSideItem, .sidenav .sideNavItem:hover , .sidenav .sideNavItem:active, .sidenav .sideNavItem:focus{
+    .sidenav > .main-sidebar-contents > .activeSideItem, .sidenav .sideNavItem:hover , .sidenav .sideNavItem:active, .sidenav .sideNavItem:focus{
         background-color:#F1F2F1;
         text-decoration: none;
         text-transform: none;
     }
-    .sidenav > .campusAmb-sidebar-contents > .activeSideItem > .campusAmb-sidebar-posts > .campusAmb-sidebar-svg-logo svg .postpath{
+    .sidenav > .main-sidebar-contents > .activeSideItem > .main-sidebar-profile > .main-sidebar-svg-logo svg .profilepath{
+        fill: #E5904A;
+    }
+    .sidenav > .main-sidebar-contents > .activeSideItem > .main-sidebar-logout > .main-sidebar-svg-logo svg .logoutpath{
         fill: red;
     }
-    .sidenav > .campusAmb-sidebar-contents > .activeSideItem > .campusAmb-sidebar-leaderboard > .campusAmb-sidebar-svg-logo svg .leaderpath{
-        fill: green;
-    }
-    .sidenav > .campusAmb-sidebar-contents > .activeSideItem > .campusAmb-sidebar-ideas > .campusAmb-sidebar-svg-logo svg .bulbpath{
-        fill: yellow;
-    }
-    .sidenav > .campusAmb-sidebar-contents > .activeSideItem > .campusAmb-sidebar-certificate > .campusAmb-sidebar-svg-logo svg .certificatepath{
-        fill:orange;
-    }
-    .sidenav > .campusAmb-sidebar-contents > .activeSideItem > .campusAmb-sidebar-guide > .campusAmb-sidebar-svg-logo svg .guidepath{
-        fill: purple;
-    }
-    .sidenav > .campusAmb-sidebar-contents > .activeSideItem > .campusAmb-sidebar-contactus > .campusAmb-sidebar-svg-logo svg .contactpath{
-        fill: blue;
-    }
-    .sidenav > .campusAmb-sidebar-contents > .activeSideItem > .campusAmb-sidebar-logout > .campusAmb-sidebar-svg-logo svg .logoutpath{
-        fill: red;
-    }
-    .sidenav > .campusAmb-sidebar-contents > .activeSideItem > .campusAmb-sidebar-events > .campusAmb-sidebar-svg-logo svg .eventspath{
+    .sidenav > .main-sidebar-contents > .activeSideItem > .main-sidebar-events > .main-sidebar-svg-logo svg .eventspath{
         fill: #4C8AE5;
     }
-    .campusAmb-sidebar-likes-child{
+    .main-sidebar-likes-child{
         display: flex;
         flex-direction: row;
     }
-    .campusAmb-sidebar-likes-grandchild{
+    .main-sidebar-likes-grandchild{
         display: flex;
         flex-direction: row;
         justify-content: space-around;
     }
-    .campusAmb-sidebar-svg-logo svg{
+    .main-sidebar-svg-logo svg{
         padding: 0 3px 0 3px;
         height: auto;
         width: 16px;
     }
-    .sidenav .sideNavItem:hover .campusAmb-sidebar-svg-logo svg .bulbpath{
-        fill: yellow;
+    .sidenav .sideNavItem:hover .main-sidebar-svg-logo svg .homepath{
+        fill: #E57373;
     }
-    .sidenav .sideNavItem:hover .campusAmb-sidebar-svg-logo svg .leaderpath{
-        fill:green;
-    }
-    .sidenav .sideNavItem:hover .campusAmb-sidebar-svg-logo svg .guidepath{
-        fill:purple;
-    }
-    .sidenav .sideNavItem:hover .campusAmb-sidebar-svg-logo svg .certificatepath{
-        fill:orange;
-    }
-    .sidenav .sideNavItem:hover .campusAmb-sidebar-svg-logo svg .contactpath{
+    .sidenav .sideNavItem:hover .main-sidebar-svg-logo svg .contactpath{
         fill:blue;
     }
-    .sidenav .sideNavItem:hover .campusAmb-sidebar-svg-logo svg .logoutpath{
+    .sidenav .sideNavItem:hover .main-sidebar-svg-logo svg .logoutpath{
         fill:red;
     }
-    .sidenav .sideNavItem:hover .campusAmb-sidebar-svg-logo svg .eventspath{
+    .sidenav .sideNavItem:hover .main-sidebar-svg-logo svg .eventspath{
         fill: #4C8AE5;
     }
-    .sidenav .sideNavItem:hover .campusAmb-sidebar-svg-logo svg .postpath{
-        fill:red;
+    .sidenav .sideNavItem:hover .main-sidebar-svg-logo svg .profilepath{
+        fill:#E5904A;
     }
-    .referral:hover .campusAmb-sidebar-svg-logo svg .referralpath{
-        cursor: pointer;
-        fill: red;
-    }
-    .campusAmb-sidebar-contents{
+    .main-sidebar-contents{
         padding: 15px 0px;
     }
-    .campusAmb-sidebar-hand{
+    .main-sidebar-hand{
         position: absolute;
         bottom: 5vh;
         cursor: pointer;
@@ -122,38 +94,34 @@
         flex-direction: row;
         justify-content: space-around;
     }
-    .campusAmb-sidebar-hand-child{
+    .main-sidebar-hand-child{
         display: flex;
         width: fit-content;
         align-content: center;
     }
-    .campusAmb-sidebar-hand .campusAmb-sidebar-svg-logo{
+    .main-sidebar-hand .main-sidebar-svg-logo{
         padding: 10px;
     }
-    .campusAmb-sidebar-hand:hover .campusAmb-sidebar-svg-logo svg .handpath{
-        cursor: pointer;
-        fill: yellow;
-    }
-    .campusAmb-sidebar-user {
+    .main-sidebar-user {
         display: flex;
         flex-direction: row;
         align-items: center;
         padding: 15px 0 15px 0;
         height: fit-content;
     }
-    .campusAmb-sidebar-user > .image {
+    .main-sidebar-user > .image {
         height: 40px;
         width: auto;
         border-radius: 50%;
         padding: 0 5px 0 5px;
     }
-    .campusAmb-sidebar-user > .campusAmb-sidebar-user-details{
+    .main-sidebar-user > .main-sidebar-user-details{
         display: flex;
         flex-direction: column;
         font-family: Montserrat;
         transition: all 0.2s;
     }
-    .campusAmb-sidebar-user > .campusAmb-sidebar-user-details > .text {
+    .main-sidebar-user > .main-sidebar-user-details > .text {
         font-weight: bold;
         padding: 0 5px 0 5px;
         font-size: 16px;
@@ -161,13 +129,13 @@
         letter-spacing: 1px;
         text-transform: capitalize;
     }
-    .campusAmb-sidebar-user > .campusAmb-sidebar-user-details > .cname{
+    .main-sidebar-user > .main-sidebar-user-details > .cname{
         padding: 0 5px 0 5px;
         font-size: 12px;
         font-weight: 600;
     }
     
-    .campusAmb-sidebar-line{
+    .main-sidebar-line{
         height:1px;
         background-color:#BEBEBE;
         margin: 10px 0 10px 0;
@@ -176,17 +144,17 @@
         display: flex;
         flex-direction: row;
     }
-    .campusAmb-sidebar-svg-logo{
+    .main-sidebar-svg-logo{
         width: 15%;
     }
-    .campusAmb-sidebar-navitem-name{
+    .main-sidebar-navitem-name{
         width: 85%;
         font-size: 12px;
         letter-spacing: 2px;
         padding: 0 5px;
         font-weight: 600;
     }
-    .campusAmb-sidebar-hand-days{
+    .main-sidebar-hand-days{
         width: 85%;
         margin-top: 10px;
         font-size: 14px;
@@ -196,17 +164,17 @@
         height: fit-content;
         margin-top: 3px;
     }
-    .campusAmb-sidebar-user > .campusAmb-sidebar-like-share-score{
+    .main-sidebar-user > .main-sidebar-like-share-score{
         display: flex;
         flex-direction: column;
     }
-    .campusAmb-sidebar-like-share-score-child{
+    .main-sidebar-like-share-score-child{
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
         padding: 10px 0 10px 0;
     }
-    .campusAmb-sidebar-likes-child{
+    .main-sidebar-likes-child{
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
@@ -214,22 +182,22 @@
         font-weight: 600;
         letter-spacing: 2px;
     }
-    .campusAmb-sidebar-likes-number{
+    .main-sidebar-likes-number{
         font-size: 12px;
         font-weight: 600;
         letter-spacing: 0.5px;
         padding: 5px 0;
     }
-    .campusAmb-sidebar-likes-shares-score-data{
+    .main-sidebar-likes-shares-score-data{
         padding-left: 8px;
     }
-    .campusAmb-sidebar-score > .campusAmb-sidebar-likes-child > img{
+    .main-sidebar-score > .main-sidebar-likes-child > img{
         padding-right: 8px;
     }
-    .campusAmb-sidebar-shares > .campusAmb-sidebar-likes-child > img{
+    .main-sidebar-shares > .main-sidebar-likes-child > img{
         padding-right: 8px;
     }
-    .campusAmb-sidebar-likes-child img{
+    .main-sidebar-likes-child img{
         height: 14px;
         width: auto;
         padding-top: 1px;
@@ -238,11 +206,11 @@
         font-size: 1vw;
         min-font-size: 12px;
     }
-    .campusAmb-sidebar-updatenews{
+    .main-sidebar-updatenews{
         font-size: 10px;
         color: rgb(117, 154, 230);
     }
-    .campusAmb-sidebar-likes > .campusAmb-sidebar-likes-child div{
+    .main-sidebar-likes > .main-sidebar-likes-child div{
         padding: 0 5px;
     }
 }
@@ -257,7 +225,7 @@
         font-size: 0;
         padding-left: 36px;
     }
-    .sidenav.collapseSide > .campusAmb-sidebar-user > .text{
+    .sidenav.collapseSide > .main-sidebar-user > .text{
         font-size: 12px;
     }
     .sidenav .sideNavItem {
@@ -270,108 +238,108 @@
         cursor: pointer;
         margin-top: 10px;
     }
-    .sidenav > .campusAmb-sidebar-contents > .activeSideItem, .sidenav .sideNavItem:hover , .sidenav .sideNavItem:active, .sidenav .sideNavItem:focus{
+    .sidenav > .main-sidebar-contents > .activeSideItem, .sidenav .sideNavItem:hover , .sidenav .sideNavItem:active, .sidenav .sideNavItem:focus{
         background-color:#F1F2F1;
         text-decoration: none;
         text-transform: none;
     }
-    .sidenav > .campusAmb-sidebar-contents > .activeSideItem > .campusAmb-sidebar-posts > .campusAmb-sidebar-svg-logo svg .postpath{
-        fill: red;
+    .sidenav > .main-sidebar-contents > .activeSideItem > .main-sidebar-profile > .main-sidebar-svg-logo svg .profilepath{
+        fill:#EF904A ;
     }
-    .sidenav > .campusAmb-sidebar-contents > .activeSideItem > .campusAmb-sidebar-leaderboard > .campusAmb-sidebar-svg-logo svg .leaderpath{
-        fill: green;
+    /* .sidenav > .main-sidebar-contents > .activeSideItem > .main-sidebar-leaderboard > .main-sidebar-svg-logo svg .leaderpath{ */
+    /*     fill: green; */
+    /* } */
+    .sidenav > .main-sidebar-contents > .activeSideItem > .main-sidebar-ideas > .main-sidebar-svg-logo svg .homepath{
+        fill: #E57373;
     }
-    .sidenav > .campusAmb-sidebar-contents > .activeSideItem > .campusAmb-sidebar-ideas > .campusAmb-sidebar-svg-logo svg .bulbpath{
-        fill: yellow;
-    }
-    .sidenav > .campusAmb-sidebar-contents > .activeSideItem > .campusAmb-sidebar-certificate > .campusAmb-sidebar-svg-logo svg .certificatepath{
-        fill:orange;
-    }
-    .sidenav > .campusAmb-sidebar-contents > .activeSideItem > .campusAmb-sidebar-guide > .campusAmb-sidebar-svg-logo svg .guidepath{
-        fill: purple;
-    }
-    .sidenav > .campusAmb-sidebar-contents > .activeSideItem > .campusAmb-sidebar-contactus > .campusAmb-sidebar-svg-logo svg .contactpath{
+    /* .sidenav > .main-sidebar-contents > .activeSideItem > .main-sidebar-certificate > .main-sidebar-svg-logo svg .certificatepath{ */
+    /*     fill:orange; */
+    /* } */
+    /* .sidenav > .main-sidebar-contents > .activeSideItem > .main-sidebar-guide > .main-sidebar-svg-logo svg .guidepath{ */
+    /*     fill: purple; */
+    /* } */
+    .sidenav > .main-sidebar-contents > .activeSideItem > .main-sidebar-contactus > .main-sidebar-svg-logo svg .contactpath{
         fill: blue;
     }
-    .sidenav > .campusAmb-sidebar-contents > .activeSideItem > .campusAmb-sidebar-logout > .campusAmb-sidebar-svg-logo svg .logoutpath{
+    .sidenav > .main-sidebar-contents > .activeSideItem > .main-sidebar-logout > .main-sidebar-svg-logo svg .logoutpath{
         fill: red;
     }
-    .sidenav > .campusAmb-sidebar-contents > .activeSideItem > .campusAmb-sidebar-events > .campusAmb-sidebar-svg-logo svg .eventspath{
+    .sidenav > .main-sidebar-contents > .activeSideItem > .main-sidebar-events > .main-sidebar-svg-logo svg .eventspath{
         fill: #4C8AE5;
     }
-    .campusAmb-sidebar-svg-logo svg{
+    .main-sidebar-svg-logo svg{
         padding: 0 3px 0 3px;
         height: auto;
         width: 16px;
     }
-    .sidenav .sideNavItem:hover .campusAmb-sidebar-svg-logo svg .bulbpath{
-        fill: yellow;
+    .sidenav .sideNavItem:hover .main-sidebar-svg-logo svg .homepath{
+        fill: #E57373;
     }
-    .sidenav .sideNavItem:hover .campusAmb-sidebar-svg-logo svg .leaderpath{
-        fill:green;
-    }
-    .sidenav .sideNavItem:hover .campusAmb-sidebar-svg-logo svg .guidepath{
-        fill:purple;
-    }
-    .sidenav .sideNavItem:hover .campusAmb-sidebar-svg-logo svg .certificatepath{
-        fill:orange;
-    }
-    .sidenav .sideNavItem:hover .campusAmb-sidebar-svg-logo svg .contactpath{
+    /* .sidenav .sideNavItem:hover .main-sidebar-svg-logo svg .leaderpath{ */
+    /*     fill:green; */
+    /* } */
+    /* .sidenav .sideNavItem:hover .main-sidebar-svg-logo svg .guidepath{ */
+    /*     fill:purple; */
+    /* } */
+    /* .sidenav .sideNavItem:hover .main-sidebar-svg-logo svg .certificatepath{ */
+    /*     fill:orange; */
+    /* } */
+    .sidenav .sideNavItem:hover .main-sidebar-svg-logo svg .contactpath{
         fill:blue;
     }
-    .sidenav .sideNavItem:hover .campusAmb-sidebar-svg-logo svg .logoutpath{
+    .sidenav .sideNavItem:hover .main-sidebar-svg-logo svg .logoutpath{
         fill:red;
     }
-    .sidenav .sideNavItem:hover .campusAmb-sidebar-svg-logo svg .eventspath{
+    .sidenav .sideNavItem:hover .main-sidebar-svg-logo svg .eventspath{
         fill:#4C8AE5;
     }
-    .sidenav .sideNavItem:hover .campusAmb-sidebar-svg-logo svg .postpath{
-        fill:red;
+    .sidenav .sideNavItem:hover .main-sidebar-svg-logo svg .profilepath{
+        fill:#EF904A;
     }
-    .referral:hover .campusAmb-sidebar-svg-logo svg .referralpath{
-        cursor: pointer;
-        fill: red;
-    }
-    .campusAmb-sidebar-contents{
+    /* .referral:hover .main-sidebar-svg-logo svg .referralpath{ */
+    /*     cursor: pointer; */
+    /*     fill: red; */
+    /* } */
+    .main-sidebar-contents{
         padding: 0px 0px;
     }
-    .campusAmb-sidebar-hand{
+    .main-sidebar-hand{
         margin-top: 100px;
         cursor: pointer;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
     }
-    .campusAmb-sidebar-hand div{
+    .main-sidebar-hand div{
         display: flex;
         flex-direction: row;
         justify-content: center;
     }
 
-    .campusAmb-sidebar-hand:hover .campusAmb-sidebar-svg-logo svg .handpath{
+    .main-sidebar-hand:hover .main-sidebar-svg-logo svg .handpath{
         cursor: pointer;
         fill: yellow;
     }
-    .campusAmb-sidebar-user {
+    .main-sidebar-user {
         display: flex;
         flex-direction: row;
         align-items: center;
         padding: 10px 0 5px 0;
         height: fit-content;
     }
-    .campusAmb-sidebar-user > .image {
+    .main-sidebar-user > .image {
         height: 40px;
         width: auto;
         border-radius: 50%;
         padding: 0 5px 0 5px;
     }
-    .campusAmb-sidebar-user > .campusAmb-sidebar-user-details{
+    .main-sidebar-user > .main-sidebar-user-details{
         display: flex;
         flex-direction: column;
         font-family: Montserrat;
         transition: all 0.2s;
     }
-    .campusAmb-sidebar-user > .campusAmb-sidebar-user-details > .text {
+    .main-sidebar-user > .main-sidebar-user-details > .text {
         font-weight: bold;
         padding: 0 5px 0 5px;
         font-size: 12px;
@@ -379,20 +347,20 @@
         letter-spacing: 1px;
         text-transform: capitalize;
     }
-    .campusAmb-sidebar-user > .campusAmb-sidebar-user-details > .cname{
+    .main-sidebar-user > .main-sidebar-user-details > .cname{
         padding: 0 5px 0 5px;
         font-size: 10px;
         font-weight: 600;
     }
-    .campusAmb-sidebar-hand .campusAmb-sidebar-svg-logo {
+    .main-sidebar-hand .main-sidebar-svg-logo {
         width: 15%;
         display: flex;
         justify-content: flex-end;
     }
-    .campusAmb-sidebar-hand .campusAmb-sidebar-svg-logo svg{
+    .main-sidebar-hand .main-sidebar-svg-logo svg{
         margin: 5px;
     }
-    .campusAmb-sidebar-line{
+    .main-sidebar-line{
         height:1px;
         background-color:#BEBEBE;
         margin: 10px 0 10px 0;
@@ -401,13 +369,13 @@
         display: flex;
         flex-direction: row;
     }
-    .campusAmb-sidebar-navitem-name{
+    .main-sidebar-navitem-name{
         width: 85%;
         font-size: 12px;
         letter-spacing: 1px;
         padding: 0 10px;
     }
-    .campusAmb-sidebar-hand-days{
+    .main-sidebar-hand-days{
         width: fit-content;
         font-size: 14px;
         letter-spacing: 2px;
@@ -416,20 +384,20 @@
         height: fit-content;
         margin-top: 3px;
     }
-    .campusAmb-sidebar-hand-child{
+    .main-sidebar-hand-child{
         width: 100%;
     }
-    .campusAmb-sidebar-user > .campusAmb-sidebar-like-share-score{
+    .main-sidebar-user > .main-sidebar-like-share-score{
         display: flex;
         flex-direction: column;
     }
-    .campusAmb-sidebar-like-share-score-child{
+    .main-sidebar-like-share-score-child{
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
         padding: 10px 0 10px 0;
     }
-    .campusAmb-sidebar-likes-child{
+    .main-sidebar-likes-child{
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
@@ -437,27 +405,27 @@
         font-weight: 600;
         letter-spacing: 2px;
     }
-    .campusAmb-sidebar-likes-grandchild{
+    .main-sidebar-likes-grandchild{
         display: flex;
         flex-direction: row;
         justify-content: space-around;
     }
-    .campusAmb-sidebar-likes-number{
+    .main-sidebar-likes-number{
         font-size: 12px;
         font-weight: 600;
         letter-spacing: 0.5px;
         padding: 5px 0;
     }
-    .campusAmb-sidebar-likes-shares-score-data{
+    .main-sidebar-likes-shares-score-data{
         padding-left: 8px;
     }
-    .campusAmb-sidebar-score > .campusAmb-sidebar-likes-child > img{
+    .main-sidebar-score > .main-sidebar-likes-child > img{
         padding-right: 8px;
     }
-    .campusAmb-sidebar-shares > .campusAmb-sidebar-likes-child > img{
+    .main-sidebar-shares > .main-sidebar-likes-child > img{
         padding-right: 8px;
     }
-    .campusAmb-sidebar-likes-child img{
+    .main-sidebar-likes-child img{
         height: 14px;
         width: auto;
         margin-top:3px; 
@@ -478,16 +446,16 @@
         visibility: visible;
         font-size: 18px;
     }
-    .campusAmb-sidebar-updatenews{
+    .main-sidebar-updatenews{
         font-size: 10px;
         color: #58595B;
     }
-    .campusAmb-sidebar-likes > .campusAmb-sidebar-likes-child div{
+    .main-sidebar-likes > .main-sidebar-likes-child div{
         padding: 0 0px;
     }
 }
 @media screen and (max-width:1000px) and (min-width:768px){
-    .campusAmb-sidebar-likes-number{
+    .main-sidebar-likes-number{
         font-size: 10px;
     }
 }
@@ -502,10 +470,10 @@
         margin-top: 5px;
         padding:0px 5px 10px 5px;
     }
-    .campusAmb-sidebar-user > .text{
+    .main-sidebar-user > .text{
         font-size: 0;
     }
-    .campusAmb-sidebar-user > .image{
+    .main-sidebar-user > .image{
         padding:0px; 
     }
     .sidenav.collapseSide{
@@ -517,84 +485,84 @@
         padding-left: 10px;
         margin-top: 10px;
     }
-    .campusAmb-sidebar-likes-grandchild-number{
+    .main-sidebar-likes-grandchild-number{
         margin-top: 13px;
     }
-    .campusAmb-sidebar-line{
+    .main-sidebar-line{
         display: none;
     }
-    .campusAmb-sidebar-user > .image {
+    .main-sidebar-user > .image {
         height: 35px;
         width: auto;
         border-radius: 50%;
         padding: 0 0px 0 0px;
     }
-    .campusAmb-sidebar-user > .campusAmb-sidebar-user-details{
+    .main-sidebar-user > .main-sidebar-user-details{
         display: none;
     }
-    .campusAmb-sidebar-svg-logo{
+    .main-sidebar-svg-logo{
         width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
     }
-    .campusAmb-sidebar-svg-logo svg{
+    .main-sidebar-svg-logo svg{
         height: 18px;
         width: auto;
         margin-top: 50%;
     }
-    .campusAmb-sidebar-navitem-name{
+    .main-sidebar-navitem-name{
         display: none;
     }
-    .campusAmb-sidebar-score{
+    .main-sidebar-score{
         margin-top: 5px;
     }
-    .campusAmb-sidebar-shares{
+    .main-sidebar-shares{
         margin-top: 5px;
     }
-    .campusAmb-sidebar-like-share-score-child{
+    .main-sidebar-like-share-score-child{
         display: flex;
         flex-direction: column;
         margin-top: 15px;
     }
-    .campusAmb-sidebar-hand{
+    .main-sidebar-hand{
         display: flex;
         flex-direction: column;
         margin-top: 25px;
         transition: all 0.2s;
         height: 100%;
     }
-    .campusAmb-sidebar-line{
+    .main-sidebar-line{
         height:1px;
         background-color:#BEBEBE;
         border: 50%;
     }
-    .campusAmb-sidebar-likes-number{
+    .main-sidebar-likes-number{
         display: none;
         transition: all 0.2s;
     }
-    .campusAmb-sidebar-likes > .campusAmb-sidebar-likes-child > img{
+    .main-sidebar-likes > .main-sidebar-likes-child > img{
         padding-right: 2px;
     }
-    .campusAmb-sidebar-score > .campusAmb-sidebar-likes-child > img{
+    .main-sidebar-score > .main-sidebar-likes-child > img{
         padding-right: 0px;
     }
-    .campusAmb-sidebar-shares > .campusAmb-sidebar-likes-child > img{
+    .main-sidebar-shares > .main-sidebar-likes-child > img{
         padding-right: 0px;
     }
-    .campusAmb-sidebar-likes-shares-score-data{
+    .main-sidebar-likes-shares-score-data{
         padding-left:0px; 
     }
-    .campusAmb-sidebar-hand div{
+    .main-sidebar-hand div{
         display: flex;
         flex-direction: column;
     }
-    .campusAmb-sidebar-hand .campusAmb-sidebar-svg-logo{
+    .main-sidebar-hand .main-sidebar-svg-logo{
         display: block;
         text-align: center;
         width: 100%;
     }
-    .campusAmb-sidebar-hand-days{
+    .main-sidebar-hand-days{
         display: block;
         text-align: center;
         font-size: 10px;

@@ -1,7 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import FetchApi from "../../../utils/FetchAPI";
 import AuthService from '../../../handlers/main/AuthService';
 import "../src/css/profile.css"
+import dustbin from '../src/img/dustbin.png';
 
 export default class Profile extends React.Component {
 
@@ -62,45 +64,62 @@ export default class Profile extends React.Component {
     render() {
         return (
             <div className="participant-profile-parent">
+                <div className="participant-child-get-seized">
+                    <p>GET SEIZED</p>
+                </div>
                 <div className="participant-profile-child-details">
                     <div className="participant-profile-child-left">
                         <div className="participant-profile-child-left-details">
-                            <span className="participant-profile-label">Name :</span><span className="participant-somedetails">{(this.props.userData && this.props.userData.name) ? this.props.userData.name : null}</span>
+                            <p className="participant-profile-label">Name :</p><p className="participant-somedetails">{(this.props.userData && this.props.userData.name) ? this.props.userData.name : null}</p>
                         </div>
-                        <div className="participant-profile-child-left-details">
-                            <span className="participant-profile-label">Thomso ID :</span><span className="participant-somedetails-some">{(this.props.userData && this.props.userData.thomso_id) ? this.props.userData.thomso_id : null}</span>
+                        <div className="participant-profile-child-left-details" style={{display:"inline-block",width:"50%"}}>
+                            <p className="participant-profile-label">Thomso ID :</p><p className="participant-somedetails">{(this.props.userData && this.props.userData.thomso_id) ? this.props.userData.thomso_id : null}</p>
                         </div>
-                        <div className="participant-profile-child-left-details">
-                            <span className="participant-profile-label">Gender :</span><span className="participant-somedetails">{(this.props.userData && this.props.userData.gender) ? this.props.userData.gender : null}</span>
+                        <div className="participant-profile-child-left-details" style={{display:"inline-block",width:"40%",marginLeft:"12px"}}>
+                            <p className="participant-profile-label">Gender :</p><p className="participant-somedetails">{(this.props.userData && this.props.userData.gender) ? this.props.userData.gender : null}</p>
                         </div>
                         <div className="participant-profile-child-left-details college">
-                            <span className="participant-profile-label">College:</span><span className="participant-somedetails">{(this.props.userData && this.props.userData.college) ? this.props.userData.college : null}</span>
+                            <p className="participant-profile-label">College:</p><p className="participant-somedetails">{(this.props.userData && this.props.userData.college) ? this.props.userData.college : null}</p>
                         </div>
                         <div className="participant-profile-child-left-details">
-                            <span className="participant-profile-label">Address :</span><span className="participant-somedetails">{(this.props.userData && this.props.userData.address) ? this.props.userData.address : null}</span>
+                            <p className="participant-profile-label">Address :</p><p className="participant-somedetails">{(this.props.userData && this.props.userData.address) ? this.props.userData.address : null}</p>
                         </div>
                         <div className="participant-profile-child-left-details">
-                            <span className="participant-profile-label">Mobile :</span><span>{(this.props.userData && this.props.userData.contact) ? this.props.userData.contact : null}</span>
+                            <p className="participant-profile-label">Mobile :</p><p className="participant-somedetails">{(this.props.userData && this.props.userData.contact) ? this.props.userData.contact : null}</p>
                         </div>
                         <div className="participant-profile-child-left-details">
-                            <span className="participant-profile-label">Email:</span><span>{(this.props.userData && this.props.userData.email) ? this.props.userData.email : null}</span>
+                            <p className="participant-profile-label">Email:</p><p className="participant-somedetails">{(this.props.userData && this.props.userData.email) ? this.props.userData.email : null}</p>
                         </div>
                         <div className="participant-profile-child-left-details">
-                            <span className="participant-profile-label">Primary event :</span>{(this.props.userData && this.props.userData.primary_event && this.props.userData.primary_event.name) ? this.props.userData.primary_event.name: null}<span></span>
+                            <p className="participant-profile-label">Primary event :</p><p className="participant-somedetails">{(this.props.userData && this.props.userData.primary_event && this.props.userData.primary_event.name) ? this.props.userData.primary_event.name: null}</p>
                         </div>
                     </div>
                     <div className="participant-profile-child-right">
                         <div className="participant-profile-events">
                             <div className="participant-profile-event-heading">
-                                Your Events
+                                My Events
                             </div>
                             <div className="participant-profile-event-details">
-                                {this.state.events ? this.state.events.map((data, i) => {
-                                    return <li>{data.event_id}{data.name} </li>
-                                })
-                                    : null}
+                                <table className="participant-profile-table-events">
+                                    <tbody>
+                                        {this.state.events ? this.state.events.map((data, i) => 
+                                            <tr key={`events${i+1}`}>
+                                                <td className="table-child-one">
+                                                    {i+1}. &nbsp; {data.event_id}{data.name}
+                                                </td>
+                                                <td className="table-child-two">
+                                                    <img src={dustbin} alt="delete" className="main-events-bin"/>
+                                                </td>
+                                            </tr>
+                                        )
+                                        : null}
+                                    </tbody>
+                                </table>
                             </div>
-                        </div>
+                       </div>
+                       <div className="main-events-add-more-parent">
+                           <Link to="/events" className="main-events-add-more">Add More events</Link>
+                       </div>
                     </div>
                 </div>
             </div>
