@@ -4,7 +4,7 @@ var router = express.Router();
 // Controllers
 var adminAuth = require('../../../controllers/api/main/admin/admin_auth');
 var adminControls = require('../../../controllers/api/main/admin/admin_controls');
-var eventControl  = require('../../../controllers/api/main/event_controls');
+// var eventControl  = require('../../../controllers/api/main/event_controls');
 
 // Middlewares
 var MainAdminTokenMiddleware = require("../../../middlewares/main/admin/TokenMiddleware");
@@ -19,4 +19,5 @@ router.post('/auth/login', adminAuth.login);
 router.get('/user', MainAdminTokenMiddleware.verify, adminControls.userInfo);
 router.post('/addEvent', MainAdminTokenMiddleware.verify, adminControls.addEvent);
 router.post('/eventUser', MainAdminTokenMiddleware.verify,adminControls.eventUser);
+router.get('/fetchEvents', MainAdminTokenMiddleware.verify,adminControls.fetchEvents);
 module.exports = router;

@@ -8,6 +8,7 @@ exports.userInfo = function(req,res){
     if(req){
         Main_User.find()
             .populate('event', 'name event_id')
+            .populate('primary_event', 'name event_id')
             .select('name email gender thomso_id college address branch contact verified')
             .exec(function (err, user) {
                 if (err) {
@@ -22,9 +23,10 @@ exports.userInfo = function(req,res){
 }
 
 exports.eventUser = function(req,res){
-    if(req && req.body.event_id){
+    console.log(req.body, req.body.event_id)
+    if(req && req.body && req.body.event_id){
         Thomso_Event.findOne({event_id:req.body.event_id})
-        .populate('users', requiredVars2)
+        .populate('users', 'name')
         .select('name')
         .exec(function(err, result){
             if(err) return res.status(400).send({success:false, msg:'Error'})
@@ -36,7 +38,7 @@ exports.eventUser = function(req,res){
 
 
 exports.addEvent = function(req, res) {
-    if(req && req.body && re.body.name && req.body.event_id && req.body.isPrimary){
+    if(req && req.body && req.body.name && req.body.event_id){
         if(req.body.event_id)req.body.event_id = req.body.event_id.trim();
         if(req.body.name)req.body.name = req.body.name.trim();
         var isPrimary = false;
@@ -56,4 +58,17 @@ exports.addEvent = function(req, res) {
             })
         }
     }else return res.status(400).send({success:false, msg:"Insuffiecient Data"})
+};
+
+exports.fetchEvents = function(req, res) {
+    if(req){
+        Thomso_Event.find()
+        .select('name event_id')
+        .exec(function(err, result){
+            if(err) return res.status(400).send({success:false, msg:'Unable to fetch event'});
+            if(result) res.json({success:true, msg:'event fetched', body: result});
+            else return res.status(400).send({success:false, msg:'Unable to fetch event'});
+        });
+    }
+    else return res.status(400).send({success:false, msg:'Invalid Request'});
 };

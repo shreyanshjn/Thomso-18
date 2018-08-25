@@ -38,6 +38,7 @@ exports.participant_registration = function (req, res) {
             primary_event: req.body.primary_event,
             password: req.body.password,
             referred_by: req.body.referred_by,
+            event:[req.body.primary_event],
             otp: '1511'
         };
         if (data.name && data.contact && data.email && data.gender && data.college && data.state && data.branch && data.address && data.primary_event && data.password) {

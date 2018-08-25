@@ -19,7 +19,7 @@ export default class HomeIndex extends React.Component {
     onChange1 = (e) => {
         const name = e.target.name;
         let value = e.target.value;
-        this.setState({ [name]: value });
+        this.setState({ [name]: value ,disabled:false});
     }
 
     onSubmit = (e) => {
@@ -31,7 +31,7 @@ export default class HomeIndex extends React.Component {
         if (data.event_id && data.name && typeof(data.isPrimary) === "boolean") {
             const token = this.Auth.getToken()
             this.setState({disabled: true})
-            FetchApi('POST', '/api/main/addEvent', data, token)
+            FetchApi('POST', '/api/main/admin/addEvent', data, token)
                 .then(res => {
                     if (res && res.data) {
                         if (res.data.success) {

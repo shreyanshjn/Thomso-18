@@ -8,7 +8,8 @@ export default class EventUserIndex extends React.Component {
         this.state = {
             authenticated : false,
             errors:'',
-            event:[]
+            event:[],
+            user:[]
         }
         this.Auth = new AuthService();
     }
@@ -21,6 +22,7 @@ export default class EventUserIndex extends React.Component {
             .then(res => {
                 if(res && res.data){
                     if(res.data.success){
+                        // console.log(res.data.body)
                         this.setState({event:res.data.body})   
                     }
                     else this.setState({errors:'Unable to fetch events'})
@@ -35,27 +37,24 @@ export default class EventUserIndex extends React.Component {
     }
 
     onChange = (e) => {
-        const name = e.target.name;
-        let value = e.target.value;
-        this.setState({ [name]: value });
+        const val = e.target.value;
+        this.setState({ event_id: val });
     }
 
-    onSubmit = (e) => {
-        e.preventDefault();
-        let { event_id, event_name, isPrimary } = this.state;
-        if (event_id) event_id = event_id.trim();
-        if (event_name) event_name = event_name.trim();
-        const data = { event_id, name: event_name, isPrimary }
-        if (data.event_id && data.name && typeof(data.isPrimary) === "boolean") {
+    onSubmit = (event_id) => {
+        // let { event_id} = this.state;
+        const reqData = { event_id}
+        if (reqData.event_id) {
             const token = this.Auth.getToken()
             this.setState({disabled: true})
-            FetchApi('POST', '/api/main/addEvent', data, token)
+            FetchApi('POST', '/api/main/admin/eventUser', reqData, token)
                 .then(res => {
                     if (res && res.data) {
+                        console.log(res.data)
                         if (res.data.success) {
                             this.setState({ 
                                 disabled: false,
-                                error: res.data.msg
+                                user:res.data.body
                             })
                         }
                         else {
@@ -86,22 +85,22 @@ export default class EventUserIndex extends React.Component {
                 <table>
                     <thead>
                         <tr>
-                            <td>Event ID</td>
-                            <td>Event Name</td>
+                            <td  style={{width:"15vw"}}>Event ID</td>
+                            <td  style={{width:"15vw"}}>Event Name</td>
+                            <td  style={{width:"15vw"}}>Fetch</td>
                         </tr>
                     </thead>
                     <tbody>
                         {(event && event.length>0)? 
-                        event.map( (data,i )=>{
-                            <tr value={data.event_id} key={i} onClick={this.onChange}>
-                                <td>{data.event_id}</td>
-                                <td>{data.name}</td>
-                                <td><button onClick={this.onSubmit}>Fetch Participants</button></td>
+                        event.map( (data,i )=>
+                            <tr style={{border: 'solid 1px black'}} key={i} onClick={this.onChange}>
+                                <td style={{textAlign: 'center'}}>  {data.event_id ? data.event_id : '--'}</td>
+                                <td style={{textAlign: 'center'}}>{data.name ? data.name : '--'}</td>
+                                <td style={{textAlign: 'center'}}><button onClick={()=>this.onSubmit(data.event_id)}>Fetch Participants</button></td>
                             </tr>
-                        }) : null}
+                        ) : null}
                     </tbody>
                 </table>
-
             </div>
         )
     }
