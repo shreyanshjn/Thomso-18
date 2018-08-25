@@ -2,8 +2,8 @@
 {
     height:"10%";
     display:"flex";
-    justifyContent:"space-between";
-    borderBottom: "white 1px solid";
+    justify-content:"space-between";
+    border-bottom: "white 1px solid";
 }
 .events-custom-selection
 {
