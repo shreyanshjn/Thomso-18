@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import FetchApi from "../../../utils/FetchAPI";
 import AuthService from '../../../handlers/main/AuthService';
+
+import EventRow from "./EventRow";
 import "../src/css/profile.css"
 import dustbin from '../src/img/dustbin.png';
 
@@ -12,7 +14,6 @@ export default class Profile extends React.Component {
         this.state = {
             event_id: '',
             event_name: '',
-            error: '',
             isPrimary: false,
             disabled: true,
             events: []
@@ -41,25 +42,6 @@ export default class Profile extends React.Component {
         let value = e.target.value;
         this.setState({ event_id: value, disabled: false });
     }
-
-    onRemove = (e) => {
-        e.preventDefault()
-        let { event_id } = this.state;
-        event_id = JSON.stringify(event_id)
-        const data = { event_id }
-        const token = this.Auth.getToken()
-        FetchApi('POST', '/api/main/removeParticipant', data, token)
-            .then(res => {
-                // console.log(res.data)
-                if (res && res.data) {
-                    this.setState({ error: res.data.msg, disabled: true })
-                }
-            })
-            .catch(e => {
-                this.setState({ error: 'something' })
-            })
-    }
-
 
     render() {
         return (
@@ -102,16 +84,7 @@ export default class Profile extends React.Component {
                             <div className="participant-profile-event-details">
                                 <table className="participant-profile-table-events">
                                     <tbody>
-                                        {this.state.events ? this.state.events.map((data, i) => 
-                                            <tr key={`events${i+1}`}>
-                                                <td className="table-child-one">
-                                                    {i+1}. &nbsp; {data.event_id}{data.name}
-                                                </td>
-                                                <td className="table-child-two">
-                                                    <img src={dustbin} alt="delete" className="main-events-bin"/>
-                                                </td>
-                                            </tr>
-                                        )
+                                        {this.state.events ? this.state.events.map((data, i) => <EventRow key={`events${i+1}`} index={i} data={data} />)
                                         : null}
                                     </tbody>
                                 </table>

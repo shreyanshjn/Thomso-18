@@ -124,7 +124,7 @@ export default class MainIndex extends React.Component{
                             <React.Fragment>
                                 <Route path="/main" render={props => (<SidebarIndex {...props} userData={this.state.userData} />)} />
                                 <Route exact path="/main" render={props => (<Profile {...props} userData={this.state.userData} />)} />
-                                <Route exact path="/main/contact" render={props => (<ContactIndex {...props} userData={this.state.userData} />)} />
+                                <Route exact path="/main/contact" render={props => (<ContactIndex {...props} main={true} userData={this.state.userData} />)} />
                             </React.Fragment>
                         }
                         <Route exact path="/main/logout" render={props => (<LogoutIndex {...props} updateRoutes={this.handleUpdate} />)} />

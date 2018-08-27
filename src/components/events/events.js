@@ -462,5 +462,5 @@ export const EventDetails =
             rulebook: "tellysporcle.pdf",
             image: "tellysporcle.jpg",
         }]
-    }     
+    }
 ]

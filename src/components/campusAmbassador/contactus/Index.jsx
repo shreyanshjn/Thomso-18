@@ -11,7 +11,7 @@ export default class ContactIndex extends React.Component {
     }
     render() {
         return (
-            <div className="campusAmb-contact-parent">
+            <div className={this.props.main ? "campusAmb-contact-parent campusAmb-contact-parent-main" : "campusAmb-contact-parent"}>
                 <div className="campusAmb-contact-child">
                     <div className="campusAmb-contact-child-first">
                         <div className="campusAmb-contact-child-wrapper flex_column">
