@@ -8,6 +8,8 @@ export default class Row extends React.Component {
         this.state = {
             verified: true,
             bonus: 0,
+            score: 0,
+            referrals: 0,
             isDisabled: false,
             bonusEditing: false,
             bonusDisabled: false
@@ -19,13 +21,21 @@ export default class Row extends React.Component {
         if (this.props.data) {
             let verified = true
             let bonus = 0
+            let score = 0
+            let referrals = 0
             if (this.props.data.verified !== undefined) {
                 verified = this.props.data.verified
             }
             if (this.props.data.bonus !== undefined) {
                 bonus = this.props.data.bonus
             }
-            this.setState({verified, bonus})
+            if (this.props.data.score !== undefined) {
+                score = this.props.data.score
+            }
+            if (this.props.data.referrals !== undefined) {
+                referrals = this.props.data.referrals
+            }
+            this.setState({verified, bonus, score, referrals})
         }
     }
 
@@ -83,7 +93,19 @@ export default class Row extends React.Component {
                 FetchApi('PUT', `/api/ca/admin/temp/bonus`, data , authtoken)
                     .then(r => {
                         if (r && r.data && r.data.success && r.data.body && r.data.body.bonus !== undefined) {
-                            this.setState({bonusEditing: false, bonusDisabled: false, bonus: r.data.body.bonus})
+                            let referrals = 0
+                            let score = 0
+                            let bonus = 0
+                            if (r.data.body.bonus !== undefined) {
+                                bonus = r.data.body.bonus
+                            }
+                            if (r.data.body.score !== undefined) {
+                                score = r.data.body.score
+                            }
+                            if (r.data.body.referrals !== undefined) {
+                                referrals = r.data.body.referrals
+                            }
+                            this.setState({bonusEditing: false, bonusDisabled: false, bonus, score, referrals})
                         } else {
                             this.setState({bonusDisabled: false})
                         }
@@ -104,8 +126,8 @@ export default class Row extends React.Component {
                         <td style={{textAlign: 'center'}}>{this.props.data.ca_id ? this.props.data.ca_id : '--'}</td>
                         <td style={{textAlign: 'center'}}>{this.props.data.name ? this.props.data.name : '--'}</td>
                         <td style={{textAlign: 'center'}}>{this.props.data.gender ? this.props.data.gender : '--'}</td>
-                        <td style={{textAlign: 'center'}}>{this.props.data.score ? this.props.data.score : 0}</td>
-                        <td style={{textAlign: 'center'}}>{this.props.data.referrals ? this.props.data.referrals : 0}</td>
+                        <td style={{textAlign: 'center'}}>{this.state.score ? this.state.score : 0}</td>
+                        <td style={{textAlign: 'center'}}>{this.state.referrals ? this.state.referrals : 0}</td>
                         <td style={{textAlign: 'center'}}>{(this.props.data.ideas && this.props.data.ideas.length) ? this.props.data.ideas.length : 'None'}</td>
                         <td style={{textAlign: 'center'}}>
                             <input 

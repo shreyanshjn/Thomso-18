@@ -32,31 +32,40 @@ var register = function(req, res, city) {
             city: city
         };
         if (data.name && data.college && data.email && data.branch && data.contact && data.city && typeof(data.events) === "object" && data.events.length > 0 ) {
-            var newUser = new Zonal_User(data);
-            newUser.save(function(err, saved) {
-                if (err) {
-                    return res.json({success: false, msg: 'Email already exists', already: true});
-                } else if (!saved) {
-                    return res.json({success: false, msg: 'Unable to save'});
-                } else {
-                    res.json({success: true, msg: 'Successfully Registered'});
-                    if (saved.tz_id && saved.email && saved.name) {
-                        if (city === 'Lucknow') {
-                            mailer.zonalsLucknow({
-                                zn_id: saved.tz_id,
-                                email: saved.email,
-                                name: saved.name
-                            })
-                        } else if (city === 'Delhi') {
-                            mailer.zonalsDelhi({
-                                zn_id: saved.tz_id,
-                                email: saved.email,
-                                name: saved.name
-                            })
-                        }
-                    }
+            Zonal_User.findOne({email: req.body.email}, function(error, exists)   {
+                if (error) {
+                    return res.status(400).send({success: false, msg: 'Find Check Failed'});
                 }
-            });
+                if (!exists) {
+                    var newUser = new Zonal_User(data);
+                    newUser.save(function(err, saved) {
+                        if (err) {
+                            return res.json({success: false, msg: 'Email already exists', already: true});
+                        } else if (!saved) {
+                            return res.json({success: false, msg: 'Unable to save'});
+                        } else {
+                            res.json({success: true, msg: 'Successfully Registered'});
+                            if (saved.tz_id && saved.email && saved.name) {
+                                if (city === 'Lucknow') {
+                                    mailer.zonalsLucknow({
+                                        zn_id: saved.tz_id,
+                                        email: saved.email,
+                                        name: saved.name
+                                    })
+                                } else if (city === 'Delhi') {
+                                    mailer.zonalsDelhi({
+                                        zn_id: saved.tz_id,
+                                        email: saved.email,
+                                        name: saved.name
+                                    })
+                                }
+                            }
+                        }
+                    });
+                } else {
+                    return res.json({success: false, msg: 'Email already exists', already: true});
+                }
+            })
         } else {
             res.status(400).send({success:false, msg:'Invalid Data'});
         }

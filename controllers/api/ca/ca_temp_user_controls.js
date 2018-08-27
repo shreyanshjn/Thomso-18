@@ -4,25 +4,25 @@ var Temp_User = require('../../../models/ca/CA_Temp_User');
 var Ideas = require('../../../models/ca/CA_Temp_Idea');
 
 // Get User Data
-exports.getData = function(req, res) {
+exports.getData = function (req, res) {
     Temp_User.findOne({
         email: req.locals.email
     })
-    .select('name email gender verified ca_id')
-    .exec(function(err, user) {
-        if (err) {
-            return res.status(400).send({
-                success:false,
-                msg: 'Unable to connect to database. Please try again.',
-                error: err
-            })
-        }
-        if (!user) {
-            return res.status(400).send({success: false, msg: 'User not found'});
-        } else {
-            res.json({success: true, msg:'User Data Found', body:user});
-        }
-    });
+        .select('name email gender verified ca_id bonus referrals score college')
+        .exec(function (err, user) {
+            if (err) {
+                return res.status(400).send({
+                    success: false,
+                    msg: 'Unable to connect to database. Please try again.',
+                    error: err
+                })
+            }
+            if (!user) {
+                return res.status(400).send({ success: false, msg: 'User not found' });
+            } else {
+                res.json({ success: true, msg: 'User Data Found', body: user });
+            }
+        });
 };
 
 /* GET all Posts */
@@ -55,13 +55,13 @@ exports.postIdea = function (req, res) {
             if (err) {
                 return res.status(400).send({ success: false, msg: 'Unable to Add Idea' });
             } else if (idea._id) {
-                Temp_User.update({ _id: req.locals._id }, { $addToSet: {ideas: idea._id} })
-                .exec(function (err) {
-                    if (err) {
-                        return res.status(400).send({ success: false, msg: 'Cannot Append Idea', error: err });
-                    }
-                    return res.json({ success: true, msg: 'Idea Successfully Posted', body: idea });
-                })
+                Temp_User.update({ _id: req.locals._id }, { $addToSet: { ideas: idea._id } })
+                    .exec(function (err) {
+                        if (err) {
+                            return res.status(400).send({ success: false, msg: 'Cannot Append Idea', error: err });
+                        }
+                        return res.json({ success: true, msg: 'Idea Successfully Posted', body: idea });
+                    })
             } else {
                 return res.status(400).send({ success: false, msg: 'Idea ID Not Found', body: idea });
             }
@@ -131,4 +131,41 @@ exports.deleteIdea = function (req, res) {
     } else {
         return res.status(400).send({ success: false, msg: 'No Post ID Specified' });
     }
+};
+
+/* GET Leaderboard */
+exports.getLeaderboard = function (req, res) {
+    Temp_User.find({ verified: true, blocked: { $ne: true } })
+        .select('name college score')
+        .sort({ 'score': -1 })
+        .limit(10)
+        .exec(function (err, allUsers) {
+            if (err) {
+                return res.status(400).send({ success: false, msg: 'Cannot GET Leaders', error: err });
+            }
+            res.json(allUsers);
+        })
+};
+
+/* GET Rank */
+exports.getRank = function (req, res) {
+    Temp_User.findOne({
+        email: req.locals.email,
+        verified: true
+    })
+        .select('score')
+        .exec(function (err, user) {
+            if (err) return res.status(400).send({ success: false, msg: 'Cannot Find User' });
+            var score = user.score;
+            if (score !== undefined) {
+                Temp_User.count({ "score": { "$gt": score }, verified: true }, function (err, rank) {
+                    if (err) {
+                        res.status(400).send({ success: false, msg: 'Rank Undefined', error: err });
+                    }
+                    return res.json({ success: true, msg: 'Your CA Rank', rank: rank + 1 });
+                })
+            } else {
+                return res.status(400).send({ success: false, msg: 'Error Reading Score' });
+            }
+        })
 };
