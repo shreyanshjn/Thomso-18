@@ -4,11 +4,12 @@
     font-family: Montserrat;
     padding:0 10px;
     min-height: 100vh;
+    height: 100%;
     background-image:url('../img/trianglify.png');
     background-position:center center;
     background-attachment:fixed;
     background-size:cover;
-    display:flex;
+    display:flex; 
     flex-direction:column;
     justify-content:center;
     align-items:center;
@@ -21,6 +22,10 @@
     color: white;
     font-size: 35px;
 }
+.participant-child-get-seized p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 .participant-profile-child-details{
     display: flex;
     flex-direction: row;
@@ -30,15 +35,12 @@
     border-radius: 2px;
     width:80%;
     background:white;
-    padding-bottom:10px;
 }
 .participant-profile-child-left{
     width: 40%;
     padding-right: 10px;
 }
 .participant-profile-child-right{
-    display:flex;
-    flex-direction:column;
     width: 40%;
 }
 .main-events-add-more-parent
@@ -46,13 +48,16 @@
    display:flex;
    justify-content:center;
    margin-top:10px;
+   border:1px solid black;
+   width: 70%;
+   margin-left: auto;
+   margin-right: auto;
+   margin-bottom: 10px;
 }
 .main-events-add-more
 {
-   border:1px solid black;
    text-decoration:none;
    color:black;
-   padding:4px 12px;
    transition:all 0.3s;
 }
 .main-events-add-more:hover
@@ -77,12 +82,15 @@
     letter-spacing: 1px;
     padding-bottom: 2px;
 }
+.participant-somedetails-email{
+    text-transform: none;
+}
 .participant-profile-label{
     margin:2px 0px;
 } 
 .participant-profile-events{
     background: white;
-    height: 100%;
+    min-height: 74px;
     border:2px solid black;
     overflow:auto;
 }
@@ -126,18 +134,21 @@
     .participant-profile-child-details{
         display: flex;
         flex-direction: column;
+        padding-top: 5px;
+        padding-bottom: 10px;
+    }
+    .participant-profile-child-left{
+        margin-top: 10px;
     }
     .participant-profile-child-right{
-        margin-top: 20px;
+        margin-top: 10px;
         width: 100%;
-        height: 100px;
     }
     .participant-profile-child-left
     {
         width:100%;
     }
-    .main-events-add-more-parent
-    {
-        height:40%;
+    .participant-profile-child-left-details{
+        padding-top: 7px;
     }
 }

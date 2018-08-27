@@ -54,10 +54,10 @@ export default class Profile extends React.Component {
                         <div className="participant-profile-child-left-details">
                             <p className="participant-profile-label">Name :</p><p className="participant-somedetails">{(this.props.userData && this.props.userData.name) ? this.props.userData.name : null}</p>
                         </div>
-                        <div className="participant-profile-child-left-details" style={{display:"inline-block",width:"50%"}}>
+                        <div className="participant-profile-child-left-details" style={{ display: "inline-block", width: "50%" }}>
                             <p className="participant-profile-label">Thomso ID :</p><p className="participant-somedetails">{(this.props.userData && this.props.userData.thomso_id) ? this.props.userData.thomso_id : null}</p>
                         </div>
-                        <div className="participant-profile-child-left-details" style={{display:"inline-block",width:"40%",marginLeft:"12px"}}>
+                        <div className="participant-profile-child-left-details" style={{ display: "inline-block", width: "40%", marginLeft: "12px" }}>
                             <p className="participant-profile-label">Gender :</p><p className="participant-somedetails">{(this.props.userData && this.props.userData.gender) ? this.props.userData.gender : null}</p>
                         </div>
                         <div className="participant-profile-child-left-details college">
@@ -70,10 +70,10 @@ export default class Profile extends React.Component {
                             <p className="participant-profile-label">Mobile :</p><p className="participant-somedetails">{(this.props.userData && this.props.userData.contact) ? this.props.userData.contact : null}</p>
                         </div>
                         <div className="participant-profile-child-left-details">
-                            <p className="participant-profile-label">Email:</p><p className="participant-somedetails">{(this.props.userData && this.props.userData.email) ? this.props.userData.email : null}</p>
+                            <p className="participant-profile-label">Email:</p><p className="participant-somedetails participant-somedetails-email">{(this.props.userData && this.props.userData.email) ? this.props.userData.email : null}</p>
                         </div>
                         <div className="participant-profile-child-left-details">
-                            <p className="participant-profile-label">Primary event :</p><p className="participant-somedetails">{(this.props.userData && this.props.userData.primary_event && this.props.userData.primary_event.name) ? this.props.userData.primary_event.name: null}</p>
+                            <p className="participant-profile-label">Primary event :</p><p className="participant-somedetails">{(this.props.userData && this.props.userData.primary_event && this.props.userData.primary_event.name) ? this.props.userData.primary_event.name : null}</p>
                         </div>
                     </div>
                     <div className="participant-profile-child-right">
@@ -84,15 +84,15 @@ export default class Profile extends React.Component {
                             <div className="participant-profile-event-details">
                                 <table className="participant-profile-table-events">
                                     <tbody>
-                                        {this.state.events ? this.state.events.map((data, i) => <EventRow key={`events${i+1}`} index={i} data={data} />)
-                                        : null}
+                                        {this.state.events ? this.state.events.map((data, i) => <EventRow key={`events${i + 1}`} index={i} data={data} />)
+                                            : null}
                                     </tbody>
                                 </table>
                             </div>
-                       </div>
-                       <div className="main-events-add-more-parent">
-                           <Link to="/events" className="main-events-add-more">Add More events</Link>
-                       </div>
+                        </div>
+                        <div className="main-events-add-more-parent">
+                            <Link to="/events" className="main-events-add-more">Add More events</Link>
+                        </div>
                     </div>
                 </div>
             </div>

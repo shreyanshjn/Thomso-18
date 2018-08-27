@@ -18,14 +18,14 @@ exports.participant_registration = function (req, res) {
             req.body.email = req.body.email.trim();
         }
         if (req.body.contact) req.body.contact = req.body.contact.trim();
-        if (req.body.gender)  req.body.gender = req.body.gender.trim();
+        if (req.body.gender) req.body.gender = req.body.gender.trim();
         if (req.body.college) req.body.college = req.body.college.trim();
-        if (req.body.state)  req.body.state = req.body.state.trim();
-        if (req.body.branch)  req.body.branch = req.body.branch.trim();
-        if (req.body.address)  req.body.address = req.body.address.trim();
-        if (req.body.primary_event)  req.body.primary_event = req.body.primary_event.trim();
-        if (req.body.referred_by)  req.body.referred_by = req.body.referred_by.trim();
-            else  req.body.referred_by = null
+        if (req.body.state) req.body.state = req.body.state.trim();
+        if (req.body.branch) req.body.branch = req.body.branch.trim();
+        if (req.body.address) req.body.address = req.body.address.trim();
+        if (req.body.primary_event) req.body.primary_event = req.body.primary_event.trim();
+        if (req.body.referred_by) req.body.referred_by = req.body.referred_by.trim();
+        else req.body.referred_by = null
         var data = {
             name: req.body.name,
             contact: req.body.contact,
@@ -38,49 +38,49 @@ exports.participant_registration = function (req, res) {
             primary_event: req.body.primary_event,
             password: req.body.password,
             referred_by: req.body.referred_by,
-            event:[req.body.primary_event],
+            event: [req.body.primary_event],
             otp: '1511'
         };
         if (data.name && data.contact && data.email && data.gender && data.college && data.state && data.branch && data.address && data.primary_event && data.password) {
             var newUser = Main_User(data);
-            newUser.save(function(err){
-                if(err) return res.json({ success: false, msg: 'Username already exist'});
-                var otp = Generator.generateOTP();    
+            newUser.save(function (err) {
+                if (err) return res.json({ success: false, msg: 'Username already exist' });
+                var otp = Generator.generateOTP();
                 var generateHash = Generator.generateHash(req.body.password);
-                if(otp && generateHash){
-                    generateHash.then(function(newHash){
-                        if(newHash){
+                if (otp && generateHash) {
+                    generateHash.then(function (newHash) {
+                        if (newHash) {
                             var updateData = {
                                 password: newHash,
-                                otp:otp
+                                otp: otp
                             };
-                            Main_User.update({email:req.body.email}, updateData)
-                            .exec(function(err){
-                                if(err) return res.status(400).send({success:false,msg:'Unable To Register'})
-                                var genratedToken = TokenHelper.generateUserToken( "data.email",data.email);
-                                if(genratedToken){
-                                    var newToken = {
-                                        email: req.body.email,
-                                        verified: false,
-                                        token: genratedToken,
-                                        expiration_time: moment().day(30),
-                                        updated_date: new Date()
-                                    };
-                                    var addToken = new Main_User_Token(newToken);
-                                    addToken.save(function(err) {
-                                        if (err)  return res.json({success: false, msg: 'Token Already Exists'});
-                                        mailer.participantRegister({
-                                            name:data.name,
-                                            email:data.email,
-                                            otp:otp
+                            Main_User.update({ email: req.body.email }, updateData)
+                                .exec(function (err) {
+                                    if (err) return res.status(400).send({ success: false, msg: 'Unable To Register' })
+                                    var genratedToken = TokenHelper.generateUserToken("data.email", data.email);
+                                    if (genratedToken) {
+                                        var newToken = {
+                                            email: req.body.email,
+                                            verified: false,
+                                            token: genratedToken,
+                                            expiration_time: moment().day(30),
+                                            updated_date: new Date()
+                                        };
+                                        var addToken = new Main_User_Token(newToken);
+                                        addToken.save(function (err) {
+                                            if (err) return res.json({ success: false, msg: 'Token Already Exists' });
+                                            mailer.participantRegister({
+                                                name: data.name,
+                                                email: data.email,
+                                                otp: otp
+                                            });
+                                            res.json({ success: true, token: genratedToken, msg: 'Successfully Registered!!' });
                                         });
-                                        res.json({success:true, token:genratedToken, msg:'Successfully Registered!!'});
-                                    });
-                                } else return res.status(400).send({success: false, msg: 'Unable To generate token'});
-                            });
+                                    } else return res.status(400).send({ success: false, msg: 'Unable To generate token' });
+                                });
                         }
                     });
-                }else return res.status(400).send({success: false, msg: 'Unable To generate token'});
+                } else return res.status(400).send({ success: false, msg: 'Unable To generate token' });
             });
         }
     }
@@ -151,13 +151,13 @@ exports.verifyOTP = function (req, res) {
                                                 Temp_User.update({ ca_id: user.referred_by }, { $inc: { referrals: 1 } }, function (error) {
                                                     if (error) return res.json({ success: false, msg: 'Unable To Add Referrals' });
                                                     EventSchema.update(
-                                                        {event_id:user.primary_event},
-                                                        {$addToSet:{users:req.locals._id}}
+                                                        { event_id: user.primary_event },
+                                                        { $addToSet: { users: req.locals._id } }
                                                     )
-                                                    .exec(function(err){
-                                                        if (err) return res.json({ success: false, msg: 'Unable To Add Event' });
-                                                        res.json({ success: true, body: parti, msg: 'Successfully verified' });
-                                                    })
+                                                        .exec(function (err) {
+                                                            if (err) return res.json({ success: false, msg: 'Unable To Add Event' });
+                                                            res.json({ success: true, body: parti, msg: 'Successfully verified' });
+                                                        })
                                                 })
                                             } else {
                                                 res.json({ success: true, body: parti, msg: 'Successfully verified' });
@@ -169,14 +169,14 @@ exports.verifyOTP = function (req, res) {
                                         });
                                 })
                             }
-                        } else  return res.json({ success: false, msg: 'Incorrect OTP' })
+                        } else return res.json({ success: false, msg: 'Incorrect OTP' })
                     }
                 }
             });
-    }  else res.status(400).send({ success: false, msg: 'Invalid Data' });
+    } else res.status(400).send({ success: false, msg: 'Invalid Data' });
 }
 
-exports.participant_login = function(req, res) {
+exports.participant_login = function (req, res) {
     if (req.body) {
         if (req.body.email) {
             req.body.email = req.body.email.toLowerCase();
@@ -226,16 +226,16 @@ exports.participant_login = function(req, res) {
                                                     if (err) return res.status(400).send({ success: false, msg: 'Unable Create Token' });
 
                                                     if (user.verified) return res.json({ success: true, token: genratedToken, msg: 'Successfully Authenticated', body: body });
-                                                     else  return res.json({ success: true, token: genratedToken, msg: 'Successfully Authenticated'})
+                                                    else return res.json({ success: true, token: genratedToken, msg: 'Successfully Authenticated' })
                                                 });
-                                        } 
+                                        }
                                         else {
                                             var addToken = new Main_User_Token(newToken);
                                             addToken.save(function (err) {
                                                 if (err) return res.status(400).send({ success: false, msg: 'Token Already Exists' });
-                                                
-                                                if (user.verified)  return res.json({ success: true, token: genratedToken, msg: 'Successfully Authenticated', body: body });
-                                                else return res.json({ success: true, token: genratedToken, msg: 'Successfully Authenticated'})
+
+                                                if (user.verified) return res.json({ success: true, token: genratedToken, msg: 'Successfully Authenticated', body: body });
+                                                else return res.json({ success: true, token: genratedToken, msg: 'Successfully Authenticated' })
                                             });
                                         }
                                     }
@@ -244,48 +244,48 @@ exports.participant_login = function(req, res) {
                         });
                     }
                 });
-        } else  return res.status(400).send({ success: false, msg: 'Invalid Data' });
-    } else  return res.status(400).send({ success: false, msg: 'Invalid Data' });
+        } else return res.status(400).send({ success: false, msg: 'Invalid Data' });
+    } else return res.status(400).send({ success: false, msg: 'Invalid Data' });
 };
 
-exports.reset_password = function(req, res){
-    if(req && req.body && req.body.email && req.body.tempPassword && req.body.password){
-        Main_User.findOne({email:req.body.email})
+exports.reset_password = function (req, res) {
+    if (req && req.body && req.body.email && req.body.tempPassword && req.body.password) {
+        Main_User.findOne({ email: req.body.email })
             .select('tempPassword')
-            .exec(function(err, result){
-                if(err) return res.status(406).send({success:false, msg:'Authentication Failed'})
-                if(!result) return res.json({success:false, msg:"Email Doesn't Exist"})
-                else{
-                    result.compareTempPassword(req.body.tempPassword, function(err, flag){
-                        if(flag && !err){
+            .exec(function (err, result) {
+                if (err) return res.status(406).send({ success: false, msg: 'Authentication Failed' })
+                if (!result) return res.json({ success: false, msg: "Email Doesn't Exist" })
+                else {
+                    result.compareTempPassword(req.body.tempPassword, function (err, flag) {
+                        if (flag && !err) {
                             var generateNewHash = Generator.generateHash(req.body.password);
-                            generateNewHash.then(function(newHash){
-                                if(newHash){
+                            generateNewHash.then(function (newHash) {
+                                if (newHash) {
                                     var updateData = {
-                                        tempPassword:"",
-                                        password:newHash
+                                        tempPassword: "",
+                                        password: newHash
                                     };
                                     Main_User.update(
-                                        {email:req.body.email},
+                                        { email: req.body.email },
                                         updateData
                                     )
-                                    .exec(function(err){
-                                        if(err) return status(401).send({success:false, msg:"Unable To Update Password. Please Try Again."})
-                                        res.json({success:true, msg:"Password Successfully Changed."})
-                                    })
-                                } else return status(401).send({success:false, msg:"Unable To create hash"})
+                                        .exec(function (err) {
+                                            if (err) return status(401).send({ success: false, msg: "Unable To Update Password. Please Try Again." })
+                                            res.json({ success: true, msg: "Password Successfully Changed." })
+                                        })
+                                } else return status(401).send({ success: false, msg: "Unable To create hash" })
                             })
                         }
-                        else if(err) return res.json({success:false, msg:"Something went wrong"})
-                        else return res.json({success:false, msg:"Wrong Password"})
+                        else if (err) return res.json({ success: false, msg: "Something went wrong" })
+                        else return res.json({ success: false, msg: "Wrong Password" })
                     })
                 }
             })
-    } else return res.status(400).send({success:false, msg:'Invalid Data'});
+    } else return res.status(400).send({ success: false, msg: 'Invalid Data' });
 }
 
-exports.reset_password_email = function(req, res){
-    if(req && req.body && req.body.email){
+exports.reset_password_email = function (req, res) {
+    if (req && req.body && req.body.email) {
         // console.log(req.body)
         // req.body.email = req.body.email.trim();
         // var newPass = Generator.generatePassword(20);
@@ -293,31 +293,31 @@ exports.reset_password_email = function(req, res){
         if (newPass) {
             var generateHash = Generator.generateHash(newPass);
             generateHash.then(
-                function(newHash) {
+                function (newHash) {
                     if (newHash) {
                         var updateData = {
                             tempPassword: newHash
                         };
-                        if(updateData.tempPassword){
-                            Main_User.findOneAndUpdate({email:req.body.email}, updateData, { new: true })
-                            .select('name email')
-                            .exec( function(err,result){
-                                if(err) {return res.state(400).send({ success: false, msg:"Something Went Wrong"})}
-                                if(!result) {return res.json({ success: false, msg:"Email Doesn't exist"})}
-                                else{
-                                    // console.log(result)
-                                    mailer.participantResetPassword({
-                                        name:result.name,
-                                        email:result.email,
-                                        password:newPass
-                                    });
-                                    res.json({status:200, success:true, body:result, msg:'Email sent'})
-                                }
-                            })
-                        }else return res.json({success:false, msg:'Something went wrong'});   
+                        if (updateData.tempPassword) {
+                            Main_User.findOneAndUpdate({ email: req.body.email }, updateData, { new: true })
+                                .select('name email')
+                                .exec(function (err, result) {
+                                    if (err) { return res.state(400).send({ success: false, msg: "Something Went Wrong" }) }
+                                    if (!result) { return res.json({ success: false, msg: "Email Doesn't exist" }) }
+                                    else {
+                                        // console.log(result)
+                                        mailer.participantResetPassword({
+                                            name: result.name,
+                                            email: result.email,
+                                            password: newPass
+                                        });
+                                        res.json({ status: 200, success: true, body: result, msg: 'Email sent' })
+                                    }
+                                })
+                        } else return res.json({ success: false, msg: 'Something went wrong' });
                     }
-                    else return res.status(400).send({success:false, msg:'Unable To create hash'});   
+                    else return res.status(400).send({ success: false, msg: 'Unable To create hash' });
                 })
         }
-    } else  return res.status(400).send({success:false, msg:'Invalid Data'});
+    } else return res.status(400).send({ success: false, msg: 'Invalid Data' });
 }
