@@ -48,7 +48,7 @@ export default class PostIndex extends React.Component {
     componentDidMount() {
         if (window.FB) {
             window.FB.init({
-                appId: process.env.REACT_APP_FB_ID,
+                appId: 420618245110151,
                 status: true,
                 xfbml: true
             });
