@@ -3,7 +3,7 @@ import '../src/css/SectionComp.css';
 export default class SectionComp extends React.Component {
     scrollToRegister = () => {
         const height = window.innerHeight
-        const push = 2*height
+        const push = 3*height
         window.scroll({top: push, behavior: "smooth"});
     }
 
@@ -21,7 +21,7 @@ export default class SectionComp extends React.Component {
                     <div className="zonal-common-comp1-register">
                         <div className="zonal-common-comp1-register-child1" style={!this.props.downloadPdf ? {width: 'auto'} : null}>
                             <div>
-                                <button className="zonal-comp1-button" onClick={() => this.scrollToRegister()}>REGISTER</button>
+                                {(this.props.register==="true")? <button className="zonal-comp1-button" onClick={()=>this.scrollToRegister()}>REGISTER</button>:<a href="https://www.townscript.com/e/oil-painting-workshop-by-expert-sweety-singh-234221" target="_blank"><button className="zonal-comp1-button">REGISTER</button></a>}
                             </div>
                         </div>
                         {this.props.downloadPdf ?
