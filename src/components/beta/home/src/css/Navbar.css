@@ -15,6 +15,10 @@
     right: 9vw;
     top: 3vh;
 }
+#background-image-gradient
+{  
+    background-image: linear-gradient(to bottom, #061116eb, #020c1159);
+}
 .beta-navbar-navtoggle span{
     display:block;
     width:40px;
@@ -33,8 +37,7 @@
 }
 
 .beta-navbar-navtoggle-both span:nth-child(4){
-    transform:translate(-50%,-50%)translateY(9px);
-    transition: .2s;
+    transform:translate(-50%,-50%)translateY(9px); transition: .2s;
 }
 
 .beta-navbar-navtoggle-mobile span:nth-child(1){
@@ -65,7 +68,6 @@
 .beta-navbar-active {
     transition: all 2s ease-in-out;
 }
-
 .beta-home-navbar {
     display: flex;
     flex-direction: row;
@@ -171,7 +173,21 @@
     height: 2px;
     background: white;
 }
-
+.zonals-navbar-option
+{
+   position:relative; 
+}
+.zonals-navbar-new
+{
+    top: 28px;
+    position:absolute;
+    background:red;
+}
+.zonals-delhi-navbar-new
+{
+    background:red;
+    margin-left:5px;
+}
 @media (max-width: 816px) {
     .beta-navbar-toggle {
         display: flex;
@@ -186,6 +202,9 @@
     #beta-navbar-options-hide {
         display: none;
         transition: all 2s ease-in-out;
+    }
+    .beta-home-navbar {
+        z-index:210;
     }
 }
 @media (max-width: 1096px) {

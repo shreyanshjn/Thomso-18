@@ -11,8 +11,7 @@
 }
 
 .quizardy-parent-body{
-    background-image: linear-gradient(to left bottom, #595b5e, #767e81, #95a3a2, #bac9c0, #e9eedd);
-
+    background-image: linear-gradient(to left bottom, #2e0e0a, #a36937, #c29750, #ad7637, #5c2b10);
     height: 100vh;
     position: relative;
     align-items: center;

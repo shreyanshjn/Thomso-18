@@ -1,23 +1,23 @@
-import React , { Component } from 'react';
-import { SectionsContainer, Section } from 'react-fullpage';
-import logo from './src/img/thomsomain.png';
-import arrow from './src/img/arrow.svg';
-import './src/css/Main.css';
-import About from './About';
-import Footfall from './Footfall';
-import Celebrity from './Celebrity';
-import Contact from './Contact';
+import React , { Component } from "react";
+import { SectionsContainer, Section } from "react-fullpage";
+import logo from "./src/img/logomain.svg";
+import arrow from "./src/img/arrow.svg";
+import "./src/css/Main.css";
+import About from "./About";
+import Footfall from "./Footfall";
+import Celebrity from "./Celebrity";
+import Contact from "./Contact";
 
 export default class FullSection extends Component {
     render() {
         let options = {
-            sectionClassName: 'section',
-            anchors: ['home', 'aboutUs', 'footfall', 'celebrity', 'contactUs'],
+            sectionClassName: "section",
+            anchors: ["home", "aboutUs", "footfall", "celebrity", "contactUs"],
             scrollBar: false,
             navigation: false,
             verticalAlign: false,
-            sectionPaddingTop: '0px',
-            slidesNavPosition: 'bottom',
+            sectionPaddingTop: "0px",
+            slidesNavPosition: "bottom",
             arrowNavigation: true
         };
         return (

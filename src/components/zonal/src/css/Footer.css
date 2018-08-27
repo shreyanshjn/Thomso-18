@@ -1,7 +1,3 @@
-.zonals-footer-main-div
-{
-    padding:12px;
-}
 .zonals-footer-address
 {
     display:flex;
@@ -27,6 +23,7 @@
     background-color:#4b4c4d;
     color:white;
     font-family:Montserrat;
+    padding:12px;
 }
 .zonals-footer-follow
 {
@@ -171,7 +168,7 @@
     .zonals-footer-main-div
     {
         font-size:8px; 
-        padding-top:0;
+        padding:3px;
     }
     .address-name-zonals
     {
@@ -188,6 +185,22 @@
     {
        font-size:9px;
        width:100%;
+    }
+    .zonals-footer-address
+    {
+        margin:0;
+    }
+    .zonals-footer-contact
+    {
+        margin:0;
+    }
+    .zonals-contact-person > div
+    {
+        width:50%;
+    }
+    .zonals-contact-person > div >div
+    {
+        font-size:7px; 
     }
 }
 @media (min-width: 1920px) and (max-width: 2560px)

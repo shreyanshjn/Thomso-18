@@ -1,8 +1,6 @@
 import React from "react";
 import FetchApi from "../../../utils/FetchAPI";
-import validateInput from '../../../utils/validation/loginValidation';
 import AuthService from '../../../handlers/main/AuthService';
-
 
 export default class VerifyIndex extends React.Component{
     constructor(){
