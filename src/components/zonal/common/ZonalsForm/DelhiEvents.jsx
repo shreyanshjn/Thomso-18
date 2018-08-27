@@ -16,9 +16,9 @@ export default class DelhiEvents extends React.Component {
     onSubmit = (e) => {
         e.preventDefault()
         let events = []
-        if (this.state.nukkad) {
-            events.push('Nukkad Natak')
-        }
+        // if (this.state.nukkad) {
+        //     events.push('Nukkad Natak')
+        // }
         if (this.state.tgt && this.state.selectedOptionTgt) {
             events.push(this.state.selectedOptionTgt)
         }
@@ -43,7 +43,7 @@ export default class DelhiEvents extends React.Component {
                     <div className={this.props.var ? "register-zonals-form-events-parent inactive" : "register-zonals-form-events-parent"}>
                         <div className="register-zonals-form-events-firstchild">
                             <div className="register-zonals-form-events-drama">
-                                <span><input type="checkbox" onClick={() => this.setState({ nukkad: !this.state.nukkad })} checked={this.state.nukkad} name="nukkad" value="nukkad" /></span><span>Nukkad Natak</span>
+                                <span><input type="checkbox" onClick={() => this.props.statevalues({ errors: 'Registration for Nukkad Natak is over.' })} checked={this.state.nukkad} name="nukkad" value="nukkad" /></span><span>Nukkad Natak</span>
                             </div>
                         </div>
                         <div className="register-zonals-form-events-secondchild">
