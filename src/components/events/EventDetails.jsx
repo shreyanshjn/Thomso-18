@@ -74,22 +74,31 @@ export default class EventDetail extends React.Component {
                 </div>
                 {this.state.data ?
                     <div className="events-details-parent">
-                        <div className="events-details-image">
-                            <img alt="thomso-events-images" src={`/img/main/events/events/${this.state.data.image}`} style={{ maxHeight: "240px" }} />
-                            <div className="events-price_money">
-                                <span>Prizes Worth :</span> <span> 40K</span>
+                        {this.state.data.image ?
+                            <div className="events-details-image">
+                                <img alt="thomso-events-images" src={`/img/main/events/events/${this.state.data.image}`} style={{ maxHeight: "240px" }} />
+                                {this.state.data.prize ? 
+                                <div className="events-price_money">
+                                    <span>Prizes Worth :</span> <span> {this.state.data.prize}K </span>
+                                </div> : null }
                             </div>
-                        </div>
+                        : null }
                         <div className="events-text-scroll-cont">
                             <p className="events-text-child">{this.state.data.content}</p>
                         </div>
                     </div> : null}
                 {this.state.data && this.props.eventsId !== 9 ?
                     <div className="events-addevents">
-                        {this.state.isAuthenticated ? <div className="be-events-modal-button" onClick={this.addEvent}>Add Event</div> :
-                            <Link className="be-events-modal-button" to="/main">Login/Register</Link>
+                        { this.state.data.link ? 
+                            <a className="be-events-modal-button" href={this.state.data.link} target="_blank" rel="noopener noreferrer">Visit Page</a>
+                            :
+                            <React.Fragment>
+                                {this.state.isAuthenticated ? <div className="be-events-modal-button" onClick={this.addEvent}>Add Event</div> :
+                                    <Link className="be-events-modal-button" to="/main">Login/Register</Link>
+                                }
+                            </React.Fragment>
                         }
-                        {this.state.data && this.state.data.rulebook ?
+                        {this.state.data.rulebook ?
                             <a href={`/pdf/events/${this.state.data.rulebook}`} className="be-events-modal-button" target="_blank">Rulebook</a>
                             : null
                         }

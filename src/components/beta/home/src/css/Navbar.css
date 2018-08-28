@@ -173,7 +173,21 @@
     height: 2px;
     background: white;
 }
-
+.zonals-navbar-option
+{
+   position:relative; 
+}
+.zonals-navbar-new
+{
+    top: 28px;
+    position:absolute;
+    background:red;
+}
+.zonals-delhi-navbar-new
+{
+    background:red;
+    margin-left:5px;
+}
 @media (max-width: 816px) {
     .beta-navbar-toggle {
         display: flex;

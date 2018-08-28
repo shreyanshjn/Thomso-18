@@ -20,10 +20,10 @@ const LogoutIndex = Loadable({
     loading: Loading,
 });
 
-const RegisterIndex = Loadable({
-    loader: () => import('./register/Index'),
-    loading: Loading,
-});
+// const RegisterIndex = Loadable({
+//     loader: () => import('./register/Index'),
+//     loading: Loading,
+// });
 
 const HomeIndex = Loadable({
     loader: () => import('./home/Index'),
@@ -99,7 +99,7 @@ export default class AdminIndex extends React.Component{
                     </div>
                 :
                     <div>
-                        <Route exact path="/ca/admin/register" component={RegisterIndex} />
+                        {/* <Route exact path="/ca/admin/register" component={RegisterIndex} /> */}
                         <Route exact path="/ca/admin" render={ () => <LoginIndex updateRoutes={this.handleUpdate}/> } />
                     </div>
                 }

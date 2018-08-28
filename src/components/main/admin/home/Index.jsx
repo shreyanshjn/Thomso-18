@@ -22,7 +22,7 @@ export default class HomeIndex extends React.Component {
                 .then(r => {
                     if (r && r.data && r.data.body) {
                         if (r.data.body) {
-                            this.setState({ userData:r.data });
+                            this.setState({ userData:r.data.body });
                         } else {
                             this.setState({ errors:"Doesn't Able To Fetch" })
                         }
@@ -44,8 +44,7 @@ export default class HomeIndex extends React.Component {
                     {errors}
                 </div>
                 : null}
-
-                {(this.state.userData.body && this.state.userData.body.length) ? <DataTable participants={this.state.userData.body} /> :null}
+                {(userData && userData.length) ? <DataTable participants={userData} /> :null}
             </div>
         )
     }
