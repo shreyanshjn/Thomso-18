@@ -18,65 +18,54 @@ export default class JaipurOpening extends Component {
     }
     componentWillUnmount() {
         if (this.parallaxInstance) {
-            this.parallaxInstance.destroy();
+            this.parallaxInstance.destroy()
         }
-    }
-    scrollToRegister = () => {
-        const height = window.innerHeight;
-        const push = 1*height;
-        window.scroll({top: push, behavior: "smooth"});
     }
     render() {
         return (
-            <div className="main-zonals-div">
-                <div style={{display:"flex"}}>
+            <div className="main-zonals-delhi-div">
+                <div style={{display:'flex'}}>
                     <div data-depth="0">
-                        <Link to="/"><img src={logo} className="zonals-lucknow-side-logo" alt="logo"/></Link>
-                    </div> <div data-depth="0">
-                        <img src={iitrlogo} className="zonals-lucknow-iitrlogo" alt="iitrlogo" />
+                        <Link to="/"><img src={logo} className="zonals-delhi-side-logo" alt="logo"/></Link>
+                    </div>
+                    <div data-depth="0">
+                        <img src={iitrlogo} className="zonals-delhi-iitrlogo" alt="iitrlogo" />
                     </div>
                 </div>
-                <div data-depth="0" className="zonals-parallax-layer7">
-                    <div className="zonals-parallax-layer7-main-child-lucknow">
-                        <div className="zonals-layer7-arrowmove">
-                            <img src={arrow} onClick={() => this.scrollToRegister()} className="zonals-layer7-downarrow" alt="arrow"/>
-                        </div>
-                    </div>
-                </div>
-                <div id="lucknow-zonals-parallax" className="zonals-scene">
+                <div id="delhi-zonals-parallax" className="zonals-scene">
 
-                    <div className="zonals-parallax-layer1">
+                    <div className="zonals-parallax-delhi-layer1">
                     </div>
 
-
-                    <div data-depth="0" className="zonals-gate-div zonals-parallax-layer2">
-                        <div className="zonals-parallax-layer2-main-child-lucknow">
-                            <div className="parallax-layer2-child-lucknow">
-                                <img src={gate} alt="lucknowgate" data-hover-only="true"  className="zonals-lucknow-gate"/>
-                                <h1 className="zonals-layer2-h1">LUCKNOW ZONALS</h1>
+                    <div  data-depth="0.3" className="zonals-parallax-delhi-layer3">
+                        <div className="zonals-parallax-delhi-layer3-main-child">
+                            <div className="parallax-delhi-layer3-child"> 
+                                <img src={cloud} alt="cloud"  className="zonals-delhi-cloud-two"/>
                             </div>
                         </div>
                     </div>
 
-                    <div  data-depth="0.4" className="zonals-parallax-layer4">
-                        <div className="zonals-parallax-layer4-main-child-lucknow">
-                            <div data-depth="0.4" className="parallax-layer4-child-lucknow"> 
-                                <img src={cloud} alt="cloud"  className="zonals-cloud-one"/>
+                    <div data-depth="0" className="zonals-delhi-gate-div zonals-parallax-delhi-layer2 layer">
+                        <div className="zonals-parallax-delhi-layer2-main-child">
+                            <div className="parallax-delhi-layer2-child">
+                                <img src={gate} alt="indiagate" data-hover-only="true"  className="zonals-india-gate"/>
+                                <h1 className="zonals-delhi-layer2-h1">JAIPUR ZONALS</h1>
                             </div>
                         </div>
                     </div>
 
-                    <div  data-depth="0.6" className="zonals-parallax-layer5">
-                        <div className="zonals-parallax-layer5-main-child-lucknow">
-                            <div data-depth="0.6" className="parallax-layer5-child-lucknow"> 
-                                <img src={cloud} alt="cloud"  className="zonals-cloud-three"/>
+                    <div  data-depth="0.4"className="zonals-parallax-delhi-layer4">
+                        <div className="zonals-parallax-delhi-layer4-main-child">
+                            <div data-depth="0.4" className="parallax-delhi-layer4-child"> 
+                                <img src={cloud} alt="cloud"  className="zonals-delhi-cloud-one"/>
                             </div>
                         </div>
-                        <div  data-depth="0.3" className="zonals-parallax-layer6">
-                            <div className="zonals-parallax-layer6-main-child-lucknow">
-                                <div data-depth="0.4" className="parallax-layer6-child-lucknow"> 
-                                    <img src={cloud} alt="cloud"  className="zonals-cloud-six"/>
-                                </div>
+                    </div>
+
+                    <div  data-depth="0.6"className="zonals-parallax-delhi-layer5">
+                        <div className="zonals-parallax-delhi-layer5-main-child">
+                            <div data-depth="0.6" className="parallax-delhi-layer5-child"> 
+                                <img src={cloud} alt="cloud"  className="zonals-delhi-cloud-three"/>
                             </div>
                         </div>
                     </div>

@@ -1,14 +1,13 @@
 import React from 'react';
 import '../zonals.css';
 
-export default class LucknowEvents extends React.Component {
+export default class JaipurEvents extends React.Component {
     constructor() {
         super();
         this.state = {
             selectedOptionTgt: '',
             nukkadnatak: false,
             tgt: false,
-            mrmsthomso:false
         }
     }
     changeState = () => {
@@ -19,9 +18,6 @@ export default class LucknowEvents extends React.Component {
         let events = []
         if (this.state.nukkadnatak) {
             events.push('Nukkad Natak')
-        }
-        if (this.state.mrmsthomso) {
-            events.push('Mr. and Mrs. Thomso')
         }
         if (this.state.tgt && this.state.selectedOptionTgt) {
             events.push(this.state.selectedOptionTgt)
@@ -64,11 +60,6 @@ export default class LucknowEvents extends React.Component {
                                 <div>
                                     <span><input onChange={this.handleOptionChangeTgt} type="radio" name="openmic" value="openmic" checked={this.state.selectedOptionTgt === 'openmic'} disabled={!this.state.tgt} /></span><span>Open mic</span>
                                 </div>
-                            </div>
-                        </div>
-                        <div className="register-zonals-form-events-secondchild">
-                            <div className="register-zonals-form-events-tgt">
-                                <span><input type="checkbox" onClick={() => this.setState({ mrmsthomso: !this.state.mrmsthomso })} checked={this.state.mrmsthomso} name="mrmsthomso" value="mrmsthomso" /></span><span>Mr & Ms Thomso</span>
                             </div>
                         </div>
                     </div>
