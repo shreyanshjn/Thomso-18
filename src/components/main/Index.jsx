@@ -41,7 +41,7 @@ const HomeIndex = Loadable({
 });
 
 const ContactIndex = Loadable({
-    loader: () => import("../campusAmbassador/contactus/Index"),
+    loader: () => import("./contactus/Index"),
     loading: Loading
 });
 
@@ -56,17 +56,17 @@ const LogoutIndex = Loadable({
 });
 
 const ResetPasswordEmailIndex = Loadable({
-    loader: ()=>import("./resetPasswordEmail/Index"),
+    loader: () => import("./resetPasswordEmail/Index"),
     loading: Loading
 });
 
 const ResetPasswordIndex = Loadable({
-    loader: ()=>import("./resetPassword/Index"),
+    loader: () => import("./resetPassword/Index"),
     loading: Loading
 });
 
-export default class MainIndex extends React.Component{
-    constructor(){
+export default class MainIndex extends React.Component {
+    constructor() {
         super();
         this.state = {
             isAuthenticated: false,
@@ -78,7 +78,7 @@ export default class MainIndex extends React.Component{
 
     componentWillMount() {
         const isAuthenticated = this.Auth.hasToken();
-        console.log(isAuthenticated,  "isAuthenticated");
+        console.log(isAuthenticated, "isAuthenticated");
         if (isAuthenticated) {
             const token = this.Auth.getToken()
             FetchApi('GET', '/api/main/user', null, token)
