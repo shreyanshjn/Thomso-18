@@ -5,7 +5,6 @@ import AuthService from '../../../handlers/main/AuthService';
 
 import EventRow from "./EventRow";
 import "../src/css/profile.css"
-import dustbin from '../src/img/dustbin.png';
 
 export default class Profile extends React.Component {
 

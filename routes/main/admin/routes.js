@@ -12,7 +12,7 @@ var MainAdminTokenMiddleware = require("../../../middlewares/main/admin/TokenMid
 // Routes
 
 // -> /main/admin/auth
-router.post('/auth/register', adminAuth.register);
+// router.post('/auth/register', adminAuth.register);
 router.post('/auth/login', adminAuth.login);
 
 // -> /main/admin
