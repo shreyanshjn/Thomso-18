@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 
-import './quizardy.css';
-import Instructions from './Instructions';
-import Footer from './Footer';
-import Navbar from '../home/Navbar';
-import { addTopic } from '../../../utils/firebasePush';
+import "./quizardy.css";
+import Instructions from "./Instructions";
+import Footer from "./Footer";
+import Navbar from "../home/Navbar";
+import { addTopic } from "../../../utils/firebasePush";
 
-import './Index.css';
+import "./Index.css";
 
 let addTopicTimeout;
 
@@ -15,17 +15,17 @@ export default class QuizardryIndex extends React.Component{
         super();
         this.state={
             isNavbar:true
-        }
+        };
     }
 
     componentDidMount() {
         addTopicTimeout = setTimeout(() => {
-            addTopic('quizardry');
-        }, 2000)
+            addTopic("quizardry");
+        }, 2000);
     }
 
     componentWillMount() {
-        clearTimeout(addTopicTimeout)
+        clearTimeout(addTopicTimeout);
     }
 
     render(){
@@ -35,24 +35,24 @@ export default class QuizardryIndex extends React.Component{
                     <Navbar />
                 </div>
                 <div className="quizardy-parent">
-                  <div className="quizardy-navbar">
-                    <Navbar />
-                  </div>
+                    <div className="quizardy-navbar">
+                        <Navbar background="true"/>
+                    </div>
                     <div className="quizardy-child">
-                            <div className="quizardy-flexcenter">
+                        <div className="quizardy-flexcenter">
                             <a href="https://dare2compete.com/o/quizardry-thomso-iit-roorkee-indian-institute-of-technology-iit-roorkee-64347" target="_blank" rel="noopener noreferrer"><button className="quizardy-button quizardy-opening-button">Register</button></a>
-                            </div>
+                        </div>
                     </div>
                 </div>
                 <div>
                     <div className='quizardy-desktop'>
-                    <Navbar />
+                        <Navbar />
                     </div>
                     <div className="quizardy-parent-body">
-                    <div className="quizardy-parent-innerbody">
-                        <Instructions />
-                        <Footer />
-                    </div>
+                        <div className="quizardy-parent-innerbody">
+                            <Instructions />
+                            <Footer />
+                        </div>
                     </div>
                 </div>
             </div>
