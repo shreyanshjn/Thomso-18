@@ -23,13 +23,13 @@ export default class DelhiIndex extends Component {
                 <div style={{ overflow: "hidden" }}>
                     <DelhiOpening />
                 </div>
-                <SectionSecond2 city='delhi' />
                 <div className="delhi-zonals-painting">
                     {this.state.mobile ? <img src={painting} alt="oil=painting-workshop" className="oil-painting-image-delhi"/>: <img src={paintingMobile} alt="oil-painting-workshop" className="oil-painting-image-delhi"/>}
                     <div className="delhi-painting-button-div">
                         <a href="https://www.townscript.com/e/oil-painting-workshop-by-expert-sweety-singh-234221" target="_blank"rel="noopener noreferrer"><button className="delhi-painting-button-child">Register</button></a>
                     </div>
                 </div>
+                <SectionSecond2 city='delhi' />
                 <ZonalsFormDelhi showModal={() => this.popup.show(["Congratulations!", "You have been successfully registered for Karwaan, Thomso18.", "Confirmation email has been sent to your inbox"])} />
                 <Footer city='delhi' />
             </div>
