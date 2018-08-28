@@ -1,28 +1,28 @@
-import React from 'react';
-import '../zonals.css';
+import React from "react";
+import "../zonals.css";
 
 export default class JaipurEvents extends React.Component {
     constructor() {
         super();
         this.state = {
-            selectedOptionTgt: '',
+            selectedOptionTgt: "",
             nukkadnatak: false,
             tgt: false,
-        }
+        };
     }
     changeState = () => {
-        this.props.function()
+        this.props.function();
     }
     onSubmit = (e) => {
-        e.preventDefault()
-        let events = []
+        e.preventDefault();
+        let events = [];
         if (this.state.nukkadnatak) {
-            events.push('Nukkad Natak')
+            events.push("Nukkad Natak");
         }
         if (this.state.tgt && this.state.selectedOptionTgt) {
-            events.push(this.state.selectedOptionTgt)
+            events.push(this.state.selectedOptionTgt);
         }
-        this.props.selectedevents(events)
+        this.props.selectedevents(events);
     }
     handleOptionChangeTgt = (changeEvent) => {
         this.setState({
@@ -30,10 +30,10 @@ export default class JaipurEvents extends React.Component {
         });
     }
     componentDidMount() {
-        this.props.onRef(this)
+        this.props.onRef(this);
     }
     componentWillUnmount() {
-        this.props.onRef(undefined)
+        this.props.onRef(undefined);
     }
     render() {
         return (
@@ -52,20 +52,22 @@ export default class JaipurEvents extends React.Component {
                             </div>
                             <div className={this.state.tgt ? "register-zonals-form-events-tgtchild" : "register-zonals-form-events-tgtchild low-opacity"}>
                                 <div>
-                                    <span><input onChange={this.handleOptionChangeTgt} type="radio" name="singing" value="singing" checked={this.state.selectedOptionTgt === 'singing'} disabled={!this.state.tgt} /></span><span>Singing</span>
+                                    <span><input onChange={this.handleOptionChangeTgt} type="radio" name="singing" value="singing" checked={this.state.selectedOptionTgt === "singing"} disabled={!this.state.tgt} /></span><span>Singing</span>
                                 </div>
                                 <div>
-                                    <span><input onChange={this.handleOptionChangeTgt} type="radio" name="dancing" value="dancing" checked={this.state.selectedOptionTgt === 'dancing'} disabled={!this.state.tgt} /></span><span>Dancing</span>
+                                    <span><input onChange={this.handleOptionChangeTgt} type="radio" name="dancing" value="dancing" checked={this.state.selectedOptionTgt === "dancing"} disabled={!this.state.tgt} /></span><span>Dancing</span>
                                 </div>
                                 <div>
-                                    <span><input onChange={this.handleOptionChangeTgt} type="radio" name="openmic" value="openmic" checked={this.state.selectedOptionTgt === 'openmic'} disabled={!this.state.tgt} /></span><span>Open mic</span>
+                                    <span><input onChange={this.handleOptionChangeTgt} type="radio" name="openmic" value="openmic" checked={this.state.selectedOptionTgt === "openmic"} disabled={!this.state.tgt} /></span><span>Open mic</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className={this.props.var ? "register-zonals-form-events-button inactive" : "register-zonals-form-events-button"}>
-                        <div onClick={() => this.changeState()}>BACK</div>
-                        <button type="submit">SUBMIT</button>
+                        <div onClick={() => this.changeState()}><span>BACK</span></div>
+                        <div>
+                            <button type="submit">SUBMIT</button>
+                        </div>
                     </div>
                 </form>
             </React.Fragment >

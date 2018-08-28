@@ -95,20 +95,20 @@ class Navbar extends Component {
                                 </li>
                                 <li>
                                     <Link to="../../main" className={(this.state.activeState === "main") ? "linkSponsors" : null}
-                                    onClick={() => {
-                                                    this.setActive("main");
-                                    }}>PARTICIPATE</Link>
+                                        onClick={() => {
+                                            this.setActive("main");
+                                        }}>PARTICIPATE</Link>
                                 </li>
                                 <li className="dropdown">
                                     <Link to="" className={(this.state.activeState === "lucknow") ? "linkLucknow" : null}
                                         onClick={() => {
                                             this.setActive("lucknow");
-                                        }}><span class="zonals-navbar-option">ZONALS</span><span className="zonals-navbar-new">new</span></Link>
+                                        }}><span className="zonals-navbar-option">ZONALS</span><span className="zonals-navbar-new">new</span></Link>
                                     <div className="beta-navbar-dropdown-content">
                                         <Link to="../../zonals/delhi" className={(this.state.activeState === "delhi") ? "linkLucknow" : null}
                                             onClick={() => {
                                                 this.setActive("delhi");
-                                            }}><span class="zonals-delhi-navbar-option">DELHI</span><span className="zonals-delhi-navbar-new">new</span></Link>
+                                            }}><span className="zonals-delhi-navbar-option">DELHI</span><span className="zonals-delhi-navbar-new">new</span></Link>
                                         <Link to="../../zonals/lucknow" className={(this.state.activeState === "lucknow") ? "linkLucknow" : null}
                                             onClick={() => {
                                                 this.setActive("lucknow");

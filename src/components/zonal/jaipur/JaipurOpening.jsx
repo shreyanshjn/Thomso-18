@@ -1,27 +1,28 @@
-import React, { Component } from 'react';
-import Parallax from 'parallax-js';
-import gate from '../src/img/indiagate.png';
-import cloud from '../src/img/cloud.png';
-import '../src/css/DelhiOpening.css';
-import logo from '../src/img/logo.png'; 
-import iitrlogo from '../src/img/iitrlogo.png';
-import { Link } from 'react-router-dom' ;
-export default class JaipurOpening extends Component {
+import React, { Component } from "react";
+import { Link } from "react-router-dom" ;
+import Parallax from "parallax-js";
+import "../src/css/DelhiOpening.css";
+import jaipur from "../src/img/jaipur.png";
+import cloud from "../src/img/cloud.png";
+import logo from "../src/img/logo.png"; 
+import iitrlogo from "../src/img/iitrlogo.png";
+
+export default class DelhiOpening extends Component {
     componentDidMount() {
-        const scene = document.getElementById('delhi-zonals-parallax');
+        const scene = document.getElementById("delhi-zonals-parallax");
         if (scene) {
             this.parallaxInstance = new Parallax(scene);
         }
     }
     componentWillUnmount() {
         if (this.parallaxInstance) {
-            this.parallaxInstance.destroy()
+            this.parallaxInstance.destroy();
         }
     }
     render() {
         return (
-            <div className="main-zonals-delhi-div">
-                <div style={{display:'flex'}}>
+            <div className="main-zonals-jaipur-div">
+                <div style={{display:"flex"}}>
                     <div data-depth="0">
                         <Link to="/"><img src={logo} className="zonals-delhi-side-logo" alt="logo"/></Link>
                     </div>
@@ -45,8 +46,8 @@ export default class JaipurOpening extends Component {
                     <div data-depth="0" className="zonals-delhi-gate-div zonals-parallax-delhi-layer2 layer">
                         <div className="zonals-parallax-delhi-layer2-main-child">
                             <div className="parallax-delhi-layer2-child">
-                                <img src={gate} alt="indiagate" data-hover-only="true"  className="zonals-india-gate"/>
-                                <h1 className="zonals-delhi-layer2-h1">JAIPUR ZONALS</h1>
+                                <img src={jaipur} alt="indiagate" data-hover-only="true"  className="zonals-india-gate"/>
+                                <h1 className="zonals-delhi-layer2-h1">DELHI ZONALS</h1>
                             </div>
                         </div>
                     </div>
@@ -71,4 +72,3 @@ export default class JaipurOpening extends Component {
         );
     }
 }
-
