@@ -16,9 +16,9 @@ export default class DelhiEvents extends React.Component {
     onSubmit = (e) => {
         e.preventDefault()
         let events = []
-        // if (this.state.nukkad) {
-        //     events.push('Nukkad Natak')
-        // }
+        if (this.state.nukkad) {
+            events.push('Nukkad Natak')
+        }
         if (this.state.tgt && this.state.selectedOptionTgt) {
             events.push(this.state.selectedOptionTgt)
         }
@@ -64,7 +64,7 @@ export default class DelhiEvents extends React.Component {
                         </div>
                     </div>
                     <div className={this.props.var ? "register-zonals-form-events-button inactive" : "register-zonals-form-events-button"}>
-                        <button onClick={() => this.changeState()}>BACK</button>
+                        <div onClick={() => this.changeState()}>BACK</div>
                         <button type="submit">SUBMIT</button>
                     </div>
                 </form>

@@ -54,6 +54,27 @@ export default class Footer extends React.Component {
                     </div>
                     : null
                 }
+                {this.props.city === 'jaipur' ?
+                    <div className="zonals-contact-person">
+                        <div className="zonals-contact-person-child">
+                            <div>
+                                Rohit
+                            </div>
+                            <div>
+                            +91-7023511775
+                            </div>
+                        </div>
+                        <div className="zonals-contact-person-child">
+                            <div>
+                                Harshit
+                            </div>
+                            <div>
+                            +91-9340043505
+                            </div>
+                        </div>
+                    </div>
+                    : null
+                }
                 {this.props.city === 'delhi' ?
                     <div className="zonals-contact-person">
                         <div className="zonals-contact-person-child">
