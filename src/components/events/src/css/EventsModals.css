@@ -72,7 +72,11 @@
 .events-modals-last-arrow{
     position: absolute;
     bottom: 4vh;
-    width: 50%;
+    width: 60%;
+    display: flex;
+    justify-content: space-between; 
+    padding: 10px;
+    margin-left: 32%;
 }
 .events-horizontal{
     position: absolute;
@@ -200,8 +204,6 @@
     }
     .events-modals-last-arrow
     {
-        margin-right:10%;
-        margin-left:35%; 
     }
     .events-text-child
     {
