@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom" ;
+import { Link } from "react-router-dom";
 import img from "./src/img/logo.png";
 
 import "./src/css/Navbar.css";
@@ -12,9 +12,9 @@ class Navbar extends Component {
         this.state = {
             isHidden: true,
             hamburger: true,
-            activeState:window.location.pathname.substring(1)
+            activeState: window.location.pathname.substring(1)
         };
-        this.setActive=this.setActive.bind(this);
+        this.setActive = this.setActive.bind(this);
     }
     toggleHidden() {
         this.setState({
@@ -22,16 +22,15 @@ class Navbar extends Component {
             hamburger: !this.state.hamburger
         });
     }
-    setActive(state)
-    {
+    setActive(state) {
         this.setState({
-            activeState:state
+            activeState: state
         });
     }
     render() {
         return (
             <div className="beta-navbar-contain">
-                <div className={this.state.hamburger? "beta-home-navbar":"beta-home-navbar beta-navbar-overlay beta-navbar-navbarToggle"} id={(this.props.background==="true")?"background-image-gradient":null}>
+                <div className={this.state.hamburger ? "beta-home-navbar" : "beta-home-navbar beta-navbar-overlay beta-navbar-navbarToggle"} id={(this.props.background === "true") ? "background-image-gradient" : null}>
                     <div className="beta-navbar-t-logo">
                         <Link to="./"> <img src={img} alt="" /></Link>
                     </div>
@@ -54,7 +53,7 @@ class Navbar extends Component {
                                         onClick={() => {
                                             this.setActive("linkCaportal");
                                         }}>
-                    CA PORTAL
+                                        CA PORTAL
                                     </Link>
                                 </li>
                                 {/*<li>
@@ -95,20 +94,20 @@ class Navbar extends Component {
                                 </li>
                                 <li>
                                     <Link to="../../main" className={(this.state.activeState === "main") ? "linkSponsors" : null}
-                                    onClick={() => {
-                                                    this.setActive("main");
-                                    }}>PARTICIPATE</Link>
+                                        onClick={() => {
+                                            this.setActive("main");
+                                        }}>PARTICIPATE</Link>
                                 </li>
                                 <li className="dropdown">
                                     <Link to="" className={(this.state.activeState === "lucknow") ? "linkLucknow" : null}
                                         onClick={() => {
                                             this.setActive("lucknow");
-                                        }}><span class="zonals-navbar-option">ZONALS</span><span className="zonals-navbar-new">new</span></Link>
+                                        }}><span className="zonals-navbar-option">ZONALS</span><span className="zonals-navbar-new">new</span></Link>
                                     <div className="beta-navbar-dropdown-content">
                                         <Link to="../../zonals/delhi" className={(this.state.activeState === "delhi") ? "linkLucknow" : null}
                                             onClick={() => {
                                                 this.setActive("delhi");
-                                            }}><span class="zonals-delhi-navbar-option">DELHI</span><span className="zonals-delhi-navbar-new">new</span></Link>
+                                            }}><span className="zonals-delhi-navbar-option">DELHI</span><span className="zonals-delhi-navbar-new">new</span></Link>
                                         <Link to="../../zonals/lucknow" className={(this.state.activeState === "lucknow") ? "linkLucknow" : null}
                                             onClick={() => {
                                                 this.setActive("lucknow");

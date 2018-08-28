@@ -76,20 +76,20 @@ export default class EventDetail extends React.Component {
                     <div className="events-details-parent">
                         {this.state.data.image ?
                             <div className="events-details-image">
-                                <img alt="thomso-events-images" src={`/img/main/events/events/${this.state.data.image}`} style={{ maxHeight: "240px" }} />
-                                {this.state.data.prize ? 
-                                <div className="events-price_money">
-                                    <span>Prizes Worth :</span> <span> {this.state.data.prize}K </span>
-                                </div> : null }
+                                <img alt="thomso-events-images" src={`/img/main/events/events/${this.state.data.image}`} />
+                                {this.state.data.prize ?
+                                    <div className="events-price_money">
+                                        <span>Prizes Worth :</span> <span> {this.state.data.prize}K </span>
+                                    </div> : null}
                             </div>
-                        : null }
+                            : null}
                         <div className="events-text-scroll-cont">
                             <p className="events-text-child">{this.state.data.content}</p>
                         </div>
                     </div> : null}
                 {this.state.data && this.props.eventsId !== 9 ?
                     <div className="events-addevents">
-                        { this.state.data.link ? 
+                        {this.state.data.link ?
                             <a className="be-events-modal-button" href={this.state.data.link} target="_blank" rel="noopener noreferrer">Visit Page</a>
                             :
                             <React.Fragment>

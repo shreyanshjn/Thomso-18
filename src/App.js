@@ -6,10 +6,10 @@ import Loadable from 'react-loadable';
 import Loader from "./components/common/Loader";
 
 // Beta route not being used currently
-// const BetaIndex = Loadable({
-//   loader: () => import('./components/beta/Index'),
-//   loading: () => <div>Loading BetaIndex</div>,
-// });
+const BetaIndex = Loadable({
+  loader: () => import('./components/beta/Index'),
+  loading: () => <div>Loading BetaIndex</div>,
+});
 
 const FakeNotification = Loadable({
   loader: () => import('./components/common/Notification'),
@@ -84,9 +84,9 @@ const MainIndex = Loadable({
   loader: () => import("./components/main/Index"),
   loading: () => <Loader />
 })
-const Events= Loadable({
-    loader: () => import("./components/events/Index"),
-    loading: () => <Loader />
+const Events = Loadable({
+  loader: () => import("./components/events/Index"),
+  loading: () => <Loader />
 })
 class App extends Component {
   render() {
@@ -96,7 +96,7 @@ class App extends Component {
           <Route path="/" component={FakeNotification} />
           <Switch>
             <React.Fragment>
-              {/* <Route path="/beta" component={BetaIndex} /> */}
+              <Route path="/beta" component={BetaIndex} />
               <Route exact path="/" component={HomeIndex} />
               <Route exact path="/sponsors" component={SponsorsIndex} />
               <Route exact path="/associate" component={AccociateIndex} />

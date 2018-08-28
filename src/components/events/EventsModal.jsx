@@ -110,7 +110,7 @@ export default class EventsModal extends React.Component {
                             <img src="/img/main/events/rightarrow.png" alt="right-arrow" width="15px" onClick={() => this.nextCat(this.state.eventId)} />
                         </p>
                     </div>
-                    <hr className="events-horizontal" />
+                    {/* <hr className="events-horizontal" /> */}
                 </div>
             </div>
         )
