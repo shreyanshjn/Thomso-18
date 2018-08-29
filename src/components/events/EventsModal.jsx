@@ -35,7 +35,7 @@ export default class EventsModal extends React.Component {
         window.removeEventListener('keyup', this.handleKeys)
     }
     nextCat = (id) => {
-        if (id === 13) {
+        if (id === 15) {
             this.setState({ eventId: 1 }, () => {
                 let filteredData = EventDetails.filter(e => e.id === this.state.eventId);
                 this.setState(
@@ -57,7 +57,7 @@ export default class EventsModal extends React.Component {
     }
     prevCat = (id) => {
         if (id === 1) {
-            this.setState({ eventId: 13 }, () => {
+            this.setState({ eventId: 15 }, () => {
                 let filteredData = EventDetails.filter(e => e.id === this.state.eventId);
                 this.setState(
                     {

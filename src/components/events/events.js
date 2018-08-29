@@ -67,7 +67,8 @@ export const EventDetails =
             content: "Are you itching for a new challenge to show off your quizzing skills? Have you a knack for solving problems? Do you love conquering questions to emerge on the top? Then we have the perfect fix for you. Every weekend, we have quizzes designed to cater the movie buff and television fanatic in you. We have this event designed specifically for those who are passionately curious about everything, be it movies, arts, sports, politics or television. Each weekend,we bring you a new theme to quiz upon, offering you a chance to uncover your potential.So get the juices flowing and push yourself to the limits to clobber the competition. Unleash your inner genius and rise above the ordinary.",
             rulebook: "",
             image:"quizardry.jpg",
-            link: "https://dare2compete.com/o/quizardry-thomso-iit-roorkee-indian-institute-of-technology-iit-roorkee-64347"
+            link: "https://dare2compete.com/o/quizardry-thomso-iit-roorkee-indian-institute-of-technology-iit-roorkee-64347",
+            prize: "10"
             },
             {
             id: '3_2',
@@ -82,30 +83,31 @@ export const EventDetails =
             name: "Silhouette",
             content: "In a world where people capture moments with cameras, only a few possess the art of creating magic with their pencils. If you are one of those who can put lines around your ideas, create some marvelous masterpieces and let everyone embrace your art. Wither away all the dullness by creating an outline of your thoughts against the bright backgrounds of your canvas and redefine the beauty of your Silhouettes.",
             rulebook: "https://drive.google.com/open?id=1AQKvtgLd6nyag_I5PUOnPjUI6Eu5icz8",
-            image:"",
+            image:"silhoutte.jpg",
             prize: "10"
             },
             {
             id: '3_4',
             name: "Online Mr. & Ms. Thomso",
-            content: "",
+            content: "Beauty attracts the eyes but personality captures the heart. The charm of personality is the very essence of grace and elegance. So get in the chase to win the eminent titles of Mr. and Miss Thomso and let your charisma shine out to reach new heights of fame. The winners will get the opportunity to reach the final round of Mr. and Miss. Thomso.",
             rulebook: "",
-            image:"",
+            image:"online_mr_and_miss_thomso.jpg",
             },
             {
             id: '3_5',
             name: "May May",
-            content: "",
+            content: "In the recent years, memesters have successfully managed to tickle our funny bones by hijacking our social medias with their MAYMAYS. The trend says memes but we are here with 'MAYMAY' - the online meme making competition of Thomso'18. With this we have begun our quest to find the ultimate memelord. Put on your thinking caps memesta’s because the competition is going to be fierce. Pour all your creativity, spill the humour and be the pro.",
             rulebook: "",
-            image:"",
+            image:"may_may.jpg",
             prize: "10"
             },
             {
             id: '3_6',
-            name: "Expressions",
-            content: "",
+            name: "Xpressions",
+            content: "‘Thoughts that flow like waves and feelings so deep as oceans. Imagination that flies like a bird and voices submerged in emotions’. All our words are but crumbs that fall down from the feast of the mind. So, pick up your pens and scribble away all your expressions. Pave a path for your innermost thoughts to reach the world and let your expressions reach out to us!",
             rulebook: "",
-            image:"",
+            image:"xpressions.jpg",
+            prize: "10"
             },
         ]
     },
@@ -131,43 +133,25 @@ export const EventDetails =
             image: "sargam.jpg",
             prize: "125"
         }]
-    },
-    {
-        id: 5,
-        name: "Adventure",
-        image: "adventure.jpg",
-        subevents:
+    },{
+        id: 13,
+        name: "Quizzing",
+        image: "quizzing.jpg",
+        subevents: 
         [
-        {
-            id: '5_1',
-            name: "Thomso's Got Talent",
-            content: "Talent is entrusted to a man as a treasure which must not be squandered. Do you have a flair towards the extraordinary? Do you have the motivation to transform your talent into genius? This Thomso, we offer you a chance to spread your wings and explore your talents in front of a captivating audience. This event has its participants showcasing their superfluity of talents, be it singing, dancing, comedy, magic or any quirky thing you are passionately curious about. So get all riled up, practice, perfect and work your way towards glory in this gem of an event.",
-            rulebook: "https://drive.google.com/open?id=1s1QbdEa3hD77RzuASKhsm_93lpKXB3Bs",
-            image: "tgt.JPG",
-            prize: "50"
+        { 	id: '13_1',
+            name: "Quriosity",
+            content: "Do you know everything from the funfacts about infinity war to the intracacies of global economics? Are you generally shunned among peers for being a know-it-all?( OR: does information unintentionally comes blurting out whenever you open your mouth?) Well here you can actually win prizes for that! So come and embrace the chance to show the ignoramuses that information is the real wealth! Five quizzing events shall be held. 1. Titans of Trivia– The general quiz. 2. The MELA – Music, Entertainment, Literature and Art 3. The India Quiz 4. The Sports Quiz 5. The Business Quiz",
+            rulebook: "https://drive.google.com/open?id=1uOb-EbhNS4dVh1tFBTx7YsSm0RtPqW2V",
+            image: "quriosity.jpg",
+            prize: "25"
         },
-        {
-            id: '5_2',
-            name: "Seiger",
-            content:"Seiger is IIT Roorkee’s own rendition of the very (in)famous TV show, Roadies! Come and try your best not to embarrass yourself as our own Raghu goes full-throttle on you!",
-            rulebook: "https://drive.google.com/open?id=1EqAaVK-NmJB8TLQi8gy925wXm0EsqxTw",
-            image: "seiger.jpg",
-            prize: "40"
-        },
-        {
-            id: '5_3',
-            name: "Street Soccer",
-            content: "Street soccer is an informal game of soccer played in the street. A more happening and exciting version of the formal game, the main objective of both the games remains the same. The players aim to score goals by advancing the ball down the field into the opposing team's goal. And the team with the maximum goals win." ,
-            rulebook: "https://drive.google.com/open?id=1oLo0W5DHkrlHzI3wnPFzHLMEwbQ78CnN",
-            image: "street_soccer.jpg",
-            prize: "15"
-        },
-        {
-            id: '5_4',
-            name: "Scavenger Hunt",
-            content: "A game typically played in extensive outdoor area in which participants have to collect a number of miscellaneous objects. Organisers prepare a list defining items which the participant have to seek or gather. The team which returns first with all the items becomes the winner." ,
-            rulebook: "https://drive.google.com/open?id=1H03bzNSsQy9A2B8eH9dQN76rFQB1eIL8",
-            image: "scavenger_hunt.png",
+        { 
+            id: '13_2',
+            name: "Telly Sporcle",
+            content: "This event will comprise of questionnaires related to 5 popular American TV Series: Suits, How I Met Your Mother, Sherlock, F.R.I.E.N.D.S. and Game of Thrones. Participants will participate in teams of two.",
+            rulebook: "https://drive.google.com/open?id=11F1txAgLRcH1dWBPL6MXXOBSstgZZ5dd",
+            image: "tellysporcle.jpg",
             prize: "10"
         }]
     },
@@ -192,7 +176,54 @@ export const EventDetails =
             image: "box_office.jpg",
             prize: "20"
         }]
-    },
+    },{
+        id: 12,
+        name: "Marketing & Finance",
+        image: "Marketing_Finance.jpg",
+        subevents:
+        [
+            { 	id: '12_1',
+                name: "Auction frenzy",
+                content: "It’s the time of the year when players go under the hammer. Welcome to Thomso’s edition of IPL auction. It’s time to place your bid. But beware. Don’t forget to analyze and assess the situation before expending. Build your dream team. Choose among the top players from around the world. Trust your intuition and spend wisely in the high paced bidding frenzy.",
+                rulebook: "https://drive.google.com/open?id=1DWva0KwY59wi4_O8Nn5ESvSCEOv6Xgfu",
+                image: "player_auction_frenzy.jpg",
+                prize: "10"
+            },
+            { 	id: '12_2',
+                name: "Corporata",
+                content: "How much do you know when it comes to finance and economics?Here’s a chance to build upon that financial repertoire of yours and sharpen your business acumen.Corporata provides you a platform to boast about your financial literacy and general economic awareness. Test your understanding of core financial knowledge against the best in the game and astound the jury with your business insights.With fierce competition and loads of rewards to be won, this sure is going to be a nerve-wracking contest.",
+                rulebook: "https://drive.google.com/open?id=133S6OjM4ghzciQHx_kGIsK6MEhpewQf8",
+                image: "corporata.jpg",
+                prize: "20"
+            },
+            { 	id: '12_3',
+                name: "Mark Sense",
+                content: "Introduction Mark - Sense: Marketing Event For Poster Quotes that can be used: Marketing is a race without a finishing line ― Philip Kotler.",
+                rulebook: "https://drive.google.com/open?id=1JS-bKIJ1dRx6iBCmwfkm7cKWLTYVj1AO",
+                image: "mark_sense.jpg",
+                prize: "15"
+            },
+            { 	id: '12_4',
+                name: "Negotium Consillium",
+                content: "Have you ever felt a problem too trivial to be ignored for so long yet remains unsolved till now? Or an idea of utmost importance but lacks the feasibility which you have been able to unearth? Then this is your chance to showcase your problem-solving skills and analytic acumen as you put on a business hat and devise a business plan that could change the world as we see it. Envision and let your thoughts transcend into reality in the form of a winning game plan.",
+                rulebook: "https://drive.google.com/open?id=1aWWvdZNT4VisHkpHJi96D6ADIafppk8E",
+                image: "negotium_consillium.jpg",
+            },
+            { 	id: '12_5',
+                name: "A(D)ESIGN",
+                content: "How often do you find yourself skipping advertisements or impatiently waiting for an ad to get over? And how often do you come across ones that you could watch over and over again because they are witty and humorous?! Surely, there aren’t half as many! So, here’s your chance to take charge! IIT Roorkee gives you a chance to create your very own advertisement and be as creative, funny, educational and entertaining as possible! The only ads that we actually watch are the ones we find most engaging, so here is an opportunity to command the attention of thousands and to showcase your creativity and directing skills in an advertisement that will spread your message on a tremendous platform!",
+                rulebook: "https://drive.google.com/open?id=1ZU63Fj3UH4MofsT0TYD7reHbiu1tnXl2",
+                image: "adesign.jpg",
+                prize: "20"
+            },
+            { 	id: '12_6',
+                name: "Cognet Wheelhouses",
+                content: "Ever dreamt about being an CXO of a company? Well, here’s a chance to think and act as a CXO and build something of your own. Cogent Wheelhouses provides you with an opportunity to test various skills required while working for an organization in the corporate world. It will be an occasion where one can innovate, build a team, take decisions and numerous other things. So, get ready to witness some fierce competition and out of the box thinking.",
+                rulebook: "https://drive.google.com/open?id=1bUJqauG__zMPitHB1Kfi6xTaFRCY7YFe",
+                image: "cognet_wheelhouses.jpg",
+            }
+            ]
+        },
     {
         id: 7,
         name: "Fashion",
@@ -250,51 +281,24 @@ export const EventDetails =
             content:" Do you think what it take to be the master of cues? If yes, come forth and compete with your contemporaries and prove your mettle; because if you can’t prove, you don’t have. This event gives you an opportunity to compete with the elites and let the world witness your flair. The table is set, now is the time for you to hit.The event consist of the following two of the table games: Snooker & Pool, which are by far, the benchmarks of precision and skill.",
             rulebook: "https://drive.google.com/open?id=1tx5Ueyu0VYXTt-oRHl6B4v-Rn72mOWbG",
             image: "snooker_elite.jpg",
-            prize: "20"
+            prize: "10"
         }
         ]
     },
     {
-        id: 9,
-        name: "Carnival",
-        image: 'carnival.jpg',
-        subevents:
+        id: 15,
+        name: "Culinary",
+        image: "culinary.jpeg",
+        subevents: 
         [
-        {   
-            id: '9_1',
-            name: "Paintball",
-            content: "Paintball is a fun sport in which players eliminate opponents from play by hitting them with dye-filled paintballs or pellets, shot from a paintball marker or gun. The players must attempt to accomplish a goal without being shot and marked with a paintball. Masks and goggles are used as safety equipments.",
+        { 	id: '15_1',
+            name: "Food Fiesta",
+            content: "Can the aroma of your food water the mouths of people around you or can the magic of your flavours make their taste buds sway? If yes, then this is the place to be. Cook some lip-smacking dishes in the event and prove your mettle against the cooks of the same calibre as yours. Summon your inner Masterchef and get grinding, chopping and baking as you make your own chef-d'oeuvre at Thomso.",
             rulebook: "",
-            image: "paintball.jpg",
-        },
-        {
-            id: '9_2',
-            name: "Body Zorbing",
-            content: "Imagine yourself falling,  bumping and rolling clumsily as you are enclosed in a transparent bubble ball. This is body zorbing, a super fun sport with the participant wearing a large and colourless inflattable capsule. Along with extreme fun and enjoyment, the body zorb ensures complete safety and comfortable breathing. So lets enjoy this high - energy, fun - time sport.",
-            rulebook: "",
-            image: "body_zorbing.jpg",
-        },
-        {
-            id: '9_3',
-            name: "Human foosball",
-            content: "The human Foosball is like the classic table top Foosball, however, it is played with real people, a soccer ball and in a large enclosed arena. The players- humans this time- hold on to the rods in set positions. The two teams compete against each other to score the most goals in the allotted time. It is the life-sized version of regular foosball.",
-            rulebook: "",
-            image: "human_fooseball.jpg",
-        },
-        {
-            id: '9_4',
-            name: "The Boulevard Games",
-            content: "Thomso’17 presents it very own version of the popular English game-show, Minute to Win It. This event is an aggregation of fun and fast-paced tasks that are to be performed in a given duration. Being the master doesn’t help your cause here, the one thing that does, is you being the jack of these trades. So giddy up, and join the fun ride.",
-            rulebook: "",
-            image: "boulevard_games.jpg",
-        },
-        {
-            id: '9_5',
-            name: "Photo Booth",
-            content: "Photo booths at Thomso will provide you some goofy and memorable photographic moments. So get ready to pose wackily in front of the cameras with some awesome backgrounds and silly accessories that will add up to your fun and frolic in the fest.",
-            rulebook: "",
-            image: "photo_booth.jpg",
-        }]
+            image: "food_fiesta.jpeg",
+            prize: "50"
+        }
+        ]
     },
     {
         id: 10,
@@ -342,9 +346,49 @@ export const EventDetails =
         ]
     },
     {
+        id: 5,
+        name: "Adventure",
+        image: "adventure.jpeg",
+        subevents:
+        [
+        {
+            id: '5_1',
+            name: "Thomso's Got Talent",
+            content: "Talent is entrusted to a man as a treasure which must not be squandered. Do you have a flair towards the extraordinary? Do you have the motivation to transform your talent into genius? This Thomso, we offer you a chance to spread your wings and explore your talents in front of a captivating audience. This event has its participants showcasing their superfluity of talents, be it singing, dancing, comedy, magic or any quirky thing you are passionately curious about. So get all riled up, practice, perfect and work your way towards glory in this gem of an event.",
+            rulebook: "https://drive.google.com/open?id=1s1QbdEa3hD77RzuASKhsm_93lpKXB3Bs",
+            image: "tgt.jpg",
+            prize: "50"
+        },
+        {
+            id: '5_2',
+            name: "Seiger",
+            content:"Seiger is IIT Roorkee’s own rendition of the very (in)famous TV show, Roadies! Come and try your best not to embarrass yourself as our own Raghu goes full-throttle on you!",
+            rulebook: "https://drive.google.com/open?id=1EqAaVK-NmJB8TLQi8gy925wXm0EsqxTw",
+            image: "seiger.jpg",
+            prize: "40"
+        },
+        {
+            id: '5_3',
+            name: "Street Soccer",
+            content: "Street soccer is an informal game of soccer played in the street. A more happening and exciting version of the formal game, the main objective of both the games remains the same. The players aim to score goals by advancing the ball down the field into the opposing team's goal. And the team with the maximum goals win." ,
+            rulebook: "https://drive.google.com/open?id=1oLo0W5DHkrlHzI3wnPFzHLMEwbQ78CnN",
+            image: "street_soccer.jpg",
+            prize: "15"
+        },
+        {
+            id: '5_4',
+            name: "Scavenger Hunt",
+            content: "A game typically played in extensive outdoor area in which participants have to collect a number of miscellaneous objects. Organisers prepare a list defining items which the participant have to seek or gather. The team which returns first with all the items becomes the winner." ,
+            rulebook: "https://drive.google.com/open?id=1H03bzNSsQy9A2B8eH9dQN76rFQB1eIL8",
+            image: "scavenger_hunt.jpg",
+            prize: "10"
+        }]
+    },
+
+    {
         id: 11,
         name: "LITFest",
-        image: "literature.jpg",
+        image: "literature.jpeg",
         subevents:
         [
         { 	id: '11_1',
@@ -388,23 +432,21 @@ export const EventDetails =
         {
             id: '11_6',
             name: "Kavi Sammelan",
-            content: "",
-            rulebook: "nhi chahiye",
-            image: "",
+            content: "A poem defines the very sense of serenity and provides evasion from the idea of materialism.Poetry is when an emotion has found its thought and the thought has found words. Kavi Sammelan is a gathering of poets where the participants recite their poetry to each other and have a general discussion of literary issues. Do come to sense the overflow of feelings.",
+            image: "kavi_sammelan.jpg",
         },
         {
             id: '11_7',
             name: "Slam Poetry",
-            content: "",
-            rulebook: "nhi chahiye",
-            image: "",
+            content: "Literature tends to gravitate toward concepts universal to the human experience, but there is something special about the experience of watching an author recite a poem tailor made for performance. We invite you on a journey to experience poetry in its most natural and raw form, and to witness our slam poets performing live at the Thomso LITFest.",
+            image: "slam_poetry.jpg",
         },
         {
             id: '11_8',
             name: "Parliamentary Debate",
             content: `“Standing up there, the faces looking up at me, the things in my head coming out of my mouth, while my brain searched for the next best thing to follow what I was saying, and if I could sway them to my side by handling it right, then I had won the debate--once my feet got wet, I was gone on debating”. – Malcolm X. Debating is an integral part of a democracy. Debate stimulates and refines communication skills that empower individuals to speak for themselves, to discover and use their own voices. This is your chance to showcase your skills as an orator and have fun as well.`,
             rulebook: "https://drive.google.com/open?id=1vy3xD__awFh5iJvOyQTp2hNt5YCblURQ",
-            image: "",
+            image: "parliamentary_debate.jpg",
             prize: "50"
         },
         {
@@ -412,7 +454,7 @@ export const EventDetails =
             name: "Model United Nations",
             content: "True to the spirit of the United Nations, this event strives to foster a constructive forum for open dialogue on complex global issues, including international peace and security, and economic and social progress. During the conference, students learn the importance of balancing national interests with the needs of the international community, while also learning about the powers and limitations of international negotiation. Delegates will preserve their countries’ national policy while negotiating in the face of other, sometimes conflicting, international policies",
             rulebook: "https://drive.google.com/open?id=1gv0uMPpq-4FIpGy1mQezwaUKGNufd6Yf",
-            image: "",
+            image: "mun.jpg",
             prize: "50"
         },
         
@@ -420,114 +462,65 @@ export const EventDetails =
         ]
     },
     {
-    id: 12,
-    name: "Marketing & Finance",
-    image: "Marketing_Finance.jpg",
-    subevents:
-    [
-        { 	id: '12_1',
-            name: "Auction frenzy",
-            content: "It’s the time of the year when players go under the hammer. Welcome to Thomso’s edition of IPL auction. It’s time to place your bid. But beware. Don’t forget to analyze and assess the situation before expending. Build your dream team. Choose among the top players from around the world. Trust your intuition and spend wisely in the high paced bidding frenzy.",
-            rulebook: "https://drive.google.com/open?id=1DWva0KwY59wi4_O8Nn5ESvSCEOv6Xgfu",
-            image: "player_auction_frenzy.jpg",
-            prize: "10"
-        },
-        { 	id: '12_2',
-            name: "Corporata",
-            content: "How much do you know when it comes to finance and economics?Here’s a chance to build upon that financial repertoire of yours and sharpen your business acumen.Corporata provides you a platform to boast about your financial literacy and general economic awareness. Test your understanding of core financial knowledge against the best in the game and astound the jury with your business insights.With fierce competition and loads of rewards to be won, this sure is going to be a nerve-wracking contest.",
-            rulebook: "https://drive.google.com/open?id=133S6OjM4ghzciQHx_kGIsK6MEhpewQf8",
-            image: "corporata.jpg",
-            prize: "20"
-        },
-        { 	id: '12_3',
-            name: "Mark Sense",
-            content: "Introduction Mark - Sense: Marketing Event For Poster Quotes that can be used: Marketing is a race without a finishing line ― Philip Kotler.",
-            rulebook: "https://drive.google.com/open?id=1JS-bKIJ1dRx6iBCmwfkm7cKWLTYVj1AO",
-            image: "mark_sense.jpg",
-            prize: "15"
-        },
-        { 	id: '12_4',
-            name: "Soci O Fun",
-            content: "The way to get started is quit talking and begin doing. Ever intrigued by an idea, looked at a business and pondered ‘I can do that!!!’. Enactus IITR brings to you a wonderful opportunity ' Socio Fun '.A business plan event.  Inscribe your dream. Hurry registrations !!!!",
-            rulebook: "soci_o_fun.pdf",
-            image: "soci_o_fun.jpg",
-            prize: "10"
-        },
-        { 	id: '12_5',
-            name: "A(D)ESIGN",
-            content: "How often do you find yourself skipping advertisements or impatiently waiting for an ad to get over? And how often do you come across ones that you could watch over and over again because they are witty and humorous?! Surely, there aren’t half as many! So, here’s your chance to take charge! IIT Roorkee gives you a chance to create your very own advertisement and be as creative, funny, educational and entertaining as possible! The only ads that we actually watch are the ones we find most engaging, so here is an opportunity to command the attention of thousands and to showcase your creativity and directing skills in an advertisement that will spread your message on a tremendous platform!",
-            rulebook: "https://drive.google.com/open?id=1ZU63Fj3UH4MofsT0TYD7reHbiu1tnXl2",
-            image: "",
-        },
-        { 	id: '12_6',
-            name: "Cognet Wheelhouses",
-            content: "Ever dreamt about being an CXO of a company? Well, here’s a chance to think and act as a CXO and build something of your own. Cogent Wheelhouses provides you with an opportunity to test various skills required while working for an organization in the corporate world. It will be an occasion where one can innovate, build a team, take decisions and numerous other things. So, get ready to witness some fierce competition and out of the box thinking.",
-            rulebook: "https://drive.google.com/open?id=1bUJqauG__zMPitHB1Kfi6xTaFRCY7YFe",
-            image: "",
-        },
-        { 	id: '12_7',
-            name: "Negotium Consillium",
-            content: "Have you ever felt a problem too trivial to be ignored for so long yet remains unsolved till now? Or an idea of utmost importance but lacks the feasibility which you have been able to unearth? Then this is your chance to showcase your problem-solving skills and analytic acumen as you put on a business hat and devise a business plan that could change the world as we see it. Envision and let your thoughts transcend into reality in the form of a winning game plan.",
-            rulebook: "https://drive.google.com/open?id=1aWWvdZNT4VisHkpHJi96D6ADIafppk8E",
-            image: "",
-        }
-        ]
-    },
-    {
-        id: 13,
-        name: "Quizzing",
-        image: "quizzing.jpg",
-        subevents: 
-        [
-        { 	id: '13_1',
-            name: "Quriosity",
-            content: "Do you know everything from the funfacts about infinity war to the intracacies of global economics? Are you generally shunned among peers for being a know-it-all?( OR: does information unintentionally comes blurting out whenever you open your mouth?) Well here you can actually win prizes for that! So come and embrace the chance to show the ignoramuses that information is the real wealth! Five quizzing events shall be held. 1. Titans of Trivia– The general quiz. 2. The MELA – Music, Entertainment, Literature and Art 3. The India Quiz 4. The Sports Quiz 5. The Business Quiz",
-            rulebook: "https://drive.google.com/open?id=1uOb-EbhNS4dVh1tFBTx7YsSm0RtPqW2V",
-            image: "quriosity.jpg",
-            prize: "25"
-        },
-        { 
-            id: '13_2',
-            name: "Telly Sporcle",
-            content: "This event will comprise of questionnaires related to 5 popular American TV Series: Suits, How I Met Your Mother, Sherlock, F.R.I.E.N.D.S. and Game of Thrones. Participants will participate in teams of two.",
-            rulebook: "https://drive.google.com/open?id=11F1txAgLRcH1dWBPL6MXXOBSstgZZ5dd",
-            image: "tellysporcle.jpg",
-            prize: "10"
-        }]
-    },
-    {
         id: 14,
         name: "Nightlife",
-        image: "quizzing.jpg",
+        image: "nightlife.jpg",
         subevents: 
         [
         { 	id: '14_1',
             name: "Silent DJ",
-            content: "",
+            content: "Witness Music screaming aloud in silence with Silent DJ hitting the lands of Thomso’18. Coolness is overloaded as the dynamics of DJing flip into headphone tactics. This silent disco gig is a gem in the crown of Thomso. Partying all night with headphones on will be a experience worth everyone's remembrance.",
             rulebook: "",
-            image: ""	,
+            image: "silentdj.jpg"	,
         },
         { 
             id: '14_2',
             name: "Nightlife Cafe",
-            content: "",
+            content: "If the days are ecstatic at Thomso, then the nights are charismatic. The nightlife cafe will be the destination for fun and amusement on the starry nights of Thomso’18. The stage at nightlife cafe is open to all. Grab the mic, feel the ambiance and enjoy the show under the noir blanket of sky full of stars.",
             rulebook: "",
-            image: "",
+            image: "nightlife_cafe.jpg",
         }]
     },
     {
-        id: 15,
-        name: "Culinary",
-        image: "quizzing.jpg",
-        subevents: 
+        id: 9,
+        name: "Carnival",
+        image: 'carnival.jpg',
+        subevents:
         [
-        { 	id: '15_1',
-            name: "Food Fiesta",
-            content: "",
+        {   
+            id: '9_1',
+            name: "Paintball",
+            content: "Paintball is a fun sport in which players eliminate opponents from play by hitting them with dye-filled paintballs or pellets, shot from a paintball marker or gun. The players must attempt to accomplish a goal without being shot and marked with a paintball. Masks and goggles are used as safety equipments.",
             rulebook: "",
-            image: "",
-            prize: "50"
-        }
-        ]
+            image: "paintball.jpg",
+        },
+        {
+            id: '9_2',
+            name: "Body Zorbing",
+            content: "Imagine yourself falling,  bumping and rolling clumsily as you are enclosed in a transparent bubble ball. This is body zorbing, a super fun sport with the participant wearing a large and colourless inflattable capsule. Along with extreme fun and enjoyment, the body zorb ensures complete safety and comfortable breathing. So lets enjoy this high - energy, fun - time sport.",
+            rulebook: "",
+            image: "body_zorbing.jpg",
+        },
+        {
+            id: '9_3',
+            name: "Human foosball",
+            content: "The human Foosball is like the classic table top Foosball, however, it is played with real people, a soccer ball and in a large enclosed arena. The players- humans this time- hold on to the rods in set positions. The two teams compete against each other to score the most goals in the allotted time. It is the life-sized version of regular foosball.",
+            rulebook: "",
+            image: "human_fooseball.jpg",
+        },
+        {
+            id: '9_4',
+            name: "The Boulevard Games",
+            content: "Thomso’17 presents it very own version of the popular English game-show, Minute to Win It. This event is an aggregation of fun and fast-paced tasks that are to be performed in a given duration. Being the master doesn’t help your cause here, the one thing that does, is you being the jack of these trades. So giddy up, and join the fun ride.",
+            rulebook: "",
+            image: "boulevard_games.jpg",
+        },
+        {
+            id: '9_5',
+            name: "Photo Booth",
+            content: "Photo booths at Thomso will provide you some goofy and memorable photographic moments. So get ready to pose wackily in front of the cameras with some awesome backgrounds and silly accessories that will add up to your fun and frolic in the fest.",
+            rulebook: "",
+            image: "photo_booth.jpg",
+        }]
     }
 ]

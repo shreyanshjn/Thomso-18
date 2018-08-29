@@ -45,10 +45,9 @@
 {"_id":{"$oid":"5b8456be1715f612ef4192c5"},"isPrimary":true,"users":[{"$oid":"5b7f23d9544c4758871bcd6b"}],"event_id":"12_1","name":"Auction frenzy","__v":0}
 {"_id":{"$oid":"5b8456c71715f612ef4192c6"},"isPrimary":true,"users":[{"$oid":"5b7f23d9544c4758871bcd6b"}],"event_id":"12_2","name":"Corporata","__v":0}
 {"_id":{"$oid":"5b8456ce1715f612ef4192c7"},"isPrimary":true,"users":[{"$oid":"5b7f23d9544c4758871bcd6b"}],"event_id":"12_3","name":"Mark Sense","__v":0}
-{"_id":{"$oid":"5b8456d61715f612ef4192c8"},"isPrimary":false,"users":[{"$oid":"5b7f23d9544c4758871bcd6b"}],"event_id":"12_4","name":"Soci O Fun","__v":0}
 {"_id":{"$oid":"5b8456df1715f612ef4192c9"},"isPrimary":false,"users":[{"$oid":"5b7f23d9544c4758871bcd6b"}],"event_id":"12_5","name":"A(D)ESIGN","__v":0}
 {"_id":{"$oid":"5b8456e81715f612ef4192ca"},"isPrimary":false,"users":[{"$oid":"5b7f23d9544c4758871bcd6b"}],"event_id":"12_6","name":"Cognet Wheelhouses","__v":0}
-{"_id":{"$oid":"5b8456f11715f612ef4192cb"},"isPrimary":false,"users":[{"$oid":"5b7f23d9544c4758871bcd6b"}],"event_id":"12_7","name":"Negotium Consillium","__v":0}
+{"_id":{"$oid":"5b8456f11715f612ef4192cb"},"isPrimary":false,"users":[{"$oid":"5b7f23d9544c4758871bcd6b"}],"event_id":"12_4","name":"Negotium Consillium","__v":0}
 {"_id":{"$oid":"5b8456fd1715f612ef4192cc"},"isPrimary":true,"users":[{"$oid":"5b7f23d9544c4758871bcd6b"}],"event_id":"13_1","name":"Quriosity","__v":0}
 {"_id":{"$oid":"5b8457061715f612ef4192cd"},"isPrimary":true,"users":[{"$oid":"5b7f23d9544c4758871bcd6b"}],"event_id":"13_2","name":"Telly Sporcle","__v":0}
 {"_id":{"$oid":"5b8457f31715f612ef4192d2"},"isPrimary":false,"users":[],"event_id":"14_1","name":"Silent DJ","__v":0}
