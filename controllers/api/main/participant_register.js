@@ -157,7 +157,7 @@ exports.verifyOTP = function (req, res) {
                                         .exec(function (err, parti) {
                                             if (err) return res.json({ success: false, msg: 'Unable to Verify' });
                                             if (user.referred_by) {
-                                                Temp_User.update({ ca_id: user.referred_by }, { $inc: { referrals: 1 } }, function (error) {
+                                                Temp_User.update({ ca_id: user.referred_by }, { $inc: { referrals: 1, score: 23 } }, function (error) {
                                                     if (error) return res.json({ success: false, msg: 'Unable To Add Referrals' });
                                                     EventSchema.update(
                                                         { event_id: user.primary_event },

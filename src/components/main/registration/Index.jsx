@@ -36,6 +36,11 @@ export default class RegisterIndex extends React.Component {
     onChange = (e) => {
         const name = e.target.name;
         let value = e.target.value;
+        if (name === 'referred_by' && value) {
+            value = value.trim();
+            value = value.substring(0, 8)
+            value = value.toUpperCase();
+        }
         if (name === 'contact' && value) {
             value = value.trim();
             value = value.substring(0, 12)

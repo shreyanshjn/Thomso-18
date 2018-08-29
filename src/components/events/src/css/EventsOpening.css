@@ -46,7 +46,7 @@
 }
 .black_white_new:hover img{
     -webkit-transform: scale3d(1.1,1.1,1) !important;
-    /* transform: scale3d(1.1,1.1,1); */
+    transform: scale3d(1.1,1.1,1) !important;
     filter:grayscale(0%);
 }
 figure.nik-custom-effect-glass {

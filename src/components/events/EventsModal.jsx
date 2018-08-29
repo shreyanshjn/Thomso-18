@@ -81,9 +81,11 @@ export default class EventsModal extends React.Component {
             <div className="events-modala">
                 <div className="events-modala-main-child">
                     <div style={{ height: "10%", display: "flex", justifyContent: "space-between", borderBottom: "white 1px solid", overflow: 'hidden' }}>
-                        <p className="events-modala-p" >
-                            {this.state.data && this.state.data.name}
-                        </p>
+                        {this.state.data && this.state.data.name ?
+                            <p className="events-modala-p events-modala-p-marketing">
+                                {this.state.data.name}
+                            </p> : null
+                        }
                         <span href="" className="events-modal-close" onClick={() => this.props.modalClose()}>
                             &times;
                     </span>
