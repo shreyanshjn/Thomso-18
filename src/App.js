@@ -88,6 +88,10 @@ const Events = Loadable({
   loader: () => import("./components/events/Index"),
   loading: () => <Loader />
 })
+const CoordinatorsIndex = Loadable({
+  loader: () => import("./components/coordinators/Index"),
+  loading: () => <Loader />
+})
 class App extends Component {
   render() {
     return (
@@ -102,6 +106,7 @@ class App extends Component {
               <Route exact path="/associate" component={AccociateIndex} />
               <Route exact path="/quizardry" component={QuizardryIndex} />
               <Route exact path="/team" component={TeamIndex} />
+              <Route exact path="/coordinators" component={CoordinatorsIndex} />
               <Route exact path="/faq" component={FAQIndex} />
               <Route path="/ca/" component={CAIndex} />
               <Route path="/campusAmbassador/" component={CampusIndex} />
