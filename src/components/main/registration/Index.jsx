@@ -204,21 +204,6 @@ export default class RegisterIndex extends React.Component {
                                     />
                                 </div>
                             </div>
-                            <div className="form-add-child">
-                                <label htmlFor="inputAddress">Present College Address</label>
-                                <input
-                                    id="inputAddress"
-                                    type="text"
-                                    placeholder="Address Name"
-                                    name="address"
-                                    autoCorrect="off"
-                                    autoComplete="off"
-                                    autoCapitalize="on"
-                                    value={address}
-                                    onChange={this.onChange}
-                                    required
-                                />
-                            </div>
                             <div className="form-first-child">
                                 <div className="form-state">
                                     <label htmlFor="inputEvents">Primary Events</label>
@@ -239,9 +224,24 @@ export default class RegisterIndex extends React.Component {
                                     />
                                 </div>
                             </div>
+                            <div className="form-add-child">
+                                <label htmlFor="inputAddress">Present College Address</label>
+                                <input
+                                    id="inputAddress"
+                                    type="text"
+                                    placeholder="Address Name"
+                                    name="address"
+                                    autoCorrect="off"
+                                    autoComplete="off"
+                                    autoCapitalize="on"
+                                    value={address}
+                                    onChange={this.onChange}
+                                    required
+                                />
+                            </div>
                             <div className="form-first-child">
                                 <div className="form-name">
-                                <label htmlFor="inputPassword">Password</label>
+                                    <label htmlFor="inputPassword">Password</label>
                                     <input
                                         id="inputPassword"
                                         type="password"

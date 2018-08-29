@@ -100,19 +100,6 @@ export default class Sidebar extends React.Component {
               </div>
             </Link>
             <Link
-              to="/"
-              className="sideNavItem"
-            >
-              <div className="main-sidebar-profile flex_row">
-                <div className="main-sidebar-svg-logo">
-                  <Home />
-                </div>
-                <div className="main-sidebar-navitem-name">
-                  HOME
-                </div>
-              </div>
-            </Link>
-            <Link
               to="/events"
               className="sideNavItem"
             >
@@ -142,6 +129,19 @@ export default class Sidebar extends React.Component {
                 </div>
                 <div className="main-sidebar-navitem-name">
                   CONTACT US
+                </div>
+              </div>
+            </Link>
+            <Link
+              to="/"
+              className="sideNavItem"
+            >
+              <div className="main-sidebar-profile flex_row">
+                <div className="main-sidebar-svg-logo">
+                  <Home />
+                </div>
+                <div className="main-sidebar-navitem-name">
+                  HOME
                 </div>
               </div>
             </Link>
