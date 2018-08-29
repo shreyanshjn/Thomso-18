@@ -32,10 +32,12 @@ exports.verify = (req, res, next) => {
     var authHeader = req.get('Authorization')
     if (authHeader !== undefined) {
         // Find token in db
+        console.log(authHeader);
         Main_User_Token.findOne({
             token: authHeader,
             verified: true
         }, function(err, user) {
+            console.log(user);
             if (err) {
                 res.status(403).send({success: false, msg: 'Token Error'});
             } else if (!user) {

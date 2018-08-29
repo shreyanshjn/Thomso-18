@@ -61,7 +61,7 @@ export default class ResetPasswordEmailIndex extends React.Component{
                 <div className="register-child">
                     <div className="register-heading">
                         <div className="r-logo">
-                            <Link to="/main"><img src={img} alt="r-logo" /></Link>
+                            <Link to="/main/login"><img src={img} alt="r-logo" /></Link>
                         </div>
                         <div className="vertical_line">
                         </div>

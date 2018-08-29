@@ -12,20 +12,40 @@ var requiredVars = 'name email gender thomso_id college address contact verified
 
 exports.participant_registration = function (req, res) {
     if (req.body) {
-        if (req.body.name) req.body.name = req.body.name.trim();
+        if (req.body.name) {
+            req.body.name = req.body.name.trim();
+        }
         if (req.body.email) {
             req.body.email = req.body.email.toLowerCase();
             req.body.email = req.body.email.trim();
         }
-        if (req.body.contact) req.body.contact = req.body.contact.trim();
-        if (req.body.gender) req.body.gender = req.body.gender.trim();
-        if (req.body.college) req.body.college = req.body.college.trim();
-        if (req.body.state) req.body.state = req.body.state.trim();
-        if (req.body.branch) req.body.branch = req.body.branch.trim();
-        if (req.body.address) req.body.address = req.body.address.trim();
-        if (req.body.primary_event) req.body.primary_event = req.body.primary_event.trim();
-        if (req.body.referred_by) req.body.referred_by = req.body.referred_by.trim();
-        else req.body.referred_by = null
+        if (req.body.contact) {
+            req.body.contact = req.body.contact.trim();
+        }
+        if (req.body.gender) {
+            req.body.gender = req.body.gender.trim();
+        }
+        if (req.body.college) {
+            req.body.college = req.body.college.trim();
+        }
+        if (req.body.state) {
+            req.body.state = req.body.state.trim();
+        }
+        if (req.body.branch) {
+            req.body.branch = req.body.branch.trim();
+        }
+        if (req.body.address) {
+            req.body.address = req.body.address.trim();
+        }
+        if (req.body.primary_event) {
+            req.body.primary_event = req.body.primary_event.trim();
+        }
+        if (req.body.referred_by) {
+            req.body.referred_by = req.body.referred_by.trim();
+        } else {
+            req.body.referred_by = null
+        }
+        var otp = Generator.generateOTP();
         var data = {
             name: req.body.name,
             contact: req.body.contact,
@@ -39,48 +59,37 @@ exports.participant_registration = function (req, res) {
             password: req.body.password,
             referred_by: req.body.referred_by,
             event: [req.body.primary_event],
-            otp: '1511'
+            otp: otp
         };
-        if (data.name && data.contact && data.email && data.gender && data.college && data.state && data.branch && data.address && data.primary_event && data.password) {
+        if (data.name && data.contact && data.email && data.gender && data.college && data.state && data.branch && data.address && data.primary_event && data.event && data.password && data.otp) {
             var newUser = Main_User(data);
-            newUser.save(function (err) {
-                if (err) return res.json({ success: false, msg: 'Username already exist' });
-                var otp = Generator.generateOTP();
-                var generateHash = Generator.generateHash(req.body.password);
-                if (otp && generateHash) {
-                    generateHash.then(function (newHash) {
-                        if (newHash) {
-                            var updateData = {
-                                password: newHash,
+            newUser.save(function (err, user) {
+                if (err) {
+                    return res.json({success: false, msg: 'Email already exists', already: true});
+                } else if (!user) {
+                    return res.json({success: false, msg: 'Unable to save'});
+                } else {
+                    var genratedToken = TokenHelper.generateUserToken(user.name, user.email);
+                    if (genratedToken) {
+                        var newToken = {
+                            email: req.body.email,
+                            verified: false,
+                            token: genratedToken,
+                            expiration_time: moment().day(30),
+                            updated_date: new Date()
+                        };
+                        var addToken = new Main_User_Token(newToken);
+                        addToken.save(function (err) {
+                            if (err) return res.json({ success: false, msg: 'Token Already Exists' });
+                            mailer.participantRegister({
+                                name: user.name,
+                                email: user.email,
                                 otp: otp
-                            };
-                            Main_User.update({ email: req.body.email }, updateData)
-                                .exec(function (err) {
-                                    if (err) return res.status(400).send({ success: false, msg: 'Unable To Register' })
-                                    var genratedToken = TokenHelper.generateUserToken("data.email", data.email);
-                                    if (genratedToken) {
-                                        var newToken = {
-                                            email: req.body.email,
-                                            verified: false,
-                                            token: genratedToken,
-                                            expiration_time: moment().day(30),
-                                            updated_date: new Date()
-                                        };
-                                        var addToken = new Main_User_Token(newToken);
-                                        addToken.save(function (err) {
-                                            if (err) return res.json({ success: false, msg: 'Token Already Exists' });
-                                            mailer.participantRegister({
-                                                name: data.name,
-                                                email: data.email,
-                                                otp: otp
-                                            });
-                                            res.json({ success: true, token: genratedToken, msg: 'Successfully Registered!!' });
-                                        });
-                                    } else return res.status(400).send({ success: false, msg: 'Unable To generate token' });
-                                });
-                        }
-                    });
-                } else return res.status(400).send({ success: false, msg: 'Unable To generate token' });
+                            });
+                            res.json({ success: true, token: genratedToken, msg: 'Successfully Registered!!' });
+                        });
+                    } else return res.status(400).send({ success: false, msg: 'Unable To generate token' });
+                }
             });
         }
     }
@@ -119,10 +128,10 @@ exports.verifyOTP = function (req, res) {
                                         if (err) return res.json({ success: false, msg: 'Unable to Verify' });
 
                                         res.json({ success: true, body: parti, msg: 'Successfully verified' });
-                                        // mailer.participantVerified({
-                                        //     name: parti.name,
-                                        //     email: parti.email
-                                        // });
+                                        mailer.participantVerified({
+                                            name: parti.name,
+                                            email: parti.email
+                                        });
                                     });
                             } else {
                                 Counter.findByIdAndUpdate({ _id: 'participant_id' }, { $inc: { seq: 1 } }, { upsert: true, new: true }, function (error, cnt) {
@@ -162,10 +171,10 @@ exports.verifyOTP = function (req, res) {
                                             } else {
                                                 res.json({ success: true, body: parti, msg: 'Successfully verified' });
                                             };
-                                            // mailer.participantVerified({
-                                            //     name: parti.name,
-                                            //     email: parti.email
-                                            // });
+                                            mailer.participantVerified({
+                                                name: parti.name,
+                                                email: parti.email
+                                            });
                                         });
                                 })
                             }
@@ -249,6 +258,10 @@ exports.participant_login = function (req, res) {
 };
 
 exports.reset_password = function (req, res) {
+    if (req.body.email) {
+        req.body.email = req.body.email.toLowerCase();
+        req.body.email = req.body.email.trim();
+    }
     if (req && req.body && req.body.email && req.body.tempPassword && req.body.password) {
         Main_User.findOne({ email: req.body.email })
             .select('tempPassword')
@@ -275,6 +288,11 @@ exports.reset_password = function (req, res) {
                                         })
                                 } else return status(401).send({ success: false, msg: "Unable To create hash" })
                             })
+                            .catch (
+                                function (err) {
+                                    return res.status(400).send({ success: false, msg: 'Unable To create hash' });
+                                }
+                            )
                         }
                         else if (err) return res.json({ success: false, msg: "Something went wrong" })
                         else return res.json({ success: false, msg: "Wrong Password" })
@@ -286,11 +304,10 @@ exports.reset_password = function (req, res) {
 
 exports.reset_password_email = function (req, res) {
     if (req && req.body && req.body.email) {
-        // console.log(req.body)
-        // req.body.email = req.body.email.trim();
-        // var newPass = Generator.generatePassword(20);
-        var newPass = "prash";
-        if (newPass) {
+        req.body.email = req.body.email.toLowerCase();
+        req.body.email = req.body.email.trim();
+        var newPass = Generator.generatePassword(20);
+        if (newPass && req.body.email) {
             var generateHash = Generator.generateHash(newPass);
             generateHash.then(
                 function (newHash) {
@@ -305,7 +322,6 @@ exports.reset_password_email = function (req, res) {
                                     if (err) { return res.state(400).send({ success: false, msg: "Something Went Wrong" }) }
                                     if (!result) { return res.json({ success: false, msg: "Email Doesn't exist" }) }
                                     else {
-                                        // console.log(result)
                                         mailer.participantResetPassword({
                                             name: result.name,
                                             email: result.email,
@@ -318,6 +334,13 @@ exports.reset_password_email = function (req, res) {
                     }
                     else return res.status(400).send({ success: false, msg: 'Unable To create hash' });
                 })
+            .catch (
+                function (err) {
+                    return res.status(400).send({ success: false, msg: 'Unable To create hash' });
+                }
+            )
+        } else {
+            return res.status(400).send({ success: false, msg: 'Invalid Data' }); 
         }
     } else return res.status(400).send({ success: false, msg: 'Invalid Data' });
 }

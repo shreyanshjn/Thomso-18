@@ -42,7 +42,6 @@ export default class VerifyIndex extends React.Component {
                                 this.props.setUserData(res.data.body);
                             }
                             this.props.updateRoutes(true, true)
-                            this.Auth.setToken(res.data.token);
                             this.props.history.push('/main')
                         } else {
                             this.setState({ errors: res.data.msg, disabled: false })
@@ -94,7 +93,7 @@ export default class VerifyIndex extends React.Component {
                                     <input
                                         id="inputOTP"
                                         type="text"
-                                        placeholder="Enter OTP 1511"
+                                        placeholder="Enter OTP"
                                         name="otp"
                                         autoCorrect="off"
                                         autoComplete="off"

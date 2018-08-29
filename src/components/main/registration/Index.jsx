@@ -111,7 +111,7 @@ export default class RegisterIndex extends React.Component {
                                 : null
                             }
                             <div className="form-heading">
-                                <h2>Registration Here</h2>
+                                <h2>Register Here</h2>
                             </div>
                             <div className="form-first-child">
                                 <div className="form-name">

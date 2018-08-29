@@ -20,10 +20,7 @@ const CAIndex = Loadable({
   loader: () => import('./components/ca/Index'),
   loading: () => <Loader />,
 });
-// const ParticipantIndex = Loadable({
-//   loader: () => import('./components/participants/Index'),
-//   loading: () => <Loader />,
-// });
+
 const FAQIndex = Loadable({
   loader: () => import("./components/beta/faq/Index"),
   loading: () => <Loader />
@@ -80,10 +77,10 @@ const ZonalsIndex = Loadable({
   loader: () => import("./components/zonal/Index"),
   loading: () => <Loader />
 });
-// const MainIndex = Loadable({
-//   loader: () => import("./components/main/Index"),
-//   loading: () => <Loader />
-// })
+const MainIndex = Loadable({
+  loader: () => import("./components/main/Index"),
+  loading: () => <Loader />
+})
 const Events = Loadable({
   loader: () => import("./components/events/Index"),
   loading: () => <Loader />
@@ -105,13 +102,12 @@ class App extends Component {
               <Route exact path="/faq" component={FAQIndex} />
               <Route path="/ca/" component={CAIndex} />
               <Route path="/campusAmbassador/" component={CampusIndex} />
-              {/* <Route path="/participants/" component={ParticipantIndex} /> */}
               <Route path="/zonals" component={ZonalsIndex} />
 
               <Route path="/verifyCerti/" component={VerifyCerti} />
               <Route path="/policy" component={Policy} />
               <Route path="/terms" component={Terms} />
-              {/* <Route path="/main/" component={MainIndex} /> */}
+              <Route path="/main/" component={MainIndex} />
               <Route path="/events" component={Events} />
               {/* <Route component={Error404} /> */}
             </React.Fragment>

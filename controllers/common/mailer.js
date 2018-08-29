@@ -455,7 +455,7 @@ var participantRegister = function(user) {
                                                             Greetings from Thomso, IIT Roorkee!
                                                             <br>
                                                             <br>Congratulations, you have registered as the Participant for Thomso’18.
-                                                            <br>Your temporary OTP is <i><b>${user.otp}<b></i><br>To complete your registeration, sign in <a href="https://www.thomso.in/participant/verify" target="_blank">here</a> to verify your email.
+                                                            <br>Your temporary OTP is <i><b>${user.otp}<b></i><br>To complete your registeration, sign in <a href="https://www.thomso.in/main/verify" target="_blank">here</a> to verify your email.
                                                             <br>
                                                             <br>For any queries, reach out to us at <a href="mailto:info.thomso18@gmail.com" target="_blank">info.thomso18@gmail.com</a>
                                                         </p>
@@ -532,7 +532,6 @@ var participantVerified = function(user) {
                                                             <br>
                                                             <br> Congratulations, you have been successfully registered for Thomso’18.
                                                             <br> Your account has been verified.
-                                                            <br> We cordially welcome you to The Thomso family as a member of Thomso 18'.
                                                             <br>
                                                             <br> For any queries, reach out to us at <a href="mailto:info.thomso18@gmail.com" target="_blank">info.thomso18@gmail.com</a>
                                                         </p>
