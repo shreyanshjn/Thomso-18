@@ -80,7 +80,7 @@ export default class EventsModal extends React.Component {
         return (
             <div className="events-modala">
                 <div className="events-modala-main-child">
-                    <div style={{ height: "10%", display: "flex", justifyContent: "space-between", borderBottom: "white 1px solid" }}>
+                    <div style={{ height: "10%", display: "flex", justifyContent: "space-between", borderBottom: "white 1px solid", overflow: 'hidden' }}>
                         <p className="events-modala-p" >
                             {this.state.data && this.state.data.name}
                         </p>

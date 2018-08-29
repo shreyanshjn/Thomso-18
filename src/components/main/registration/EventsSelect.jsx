@@ -78,7 +78,7 @@ export default class Primary_eventsSelect extends Component {
                         value: event._id,
                         label: event.name,
                     }));
-                    this.setState({events: events})
+                    this.setState({ events: events })
                 }
             })
             .catch(e => {

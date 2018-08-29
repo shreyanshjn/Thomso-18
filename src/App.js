@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import "./App.css";
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Loadable from 'react-loadable';
 
 import Loader from "./components/common/Loader";
@@ -108,6 +108,7 @@ class App extends Component {
               <Route path="/policy" component={Policy} />
               <Route path="/terms" component={Terms} />
               <Route path="/main/" component={MainIndex} />
+              <Route path="/register" render={(props) => (<Redirect to="/main/" />)} />
               <Route path="/events" component={Events} />
               {/* <Route component={Error404} /> */}
             </React.Fragment>
