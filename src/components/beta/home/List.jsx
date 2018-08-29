@@ -33,11 +33,19 @@ class List extends Component {
         </li>*/}
                 <li>
                     <Link to="../quizardry" className={(this.state.activeStateLink === "quizardry") ? "list-quiz-link" : null}
-                        onClick={() => {
-                            this.setActiveLink("quizardry")
+                        onClick={()=>{
+                            this.setActiveLink("quizardry");
                         }}>
-                        QUIZARDRY
-            </Link>
+                QUIZARDRY
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/campusclicks" className={(this.state.activeStateLink === "campusclicks") ? "list-quiz-link" : null}
+                        onClick={()=>{
+                            this.setActiveLink("campusclicks");
+                        }}>
+                CAMPUS CLICKS
+                    </Link>
                 </li>
                 {/*<li>
           <a href="">OFFINE EVENTS</a>
@@ -62,7 +70,7 @@ class List extends Component {
             </Link>
                 </li>
                 <li>
-                    <Link to="../../zonals/delhi" className={(this.state.activeStateLink === "zonals-delhi") ? "list-zonals-link" : null}
+                    <Link to="/zonals/delhi" className={(this.state.activeStateLink === "zonals-delhi") ? "list-zonals-link" : null}
                         onClick={() => {
                             this.setActiveLink("list-zonals-delhi")
                         }}>
@@ -70,7 +78,7 @@ class List extends Component {
             </Link>
                 </li>
                 <li>
-                    <Link to="../../zonals/lucknow" className={(this.state.activeStateLink === "zonals-lucknow") ? "list-zonals-lucknow" : null}
+                    <Link to="/zonals/lucknow" className={(this.state.activeStateLink === "zonals-lucknow") ? "list-zonals-lucknow" : null}
                         onClick={() => {
                             this.setActiveLink("list-zonals-lucknow")
                         }}>
