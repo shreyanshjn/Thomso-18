@@ -66,15 +66,33 @@ class Navbar extends Component {
                 </Link>
                 </li> */}
                                 <li className="dropdown">
-                                    <Link to="" className={(this.state.activeState === "quizardry") ? "linkEvents" : null}
+                                    <Link to="#" className={(this.state.activeState === "#") ? "linkEvents" : null}
                                         onClick={() => {
-                                            this.setActive("quizardry");
-                                        }}>ONLINE EVENTS</Link>
+                                            this.setActive("#");
+                                        }}>EVENTS
+                                    </Link>
                                     <div className="beta-navbar-dropdown-content">
-                                        <Link to="../quizardry" className={(this.state.activeState === "quizardry") ? "linkEventson" : null}
+                                        <Link to="#" className="events-online-navbar-option">
+                                           ONLINE EVENTS
+                                        </Link>
+                                        <Link to="../quizardry" style={{marginLeft:"15px"}} className={(this.state.activeState === "quizardry") ? "linkEventson" : null}
                                             onClick={() => {
                                                 this.setActive("quizardry");
-                                            }}>QUIZARDRY</Link>
+                                            }}>Quizardry
+                                        </Link>
+                                        <Link to="/campusclicks" style={{marginLeft:"15px"}}  className={(this.state.activeState === "campusclicks") ? "linkEventson" : null}
+                                            onClick={() => {
+                                                this.setActive("campusclicks");
+                                            }}>Campus Clicks
+                                        </Link>
+                                        <Link to="#" className="events-offline-navbar-option">
+                                            OFFLINE EVENTS
+                                        </Link>
+                                        <Link to="/events"  style={{marginLeft:"15px"}} className={(this.state.activeState === "events") ? "linkEvents" : null}
+                                            onClick={() => {
+                                                this.setActive("events");
+                                            }}>Events
+                                        </Link>
                                         {/*  <Link to="" className={(this.state.activeState === "linkEventsoff") ? "linkEventsoff" : null}
                     onClick={() => {
                                     this.setActive("linkEventsoff");
@@ -97,7 +115,8 @@ class Navbar extends Component {
                                     <Link to="../../main" className={(this.state.activeState === "main") ? "linkSponsors" : null}
                                         onClick={() => {
                                             this.setActive("main");
-                                        }}>PARTICIPATE</Link>
+                                        }}><span className="zonals-navbar-option">PARTICIPATE</span><span className="zonals-navbar-new">new</span></Link>
+
                                 </li>
                                 <li className="dropdown">
                                     <Link to="" className={(this.state.activeState === "lucknow") ? "linkLucknow" : null}
