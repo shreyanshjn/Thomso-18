@@ -36,7 +36,7 @@
 }
 .events-opening-decrease-opacity
 {
-    opacity:0.05; 
+    opacity:0;
 }
 .black_white_new img{
     -webkit-transition: all 0.1s;
@@ -46,14 +46,24 @@
 }
 .black_white_new:hover img{
     -webkit-transform: scale3d(1.1,1.1,1) !important;
-    /* transform: scale3d(1.1,1.1,1); */
+    -moz-transform: scale3d(1.1,1.1,1) !important;
+    transform: scale3d(1.1,1.1,1);
     filter:grayscale(0%);
 }
 figure.nik-custom-effect-glass {
     background: black;
     border-radius: 3px;
 }
-
+.events-scroll{
+    display: flex;
+    justify-content: center;
+}
+.events-not-scroll{
+    display: flex;
+    justify-content: center;
+    height: 95vh;
+    overflow: hidden;
+}
 figure.nik-custom-effect-glass img {
     opacity: 1;
     -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
