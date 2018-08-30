@@ -39,7 +39,7 @@ export default class Profile extends React.Component {
         return (
             <tr>
                 <td className="table-child-one" style={this.state.deleted ? {textDecoration: 'line-through'} : null}>
-                    {this.props.index + 1}. &nbsp; {this.props.data ? this.props.data.event_id : null} {this.props.data ? this.props.data.name : null}
+                    {this.props.index + 1}. &nbsp; {this.props.data ? this.props.data.name : null}
                 </td>
                 <td className="table-child-two" onClick={this.onRemove} style={this.state.deleted ? {cursor: 'not-allowed'} : {cursor: 'pointer'} }>
                     <img src={dustbin} alt="delete" className="main-events-bin"/>

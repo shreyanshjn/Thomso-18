@@ -1,14 +1,31 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
+
+import AuthService from "../../../handlers/main/AuthService";
 import "./src/css/List.css";
 
 class List extends Component {
     constructor() {
         super();
         this.state = {
-            activeStateLink: window.location.pathname.substring(1)
+            activeStateLink: window.location.pathname.substring(1),
+            isAuthenticated: false
         };
-        this.setActiveLink = this.setActiveLink.bind(this)
+        this.setActiveLink = this.setActiveLink.bind(this);
+        this.Auth = new AuthService();
+    }
+    componentWillMount() {
+        const isAuthenticated = this.Auth.hasToken();
+        if (this.props.detail && this.props.detail.subevents) {
+            const filteredData = this.props.detail.subevents.filter(e => e.id === this.props.id);
+            if (filteredData) {
+                this.setState({ data: filteredData[0], isAuthenticated });
+            } else {
+                this.setState({ isAuthenticated })
+            }
+        } else if (isAuthenticated) {
+            this.setState({ isAuthenticated })
+        }
     }
     setActiveLink(state) {
         this.setState({
@@ -33,11 +50,19 @@ class List extends Component {
         </li>*/}
                 <li>
                     <Link to="../quizardry" className={(this.state.activeStateLink === "quizardry") ? "list-quiz-link" : null}
-                        onClick={() => {
-                            this.setActiveLink("quizardry")
+                        onClick={()=>{
+                            this.setActiveLink("quizardry");
                         }}>
-                        QUIZARDRY
-            </Link>
+                QUIZARDRY
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/campusclicks" className={(this.state.activeStateLink === "campusclicks") ? "list-quiz-link" : null}
+                        onClick={()=>{
+                            this.setActiveLink("campusclicks");
+                        }}>
+                CAMPUS CLICKS
+                    </Link>
                 </li>
                 {/*<li>
           <a href="">OFFINE EVENTS</a>
@@ -58,11 +83,11 @@ class List extends Component {
                         onClick={() => {
                             this.setActiveLink("main")
                         }}>
-                        PARTICIPATE
+                        {this.state.isAuthenticated ? 'DASHBOARD' : 'PARTICIPATE'}
             </Link>
                 </li>
                 <li>
-                    <Link to="../../zonals/delhi" className={(this.state.activeStateLink === "zonals-delhi") ? "list-zonals-link" : null}
+                    <Link to="/zonals/delhi" className={(this.state.activeStateLink === "zonals-delhi") ? "list-zonals-link" : null}
                         onClick={() => {
                             this.setActiveLink("list-zonals-delhi")
                         }}>
@@ -70,7 +95,7 @@ class List extends Component {
             </Link>
                 </li>
                 <li>
-                    <Link to="../../zonals/lucknow" className={(this.state.activeStateLink === "zonals-lucknow") ? "list-zonals-lucknow" : null}
+                    <Link to="/zonals/lucknow" className={(this.state.activeStateLink === "zonals-lucknow") ? "list-zonals-lucknow" : null}
                         onClick={() => {
                             this.setActiveLink("list-zonals-lucknow")
                         }}>

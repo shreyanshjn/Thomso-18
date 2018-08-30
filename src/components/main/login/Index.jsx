@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom' ;
+import { Link } from 'react-router-dom';
 
 import FetchApi from "../../../utils/FetchAPI";
 import validateInput from '../../../utils/validation/loginValidation';
@@ -7,6 +7,7 @@ import AuthService from '../../../handlers/main/AuthService';
 
 import img from "../../campusAmbassador/register/img/logo.png"
 import "../../campusAmbassador/register/css/register.css";
+import "../verify/verify.css"
 
 export default class LoginIndex extends React.Component {
     constructor(props) {
@@ -81,7 +82,7 @@ export default class LoginIndex extends React.Component {
     render() {
         const { email, password, errors, disabled } = this.state;
         return (
-            <div className="register-parent">
+            <div className="main-verify-register-parent">
                 <div className="register-child">
                     <div className="register-heading">
                         <div className="r-logo">
@@ -90,13 +91,13 @@ export default class LoginIndex extends React.Component {
                         <div className="vertical_line">
                         </div>
                         <div className="register-ca common-cursor">
-                            <h1>Paricipant<br /> Login</h1>
+                            <h1>Paricipant Login</h1>
                         </div>
                     </div>
                     <div className="register-form">
                         <form onSubmit={this.onSubmit}>
                             {errors ?
-                                <div style={{textAlign: 'center', color: 'red', fontWeight: '600'}}>
+                                <div style={{ textAlign: 'center', color: 'red', fontWeight: '600' }}>
                                     {errors}
                                 </div>
                                 : null
@@ -122,21 +123,21 @@ export default class LoginIndex extends React.Component {
                                 </div>
                                 <div className="form-contactnumber form-gender">
                                     <input
-                                        id="inputPassword" 
-                                        type="password" 
-                                        placeholder="Password" 
-                                        name="password" 
-                                        autoCorrect="off" 
-                                        autoComplete="off" 
-                                        autoCapitalize="off" 
-                                        value={password} 
-                                        onChange={this.onChange} 
+                                        id="inputPassword"
+                                        type="password"
+                                        placeholder="Password"
+                                        name="password"
+                                        autoCorrect="off"
+                                        autoComplete="off"
+                                        autoCapitalize="off"
+                                        value={password}
+                                        onChange={this.onChange}
                                         required
                                     />
                                 </div>
                             </div>
-                            <div style={{marginTop: '10px', fontSize: '0.8em', textAlign: 'center'}}>* Forgot Password? Click 
-                                <span style={{color: 'cyan', cursor: 'pointer'}} onClick={() => this.props.history.push('/main/resetPasswordEmail')}> 
+                            <div style={{ marginTop: '10px', fontSize: '0.8em', textAlign: 'center' }}><i>* Forgot Password</i>? Click
+                                <span style={{ color: 'red', cursor: 'pointer', textDecoration: 'underline' }} onClick={() => this.props.history.push('/main/resetPasswordEmail')}>
                                     &nbsp;here&nbsp;
                                 </span>
                                 to reset

@@ -134,7 +134,7 @@
     position:fixed;
     height:100vh;
     width:100%;
-    z-index:100;
+    z-index:999;
 }
 .events-modal-close
 {
@@ -144,6 +144,7 @@
     display:flex;
     align-items:center;
     cursor:pointer;
+    transform: scale(3);
 }
 .events-modala-p
 {
@@ -230,7 +231,7 @@
         width:90%;
         margin-left: auto;
         margin-right: auto;
-        height: 20vh;
+        height: 15vh;
         overflow: scroll;
     }
     .events-list-child
@@ -242,7 +243,7 @@
     {
         display:flex;
         flex-direction: column;
-        height: calc(97vh - 210px);
+        height: calc(93vh - 210px);
     }
     .events-text-child
     {
@@ -259,7 +260,7 @@
         justify-content: center;
     }
     .events-registration{
-        bottom: -2vh;
+        bottom: 0vh;
         left: 2%;
     }
     .events-details-image > img
@@ -285,11 +286,14 @@
         padding: 0px 5px 0px 0px;
         margin-left: auto;
         margin-right: auto;
-        bottom: -1vh;
+        bottom: 45px;
     }
     .arrow-button-events{
         margin-left: 5px;
         margin-right: 5px;
+    }
+    .events-modala-p-marketing {
+        font-size: 1.5em;
     }
 }
 @media (min-width: 1920px) and (max-width: 2560px)
@@ -334,7 +338,7 @@
         font-size: 2.7em;
     }
     .events-text-scroll-cont p{
-        font-size: 1.5em;
+        font-size: 1.4em;
     }
     .events-registration{
         font-size: 1.8em;
@@ -355,12 +359,34 @@
         flex-direction: row;
     }
     .events-registration{
-        bottom: -5vh;
+        bottom: 1vh;
         left: 18%;
     }
     .events-list-child{
         display: none;
     }
-
-
+    .events-modala-p
+    {
+        font-size: 1em;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .events-modala-p-marketing {
+        font-size: 1em;
+    }
+    .events-details-parent
+    {
+        height: calc(90vh - 110px);
+        padding: 5px;
+    }
+    .events-modals-last-arrow {
+        bottom: 12vh;
+    }
+    .events-text-scroll-cont {
+        height: 40vh;
+        margin-top: 10px;
+    }
+    .events-text-child {
+        padding-top: 14px;
+    }
 }

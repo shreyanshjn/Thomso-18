@@ -8,6 +8,7 @@ import StateSelect from "../../campusAmbassador/register/StateSelect";
 import validateInput from '../../../utils/validation/loginValidation';
 import AuthService from '../../../handlers/main/AuthService';
 import EventsSelect from "./EventsSelect";
+import "../verify/verify.css";
 
 import "../../campusAmbassador/register/css/register.css";
 
@@ -36,6 +37,11 @@ export default class RegisterIndex extends React.Component {
     onChange = (e) => {
         const name = e.target.name;
         let value = e.target.value;
+        if (name === 'referred_by' && value) {
+            value = value.trim();
+            value = value.substring(0, 8)
+            value = value.toUpperCase();
+        }
         if (name === 'contact' && value) {
             value = value.trim();
             value = value.substring(0, 12)
@@ -90,7 +96,7 @@ export default class RegisterIndex extends React.Component {
     render() {
         const { name, contact, email, gender, branch, address, errors, referred_by, password, confirmPassword } = this.state;
         return (
-            <div className="register-parent">
+            <div className="main-verify-register-parent">
                 <div className="register-child">
                     <div className="register-heading">
                         <div className="r-logo">
@@ -99,7 +105,7 @@ export default class RegisterIndex extends React.Component {
                         <div className="vertical_line">
                         </div>
                         <div className="register-ca common-cursor">
-                            <h1>Participant<br /> Registration</h1>
+                            <h1>Participant Registration</h1>
                         </div>
                     </div>
                     <div className="register-form">
@@ -111,7 +117,7 @@ export default class RegisterIndex extends React.Component {
                                 : null
                             }
                             <div className="form-heading">
-                                <h2>Registration Here</h2>
+                                <h2>Register Here</h2>
                             </div>
                             <div className="form-first-child">
                                 <div className="form-name">
@@ -148,7 +154,7 @@ export default class RegisterIndex extends React.Component {
                             </div>
                             <div className="form-first-child">
                                 <div className="form-email">
-                                    <label htmlFor="inputEmail">Email</label>
+                                    <label htmlFor="inputEmail">Email (For OTP)</label>
                                     <input
                                         id="inputEmail"
                                         type="email"
@@ -206,7 +212,7 @@ export default class RegisterIndex extends React.Component {
                             </div>
                             <div className="form-first-child">
                                 <div className="form-state">
-                                    <label htmlFor="inputEvents">Primary Events</label>
+                                    <label htmlFor="inputEvents">Primary Event</label>
                                     <EventsSelect onChange={primary_event => this.setState({ primary_event })} />
                                 </div>
                                 <div className="form-branch">
@@ -214,7 +220,7 @@ export default class RegisterIndex extends React.Component {
                                     <input
                                         id="inputRefferedBy"
                                         type="text"
-                                        placeholder="Referral Code"
+                                        placeholder="Referral Code (Optional)"
                                         name="referred_by"
                                         autoCorrect="off"
                                         autoComplete="off"

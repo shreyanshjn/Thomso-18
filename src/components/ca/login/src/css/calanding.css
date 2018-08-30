@@ -17,10 +17,14 @@
 .ca-landing-heading > .ca-landing-ca >h2
 {
     color:white;
+    opacity: 0.8;
+    font-size: 1.6em;
+    font-weight: 600;
     font-family:Montserrat;
 }
 .ca-landing-ca{
     padding-left: 20px;
+    margin: auto 0px;
 }
 .vertical_line{
     height: 35px;

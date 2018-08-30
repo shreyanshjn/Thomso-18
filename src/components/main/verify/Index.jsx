@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom' ;
+import { Link } from 'react-router-dom';
 
 import FetchApi from "../../../utils/FetchAPI";
 import AuthService from '../../../handlers/main/AuthService';
@@ -42,7 +42,6 @@ export default class VerifyIndex extends React.Component {
                                 this.props.setUserData(res.data.body);
                             }
                             this.props.updateRoutes(true, true)
-                            this.Auth.setToken(res.data.token);
                             this.props.history.push('/main')
                         } else {
                             this.setState({ errors: res.data.msg, disabled: false })
@@ -61,7 +60,7 @@ export default class VerifyIndex extends React.Component {
     render() {
         const { otp, errors, disabled } = this.state;
         return (
-            <div className="register-parent">
+            <div className="main-verify-register-parent">
                 <div className="register-child">
                     <div className="register-child-child">
                         <div className="register-heading">
@@ -81,7 +80,7 @@ export default class VerifyIndex extends React.Component {
                     <div className="register-form">
                         <form onSubmit={this.onSubmit}>
                             {errors ?
-                                <div style={{textAlign: 'center', color: 'red', fontWeight: '600'}}>
+                                <div style={{ textAlign: 'center', color: 'red', fontWeight: '600' }}>
                                     {errors}
                                 </div>
                                 : null
@@ -94,7 +93,7 @@ export default class VerifyIndex extends React.Component {
                                     <input
                                         id="inputOTP"
                                         type="text"
-                                        placeholder="Enter OTP 1511"
+                                        placeholder="Enter OTP Sent To Your Email"
                                         name="otp"
                                         autoCorrect="off"
                                         autoComplete="off"
