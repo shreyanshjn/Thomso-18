@@ -17,7 +17,8 @@ export default class Sidebar extends React.Component {
     super(props);
     this.state = {
       referral: 'AVSHFSAD',
-      activeState: window.location.pathname.substring(6)
+      activeState: window.location.pathname.substring(6),
+      days: 0
     };
     if (!window.location.pathname.substring(6)) {
       this.state = {
@@ -34,7 +35,7 @@ export default class Sidebar extends React.Component {
       addCATopic('tempCA');
     }, 2000)
 
-    const countDownDate = new Date("Oct 25, 2018 00:00:00").getTime();
+    const countDownDate = new Date("Oct 27, 2018 00:00:00").getTime();
     const now = new Date().getTime();
     const distance = countDownDate - now;
     let days = Math.floor(distance / (1000 * 60 * 60 * 24));

@@ -1,4 +1,5 @@
 var Main_User = require('../../../models/main/Main_User');
+var mailer = require('../../common/mailer');
 
 exports.userInfo = function (req, res) {
     Main_User.findOne({
@@ -40,4 +41,28 @@ exports.getUserEvents = function (req, res) {
                 res.json({ success: true, msg: 'Events List', body: user.event });
             }
         });
+};
+
+exports.resendOTP = function (req, res) {
+    if (req.locals.email) {
+        Main_User.findOne({
+            email: req.locals.email
+        })
+            .select('name email otp')
+            .exec(function (err, user) {
+                if (err) {
+                    return res.status(400).send({ success: false, msg: 'Unable to connect to database. Please try again.' })
+                }
+                if (!user) {
+                    return res.status(400).send({ success: false, msg: 'User not found' });
+                } else {
+                    mailer.participantRegister({
+                        name: user.name,
+                        email: user.email,
+                        otp: user.otp
+                    });
+                    res.json({ success: true, msg: 'Successfully sent email', body: user.email });
+                }
+            });
+    }
 };

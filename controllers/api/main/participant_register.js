@@ -235,7 +235,7 @@ exports.participant_login = function (req, res) {
                                                     if (err) return res.status(400).send({ success: false, msg: 'Unable Create Token' });
 
                                                     if (user.verified) return res.json({ success: true, token: genratedToken, msg: 'Successfully Authenticated', body: body });
-                                                    else return res.json({ success: true, token: genratedToken, msg: 'Successfully Authenticated' })
+                                                    else return res.json({ success: false, token: genratedToken, msg: 'Successfully Authenticated', notVerified: true })
                                                 });
                                         }
                                         else {
@@ -244,7 +244,7 @@ exports.participant_login = function (req, res) {
                                                 if (err) return res.status(400).send({ success: false, msg: 'Token Already Exists' });
 
                                                 if (user.verified) return res.json({ success: true, token: genratedToken, msg: 'Successfully Authenticated', body: body });
-                                                else return res.json({ success: true, token: genratedToken, msg: 'Successfully Authenticated' })
+                                                else return res.json({ success: false, token: genratedToken, msg: 'Successfully Authenticated', notVerified: true })
                                             });
                                         }
                                     }

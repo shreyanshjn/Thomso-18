@@ -43,7 +43,7 @@ export default class RegisterIndex extends React.Component {
         }
         if (name === 'contact' && value) {
             value = value.trim();
-            value = value.substring(0, 12)
+            value = value.substring(0, 10)
         }
         this.setState({ [name]: value });
     }

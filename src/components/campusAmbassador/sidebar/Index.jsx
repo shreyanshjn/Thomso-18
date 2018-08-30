@@ -23,13 +23,15 @@ import Hand from "./Svg/Hand"
 // import logoUser from '../common/images/user.svg';
 
 let addTopicTimeout;
+let showReferralTimeout;
 
 export default class Sidebar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       referral: 'AVSHFSAD',
-      activeState: window.location.pathname.substring(18)
+      activeState: window.location.pathname.substring(18),
+      showReferral: false
     };
     if (!window.location.pathname.substring(18)) {
       this.state = {
@@ -39,6 +41,7 @@ export default class Sidebar extends React.Component {
   }
   componentWillMount() {
     clearTimeout(addTopicTimeout)
+    clearTimeout(showReferralTimeout)
   }
 
   componentDidMount() {
@@ -46,7 +49,7 @@ export default class Sidebar extends React.Component {
       addCATopic('tempCA');
     }, 2000)
 
-    const countDownDate = new Date("Oct 25, 2018 00:00:00").getTime();
+    const countDownDate = new Date("Oct 27, 2018 00:00:00").getTime();
     const now = new Date().getTime();
     const distance = countDownDate - now;
     let days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -69,6 +72,13 @@ export default class Sidebar extends React.Component {
   render() {
     return (
       <div>
+        {this.state.showReferral ?
+          <div style={{position: 'fixed', display: 'flex', height: '100%', width: '100%', justifyContent: 'center', alignItems: 'center', zIndex: '1000'}} >
+            <div style={{color: 'white', background: '#00000069', padding:'10px', borderRadius: '10px', fontWeight: '600'}}>
+              Referral code copied to clipboard
+            </div>
+          </div>
+        : null}
         <div
           id="mySidenav"
           className="sidenav"
@@ -267,23 +277,27 @@ export default class Sidebar extends React.Component {
             </Link>
             {(this.props.userData && this.props.userData.ca_id) ?
               <div
-                className="sideNavItem re"
+                className="sideNavItem re" onClick={() => {
+                  const el = document.createElement('textarea');
+                  el.value = this.props.userData.ca_id;
+                  el.setAttribute('readonly', '');
+                  el.style.position = 'absolute';
+                  el.style.left = '-9999px';
+                  document.body.appendChild(el);
+                  el.select();
+                  document.execCommand('copy');
+                  document.body.removeChild(el);
+                  this.setState({showReferral: true})
+                  showReferralTimeout = setTimeout(() => {
+                    this.setState({showReferral: false})
+                  }, 1000)
+                }}
               >
                 <div className="referral flex_row" title="Click to copy">
                   <div className="campusAmb-sidebar-svg-logo">
                     <Referral />
                   </div>
-                  <div className="campusAmb-sidebar-navitem-name" onClick={() => {
-                    const el = document.createElement('textarea');
-                    el.value = this.props.userData.ca_id;
-                    el.setAttribute('readonly', '');
-                    el.style.position = 'absolute';
-                    el.style.left = '-9999px';
-                    document.body.appendChild(el);
-                    el.select();
-                    document.execCommand('copy');
-                    document.body.removeChild(el);
-                  }}>
+                  <div className="campusAmb-sidebar-navitem-name">
                     REFERRAL CODE : <span id="ca-referral-code">{this.props.userData.ca_id}</span>
                   </div>
                 </div>
