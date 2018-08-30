@@ -37,6 +37,14 @@ class List extends Component {
         return (
             <ul className="beta-home-list">
                 <li>
+                    <Link to="/events" className={(this.state.activeStateLink === "events") ? "list-spons-link" : null}
+                        onClick={() => {
+                            this.setActiveLink("events")
+                        }}>
+                        EVENTS
+            </Link>
+                </li>
+                <li>
                     <Link to="../campusambassador" className={(this.state.activeStateLink
                         === "list-ca-link") ? "list-ca-link" : null}
                         onClick={() => {
@@ -56,6 +64,12 @@ class List extends Component {
                 QUIZARDRY
                     </Link>
                 </li>
+                {/*<li>
+          <a href="">OFFINE EVENTS</a>
+        </li>*/}
+                {/* <li>
+          <a href="">TEAM CONTACT</a>
+        </li>*/}
                 <li>
                     <Link to="/campusclicks" className={(this.state.activeStateLink === "campusclicks") ? "list-quiz-link" : null}
                         onClick={()=>{
@@ -64,18 +78,12 @@ class List extends Component {
                 CAMPUS CLICKS
                     </Link>
                 </li>
-                {/*<li>
-          <a href="">OFFINE EVENTS</a>
-        </li>*/}
-                {/* <li>
-          <a href="">TEAM CONTACT</a>
-        </li>*/}
                 <li>
-                    <Link to="/associate" className={(this.state.activeStateLink === "linkAssociate") ? "list-spons-link" : null}
+                    <Link to="/silhoutte" className={(this.state.activeStateLink === "silhoutte") ? "list-spons-link" : null}
                         onClick={() => {
-                            this.setActiveLink("linkAssociate")
+                            this.setActiveLink("silhoutte")
                         }}>
-                        ASSOCIATE WITH US
+                        SILHOUTTE
             </Link>
                 </li>
                 <li>
@@ -100,6 +108,14 @@ class List extends Component {
                             this.setActiveLink("list-zonals-lucknow")
                         }}>
                         LUCKNOW-ZONALS
+            </Link>
+                </li>
+                <li>
+                    <Link to="/associate" className={(this.state.activeStateLink === "linkAssociate") ? "list-spons-link" : null}
+                        onClick={() => {
+                            this.setActiveLink("linkAssociate")
+                        }}>
+                        ASSOCIATE WITH US
             </Link>
                 </li>
 

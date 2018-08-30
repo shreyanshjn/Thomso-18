@@ -39,6 +39,10 @@
     height: 89px;
     text-align:center;
     border-radius:10px;
+    user-select:none;
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none; 
 }
 .beta-footfall-first
 {

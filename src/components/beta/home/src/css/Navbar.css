@@ -75,6 +75,10 @@
     height: fit-content;
     position: fixed;
     z-index:20;
+    user-select:none;
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none; 
 }
 .beta-navbar-navbarToggle
 {
@@ -208,6 +212,10 @@
     }
     .beta-home-navbar {
         z-index:210;
+        user-select:none;
+        -webkit-user-select: none;
+        -moz-user-select: none; 
+        -ms-user-select: none; 
     }
 }
 @media (max-width: 1096px) {

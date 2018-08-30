@@ -129,6 +129,10 @@
    background-repeat:no-repeat;
    position:relative;
    height:100vh;
+   user-select:none;
+   -webkit-user-select: none;
+   -moz-user-select: none; 
+   -ms-user-select: none; 
 }
 .zonals-lucknow-side-logo
 {

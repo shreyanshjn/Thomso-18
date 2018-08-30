@@ -7,11 +7,23 @@
         width:80%;
         margin-top:11%;
         font-family:Montserrat;
+        user-select:none;
+        -webkit-user-select: none;
+        -moz-user-select: none; 
+        -ms-user-select: none; 
     }
 }
 .hide-scroll-events
 {
     overflow:hidden;
+
+}
+.events-parent-main-div
+{
+   user-select:none;
+   -webkit-user-select: none;
+   -moz-user-select: none; 
+   -ms-user-select: none; 
 }
 .events-opening-column1,.events-opening-column2,.events-opening-column3
 {

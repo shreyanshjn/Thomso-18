@@ -54,7 +54,7 @@ class EventsOpening extends Component {
                         </div>
                         : null}
                         {(this.state.showModal===false)?<Navbar background="true"/>:null}
-                        <div style={{display:"flex",justifyContent:"center"}}>
+                        <div className="events-main-div-parent" style={{display:"flex",justifyContent:"center"}}>
                             <div className={(this.state.showModal===true)? "events-opening-main-div events-in-desktop":"events-opening-main-div events-in-desktop hide-scroll-events"}>
                                 <div className="events-opening-column1">
                                     {e1.map(e => 
