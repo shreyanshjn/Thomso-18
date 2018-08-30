@@ -153,7 +153,7 @@ export default class RegisterIndex extends React.Component {
                             </div>
                             <div className="form-first-child">
                                 <div className="form-email">
-                                    <label htmlFor="inputEmail">Email</label>
+                                    <label htmlFor="inputEmail">Email (For OTP)</label>
                                     <input
                                         id="inputEmail"
                                         type="email"
@@ -211,7 +211,7 @@ export default class RegisterIndex extends React.Component {
                             </div>
                             <div className="form-first-child">
                                 <div className="form-state">
-                                    <label htmlFor="inputEvents">Primary Events</label>
+                                    <label htmlFor="inputEvents">Primary Event</label>
                                     <EventsSelect onChange={primary_event => this.setState({ primary_event })} />
                                 </div>
                                 <div className="form-branch">
@@ -219,7 +219,7 @@ export default class RegisterIndex extends React.Component {
                                     <input
                                         id="inputRefferedBy"
                                         type="text"
-                                        placeholder="Referral Code"
+                                        placeholder="Referral Code (Optional)"
                                         name="referred_by"
                                         autoCorrect="off"
                                         autoComplete="off"

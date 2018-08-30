@@ -12,7 +12,7 @@ export default class Row extends React.Component {
                         <td style={{textAlign: 'center'}}>{this.props.data.email ? this.props.data.email : '--'}</td>
                         <td style={{textAlign: 'center'}}>{this.props.data.branch ? this.props.data.branch : '--'}</td>
                         <td style={{textAlign: 'center'}}>{this.props.data.contact ? this.props.data.contact : '--'}</td>
-                        <td style={{textAlign: 'center'}}>{this.props.data.primary_event ? this.props.data.primary_event : '--'}</td>
+                        <td style={{textAlign: 'center'}}>{this.props.data.primary_event ? this.props.data.primary_event.name : '--'}</td>
                         <td style={{textAlign: 'center'}}>{(this.props.data.event && this.props.data.event.length !== 0) ? this.props.data.event.map( (event,i) => {
                             return (<div key={i}>{event.name}<br /></div> )
                         }) : '--'}</td>

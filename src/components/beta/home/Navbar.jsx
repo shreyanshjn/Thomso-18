@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import img from "./src/img/logo.png";
 
+import AuthService from "../../../handlers/main/AuthService";
+import List from "./List";
 import "./src/css/Navbar.css";
 
-import List from "./List";
+import img from "./src/img/logo.png";
 
 class Navbar extends Component {
     constructor() {
@@ -12,9 +13,24 @@ class Navbar extends Component {
         this.state = {
             isHidden: true,
             hamburger: true,
+            isAuthenticated: false,
             activeState: window.location.pathname.substring(1)
         };
         this.setActive = this.setActive.bind(this);
+        this.Auth = new AuthService();
+    }
+    componentWillMount() {
+        const isAuthenticated = this.Auth.hasToken();
+        if (this.props.detail && this.props.detail.subevents) {
+            const filteredData = this.props.detail.subevents.filter(e => e.id === this.props.id);
+            if (filteredData) {
+                this.setState({ data: filteredData[0], isAuthenticated });
+            } else {
+                this.setState({ isAuthenticated })
+            }
+        } else if (isAuthenticated) {
+            this.setState({ isAuthenticated })
+        }
     }
     toggleHidden() {
         this.setState({
@@ -114,7 +130,7 @@ class Navbar extends Component {
                                     <Link to="/main" className={(this.state.activeState === "main") ? "linkSponsors" : null}
                                         onClick={() => {
                                             this.setActive("main");
-                                        }}>PARTICIPATE</Link>
+                                        }}>{this.state.isAuthenticated ? 'DASHBOARD' : 'PARTICIPATE'}</Link>
 
                                 </li>
                                 <li className="dropdown">

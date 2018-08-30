@@ -1,14 +1,31 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
+
+import AuthService from "../../../handlers/main/AuthService";
 import "./src/css/List.css";
 
 class List extends Component {
     constructor() {
         super();
         this.state = {
-            activeStateLink: window.location.pathname.substring(1)
+            activeStateLink: window.location.pathname.substring(1),
+            isAuthenticated: false
         };
-        this.setActiveLink = this.setActiveLink.bind(this)
+        this.setActiveLink = this.setActiveLink.bind(this);
+        this.Auth = new AuthService();
+    }
+    componentWillMount() {
+        const isAuthenticated = this.Auth.hasToken();
+        if (this.props.detail && this.props.detail.subevents) {
+            const filteredData = this.props.detail.subevents.filter(e => e.id === this.props.id);
+            if (filteredData) {
+                this.setState({ data: filteredData[0], isAuthenticated });
+            } else {
+                this.setState({ isAuthenticated })
+            }
+        } else if (isAuthenticated) {
+            this.setState({ isAuthenticated })
+        }
     }
     setActiveLink(state) {
         this.setState({
@@ -66,7 +83,7 @@ class List extends Component {
                         onClick={() => {
                             this.setActiveLink("main")
                         }}>
-                        PARTICIPATE
+                        {this.state.isAuthenticated ? 'DASHBOARD' : 'PARTICIPATE'}
             </Link>
                 </li>
                 <li>

@@ -93,7 +93,7 @@ export default class VerifyIndex extends React.Component {
                                     <input
                                         id="inputOTP"
                                         type="text"
-                                        placeholder="Enter OTP"
+                                        placeholder="Enter OTP Sent To Your Email"
                                         name="otp"
                                         autoCorrect="off"
                                         autoComplete="off"
