@@ -233,7 +233,7 @@ export const EventDetails =
         {
             id: '7_1',
             name: "Campus Diva",
-            content:" Girls this one is for you all. Have you ever speculated how sumptuos and grogeous you would look when you dress up like Cindrella or Snow White or any other disney Princess ? When Thousands of people are gazing at you and you mesmerise them with your beauty leaving them awestruck. When you realise that your childhood dream has come true and you are living it..... Ever wanted to feel the beauty within you and show the world the real you, Thomso 2k17, with the theme of A Magical Fantasia is giving you all the opportunity to become Amparo Munoz or Janelle Commissiong of this Song of the Wildflower which will be Beating at this years Thomso.",
+            content:" Girls this one is for you all. Have you ever speculated how sumptuous and gorgeous you would look when you dress up like Cinderella or Snow White or any other Disney Princess? When thousands of people are gazing at you and you mesmerize them with your beauty leaving them awestruck. When you realize that your childhood dream has come true and you are living it. Ever wanted to feel the beauty within you and show the world the real you, Thomso 2018 with the theme of ‘Seized By Stardust’, is giving you all the opportunity to become Amparo Munoz or Janelle Commissiong of this event which will be beating at this year’s Thomso.",
             rulebook: "https://drive.google.com/open?id=1zNxvEKt0CciRDQrb9Rzk1Dak3xBa0D22",
             image: "campus_princess.jpeg",
             prize: "65"

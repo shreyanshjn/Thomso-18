@@ -25,6 +25,7 @@ router.use('/admin', mainAdminRoutes);
 // -> /main/auth
 router.post('/auth/register', participantRegister.participant_registration);
 router.post('/auth/verify', MainUserTokenMiddleware.verifyUser, participantRegister.verifyOTP);
+router.get('/auth/resend', MainUserTokenMiddleware.verifyUser, participantControl.resendOTP);
 router.post('/auth/login' , participantRegister.participant_login);
 
 // -> /main/resetPassword

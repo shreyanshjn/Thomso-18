@@ -21,13 +21,25 @@ export default class Sidebar extends React.Component {
     super(props);
     this.state = {
       referral: 'AVSHFSAD',
-      activeState: window.location.pathname.substring(4)
+      activeState: window.location.pathname.substring(4),
+      days: 0
     };
     if (!window.location.pathname.substring(4)) {
       this.state = {
         activeState: "home"
       };
     }
+  }
+
+  componentDidMount() {
+    const countDownDate = new Date("Oct 27, 2018 00:00:00").getTime();
+    const now = new Date().getTime();
+    const distance = countDownDate - now;
+    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    if (days < 0) {
+      days = 0;
+    }
+    this.setState({ days })
   }
 
   setActive(state) {
@@ -40,14 +52,6 @@ export default class Sidebar extends React.Component {
     Field.remove()
   }
   render() {
-    let countDownDate = new Date("Oct 25, 2018 00:00:00").getTime();
-    let now = new Date().getTime();
-    let distance = countDownDate - now;
-    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    if (days < 0) {
-      days = 0;
-    }
-
     return (
       <div>
         <div
@@ -266,7 +270,7 @@ export default class Sidebar extends React.Component {
                 <Hand />
               </div>
               <div className="sidebar-hand-days">
-                {days} DAYS LEFT
+                {this.state.days} DAYS LEFT
             </div>
             </div>
           </div>

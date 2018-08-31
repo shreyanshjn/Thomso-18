@@ -97,8 +97,8 @@ export default class EventDetail extends React.Component {
                                 }
                             </React.Fragment>
                         }
-                        {this.state.data.rulebook ?
-                            <a href={`/pdf/events/${this.state.data.rulebook}`} className="be-events-modal-button" target="_blank">Rulebook</a>
+                        {(this.state.data.rulebook && this.state.isAuthenticated) ?
+                            <a href={this.state.data.rulebook} className="be-events-modal-button" target="_blank">Rulebook</a>
                             : null
                         }
                     </div>
