@@ -9,7 +9,7 @@ import Events from "../../campusAmbassador/sidebar/Svg/Events"
 import Contact from "../../campusAmbassador/sidebar/Svg/Contact"
 import Logout from "../../campusAmbassador/sidebar/Svg/Logout"
 import Home from "./Svg/Home"
-import UpdateImage from './UpdateImage'
+// import UpdateImage from './UpdateImage'
 import Post from "./Svg/Post"
 let addTopicTimeout;
 
@@ -74,7 +74,7 @@ export default class Sidebar extends React.Component {
                   <img src={boy} className="image" alt="User" />
                 }
               </React.Fragment>}
-            <UpdateImage imagePrev={(data) => this.setState({ img: data })} imageUpdated={(data) => data ? this.setState({ errors: 'Image updated successfully' }) : this.setState({ errors: 'Unable to update image' })} /> : null}
+            {/* <UpdateImage imagePrev={(data) => this.setState({ img: data })} imageUpdated={(data) => data ? this.setState({ errors: 'Image updated successfully' }) : this.setState({ errors: 'Unable to update image' })} /> : null} */}
               {errors ?
               <div style={{ textAlign: 'center', color: 'black', fontWeight: '600' }}>
                 {errors}

@@ -58,7 +58,7 @@ export default class UpdateImage extends React.Component{
       }
     
       render() {
-        let {imagePreviewUrl, errors,disabled } = this.state;
+        let { errors,disabled } = this.state;
         return (
           <div>
               {errors ?

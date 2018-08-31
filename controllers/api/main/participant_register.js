@@ -45,7 +45,7 @@ exports.participant_registration = function (req, res) {
         } else {
             req.body.referred_by = null
         }
-        var otp = "1511";
+        var otp = Generator.generateOTP();
         var data = {
             name: req.body.name,
             contact: req.body.contact,

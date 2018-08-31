@@ -33,28 +33,28 @@ export default class blog extends React.Component{
     <div className="blog-body">
       <div className="blog-body-imageicons">
               <div className="blog-body-icons">
-                <img src={logo1}/>
+                <img src={logo1} alt="logo"/>
               </div>
               <div className="blog-body-icons">
-                <img src={logo2}/>
+                <img src={logo2} alt="logo"/>
               </div>
               <div className="blog-body-icons">
-                <img src={logo3}/>
+                <img src={logo3} alt="logo"/>
               </div>
               <div className="blog-body-icons">
-                <img src={logo4}/>
+                <img src={logo4} alt="logo"/>
               </div>
               <div className="blog-body-icons">
-                <img src={logo5}/>
+                <img src={logo5} alt="logo"/>
               </div>
               <div className="blog-body-icons">
-                <img src={logo6}/>
+                <img src={logo6} alt="logo"/>
               </div>
               <div className="blog-body-icons">
-                <img src={logo7}/>
+                <img src={logo7} alt="logo"/>
               </div>
               <div className="blog-body-icons">
-                <img src={logo8}/>
+                <img src={logo8} alt="logo"/>
               </div>
       </div>
 
@@ -62,7 +62,7 @@ export default class blog extends React.Component{
       <div className="blog-body-innerdiv">
 
         <div className="blog-body-image">
-        <img src={logo9}/>
+        <img src={logo9} alt="logo"/>
         </div>
         <div className="blog-body-text">
           “Rome wasn’t built in a day”, neither is Thomso. Be it a magnificent city or a magnificent fest, you have to lay bricks every hour to make things happen.

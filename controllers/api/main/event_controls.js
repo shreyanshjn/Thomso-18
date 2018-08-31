@@ -73,7 +73,6 @@ exports.removeParticipant = function(req, res){
             email : req.locals.email,
             _id:req.locals._id
         }
-        console.log(data)
         if(data.event_id && data.email && data._id){
             Main_User.findOne({
                 email:data.email
@@ -83,7 +82,6 @@ exports.removeParticipant = function(req, res){
                 if(err){
                     return res.state(400).send({success:false, msg:'unable to remove participant'});
                 }
-                console.log(user);
                 if(!user){
                     return res.state(400).send({success:false, msg:'Email Not Found'});
                 }
@@ -95,13 +93,9 @@ exports.removeParticipant = function(req, res){
                             return res.state(400).send({success:false, msg:'unable to remove participant'});
                         }
                         if(results){
-                        console.log(results);
-
                             return res.json({success:false, msg:"Cann't Remove Primary Event"});
                         }
                         else{
-                        console.log(results);
-
                             EventSchema.findOneAndUpdate({ event_id: data.event_id }, {$pull:{users:data._id}})
                             .select('name')
                             .exec(function(err, result){
