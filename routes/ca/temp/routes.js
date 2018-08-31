@@ -21,6 +21,15 @@ router.post('/auth/reset', TempCATokenMiddleware.verifyTemp, tempAuth.reset);
 router.get('/info', TempCATokenMiddleware.verifyTemp, tempControls.getData);
 
 // -> /ca/temp/posts
-router.get('/posts', TempCATokenMiddleware.verify, tempControls.getPosts);
+router.use('/', TempCATokenMiddleware.verify)
+router.get('/posts', tempControls.getPosts);
+
+router.post('/idea', tempControls.postIdea);
+router.get('/idea', tempControls.getIdea);
+router.put('/idea/:id', tempControls.putIdea);
+router.delete('/idea/:id', tempControls.deleteIdea);
+
+router.get('/leaderboard', tempControls.getLeaderboard);
+router.get('/rank', tempControls.getRank);
 
 module.exports = router;

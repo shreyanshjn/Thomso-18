@@ -6,11 +6,6 @@ import FetchApi from '../../utils/FetchAPI';
 import AuthService from '../../handlers/ca/temp/AuthService';
 import Loader from "../common/Loader";
 import Sidebar from "./sidebar/Index";
-import LeaderboardIndex from "./leaderboard/Index";
-import ContactIndex from "./contactus/Index";
-import GuideIndex from "./guidelines/Index";
-import PostIndex from "./posts/Index";
-import EventsIndex from "./events/Index";
 
 const Loading = ({ error }) => {
   if (error) {
@@ -20,13 +15,13 @@ const Loading = ({ error }) => {
   }
 };
 
-const RegisterIndex = Loadable({
-  loader: () => import("./register/Index"),
+const LogoutIndex = Loadable({
+  loader: () => import("./logout/Index"),
   loading: Loading
 });
 
-const LoginIndex = Loadable({
-  loader: () => import("./login/Index"),
+const RegisterIndex = Loadable({
+  loader: () => import("./register/Index"),
   loading: Loading
 });
 
@@ -35,8 +30,38 @@ const HomeIndex = Loadable({
   loading: Loading
 });
 
-const LogoutIndex = Loadable({
-  loader: () => import("./logout/Index"),
+const LeaderboardIndex = Loadable({
+  loader: () => import("./leaderboard/Index"),
+  loading: Loading
+});
+
+const ContactIndex = Loadable({
+  loader: () => import("./contactus/Index"),
+  loading: Loading
+});
+
+const IdeasIndex = Loadable({
+  loader: () => import("./ideas/Index"),
+  loading: Loading
+});
+
+const GuideIndex = Loadable({
+  loader: () => import("./guidelines/Index"),
+  loading: Loading
+});
+
+const PostIndex = Loadable({
+  loader: () => import("./posts/Index"),
+  loading: Loading
+});
+
+const EventsIndex = Loadable({
+  loader: () => import("./events/Index"),
+  loading: Loading
+});
+
+const LoginIndex = Loadable({
+  loader: () => import("./login/Index"),
   loading: Loading
 });
 
@@ -58,7 +83,6 @@ export default class CampusIndex extends React.Component {
 
   componentWillMount() {
     const isAuthenticated = this.Auth.hasToken();
-    console.log(isAuthenticated, "isAuthenticated");
     if (isAuthenticated) {
       const token = this.Auth.getToken()
       FetchApi('GET', '/api/ca/temp/info', null, token)
@@ -99,6 +123,7 @@ export default class CampusIndex extends React.Component {
                 <Route path="/campusAmbassador" render={props => (<Sidebar {...props} userData={this.state.userData} />)} />
                 <Route exact path="/campusAmbassador/leaderboard" render={props => (<LeaderboardIndex {...props} userData={this.state.userData} />)} />
                 <Route exact path="/campusAmbassador/contact" render={props => (<ContactIndex {...props} userData={this.state.userData} />)} />
+                <Route exact path="/campusAmbassador/ideas" component={IdeasIndex} />
                 <Route exact path="/campusAmbassador/guidelines" component={GuideIndex} />
                 <Route exact path="/campusAmbassador/events" component={EventsIndex} />
                 <Route exact path="/campusAmbassador" component={PostIndex} />

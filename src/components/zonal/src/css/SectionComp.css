@@ -100,4 +100,38 @@
     {
         width:35%;
     }
+    .zonal-comp1-button
+    {
+        padding: 3px 2px;
+        font-size:12px;
+    }
+    .zonals-comp-dance-transform > div
+    {
+        font-size:12px;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width:1900px)
+{
+    .zonal-common-comp1-register
+    {
+        display:flex;
+        justify-content:space-around;
+        width:100%;
+    }
+}
+@media (min-width: 1900px) and (max-width: 2560px)
+{
+    .zonals-comp-dance-transform
+    {
+        top:26px;
+    }
+    .zonal-common-comp1-heading >div
+    {
+        font-weight:bolder;
+        font-size:35px;
+    }
+    .zonals-comp-dance-transform > div
+    {
+        font-size:19px;
+    }
 }

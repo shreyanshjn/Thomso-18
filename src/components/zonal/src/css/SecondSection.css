@@ -6,27 +6,28 @@
     background:url('../img/backsecond.jpg');
     background-position:center;
     background-size:cover;
-    height:100vh;
+    min-height:100vh;
 }
 .zonals-common-sectioncomp2
 {
     display:flex;
     justify-content:space-around;
     z-index:20;
-    margin-top:-3vh;
+    margin-top:-20vh;
+    margin-bottom:7vh;
 }
 
-@media (min-width: 1920px) and (max-width: 2560px)
+@media (min-width: 1800px) and (max-width: 2560px)
 {
     .zonals-common-sectioncomp2
     {
-        margin-top:180px;
+        margin-top: -2vh;
     }
 }
 @media (max-width:768px)
 {
     .zonals-common-sectioncomp2
     {
-        margin-top:-60vw;
+        margin-top:-50vh;
     }
 }

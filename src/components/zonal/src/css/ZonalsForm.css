@@ -60,7 +60,30 @@
     flex-direction: row;
     justify-content: flex-end;
 }
-
+.zonals-modal-box{
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    margin-top: 30vh;
+    padding: 20px;
+    color: black;
+    background: white;
+    border: 1px solid black;
+    font-weight: 600;
+    font-family: Montserrat;
+}
+.zonals-modal-box-child:nth-child(1){
+    color: green;
+    padding: 10px 0px;
+}
+.zonals-modal-box-child:nth-child(2){
+    color: black;
+    padding: 10px 0px;
+    font-size: 12px;
+    line-height: 2em;
+}
 .register-zonals-form-div
 {
     background-color:rgba(55, 90, 117,0.3);

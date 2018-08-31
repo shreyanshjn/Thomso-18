@@ -29,3 +29,11 @@ exports.generateHash = function(password) {
         });
     })
 }
+
+exports.generateOTP = function(){
+    var range = "0123456789", res = "";
+    for(var i =0; i<4; i++){
+        res += range.charAt(Math.floor(Math.random() * range.length)); 
+    }
+    return res;
+}

@@ -1,19 +1,14 @@
-.zonals-parallax-layer1 , .zonals-parallax-layer2 ,.zonals-parallax-layer3, .zonals-parallax-layer4 , .zonals-parallax-layer5
+.zonals-parallax-delhi-layer1 , .zonals-parallax-delhi-layer2 ,.zonals-parallax-delhi-layer3, .zonals-parallax-delhi-layer4 , .zonals-parallax-delhi-layer5
 {
    height:100vh;
    width:100vw;
 }
-.zonals-parallax-layer1-main-child
-{
-   display:flex;
-   justify-content:space-between;
-}
-.zonals-parallax-layer1-main-child ,.zonals-parallax-layer2-main-child,.zonals-parallax-layer3-main-child ,.zonals-parallax-layer4-main-child ,.zonals-parallax-layer5-main-child
+.zonals-parallax-delhi-layer1-main-child ,.zonals-parallax-delhi-layer2-main-child,.zonals-parallax-delhi-layer3-main-child ,.zonals-parallax-delhi-layer4-main-child ,.zonals-parallax-delhi-layer5-main-child
 {
     height:100vh;
     width:100vw;
 }
-.zonals-parallax-layer1
+.zonals-parallax-delhi-layer1
 {
     z-index:12;
     cursor:pointer;
@@ -27,7 +22,7 @@
     right:0;
     padding:10px;
 }
-.zonals-parallax-layer2-main-child
+.zonals-parallax-delhi-layer2-main-child
 {
    display:flex;
    justify-content:center;
@@ -38,31 +33,25 @@
     width:100%;
     max-width:28vw;
 }
-.parallax-layer1-child
+.parallax-delhi-layer3-child
 {
    position:absolute;
-   left:50%;
-   top:50%;
-}
-.parallax-layer3-child
-{
-   position:absolute;
-   left:54%;
+   left:60%;
    top:28%;
 }
-.parallax-layer4-child
+.parallax-delhi-layer4-child
 {
    position:absolute;
    left:26%;
    top:29%;
 }
-.parallax-layer5-child
+.parallax-delhi-layer5-child
 {
    position:absolute;
    left:39%;
    top:6%;
 }
-.main-zonals-div
+.main-zonals-delhi-div
 {
    background-color:rgba(57, 125, 162, 0.9) ;
    background-image:url('../img/backgroundEle.png');
@@ -72,7 +61,7 @@
    background-attachment:fixed;
    background-repeat:no-repeat;
    position:relative;
-   height:100vh;
+   min-height:100vh;
 }
 .zonals-delhi-side-logo
 {
@@ -82,7 +71,7 @@
     cursor:pointer;
     padding:10px;
 }
-.zonals-layer2-h1
+.zonals-delhi-layer2-h1
 {
    text-align:center;
    color:white;
@@ -101,35 +90,35 @@
     {
        max-width:19vw;
     }
-    .zonals-layer2-h1
+    .zonals-delhi-layer2-h1
     {
         font-size:24px;
     }
-    .main-zonals-div
+    .main-zonals-delhi-div
     {
         background-size:100% auto;
     }
-    .zonals-cloud-one , .zonals-cloud-two, .zonals-cloud-three
+    .zonals-delhi-cloud-one , .zonals-delhi-cloud-two, .zonals-delhi-cloud-three
     {
         height:34px;
         width:auto;
     }
- .parallax-layer5-child
+ .parallax-delhi-layer5-child
 {
    top:21%;
 }
- .parallax-layer3-child
+ .parallax-delhi-layer3-child
  {
     top:32%; 
     left:60%;
  }
- .parallax-layer4-child
+ .parallax-delhi-layer4-child
  {
      top:31%;
      left:22%;
  
  }
-.zonals-parallax-layer2-main-child
+.zonals-parallax-delhi-layer2-main-child
 {
 
      margin-top:18vh;
@@ -137,7 +126,7 @@
 }
 @media only screen and (min-width:768px)
 {
-    .zonals-parallax-layer2-main-child
+    .zonals-parallax-delhi-layer2-main-child
     {
         align-items:center;
     }

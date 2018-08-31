@@ -27,10 +27,10 @@ export default class FakeNotification extends React.Component{
     return(
       <div>
         {this.state.show ?
-          <div className="notification-div-O">
-            <div className="notification-div-S"><img src="" alt="hello"/></div>
-            <div className="notification-div-C">
-              <div className="notification-div-T">
+          <div className="Notification-div-O">
+            <div className="Notification-div-S"></div>
+            <div className="Notification-div-C">
+              <div className="Notification-div-T">
                 <h1>Notification</h1><p> Press 'Allow' to continue </p>
               </div>
               <div className="notification-div-A">

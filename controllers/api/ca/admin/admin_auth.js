@@ -54,22 +54,40 @@ exports.login = function(req, res) {
                             }
                         }, function(err) {
                             if(err){
-                                return res.status(400).send({success:false, msg:'Error Saving IP', error:err});
+                                return res.status(400).send({success:false, msg:'Error Saving IP'});
+                            } else {
+                                CA_Admin_Token.find({ username: req.body.username }).sort({'updated_date': 1}).exec(function(err, tokens) {
+                                    if (err) {
+                                        return res.status(400).send({success: false, msg: 'Unable To find token'});
+                                    } else {
+                                        var genratedToken = TokenHelper.generateAdminToken(req.body.username);
+                                        var newToken = {
+                                            username: req.body.username,
+                                            user_id: user._id,
+                                            token: genratedToken,
+                                            expiration_time: moment().day(30),
+                                            updated_date: new Date()
+                                        };
+                                        if (tokens.length > 2 && tokens[0]) {
+                                            CA_Admin_Token.update({ _id: tokens[0]._id }, newToken)
+                                                .exec(function(err) {
+                                                    if (err) {
+                                                        return res.status(400).send({success: false, msg: 'Unable Create Token'});
+                                                    }
+                                                    res.json({success: true, token: genratedToken, username: req.body.username});
+                                                });
+                                        } else {
+                                            var addToken = new CA_Admin_Token(newToken);
+                                            addToken.save(function(err) {
+                                                if (err) {
+                                                    return res.status(400).send({success: false, msg: 'Token Already Exists'});
+                                                }
+                                                res.json({success: true, token: genratedToken, username: req.body.username});
+                                            });
+                                        }
+                                    }
+                                });
                             }
-                            var newToken = {
-                                username: req.body.username,
-                                user_id: user._id,
-                                token: TokenHelper.generateAdminToken(req.body.username),
-                                expirationTime: moment().day(30),
-                                updated_date: new Date()
-                            };
-                            CA_Admin_Token.findOneAndUpdate({ username: req.body.username }, newToken, { upsert: true, new:true })
-                            .exec(function(err, token) {
-                                if (err) {
-                                    return res.status(400).send({success: false, msg: 'Unable Create Token'});
-                                }
-                                res.json({success: true, token: token.token, username: user.username});
-                            });
                         }
                     );
                 } else {

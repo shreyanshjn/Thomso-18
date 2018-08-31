@@ -45,8 +45,18 @@ const IdeasIndex = Loadable({
     loading: Loading,
 });
 
+const TempIdeasIndex = Loadable({
+    loader: () => import('./tempIdeas/Index'),
+    loading: Loading,
+});
+
 const ControlsIndex = Loadable({
     loader: () => import('./controls/Index'),
+    loading: Loading,
+});
+
+const TempControlsIndex = Loadable({
+    loader: () => import('./tempControls/Index'),
     loading: Loading,
 });
 
@@ -80,8 +90,10 @@ export default class AdminIndex extends React.Component{
                     <div>
                         <Route path="/ca/admin" component={NavbarIndex} />
                         <Route exact path="/ca/admin/ideas" component={IdeasIndex} />
+                        <Route exact path="/ca/admin/tempideas" component={TempIdeasIndex} />
                         <Route exact path="/ca/admin/temp" component={TempUsersIndex} />
                         <Route exact path="/ca/admin/controls" component={ControlsIndex} />
+                        <Route exact path="/ca/admin/tempControls" component={TempControlsIndex} />
                         <Route exact path="/ca/admin/logout" render={ () => <LogoutIndex updateRoutes={this.handleUpdate}/> } />
                         <Route exact path="/ca/admin" component={HomeIndex} />
                     </div>

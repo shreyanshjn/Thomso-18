@@ -33,24 +33,48 @@ export default class Footer extends React.Component {
                         CONTACT
                     </div>
                 </div>
-                <div className="zonals-contact-person">
-                    <div className="zonals-contact-person-child">
-                        <div>
-                            Harshit
+                {this.props.city === 'lucknow' ?
+                    <div className="zonals-contact-person">
+                        <div className="zonals-contact-person-child">
+                            <div>
+                                Rohit
+                            </div>
+                            <div>
+                            +91-7023511775
+                            </div>
                         </div>
-                        <div>
-                           +91-9340043505
+                        <div className="zonals-contact-person-child">
+                            <div>
+                                Arihant
+                            </div>
+                            <div>
+                                +91-9479714596
+                            </div>
                         </div>
                     </div>
-                    <div className="zonals-contact-person-child">
-                        <div>
-                            Abhay
+                    : null
+                }
+                {this.props.city === 'delhi' ?
+                    <div className="zonals-contact-person">
+                        <div className="zonals-contact-person-child">
+                            <div>
+                                Harshit
+                            </div>
+                            <div>
+                            +91-9340043505
+                            </div>
                         </div>
-                        <div>
-                            +91-9131700765
+                        <div className="zonals-contact-person-child">
+                            <div>
+                                Abhay
+                            </div>
+                            <div>
+                                +91-9131700765
+                            </div>
                         </div>
                     </div>
-                </div>
+                    : null
+                }
             </div>
             </div>
         );

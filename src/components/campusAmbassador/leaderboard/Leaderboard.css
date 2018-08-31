@@ -14,8 +14,36 @@
     width:100%;
     float:right;
 }
+.campusAmb-leader-heading th:nth-child(1){
+    width: 15%;
+}
+.campusAmb-leader-heading th:nth-child(2){
+    width: 24%;
+}
+.campusAmb-leader-heading th:nth-child(3){
+    width: 45%;
+}
+.campusAmb-leader-heading th:nth-child(4){
+    width: 17.5%;
+}
+.campusAmb-leader-rank th:nth-child(1){
+    width: 15%;
+}
+.campusAmb-leader-rank th:nth-child(2){
+    text-transform: capitalize;
+    width: 24%;
+}
+.campusAmb-leader-rank th:nth-child(3){
+    width: 45%;
+}
+.campusAmb-leader-rank th:nth-child(4){
+    width: 17.5%;
+}
+.campusAmb-leader-desktop-name{
+    text-transform: capitalize;
+}
 .campusAmb-leader-heading > th,td {
-    padding: 20px;
+    padding: 10px;
     text-align: left;
     word-wrap:break-word;
 }
@@ -29,9 +57,12 @@
     text-align: left;
     word-wrap:break-word;
 }
+.campusAmb-leader-rank{
+    padding-top:20px; 
+}
 .campusAmb-leader-rank >th
 {
-    padding:20px;
+    padding:10px 10px;
     text-align:left;
     word-wrap:break-word;
 }
@@ -67,17 +98,6 @@
     font-size: 12px;
     color:white;
     table-layout:fixed;
-}
-.arrow
-{
-    display:none;
-}
-@media only screen and (min-width: 768px){
-    .campusAmb-leader-desktop
-    {
-        display:none; 
-    }   
-    
 }
 @media only screen and (max-width: 768px) {
     .campusAmb-leader-indexMain{
@@ -133,4 +153,32 @@
     {
         padding:5px;
     }
+    .campusAmb-leader-heading th:nth-child(1){
+        width: 15%;
+    }
+    .campusAmb-leader-heading th:nth-child(2){
+        width: 24%;
+    }
+    .campusAmb-leader-heading th:nth-child(3){
+        width: 45%;
+    }
+    .campusAmb-leader-heading th:nth-child(4){
+        width: 17.5%;
+    }
+    .campusAmb-leader-rank th:nth-child(1){
+        width: 15%;
+    }
+    .campusAmb-leader-rank th:nth-child(2){
+        width: 24%;
+        text-transform: capitalize;
+    }
+    .campusAmb-leader-rank th:nth-child(3){
+        width: 45%;
+    }
+    .campusAmb-leader-rank th:nth-child(4){
+        width: 17.5%;
+    }
 }
+/*referral color code : #F50947
+   bonus color code: #F4EA31
+*/

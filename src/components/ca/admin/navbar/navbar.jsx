@@ -15,7 +15,7 @@ render(){
             </Link>
           </li>
           <li><Link to="/ca/admin/ideas">Ideas</Link></li>
-          {/* <li><Link to="/ca/admin/controls">Controls</Link></li> */}
+          <li><Link to="/ca/admin/tempideas">New Ideas</Link></li>
           <li><Link to="/ca/admin/temp">Temp Registrations</Link></li>
           <li><Link to="/ca/admin/logout">Logout</Link></li>
         </ul>
