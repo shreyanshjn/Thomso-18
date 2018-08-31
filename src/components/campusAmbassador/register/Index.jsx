@@ -60,26 +60,30 @@ export default class RegisterIndex extends React.Component {
         }
         const data = { name, contact, email, gender, college, state, branch, address, why }
         const check = validateInput(email, 'email')
-
-        if (name && contact && email && gender && college && state && branch && address && why && check.isValid) {
-            FetchApi('POST', '/api/ca/temp/auth/register', data)
-                .then(r => {
-                    if (r && r.data && this.popup) {
-                        if (r.data.success === true) {
-                            this.popup.show(['Thank you for registering as CA.', `Verification email has been sent to ${this.state.email ? this.state.email : 'your email'}.`], '/CampusAmbassador')
-                        } else {
-                            this.setState({ errors: 'This email is already registered' })
+        if (!isNaN(contact)) {
+            if (name && contact && email && gender && college && state && branch && address && why && check.isValid) {
+                FetchApi('POST', '/api/ca/temp/auth/register', data)
+                    .then(r => {
+                        if (r && r.data && this.popup) {
+                            if (r.data.success === true) {
+                                this.popup.show(['Thank you for registering as CA.', `Verification email has been sent to ${this.state.email ? this.state.email : 'your email'}.`], '/CampusAmbassador')
+                            } else {
+                                this.setState({ errors: 'This email is already registered' })
+                            }
                         }
-                    }
-                })
-                .catch(e => {
-                    console.log(e)
-                    this.popup.show('Something went wrong.')
-                });
-        } else if (check.errors && check.errors.email) {
-            this.setState({ errors: check.errors.email })
-        } else {
-            this.setState({ errors: 'Fields cannot be empty' })
+                    })
+                    .catch(e => {
+                        console.log(e)
+                        this.popup.show('Something went wrong.')
+                    });
+            } else if (check.errors && check.errors.email) {
+                this.setState({ errors: check.errors.email })
+            } else {
+                this.setState({ errors: 'Fields cannot be empty' })
+            }
+        }
+        else {
+            this.setState({ errors: "Contact invalid" })
         }
     }
 
@@ -131,7 +135,7 @@ export default class RegisterIndex extends React.Component {
                                     <label htmlFor="inputContact">Contact Number</label>
                                     <input
                                         id="inputContact"
-                                        type="number"
+                                        type="text"
                                         placeholder="Contact Number"
                                         name="contact"
                                         autoCorrect="off"

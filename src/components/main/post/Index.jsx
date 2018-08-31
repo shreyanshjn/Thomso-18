@@ -1,9 +1,9 @@
 import React from 'react';
-import "../../ca/home/updatedcard.css";
+import "./maincard.css";
 import AuthService from '../../../handlers/ca/temp/AuthService';
 import FetchApi from '../../../utils/FetchAPI';
 
-import Card from '../../ca/timeline/Card';
+import Card from '../../ca/home/Card';
 
 let unmount = false
 export default class PostIndex extends React.Component {
@@ -56,11 +56,13 @@ export default class PostIndex extends React.Component {
         const authtoken = this.Auth.getToken();
         FetchApi('GET', '/api/ca/temp/posts', null, authtoken)
             .then((result) => {
+                console.log(result)
                 if (result.data && result.data.posts && result.data.posts.data && result.data.posts.data.length > 0 && !unmount) {
                     this.setState({ posts: result.data.posts.data });
                 }
             })
             .catch(error => {
+                console.log(error.response)
                 if (error.response && error.response.status === 401 && !unmount) {
                     this.setState({ message: 'Token Expired' });
                     // this.props.history.push('/ca/logout')
@@ -77,7 +79,7 @@ export default class PostIndex extends React.Component {
     render() {
         const { posts, message, isVisible } = this.state;
         return (
-            <div className="cards">
+            <div className="maincards">
                 {isVisible ? message : null}
                 {posts ? posts.map((post, index) => {
                     if (post.link) {

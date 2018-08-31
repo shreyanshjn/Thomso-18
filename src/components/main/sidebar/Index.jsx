@@ -10,6 +10,7 @@ import Contact from "../../campusAmbassador/sidebar/Svg/Contact"
 import Logout from "../../campusAmbassador/sidebar/Svg/Logout"
 import Home from "./Svg/Home"
 import UpdateImage from './UpdateImage'
+import Post from "./Svg/Post"
 let addTopicTimeout;
 
 export default class Sidebar extends React.Component {
@@ -18,7 +19,7 @@ export default class Sidebar extends React.Component {
     this.state = {
       referral: 'AVSHFSAD',
       activeState: window.location.pathname.substring(6),
-      errors:'',
+      errors: '',
       days: 0
     };
     if (!window.location.pathname.substring(6)) {
@@ -57,7 +58,7 @@ export default class Sidebar extends React.Component {
   }
 
   render() {
-    let {errors} = this.state;
+    let { errors } = this.state;
     return (
       <div>
         <div
@@ -73,12 +74,12 @@ export default class Sidebar extends React.Component {
                   <img src={boy} className="image" alt="User" />
                 }
               </React.Fragment>}
-              <UpdateImage imagePrev={(data) => this.setState({img: data})} imageUpdated={(data) => data ? this.setState({ errors: 'Image updated successfully'}) : this.setState({errors: 'Unable to update image'})}/> : null}
+            <UpdateImage imagePrev={(data) => this.setState({ img: data })} imageUpdated={(data) => data ? this.setState({ errors: 'Image updated successfully' }) : this.setState({ errors: 'Unable to update image' })} /> : null}
               {errors ?
-                <div style={{ textAlign: 'center', color: 'black', fontWeight: '600' }}>
-                    {errors}
-                </div>
-                : null
+              <div style={{ textAlign: 'center', color: 'black', fontWeight: '600' }}>
+                {errors}
+              </div>
+              : null
             }
             <div className="main-sidebar-user-details">
               <div className="text">{this.props.userData ? this.props.userData.name : "User"}</div>
@@ -138,6 +139,26 @@ export default class Sidebar extends React.Component {
                 </div>
                 <div className="main-sidebar-navitem-name">
                   CONTACT US
+                </div>
+              </div>
+            </Link>
+            <Link
+              to="/main/post"
+              className={
+                (this.state.activeState === "post")
+                  ? "sideNavItem activeSideItem"
+                  : "sideNavItem"
+              }
+              onClick={() => {
+                this.setActive("post");
+              }}
+            >
+              <div className="main-sidebar-posts flex_row">
+                <div className="main-sidebar-svg-logo">
+                  <Post />
+                </div>
+                <div className="main-sidebar-navitem-name">
+                  RECENT UPDATES
                 </div>
               </div>
             </Link>

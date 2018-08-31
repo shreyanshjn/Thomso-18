@@ -61,35 +61,40 @@ export default class RegisterIndex extends React.Component {
         if (address) address = address.trim()
         if (referred_by) referred_by = referred_by.trim()
         if (primary_event) primary_event = primary_event.trim()
-        if (password === confirmPassword) {
-            const data = { name, email, gender, contact, college, state, branch, address, referred_by, password, primary_event }
-            const check = validateInput(data)
-            if (name && gender && branch && contact && college && state && address && primary_event && check.isValid) {
-                FetchApi('POST', '/api/main/auth/register', data)
-                    .then(res => {
-                        if (res && res.data) {
-                            if (res.data.success === true) {
-                                this.Auth.setToken(res.data.token);
-                                this.props.updateRoutes(true, false);
-                                this.props.history.push('/main/verify')
+        if (!isNaN(contact)) {
+            if (password === confirmPassword) {
+                const data = { name, email, gender, contact, college, state, branch, address, referred_by, password, primary_event }
+                const check = validateInput(data)
+                if (name && gender && branch && contact && college && state && address && primary_event && check.isValid) {
+                    FetchApi('POST', '/api/main/auth/register', data)
+                        .then(res => {
+                            if (res && res.data) {
+                                if (res.data.success === true) {
+                                    this.Auth.setToken(res.data.token);
+                                    this.props.updateRoutes(true, false);
+                                    this.props.history.push('/main/verify')
+                                }
+                                else
+                                    this.setState({ errors: res.data.msg })
                             }
-                            else
-                                this.setState({ errors: res.data.msg })
-                        }
-                    })
-                    .catch(e => {
-                        this.setState({ errors: "Something went wrong." })
-                    });
-            } else if (check.errors && check.errors.email) {
-                this.setState({ errors: check.errors.email })
-            } else if (check.errors && check.errors.password) {
-                this.setState({ errors: check.errors.password })
-            } else {
-                this.setState({ errors: 'Fields cannot be empty' })
+                        })
+                        .catch(e => {
+                            this.setState({ errors: "Something went wrong." })
+                        });
+                } else if (check.errors && check.errors.email) {
+                    this.setState({ errors: check.errors.email })
+                } else if (check.errors && check.errors.password) {
+                    this.setState({ errors: check.errors.password })
+                } else {
+                    this.setState({ errors: 'Fields cannot be empty' })
+                }
+            }
+            else {
+                this.setState({ errors: "Password didn't matched!!" })
             }
         }
         else {
-            this.setState({ errors: "Password didn't matched!!" })
+            this.setState({ errors: "Contact invalid" })
         }
     }
 
@@ -140,7 +145,7 @@ export default class RegisterIndex extends React.Component {
                                     <label htmlFor="inputContact">Contact Number</label>
                                     <input
                                         id="inputContact"
-                                        type="number"
+                                        type="text"
                                         placeholder="Contact Number"
                                         name="contact"
                                         autoCorrect="off"
