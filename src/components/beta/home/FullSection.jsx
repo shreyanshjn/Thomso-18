@@ -36,9 +36,6 @@ export default class FullSection extends Component {
                     </div>
                 </Section>
 
-                <Section>
-                    <About />
-                </Section>
 
                 <Section>
                     <Footfall />
@@ -46,6 +43,10 @@ export default class FullSection extends Component {
 
                 <Section>
                     <Celebrity />
+                </Section>
+
+                <Section>
+                    <About />
                 </Section>
 
                 <Section>

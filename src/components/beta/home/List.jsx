@@ -36,23 +36,23 @@ class List extends Component {
     render() {
         return (
             <ul className="beta-home-list">
-                <li>
+                {this.props.events==="true" ? null: <li>
                     <Link to="/events" className={(this.state.activeStateLink === "events") ? "list-spons-link" : null}
                         onClick={() => {
                             this.setActiveLink("events")
                         }}>
                         EVENTS
             </Link>
-                </li>
-                <li>
+                </li>}
+                {this.props.events==="true" ? null:<li>
                     <Link to="../campusambassador" className={(this.state.activeStateLink
                         === "list-ca-link") ? "list-ca-link" : null}
                         onClick={() => {
                             this.setActiveLink("list-ca-link")
                         }}>
-                        CA PORTAL
+                        CAMPUS AMBASSADOR
                     </Link>
-                </li>
+                </li>}
                 {/*       <li>
           <a href="">ZONALS</a>
         </li>*/}
@@ -94,30 +94,22 @@ class List extends Component {
                         {this.state.isAuthenticated ? 'DASHBOARD' : 'PARTICIPATE'}
             </Link>
                 </li>
-                <li>
-                    <Link to="/zonals/delhi" className={(this.state.activeStateLink === "zonals-delhi") ? "list-zonals-link" : null}
+                {this.props.events === "true" ? null:<li>
+                    <Link to="/zonals/home" className={(this.state.activeStateLink === "zonals-home") ? "list-zonals-link" : null}
                         onClick={() => {
-                            this.setActiveLink("list-zonals-delhi")
+                            this.setActiveLink("list-zonals-home")
                         }}>
-                        DELHI-ZONALS
+                        ZONALS
             </Link>
-                </li>
-                <li>
-                    <Link to="/zonals/lucknow" className={(this.state.activeStateLink === "zonals-lucknow") ? "list-zonals-lucknow" : null}
-                        onClick={() => {
-                            this.setActiveLink("list-zonals-lucknow")
-                        }}>
-                        LUCKNOW-ZONALS
-            </Link>
-                </li>
-                <li>
+                </li>}
+                {this.props.events === "true" ? null:<li>
                     <Link to="/associate" className={(this.state.activeStateLink === "linkAssociate") ? "list-spons-link" : null}
                         onClick={() => {
                             this.setActiveLink("linkAssociate")
                         }}>
                         ASSOCIATE WITH US
             </Link>
-                </li>
+                </li>}
 
                 {/* <li>
           <a href="">FAQs</a>
