@@ -81,13 +81,17 @@ const MainIndex = Loadable({
     loader: () => import("./components/main/Index"),
     loading: () => <Loader />
 });
-const Events= Loadable({
+const Events = Loadable({
     loader: () => import("./components/events/Index"),
     loading: () => <Loader />
 });
 
-const CampusClicks= Loadable({
+const CampusClicks = Loadable({
     loader: () => import("./components/campusClicks/Index"),
+    loading: () => <Loader />
+});
+const Silhoutte = Loadable({
+    loader: () => import("./components/silhoutte/Index"),
     loading: () => <Loader />
 });
 class App extends Component {
@@ -116,6 +120,7 @@ class App extends Component {
                             <Route path="/register" render={(props) => (<Redirect to="/main/" />)} />
                             <Route path="/events" component={Events} />
                             <Route path="/campusclicks" component={CampusClicks} />
+                            <Route path="/silhoutte" component={Silhoutte} />
                             {/* <Route component={Error404} /> */}
                         </React.Fragment>
                     </Switch>

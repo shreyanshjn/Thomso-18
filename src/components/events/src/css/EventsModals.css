@@ -124,7 +124,6 @@
 }
 .events-text-scroll-cont
 {
-    width: 70%;
     display: flex;
     padding: 10px 10px 10px 20px;
     color:white;
@@ -208,9 +207,6 @@
     {
         display:none;
     }
-    .events-modals-last-arrow
-    {
-    }
     .events-text-child
     {
         display:flex;
@@ -232,7 +228,7 @@
     }
     .events-text-scroll-cont
     {
-        width:80%;
+        width:90%;
         margin-left: auto;
         margin-right: auto;
         height: 15vh;

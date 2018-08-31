@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom' ;
+import { Link } from 'react-router-dom';
 
 import FetchApi from "../../../utils/FetchAPI";
 import AuthService from '../../../handlers/main/AuthService';
@@ -60,7 +60,7 @@ export default class VerifyIndex extends React.Component {
     render() {
         const { otp, errors, disabled } = this.state;
         return (
-            <div className="register-parent">
+            <div className="main-verify-register-parent">
                 <div className="register-child">
                     <div className="register-child-child">
                         <div className="register-heading">
@@ -80,7 +80,7 @@ export default class VerifyIndex extends React.Component {
                     <div className="register-form">
                         <form onSubmit={this.onSubmit}>
                             {errors ?
-                                <div style={{textAlign: 'center', color: 'red', fontWeight: '600'}}>
+                                <div style={{ textAlign: 'center', color: 'red', fontWeight: '600' }}>
                                     {errors}
                                 </div>
                                 : null

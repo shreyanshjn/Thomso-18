@@ -80,39 +80,12 @@ class Navbar extends Component {
                     ZONALS
                 </Link>
                 </li> */}
-                                <li className="dropdown">
-                                    <Link to="#" className={(this.state.activeState === "#") ? "linkEvents" : null}
+                                <li >
+                                    <Link to="/events" className={(this.state.activeState === "#") ? "linkEvents" : null}
                                         onClick={() => {
                                             this.setActive("#");
                                         }}>EVENTS
                                     </Link>
-                                    <div className="beta-navbar-dropdown-content">
-                                        <Link to="#" className="events-online-navbar-option">
-                                           ONLINE EVENTS
-                                        </Link>
-                                        <Link to="/quizardry" style={{marginLeft:"15px"}} className={(this.state.activeState === "quizardry") ? "linkEventson" : null}
-                                            onClick={() => {
-                                                this.setActive("quizardry");
-                                            }}>Quizardry
-                                        </Link>
-                                        <Link to="/campusclicks" style={{marginLeft:"15px"}}  className={(this.state.activeState === "campusclicks") ? "linkEventson" : null}
-                                            onClick={() => {
-                                                this.setActive("campusclicks");
-                                            }}>Campus Clicks
-                                        </Link>
-                                        <Link to="#" className="events-offline-navbar-option">
-                                            OFFLINE EVENTS
-                                        </Link>
-                                        <Link to="/events"  style={{marginLeft:"15px"}} className={(this.state.activeState === "events") ? "linkEvents" : null}
-                                            onClick={() => {
-                                                this.setActive("events");
-                                            }}>Events
-                                        </Link>
-                                        {/*  <Link to="" className={(this.state.activeState === "linkEventsoff") ? "linkEventsoff" : null}
-                    onClick={() => {
-                                    this.setActive("linkEventsoff");
-                    }}>OFFLINE EVENTS</Link>*/}
-                                    </div>
                                 </li>
                                 {/*    <li>
                   <Link to="" className={(this.state.activeState === "linkTeam") ? "linkTeam" : null}
@@ -120,6 +93,32 @@ class Navbar extends Component {
                                     this.setActive("linkTeam");
                     }}>TEAM CONTACT</Link>
                 </li>*/}
+                                <li className="dropdown">
+                                    <Link to="#" className="events-online-navbar-option" style={{}}>
+                                        ONGOING EVENTS
+                                    </Link>
+                                    <div className="beta-navbar-dropdown-content">
+                                        <Link to="/quizardry" style={{ marginLeft: "15px" }} className={(this.state.activeState === "quizardry") ? "linkEventson" : null}
+                                            onClick={() => {
+                                                this.setActive("quizardry");
+                                            }}>QUIZARDRY
+                                        </Link>
+                                        <Link to="/campusclicks" style={{ marginLeft: "15px" }} className={(this.state.activeState === "campusclicks") ? "linkEventson" : null}
+                                            onClick={() => {
+                                                this.setActive("campusclicks");
+                                            }}>CAMPUS CLICKS
+                                        </Link>
+                                        <Link to="/silhoutte" style={{ marginLeft: "15px" }} className={(this.state.activeState === "silhoutte") ? "linkEventson" : null}
+                                            onClick={() => {
+                                                this.setActive("silhoutte");
+                                            }}>SILHOUTTE
+                                        </Link>
+                                        {/*  <Link to="" className={(this.state.activeState === "linkEventsoff") ? "linkEventsoff" : null}
+                    onClick={() => {
+                                    this.setActive("linkEventsoff");
+                    }}>OFFLINE EVENTS</Link>*/}
+                                    </div>
+                                </li>
                                 <li>
                                     <Link to="/associate" className={(this.state.activeState === "linkAssociate") ? "linkSponsors" : null}
                                         onClick={() => {
@@ -159,7 +158,7 @@ class Navbar extends Component {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
         );
     }
 }

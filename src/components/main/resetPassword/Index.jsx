@@ -1,63 +1,64 @@
 import React from "react";
-import { Link } from 'react-router-dom' ;
+import { Link } from 'react-router-dom';
 
 import FetchApi from "../../../utils/FetchAPI";
 import validateInput from '../../../utils/validation/loginValidation';
 
 import img from "../../campusAmbassador/register/img/logo.png"
 import "../../campusAmbassador/register/css/register.css";
+import "../verify/verify.css";
 
 
-export default class ResetPasswordEmailIndex extends React.Component{
-    constructor(){
+export default class ResetPasswordEmailIndex extends React.Component {
+    constructor() {
         super();
         this.state = {
-            email:'',
-            errors:'',
-            password:'',
-            confirmPassword:'',
-            tempPassword:'',
-            disabled:true
+            email: '',
+            errors: '',
+            password: '',
+            confirmPassword: '',
+            tempPassword: '',
+            disabled: true
         }
     }
-    onChange = (e)=>{
+    onChange = (e) => {
         const name = e.target.name;
         let value = e.target.value;
-        this.setState({ [name]: value, disabled:false});
+        this.setState({ [name]: value, disabled: false });
     }
-    onSubmit = (e)=>{
+    onSubmit = (e) => {
         e.preventDefault();
-        if(!this.state.disabled){
-            let {email,password, confirmPassword, tempPassword} = this.state;
-            const data = {email,password, tempPassword}
+        if (!this.state.disabled) {
+            let { email, password, confirmPassword, tempPassword } = this.state;
+            const data = { email, password, tempPassword }
             const check = validateInput(data)
             if (check.isValid) {
-                if(password === confirmPassword){
-                    FetchApi('POST','/api/main/auth/resetPassword',data)
-                    .then( res => {
-                        if(res && res.data){
-                            if(res.data.success) this.props.history.push('/main/login')   
-                            else this.setState({errors:res.data.msg})
-                            this.setState({disabled:true})
-                        }
-                    })
-                    .catch(e=>{
-                       if(e && e.response && e.response.data && e.response.data.msg) this.setState({errors:e.response.data.msg,disabled:true})
-                       else this.setState({errors:'Something Went Wrong'})
-                    });
+                if (password === confirmPassword) {
+                    FetchApi('POST', '/api/main/auth/resetPassword', data)
+                        .then(res => {
+                            if (res && res.data) {
+                                if (res.data.success) this.props.history.push('/main/login')
+                                else this.setState({ errors: res.data.msg })
+                                this.setState({ disabled: true })
+                            }
+                        })
+                        .catch(e => {
+                            if (e && e.response && e.response.data && e.response.data.msg) this.setState({ errors: e.response.data.msg, disabled: true })
+                            else this.setState({ errors: 'Something Went Wrong' })
+                        });
                 }
-                else this.setState({errors:"Password Didn't match",disabled:true})
+                else this.setState({ errors: "Password Didn't match", disabled: true })
             }
             else if (check.errors && check.errors.email) this.setState({ errors: check.errors.email })
-            else if (check.errors && check.errors.password)  this.setState({ errors: check.errors.password })
-            else  this.setState({ errors: 'Fields cannot be empty' })
+            else if (check.errors && check.errors.password) this.setState({ errors: check.errors.password })
+            else this.setState({ errors: 'Fields cannot be empty' })
         }
     }
 
-    render(){
-        const {email,tempPassword, password, confirmPassword, errors, disabled} = this.state;
-        return(
-            <div className="register-parent">
+    render() {
+        const { email, tempPassword, password, confirmPassword, errors, disabled } = this.state;
+        return (
+            <div className="main-verify-register-parent">
                 <div className="register-child">
                     <div className="register-heading">
                         <div className="r-logo">
@@ -72,7 +73,7 @@ export default class ResetPasswordEmailIndex extends React.Component{
                     <div className="register-form">
                         <form onSubmit={this.onSubmit}>
                             {errors ?
-                                <div style={{textAlign: 'center', color: 'red', fontWeight: '600'}}>
+                                <div style={{ textAlign: 'center', color: 'red', fontWeight: '600' }}>
                                     {errors}
                                 </div>
                                 : null

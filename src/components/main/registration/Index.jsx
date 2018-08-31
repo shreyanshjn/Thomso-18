@@ -8,6 +8,7 @@ import StateSelect from "../../campusAmbassador/register/StateSelect";
 import validateInput from '../../../utils/validation/loginValidation';
 import AuthService from '../../../handlers/main/AuthService';
 import EventsSelect from "./EventsSelect";
+import "../verify/verify.css";
 
 import "../../campusAmbassador/register/css/register.css";
 
@@ -95,7 +96,7 @@ export default class RegisterIndex extends React.Component {
     render() {
         const { name, contact, email, gender, branch, address, errors, referred_by, password, confirmPassword } = this.state;
         return (
-            <div className="register-parent">
+            <div className="main-verify-register-parent">
                 <div className="register-child">
                     <div className="register-heading">
                         <div className="r-logo">
@@ -104,7 +105,7 @@ export default class RegisterIndex extends React.Component {
                         <div className="vertical_line">
                         </div>
                         <div className="register-ca common-cursor">
-                            <h1>Participant<br /> Registration</h1>
+                            <h1>Participant Registration</h1>
                         </div>
                     </div>
                     <div className="register-form">

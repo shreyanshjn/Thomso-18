@@ -7,7 +7,6 @@
   position: fixed;
   z-index: 100;
   width: 100%;
-  height: 100px;
 }
 
 .quizardy-parent-body{
@@ -30,15 +29,15 @@
 @media only screen and (min-width:768px)
 {
 .quizardy-child{
-    background: url('./nolan.jpg');
-    background-size: 100% 100%;
+    background: url('./Poster-03.jpg');
+    background-size: cover;
     height: 100vh;
     background-repeat: no-repeat;
     background-position: center;
 }
 }
 .quizardy-button{
-    margin-top:70vh;
+    margin-top:50vh;
 }
 .quizardy-flexcenter {
     margin:auto;
@@ -48,14 +47,19 @@
 .quizardy-opening-button {
     cursor: pointer;
     width: fit-content;
-    padding: 15px;
+    padding: 15px 25px;
     background: none;
     font-family: Montserrat;
     font-weight: 600;
-    color: black;
-    border: 2px solid black;
-    background: rgba(255,255,255,0.6);
+    font-size: 16px;
+    color: rgba(0,0,0);
+    border: 1px solid black;
+    background: transparent;
     border-radius: 5px;
+    transition: 0.2s all;
+}
+.quizardy-opening-button:hover{
+    background: rgba(255,255,255,0.6);
 }
 @keyframes bounce {
     0%, 100%, 20%, 50%, 80% {
@@ -78,8 +82,8 @@
   .quizardy-parent {
     height: 100vh;
     overflow-y: hidden;
-    background: url('./nolanMobile.jpg');
-    background-size:140% 100%;
+    background: url('./Poster-04.jpg');
+    background-size:cover;
     background-position: center;
     background-repeat: no-repeat;
     background-position:center;
@@ -99,7 +103,7 @@
     right: 10%;
     }
   .quizardy-button {
-    margin-top: 90vh;
+    margin-top: 91.5vh;
     }
   .quizardy-flexcenter{
     width: 100%;

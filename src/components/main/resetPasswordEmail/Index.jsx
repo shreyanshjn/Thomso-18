@@ -6,53 +6,54 @@ import validateInput from '../../../utils/validation/loginValidation';
 
 import img from "../../campusAmbassador/register/img/logo.png"
 import "../../campusAmbassador/register/css/register.css";
+import "../verify/verify.css";
 
 
-export default class ResetPasswordEmailIndex extends React.Component{
-    constructor(){
+export default class ResetPasswordEmailIndex extends React.Component {
+    constructor() {
         super();
         this.state = {
-            errors:'',
-            email:'',
-            disabled:true
+            errors: '',
+            email: '',
+            disabled: true
         }
     }
-    onChange = (e)=>{
+    onChange = (e) => {
         const name = e.target.name;
         let value = e.target.value;
-        this.setState({ [name]: value, disabled:false});
+        this.setState({ [name]: value, disabled: false });
     }
-    onSubmit = (e)=>{
+    onSubmit = (e) => {
         e.preventDefault();
-        if(!this.state.disabled){
-            let {email} = this.state;
-            if(email) email = email.trim();
-            const data = {email}
+        if (!this.state.disabled) {
+            let { email } = this.state;
+            if (email) email = email.trim();
+            const data = { email }
             const check = validateInput(email, 'email')
-            if(check.isValid){
-                this.setState({disabled:true})
-                FetchApi('POST','/api/main/auth/resetEmail',data)
-                .then( res => {
-                    if(res && res.data){
-                        if(res.data.success) this.props.history.push('/main/resetPassword')
-                        else this.setState({errors:res.data.msg})
-                    }
-                })
-                .catch(e=>{
-                    if(e && e.response && e.response.data && e.response.data.msg) this.setState({errors:e.response.data.msg})
-                    else this.setState({errors:"Something Went Wrong"})
-                });
+            if (check.isValid) {
+                this.setState({ disabled: true })
+                FetchApi('POST', '/api/main/auth/resetEmail', data)
+                    .then(res => {
+                        if (res && res.data) {
+                            if (res.data.success) this.props.history.push('/main/resetPassword')
+                            else this.setState({ errors: res.data.msg })
+                        }
+                    })
+                    .catch(e => {
+                        if (e && e.response && e.response.data && e.response.data.msg) this.setState({ errors: e.response.data.msg })
+                        else this.setState({ errors: "Something Went Wrong" })
+                    });
             }
-            else if (check.errors && check.errors.email)  this.setState({ errors: check.errors.email })
-            else  this.setState({ errors: 'Fields cannot be empty' })
+            else if (check.errors && check.errors.email) this.setState({ errors: check.errors.email })
+            else this.setState({ errors: 'Fields cannot be empty' })
         }
     }
 
 
-    render(){
-        const {email, errors, disabled} = this.state;
-        return(
-            <div className="register-parent">
+    render() {
+        const { email, errors, disabled } = this.state;
+        return (
+            <div className="main-verify-register-parent">
                 <div className="register-child">
                     <div className="register-heading">
                         <div className="r-logo">
@@ -67,7 +68,7 @@ export default class ResetPasswordEmailIndex extends React.Component{
                     <div className="register-form">
                         <form onSubmit={this.onSubmit}>
                             {errors ?
-                                <div style={{textAlign: 'center', color: 'red', fontWeight: '600'}}>
+                                <div style={{ textAlign: 'center', color: 'red', fontWeight: '600' }}>
                                     {errors}
                                 </div>
                                 : null
@@ -92,8 +93,8 @@ export default class ResetPasswordEmailIndex extends React.Component{
                                     />
                                 </div>
                             </div>
-                            <div style={{marginTop: '10px', fontSize: '0.8em', textAlign: 'center'}}>* Already have Reset Code? Click 
-                                <span style={{color: 'cyan', cursor: 'pointer'}} onClick={() => this.props.history.push('/main/resetPassword')}> 
+                            <div style={{ marginTop: '10px', fontSize: '0.8em', textAlign: 'center' }}>* Already have Reset Code? Click
+                                <span style={{ color: 'cyan', cursor: 'pointer' }} onClick={() => this.props.history.push('/main/resetPassword')}>
                                     &nbsp;here&nbsp;
                                 </span>
                                 to proceed
