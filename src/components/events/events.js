@@ -217,7 +217,7 @@ export const EventDetails =
                 prize: "20"
             },
             { 	id: '12_6',
-                name: "Cognet Wheelhouses",
+                name: "Cogent Wheelhouses",
                 content: "Ever dreamt about being an CXO of a company? Well, here’s a chance to think and act as a CXO and build something of your own. Cogent Wheelhouses provides you with an opportunity to test various skills required while working for an organization in the corporate world. It will be an occasion where one can innovate, build a team, take decisions and numerous other things. So, get ready to witness some fierce competition and out of the box thinking.",
                 rulebook: "https://drive.google.com/open?id=1bUJqauG__zMPitHB1Kfi6xTaFRCY7YFe",
                 image: "cognet_wheelhouses.jpeg",

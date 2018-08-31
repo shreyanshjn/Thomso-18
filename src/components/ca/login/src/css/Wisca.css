@@ -67,19 +67,19 @@
     position: relative;
     overflow-x: hidden;
     margin-left:1.7%;
-
+    user-select:none;
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none; 
 }
 @media screen and (max-width:1068px){
   .login-wisca-Heading{
-
     font-size: 12px;
     font-weight:bold; 
     text-align: center;
     font-family: Montserrat
-
   }
   .login-wisca-MAINDIV{
-
     margin-top:24vh;
     padding-left:10%;
     overflow-x: hidden;

@@ -8,6 +8,10 @@
     align-items: center;
     font-family:Montserrat;
     font-size:15px;
+    user-select:none;
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none; 
 }
 .beta-home-hoverEffect
 {

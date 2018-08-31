@@ -1,4 +1,8 @@
 .cards{
+    user-select:none;
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none; 
 	background-image: url("../../beta/home/src/img/dashboard.jpg");
 	background-size: cover;
 	background-position: center center;

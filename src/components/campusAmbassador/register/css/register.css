@@ -29,6 +29,10 @@
 .register-heading{
     display: flex;
     padding: 10px 40px 0px 30px;
+    user-select:none;
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none; 
 }
 .register-parent-reset
 {
@@ -120,6 +124,10 @@
     flex-direction: column;
     background-color:rgba(0,0,0,0.2);
     border-radius: 10px;
+    user-select:none;
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none; 
 }
 .form-heading{
     display: flex;
