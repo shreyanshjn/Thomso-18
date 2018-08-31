@@ -36,6 +36,7 @@ router.post('/auth/resetPassword' , participantRegister.reset_password);
 router.get('/user', MainUserTokenMiddleware.verifyUser , participantControl.userInfo);
 router.get('/primary', eventControl.getEvents);
 router.get('/events' , MainUserTokenMiddleware.verify, participantControl.getUserEvents);
+router.post('/updateImage' , MainUserTokenMiddleware.verify, participantControl.update_image);
 
 router.delete('/removeEvent' , MainUserTokenMiddleware.verify,eventControl.removeEvent);
 

@@ -276,7 +276,7 @@ exports.reset_password = function (req, res) {
                                 if (newHash) {
                                     var updateData = {
                                         tempPassword: "",
-                                        password: newHash
+                                        password: newHash,
                                     };
                                     Main_User.update(
                                         { email: req.body.email },

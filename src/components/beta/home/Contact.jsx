@@ -42,7 +42,7 @@ class Contact extends Component {
                             </tr>
                             <tr>
                                 <td>(Public Relations)</td>
-                                <td>&nbsp;&nbsp; shubham.thomso@gmail.com</td>
+                                <td>&nbsp;&nbsp; shubham.thomso18@gmail.com</td>
                             </tr>
                         </tbody> 
                     </table>

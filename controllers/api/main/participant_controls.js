@@ -41,3 +41,9 @@ exports.getUserEvents = function (req, res) {
             }
         });
 };
+
+exports.update_image = function (req, res) {
+    if(req && req.body){
+        console.log("hello bs")
+    }
+};
