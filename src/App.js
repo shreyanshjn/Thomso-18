@@ -94,6 +94,10 @@ const Silhoutte = Loadable({
     loader: () => import("./components/silhoutte/Index"),
     loading: () => <Loader />
 });
+const blog= Loadable({
+    loader: () => import("./components/beta/blog/index"),
+    loading: () => <Loader />
+});
 class App extends Component {
     render() {
         return (
@@ -112,6 +116,7 @@ class App extends Component {
                             <Route path="/ca/" component={CAIndex} />
                             <Route path="/campusAmbassador/" component={CampusIndex} />
                             <Route path="/zonals" component={ZonalsIndex} />
+                            <Route path="/blog" component={blog} />
 
                             <Route path="/verifyCerti/" component={VerifyCerti} />
                             <Route path="/policy" component={Policy} />
