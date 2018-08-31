@@ -10,11 +10,11 @@ import "./Index.css";
 
 let addTopicTimeout;
 
-export default class QuizardryIndex extends React.Component{
+export default class QuizardryIndex extends React.Component {
     constructor() {
         super();
-        this.state={
-            isNavbar:true
+        this.state = {
+            isNavbar: true
         };
     }
 
@@ -28,15 +28,15 @@ export default class QuizardryIndex extends React.Component{
         clearTimeout(addTopicTimeout);
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <div>
                 <div className="quizardy-mobile">
                     <Navbar />
                 </div>
                 <div className="quizardy-parent">
                     <div className="quizardy-navbar">
-                        <Navbar background="true"/>
+                        <Navbar background="true" />
                     </div>
                     <div className="quizardy-child">
                         <div className="quizardy-flexcenter">

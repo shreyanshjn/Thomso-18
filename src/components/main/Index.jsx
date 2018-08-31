@@ -50,6 +50,11 @@ const Profile = Loadable({
     loading: Loading
 });
 
+const PostIndex = Loadable({
+    loader: () => import("./post/Index"),
+    loading: Loading
+});
+
 const LogoutIndex = Loadable({
     loader: () => import("./logout/Index"),
     loading: Loading
@@ -125,6 +130,7 @@ export default class MainIndex extends React.Component {
                                 <Route path="/main" render={props => (<SidebarIndex {...props} userData={this.state.userData} />)} />
                                 <Route exact path="/main" render={props => (<Profile {...props} userData={this.state.userData} />)} />
                                 <Route exact path="/main/contact" render={props => (<ContactIndex {...props} main={true} userData={this.state.userData} />)} />
+                                <Route exact path="/main/post" component={PostIndex} />
                             </React.Fragment>
                         }
                         <Route exact path="/main/logout" render={props => (<LogoutIndex {...props} updateRoutes={this.handleUpdate} />)} />
