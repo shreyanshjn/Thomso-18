@@ -2,7 +2,11 @@
   height:16vh;
   width: 100%;
   background-color: #171e33;
-  
+  position: fixed;
+  top:0;
+}
+.parent{
+
 }
 .blog-body{
   display: flex;
@@ -45,6 +49,7 @@
 }
 .blog-bodyparent{
   height: 20vh;
+  margin-top: 20vh;
   text-align: center;
 }
 .blog-bodyparent-pic{

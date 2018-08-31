@@ -20,13 +20,14 @@ export default class blog extends React.Component{
     <Navbar />
 
     </div>
+    <div className="parent">
     <div className="blog-bodyparent">
 
       <div className="blog-bodyparent-name">
         JOHN DOE
       </div>
       <div className="blog-bodyparent-date">
-        posted on *******
+        posted on 30 August 2018
       </div>
     </div>
     <div className="blog-body">
@@ -99,7 +100,7 @@ export default class blog extends React.Component{
 
         </div>
       </div>
-
+</div>
 
   </div>
 </div>
