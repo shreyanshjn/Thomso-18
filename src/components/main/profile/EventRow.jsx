@@ -1,8 +1,6 @@
 import React from "react";
-
 import AuthService from '../../../handlers/main/AuthService';
 import FetchApi from "../../../utils/FetchAPI";
-
 import dustbin from '../src/img/dustbin.png';
 
 export default class Profile extends React.Component {
@@ -10,7 +8,8 @@ export default class Profile extends React.Component {
         super();
         this.state = {
             disabled: false,
-            deleted: false
+            deleted: false,
+            errors:''
         }
         this.Auth = new AuthService();
     }
@@ -25,8 +24,11 @@ export default class Profile extends React.Component {
             FetchApi('POST', '/api/main/removeParticipant', data, token)
                 .then(res => {
                     console.log(res.data)
-                    if (res && res.data) {
-                        this.setState({ deleted: true })
+                    if (res && res.data && res.data.success) {
+                        this.setState({ deleted: true });
+                    }
+                    else{
+                        this.setState({errors:res.data.msg});
                     }
                 })
                 .catch(e => {
@@ -36,7 +38,10 @@ export default class Profile extends React.Component {
     }
 
     render() {
+        let {errors} = this.state;
         return (
+            <React.Fragment>
+            {errors ? <div style={{color:"red", fontSize:"10px",width:"100%"}}>{errors}</div>:null}
             <tr>
                 <td className="table-child-one" style={this.state.deleted ? {textDecoration: 'line-through'} : null}>
                     {this.props.index + 1}. &nbsp; {this.props.data ? this.props.data.name : null}
@@ -45,6 +50,7 @@ export default class Profile extends React.Component {
                     <img src={dustbin} alt="delete" className="main-events-bin"/>
                 </td>
             </tr>
+            </React.Fragment>
         );
     }
 }

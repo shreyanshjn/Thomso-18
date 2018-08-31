@@ -68,29 +68,59 @@ exports.addParticipant = function(req, res){
 
 exports.removeParticipant = function(req, res){
     if(req && req.body){
-        // console.log(req.body)
-        // console.log(req.locals)
         var data = {
             event_id : req.body.event_id,
             email : req.locals.email,
             _id:req.locals._id
         }
+        console.log(data)
         if(data.event_id && data.email && data._id){
-            EventSchema.findOneAndUpdate({ event_id: data.event_id }, {$pull:{users:data._id}})
-            .select('name')
-            .exec(function(err, user){
+            Main_User.findOne({
+                email:data.email
+            })
+            .select('name primary_event')
+            .exec(function(err,user){
                 if(err){
                     return res.state(400).send({success:false, msg:'unable to remove participant'});
                 }
-                Main_User.findOneAndUpdate(
-                    {email:data.email},
-                    {$pull:{event:user._id}}
-                ) 
-                .exec(function(err){
-                    if(err) return res.status(400).send({success:false, msg:'unable to remove event'});
-                    res.json({success:true, msg:'event removes from participant'});
-                });            
-            });
+                console.log(user);
+                if(!user){
+                    return res.state(400).send({success:false, msg:'Email Not Found'});
+                }
+                else{
+                    EventSchema.findOne({ _id:user.primary_event })
+                    .select('name')
+                    .exec(function(err, results){
+                        if(err){
+                            return res.state(400).send({success:false, msg:'unable to remove participant'});
+                        }
+                        if(results){
+                        console.log(results);
+
+                            return res.json({success:false, msg:"Cann't Remove Primary Event"});
+                        }
+                        else{
+                        console.log(results);
+
+                            EventSchema.findOneAndUpdate({ event_id: data.event_id }, {$pull:{users:data._id}})
+                            .select('name')
+                            .exec(function(err, result){
+                                if(err){
+                                    return res.state(400).send({success:false, msg:'unable to remove participant'});
+                                }
+                                Main_User.findOneAndUpdate(
+                                    {email:data.email},
+                                    {$pull:{event:result._id}}
+                                ) 
+                                .exec(function(err){
+                                    if(err) return res.status(400).send({success:false, msg:'unable to remove event'});
+                                    res.json({success:true, msg:'event removes from participant'});
+                                });    
+                            });
+                        }
+                    })
+                }
+            })
         } else return res.status(400).send({success:false,msg:'Invalid Event ID'});
     } else return res.status(400).send({success:false,msg:'Invalid Data'});
 }
