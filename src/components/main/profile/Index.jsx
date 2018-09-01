@@ -5,6 +5,7 @@ import AuthService from '../../../handlers/main/AuthService';
 
 import EventRow from "./EventRow";
 import "../src/css/profile.css"
+import UpdateImage from "../sidebar/UpdateImage"
 
 export default class Profile extends React.Component {
 
@@ -15,7 +16,8 @@ export default class Profile extends React.Component {
             event_name: '',
             isPrimary: false,
             disabled: true,
-            events: []
+            events: [],
+            img: ''
         }
         this.Auth = new AuthService();
     }
@@ -50,7 +52,10 @@ export default class Profile extends React.Component {
                 <div className="participant-profile-child-details">
                     <div className="participant-profile-child-left">
                         <div className="participant-profile-child-left-details">
-                            <p className="participant-profile-label">Name :</p><p className="participant-somedetails">{(this.props.userData && this.props.userData.name) ? this.props.userData.name : null}</p>
+                            <p className="participant-profile-label">Name:</p><p className="participant-somedetails">{(this.props.userData && this.props.userData.name) ? this.props.userData.name : null}</p>
+                        </div>
+                        <div className="participant-profile-child-left-details">
+                            <UpdateImage imagePrev={(data) => this.setState({ img: data })} />
                         </div>
                         <div className="participant-profile-child-left-details" style={{ display: "inline-block", width: "50%" }}>
                             <p className="participant-profile-label">Thomso ID :</p><p className="participant-somedetails">{(this.props.userData && this.props.userData.thomso_id) ? this.props.userData.thomso_id : null}</p>

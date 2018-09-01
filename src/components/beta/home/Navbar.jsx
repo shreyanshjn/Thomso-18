@@ -46,7 +46,7 @@ class Navbar extends Component {
     render() {
         return (
             <div className="beta-navbar-contain">
-                {console.log(this.props.events,"ff")}
+                {console.log(this.props.events, "ff")}
                 <div className={this.state.hamburger ? "beta-home-navbar" : "beta-home-navbar beta-navbar-overlay beta-navbar-navbarToggle"} id={(this.props.background === "true") ? "background-image-gradient" : null}>
                     <div className="beta-navbar-t-logo">
                         <Link to="/"> <img src={img} alt="" /></Link>
@@ -61,18 +61,18 @@ class Navbar extends Component {
                             </div>
                         </div>
                         <div className={this.state.isHidden ? "list_" : "list_ beta-navbar-active"}>
-                            {!this.state.isHidden && <List events={this.props.events === "true" ? "true":null}/>}
+                            {!this.state.isHidden && <List events={this.props.events === "true" ? "true" : null} />}
                         </div>
                         <div className="beta-navbar-int-ctos">
                             <ul id="beta-navbar-options-hide">
-                                {this.props.events==="true" ? null:<li >
+                                {this.props.events === "true" ? null : <li >
                                     <Link to="/campusambassador/" className={(this.state.activeState === "campusambassador/") ? "linkCaportal" : null}
                                         onClick={() => {
                                             this.setActive("linkCaportal");
                                         }}>
                                         CAMPUS AMBASSADOR
                                     </Link>
-                                </li> }
+                                </li>}
                                 {/*<li>
                       <Link to="" className={(this.state.activeState === "linkZonals") ? "linkZonals" : null}
                     onClick={() => {
@@ -81,7 +81,7 @@ class Navbar extends Component {
                     ZONALS
                 </Link>
                 </li> */}
-                                {this.props.events==="true" ? null:<li >
+                                {this.props.events === "true" ? null : <li >
                                     <Link to="/events" className={(this.state.activeState === "#") ? "linkEvents" : null}
                                         onClick={() => {
                                             this.setActive("#");
@@ -119,13 +119,13 @@ class Navbar extends Component {
                     }}>OFFLINE EVENTS</Link>*/}
                                     </div>
                                 </li>
-                                {this.props.events==="true" ? null:<li>
+                                {this.props.events === "true" ? null : <li>
                                     <Link to="/associate" className={(this.state.activeState === "linkAssociate") ? "linkSponsors" : null}
                                         onClick={() => {
                                             this.setActive("linkAssociate");
                                         }}>ASSOCIATE WITH US</Link>
                                 </li>}
-                                {this.props.events==="true" ? null:<li className="dropdown">
+                                {this.props.events === "true" ? null : <li className="dropdown">
                                     <Link to="/zonals/home" className={(this.state.activeState === "lucknow") ? "linkLucknow" : null}
                                         onClick={() => {
                                             this.setActive("lucknow");
@@ -135,7 +135,13 @@ class Navbar extends Component {
                                     <Link to="/main" className={(this.state.activeState === "main") ? "linkSponsors" : null}
                                         onClick={() => {
                                             this.setActive("main");
-                                        }}>{this.state.isAuthenticated ? 'DASHBOARD' : 'REGISTER'}</Link>
+                                        }}>{this.state.isAuthenticated ?
+
+                                            // this.props.userData && this.props.userData.image && this.props.userData.image !== 0 ?
+                                            //     <img src={} alt="User" /> : 
+                                            'Dashboard'
+
+                                            : 'REGISTER'}</Link>
 
                                 </li>
                                 {/* <li>

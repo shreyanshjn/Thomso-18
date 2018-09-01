@@ -69,24 +69,28 @@ export default class Sidebar extends React.Component {
           style={{ backgroundColor: 'white' }}
         >
           <div className="main-sidebar-user">
-            {(this.props.userData && this.props.userData.image) ? <img src={user} className="image" alt="User" /> :
-              <React.Fragment>
-                {(this.props.userData && this.props.userData.gender === 'female') ?
-                  <img src={girl} className="image" alt="User" /> :
-                  <img src={boy} className="image" alt="User" />
-                }
-              </React.Fragment>}
+            <div className="main-sidebar-user-child">
+              {(this.props.userData && this.props.userData.image) ? <img src={user} className="image" alt="User" /> :
+                <React.Fragment>
+                  {(this.props.userData && this.props.userData.gender === 'female') ?
+                    <img src={girl} className="image" alt="User" /> :
+                    <img src={boy} className="image" alt="User" />
+                  }
+                </React.Fragment>}
+            </div>
             <div className="main-sidebar-user-details">
               <div className="text">{this.props.userData ? this.props.userData.name : "User"}</div>
               <div className="cname">{this.props.userData ? this.props.userData.college : "-"}</div>
-            </div>
-            <UpdateImage imagePrev={(data) => this.setState({ img: data })} imageUpdated={(data) => data ? this.setState({ errors: 'Image updated successfully' }) : this.setState({ errors: 'Unable to update image' })} />
-              {errors ?
-              <div style={{ textAlign: 'center', color: 'black', fontWeight: '600' }}>
-                {errors}
+              <div>
+                <UpdateImage imagePrev={(data) => this.setState({ img: data })} imageUpdated={(data) => data ? this.setState({ errors: 'Image updated successfully' }) : this.setState({ errors: 'Unable to update image' })} />
               </div>
-              : null
-            }
+              {errors ?
+                <div style={{ textAlign: 'center', color: 'red', fontWeight: '600' }}>
+                  {errors}
+                </div>
+                : null
+              }
+            </div>
           </div>
           <div className="main-sidebar-line">
           </div>
@@ -219,7 +223,7 @@ export default class Sidebar extends React.Component {
             </Link>
           </div>
         </div>
-      </div>
+      </div >
     );
   }
 }
