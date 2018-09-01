@@ -7,7 +7,7 @@ exports.userInfo = function(req,res){
         Main_User.find()
             .populate('event', 'name event_id')
             .populate('primary_event', 'name event_id')
-            .select('name email gender thomso_id college address branch contact verified')
+            .select('name email gender thomso_id college address branch contact verified referral')
             .exec(function (err, user) {
                 if (err) {
                     return res.status(400).send({ success: false, msg: 'Unable to connect to database. Please try again.' })

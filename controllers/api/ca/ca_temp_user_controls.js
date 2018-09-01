@@ -8,7 +8,7 @@ exports.getData = function (req, res) {
     Temp_User.findOne({
         email: req.locals.email
     })
-        .select('name email gender verified ca_id bonus referrals score college')
+        .select('name email gender verified ca_id bonus referrals score college image')
         .exec(function (err, user) {
             if (err) {
                 return res.status(400).send({
@@ -24,6 +24,36 @@ exports.getData = function (req, res) {
             }
         });
 };
+
+exports.update_image = function (req, res) {
+    if(req && req.body && req.body.format){
+        let data = {
+            id:req.locals._id,
+            email:req.locals.email,
+            img:req.body.image,
+            format:req.body.format
+        }
+        console.log(data);
+        let baseImg = data.img.split(',')[1]
+        let binaryData = new Buffer(baseImg, 'base64');
+        let ext = data.format.split('/')[1]
+        let updateData = {image : `${data.id}.${ext}`}
+        console.log(updateData);
+
+        require("fs").writeFile(`./public/img/ProfileImage/${updateData.image}`, binaryData, function(err) {
+            if(err) return res.status(400).send({ success: false, msg:"something went wrong"})
+            else{
+                Temp_User.findOneAndUpdate({
+                    email:data.email
+                }, updateData)
+                .exec(function(err){
+                    if (err) return status(401).send({ success: false, msg: "Unable To Upload Image. Please Try Again." })
+                    res.json({ success: true, msg: "Image Uploaded Successfully." })
+                })
+            }
+        })
+    }else res.status(400).send({ success: false, msg: 'Invalid Data' });
+}
 
 /* GET all Posts */
 exports.getPosts = function (req, res) {

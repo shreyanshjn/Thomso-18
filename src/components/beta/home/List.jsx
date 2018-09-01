@@ -83,7 +83,7 @@ class List extends Component {
                         onClick={() => {
                             this.setActiveLink("silhoutte")
                         }}>
-                        SILHOUTTE
+                        SILHOUETTE
             </Link>
                 </li>
                 <li>

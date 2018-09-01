@@ -99,7 +99,7 @@ export const EventDetails =
             content: "In the recent years, memesters have successfully managed to tickle our funny bones by hijacking our social medias with their MAYMAYS. The trend says memes but we are here with 'MAYMAY' - the online meme making competition of Thomso'18. With this we have begun our quest to find the ultimate memelord. Put on your thinking caps memesta’s because the competition is going to be fierce. Pour all your creativity, spill the humour and be the pro.",
             rulebook: "",
             image:"may_may.jpeg",
-            prize: "10"
+            prize: "50"
             },
             {
             id: '3_6',
@@ -270,7 +270,7 @@ export const EventDetails =
         },
         { 	id: '8_2',
             name: "Queen's Gambit",
-            content: "Do you pursuegood chess skills,but do not feel like playing those 30+minute games?If yes, then this is the best platform to show off your skills.Instead of playing tediously long matches on a chess board, this is a unique Chess tactics solving competition." ,
+            content: "Do you pursue good chess skills,but do not feel like playing those 30+minute games? If yes, then this is the best platform to show off your skills.Instead of playing tediously long matches on a chess board, this is a unique 'Chess tactics solving competition.'" ,
             rulebook: "https://drive.google.com/open?id=1TD7_ZMNIJvCcC-6Ym0a1AmZrWaRUkzFN",
             image: "queen_gambit.jpg",
             prize: "10"

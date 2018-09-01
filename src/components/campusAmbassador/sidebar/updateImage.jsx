@@ -17,7 +17,7 @@ export default class UpdateImage extends React.Component{
     
       onSubmit =(e)=> {
         e.preventDefault();
-        if(this.state.file.size > 101200){
+        if(this.state.file.size > 1101200){
             this.setState({disabled: true, errors: 'Max image sixe of 100 kb exceeded'})
         }else{
             let data = {
@@ -25,12 +25,13 @@ export default class UpdateImage extends React.Component{
                 format: this.state.file.type
             }
             const token = this.Auth.getToken()
-            FetchApi('post','/api/main/updateImage', data, token)
+            FetchApi('post','/api/ca/temp/updateImage', data, token)
             .then(res => {
+                console.log(res.data)
                 if(res && res.data && res.data.success){
                   this.props.imageUpdated(true);
                   this.setState({disabled: true, errors: ''})
-                  // this.props.history.push('/CampusAmbassador');
+                  // this.props.history.push('/main');
                 }
                 else{
                   this.props.imageUpdated(false);

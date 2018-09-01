@@ -111,7 +111,7 @@ class Navbar extends Component {
                                         <Link to="/silhoutte" style={{ marginLeft: "15px" }} className={(this.state.activeState === "silhoutte") ? "linkEventson" : null}
                                             onClick={() => {
                                                 this.setActive("silhoutte");
-                                            }}>SILHOUTTE
+                                            }}>SILHOUETTE
                                         </Link>
                                         {/*  <Link to="" className={(this.state.activeState === "linkEventsoff") ? "linkEventsoff" : null}
                     onClick={() => {

@@ -19,6 +19,7 @@ import Contact from "./Svg/Contact"
 import Logout from "./Svg/Logout"
 import Bulb from "./Svg/Bulb"
 import Hand from "./Svg/Hand"
+import UpdateImage from './updateImage'
 
 // import logoUser from '../common/images/user.svg';
 
@@ -31,7 +32,8 @@ export default class Sidebar extends React.Component {
     this.state = {
       referral: 'AVSHFSAD',
       activeState: window.location.pathname.substring(18),
-      showReferral: false
+      showReferral: false,
+      errors: '',
     };
     if (!window.location.pathname.substring(18)) {
       this.state = {
@@ -70,6 +72,8 @@ export default class Sidebar extends React.Component {
   }
 
   render() {
+    let { errors } = this.state;
+    let user  = 'img/ProfileImage/' + this.props.userData.image
     return (
       <div>
         {this.state.showReferral ?
@@ -84,14 +88,22 @@ export default class Sidebar extends React.Component {
           className="sidenav"
           style={{ backgroundColor: 'white' }}
         >
+        {console.log(this.props.userData)}
           <div className="campusAmb-sidebar-user">
-            {(this.props.userData && this.props.userData.image) ? <img src={this.props.userData.image} className="image" alt="User" /> :
+            {(this.props.userData && this.props.userData.image) ? <img src={user} className="image" alt="User" /> :
               <React.Fragment>
                 {(this.props.userData && this.props.userData.gender === 'female') ?
                   <img src={girl} className="image" alt="User" /> :
                   <img src={boy} className="image" alt="User" />
                 }
               </React.Fragment>}
+            <UpdateImage imagePrev={(data) => this.setState({ img: data })} imageUpdated={(data) => data ? this.setState({ errors: 'Image updated successfully' }) : this.setState({ errors: 'Unable to update image' })} /> : null}
+            {errors ?
+              <div style={{ textAlign: 'center', color: 'black', fontWeight: '600' }}>
+                {errors}
+              </div>
+              : null
+            }
 
             <div className="campusAmb-sidebar-user-details">
               <div className="text">{this.props.userData ? this.props.userData.name : "User"}</div>
