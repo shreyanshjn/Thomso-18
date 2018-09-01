@@ -11,12 +11,13 @@ export default class UpdateImage extends React.Component{
             disabled:true,
             errors:''
       };
+      this.handleImageChange = this.handleImageChange.bind(this);
         this.Auth = new AuthService();
       }
     
       onSubmit =(e)=> {
         e.preventDefault();
-        console.log(this.state)
+        // console.log(this.state,"ghggjh")
         if(this.state.file.size > 101200){
             this.setState({disabled: true, errors: 'Max image sixe of 100 kb exceeded'})
         }else{
@@ -24,21 +25,21 @@ export default class UpdateImage extends React.Component{
                 image: this.state.imagePreviewUrl,
                 format: this.state.file.type
             }
-            console.log(data)
+            // console.log(data)
             const token = this.Auth.getToken()
-            this.setState({disabled: true, errors: ''});
+            this.setState({ errors: ''});
             FetchApi('post', '/api/main/updateImage', data, token)
-            .then(r => r.data.success ? this.props.imageUpdated(true) : this.props.imageUpdated(false))
+            .then(res => {
+                if(res && res.data && res.data.success){
+                  this.props.imageUpdated(true);
+                }
+                else{
+                  this.props.imageUpdated(false);
+                }
+              })
            .catch(err => console.log(err));
         }
       }
-    
-      onChange = (e) => {
-        const name = e.target.name;
-        let value = e.target.value;
-        console.log(e.target.name, 'sdds',e.target.value)
-        this.setState({ [name]: value , disabled:false});
-        }
 
       handleImageChange(e) {
         e.preventDefault();
@@ -49,7 +50,8 @@ export default class UpdateImage extends React.Component{
         reader.onloadend = () => {
           this.setState({
             file: file,
-            imagePreviewUrl: reader.result
+            imagePreviewUrl: reader.result,
+            disabled:false
           });
           this.props.imagePrev(reader.result);
         }
@@ -58,22 +60,16 @@ export default class UpdateImage extends React.Component{
       }
     
       render() {
-        let { errors,disabled } = this.state;
+        let { disabled } = this.state;
         return (
           <div>
-              {errors ?
-                <div style={{ textAlign: 'center', color: 'red', fontWeight: '600' }}>
-                    {errors}
-                </div>
-                : null
-            }
             <form onSubmit={this.onSubmit}>
               <div>
                 <span>Chose File</span>
                 <input 
                 name="file"
                 type="file"
-                onChange={this.onChange}
+                onChange={(e)=>this.handleImageChange(e)}
                 accept="" />
               </div>
               

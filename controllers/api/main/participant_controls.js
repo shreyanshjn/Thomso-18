@@ -44,9 +44,42 @@ exports.getUserEvents = function (req, res) {
 };
 
 exports.update_image = function (req, res) {
-    if(req && req.body){
-        console.log("hello bs")
-    }
+    if(req && req.body && req.body.format){
+        // console.log(req.locals)
+        let data = {
+            id:req.locals._id,
+            email:req.locals.email,
+            img:req.body.image,
+            format:req.body.format
+        }
+        // console.log(data.email)
+        let baseImg = data.img.split(',')[1];
+        // console.log(baseImg)
+        let binaryData = new Buffer(baseImg, 'base64');
+        // console.log(binaryData)
+        let ext = data.format.split('/')[1]
+        // console.log(ext)
+
+        let updateData = {
+            image : `${data.id}.${ext}`
+        }
+        // console.log(updateData.image)
+        require("fs").writeFile(`./ProfileImage/${updateData.image}`, binaryData, function(err) {
+            if(err){
+                console.log(err)
+                return res.status(400).send({ success: false, msg:"something went wrong"})
+            }
+            else{
+                Main_User.findOneAndUpdate({
+                    email:data.email
+                }, updateData)
+                .exec(function(err){
+                    if (err) return status(401).send({ success: false, msg: "Unable To Upload Image. Please Try Again." })
+                    res.json({ success: true, msg: "Image Uploaded Successfully." })
+                })
+            }
+        })
+    }else res.status(400).send({ success: false, msg: 'Invalid Data' });
 }
 exports.resendOTP = function (req, res) {
     if (req.locals.email) {

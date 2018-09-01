@@ -87,12 +87,12 @@ exports.removeParticipant = function(req, res){
                 }
                 else{
                     EventSchema.findOne({ _id:user.primary_event })
-                    .select('name')
+                    .select('name event_id')
                     .exec(function(err, results){
                         if(err){
                             return res.state(400).send({success:false, msg:'unable to remove participant'});
                         }
-                        if(results){
+                        if(results.event_id === data.event_id){
                             return res.json({success:false, msg:"Cann't Remove Primary Event"});
                         }
                         else{
