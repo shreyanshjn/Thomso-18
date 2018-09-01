@@ -61,7 +61,7 @@ export default class UpdateImage extends React.Component{
           <div>
             <form onSubmit={this.onSubmit}>
               <div>
-                <span>Chose File</span>
+                <span>Choose File</span>
                 <input 
                 name="file"
                 type="file"

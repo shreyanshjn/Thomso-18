@@ -19,6 +19,7 @@ import Contact from "./Svg/Contact"
 import Logout from "./Svg/Logout"
 import Bulb from "./Svg/Bulb"
 import Hand from "./Svg/Hand"
+import Home from "../../main/sidebar/Svg/Home.jsx";
 
 // import logoUser from '../common/images/user.svg';
 
@@ -256,6 +257,26 @@ export default class Sidebar extends React.Component {
               </div>
             </Link> */}
             <Link
+              to="/CampusAmbassador/zonals"
+              className={
+                this.state.activeState === "zonals"
+                  ? "sideNavItem activeSideItem"
+                  : "sideNavItem"
+              }
+              onClick={() => {
+                this.setActive("zonals");
+              }}
+            >
+              <div className="campusAmb-sidebar-ideas flex_row">
+                <div className="campusAmb-sidebar-svg-logo">
+                    <Home />
+                </div>
+                <div className="campusAmb-sidebar-navitem-name">
+                  ZONALS
+                </div>
+              </div>
+            </Link>
+            <Link
               to="/CampusAmbassador/contact"
               className={
                 this.state.activeState === "contact"
@@ -293,14 +314,26 @@ export default class Sidebar extends React.Component {
                   }, 1000)
                 }}
               >
-                <div className="referral flex_row" title="Click to copy">
-                  <div className="campusAmb-sidebar-svg-logo">
-                    <Referral />
-                  </div>
-                  <div className="campusAmb-sidebar-navitem-name">
-                    REFERRAL CODE : <span id="ca-referral-code">{this.props.userData.ca_id}</span>
-                  </div>
-                </div>
+                  <Link
+                      to="/CampusAmbassador/referral"
+                      className={
+                          this.state.activeState === "referral"
+                              ? "sideNavItem activeSideItem"
+                              : "sideNavItem"
+                      }
+                      onClick={() => {
+                          this.setActive("referral");
+                      }}
+                  >
+                      <div className="referral flex_row" title="Click to copy">
+                          <div className="campusAmb-sidebar-svg-logo">
+                              <Referral />
+                          </div>
+                          <div className="campusAmb-sidebar-navitem-name">
+                              REFERRAL CODE : <span id="ca-referral-code">{this.props.userData.ca_id}</span>
+                          </div>
+                      </div>
+                  </Link>
               </div>
               : null}
             <Link
