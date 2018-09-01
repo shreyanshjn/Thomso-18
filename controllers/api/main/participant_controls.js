@@ -45,30 +45,18 @@ exports.getUserEvents = function (req, res) {
 
 exports.update_image = function (req, res) {
     if(req && req.body && req.body.format){
-        // console.log(req.locals)
         let data = {
             id:req.locals._id,
             email:req.locals.email,
             img:req.body.image,
             format:req.body.format
         }
-        // console.log(data.email)
-        let baseImg = data.img.split(',')[1];
-        // console.log(baseImg)
+        let baseImg = data.img.split(',')[1]
         let binaryData = new Buffer(baseImg, 'base64');
-        // console.log(binaryData)
         let ext = data.format.split('/')[1]
-        // console.log(ext)
-
-        let updateData = {
-            image : `${data.id}.${ext}`
-        }
-        // console.log(updateData.image)
+        let updateData = {image : `${data.id}.${ext}`}
         require("fs").writeFile(`./public/img/ProfileImage/${updateData.image}`, binaryData, function(err) {
-            if(err){
-                console.log(err)
-                return res.status(400).send({ success: false, msg:"something went wrong"})
-            }
+            if(err) return res.status(400).send({ success: false, msg:"something went wrong"})
             else{
                 Main_User.findOneAndUpdate({
                     email:data.email

@@ -48,6 +48,11 @@ const EventUserIndex = Loadable({
     loading: Loading,
 });
 
+const AssociateWithUsIndex = Loadable({
+    loader: () => import('./associateWithUs/Index'),
+    loading: Loading,
+});
+
 
 export default class AdminIndex extends React.Component{
     constructor() {
@@ -77,6 +82,7 @@ export default class AdminIndex extends React.Component{
                         <Route exact path="/main/admin/logout" render={ (props) => <LogoutIndex {...props} updateRoutes={this.handleUpdate}/> } />
                         <Route exact path="/main/admin" component={HomeIndex} />
                         <Route exact path="/main/admin/eventUser" component={EventUserIndex} />
+                        <Route exact path="/main/admin/associateWithUs" component={AssociateWithUsIndex} />
                     </React.Fragment>
                 :
                     <React.Fragment>

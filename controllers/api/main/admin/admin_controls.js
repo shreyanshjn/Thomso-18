@@ -1,8 +1,6 @@
 var Main_User = require('../../../../models/main/Main_User');
 var Thomso_Event = require('../../../../models/main/Thomso_Event');
-
-var requiredVars = 'name email gender thomso_id college address branch contact verified';
-var requiredVars2 = 'name email gender thomso_id college address branch contact verified';
+var Associate_Sponsor = require('../../../../models/beta/Associate_Sponsor');
 
 exports.userInfo = function(req,res){
     if(req){
@@ -72,3 +70,16 @@ exports.fetchEvents = function(req, res) {
     }
     else return res.status(400).send({success:false, msg:'Invalid Request'});
 };
+
+exports.associate_fetch = ( req, res) => {
+    if(req){
+        Associate_Sponsor.find()
+        .select('name email contact sponsorType message')
+        .exec(function(err, result){
+            if(err) return res.status(400).send({success:false, msg:'Unable to fetch event'});
+            if(result) res.json({success:true, msg:'Data fetched', body: result});
+            else return res.status(400).send({success:false, msg:'Unable to fetch event'});
+        });
+    }
+    else return res.status(400).send({success:false, msg:'Invalid Request'});
+}
