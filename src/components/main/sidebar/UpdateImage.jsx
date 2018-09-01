@@ -24,13 +24,16 @@ export default class UpdateImage extends React.Component{
                 image: this.state.imagePreviewUrl,
                 format: this.state.file.type
             }
+            console.log(data, 'hello')
+
             const token = this.Auth.getToken()
             FetchApi('post','/api/main/updateImage', data, token)
             .then(res => {
+              console.log(res.data)
                 if(res && res.data && res.data.success){
                   this.props.imageUpdated(true);
                   this.setState({disabled: true, errors: ''})
-                  // this.props.history.push('/CampusAmbassador');
+                  this.props.history.push('/CampusAmbassador');
                 }
                 else{
                   this.props.imageUpdated(false);
@@ -63,6 +66,7 @@ export default class UpdateImage extends React.Component{
         let { disabled } = this.state;
         return (
           <div>
+            {console.log(this.state.file)}
             <form onSubmit={this.onSubmit}>
               <div>
                 <span>Choose File</span>

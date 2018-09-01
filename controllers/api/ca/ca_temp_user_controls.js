@@ -26,21 +26,18 @@ exports.getData = function (req, res) {
 };
 
 exports.update_image = function (req, res) {
+    console.log(req)
     if(req && req.body && req.body.format){
-        console.log(req.locals, req.body)
         let data = {
             id:req.locals._id,
             email:req.locals.email,
             img:req.body.image,
             format:req.body.format
         }
-        console.log(data);
         let baseImg = data.img.split(',')[1]
         let binaryData = new Buffer(baseImg, 'base64');
         let ext = data.format.split('/')[1]
         let updateData = {image : `${data.id}.${ext}`}
-        console.log(updateData);
-
         require("fs").writeFile(`./public/img/ProfileImage/${updateData.image}`, binaryData, function(err) {
             if(err) return res.status(400).send({ success: false, msg:"something went wrong"})
             else{
