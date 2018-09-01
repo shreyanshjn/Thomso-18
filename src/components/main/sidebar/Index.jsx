@@ -11,6 +11,8 @@ import Logout from "../../campusAmbassador/sidebar/Svg/Logout"
 import Home from "./Svg/Home"
 import UpdateImage from './UpdateImage'
 import Post from "./Svg/Post"
+import Bulb from "../../campusAmbassador/sidebar/Svg/Bulb.jsx"
+
 let addTopicTimeout;
 
 export default class Sidebar extends React.Component {
@@ -75,17 +77,17 @@ export default class Sidebar extends React.Component {
                   <img src={boy} className="image" alt="User" />
                 }
               </React.Fragment>}
-            <UpdateImage imagePrev={(data) => this.setState({ img: data })} imageUpdated={(data) => data ? this.setState({ errors: 'Image updated successfully' }) : this.setState({ errors: 'Unable to update image' })} /> : null}
+            <div className="main-sidebar-user-details">
+              <div className="text">{this.props.userData ? this.props.userData.name : "User"}</div>
+              <div className="cname">{this.props.userData ? this.props.userData.college : "-"}</div>
+            </div>
+            <UpdateImage imagePrev={(data) => this.setState({ img: data })} imageUpdated={(data) => data ? this.setState({ errors: 'Image updated successfully' }) : this.setState({ errors: 'Unable to update image' })} />
               {errors ?
               <div style={{ textAlign: 'center', color: 'black', fontWeight: '600' }}>
                 {errors}
               </div>
               : null
             }
-            <div className="main-sidebar-user-details">
-              <div className="text">{this.props.userData ? this.props.userData.name : "User"}</div>
-              <div className="cname">{this.props.userData ? this.props.userData.college : "-"}</div>
-            </div>
           </div>
           <div className="main-sidebar-line">
           </div>
@@ -160,6 +162,26 @@ export default class Sidebar extends React.Component {
                 </div>
                 <div className="main-sidebar-navitem-name">
                   RECENT UPDATES
+                </div>
+              </div>
+            </Link>
+            <Link
+              to="/main/zonals"
+              className={
+                (this.state.activeState === "zonals " )
+                  ? "sideNavItem activeSideItem"
+                  : "sideNavItem"
+              }
+              onClick={() => {
+                this.setActive("zonals");
+              }}
+            >
+              <div className="main-sidebar-profile flex_row">
+                <div className="main-sidebar-svg-logo">
+                  <Bulb />
+                </div>
+                <div className="main-sidebar-navitem-name">
+                  ZONALS
                 </div>
               </div>
             </Link>
