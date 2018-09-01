@@ -52,12 +52,16 @@
     .sidenav > .main-sidebar-contents > .activeSideItem > .main-sidebar-profile > .main-sidebar-svg-logo svg .profilepath{
         fill: #E5904A;
     }
+    .sidenav > .main-sidebar-contents > .activeSideItem > .main-sidebar-ideas > .main-sidebar-svg-logo svg .bulbpath{
+        fill: yellow;
+    }
     .sidenav > .main-sidebar-contents > .activeSideItem > .main-sidebar-logout > .main-sidebar-svg-logo svg .logoutpath{
         fill: red;
     }
     .sidenav > .main-sidebar-contents > .activeSideItem > .main-sidebar-events > .main-sidebar-svg-logo svg .eventspath{
-        fill: #4C8AE5;
+        fill: purple;
     }
+
     .main-sidebar-likes-child{
         display: flex;
         flex-direction: row;
@@ -75,6 +79,9 @@
     .sidenav .sideNavItem:hover .main-sidebar-svg-logo svg .homepath{
         fill: #E57373;
     }
+    .sidenav .sideNavItem:hover .main-sidebar-svg-logo svg .bulbpath{
+        fill: yellow;
+    }
     .sidenav .sideNavItem:hover .main-sidebar-svg-logo svg .contactpath{
         fill:blue;
     }
@@ -82,7 +89,7 @@
         fill:red;
     }
     .sidenav .sideNavItem:hover .main-sidebar-svg-logo svg .eventspath{
-        fill: #4C8AE5;
+        fill: purple;
     }
     .sidenav .sideNavItem:hover .main-sidebar-svg-logo svg .profilepath{
         fill:#E5904A;
@@ -253,7 +260,7 @@
     /* .sidenav > .main-sidebar-contents > .activeSideItem > .main-sidebar-leaderboard > .main-sidebar-svg-logo svg .leaderpath{ */
     /*     fill: green; */
     /* } */
-    .sidenav > .main-sidebar-contents > .activeSideItem > .main-sidebar-ideas > .main-sidebar-svg-logo svg .homepath{
+    .sidenav > .main-sidebar-contents > .activeSideItem > .main-sidebar-home > .main-sidebar-svg-logo svg .homepath{
         fill: #E57373;
     }
     /* .sidenav > .main-sidebar-contents > .activeSideItem > .main-sidebar-certificate > .main-sidebar-svg-logo svg .certificatepath{ */
@@ -269,7 +276,10 @@
         fill: red;
     }
     .sidenav > .main-sidebar-contents > .activeSideItem > .main-sidebar-events > .main-sidebar-svg-logo svg .eventspath{
-        fill: #4C8AE5;
+        fill: purple;
+    }
+    .sidenav > .main-sidebar-contents > .activeSideItem > .main-sidebar-ideas > .main-sidebar-svg-logo svg .bulbpath{
+        fill: yellow;
     }
     .main-sidebar-svg-logo svg{
         padding: 0 3px 0 3px;
@@ -295,10 +305,13 @@
         fill:red;
     }
     .sidenav .sideNavItem:hover .main-sidebar-svg-logo svg .eventspath{
-        fill:#4C8AE5;
+        fill:purple;
     }
     .sidenav .sideNavItem:hover .main-sidebar-svg-logo svg .profilepath{
         fill:#EF904A;
+    }
+    .sidenav .sideNavItem:hover .main-sidebar-svg-logo svg .bulbpath{
+        fill:yellow;
     }
     /* .referral:hover .main-sidebar-svg-logo svg .referralpath{ */
     /*     cursor: pointer; */
