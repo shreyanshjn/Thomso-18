@@ -59,6 +59,7 @@ export default class Sidebar extends React.Component {
 
   render() {
     let { errors } = this.state;
+    let user  = 'img/ProfileImage/' + this.props.userData.image
     return (
       <div>
         <div
@@ -67,7 +68,7 @@ export default class Sidebar extends React.Component {
           style={{ backgroundColor: 'white' }}
         >
           <div className="main-sidebar-user">
-            {(this.props.userData && this.props.userData.image) ? <img src={this.props.userData.image} className="image" alt="User" /> :
+            {(this.props.userData && this.props.userData.image) ? <img src={user}    className="image" alt="User" /> :
               <React.Fragment>
                 {(this.props.userData && this.props.userData.gender === 'female') ?
                   <img src={girl} className="image" alt="User" /> :

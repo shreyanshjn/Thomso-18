@@ -6,7 +6,7 @@ exports.userInfo = function (req, res) {
         email: req.locals.email
     })
         .populate('primary_event', 'name')
-        .select('name email gender thomso_id college address contact verified primary_event')
+        .select('name email gender thomso_id college address contact verified primary_event image')
         .exec(function (err, user) {
             if (err) {
                 return res.status(400).send({
@@ -64,7 +64,7 @@ exports.update_image = function (req, res) {
             image : `${data.id}.${ext}`
         }
         // console.log(updateData.image)
-        require("fs").writeFile(`./ProfileImage/${updateData.image}`, binaryData, function(err) {
+        require("fs").writeFile(`./public/img/ProfileImage/${updateData.image}`, binaryData, function(err) {
             if(err){
                 console.log(err)
                 return res.status(400).send({ success: false, msg:"something went wrong"})

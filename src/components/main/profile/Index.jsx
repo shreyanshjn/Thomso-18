@@ -22,7 +22,6 @@ export default class Profile extends React.Component {
 
     componentDidMount() {
         const isAuthenticated = this.Auth.hasToken();
-        console.log(isAuthenticated, "isAuthenticated");
         if (isAuthenticated) {
             const token = this.Auth.getToken()
             FetchApi('GET', '/api/main/events', null, token)

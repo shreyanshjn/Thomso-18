@@ -83,13 +83,11 @@ export default class MainIndex extends React.Component {
 
     componentWillMount() {
         const isAuthenticated = this.Auth.hasToken();
-        console.log(isAuthenticated, "isAuthenticated");
         if (isAuthenticated) {
             const token = this.Auth.getToken()
             FetchApi('GET', '/api/main/user', null, token)
                 .then(r => {
                     if (r && r.data && r.data.body) {
-                        console.log(r.data);
                         if (r.data.isVerified) {
                             this.setState({ isAuthenticated: true, verified: true, userData: r.data.body });
                         } else {

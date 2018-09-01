@@ -17,21 +17,20 @@ export default class UpdateImage extends React.Component{
     
       onSubmit =(e)=> {
         e.preventDefault();
-        // console.log(this.state,"ghggjh")
-        if(this.state.file.size > 101200){
+        if(this.state.file.size > 1101200){
             this.setState({disabled: true, errors: 'Max image sixe of 100 kb exceeded'})
         }else{
             let data = {
                 image: this.state.imagePreviewUrl,
                 format: this.state.file.type
             }
-            // console.log(data)
             const token = this.Auth.getToken()
             this.setState({ errors: ''});
             FetchApi('post', '/api/main/updateImage', data, token)
             .then(res => {
                 if(res && res.data && res.data.success){
                   this.props.imageUpdated(true);
+                  this.props.history.push('/main');
                 }
                 else{
                   this.props.imageUpdated(false);
@@ -43,10 +42,8 @@ export default class UpdateImage extends React.Component{
 
       handleImageChange(e) {
         e.preventDefault();
-    
         let reader = new FileReader();
         let file = e.target.files[0];
-    
         reader.onloadend = () => {
           this.setState({
             file: file,
@@ -55,7 +52,6 @@ export default class UpdateImage extends React.Component{
           });
           this.props.imagePrev(reader.result);
         }
-    
         reader.readAsDataURL(file)
       }
     

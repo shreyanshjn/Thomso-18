@@ -27,4 +27,5 @@ package-lock.json
 package-json.json
 
 *.swp
-/ProfileImage
+#profile Images
+/public/img/ProfileImage
