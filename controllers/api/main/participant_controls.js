@@ -25,6 +25,29 @@ exports.userInfo = function (req, res) {
         });
 };
 
+exports.get_image = function (req, res) {
+    Main_User.findOne({
+        email: req.locals.email
+    })
+        .select('verified image')
+        .exec(function (err, user) {
+            if (err) {
+                return res.status(400).send({
+                    success: false,
+                    msg: 'Unable to connect to database. Please try again.',
+                    error: err
+                })
+            }
+            if (!user) {
+                return res.status(400).send({ success: false, msg: 'User not found' });
+            } else if (!user.verified){
+                return res.json({ success: true, isVerified: false, msg: 'User Data Found', body: {email: user.email, name: user.name} });
+            } else {
+                return res.json({ success: true, isVerified: true, msg: 'User Data Found', body: user });
+            }
+        });
+};
+
 exports.getUserEvents = function (req, res) {
     Main_User.findOne({
         email: req.locals.email

@@ -93,7 +93,7 @@ export default class MainIndex extends React.Component {
             FetchApi('GET', '/api/main/user', null, token)
                 .then(r => {
                     if (r && r.data && r.data.body) {
-                        console.log(r.data.body)
+                        // console.log(r.data.body)
                         if (r.data.isVerified) {
                             this.setState({ isAuthenticated: true, verified: true, userData: r.data.body });
                         } else {

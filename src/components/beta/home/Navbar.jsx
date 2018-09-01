@@ -5,6 +5,8 @@ import AuthService from "../../../handlers/main/AuthService";
 import List from "./List";
 import "./src/css/Navbar.css";
 
+import FetchApi from '../../../utils/FetchAPI';
+
 import img from "./src/img/logo.png";
 
 class Navbar extends Component {
@@ -14,13 +16,27 @@ class Navbar extends Component {
             isHidden: true,
             hamburger: true,
             isAuthenticated: false,
-            activeState: window.location.pathname.substring(1)
+            activeState: window.location.pathname.substring(1),
+            imageData:[]
         };
         this.setActive = this.setActive.bind(this);
         this.Auth = new AuthService();
     }
     componentWillMount() {
         const isAuthenticated = this.Auth.hasToken();
+        if (isAuthenticated) {
+            const token = this.Auth.getToken()
+            FetchApi('POST', '/api/main/getImage', null, token)
+                .then(r => {
+                    if (r && r.data && r.data.body) {
+                        this.setState({ imageData: r.data.body });
+                    }
+                })
+                .catch(e => {
+                    console.log(e)
+                });
+        }
+
         if (this.props.detail && this.props.detail.subevents) {
             const filteredData = this.props.detail.subevents.filter(e => e.id === this.props.id);
             if (filteredData) {
@@ -44,9 +60,10 @@ class Navbar extends Component {
         });
     }
     render() {
+        let verified = this.state.imageData.verified;
+        let imageUrl = '/img/ProfileImage/' + this.state.imageData.image;
         return (
             <div className="beta-navbar-contain">
-                {console.log(this.props.events,"ff")}
                 <div className={this.state.hamburger ? "beta-home-navbar" : "beta-home-navbar beta-navbar-overlay beta-navbar-navbarToggle"} id={(this.props.background === "true") ? "background-image-gradient" : null}>
                     <div className="beta-navbar-t-logo">
                         <Link to="/"> <img src={img} alt="" /></Link>
@@ -135,7 +152,7 @@ class Navbar extends Component {
                                     <Link to="/main" className={(this.state.activeState === "main") ? "linkSponsors" : null}
                                         onClick={() => {
                                             this.setActive("main");
-                                        }}>{this.state.isAuthenticated ? 'DASHBOARD' : 'REGISTER'}</Link>
+                                        }}>{verified ? (this.state.imageData && this.state.imageData.image) ? <img className="navbar-user-image" src={imageUrl} alt="DASHBOARD" /> :'DASHBOARD' : <span><span className="events-navbar-new">REGISTER</span><span className="events-delhi-navbar-new">new</span></span> }</Link>
 
                                 </li>
                                 {/* <li>

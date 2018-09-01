@@ -56,13 +56,13 @@ export default class PostIndex extends React.Component {
         const authtoken = this.Auth.getToken();
         FetchApi('GET', '/api/ca/temp/posts', null, authtoken)
             .then((result) => {
-                console.log(result)
+                // console.log(result)
                 if (result.data && result.data.posts && result.data.posts.data && result.data.posts.data.length > 0 && !unmount) {
                     this.setState({ posts: result.data.posts.data });
                 }
             })
             .catch(error => {
-                console.log(error.response)
+                // console.log(error.response)
                 if (error.response && error.response.status === 401 && !unmount) {
                     this.setState({ message: 'Token Expired' });
                     // this.props.history.push('/ca/logout')

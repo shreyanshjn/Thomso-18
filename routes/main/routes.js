@@ -38,6 +38,7 @@ router.get('/user', MainUserTokenMiddleware.verifyUser , participantControl.user
 router.get('/primary', eventControl.getEvents);
 router.get('/events' , MainUserTokenMiddleware.verify, participantControl.getUserEvents);
 router.post('/updateImage' , MainUserTokenMiddleware.verify, participantControl.update_image);
+router.post('/getImage' , MainUserTokenMiddleware.verify, participantControl.get_image);
 
 router.delete('/removeEvent' , MainUserTokenMiddleware.verify,eventControl.removeEvent);
 

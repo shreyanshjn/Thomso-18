@@ -80,7 +80,7 @@ export default class Sidebar extends React.Component {
               <div className="text">{this.props.userData ? this.props.userData.name : "User"}</div>
               <div className="cname">{this.props.userData ? this.props.userData.college : "-"}</div>
             </div>
-            <UpdateImage imagePrev={(data) => this.setState({ img: data })} imageUpdated={(data) => data ? this.setState({ errors: 'Image updated successfully' }) : this.setState({ errors: 'Unable to update image' })} />
+            <UpdateImage imagePrev={(data) => this.setState({ img: data })}  />
               {errors ?
               <div style={{ textAlign: 'center', color: 'black', fontWeight: '600' }}>
                 {errors}

@@ -98,7 +98,7 @@ export default class Sidebar extends React.Component {
                   <img src={boy} className="image" alt="User" />
                 }
               </React.Fragment>}
-            <UpdateImageCA imagePrev={(data) => this.setState({ img: data })} imageUpdated={(data) => data ? this.setState({ errors: 'Image updated successfully' }) : this.setState({ errors: 'Unable to update image' })} /> : null}
+            <UpdateImageCA imagePrev={(data) => this.setState({ img: data })}  />
             {errors ?
               <div style={{ textAlign: 'center', color: 'black', fontWeight: '600' }}>
                 {errors}

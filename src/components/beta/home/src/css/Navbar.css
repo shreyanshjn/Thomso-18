@@ -15,6 +15,13 @@
     right: 9vw;
     top: 3vh;
 }
+.navbar-user-image{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin-top: -5px;
+    margin-right:10px
+}
 #background-image-gradient
 {  
     background-image: linear-gradient(to bottom, #061116eb, #020c1159);
@@ -192,12 +199,13 @@
 .events-delhi-navbar-new
 {
     background:red;
-    top: 21px;
+    top: 30px;
     position:absolute;
-    margin-left:-8px;
+    margin-left:-5px;
 }
 .events-navbar-new
 {
+    margin-top: -5px;
    position:relative;
 }
 @media (max-width: 816px) {
