@@ -78,7 +78,7 @@ export default class LoginIndex extends React.Component {
                             if (e.response.data.notExists) {
                                 this.setState({ disabled: false, loginErrors: 'Email does not exists. Please Register' })
                             }  else if (e.response.data.mismatch) {
-                                this.setState({ disabled: false, loginErrors: 'Password did not match' })
+                                this.setState({ disabled: false, loginErrors: 'Incorrect Password' })
                             } else {
                                 this.setState({ disabled: false, loginErrors: 'Something went wrong' })
                             }

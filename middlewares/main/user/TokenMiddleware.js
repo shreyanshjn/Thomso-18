@@ -4,7 +4,6 @@ var Main_User_Token = require("../../../models/main/Main_User_Token");
 
 exports.verifyUser = (req, res, next) => {
     var authHeader = req.get('Authorization')
-    console.log(authHeader)
     if (authHeader !== undefined) {
         // Find token in db
         Main_User_Token.findOne({
@@ -15,18 +14,17 @@ exports.verifyUser = (req, res, next) => {
             } else if (!user) {
                 res.status(403).send({success: false, msg: 'User Not Found'});
             } else if (moment() > user.expirationTime) {
-                // If token expired
-                res.status(403).json({ success: false, message: 'Token Expired' });
+                res.status(403).send({ success: false, message: 'Token Expired' });
             } else {
                 req.locals = {
-                    _id: user.user_id,
+                    _id: user._id,
                     email: user.email
                 };
                 next();
             }
         });
     } else {
-        res.status(401).json({ message: 'Token Not Found' })
+        res.status(401).send({ message: 'Token Not Found' })
     }
 }
 
@@ -34,27 +32,27 @@ exports.verify = (req, res, next) => {
     var authHeader = req.get('Authorization')
     if (authHeader !== undefined) {
         // Find token in db
+        console.log(authHeader);
         Main_User_Token.findOne({
-            token: authHeader
+            token: authHeader,
+            verified: true
         }, function(err, user) {
+            console.log(user);
             if (err) {
                 res.status(403).send({success: false, msg: 'Token Error'});
             } else if (!user) {
                 res.status(403).send({success: false, msg: 'Invalid Token'});
             } else if (moment() > user.expirationTime) {
-                // If token expired
-                res.status(403).json({ success: false, message: 'Token Expired' });
-            } else if (user.verified) {
+                res.status(403).send({ success: false, message: 'Token Expired' });
+            } else {
                 req.locals = {
-                    _id: user.user_id,
-                    email: user.email
+                    _id: user._id,
+                    email: user.email,
                 };
                 next();
-            } else {
-                res.status(403).json({ success: false, message: 'User Not Verified' });
             }
         });
     } else {
-        res.status(401).json({ message: 'Token Not Found' })
+        res.status(401).send({ message: 'Token Not Found' })
     }
 }

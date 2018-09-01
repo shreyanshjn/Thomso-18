@@ -7,25 +7,29 @@ import iglogo from './src/img/inicon.png';
 class Footer extends Component {
     constructor(props) {
         super(props);
-        this.state=
-            {
-                days:0
-            };
+        this.state= {
+            days:0
+        };
     }
-    render() {
-        let countDownDate = new Date("Oct 25, 2018 00:00:00").getTime();
-        let now=new Date().getTime();
-        let distance = countDownDate - now;
+
+    componentDidMount() {
+        const countDownDate = new Date("Oct 27, 2018 00:00:00").getTime();
+        const now = new Date().getTime();
+        const distance = countDownDate - now;
         let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        if(days<0)
-        {
-           days=0;
+        if (days < 0) {
+          days = 0;
         }
+        this.setState({ days })
+    }
+    
+
+    render() {
         return (
             <div className="beta-footer-main">
                 <div className="beta-footer-countdown">
                     <p className="beta-footer-thomso common-cursor">THOMSO'18 COUNTDOWN</p><br />
-                    <p className="daysleft common-cursor"><span className="beta-footer-days">{days}</span> <span className="beta-footer-left">DAYS LEFT</span></p>
+                    <p className="daysleft common-cursor"><span className="beta-footer-days">{this.state.days}</span> <span className="beta-footer-left">DAYS LEFT</span></p>
                 </div>
                 <div className="beta-footer-icons">
                     <p className="beta-footer-follow common-cursor">FOLLOW US </p>

@@ -5,8 +5,6 @@ import Loadable from 'react-loadable';
 import Loader from "../../common/Loader";
 import AuthService from '../../../handlers/zonals/admin/AuthService';
 
-// import LoginIndex from './login/Index';
-
 const Loading = ({ error }) => {
     if (error) {
       return <div>Error loading component</div>;
@@ -20,10 +18,10 @@ const LogoutIndex = Loadable({
     loading: Loading,
 });
 
-const RegisterIndex = Loadable({
-    loader: () => import('./register/Index'),
-    loading: Loading,
-});
+// const RegisterIndex = Loadable({
+//     loader: () => import('./register/Index'),
+//     loading: Loading,
+// });
 
 const HomeIndex = Loadable({
     loader: () => import('./home/Index'),
@@ -77,7 +75,7 @@ export default class AdminIndex extends React.Component{
                     </React.Fragment>
                 :
                     <React.Fragment>
-                        <Route exact path="/zonals/admin/register" component={RegisterIndex} />
+                        {/* <Route exact path="/zonals/admin/register" component={RegisterIndex} /> */}
                         <Route exact path="/zonals/admin" render={ (props) => <LoginIndex updateRoutes={this.handleUpdate}/> } />
                     </React.Fragment>
                 }

@@ -9,7 +9,7 @@ let initialized = false;
 export default class Main extends Component {
     componentDidMount() {
         initialized = false;
-        setTimeout( () => this.initParticle(), 100 );
+    setTimeout( () => this.initParticle(), 100 );
         let check = setInterval( () => {
             this.initParticle(check)
         }, 1000)

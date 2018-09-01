@@ -105,7 +105,6 @@
     width: 20%;
     padding: 25px 30px 20px 87px;
 }
-
 .beta-navbar-t-logo img {
     width: auto;
     height: 65px;
@@ -145,7 +144,7 @@
 .beta-navbar-int-ctos ul li {
     padding: 0px 35px 0px 0px;
 }
-.beta-navbar-int-ctos ul li a {
+.beta-navbar-int-ctos ul li a{
     text-decoration: none;
     font-weight: bold;
     font-family: Montserrat;
@@ -153,7 +152,7 @@
     color: white;
     letter-spacing: 2px;
 }
-.beta-navbar-int-ctos ul li a::after {
+.beta-navbar-int-ctos ul li a::after{
     content: "";
     display: block;
     margin-top: 1vh;
@@ -164,6 +163,10 @@
 }
 .beta-navbar-int-ctos ul li a:hover::after {
     width: 100%;
+}
+.beta-navbar-int-ctos ul li .events-offline-navbar-option::after, .beta-navbar-int-ctos ul li .events-online-navbar-option::after{
+    margin-top: 1vh;
+    height: 0px;
 }
 .beta-navbar-int-ctos ul li  .linkZonals::after , .beta-navbar-int-ctos ul li .linkCaportal::after , .beta-navbar-int-ctos ul li .linkEvents::after , .beta-navbar-int-ctos ul li .linkTeam::after , .beta-navbar-int-ctos ul li .linkSponsors::after , .beta-navbar-int-ctos ul li .linkFaq::after ,.beta-navbar-int-ctos ul li .linkEventson::after, .beta-navbar-int-ctos ul li .linkEventsoff::after{
     content: "";

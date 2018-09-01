@@ -1,28 +1,28 @@
-import React from 'react';
-import '../zonals.css';
+import React from "react";
+import "../zonals.css";
 
 export default class DelhiEvents extends React.Component {
     constructor() {
         super();
         this.state = {
-            selectedOptionTgt: '',
+            selectedOptionTgt: "",
             nukkad: false,
             tgt: false
-        }
+        };
     }
     changeState = () => {
-        this.props.function()
+        this.props.function();
     }
     onSubmit = (e) => {
-        e.preventDefault()
-        let events = []
-        // if (this.state.nukkad) {
-        //     events.push('Nukkad Natak')
-        // }
-        if (this.state.tgt && this.state.selectedOptionTgt) {
-            events.push(this.state.selectedOptionTgt)
+        e.preventDefault();
+        let events = [];
+        if (this.state.nukkad) {
+            events.push("Nukkad Natak");
         }
-        this.props.selectedevents(events)
+        if (this.state.tgt && this.state.selectedOptionTgt) {
+            events.push(this.state.selectedOptionTgt);
+        }
+        this.props.selectedevents(events);
     }
     handleOptionChangeTgt = (changeEvent) => {
         this.setState({
@@ -30,20 +30,20 @@ export default class DelhiEvents extends React.Component {
         });
     }
     componentDidMount() {
-        this.props.onRef(this)
+        this.props.onRef(this);
     }
     componentWillUnmount() {
-        this.props.onRef(undefined)
+        this.props.onRef(undefined);
     }
     render() {
         return (
-              <React.Fragment>
+            <React.Fragment>
                 <form className={this.props.var ? "register-zonals-form-events inactive" : "register-zonals-form-events active"} onSubmit={this.onSubmit}>
-                        {this.props.errors ? <p className="form-submitted-popup">{this.props.errors}</p> : <p className="form-submitted-popup-hide">&nbsp;</p>}
+                    {this.props.errors ? <p className="form-submitted-popup">{this.props.errors}</p> : <p className="form-submitted-popup-hide">&nbsp;</p>}
                     <div className={this.props.var ? "register-zonals-form-events-parent inactive" : "register-zonals-form-events-parent"}>
                         <div className="register-zonals-form-events-firstchild">
                             <div className="register-zonals-form-events-drama">
-                                <span><input type="checkbox" onClick={() => this.props.statevalues({ errors: 'Registration for Nukkad Natak is over.' })} checked={this.state.nukkad} name="nukkad" value="nukkad" /></span><span>Nukkad Natak</span>
+                                <span><input type="checkbox" onClick={() => this.props.statevalues({ errors: "Registration for Nukkad Natak is over." })} checked={this.state.nukkad} name="nukkad" value="nukkad" /></span><span>Nukkad Natak</span>
                             </div>
                         </div>
                         <div className="register-zonals-form-events-secondchild">
@@ -52,19 +52,19 @@ export default class DelhiEvents extends React.Component {
                             </div>
                             <div className={this.state.tgt ? "register-zonals-form-events-tgtchild" : "register-zonals-form-events-tgtchild low-opacity"}>
                                 <div>
-                                    <span><input onChange={this.handleOptionChangeTgt} type="radio" name="singing" value="singing" checked={this.state.selectedOptionTgt === 'singing'} disabled={!this.state.tgt} /></span><span>Singing</span>
+                                    <span><input onChange={this.handleOptionChangeTgt} type="radio" name="singing" value="singing" checked={this.state.selectedOptionTgt === "singing"} disabled={!this.state.tgt} /></span><span>Singing</span>
                                 </div>
                                 <div>
-                                    <span><input onChange={this.handleOptionChangeTgt} type="radio" name="dancing" value="dancing" checked={this.state.selectedOptionTgt === 'dancing'} disabled={!this.state.tgt} /></span><span>Dancing</span>
+                                    <span><input onChange={this.handleOptionChangeTgt} type="radio" name="dancing" value="dancing" checked={this.state.selectedOptionTgt === "dancing"} disabled={!this.state.tgt} /></span><span>Dancing</span>
                                 </div>
                                 <div>
-                                    <span><input onChange={this.handleOptionChangeTgt} type="radio" name="openmic" value="openmic" checked={this.state.selectedOptionTgt === 'openmic'} disabled={!this.state.tgt} /></span><span>Open mic</span>
+                                    <span><input onChange={this.handleOptionChangeTgt} type="radio" name="openmic" value="openmic" checked={this.state.selectedOptionTgt === "openmic"} disabled={!this.state.tgt} /></span><span>Open mic</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className={this.props.var ? "register-zonals-form-events-button inactive" : "register-zonals-form-events-button"}>
-                        <button onClick={() => this.changeState()}>BACK</button>
+                        <div onClick={() => this.changeState()}><span>BACK</span></div>
                         <button type="submit">SUBMIT</button>
                     </div>
                 </form>

@@ -19,6 +19,10 @@
     background-size: cover;
     color: white;
 }
+.campusAmb-contact-parent-main {
+    background-image: url('../../../main/src/img/trianglify.png');
+}
+
 .campusAmb-contact-child{
     display: flex;
     width: 100%;

@@ -1,13 +1,7 @@
 .delhi-zonals-painting
-{
-    background:url('../img/Painting.png');
-    background-position:center;
-    background-size:cover;
-    background-repeat:no-repeat;
-    background-position:center;
+{  
+    background: #edf0f6;
     position:relative;
-    min-height:100vh;
-    width:100%;
 }
 .delhi-painting-button-child
 {
@@ -23,19 +17,13 @@
     font-size: 18px;
     background:none;
 }
+.oil-painting-image-delhi
+{
+    width:100%;
+    height:auto;
+}
 @media only screen and (max-width: 768px)
 {
-    .delhi-zonals-painting
-    {
-        background:url('../img/paintingPortrait.png');
-        background-position:center;
-        background-size:cover;
-        background-repeat:no-repeat;
-        background-position:center;
-        position:relative;
-        min-height:100vh;
-        width:100%;
-    }
     .delhi-painting-button-child
     {
         padding: 8px 20px;

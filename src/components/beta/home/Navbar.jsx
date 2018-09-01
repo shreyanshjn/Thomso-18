@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom" ;
-import img from "./src/img/logo.png";
+import { Link } from "react-router-dom";
 
+import AuthService from "../../../handlers/main/AuthService";
+import List from "./List";
 import "./src/css/Navbar.css";
 
-import List from "./List";
+import img from "./src/img/logo.png";
 
 class Navbar extends Component {
     constructor() {
@@ -12,9 +13,24 @@ class Navbar extends Component {
         this.state = {
             isHidden: true,
             hamburger: true,
-            activeState:window.location.pathname.substring(1)
+            isAuthenticated: false,
+            activeState: window.location.pathname.substring(1)
         };
-        this.setActive=this.setActive.bind(this);
+        this.setActive = this.setActive.bind(this);
+        this.Auth = new AuthService();
+    }
+    componentWillMount() {
+        const isAuthenticated = this.Auth.hasToken();
+        if (this.props.detail && this.props.detail.subevents) {
+            const filteredData = this.props.detail.subevents.filter(e => e.id === this.props.id);
+            if (filteredData) {
+                this.setState({ data: filteredData[0], isAuthenticated });
+            } else {
+                this.setState({ isAuthenticated })
+            }
+        } else if (isAuthenticated) {
+            this.setState({ isAuthenticated })
+        }
     }
     toggleHidden() {
         this.setState({
@@ -22,18 +38,17 @@ class Navbar extends Component {
             hamburger: !this.state.hamburger
         });
     }
-    setActive(state)
-    {
+    setActive(state) {
         this.setState({
-            activeState:state
+            activeState: state
         });
     }
     render() {
         return (
             <div className="beta-navbar-contain">
-                <div className={this.state.hamburger? "beta-home-navbar":"beta-home-navbar beta-navbar-overlay beta-navbar-navbarToggle"} id={(this.props.background==="true")?"background-image-gradient":null}>
+                <div className={this.state.hamburger ? "beta-home-navbar" : "beta-home-navbar beta-navbar-overlay beta-navbar-navbarToggle"} id={(this.props.background === "true") ? "background-image-gradient" : null}>
                     <div className="beta-navbar-t-logo">
-                        <Link to="./"> <img src={img} alt="" /></Link>
+                        <Link to="/"> <img src={img} alt="" /></Link>
                     </div>
                     <div className="beta-navbar-t-ctos">
                         <div className="beta-navbar-toggle">
@@ -50,11 +65,11 @@ class Navbar extends Component {
                         <div className="beta-navbar-int-ctos">
                             <ul id="beta-navbar-options-hide">
                                 <li>
-                                    <Link to="../campusambassador/" className={(this.state.activeState === "campusambassador/") ? "linkCaportal" : null}
+                                    <Link to="/campusambassador/" className={(this.state.activeState === "campusambassador/") ? "linkCaportal" : null}
                                         onClick={() => {
                                             this.setActive("linkCaportal");
                                         }}>
-                    CA PORTAL
+                                        CA PORTAL
                                     </Link>
                                 </li>
                                 {/*<li>
@@ -66,15 +81,33 @@ class Navbar extends Component {
                 </Link>
                 </li> */}
                                 <li className="dropdown">
-                                    <Link to="" className={(this.state.activeState === "quizardry") ? "linkEvents" : null}
+                                    <Link to="#" className={(this.state.activeState === "#") ? "linkEvents" : null}
                                         onClick={() => {
-                                            this.setActive("quizardry");
-                                        }}>ONLINE EVENTS</Link>
+                                            this.setActive("#");
+                                        }}>EVENTS
+                                    </Link>
                                     <div className="beta-navbar-dropdown-content">
-                                        <Link to="../quizardry" className={(this.state.activeState === "quizardry") ? "linkEventson" : null}
+                                        <Link to="#" className="events-online-navbar-option">
+                                           ONLINE EVENTS
+                                        </Link>
+                                        <Link to="/quizardry" style={{marginLeft:"15px"}} className={(this.state.activeState === "quizardry") ? "linkEventson" : null}
                                             onClick={() => {
                                                 this.setActive("quizardry");
-                                            }}>QUIZARDRY</Link>
+                                            }}>Quizardry
+                                        </Link>
+                                        <Link to="/campusclicks" style={{marginLeft:"15px"}}  className={(this.state.activeState === "campusclicks") ? "linkEventson" : null}
+                                            onClick={() => {
+                                                this.setActive("campusclicks");
+                                            }}>Campus Clicks
+                                        </Link>
+                                        <Link to="#" className="events-offline-navbar-option">
+                                            OFFLINE EVENTS
+                                        </Link>
+                                        <Link to="/events"  style={{marginLeft:"15px"}} className={(this.state.activeState === "events") ? "linkEvents" : null}
+                                            onClick={() => {
+                                                this.setActive("events");
+                                            }}>Events
+                                        </Link>
                                         {/*  <Link to="" className={(this.state.activeState === "linkEventsoff") ? "linkEventsoff" : null}
                     onClick={() => {
                                     this.setActive("linkEventsoff");
@@ -88,22 +121,29 @@ class Navbar extends Component {
                     }}>TEAM CONTACT</Link>
                 </li>*/}
                                 <li>
-                                    <Link to="../associate" className={(this.state.activeState === "linkAssociate") ? "linkSponsors" : null}
+                                    <Link to="/associate" className={(this.state.activeState === "linkAssociate") ? "linkSponsors" : null}
                                         onClick={() => {
                                             this.setActive("linkAssociate");
                                         }}>ASSOCIATE WITH US</Link>
+                                </li>
+                                <li>
+                                    <Link to="/main" className={(this.state.activeState === "main") ? "linkSponsors" : null}
+                                        onClick={() => {
+                                            this.setActive("main");
+                                        }}>{this.state.isAuthenticated ? 'DASHBOARD' : 'PARTICIPATE'}</Link>
+
                                 </li>
                                 <li className="dropdown">
                                     <Link to="" className={(this.state.activeState === "lucknow") ? "linkLucknow" : null}
                                         onClick={() => {
                                             this.setActive("lucknow");
-                                        }}><span class="zonals-navbar-option">ZONALS</span><span className="zonals-navbar-new">new</span></Link>
+                                        }}><span className="zonals-navbar-option">ZONALS</span><span className="zonals-navbar-new">new</span></Link>
                                     <div className="beta-navbar-dropdown-content">
-                                        <Link to="../../zonals/delhi" className={(this.state.activeState === "delhi") ? "linkLucknow" : null}
+                                        <Link to="/zonals/delhi" className={(this.state.activeState === "delhi") ? "linkLucknow" : null}
                                             onClick={() => {
                                                 this.setActive("delhi");
-                                            }}><span class="zonals-delhi-navbar-option">DELHI</span><span className="zonals-delhi-navbar-new">new</span></Link>
-                                        <Link to="../../zonals/lucknow" className={(this.state.activeState === "lucknow") ? "linkLucknow" : null}
+                                            }}><span className="zonals-delhi-navbar-option">DELHI</span><span className="zonals-delhi-navbar-new">new</span></Link>
+                                        <Link to="/zonals/lucknow" className={(this.state.activeState === "lucknow") ? "linkLucknow" : null}
                                             onClick={() => {
                                                 this.setActive("lucknow");
                                             }}>LUCKNOW</Link>
