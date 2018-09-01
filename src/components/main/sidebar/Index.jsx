@@ -11,8 +11,7 @@ import Logout from "../../campusAmbassador/sidebar/Svg/Logout"
 import Home from "./Svg/Home"
 import UpdateImage from './UpdateImage'
 import Post from "./Svg/Post"
-import Bulb from "../../campusAmbassador/sidebar/Svg/Bulb.jsx"
-
+import Bulb from "./Svg/Bulb"
 let addTopicTimeout;
 
 export default class Sidebar extends React.Component {
@@ -61,7 +60,7 @@ export default class Sidebar extends React.Component {
 
   render() {
     let { errors } = this.state;
-    let user  = 'img/ProfileImage/' + this.props.userData.image
+    let user = 'img/ProfileImage/' + this.props.userData.image
     return (
       <div>
         <div
@@ -70,7 +69,7 @@ export default class Sidebar extends React.Component {
           style={{ backgroundColor: 'white' }}
         >
           <div className="main-sidebar-user">
-            {(this.props.userData && this.props.userData.image) ? <img src={user}    className="image" alt="User" /> :
+            {(this.props.userData && this.props.userData.image) ? <img src={user} className="image" alt="User" /> :
               <React.Fragment>
                 {(this.props.userData && this.props.userData.gender === 'female') ?
                   <img src={girl} className="image" alt="User" /> :
@@ -156,7 +155,7 @@ export default class Sidebar extends React.Component {
                 this.setActive("post");
               }}
             >
-              <div className="main-sidebar-posts flex_row">
+              <div className="main-sidebar-profile flex_row">
                 <div className="main-sidebar-svg-logo">
                   <Post />
                 </div>
@@ -166,9 +165,9 @@ export default class Sidebar extends React.Component {
               </div>
             </Link>
             <Link
-              to="/main/zonals"
+              to="/zonals/home"
               className={
-                (this.state.activeState === "zonals " )
+                (this.state.activeState === "zonals")
                   ? "sideNavItem activeSideItem"
                   : "sideNavItem"
               }
@@ -176,7 +175,7 @@ export default class Sidebar extends React.Component {
                 this.setActive("zonals");
               }}
             >
-              <div className="main-sidebar-profile flex_row">
+              <div className="main-sidebar-ideas flex_row">
                 <div className="main-sidebar-svg-logo">
                   <Bulb />
                 </div>

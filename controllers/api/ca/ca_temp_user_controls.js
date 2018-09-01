@@ -27,6 +27,7 @@ exports.getData = function (req, res) {
 
 exports.update_image = function (req, res) {
     if(req && req.body && req.body.format){
+        console.log(req.locals, req.body)
         let data = {
             id:req.locals._id,
             email:req.locals.email,

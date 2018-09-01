@@ -1,87 +1,181 @@
-.blog-header{
+.main-blog-parent{
+  height: 100%;
+  width: 100%;
+}
+.main-blog-header{
   height:16vh;
   width: 100%;
   background-color: #171e33;
   position: fixed;
   top:0;
 }
-.parent{
-
+.main-blog-child{
+  margin-top: 16vh;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
-.blog-body{
-  display: flex;
-  flex-direction: row;
-  height: 100vh;
-}
-.blog-body-imageicons{
-  width:20vw;
-  flex-direction: column;
-  display: flex;
-  padding-left: 5vw;
-}
-.blog-body-innerdiv{
+.main-blog-firstchild{
   display: flex;
   flex-direction: column;
-  padding-right: 20vw;
-  padding-left: 5vw;
-  height: 400vh;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  font-family: Montserrat;
 }
-.blog-body-text{
-  margin-top: 20vh;
-  font-size: 18px;
-  color: #504848;
-  font-family:Montserrat;
-}
-.blog-body-image{
-  width: 60vw;
-}
-.blog-body-image img{
-  width: 60vw;
-  height: auto;
-}
-.blog-body-icons{
-  height: 60px;
-  width: auto;
-}
-.blog-body-icons img{
-  height: 60px;
-  width: auto;
-}
-.blog-bodyparent{
-  height: 20vh;
-  margin-top: 20vh;
-  text-align: center;
-}
-.blog-bodyparent-pic{
-  height: 100px;
-}
-
-.blog-bodyparent-pic img{
-  height: 100px;
-  width: auto;
-  border-radius: 50%;
-}
-.blog-bodyparent-name{
+.main-blog-bodyparent-name{
   margin-top: 2vh;
   font-size: 40px;
   font-weight: bold;
-
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
-.blog-bodyparent-date{
+.main-blog-bodyparent-date{
   margin-top: 2vh;
   font-size: 20px;
 }
+.main-blog-footer-disqus{
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.main-blog-secondchild{
+  width: 100%;
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+}
+.main-blog-icons{
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.main-blog-body-icon1{
+  background-image: url("./image/facebook.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 60px;
+  width: 60px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.main-blog-body-icon1:hover{
+  cursor: pointer;
+}
+.main-blog-body-icon2{
+  background-image: url("./image/twitter.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 60px;
+  width: 60px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.main-blog-body-icon2:hover{
+  cursor: pointer;
+}
+.main-blog-body-icon3{
+  background-image: url("./image/instagram.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 60px;
+  width: 60px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.main-blog-body-icon3:hover{
+  cursor: pointer;
+}
+.main-blog-body-icon4{
+  background-image: url("./image/linkedin.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 60px;
+  width: 60px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.main-blog-body-icon4:hover{
+  cursor: pointer;
+}
+.main-blog-body-icon5{
+  background-image: url("./image/pinterest.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 60px;
+  width: 60px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.main-blog-body-icon5:hover{
+  cursor: pointer;
+}
+.main-blog-image{
+  width:  60%;
+}
+.main-blog-image-child{
+  width: 100%;
+  background-image: url("./image/thomsoblog.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 70vh;
+  margin-right: auto;
+}
+.main-blog-thirdchild{
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  padding: 10px;
+}
+.main-blog-body-text{
+  font-family: Montserrat;
+  color: black;
+  font-size: 16px;
+  overflow-wrap: break-word;
+  text-align: justify;
+  line-height: 1.5em;
+}
 @media only screen and (max-width: 768px){
-  .blog-body-icons{
-    height: 20px;
-    width: auto;
+  .main-blog-secondchild{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
   }
-  .blog-body-icons img{
-    height: 20px;
-    width: auto;
+  .main-blog-icons{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
   }
-  .blog-body-text{
-    margin-top: 10vh;
-    font-size: 10px;
+  .main-blog-image{
+    width:  100%;
+  }
+  .main-blog-thirdchild{
+    width: 70%;
+  }
+  .main-blog-body-text{
+    font-family: Montserrat;
+    color: black;
+    font-size: 24px;
+    overflow-wrap: break-word;
+    text-align: justify;
+    line-height: 1.5em;
+  }
+  .main-blog-footer-disqus{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
