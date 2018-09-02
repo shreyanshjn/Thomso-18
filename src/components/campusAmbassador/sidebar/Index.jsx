@@ -19,7 +19,7 @@ import Contact from "./Svg/Contact"
 import Logout from "./Svg/Logout"
 import Bulb from "./Svg/Bulb"
 import Hand from "./Svg/Hand"
-import UpdateImageCA from './UpdateImageCA'
+// import UpdateImageCA from './UpdateImageCA'
 import Home from "../../main/sidebar/Svg/Home.jsx";
 
 // import logoUser from '../common/images/user.svg';
@@ -73,7 +73,6 @@ export default class Sidebar extends React.Component {
   }
 
   render() {
-    let { errors } = this.state;
     let user  = 'img/ProfileImage/' + this.props.userData.image
     return (
       <div>

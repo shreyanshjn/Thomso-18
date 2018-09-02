@@ -29,8 +29,7 @@ export default class UpdateImage extends React.Component {
       FetchApi('post', '/api/main/updateImage', data, token)
         .then(res => {
           if (res && res.data && res.data.success) {
-            this.setState({ disabled: true, errors: '' })
-            this.props.history.push('/CampusAmbassador');
+            this.context.history.push('/main');
           }
           else {
             this.setState({ disabled: true, errors: 'Unable to upload' })

@@ -59,7 +59,6 @@ export default class Sidebar extends React.Component {
   }
 
   render() {
-    let { errors } = this.state;
     let user = 'img/ProfileImage/' + this.props.userData.image
     return (
       <div>
@@ -164,7 +163,7 @@ export default class Sidebar extends React.Component {
               </div>
             </Link>
             <Link
-              to="/zonals/home"
+              to="/main/zonals"
               className={
                 (this.state.activeState === "zonals")
                   ? "sideNavItem activeSideItem"

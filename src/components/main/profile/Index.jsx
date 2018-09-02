@@ -5,7 +5,7 @@ import AuthService from '../../../handlers/main/AuthService';
 
 import EventRow from "./EventRow";
 import "../src/css/profile.css"
-import UpdateImage from "../sidebar/UpdateImage"
+// import UpdateImage from "../sidebar/UpdateImage"
 
 export default class Profile extends React.Component {
 
