@@ -78,18 +78,18 @@ class Navbar extends Component {
                             </div>
                         </div>
                         <div className={this.state.isHidden ? "list_" : "list_ beta-navbar-active"}>
-                            {!this.state.isHidden && <List events={this.props.events === "true" ? "true":null}/>}
+                            {!this.state.isHidden && <List events={this.props.events === "true" ? "true" : null} />}
                         </div>
                         <div className="beta-navbar-int-ctos">
                             <ul id="beta-navbar-options-hide">
-                                {this.props.events==="true" ? null:<li >
+                                {this.props.events === "true" ? null : <li >
                                     <Link to="/campusambassador/" className={(this.state.activeState === "campusambassador/") ? "linkCaportal" : null}
                                         onClick={() => {
                                             this.setActive("linkCaportal");
                                         }}>
                                         CAMPUS AMBASSADOR
                                     </Link>
-                                </li> }
+                                </li>}
                                 {/*<li>
                       <Link to="" className={(this.state.activeState === "linkZonals") ? "linkZonals" : null}
                     onClick={() => {
@@ -98,7 +98,7 @@ class Navbar extends Component {
                     ZONALS
                 </Link>
                 </li> */}
-                                {this.props.events==="true" ? null:<li >
+                                {this.props.events === "true" ? null : <li >
                                     <Link to="/events" className={(this.state.activeState === "#") ? "linkEvents" : null}
                                         onClick={() => {
                                             this.setActive("#");
@@ -136,13 +136,13 @@ class Navbar extends Component {
                     }}>OFFLINE EVENTS</Link>*/}
                                     </div>
                                 </li>
-                                {this.props.events==="true" ? null:<li>
+                                {this.props.events === "true" ? null : <li>
                                     <Link to="/associate" className={(this.state.activeState === "linkAssociate") ? "linkSponsors" : null}
                                         onClick={() => {
                                             this.setActive("linkAssociate");
                                         }}>ASSOCIATE WITH US</Link>
                                 </li>}
-                                {this.props.events==="true" ? null:<li className="dropdown">
+                                {this.props.events === "true" ? null : <li className="dropdown">
                                     <Link to="/zonals/home" className={(this.state.activeState === "lucknow") ? "linkLucknow" : null}
                                         onClick={() => {
                                             this.setActive("lucknow");

@@ -26,7 +26,7 @@ export default class blog extends React.Component {
         <div className="main-blog-child">
           <div className="main-blog-firstchild">
             <div className="main-blog-bodyparent-name">
-              THOMSO'18
+              Behind The Scenes
             </div>
             <div className="main-blog-bodyparent-date">
               posted on 1 September 2018

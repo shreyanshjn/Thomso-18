@@ -35,6 +35,9 @@
 .main-blog-bodyparent-date{
   margin-top: 2vh;
   font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 .main-blog-footer-disqus{
   width: 60%;
@@ -168,7 +171,7 @@
   .main-blog-body-text{
     font-family: Montserrat;
     color: black;
-    font-size: 24px;
+    font-size: 20px;
     overflow-wrap: break-word;
     text-align: justify;
     line-height: 1.5em;

@@ -97,6 +97,10 @@
     font-weight: bolder;
     letter-spacing: 1px;
     padding-bottom: 2px;
+    width: 90%;
+}
+.participant-somedetails:nth-child(2){
+    padding-left: 5px;
 }
 .participant-somedetails-email{
     text-transform: none;
@@ -148,6 +152,9 @@
    height:16px;
    width:auto;
 }
+.participant-profile-child-left-details div:nth-child(2){
+    display: none;
+}
 @media screen and (max-width:768px){
     .participant-profile-parent{
         width: calc(100% - 75px);
@@ -171,6 +178,11 @@
     }
     .participant-profile-child-left-details{
         padding-top: 7px;
+    }
+    .participant-profile-child-left-details:nth-child(1){
+        padding-top: 7px;
+        display: flex;
+        flex-direction: row;
     }
 }
 @media screen and (min-width:1400px){
