@@ -54,9 +54,9 @@ export default class Profile extends React.Component {
                         <div className="participant-profile-child-left-details">
                             <p className="participant-profile-label">Name:</p><p className="participant-somedetails">{(this.props.userData && this.props.userData.name) ? this.props.userData.name : null}</p>
                         </div>
-                        <div className="participant-profile-child-left-details">
+                        {/* <div className="participant-profile-child-left-details">
                             <UpdateImage imagePrev={(data) => this.setState({ img: data })} />
-                        </div>
+                        </div> */}
                         <div className="participant-profile-child-left-details" style={{ display: "inline-block", width: "50%" }}>
                             <p className="participant-profile-label">Thomso ID :</p><p className="participant-somedetails">{(this.props.userData && this.props.userData.thomso_id) ? this.props.userData.thomso_id : null}</p>
                         </div>

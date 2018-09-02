@@ -103,6 +103,14 @@ class List extends Component {
             </Link>
                 </li>}
                 {this.props.events === "true" ? null:<li>
+                    <Link to="/blog" className={(this.state.activeStateLink === "linkBlog") ? "list-blog-link" : null}
+                        onClick={() => {
+                            this.setActiveLink("linkBlog")
+                        }}>
+                        BLOG
+            </Link>
+                </li>}
+                {this.props.events === "true" ? null:<li>
                     <Link to="/associate" className={(this.state.activeStateLink === "linkAssociate") ? "list-spons-link" : null}
                         onClick={() => {
                             this.setActiveLink("linkAssociate")

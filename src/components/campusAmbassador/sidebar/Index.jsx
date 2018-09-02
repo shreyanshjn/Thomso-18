@@ -98,14 +98,7 @@ export default class Sidebar extends React.Component {
                   <img src={boy} className="image" alt="User" />
                 }
               </React.Fragment>}
-            <UpdateImageCA imagePrev={(data) => this.setState({ img: data })}  />
-            {errors ?
-              <div style={{ textAlign: 'center', color: 'black', fontWeight: '600' }}>
-                {errors}
-              </div>
-              : null
-            }
-
+            {/* <UpdateImageCA imagePrev={(data) => this.setState({ img: data })}  /> */}
             <div className="campusAmb-sidebar-user-details">
               <div className="text">{this.props.userData ? this.props.userData.name : "User"}</div>
               <div className="cname">{this.props.userData ? this.props.userData.college : "-"}</div>

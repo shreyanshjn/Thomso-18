@@ -37,6 +37,28 @@ export default class ContactIndex extends React.Component {
                     </div>
                     <div className="campusAmb-contact-child-second">
                         <div className="campusAmb-contact-child-wrapper flex_column">
+                            <div className="campusAmb-contact-image_two">
+                            </div>
+                            <div className="campusAmb-contact-details">
+                                <div className="campusAmb-contact-details-name">
+                                    <h2>Rohit Niranjan</h2>
+                                </div>
+                                <div className="campusAmb-contact-details-post">
+                                    <h2>PUBLIC RELATIONS</h2>
+                                </div>
+                                <div className="campusAmb-contact-details-gmail">
+                                    <img src={gmail} alt="email"/>
+                                    <span>niranjan98.thomso@gmail.com</span>
+                                </div>
+                                <div className="campusAmb-contact-details-call">
+                                    <img src={call} alt="mobile"/>
+                                    <span>+91-7023511775</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="campusAmb-contact-child-second">
+                        <div className="campusAmb-contact-child-wrapper flex_column">
                             <div className="campusAmb-contact-image_six">
                             </div>
                             <div className="campusAmb-contact-details">
@@ -53,6 +75,28 @@ export default class ContactIndex extends React.Component {
                                 <div className="campusAmb-contact-details-call">
                                     <img src={call} alt="mobile"/>
                                     <span>+91-9693482762</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="campusAmb-contact-child-second">
+                        <div className="campusAmb-contact-child-wrapper flex_column">
+                            <div className="campusAmb-contact-image_seven">
+                            </div>
+                            <div className="campusAmb-contact-details">
+                                <div className="campusAmb-contact-details-name">
+                                    <h2>Ayush Dhaka</h2>
+                                </div>
+                                <div className="campusAmb-contact-details-post">
+                                    <h2>EVENTS AND MANAGEMENT</h2>
+                                </div>
+                                <div className="campusAmb-contact-details-gmail">
+                                    <img src={gmail} alt="email"/>
+                                    <span>ayush.thomso@gmail.com</span>
+                                </div>
+                                <div className="campusAmb-contact-details-call">
+                                    <img src={call} alt="mobile"/>
+                                    <span>+91-9411028240</span>
                                 </div>
                             </div>
                         </div>
@@ -97,50 +141,6 @@ export default class ContactIndex extends React.Component {
                                 <div className="campusAmb-contact-details-call">
                                     <img src={call} alt="mobile"/>
                                     <span>+91-8840592467</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="campusAmb-contact-child-second">
-                        <div className="campusAmb-contact-child-wrapper flex_column">
-                            <div className="campusAmb-contact-image_two">
-                            </div>
-                            <div className="campusAmb-contact-details">
-                                <div className="campusAmb-contact-details-name">
-                                    <h2>Rohit Niranjan</h2>
-                                </div>
-                                <div className="campusAmb-contact-details-post">
-                                    <h2>PUBLIC RELATIONS</h2>
-                                </div>
-                                <div className="campusAmb-contact-details-gmail">
-                                    <img src={gmail} alt="email"/>
-                                    <span>niranjan98.thomso@gmail.com</span>
-                                </div>
-                                <div className="campusAmb-contact-details-call">
-                                    <img src={call} alt="mobile"/>
-                                    <span>+91-7023511775</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="campusAmb-contact-child-second">
-                        <div className="campusAmb-contact-child-wrapper flex_column">
-                            <div className="campusAmb-contact-image_seven">
-                            </div>
-                            <div className="campusAmb-contact-details">
-                                <div className="campusAmb-contact-details-name">
-                                    <h2>Ayush Dhaka</h2>
-                                </div>
-                                <div className="campusAmb-contact-details-post">
-                                    <h2>EVENTS AND MANAGEMENT</h2>
-                                </div>
-                                <div className="campusAmb-contact-details-gmail">
-                                    <img src={gmail} alt="email"/>
-                                    <span>ayush.thomso@gmail.com</span>
-                                </div>
-                                <div className="campusAmb-contact-details-call">
-                                    <img src={call} alt="mobile"/>
-                                    <span>+91-9411028240</span>
                                 </div>
                             </div>
                         </div>

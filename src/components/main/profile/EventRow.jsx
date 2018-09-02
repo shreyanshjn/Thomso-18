@@ -44,10 +44,12 @@ export default class Profile extends React.Component {
             {errors ? <div style={{color:"red", fontSize:"10px",width:"100%"}}>{errors}</div>:null}
             <tr>
                 <td className="table-child-one" style={this.state.deleted ? {textDecoration: 'line-through'} : null}>
-                    {this.props.index + 1}. &nbsp; {this.props.data ? this.props.data.name : null}
+                    {this.props.index !==0 ? <span>{this.props.index + 1}. &nbsp; {this.props.data ? this.props.data.name : null}</span> :<span style={{fontWeight:'600',color:'#444'}}>{this.props.index + 1}. &nbsp; {this.props.data ? this.props.data.name : null}</span>}
+                    
                 </td>
                 <td className="table-child-two" onClick={this.onRemove} style={this.state.deleted ? {cursor: 'not-allowed'} : {cursor: 'pointer'} }>
-                    <img src={dustbin} alt="delete" className="main-events-bin"/>
+                {this.props.index !==0 ? <img src={dustbin} alt="delete" className="main-events-bin"/> :null}
+                    
                 </td>
             </tr>
             </React.Fragment>

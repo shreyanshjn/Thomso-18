@@ -93,7 +93,7 @@ exports.removeParticipant = function(req, res){
                             return res.state(400).send({success:false, msg:'unable to remove participant'});
                         }
                         if(results.event_id === data.event_id){
-                            return res.json({success:false, msg:"Cann't Remove Primary Event"});
+                            return res.json({success:false, msg:"Primary Event Can't be deleted"});
                         }
                         else{
                             EventSchema.findOneAndUpdate({ event_id: data.event_id }, {$pull:{users:data._id}})
