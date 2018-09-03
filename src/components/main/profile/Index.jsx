@@ -29,6 +29,7 @@ export default class Profile extends React.Component {
             FetchApi('GET', '/api/main/events', null, token)
                 .then(r => {
                     if (r && r.data && r.data.body) {
+                        console.log(r.data.body)
                         this.setState({ events: r.data.body })
                     }
                 })
@@ -87,7 +88,7 @@ export default class Profile extends React.Component {
                             <div className="participant-profile-event-details">
                                 <table className="participant-profile-table-events">
                                     <tbody>
-                                        {this.state.events ? this.state.events.map((data, i) => <EventRow key={`events${i + 1}`} index={i} data={data} />)
+                                        {this.state.events.event ? this.state.events.event.map((data, i) => <EventRow key={`events${i + 1}`} index={i} data={data} primaryEvent={this.state.events.primary_event} />)
                                             : null}
                                     </tbody>
                                 </table>
@@ -102,3 +103,4 @@ export default class Profile extends React.Component {
         );
     }
 }
+

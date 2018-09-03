@@ -95,7 +95,7 @@ class ZonalsForm extends React.Component {
                         </div>
                         <div className="register-zonals-form-div">
                             <PersonalDetails onRef={ref => (this.personalDetails = ref)} statevalues={this.stateValues} function={this.changeState} var={this.state.variable} />
-                            <LucknowEvents onRef={ref => (this.lucknowEvents = ref)} errors={this.state.errors} selectedevents={this.selected} function={this.setEvents} var={this.state.variable} hiding={this.state.isHidden} />
+                            <LucknowEvents onRef={ref => (this.lucknowEvents = ref)} errors={this.state.errors} statevalues={this.stateValues} selectedevents={this.selected} function={this.setEvents} var={this.state.variable} hiding={this.state.isHidden} />
                         </div>
                     </div>
                 </div>

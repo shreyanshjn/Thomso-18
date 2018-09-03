@@ -9,7 +9,7 @@ import Events from "../../campusAmbassador/sidebar/Svg/Events"
 import Contact from "../../campusAmbassador/sidebar/Svg/Contact"
 import Logout from "../../campusAmbassador/sidebar/Svg/Logout"
 import Home from "./Svg/Home"
-import UpdateImage from './UpdateImage'
+// import UpdateImage from './UpdateImage'
 import Post from "./Svg/Post"
 import Bulb from "./Svg/Bulb"
 let addTopicTimeout;
@@ -69,7 +69,7 @@ export default class Sidebar extends React.Component {
         >
           <div className="main-sidebar-user">
             <div className="main-sidebar-user-child">
-            {console.log(this.props.userData)}
+            {/* {console.log(this.props.userData)} */}
               {(this.props.userData && this.props.userData.image) ? <img src={user} className="image" alt="User" /> :
                 <React.Fragment>
                   {(this.props.userData && this.props.userData.gender === 'female') ?
@@ -82,7 +82,7 @@ export default class Sidebar extends React.Component {
               <div className="text">{this.props.userData ? this.props.userData.name : "User"}</div>
               <div className="cname">{this.props.userData ? this.props.userData.college : "-"}</div>
               <div>
-                <UpdateImage imagePrev={(data) => this.setState({ img: data })} imageUpdated={(data) => data ? this.setState({ errors: 'Image updated successfully' }) : this.setState({ errors: 'Unable to update image' })} />
+                {/* <UpdateImage imagePrev={(data) => this.setState({ img: data })} imageUpdated={(data) => data ? this.setState({ errors: 'Image updated successfully' }) : this.setState({ errors: 'Unable to update image' })} /> */}
               </div>
             </div>
           </div>
