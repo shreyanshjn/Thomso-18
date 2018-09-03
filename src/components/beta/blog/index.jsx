@@ -2,7 +2,6 @@ import React from "react";
 import Navbar from '../home/Navbar';
 import "./blog.css";
 import "./disqus.js"
-import "./discuss.css"
 
 export default class blog extends React.Component {
   handleSharefb = () => {
