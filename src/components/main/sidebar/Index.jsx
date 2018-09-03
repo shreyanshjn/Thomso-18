@@ -82,7 +82,10 @@ export default class Sidebar extends React.Component {
           <div className="main-sidebar-user">
             <div className="main-sidebar-user-child">
             {/* {console.log(this.props.userData)} */}
-              {(this.props.userData && this.props.userData.image) ? <img src={user} className="image" alt="User" /> :
+            {(this.props.userData && this.props.userData.image) ? 
+                    <div className="upload-image-parent-div">
+                        <img src={user} className="image" alt="User" />
+                    </div> :
                 <React.Fragment>
                   {(this.props.userData && this.props.userData.gender === 'female') ?
                     <img src={girl} className="image" alt="User" /> :
