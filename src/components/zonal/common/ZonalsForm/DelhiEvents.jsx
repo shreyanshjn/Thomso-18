@@ -15,14 +15,15 @@ export default class DelhiEvents extends React.Component {
     }
     onSubmit = (e) => {
         e.preventDefault();
-        let events = [];
-        if (this.state.nukkad) {
-            events.push("Nukkad Natak");
-        }
-        if (this.state.tgt && this.state.selectedOptionTgt) {
-            events.push(this.state.selectedOptionTgt);
-        }
-        this.props.selectedevents(events);
+        // let events = [];
+        this.props.statevalues({ errors: "Registration Closed." })
+        // if (this.state.nukkad) {
+        //     events.push("Nukkad Natak");
+        // }
+        // if (this.state.tgt && this.state.selectedOptionTgt) {
+        //     events.push(this.state.selectedOptionTgt);
+        // }
+        // this.props.selectedevents(events);
     }
     handleOptionChangeTgt = (changeEvent) => {
         this.setState({

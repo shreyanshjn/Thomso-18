@@ -10,27 +10,27 @@ export default class HomeIndex extends Component {
                 <Navbar background="true" />
                 <div className="zonals-mainpage-parent-child">
                     <div className="zonals-mainpage-cards">
-                        <div className="zonals-mainpage-cards-image-delhi">
-                        </div>
+                        <Link to="/zonals/delhi">
+                            <div className="zonals-mainpage-cards-image-delhi">
+                            </div>
+                        </Link>
                         <div className="zonals-mainpage-cards-title">
                             Delhi Zonals
                         </div>
                         <div className="zonals-mainpage-cards-button">
-                            <Link to="/zonals/delhi">
-                                Register
-                            </Link>
+                                Successfully Organized.
                         </div>
                     </div>
                     <div className="zonals-mainpage-cards">
+                    <Link to="/zonals/lucknow">
                         <div className="zonals-mainpage-cards-image-lucknow">
                         </div>
+                    </Link>
                         <div className="zonals-mainpage-cards-title">
                             Lucknow Zonals
                         </div>
                         <div className="zonals-mainpage-cards-button">
-                            <Link to="/zonals/lucknow">
-                                Register
-                            </Link>
+                            Successfully Organized.
                         </div>
                     </div>
                 </div>

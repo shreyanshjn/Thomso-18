@@ -53,7 +53,7 @@ exports.getUserEvents = function (req, res) {
         email: req.locals.email
     })
         .populate('event', 'name event_id')
-        .select('name email')
+        .select('primary_event')
         .exec(function (err, user) {
             if (err) {
                 return res.status(400).send({ success: false, msg: 'Unable to connect to database. Please try again.' })
@@ -61,7 +61,7 @@ exports.getUserEvents = function (req, res) {
             if (!user) {
                 return res.status(400).send({ success: false, msg: 'User not found' });
             } else {
-                res.json({ success: true, msg: 'Events List', body: user.event });
+                res.json({ success: true, msg: 'Events List', body: user });
             }
         });
 };
