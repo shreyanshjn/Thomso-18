@@ -8,7 +8,7 @@ var TokenHelper = require('../../../helpers/TokenHelper');
 var Generator = require("../../../helpers/GeneratePassword");
 var mailer = require('../../common/mailer');
 
-var requiredVars = 'name email gender thomso_id college address contact verified';
+var requiredVars = 'name email gender thomso_id college address contact verified image';
 
 exports.participant_registration = function (req, res) {
     if (req.body) {
@@ -227,7 +227,8 @@ exports.participant_login = function (req, res) {
                                             college: user.college,
                                             address: user.address,
                                             contact: user.contact,
-                                            primary_event: user.primary_event
+                                            primary_event: user.primary_event,
+                                            image: user.image
                                         }
                                         if (tokens.length > 2 && tokens[0]) {
                                             Main_User_Token.update({ _id: tokens[0]._id }, newToken)

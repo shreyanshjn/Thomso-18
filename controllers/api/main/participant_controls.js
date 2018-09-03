@@ -78,9 +78,11 @@ exports.update_image = function (req, res) {
         let binaryData = new Buffer(baseImg, 'base64');
         let ext = data.format.split('/')[1]
         let updateData = {image : `${data.id}.${ext}`}
-        require("fs").writeFile(`./public/img/ProfileImage/${updateData.image}`, binaryData, function(err) {
-            if(err) return res.status(400).send({ success: false, msg:"something went wrong"})
-            else{
+        require("fs").writeFile(`./uploads/img/ProfileImage/${updateData.image}`, binaryData, function(err) {
+            if(err) {
+                console.log(err);
+                return res.status(400).send({ success: false, msg:"something went wrong"});
+            } else {
                 Main_User.findOneAndUpdate({
                     email:data.email
                 }, updateData)
