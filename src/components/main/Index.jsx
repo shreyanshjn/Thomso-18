@@ -92,8 +92,9 @@ export default class MainIndex extends React.Component {
             const token = this.Auth.getToken()
             FetchApi('GET', '/api/main/user', null, token)
                 .then(r => {
+                    // console.log(r.data.body)
                     if (r && r.data && r.data.body) {
-                        console.log(r.data.body)
+                        // console.log(r.data.body)
                         if (r.data.isVerified) {
                             this.setState({ isAuthenticated: true, verified: true, userData: r.data.body });
                         } else {
@@ -131,6 +132,7 @@ export default class MainIndex extends React.Component {
                             </React.Fragment>
                             :
                             <React.Fragment>
+                                {/* {console.log(this.state.userData)} */}
                                 <Route path="/main" render={props => (<SidebarIndex {...props} userData={this.state.userData} />)} />
                                 <Route exact path="/main" render={props => (<Profile {...props} userData={this.state.userData} />)} />
                                 <Route exact path="/main/contact" render={props => (<ContactIndex {...props} main={true} userData={this.state.userData} />)} />

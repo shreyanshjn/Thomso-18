@@ -25,12 +25,35 @@ exports.userInfo = function (req, res) {
         });
 };
 
+exports.get_image = function (req, res) {
+    Main_User.findOne({
+        email: req.locals.email
+    })
+        .select('verified image')
+        .exec(function (err, user) {
+            if (err) {
+                return res.status(400).send({
+                    success: false,
+                    msg: 'Unable to connect to database. Please try again.',
+                    error: err
+                })
+            }
+            if (!user) {
+                return res.status(400).send({ success: false, msg: 'User not found' });
+            } else if (!user.verified){
+                return res.json({ success: true, isVerified: false, msg: 'User Data Found', body: {email: user.email, name: user.name} });
+            } else {
+                return res.json({ success: true, isVerified: true, msg: 'User Data Found', body: user });
+            }
+        });
+};
+
 exports.getUserEvents = function (req, res) {
     Main_User.findOne({
         email: req.locals.email
     })
         .populate('event', 'name event_id')
-        .select('name email')
+        .select('primary_event')
         .exec(function (err, user) {
             if (err) {
                 return res.status(400).send({ success: false, msg: 'Unable to connect to database. Please try again.' })
@@ -38,7 +61,7 @@ exports.getUserEvents = function (req, res) {
             if (!user) {
                 return res.status(400).send({ success: false, msg: 'User not found' });
             } else {
-                res.json({ success: true, msg: 'Events List', body: user.event });
+                res.json({ success: true, msg: 'Events List', body: user });
             }
         });
 };
@@ -55,9 +78,11 @@ exports.update_image = function (req, res) {
         let binaryData = new Buffer(baseImg, 'base64');
         let ext = data.format.split('/')[1]
         let updateData = {image : `${data.id}.${ext}`}
-        require("fs").writeFile(`./public/img/ProfileImage/${updateData.image}`, binaryData, function(err) {
-            if(err) return res.status(400).send({ success: false, msg:"something went wrong"})
-            else{
+        require("fs").writeFile(`./uploads/img/ProfileImage/${updateData.image}`, binaryData, function(err) {
+            if(err) {
+                console.log(err);
+                return res.status(400).send({ success: false, msg:"something went wrong"});
+            } else {
                 Main_User.findOneAndUpdate({
                     email:data.email
                 }, updateData)

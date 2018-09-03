@@ -23,7 +23,6 @@ export default class Profile extends React.Component {
             const token = this.Auth.getToken()
             FetchApi('POST', '/api/main/removeParticipant', data, token)
                 .then(res => {
-                    console.log(res.data)
                     if (res && res.data && res.data.success) {
                         this.setState({ deleted: true });
                     }
@@ -39,15 +38,17 @@ export default class Profile extends React.Component {
 
     render() {
         let {errors} = this.state;
-        return (
+return (
             <React.Fragment>
             {errors ? <div style={{color:"red", fontSize:"10px",width:"100%"}}>{errors}</div>:null}
             <tr>
                 <td className="table-child-one" style={this.state.deleted ? {textDecoration: 'line-through'} : null}>
-                    {this.props.index + 1}. &nbsp; {this.props.data ? this.props.data.name : null}
+                    {this.props.primaryEvent !==this.props.data._id ? <span>{this.props.index + 1}. &nbsp; {this.props.data ? this.props.data.name : null}</span> :<span style={{fontWeight:'600',color:'#444'}}>{this.props.index + 1}. &nbsp; {this.props.data ? this.props.data.name : null}</span>}
+                    
                 </td>
                 <td className="table-child-two" onClick={this.onRemove} style={this.state.deleted ? {cursor: 'not-allowed'} : {cursor: 'pointer'} }>
-                    <img src={dustbin} alt="delete" className="main-events-bin"/>
+                {this.props.primaryEvent !==this.props.data._id ? <img src={dustbin} alt="delete" className="main-events-bin"/> :null}
+                    
                 </td>
             </tr>
             </React.Fragment>

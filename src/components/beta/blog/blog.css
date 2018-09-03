@@ -33,9 +33,10 @@
   justify-content: space-around;
 }
 .main-blog-bodyparent-date{
-  margin-top: 2vh;
-  font-size: 20px;
+  margin-top: .5vh;
+  font-size: 12px;
   display: flex;
+  color:#888;
   flex-direction: row;
   justify-content: space-around;
 }
@@ -164,6 +165,14 @@
   }
   .main-blog-image{
     width:  100%;
+  }
+  .main-blog-bodyparent-name{
+    margin-top: 2vh;
+    font-size: 32px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
   }
   .main-blog-thirdchild{
     width: 70%;

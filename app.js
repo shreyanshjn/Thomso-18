@@ -3,9 +3,10 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
-var cors = require('cors')
+var cors = require('cors');
+var fs = require('fs');
 var mongoose = require('mongoose');
-var routes = require('./routes/routes')
+var routes = require('./routes/routes');
 
 var app = express();
 
@@ -44,8 +45,17 @@ app.get("/pdf/*", function(req, res){
   res.sendFile(req.url);
 });
 
-app.get("/image/*", function(req, res){
-  res.sendFile('../../'+req.url);
+app.get("/uploads/*", function(req, res){
+  fs.readFile(`.${req.url}`, function (err, content) {
+    if (err) {
+        res.writeHead(400, {'Content-type':'text/html'})
+        console.log(err);
+        res.end("No such image");
+    } else {
+        res.writeHead(200,{'Content-type':'image/jpg'});
+        res.end(content);
+    }
+  });
 });
 
 // app.get('/static/*.css', function (req, res, next) {

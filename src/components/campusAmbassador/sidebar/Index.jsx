@@ -19,7 +19,7 @@ import Contact from "./Svg/Contact"
 import Logout from "./Svg/Logout"
 import Bulb from "./Svg/Bulb"
 import Hand from "./Svg/Hand"
-import UpdateImage from './updateImage'
+// import UpdateImageCA from './UpdateImageCA'
 import Home from "../../main/sidebar/Svg/Home.jsx";
 
 // import logoUser from '../common/images/user.svg';
@@ -73,7 +73,6 @@ export default class Sidebar extends React.Component {
   }
 
   render() {
-    let { errors } = this.state;
     let user  = 'img/ProfileImage/' + this.props.userData.image
     return (
       <div>
@@ -89,7 +88,7 @@ export default class Sidebar extends React.Component {
           className="sidenav"
           style={{ backgroundColor: 'white' }}
         >
-        {console.log(this.props.userData)}
+        {/* {console.log(this.props.userData)} */}
           <div className="campusAmb-sidebar-user">
             {(this.props.userData && this.props.userData.image) ? <img src={user} className="image" alt="User" /> :
               <React.Fragment>
@@ -98,14 +97,7 @@ export default class Sidebar extends React.Component {
                   <img src={boy} className="image" alt="User" />
                 }
               </React.Fragment>}
-            <UpdateImage imagePrev={(data) => this.setState({ img: data })} imageUpdated={(data) => data ? this.setState({ errors: 'Image updated successfully' }) : this.setState({ errors: 'Unable to update image' })} /> : null}
-            {errors ?
-              <div style={{ textAlign: 'center', color: 'black', fontWeight: '600' }}>
-                {errors}
-              </div>
-              : null
-            }
-
+            {/* <UpdateImageCA imagePrev={(data) => this.setState({ img: data })}  /> */}
             <div className="campusAmb-sidebar-user-details">
               <div className="text">{this.props.userData ? this.props.userData.name : "User"}</div>
               <div className="cname">{this.props.userData ? this.props.userData.college : "-"}</div>

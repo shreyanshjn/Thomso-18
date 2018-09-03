@@ -5,7 +5,7 @@ import AuthService from '../../../handlers/main/AuthService';
 
 import EventRow from "./EventRow";
 import "../src/css/profile.css"
-import UpdateImage from "../sidebar/UpdateImage"
+// import UpdateImage from "../sidebar/UpdateImage"
 
 export default class Profile extends React.Component {
 
@@ -29,6 +29,7 @@ export default class Profile extends React.Component {
             FetchApi('GET', '/api/main/events', null, token)
                 .then(r => {
                     if (r && r.data && r.data.body) {
+                        console.log(r.data.body)
                         this.setState({ events: r.data.body })
                     }
                 })
@@ -54,9 +55,9 @@ export default class Profile extends React.Component {
                         <div className="participant-profile-child-left-details">
                             <p className="participant-profile-label">Name:</p><p className="participant-somedetails">{(this.props.userData && this.props.userData.name) ? this.props.userData.name : null}</p>
                         </div>
-                        <div className="participant-profile-child-left-details">
+                        {/* <div className="participant-profile-child-left-details">
                             <UpdateImage imagePrev={(data) => this.setState({ img: data })} />
-                        </div>
+                        </div> */}
                         <div className="participant-profile-child-left-details" style={{ display: "inline-block", width: "50%" }}>
                             <p className="participant-profile-label">Thomso ID :</p><p className="participant-somedetails">{(this.props.userData && this.props.userData.thomso_id) ? this.props.userData.thomso_id : null}</p>
                         </div>
@@ -87,7 +88,7 @@ export default class Profile extends React.Component {
                             <div className="participant-profile-event-details">
                                 <table className="participant-profile-table-events">
                                     <tbody>
-                                        {this.state.events ? this.state.events.map((data, i) => <EventRow key={`events${i + 1}`} index={i} data={data} />)
+                                        {this.state.events.event ? this.state.events.event.map((data, i) => <EventRow key={`events${i + 1}`} index={i} data={data} primaryEvent={this.state.events.primary_event} />)
                                             : null}
                                     </tbody>
                                 </table>
@@ -102,3 +103,4 @@ export default class Profile extends React.Component {
         );
     }
 }
+

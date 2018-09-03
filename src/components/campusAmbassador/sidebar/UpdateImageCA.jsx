@@ -1,8 +1,8 @@
 import React from 'react';
 import FetchApi from '../../../utils/FetchAPI';
-import AuthService from '../../../handlers/main/AuthService';
+import AuthService from '../../../handlers/ca/temp/AuthService';
 
-export default class UpdateImage extends React.Component{
+export default class UpdateImageCA extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
@@ -17,7 +17,7 @@ export default class UpdateImage extends React.Component{
     
       onSubmit =(e)=> {
         e.preventDefault();
-        if(this.state.file.size > 1101200){
+        if(this.state.file.size > 101200){
             this.setState({disabled: true, errors: 'Max image sixe of 100 kb exceeded'})
         }else{
             let data = {
@@ -27,19 +27,15 @@ export default class UpdateImage extends React.Component{
             const token = this.Auth.getToken()
             FetchApi('post','/api/ca/temp/updateImage', data, token)
             .then(res => {
-                console.log(res.data)
                 if(res && res.data && res.data.success){
-                  this.props.imageUpdated(true);
                   this.setState({disabled: true, errors: ''})
-                  // this.props.history.push('/main');
+                  this.props.history.push('/CampusAmbassador');
                 }
                 else{
-                  this.props.imageUpdated(false);
                   this.setState({disabled: true, errors: 'Unable to upload'})
                 }
               })
            .catch(err => {
-            this.props.imageUpdated(false);
             console.log(err)
             });
         }
@@ -66,7 +62,7 @@ export default class UpdateImage extends React.Component{
           <div>
             <form onSubmit={this.onSubmit}>
               <div>
-                <span>Chose File</span>
+                <span>Choose File</span>
                 <input 
                 name="file"
                 type="file"

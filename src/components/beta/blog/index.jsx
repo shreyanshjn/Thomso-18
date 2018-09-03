@@ -28,7 +28,7 @@ export default class blog extends React.Component {
               Behind The Scenes
             </div>
             <div className="main-blog-bodyparent-date">
-              posted on 1 September 2018
+              Posted on 1st September'18
             </div>
           </div>
           <div className="main-blog-secondchild">

@@ -1,17 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./css/style.css";
-import boy from "./img/boy.png";
-import girl from "./img/girl.png";
+
 import { addCATopic } from '../../../utils/firebasePush';
+
+import UpdateImage from './UpdateImage'
+
+import "./css/style.css";
+
 import Profile from "./Svg/Profile"
 import Events from "../../campusAmbassador/sidebar/Svg/Events"
 import Contact from "../../campusAmbassador/sidebar/Svg/Contact"
 import Logout from "../../campusAmbassador/sidebar/Svg/Logout"
 import Home from "./Svg/Home"
-import UpdateImage from './UpdateImage'
 import Post from "./Svg/Post"
 import Bulb from "./Svg/Bulb"
+import boy from "./img/boy.png";
+import girl from "./img/girl.png";
+
 let addTopicTimeout;
 
 export default class Sidebar extends React.Component {
@@ -59,8 +64,14 @@ export default class Sidebar extends React.Component {
   }
 
   render() {
-    let { errors } = this.state;
-    let user = 'img/ProfileImage/' + this.props.userData.image
+    let user
+    console.log(this.props.userData);
+    if (this.props.userData && this.props.userData.image) {
+      user = '/uploads/img/ProfileImage/' + this.props.userData.image
+    }
+    if (process.env.REACT_APP_SERVER_ENVIORNMENT === "dev") {
+      user = 'https://localhost:' + process.env.REACT_APP_SERVER_PORT + user
+    }
     return (
       <div>
         <div
@@ -70,6 +81,7 @@ export default class Sidebar extends React.Component {
         >
           <div className="main-sidebar-user">
             <div className="main-sidebar-user-child">
+            {/* {console.log(this.props.userData)} */}
               {(this.props.userData && this.props.userData.image) ? <img src={user} className="image" alt="User" /> :
                 <React.Fragment>
                   {(this.props.userData && this.props.userData.gender === 'female') ?
@@ -84,12 +96,6 @@ export default class Sidebar extends React.Component {
               <div>
                 <UpdateImage imagePrev={(data) => this.setState({ img: data })} imageUpdated={(data) => data ? this.setState({ errors: 'Image updated successfully' }) : this.setState({ errors: 'Unable to update image' })} />
               </div>
-              {errors ?
-                <div style={{ textAlign: 'center', color: 'red', fontWeight: '600' }}>
-                  {errors}
-                </div>
-                : null
-              }
             </div>
           </div>
           <div className="main-sidebar-line">
@@ -169,7 +175,7 @@ export default class Sidebar extends React.Component {
               </div>
             </Link>
             <Link
-              to="/zonals/home"
+              to="/main/zonals"
               className={
                 (this.state.activeState === "zonals")
                   ? "sideNavItem activeSideItem"

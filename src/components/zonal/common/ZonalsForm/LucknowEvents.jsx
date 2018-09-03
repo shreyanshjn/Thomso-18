@@ -16,17 +16,18 @@ export default class LucknowEvents extends React.Component {
     }
     onSubmit = (e) => {
         e.preventDefault();
-        let events = [];
-        if (this.state.nukkadnatak) {
-            events.push("Nukkad Natak");
-        }
-        if (this.state.mrmsthomso) {
-            events.push("Mr. and Mrs. Thomso");
-        }
-        if (this.state.tgt && this.state.selectedOptionTgt) {
-            events.push(this.state.selectedOptionTgt);
-        }
-        this.props.selectedevents(events);
+        // let events = [];
+        this.props.statevalues({ errors: "Registration Closed." })
+        // if (this.state.nukkadnatak) {
+        //     events.push("Nukkad Natak");
+        // }
+        // if (this.state.mrmsthomso) {
+        //     events.push("Mr. and Mrs. Thomso");
+        // }
+        // if (this.state.tgt && this.state.selectedOptionTgt) {
+        //     events.push(this.state.selectedOptionTgt);
+        // }
+        // this.props.selectedevents(events);
     }
     handleOptionChangeTgt = (changeEvent) => {
         this.setState({

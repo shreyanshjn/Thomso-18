@@ -18,7 +18,7 @@ exports.verifyTemp = (req, res, next) => {
                 res.status(403).send({ success: false, message: 'Token Expired' });
             } else {
 
-                console.log(user)
+                // console.log(user)
                 req.locals = {
                     _id: user.user_id,
                     email: user.email
