@@ -61,7 +61,14 @@ class Navbar extends Component {
     }
     render() {
         let verified = this.state.imageData.verified;
-        let imageUrl = '/img/ProfileImage/' + this.state.imageData.image;
+        // let imageUrl = '/img/ProfileImage/' + this.state.imageData.image;
+        let imageUrl;
+        if (this.state.imageData && this.state.imageData.image) {
+            imageUrl = '/uploads/img/ProfileImage/' + this.state.imageData.image
+          }
+          if (process.env.REACT_APP_SERVER_ENVIORNMENT === "dev") {
+            imageUrl = 'https://localhost:' + process.env.REACT_APP_SERVER_PORT + imageUrl
+          }
         return (
             <div className="beta-navbar-contain">
                 <div className={this.state.hamburger ? "beta-home-navbar" : "beta-home-navbar beta-navbar-overlay beta-navbar-navbarToggle"} id={(this.props.background === "true") ? "background-image-gradient" : null}>

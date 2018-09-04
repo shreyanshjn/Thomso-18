@@ -65,7 +65,7 @@ export default class Sidebar extends React.Component {
 
   render() {
     let user
-    console.log(this.props.userData);
+    // console.log(this.props.userData);
     if (this.props.userData && this.props.userData.image) {
       user = '/uploads/img/ProfileImage/' + this.props.userData.image
     }
