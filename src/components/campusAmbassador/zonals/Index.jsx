@@ -41,7 +41,7 @@ export default class ZonalCampus extends Component {
                             Bhopal Zonals
                         </div>
                         <div className="zonals-mainpage-cards-button">
-                            {/* Successfully Organized. */}
+                            COMING SOON.
                         </div>
                     </div>
                     <div className="zonals-mainpage-cards">
@@ -53,7 +53,7 @@ export default class ZonalCampus extends Component {
                             Jaipur Zonals
                         </div>
                         <div className="zonals-mainpage-cards-button">
-                            {/* Successfully Organized. */}
+                            COMING SOON.
                         </div>
                     </div>
                     <div className="zonals-mainpage-cards">
@@ -65,7 +65,7 @@ export default class ZonalCampus extends Component {
                             Chandigarh Zonals
                         </div>
                         <div className="zonals-mainpage-cards-button">
-                            {/* Successfully Organized. */}
+                            COMING SOON.
                         </div>
                     </div>
                 </div>

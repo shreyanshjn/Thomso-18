@@ -22,7 +22,32 @@
 .campusAmb-contact-parent-main {
     background-image: url('../../../main/src/img/trianglify.png');
 }
-
+.campusAmb-contact-image_six{
+    background-image: url("../../../beta//home/src/img/shubham.jpg");
+    box-shadow: 2px 2px 7px 2px rgba(55,55,55,.1);
+    height:300px;
+    width: auto;
+    display: flex;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 2px;
+    opacity: 0.8;
+    transition: all 0.5s;
+}
+.campusAmb-contact-image_seven{
+    background-image: url("../../../beta//home/src/img/dhaka.jpg");
+    box-shadow: 2px 2px 7px 2px rgba(55,55,55,.1);
+    height:300px;
+    width: auto;
+    display: flex;
+    background-size: cover;
+    background-position: 8% 8%;
+    background-repeat: no-repeat;
+    border-radius: 2px;
+    opacity: 0.8;
+    transition: all 0.5s;
+}
 .campusAmb-contact-child{
     display: flex;
     width: 100%;

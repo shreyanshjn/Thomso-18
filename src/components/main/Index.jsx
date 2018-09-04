@@ -50,11 +50,6 @@ const Profile = Loadable({
     loading: Loading
 });
 
-const PostIndex = Loadable({
-    loader: () => import("./post/Index"),
-    loading: Loading
-});
-
 const LogoutIndex = Loadable({
     loader: () => import("./logout/Index"),
     loading: Loading
@@ -74,6 +69,12 @@ const ZonalsMainIndex = Loadable({
     loader: () => import("../campusAmbassador/zonals/Index"),
     loading: Loading
 });
+
+const PostIndex = Loadable({
+    loader: () => import("./../campusAmbassador/posts/Index"),
+    loading: Loading
+});
+
 
 export default class MainIndex extends React.Component {
     constructor() {
