@@ -10,17 +10,20 @@ export default class HomeIndex extends Component {
                 <Navbar background="true" />
                 <div className="zonals-mainpage-parent-child">
                     <div className="zonals-mainpage-cards">
-                        <Link to="/zonals/delhi">
-                            <div className="zonals-mainpage-cards-image-delhi">
+                        <Link to="/zonals/jaipur">
+                            <div className="zonals-mainpage-cards-image-jaipur">
                             </div>
                         </Link>
                         <div className="zonals-mainpage-cards-title">
-                            Delhi Zonals
+                            Jaipur Zonals
                         </div>
-                        <div className="zonals-mainpage-cards-text">
-                                SUCCESSFULLY ORGANIZED.
-                        </div>
+                            <div className="zonals-mainpage-cards-button">
+                                <Link to="/zonals/jaipur">
+                                    Register
+                                </Link>
+                            </div>
                     </div>
+                    
                     <div className="zonals-mainpage-cards">
                     <Link to="/zonals/lucknow">
                         <div className="zonals-mainpage-cards-image-lucknow">
@@ -36,15 +39,15 @@ export default class HomeIndex extends Component {
                 </div>
                 <div className="zonals-mainpage-parent-child">
                     <div className="zonals-mainpage-cards">
-                        {/* <Link to="/zonals/jaipur"> */}
-                            <div className="zonals-mainpage-cards-image-jaipur">
+                        <Link to="/zonals/delhi">
+                            <div className="zonals-mainpage-cards-image-delhi">
                             </div>
-                        {/* </Link> */}
+                        </Link>
                         <div className="zonals-mainpage-cards-title">
-                            Jaipur Zonals
+                            Delhi Zonals
                         </div>
                         <div className="zonals-mainpage-cards-text">
-                                COMING SOON
+                                SUCCESSFULLY ORGANIZED.
                         </div>
                     </div>
                     <div className="zonals-mainpage-cards">
