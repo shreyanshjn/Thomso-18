@@ -17,7 +17,7 @@ class Navbar extends Component {
             hamburger: true,
             isAuthenticated: false,
             activeState: window.location.pathname.substring(1),
-            imageData:[]
+            imageData: []
         };
         this.setActive = this.setActive.bind(this);
         this.Auth = new AuthService();
@@ -65,10 +65,10 @@ class Navbar extends Component {
         let imageUrl;
         if (this.state.imageData && this.state.imageData.image) {
             imageUrl = '/uploads/img/ProfileImage/' + this.state.imageData.image
-          }
-          if (process.env.REACT_APP_SERVER_ENVIORNMENT === "dev") {
+        }
+        if (process.env.REACT_APP_SERVER_ENVIORNMENT === "dev") {
             imageUrl = 'https://localhost:' + process.env.REACT_APP_SERVER_PORT + imageUrl
-          }
+        }
         return (
             <div className="beta-navbar-contain">
                 <div className={this.state.hamburger ? "beta-home-navbar" : "beta-home-navbar beta-navbar-overlay beta-navbar-navbarToggle"} id={(this.props.background === "true") ? "background-image-gradient" : null}>
@@ -137,6 +137,11 @@ class Navbar extends Component {
                                                 this.setActive("silhoutte");
                                             }}>SILHOUETTE
                                         </Link>
+                                        <Link to="/xpression" style={{ marginLeft: "15px" }} className={(this.state.activeState === "xpression") ? "linkEventson" : null}
+                                            onClick={() => {
+                                                this.setActive("xpression");
+                                            }}>XPRESSION
+                                        </Link>
                                         {/*  <Link to="" className={(this.state.activeState === "linkEventsoff") ? "linkEventsoff" : null}
                     onClick={() => {
                                     this.setActive("linkEventsoff");
@@ -165,7 +170,7 @@ class Navbar extends Component {
                                     <Link to="/main" className={(this.state.activeState === "main") ? "linkSponsors" : null}
                                         onClick={() => {
                                             this.setActive("main");
-                                        }}>{verified ? (this.state.imageData && this.state.imageData.image) ? <img className="navbar-user-image" src={imageUrl} alt="DASHBOARD" /> :'DASHBOARD' : <span><span className="events-navbar-new">REGISTER</span><span className="events-delhi-navbar-new">new</span></span> }</Link>
+                                        }}>{verified ? (this.state.imageData && this.state.imageData.image) ? <img className="navbar-user-image" src={imageUrl} alt="DASHBOARD" /> : 'DASHBOARD' : <span><span className="events-navbar-new">REGISTER</span><span className="events-delhi-navbar-new">new</span></span>}</Link>
 
                                 </li>
                                 {/* <li>
