@@ -7,7 +7,7 @@ export const EventDetails =
             subevents: [
                 {
                     id: '1_1',
-                    name: "Foot Loose",
+                    name: "Foot Loose(Stage Dance Competition)",
                     content: "Are you passionate about dancing? Do you have tingling sensations run down your feet when you hear music? Then come let yourself loose. Dance to express. It's said that in order to find your true self, you first have to lose yourself. Come get lost amid the likes of yourself.Prepare, perfect, perform and if you stumble then make it a part of the dance.",
                     rulebook: "https://drive.google.com/open?id=1inLU2fKJglROpFDV9YTlULrzcfqPOeGl",
                     image: "footloose.jpeg",
@@ -15,7 +15,7 @@ export const EventDetails =
                 },
                 {
                     id: '1_2',
-                    name: "Step Up",
+                    name: "Step Up(Street Dance Competition)",
                     content: "Have you ever had the desire to express the hidden language of your soul, make the music visible and simply be insane? We'll provide you the level field to be fearless, limitless and well,as we promised before, insane. Dance to the beat of your own drum; don't let anyone tell you it can't be done. There are no spring floors, no spotlights, no stage, and no boundaries. Come on the streets to glide, to spin, to fly or to expression to all your instincts, bring your style on the floor. Dance on the random music being played and show your instincts to dance. Step-Up is an on-the-spot street dance competition.",
                     rulebook: "https://drive.google.com/open?id=10jmJuwECgNHYhK6lruO4VMxkKnjVKQ1L",
                     image: "step_up.jpg",
@@ -38,7 +38,7 @@ export const EventDetails =
                 [
                     {
                         id: '2_1',
-                        name: "Abhivyakti",
+                        name: "Abhivyakti(Stage Play Competition)",
                         content: "All the world's a stage, and all the men and women are merely players. This event is for those who act, write, dance, run, cry and laugh just for the ethereal beauty of the act. Stand on a stage and hold the hearts of men in your hands. Make them laugh with a gesture and cry with words. Turn the spotlight towards you, perfecting acting skills, coordination, expressions and stellar dialogue delivery.We have this event planned to cater to all those patrons of direction, acting and screenplay. So, participate and hypnotize people with the power of words and expressions and you will Shine brighter than any praise or fame or glory.",
                         rulebook: "https://drive.google.com/open?id=1zJfdkhyMXp-mkFiy4TQY9lqbH2wTJaWf",
                         image: "abhivyakti.jpeg",
@@ -46,7 +46,7 @@ export const EventDetails =
                     },
                     {
                         id: '2_2',
-                        name: "Nukkad Natak",
+                        name: "Nukkad Natak(Street Play Competition)",
                         content: "Nukkad Natak is a street-play competition of Dramatics at Thomso where you speak in the lingo of the common folks to outline captivating issues which are also socially relevant.The main endeavor is to convey a social and political message in an entertaining environment, amidst the intimate and effective means of theatre by means of shout,chants, drums and catchy songs. This is your chance to be the change you think of bringing about.",
                         rulebook: "https://drive.google.com/open?id=1B4MOAc3ouHsGYWuWhYohJhwe5m8ON41F",
                         image: "nukkad_natak.jpg",
@@ -457,16 +457,8 @@ export const EventDetails =
                         image: "slam_poetry.jpg",
                     },
                     {
-                        id: '11_8',
-                        name: "Parliamentary Debate",
-                        content: `“Standing up there, the faces looking up at me, the things in my head coming out of my mouth, while my brain searched for the next best thing to follow what I was saying, and if I could sway them to my side by handling it right, then I had won the debate--once my feet got wet, I was gone on debating”. – Malcolm X. Debating is an integral part of a democracy. Debate stimulates and refines communication skills that empower individuals to speak for themselves, to discover and use their own voices. This is your chance to showcase your skills as an orator and have fun as well.`,
-                        rulebook: "https://drive.google.com/open?id=1vy3xD__awFh5iJvOyQTp2hNt5YCblURQ",
-                        image: "parliamentary_debate.jpeg",
-                        prize: "50"
-                    },
-                    {
                         id: '11_9',
-                        name: "Model United Nations",
+                        name: "IITR MUN",
                         content: "True to the spirit of the United Nations, this event strives to foster a constructive forum for open dialogue on complex global issues, including international peace and security, and economic and social progress. During the conference, students learn the importance of balancing national interests with the needs of the international community, while also learning about the powers and limitations of international negotiation. Delegates will preserve their countries’ national policy while negotiating in the face of other, sometimes conflicting, international policies",
                         rulebook: "https://drive.google.com/open?id=1gv0uMPpq-4FIpGy1mQezwaUKGNufd6Yf",
                         image: "mun.jpg",

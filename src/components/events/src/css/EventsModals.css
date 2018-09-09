@@ -11,6 +11,8 @@
 }
 .events-custom-selection
 {
+    white-space: nowrap;
+    text-overflow: ellipsis;
     height: 1.1em;
     color:white;
     overflow: hidden; 
@@ -304,7 +306,7 @@
         width: 100%; 
         background: transparent;
         color: white;
-        padding: 5px 5px 5px 35%;
+        padding: 5px 5px 5px 12px;
         font-size: 14px;
         font-weight: 600;
         font-family: Montserrat;
