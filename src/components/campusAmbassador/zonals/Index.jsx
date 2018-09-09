@@ -9,6 +9,20 @@ export default class ZonalCampus extends Component {
                 {console.log(this.props.mainBackground)}
                 <div className="zonals-mainpage-parent-child">
                     <div className="zonals-mainpage-cards">
+                        <Link to="/zonals/lucknow">
+                            <div className="zonals-mainpage-cards-image-jaipur">
+                            </div>
+                        </Link>
+                        <div className="zonals-mainpage-cards-title">
+                            Jaipur Zonals
+                        </div>
+                        <div className="zonals-mainpage-cards-button">
+                            <Link to="/zonals/lucknow">
+                                Register
+                            </Link>
+                        </div>
+                    </div>
+                    <div className="zonals-mainpage-cards">
                         <Link to="/zonals/delhi">
                             <div className="zonals-mainpage-cards-image-delhi">
                             </div>
@@ -41,21 +55,10 @@ export default class ZonalCampus extends Component {
                             Bhopal Zonals
                         </div>
                         <div className="zonals-mainpage-cards-button">
-                            {/* Successfully Organized. */}
+                            COMING SOON.
                         </div>
                     </div>
-                    <div className="zonals-mainpage-cards">
-                        <Link to="/zonals/lucknow">
-                            <div className="zonals-mainpage-cards-image-jaipur">
-                            </div>
-                        </Link>
-                        <div className="zonals-mainpage-cards-title">
-                            Jaipur Zonals
-                        </div>
-                        <div className="zonals-mainpage-cards-button">
-                            {/* Successfully Organized. */}
-                        </div>
-                    </div>
+                    
                     <div className="zonals-mainpage-cards">
                         <Link to="/zonals/lucknow">
                             <div className="zonals-mainpage-cards-image-chandigarh">
@@ -65,7 +68,7 @@ export default class ZonalCampus extends Component {
                             Chandigarh Zonals
                         </div>
                         <div className="zonals-mainpage-cards-button">
-                            {/* Successfully Organized. */}
+                            COMING SOON.
                         </div>
                     </div>
                 </div>

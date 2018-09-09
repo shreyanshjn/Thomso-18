@@ -30,10 +30,10 @@ const LucknowIndex = Loadable({
     loader: () => import("./lucknow/Index"),
     loading: loading
 });
-// const JaipurIndex= Loadable({
-//     loader: () => import("./jaipur/Index"),
-//     loading: loading
-// });
+const JaipurIndex= Loadable({
+    loader: () => import("./jaipur/Index"),
+    loading: loading
+});
 export default class ZonalsIndex extends React.Component {
     render() {
         return (
@@ -42,7 +42,7 @@ export default class ZonalsIndex extends React.Component {
                 <Route path="/zonals/delhi" component={DelhiIndex} />
                 <Route path="/zonals/lucknow" component={LucknowIndex} />
                 <Route path="/zonals/home" component={HomeIndex} />
-                {/* <Route path="/zonals/jaipur" component={JaipurIndex} />*/}
+                <Route path="/zonals/jaipur" component={JaipurIndex} />
             </React.Fragment>
         );
     }

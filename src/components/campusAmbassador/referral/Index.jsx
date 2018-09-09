@@ -13,7 +13,7 @@ export default class ReferralIndex extends Component {
                         </li>
                         <br />
                         <li>
-                            People registering with that particular referral code will add to the score of the campus ambassador in the leaderboard. More the number of people registering with the referral code shared, more will be the score of the campus ambassador. 
+                            People registering with that particular referral code will add to the score of that campus ambassador in the leaderboard. More the number of people registering with the referral code shared, more will be the score of the campus ambassador. 
                         </li>
                     </ul>
                 </div>
