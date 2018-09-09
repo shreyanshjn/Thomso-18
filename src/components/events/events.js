@@ -7,7 +7,7 @@ export const EventDetails =
         subevents: [
             {
                 id: '1_1',
-                name: "Foot Loose",
+                name: "Foot Loose(Stage Dance Competition)",
                 content: "Are you passionate about dancing? Do you have tingling sensations run down your feet when you hear music? Then complete yourself loose. Dance to express. Its said that in order to find your true self, you first have to lose yourself. Come get lost amid the likes of yourself.Prepare, perfect, perform and if you stumble then make it a part of the dance.",
                 rulebook: "https://drive.google.com/open?id=1inLU2fKJglROpFDV9YTlULrzcfqPOeGl",
                 image: "footloose.jpeg",
@@ -15,7 +15,7 @@ export const EventDetails =
             },
             {
              id: '1_2',
-             name: "Step Up",
+             name: "Step Up(Street Dance Competition)",
              content: "Have you ever had the desire to express the hidden language of your soul, make the music visible and simply be insane? We'll provide you the level field to be fearless, limitless and well, as we promised before, insane.  There are no spring floors, no spotlights, no stage, and no boundaries. Come on the streets to glide, to spin, to fly or to expression to all your instincts, bring your style on the floor. Dance on the random music being played and show your instincts to dance. Step-Up is an on-the- spot street dance competition.",
              rulebook: "https://drive.google.com/open?id=10jmJuwECgNHYhK6lruO4VMxkKnjVKQ1L",
              image: "step_up.jpg",
@@ -39,7 +39,7 @@ export const EventDetails =
        [
           {   
              id: '2_1',
-             name: "Abhivyakti",
+             name: "Abhivyakti(Stage Play Competition)",
              content: "All the world's a stage, and all the men and women merely players. This event is for those who act, write, dance, run, cry and laugh just for the ethereal beauty of the act. Stand on a stage and hold the hearts of men in your hands. Make them laugh with a gesture and cry with words. Turn the spotlight towards you, perfecting acting skills, coordination, expressions and stellar dialogue delivery.We have this event planned out to cater to all those patrons of direction, acting and screenplay. So participate and hypnotize people with the power of words and expressions and you will shine brighter than any praise or fame or glory",
              rulebook: "https://drive.google.com/open?id=1zJfdkhyMXp-mkFiy4TQY9lqbH2wTJaWf",
              image:"abhivyakti.jpeg",
@@ -47,7 +47,7 @@ export const EventDetails =
           },
           {
               id: '2_2',
-              name: "Nukkad Natak",
+              name: "Nukkad Natak(Street Play Competition)",
               content: "Nukkad Natak is a street-play competition of Dramatics at Thomso where you speak in the lingo of the common folks to outline captivating issues which are also socially relevant. The main endeavor is to convey a social and political message in an entertaining environment, amidst the intimate and effective means of theatre by means of shout, chants, drums and catchy songs.This is your chance to be the change you think of bringing about.",
               rulebook: "https://drive.google.com/open?id=1B4MOAc3ouHsGYWuWhYohJhwe5m8ON41F",
               image: "nukkad_natak.jpg",
@@ -127,9 +127,9 @@ export const EventDetails =
         },
             {
             id: '4_2',
-            name: "Sargam",
-            content: "In the words of Plato: Music gives a soul to the universe, wings to the mind, flight to the imagination and life to everything.This is your chance to flaunt your gift. Here’s an opportunity to get on stage and tell your story through your flair. It’s the IITR’s premier singing contest. If you believe in yourself then come compete with the elite.You can sing or play an instrument. Just be your best self and own the stage. !",
-            rulebook: "https://drive.google.com/open?id=16NxI-rd-orfXWqPnoxPiCDiPhQBhd621",
+                name: "Sargam",
+                content: "In the words of Plato, 'Music gives a soul to the universe, wings to the mind, flight to the imagination and life to everything.' This is your chance to flaunt your gift. Here’s an opportunity to get on stage and tell your story through your flair. It’s the IITR’s premier singing contest. If you believe in yourself then come compete with the elite.  You can sing or play an instrument. Just be your best self and own the stage!",
+                rulebook: "https://drive.google.com/open?id=16NxI-rd-orfXWqPnoxPiCDiPhQBhd621",
             image: "sargam.jpg",
             prize: "125"
         }]
@@ -263,14 +263,14 @@ export const EventDetails =
         [
         { 	id: '8_1',
             name: "Apocalypse",
-            content: "Beating a game is a journey. Therein lies the fun.Are you one of those who think gaming is their DNA? Do you get an adrenaline rush every time you conquer a game? Welcome to Apocalypse, a cut throat competition with intense competition and massive crowds,this is one gaming competition you wouldn’t want to miss. So gear up and let your game speak for you. Strike new camaraderie and build up envious rivalries in this hard fought event, where shots are traded across battle lines. Show us your hard acquired gaming skills and aim to vanquish all.So if you think you are the one to obliterate the competition, then Apocalypse is the place to be!Level up, fall down, respawn and get back up to earn the coveted crown.",
+            content: "Beating a game is a journey. Therein lies the fun. Are you one of those who thinks gaming is their DNA? Do you get an adrenaline rush every time you conquer a game? Welcome to Apocalypse, a cut-throat competition with intense competition and massive crowds, this is one gaming competition you wouldn’t want to miss. So, gear up and let your game speak for you. Strike new camaraderie and build up envious rivalries in this hard-fought event, where shots are traded across battle lines. Show us your hard-acquired gaming skills and aim to vanquish all. So, if you think you are the one to obliterate the competition, then Apocalypse is the place to be! Level up, fall down, respawn and get back up to earn the coveted crown.",
             rulebook: "https://drive.google.com/file/d/1mJGseb-TK6_2mGIO-LXfVJb6a2KMM2Ez" ,
             image: "apocalypse.jpeg",
             prize: "50"
         },
         { 	id: '8_2',
             name: "Queen's Gambit",
-            content: "Do you pursue good chess skills,but do not feel like playing those 30+minute games? If yes, then this is the best platform to show off your skills.Instead of playing tediously long matches on a chess board, this is a unique 'Chess tactics solving competition.'" ,
+            content: "Do you think what it takes to be the master of cues? If yes, come forth and compete with your contemporaries and prove your mettle; because if you can’t prove, you don’t have. This event gives you an opportunity to compete with the elites and let the world witness your flair. The table is set, now is the time for you to hit.  The event consists of the following two of the table games: Snooker & Pool, which are by far, the benchmarks of precision and skill.",
             rulebook: "https://drive.google.com/open?id=1TD7_ZMNIJvCcC-6Ym0a1AmZrWaRUkzFN",
             image: "queen_gambit.jpg",
             prize: "10"
@@ -401,7 +401,7 @@ export const EventDetails =
         {
             id: '11_2',
             name: "Spin A yarn",
-            content: "Are you passionate about entrancing people in the mystique of yourstories? Do characters come alive in your mind, flourishing under the light of creativity and doing a better job than truth itself? This event lets the participants put their heads together over an intriguing comic strip to create enthralling stories in front of an engaging audience. Storytelling is an art, and even more so when people want to listen. So buckle your seatbelts and let the story take over in this magical journey of storytelling and adventure, enrapturing listeners to your world.",
+            content: "Are you passionate about entrancing people in the mystique of your stories? Do characters come alive in your mind, flourishing under the light of creativity and doing a better job than truth itself?  This event lets the participants put their heads together over an intriguing comic strip to create enthralling stories in front of an engaging audience. Storytelling is an art, and even more so when people want to listen. So buckle your seatbelts and let the story takeover in this magical journey of storytelling and adventure, enrapturing listeners to your world.",
             rulebook: "https://drive.google.com/open?id=1GWgUNwnGmbH22nESPN6n1JzrrCf5yhDU",
             image: "spin_a_yarn.jpg",
             prize: "10"
@@ -444,14 +444,14 @@ export const EventDetails =
         {
             id: '11_8',
             name: "Parliamentary Debate",
-            content: `“Standing up there, the faces looking up at me, the things in my head coming out of my mouth, while my brain searched for the next best thing to follow what I was saying, and if I could sway them to my side by handling it right, then I had won the debate--once my feet got wet, I was gone on debating”. – Malcolm X. Debating is an integral part of a democracy. Debate stimulates and refines communication skills that empower individuals to speak for themselves, to discover and use their own voices. This is your chance to showcase your skills as an orator and have fun as well.`,
+            content: `“Standing up there, the faces looking up at me, the things in my head coming out of my mouth, while my brain searched for the next best thing to follow what I was saying, and if I could sway them to my side by handling it right, then I had won the debate--once my feet got wet, I was gone on debating”. – Malcolm X.  Debating is an integral part of a democracy. Debate stimulates and refines communication skills that empower individuals to speak for themselves, to discover and use their own voices. This is your chance to showcase your skills as an orator and have fun as well."`,
             rulebook: "https://drive.google.com/open?id=1vy3xD__awFh5iJvOyQTp2hNt5YCblURQ",
             image: "parliamentary_debate.jpeg",
             prize: "50"
         },
         {
             id: '11_9',
-            name: "Model United Nations",
+            name: "ITR MUN",
             content: "True to the spirit of the United Nations, this event strives to foster a constructive forum for open dialogue on complex global issues, including international peace and security, and economic and social progress. During the conference, students learn the importance of balancing national interests with the needs of the international community, while also learning about the powers and limitations of international negotiation. Delegates will preserve their countries’ national policy while negotiating in the face of other, sometimes conflicting, international policies",
             rulebook: "https://drive.google.com/open?id=1gv0uMPpq-4FIpGy1mQezwaUKGNufd6Yf",
             image: "mun.jpg",
