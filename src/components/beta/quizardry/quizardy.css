@@ -10,7 +10,7 @@
 }
 
 .quizardy-parent-body{
-    background-color: #0103059e;
+    background-color: #318388;
     height: 100vh;
     position: relative;
     align-items: center;
@@ -29,7 +29,7 @@
 @media only screen and (min-width:768px)
 {
 .quizardy-child{
-    background: url('./Poster-03.jpg');
+    background: url('./ipl.jpg');
     background-size: cover;
     height: 100vh;
     background-repeat: no-repeat;
@@ -82,12 +82,10 @@
   .quizardy-parent {
     height: 100vh;
     overflow-y: hidden;
-    background: url('./Poster-04.jpg');
+    background: url('./ipl.jpg');
     background-size:cover;
-    background-position: center;
     background-repeat: no-repeat;
-    background-position:center;
-    background-color:#190801;
+    background-color:#318388;
   }
   .quizardy-navbar{
     height: 80px;
