@@ -38,7 +38,7 @@ export default class HomeIndex extends Component {
                             </Link>
                         </div> */}
                         <div className="zonals-mainpage-cards-text">
-                                SUCCESSFULLY ORGANIZED.
+                                COMING SOON.
                         </div>
                     </div>
 

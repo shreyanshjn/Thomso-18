@@ -34,10 +34,10 @@ const JaipurIndex= Loadable({
     loader: () => import("./jaipur/Index"),
     loading: loading
 });
-const ChandigadhIndex= Loadable({
-    loader: () => import("./chandigadh/Index"),
-    loading: loading
-});
+// const ChandigadhIndex= Loadable({
+//     loader: () => import("./chandigadh/Index"),
+//     loading: loading
+// });
 export default class ZonalsIndex extends React.Component {
     render() {
         return (

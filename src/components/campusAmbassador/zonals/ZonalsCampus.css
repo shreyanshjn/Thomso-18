@@ -39,6 +39,7 @@
     justify-content: space-around;
     flex-wrap: wrap;
     width: 100%;
+    padding-bottom: 7vh;
     height: 100%;
 }
 .zonals-mainpage-cards{

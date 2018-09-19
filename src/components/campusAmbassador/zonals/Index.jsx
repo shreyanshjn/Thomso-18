@@ -23,6 +23,23 @@ export default class ZonalCampus extends Component {
                         </div>
                     </div>
                     <div className="zonals-mainpage-cards">
+                        <Link to="/zonals/chandigadh">
+                            <div className="zonals-mainpage-cards-image-chandigarh">
+                            </div>
+                        </Link>
+                        <div className="zonals-mainpage-cards-title">
+                            Chandigarh Zonals
+                        </div>
+                        {/* <div className="zonals-mainpage-cards-button">
+                            <Link to="/zonals/chandigadh">
+                                Register
+                            </Link>
+                        </div> */}
+                        <div className="zonals-mainpage-cards-button">
+                            COMING SOON.
+                        </div>
+                    </div>
+                    <div className="zonals-mainpage-cards">
                         <Link to="/zonals/delhi">
                             <div className="zonals-mainpage-cards-image-delhi">
                             </div>
@@ -59,18 +76,7 @@ export default class ZonalCampus extends Component {
                         </div>
                     </div>
                     
-                    <div className="zonals-mainpage-cards">
-                        <Link to="/zonals/lucknow">
-                            <div className="zonals-mainpage-cards-image-chandigarh">
-                            </div>
-                        </Link>
-                        <div className="zonals-mainpage-cards-title">
-                            Chandigarh Zonals
-                        </div>
-                        <div className="zonals-mainpage-cards-button">
-                            COMING SOON.
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         );

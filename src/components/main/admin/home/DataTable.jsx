@@ -20,11 +20,6 @@ export default class DataTable extends React.Component {
         console.log(this.props.participants)
         
         if (this.props.participants && this.props.participants.length > 0) {
-            // let primaryEvent = this.props.participants.primary_event.name;
-            // let {event} = this.props.participants.event.name;
-            // let {name, branch, address, college, gender, contact, email, thomso_id, primary_event,event} = this.props.participants[2];
-            // let data = {name, branch, email,  thomso_id, contact,  college, gender, address,primary_event, event};
-            // console.log(data);
             downloadCSV({data: this.props.participants, filename: 'participant_registrations.csv'})
         }
     }
