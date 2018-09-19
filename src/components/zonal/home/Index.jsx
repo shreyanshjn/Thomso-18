@@ -25,10 +25,10 @@ export default class HomeIndex extends Component {
                     </div>
                     
                     <div className="zonals-mainpage-cards">
-                        <Link to="/zonals/chandigadh">
+                        {/* <Link to="/zonals/chandigadh"> */}
                             <div className="zonals-mainpage-cards-image-chandigadh">
                             </div>
-                        </Link>
+                        {/* </Link> */}
                         <div className="zonals-mainpage-cards-title">
                             Chandigadh Zonals
                         </div>

@@ -6,7 +6,7 @@ export default class ZonalCampus extends Component {
     render() {
         return (
             <div className={(this.props.mainBackground === "true") ? "zonals-mainpage-main-page" : "zonals-mainpage-parent"}>
-                {console.log(this.props.mainBackground)}
+                {/* {console.log(this.props.mainBackground)} */}
                 <div className="zonals-mainpage-parent-child">
                     <div className="zonals-mainpage-cards">
                         <Link to="/zonals/lucknow">
@@ -23,10 +23,10 @@ export default class ZonalCampus extends Component {
                         </div>
                     </div>
                     <div className="zonals-mainpage-cards">
-                        <Link to="/zonals/chandigadh">
+                        {/* <Link to="/zonals/chandigadh"> */}
                             <div className="zonals-mainpage-cards-image-chandigarh">
                             </div>
-                        </Link>
+                        {/* </Link> */}
                         <div className="zonals-mainpage-cards-title">
                             Chandigarh Zonals
                         </div>
@@ -64,10 +64,10 @@ export default class ZonalCampus extends Component {
                         </div>
                     </div>
                     <div className="zonals-mainpage-cards">
-                        <Link to="/zonals/lucknow">
+                        {/* <Link to="/zonals/lucknow"> */}
                             <div className="zonals-mainpage-cards-image-bhopal">
                             </div>
-                        </Link>
+                        {/* </Link> */}
                         <div className="zonals-mainpage-cards-title">
                             Bhopal Zonals
                         </div>
