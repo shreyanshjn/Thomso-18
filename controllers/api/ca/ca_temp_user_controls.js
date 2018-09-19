@@ -254,3 +254,16 @@ exports.checkToken = function (req, res) {
             })
         });
 };
+
+/* GET Profile Data */
+exports.getProfile = function (req, res) {
+    Temp_User.findOne({
+        email: req.locals.email,
+    })
+        .select('fb_likes fb_shares fb_score bonus ideas referrals score')
+        .exec(function (err, user) {
+            if (err) return res.status(400).send({ success: false, msg: 'Cannot Find User' });
+            if (!user) return res.status(400).send({ success: false, msg: 'Cannot Find User' });
+            res.json({ success: true, msg: 'Profile Data', body: user });
+        })
+};

@@ -36,4 +36,6 @@ router.get('/rank', tempControls.getRank);
 router.put('/fbtoken', tempControls.setFBToken);
 router.get('/fbtoken', tempControls.checkToken);
 
+router.get('/profile', tempControls.getProfile);
+
 module.exports = router;
