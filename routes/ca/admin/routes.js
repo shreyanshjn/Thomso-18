@@ -41,5 +41,7 @@ router.put('/temp/unverify/:id', adminControls.unverifyTempUser);
 
 router.put('/temp/bonus', adminControls.putTempBonus);
 
+router.get('/temp/checkoutlist', adminControls.getCheckoutList);
+router.get('/temp/checkoutposts/:id', adminControls.getCheckoutPosts);
 
 module.exports = router;

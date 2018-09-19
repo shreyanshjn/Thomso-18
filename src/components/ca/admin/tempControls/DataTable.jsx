@@ -54,12 +54,13 @@ export default class DataTable extends React.Component {
                 <table>
                     <thead>
                         <tr>
-                            <th style={{width:"5vw"}}>CA_ID</th>
+                            <th style={{width:"4vw"}}>CA_ID</th>
                             <th style={{width:"20vw"}}>Name</th>
                             <th style={{width:"10vw"}}>Gender</th>
-                            <th style={{width:"5vw"}}>Score</th>
-                            <th style={{width:"5vw"}}>Referrals</th>
-                            <th style={{width:"5vw"}}>Ideas</th>
+                            <th style={{width:"4vw"}}>Score</th>
+                            <th style={{width:"4vw"}}>Referrals</th>
+                            <th style={{width:"4vw"}}>FB Score</th>
+                            <th style={{width:"4vw"}}>Ideas</th>
                             <th style={{width:"30vw"}}>Bonus</th>
                             <th style={{width:"10vw"}}>Unverify</th>
                         </tr>

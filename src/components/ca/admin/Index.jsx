@@ -55,6 +55,11 @@ const ControlsIndex = Loadable({
     loading: Loading,
 });
 
+const CheckoutIndex = Loadable({
+    loader: () => import('./checkout/Index'),
+    loading: Loading,
+});
+
 const TempControlsIndex = Loadable({
     loader: () => import('./tempControls/Index'),
     loading: Loading,
@@ -93,6 +98,7 @@ export default class AdminIndex extends React.Component{
                         <Route exact path="/ca/admin/tempideas" component={TempIdeasIndex} />
                         <Route exact path="/ca/admin/temp" component={TempUsersIndex} />
                         <Route exact path="/ca/admin/controls" component={ControlsIndex} />
+                        <Route exact path="/ca/admin/checkout" component={CheckoutIndex} />
                         <Route exact path="/ca/admin/tempControls" component={TempControlsIndex} />
                         <Route exact path="/ca/admin/logout" render={ () => <LogoutIndex updateRoutes={this.handleUpdate}/> } />
                         <Route exact path="/ca/admin" component={HomeIndex} />

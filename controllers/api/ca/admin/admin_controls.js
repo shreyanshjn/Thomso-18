@@ -1,3 +1,5 @@
+var request = require('request');
+
 var Users = require('../../../../models/ca/CA_User');
 var Ideas = require('../../../../models/ca/CA_Idea');
 
@@ -135,7 +137,7 @@ exports.getTempUsers = function (req, res) {
 /* GET ALL Users */
 exports.getTempScoreList = function (req, res) {
     TempUsers.find()
-        .select('name ca_id gender score ideas bonus referrals verified')
+        .select('name ca_id gender score ideas bonus fb_score referrals verified')
         .exec(function (err, allUsers) {
             if (err) return res.status(400).send({ success: false, msg: 'Unable to GET Score List', error: err });
             res.json(allUsers);
@@ -238,7 +240,7 @@ exports.putTempBonus = function (req, res) {
                         score: score
                     }
                     TempUsers.findOneAndUpdate({ _id: req.body.id }, updateScore, { new: true })
-                        .select('bonus referrals score')
+                        .select('bonus referrals fb_score score')
                         .exec(function (err, newScore) {
                             if (err) {
                                 return res.status(400).send({ success: false, msg: 'Cannot Update Score', error: err });
@@ -246,6 +248,38 @@ exports.putTempBonus = function (req, res) {
                             return res.json({ success: true, msg: 'Successfully Updated', body: newScore });
                         });
                 }
+            });
+    } else {
+        return res.status(400).send({ success: false, msg: 'Invalid Params' });
+    }
+};
+
+/* GET All Temp Users CHECKOUT List */
+exports.getCheckoutList = function (req, res) {
+    TempUsers.find({fb_access_token: {$ne: null}})
+        .select('name image email fb_link ca_id verified gender contact college state branch address why create_date')
+        .exec(function (err, allUsers) {
+            if (err) return res.status(400).send({ success: false, msg: 'Unable to GET Participants', error: err });
+            res.json(allUsers);
+        });
+};
+
+/* GET All Temp Users CHECKOUT Posts */
+exports.getCheckoutPosts = function (req, res) {
+    if (req.params.id) {
+        TempUsers.findById(req.params.id)
+            .select('fb_access_token')
+            .exec(function (err, user) {
+                if (err) return res.status(400).send({ success: false, msg: 'Unable to find user' });
+                if (!user || !user.fb_access_token ) return res.status(400).send({ success: false, msg: 'Unable to find user' });
+                var fb_auth_token = user.fb_access_token;
+                request(`https://graph.facebook.com/v3.1/me?fields=posts.limit(100){created_time,id,full_picture,message,link,likes.limit(0).summary(true)}&access_token=${fb_auth_token}`, function (err, response, body) {
+                    if (err) return res.status(400).send({ success: false, msg: 'Facebook returned error.', error: err });
+                    if (response.statusCode) {
+                        return res.status(response.statusCode).send(body);
+                    }
+                    return res.status(400).send({ success: false, msg: 'Facebook didnt return status.' });
+                })
             });
     } else {
         return res.status(400).send({ success: false, msg: 'Invalid Params' });

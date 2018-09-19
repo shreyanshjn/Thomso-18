@@ -63,7 +63,7 @@ exports.getPosts = function (req, res) {
         request(`https://graph.facebook.com/v3.1/171774543014513?fields=posts.since(2018-07-30){created_time,id,full_picture,message,link}&access_token=${fb_auth_token}`, function (err, response, body) {
             if (err) {
                 console.log(err)
-                return res.status(400).send({ success: false, msg: 'Facebook returend error.', error: err });
+                return res.status(400).send({ success: false, msg: 'Facebook returned error.', error: err });
             }
             if (response.statusCode) {
                 console.log('hel')
@@ -246,7 +246,7 @@ exports.checkToken = function (req, res) {
             if (!user) return res.json({ success: false, msg: 'Unable to find user.' });
             var fb_auth_token = user.fb_access_token;
             request(`https://graph.facebook.com/v3.1/me?fields=link&access_token=${fb_auth_token}`, function (err, response, body) {
-                if (err) return res.json({ success: false, msg: 'Facebook returend error.', error: err });
+                if (err) return res.json({ success: false, msg: 'Facebook returned error.', error: err });
                 if (response.statusCode === 200) {
                     return res.json( { success: true, msg: 'Valid Token'} );
                 }

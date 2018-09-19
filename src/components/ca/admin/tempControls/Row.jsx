@@ -10,6 +10,7 @@ export default class Row extends React.Component {
             bonus: 0,
             score: 0,
             referrals: 0,
+            fb_score: 0,
             isDisabled: false,
             bonusEditing: false,
             bonusDisabled: false
@@ -23,6 +24,7 @@ export default class Row extends React.Component {
             let bonus = 0
             let score = 0
             let referrals = 0
+            let fb_score = 0
             if (this.props.data.verified !== undefined) {
                 verified = this.props.data.verified
             }
@@ -35,7 +37,10 @@ export default class Row extends React.Component {
             if (this.props.data.referrals !== undefined) {
                 referrals = this.props.data.referrals
             }
-            this.setState({verified, bonus, score, referrals})
+            if (this.props.data.fb_score !== undefined) {
+                fb_score = this.props.data.fb_score
+            }
+            this.setState({verified, bonus, score, referrals, fb_score})
         }
     }
 
@@ -96,6 +101,7 @@ export default class Row extends React.Component {
                             let referrals = 0
                             let score = 0
                             let bonus = 0
+                            let fb_score = 0
                             if (r.data.body.bonus !== undefined) {
                                 bonus = r.data.body.bonus
                             }
@@ -105,7 +111,10 @@ export default class Row extends React.Component {
                             if (r.data.body.referrals !== undefined) {
                                 referrals = r.data.body.referrals
                             }
-                            this.setState({bonusEditing: false, bonusDisabled: false, bonus, score, referrals})
+                            if (r.data.body.fb_score !== undefined) {
+                                fb_score = r.data.body.fb_score
+                            }
+                            this.setState({bonusEditing: false, bonusDisabled: false, bonus, score, referrals, fb_score})
                         } else {
                             this.setState({bonusDisabled: false})
                         }
@@ -128,6 +137,7 @@ export default class Row extends React.Component {
                         <td style={{textAlign: 'center'}}>{this.props.data.gender ? this.props.data.gender : '--'}</td>
                         <td style={{textAlign: 'center'}}>{this.state.score ? this.state.score : 0}</td>
                         <td style={{textAlign: 'center'}}>{this.state.referrals ? this.state.referrals : 0}</td>
+                        <td style={{textAlign: 'center'}}>{this.state.fb_score ? this.state.fb_score : 0}</td>
                         <td style={{textAlign: 'center'}}>{(this.props.data.ideas && this.props.data.ideas.length) ? this.props.data.ideas.length : 'None'}</td>
                         <td style={{textAlign: 'center'}}>
                             <input 
