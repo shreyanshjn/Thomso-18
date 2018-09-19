@@ -24,7 +24,7 @@ router.use('/', cors(corsOptions));
 router.post('/delhi', cors(corsOptions), zonalsControl.register_delhi);
 
 // -> /zonals/chandigadh
-router.post('/chandigadh', cors(corsOptions), zonalsControl.register_chandigadh);
+// router.post('/chandigadh', cors(corsOptions), zonalsControl.register_chandigadh);
 
 // -> /zonals/jaipur
 router.post('/jaipur', cors(corsOptions), zonalsControl.register_jaipur);

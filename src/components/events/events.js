@@ -189,7 +189,7 @@ export const EventDetails =
                         content: "It’s the time of the year when players go under the hammer.Welcome to Thomso’s edition of IPL auction. It’s time to place your bid. But beware. Don’t forget to analyse and assess the situation before expending. Build your dream team. Choose among the top players from around the world. Trust your intuition and spend wisely in the high paced bidding frenzy.",
                         rulebook: "https://drive.google.com/open?id=1DWva0KwY59wi4_O8Nn5ESvSCEOv6Xgfu",
                         image: "player_auction_frenzy.jpg",
-                        prize: "10"
+                        prize: "20"
                     },
                     {
                         id: '12_2',
@@ -213,6 +213,7 @@ export const EventDetails =
                         content: "Have you ever felt a problem too trivial to be ignored for so long yet remains unsolved till now? Or an idea of utmost importance but lacks the feasibility which you have been able to unearth? Then this is your chance to showcase your problem-solving skills and analytic acumen as you put on a business hat and devise a business plan that could change the world as we see it. Envision and let your thoughts transcend into reality in the form of a winning game plan.",
                         rulebook: "https://drive.google.com/open?id=1aWWvdZNT4VisHkpHJi96D6ADIafppk8E",
                         image: "negotium_consillium.jpg",
+                        prize:"20"
                     },
                     {
                         id: '12_5',
@@ -228,6 +229,7 @@ export const EventDetails =
                         content: "Ever dreamt about being an CXO of a company? Well, here’s a chance to think and act as a CXO and build something of your own. Cogent Wheelhouses provides you with an opportunity to test various skills required while working for an organization in the corporate world. It will be an occasion where one can innovate, build a team, take decisions and numerous other things. So, get ready to witness some fierce competition and out of the box thinking.",
                         rulebook: "https://drive.google.com/open?id=1bUJqauG__zMPitHB1Kfi6xTaFRCY7YFe",
                         image: "cognet_wheelhouses.jpeg",
+                        prize:"30"
                     }
                 ]
         },
@@ -243,7 +245,7 @@ export const EventDetails =
                         content: "Girls this one is for you all. Have you ever speculated how sumptuous and gorgeous you would look when you dress up like Cinderella or Snow White or any other Disney Princess? When thousands of people are gazing at you and you mesmerize them with your beauty leaving them awestruck. When you realize that your childhood dream has come true and you are living it.Ever wanted to feel the beauty within you and show the world the real you, Thomso 2018 with the theme of ‘Seized By Stardust’, is giving you all the opportunity to become Amparo Munoz or Janelle Commissiong of this event which will be beating at this year’s Thomso.",
                         rulebook: "https://drive.google.com/open?id=1zNxvEKt0CciRDQrb9Rzk1Dak3xBa0D22",
                         image: "campus_princess.jpeg",
-                        prize: "65"
+                        prize: "75"
                     },
                     {
                         id: '7_2',
@@ -455,6 +457,14 @@ export const EventDetails =
                         name: "Slam Poetry",
                         content: "Literature tends to gravitate toward concepts universal to the human experience, but there is something special about the experience of watching an author recite a poem tailor made for performance. We invite you on a journey to experience poetry in its most natural and raw form, and to witness our slam poets performing live at the Thomso LITFest.",
                         image: "slam_poetry.jpg",
+                    },
+                    {
+                        id: '11_8',
+                        name: "Parliamentary Debate",
+                        content: `“Standing up there, the faces looking up at me, the things in my head coming out of my mouth, while my brain searched for the next best thing to follow what I was saying, and if I could sway them to my side by handling it right, then I had won the debate--once my feet got wet, I was gone on debating”. – Malcolm X.  Debating is an integral part of a democracy. Debate stimulates and refines communication skills that empower individuals to speak for themselves, to discover and use their own voices. This is your chance to showcase your skills as an orator and have fun as well."`,
+                        rulebook: "https://drive.google.com/open?id=1vy3xD__awFh5iJvOyQTp2hNt5YCblURQ",
+                        image: "parliamentary_debate.jpeg",
+                        prize: "50"
                     },
                     {
                         id: '11_9',

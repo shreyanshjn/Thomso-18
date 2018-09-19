@@ -78,6 +78,7 @@ exports.update_image = function (req, res) {
         let binaryData = new Buffer(baseImg, 'base64');
         let ext = data.format.split('/')[1]
         let updateData = {image : `${data.id}.${ext}`}
+        const url = `/uploads/img/ProfileImage/${updateData.image}`;
         require("fs").writeFile(`./uploads/img/ProfileImage/${updateData.image}`, binaryData, function(err) {
             if(err) {
                 console.log(err);
@@ -88,7 +89,7 @@ exports.update_image = function (req, res) {
                 }, updateData)
                 .exec(function(err){
                     if (err) return status(401).send({ success: false, msg: "Unable To Upload Image. Please Try Again." })
-                    res.json({ success: true, msg: "Image Uploaded Successfully." })
+                    res.json({ success: true, body:url, msg: "Image Uploaded Successfully." })
                 })
             }
         })

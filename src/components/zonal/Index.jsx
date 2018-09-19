@@ -47,7 +47,7 @@ export default class ZonalsIndex extends React.Component {
                 <Route path="/zonals/lucknow" component={LucknowIndex} />
                 <Route path="/zonals/home" component={HomeIndex} />
                 <Route path="/zonals/jaipur" component={JaipurIndex} />
-                <Route path="/zonals/chandigadh" component={ChandigadhIndex} />
+                {/* <Route path="/zonals/chandigadh" component={ChandigadhIndex} /> */}
             </React.Fragment>
         );
     }

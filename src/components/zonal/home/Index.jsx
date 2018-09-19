@@ -32,10 +32,13 @@ export default class HomeIndex extends Component {
                         <div className="zonals-mainpage-cards-title">
                             Chandigadh Zonals
                         </div>
-                        <div className="zonals-mainpage-cards-button">
+                        {/* <div className="zonals-mainpage-cards-button">
                             <Link to="/zonals/chandigadh">
                                     Register
                             </Link>
+                        </div> */}
+                        <div className="zonals-mainpage-cards-text">
+                                SUCCESSFULLY ORGANIZED.
                         </div>
                     </div>
 
