@@ -3,6 +3,7 @@ var mailer = require('../../common/mailer');
 
 var register = function(req, res, city) {
     if (req.body) {
+        // console.log(req.body)
         if (req.body.name) {
             req.body.name = req.body.name.trim();
         }
@@ -58,7 +59,20 @@ var register = function(req, res, city) {
                                         email: saved.email,
                                         name: saved.name
                                     })
+                                } else if (city === 'Jaipur') {
+                                    mailer.zonalsJaipur({
+                                        zn_id: saved.tz_id,
+                                        email: saved.email,
+                                        name: saved.name
+                                    })
+                                } else if (city === 'Chandigadh') {
+                                    mailer.zonalsChandigadh({
+                                        zn_id: saved.tz_id,
+                                        email: saved.email,
+                                        name: saved.name
+                                    })
                                 }
+
                             }
                         }
                     });
@@ -84,4 +98,8 @@ exports.register_jaipur = function (req, res) {
 
 exports.register_lucknow = function (req, res) {
     register(req, res, 'Lucknow')
+}
+
+exports.register_chandigadh = function (req, res) {
+    register(req, res, 'Chandigadh')
 }
