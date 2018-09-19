@@ -8,6 +8,8 @@ import "./src/css/Navbar.css";
 import FetchApi from '../../../utils/FetchAPI';
 
 import img from "./src/img/logo.png";
+// import boy from "../../campusAmbassador/sidebar/img/boy.png";
+// import girl from "../../campusAmbassador/sidebar/img/girl.png";
 
 class Navbar extends Component {
     constructor() {

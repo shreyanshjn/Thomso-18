@@ -6,6 +6,7 @@ import AuthService from '../../../handlers/main/AuthService';
 
 import img from "../../campusAmbassador/register/img/logo.png"
 import "../../campusAmbassador/register/css/register.css";
+import "../verify/verify.css";
 
 export default class VerifyIndex extends React.Component {
     constructor(props) {
@@ -16,8 +17,7 @@ export default class VerifyIndex extends React.Component {
             disabled: false
         }
         this.Auth = new AuthService();
-    }
-
+    } 
     onChange = (e) => {
         const name = e.target.name;
         let value = e.target.value;
@@ -140,6 +140,11 @@ export default class VerifyIndex extends React.Component {
                                 <button type="submit" disabled={disabled}>Verify</button>
                             </div>
                         </form>
+                        <div style={{width:'70%'}}>
+                            <Link to="/main/logout" className="mobile-logout-main-register">
+                                <h1>Logout</h1>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>
