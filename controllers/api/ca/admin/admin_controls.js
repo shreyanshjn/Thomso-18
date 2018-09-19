@@ -219,7 +219,7 @@ exports.putTempBonus = function (req, res) {
             bonus: req.body.bonus
         }
         TempUsers.findOneAndUpdate({ _id: req.body.id }, updateBonus, { new: true })
-            .select('bonus referrals')
+            .select('bonus referrals fb_score')
             .exec(function (err, oldScore) {
                 if (err) {
                     return res.status(400).send({ success: false, msg: 'Cannot Update bonus', error: err });
@@ -230,6 +230,9 @@ exports.putTempBonus = function (req, res) {
                     }
                     if (typeof (oldScore.referrals) === "number") {
                         score = score + 23 * oldScore.referrals;
+                    }
+                    if (typeof (oldScore.fb_score) === "number") {
+                        score = score + oldScore.fb_score;
                     }
                     var updateScore = {
                         score: score

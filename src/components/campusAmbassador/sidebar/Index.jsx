@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./css/style.css";
 // import "../../ca/sidebar/css/style.css";
+import FetchApi from "../../../utils/FetchAPI";
+import AuthService from "../../../handlers/ca/temp/AuthService";
 import boy from "./img/boy.png";
 import girl from "./img/girl.png";
 import { addCATopic } from '../../../utils/firebasePush';
@@ -19,7 +21,6 @@ import Contact from "./Svg/Contact"
 import Logout from "./Svg/Logout"
 import Bulb from "./Svg/Bulb"
 import Hand from "./Svg/Hand"
-// import UpdateImageCA from './UpdateImageCA'
 import Home from "../../main/sidebar/Svg/Home.jsx";
 
 // import logoUser from '../common/images/user.svg';
@@ -35,22 +36,84 @@ export default class Sidebar extends React.Component {
       activeState: window.location.pathname.substring(18),
       showReferral: false,
       errors: '',
+      facebookConnect: false
     };
+    this.Auth = new AuthService();
     if (!window.location.pathname.substring(18)) {
       this.state = {
         activeState: "home"
       };
     }
   }
-  componentWillMount() {
+
+  facebookLogin = () => {
+    if (window.FB && !this.state.facebookConnect) {
+      window.FB.login(response => {
+        window.FB.api('/me?fields=id, picture.type(large), link', res => {
+          let accessToken = response.authResponse.accessToken;
+          let { id, link } = res;
+          let image = res.picture.data.url;
+          let data = { id, image, accessToken, link };
+          this.updateFBToken(data)
+        })
+      }, { scope: 'user_likes, user_posts, user_link' });
+    }
+  }
+
+  updateFBToken = data => {
+    const token = this.Auth.getToken();
+    FetchApi('PUT', '/api/ca/temp/fbtoken', data, token)
+      .then(r => {
+        if (r && r.data) {
+          if (r.data.success) {
+            this.setState({ facebookConnect: true, errors: '' })
+          } else {
+            this.setState({ errors: r.data.msg })
+          }
+        } else {
+          this.setState({errors: 'Something went wrong'})
+        }
+      })
+      .catch(e => {
+        this.setState({errors: 'Something went wrong'})
+        console.log(e)
+      });
+  }
+
+  componentWillUnmount() {
     clearTimeout(addTopicTimeout)
     clearTimeout(showReferralTimeout)
+  }
+
+  componentWillMount() {
+    if (window.FB) {
+      window.FB.init({
+          appId: process.env.REACT_APP_FB_ID,
+          status: true,
+          xfbml: true
+      });
+    }
   }
 
   componentDidMount() {
     addTopicTimeout = setTimeout(() => {
       addCATopic('tempCA');
     }, 2000)
+
+    const token = this.Auth.getToken();
+    FetchApi('GET', '/api/ca/temp/fbtoken', null, token)
+      .then(r => {
+        if (r && r.data) {
+          if (r.data.success) {
+            this.setState({ facebookConnect: true, errors: '' })
+          }
+        } else {
+          this.setState({errors: 'Something went wrong'})
+        }
+      })
+      .catch(e => {
+        this.setState({errors: 'Something went wrong'})
+      });
 
     const countDownDate = new Date("Oct 27, 2018 00:00:00").getTime();
     const now = new Date().getTime();
@@ -73,7 +136,6 @@ export default class Sidebar extends React.Component {
   }
 
   render() {
-    let user  = 'img/ProfileImage/' + this.props.userData.image
     return (
       <div>
         {this.state.showReferral ?
@@ -90,14 +152,13 @@ export default class Sidebar extends React.Component {
         >
         {/* {console.log(this.props.userData)} */}
           <div className="campusAmb-sidebar-user">
-            {(this.props.userData && this.props.userData.image) ? <img src={user} className="image" alt="User" /> :
+            {(this.props.userData && this.props.userData.image) ? <img src={this.props.userData.image} className="image" alt="User" /> :
               <React.Fragment>
                 {(this.props.userData && this.props.userData.gender === 'female') ?
                   <img src={girl} className="image" alt="User" /> :
                   <img src={boy} className="image" alt="User" />
                 }
               </React.Fragment>}
-            {/* <UpdateImageCA imagePrev={(data) => this.setState({ img: data })}  /> */}
             <div className="campusAmb-sidebar-user-details">
               <div className="text">{this.props.userData ? this.props.userData.name : "User"}</div>
               <div className="cname">{this.props.userData ? this.props.userData.college : "-"}</div>
@@ -156,6 +217,33 @@ export default class Sidebar extends React.Component {
             {/* <div className="campusAmb-sidebar-updatenews">
               *Scores will be updated at 12 am
             </div> */}
+          </div>
+          <div className="campusAmb-sidebar-line">
+          </div>
+          <div className="campusAmb-sidebar-contents">
+            <div
+              className={
+                this.state.facebookConnect
+                  ? "sideNavItem activeSideItem"
+                  : "sideNavItem"
+              }
+              onClick={this.facebookLogin}
+            >
+              <div className="campusAmb-sidebar-posts flex_row">
+                <div className="campusAmb-sidebar-svg-logo">
+                  <Post />
+                </div>
+                <div className="campusAmb-sidebar-navitem-name">
+                  { this.state.facebookConnect ? 'Facebook Connected' : 'Connect With Facebook' }
+                </div>
+              </div>
+            </div>
+            {this.state.errors ? 
+                <div>
+                  {this.state.errors}
+                </div>
+                : null
+            }
           </div>
           <div className="campusAmb-sidebar-line">
           </div>

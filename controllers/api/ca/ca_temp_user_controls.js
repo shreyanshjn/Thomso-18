@@ -3,6 +3,9 @@ var Temp_User = require('../../../models/ca/CA_Temp_User');
 
 var Ideas = require('../../../models/ca/CA_Temp_Idea');
 
+var client_id = process.env.REACT_APP_FB_ID;
+var client_secret = process.env.FACEBOOK_APP_SECRET;
+
 // Get User Data
 exports.getData = function (req, res) {
     Temp_User.findOne({
@@ -200,4 +203,54 @@ exports.getRank = function (req, res) {
                 return res.status(400).send({ success: false, msg: 'Error Reading Score' });
             }
         })
+};
+
+/* Update Token */
+exports.setFBToken = function (req, res) {
+    if (req.body && req.body.id && req.body.accessToken) {
+        var accessToken = req.body.accessToken;
+        var updateData = {
+            fb_id: req.body.id,
+        }
+        if (req.body.image) {
+            updateData.image = req.body.image 
+        }
+        if (req.body.link) {
+            updateData.fb_link = req.body.link
+        }
+        request(`https://graph.facebook.com/oauth/access_token?grant_type=fb_exchange_token&client_id=${client_id}&client_secret=${client_secret}&fb_exchange_token=${accessToken}`, function(err, response, body){
+            if (err) {
+                return res.json({ success: false, msg: 'Graph API Error' });
+            }
+            var access_token = JSON.parse(response.body).access_token;
+            var saveData = Object.assign(updateData, {fb_access_token: access_token});
+            Temp_User.update({ email: req.locals.email}, saveData)
+                .exec(function (err) {
+                    if (err) {
+                        return res.json({ success: false, msg: 'Failed to update token', error: err });
+                    }
+                    return res.json({ success: true, msg: 'Successfully Updated' });
+                })
+        })
+    } else {
+        return res.json({ success: false, msg: 'Invalid Data' });
+    }
+};
+
+/* Check Facebook Token */
+exports.checkToken = function (req, res) {
+    Temp_User.findOne({ email: req.locals.email, fb_access_token: { $ne: null } })
+        .select('fb_access_token')
+        .exec(function (err, user) {
+            if (err) return res.json({ success: false, msg: 'Unable to find user.' });
+            if (!user) return res.json({ success: false, msg: 'Unable to find user.' });
+            var fb_auth_token = user.fb_access_token;
+            request(`https://graph.facebook.com/v3.1/me?fields=link&access_token=${fb_auth_token}`, function (err, response, body) {
+                if (err) return res.json({ success: false, msg: 'Facebook returend error.', error: err });
+                if (response.statusCode === 200) {
+                    return res.json( { success: true, msg: 'Valid Token'} );
+                }
+                return res.json({ success: false, msg: 'Failed' });
+            })
+        });
 };
