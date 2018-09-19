@@ -44,7 +44,7 @@ export default class DataTable extends React.Component {
             });
         });
     }
-    
+
     download = () => {
         if (this.state.participants && this.state.participants.length > 0) {
             downloadCSV({data: this.state.participants, filename: 'temp_registrations.csv'})
@@ -85,4 +85,3 @@ export default class DataTable extends React.Component {
       );
     }
   }
-  

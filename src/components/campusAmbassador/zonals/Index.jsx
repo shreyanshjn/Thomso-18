@@ -9,7 +9,7 @@ export default class ZonalCampus extends Component {
                 {/* {console.log(this.props.mainBackground)} */}
                 <div className="zonals-mainpage-parent-child">
                     <div className="zonals-mainpage-cards">
-                        <Link to="/zonals/lucknow">
+                        <Link to="/zonals/jaipur">
                             <div className="zonals-mainpage-cards-image-jaipur">
                             </div>
                         </Link>
@@ -17,7 +17,7 @@ export default class ZonalCampus extends Component {
                             Jaipur Zonals
                         </div>
                         <div className="zonals-mainpage-cards-button">
-                            <Link to="/zonals/lucknow">
+                            <Link to="/zonals/jaipur">
                                 Register
                             </Link>
                         </div>
@@ -75,8 +75,6 @@ export default class ZonalCampus extends Component {
                             COMING SOON.
                         </div>
                     </div>
-                    
-                    
                 </div>
             </div>
         );

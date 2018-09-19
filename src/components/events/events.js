@@ -17,7 +17,7 @@ export const EventDetails =
                     id: '1_2',
                     name: "Step Up(Street Dance Competition)",
                     content: "Have you ever had the desire to express the hidden language of your soul, make the music visible and simply be insane? We'll provide you the level field to be fearless, limitless and well,as we promised before, insane. Dance to the beat of your own drum; don't let anyone tell you it can't be done. There are no spring floors, no spotlights, no stage, and no boundaries. Come on the streets to glide, to spin, to fly or to expression to all your instincts, bring your style on the floor. Dance on the random music being played and show your instincts to dance. Step-Up is an on-the-spot street dance competition.",
-                    rulebook: "https://drive.google.com/open?id=10jmJuwECgNHYhK6lruO4VMxkKnjVKQ1L",
+                    rulebook: "https://drive.google.com/open?id=1UtzxNQSBFrRZNVWDhHsOk_B8ieCeu52D",
                     image: "step_up.jpg",
                     prize: "60"
                 },
@@ -40,7 +40,7 @@ export const EventDetails =
                         id: '2_1',
                         name: "Abhivyakti(Stage Play Competition)",
                         content: "All the world's a stage, and all the men and women are merely players. This event is for those who act, write, dance, run, cry and laugh just for the ethereal beauty of the act. Stand on a stage and hold the hearts of men in your hands. Make them laugh with a gesture and cry with words. Turn the spotlight towards you, perfecting acting skills, coordination, expressions and stellar dialogue delivery.We have this event planned to cater to all those patrons of direction, acting and screenplay. So, participate and hypnotize people with the power of words and expressions and you will Shine brighter than any praise or fame or glory.",
-                        rulebook: "https://drive.google.com/open?id=1zJfdkhyMXp-mkFiy4TQY9lqbH2wTJaWf",
+                        rulebook: "https://drive.google.com/open?id=1uKkdervhdr90-mGpWr0PyYOwp5BKRZO3",
                         image: "abhivyakti.jpeg",
                         prize: "100"
                     },
@@ -48,7 +48,7 @@ export const EventDetails =
                         id: '2_2',
                         name: "Nukkad Natak(Street Play Competition)",
                         content: "Nukkad Natak is a street-play competition of Dramatics at Thomso where you speak in the lingo of the common folks to outline captivating issues which are also socially relevant.The main endeavor is to convey a social and political message in an entertaining environment, amidst the intimate and effective means of theatre by means of shout,chants, drums and catchy songs. This is your chance to be the change you think of bringing about.",
-                        rulebook: "https://drive.google.com/open?id=1B4MOAc3ouHsGYWuWhYohJhwe5m8ON41F",
+                        rulebook: "https://drive.google.com/open?id=1sQaBBhETPHLo5IWYlSwWNTId2ceA53JM",
                         image: "nukkad_natak.jpg",
                         prize: "100"
                     }
@@ -64,7 +64,7 @@ export const EventDetails =
                         id: '3_1',
                         name: "Quizardry",
                         content: "Are you itching for a new challenge to show off your quizzing skills? Have you a knack for solving problems? Do you love conquering questions to emerge on the top? Then we have the perfect fix for you. Every weekend, we have quizzes designed to cater the movie buff and television fanatic in you. We have this event designed specifically for those who are passionately curious about everything, be it movies, arts, sports, politics or television. Each weekend,we bring you a new theme to quiz upon, offering you a chance to uncover your potential.So get the juices flowing and push yourself to the limits to clobber the competition. Unleash your inner genius and rise above the ordinary.",
-                        rulebook: "",
+                        rulebook: "https://drive.google.com/file/d/11RuKZAADVlLskaugidVwraNsgOUDbN9T/view?usp=sharing",
                         image: "quizardry.jpg",
                         link: "https://dare2compete.com/o/quizardry-thomso-iit-roorkee-indian-institute-of-technology-iit-roorkee-64347",
                         prize: "10"
@@ -89,14 +89,14 @@ export const EventDetails =
                         id: '3_4',
                         name: "Online Mr. & Ms. Thomso",
                         content: "Beauty attracts the eyes but personality captures the heart. The charm of personality is the very essence of grace and elegance. So get in the chase to win the eminent titles of Mr. and Miss Thomso and let your charisma shine out to reach new heights of fame. The winners will get the opportunity to reach the final round of Mr. and Miss. Thomso.",
-                        rulebook: "",
+                        rulebook: "https://drive.google.com/file/d/1B9qCT4fdnxjr_25m0pxWhAYjrHzZyCaA/view?usp=sharing",
                         image: "online_mr_and_miss_thomso.jpg",
                     },
                     {
                         id: '3_5',
                         name: "May May",
                         content: "In the recent years, memesters have successfully managed to tickle our funny bones by hijacking our social medias with their MAYMAYS. The trend says memes but we are here with 'MAYMAY' - the online meme making competition of Thomso'18. With this we have begun our quest to find the ultimate memelord. Put on your thinking caps memesta’s because the competition is going to be fierce. Pour all your creativity, spill the humour and be the pro.",
-                        rulebook: "",
+                        rulebook: "https://drive.google.com/open?id=1QMbZO0WojWjvnfvF8pqkTKfzh1T4V7QR",
                         image: "may_may.jpeg",
                         prize: "50"
                     },
@@ -104,7 +104,7 @@ export const EventDetails =
                         id: '3_6',
                         name: "Xpressions",
                         content: "‘Thoughts that flow like waves and feelings so deep as oceans. Imagination that flies like a bird and voices submerged in emotions’. All our words are but crumbs that fall down from the feast of the mind. So, pick up your pens and scribble away all your expressions. Pave a path for your innermost thoughts to reach the world and let your expressions reach out to us!",
-                        rulebook: "",
+                        rulebook: "https://drive.google.com/open?id=1YLtixeZyUwCEgxmrEgsCIHjjRYHV3Ti9",
                         image: "xpressions.jpg",
                         prize: "10"
                     },
@@ -120,7 +120,7 @@ export const EventDetails =
                         id: '4_1',
                         name: "Battle of Bands",
                         content: "Do you think your voice matters? Do you have the power to change the mood or move the world with a single tone? If you think you can make the crowd forget themselves in your performance, then this is the place to be in. Thomso welcomes you to B.O.B (Battle of Bands), an arena to battle against India’s best bands. With massive enthusiasm and fearsome competition, this event brings out the best in its participants striving for glory. If you have the band that just can’t lose and have hunger for more, then come and perform against the most formidable bands in India.",
-                        rulebook: "https://drive.google.com/open?id=12MVxGPNqIjOUe4UNTC0x0HlieyjGmq5T",
+                        rulebook: "https://drive.google.com/open?id=1SoRKx8MDGxRPEZtgqfbbumlZTQQsm6vJ",
                         image: "battle_of_bands.jpeg",
                         prize: "100"
                     },
@@ -128,7 +128,7 @@ export const EventDetails =
                         id: '4_2',
                         name: "Sargam",
                         content: "In the words of Plato: Music gives a soul to the universe, wings to the mind, flight to the imagination and life to everything.This is your chance to flaunt your gift. Here’s an opportunity to get on stage and tell your story through your flair. It’s the IITR’s premier singing contest. If you believe in yourself then come compete with the elite.You can sing or play an instrument. Just be your best self and own the stage. !",
-                        rulebook: "https://drive.google.com/open?id=16NxI-rd-orfXWqPnoxPiCDiPhQBhd621",
+                        rulebook: "https://drive.google.com/open?id=1GHvKKC8gRCVKlzrXCRDmPRmffaEsHIqe",
                         image: "sargam.jpg",
                         prize: "125"
                     }]
@@ -150,7 +150,7 @@ export const EventDetails =
                         id: '13_2',
                         name: "Telly Sporcle",
                         content: "This event will comprise of questionnaires related to 5 popular American TV Series: Suits, How I Met Your Mother, Sherlock, F.R.I.E.N.D.S. and Game of Thrones. Participants will participate in teams of two.",
-                        rulebook: "https://drive.google.com/open?id=11F1txAgLRcH1dWBPL6MXXOBSstgZZ5dd",
+                        rulebook: "https://drive.google.com/open?id=1W9s3UKb1qRX2wfOjXTNBChu_buD5TUkW",
                         image: "tellysporcle.jpg",
                         prize: "10"
                     }]
@@ -187,7 +187,7 @@ export const EventDetails =
                         id: '12_1',
                         name: "Auction frenzy",
                         content: "It’s the time of the year when players go under the hammer.Welcome to Thomso’s edition of IPL auction. It’s time to place your bid. But beware. Don’t forget to analyse and assess the situation before expending. Build your dream team. Choose among the top players from around the world. Trust your intuition and spend wisely in the high paced bidding frenzy.",
-                        rulebook: "https://drive.google.com/open?id=1DWva0KwY59wi4_O8Nn5ESvSCEOv6Xgfu",
+                        rulebook: "https://drive.google.com/open?id=1F8Dq2QsafLdynG8Qq0zXUXJ8jUnQ8nEA",
                         image: "player_auction_frenzy.jpg",
                         prize: "20"
                     },
@@ -203,7 +203,7 @@ export const EventDetails =
                         id: '12_3',
                         name: "Mark Sense",
                         content: "Introduction Mark - Sense: Marketing Event For Poster Quotes that can be used: Marketing is a race without a finishing line ― Philip Kotler.",
-                        rulebook: "https://drive.google.com/open?id=1JS-bKIJ1dRx6iBCmwfkm7cKWLTYVj1AO",
+                        rulebook: "https://drive.google.com/open?id=1oACFxco2795nqSQKi1cyIZrj4OaCc2xw",
                         image: "mark_sense.jpeg",
                         prize: "15"
                     },
@@ -251,7 +251,7 @@ export const EventDetails =
                         id: '7_2',
                         name: "Mr & Ms Thomso",
                         content: "One of the biggest regrets in life is projecting yourself as what people want you to be,rather than being yourself. So do you think yourself as the right blend of beauty, attitude and wit? Do you have what it takes to win the prestigious crown? We offer you a chance to break out of conformity and get a shot at glory. Mr and Ms Thomso is an illustrious event probing the charismatic as well as the intellectual side of the participants. Embrace your uniqueness in this stellar event of individuality and temperament. Come and experience the joy of new encounters and an endlessly changing horizon.",
-                        rulebook: "https://drive.google.com/open?id=1dLMJAIDEug0ivdY0NJLbiqT5X7cmmlzi",
+                        rulebook: "https://drive.google.com/file/d/1dLMJAIDEug0ivdY0NJLbiqT5X7cmmlzi/view?usp=sharing",
                         image: "mr_and_ms_thomso.jpeg",
                         prize: "60"
                     },
@@ -275,7 +275,7 @@ export const EventDetails =
                         id: '8_1',
                         name: "Apocalypse",
                         content: "Beating a game is a journey. Therein lies the fun.Are you one of those who think gaming is their DNA? Do you get an adrenaline rush every time you conquer a game? Welcome to Apocalypse, a cut throat competition with intense competition and massive crowds,this is one gaming competition you wouldn’t want to miss. So gear up and let your game speak for you. Strike new camaraderie and build up envious rivalries in this hard fought event, where shots are traded across battle lines. Show us your hard acquired gaming skills and aim to vanquish all.So if you think you are the one to obliterate the competition, then Apocalypse is the place to be!Level up, fall down, respawn and get back up to earn the coveted crown.",
-                        rulebook: "https://drive.google.com/file/d/1mJGseb-TK6_2mGIO-LXfVJb6a2KMM2Ez",
+                        rulebook: "https://drive.google.com/open?id=18KzLDFXJkzc-kDkX6CkInPhZHzc1CUJv",
                         image: "apocalypse.jpeg",
                         prize: "50"
                     },
@@ -291,7 +291,7 @@ export const EventDetails =
                         id: '8_3',
                         name: "Snooker Elite",
                         content: " Do you think what it take to be the master of cues? If yes, come forth and compete with your contemporaries and prove your mettle; because if you can’t prove, you don’t have. This event gives you an opportunity to compete with the elites and let the world witness your flair. The table is set, now is the time for you to hit.The event consist of the following two of the table games: Snooker & Pool, which are by far, the benchmarks of precision and skill.",
-                        rulebook: "https://drive.google.com/open?id=1tx5Ueyu0VYXTt-oRHl6B4v-Rn72mOWbG",
+                        rulebook: "https://drive.google.com/open?id=1LwQfu69j6JZuCMIy0QEB6HWcf3ydhYS7",
                         image: "snooker_elite.jpg",
                         prize: "10"
                     }
@@ -347,7 +347,7 @@ export const EventDetails =
                         id: '10_4',
                         name: "Costume Design",
                         content: "A great dress can make you remember what is beautiful about life. This Thomso let your creativity go bersek and gear up to dress up your friend in the most innovative fashion.",
-                        rulebook: "",
+                        rulebook: "https://drive.google.com/file/d/1WVRIL7B1ELaKHEA6ATuQNUbGwqBNsAkb/view?usp=sharing",
                         image: "costume_design.jpeg",
                         prize: "30"
                     },
@@ -355,7 +355,7 @@ export const EventDetails =
                         id: '10_5',
                         name: "Junkyard",
                         content: 'All Hands on the boat!!" Well, as usual the “Black Pearl” is gone, and our Dear Captain Sparrow is once again left behind on an island. Help Sparrow build a boat from the junk he is left with on the island, which will leads him towards the treasure far away in the Caribbean. Make use of the Junk made available to you to build a boat.',
-                        rulebook: "",
+                        rulebook: "https://drive.google.com/file/d/1BCBvq7DzEVaMom34V84hQKr4wEBYK9Sn/view?usp=sharing",
                         image: "junkyard.jpeg",
                         prize: "20"
                     }
@@ -387,7 +387,7 @@ export const EventDetails =
                         id: '5_3',
                         name: "Street Soccer",
                         content: "Makeshift goalposts, the nudges and pushes, the adrenaline, goals, spectators and dramatic matches. If you love playing football street style, then this is the place to be! Street Soccer focuses on flair, style and trickery, reflecting the cultures of street football and freestyle football played in streets and backlots across the world. It encompasses a number of informal varieties of association football, marking a return to the roots of the game.So shove, prod and force your way through the opposition in this vicious and cut-throat event catering specifically to the street smarts!",
-                        rulebook: "https://drive.google.com/open?id=1oLo0W5DHkrlHzI3wnPFzHLMEwbQ78CnN",
+                        rulebook: "https://drive.google.com/open?id=1SJT6fiQR6KkUocqshrsjc5jehMedilGb",
                         image: "street_soccer.jpg",
                         prize: "15"
                     },
@@ -395,7 +395,7 @@ export const EventDetails =
                         id: '5_4',
                         name: "Scavenger Hunt",
                         content: "The quintessential pleasure in a quest is not the conclusion, but it's the journey that makes all the difference. Simple, crazy and exhilarating, Scavenger Hunt is as exciting as the name promises. An exciting event that promises to take participants on a wild ride around the campus in search for elusive artefacts, with a single agenda in mind, Catch them all. This Thomso, we invite you to embark on a quest to uncover hidden treasures and trudge your way towards glory. So compete, enjoy and seek your inner adventurer in this kooky pursuit of wondrous exaltation.",
-                        rulebook: "https://drive.google.com/open?id=1H03bzNSsQy9A2B8eH9dQN76rFQB1eIL8",
+                        rulebook: "https://drive.google.com/open?id=1AbiD2D2AQryxp8pH_QuxCckrnjQ5hjBk",
                         image: "scavenger_hunt.jpg",
                         prize: "10"
                     }]

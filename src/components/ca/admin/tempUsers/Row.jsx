@@ -3,8 +3,7 @@ export default class Row extends React.Component {
     render(){
         return (
             <React.Fragment>
-                {/* {console.log(this.props)} */}
-                {this.props.data ? 
+                {this.props.data ?
                     <tr style={(this.props.data && this.props.data.verified) ? {color: 'black'} : {color: 'red'}} >
                         <td style={{textAlign: 'center'}}>{(this.props.index !== undefined) ? (this.props.index + 1) : '--'}</td>
                         <td style={{textAlign: 'center'}}>{this.props.data.ca_id ? this.props.data.ca_id : '--'}</td>
