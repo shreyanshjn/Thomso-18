@@ -121,10 +121,12 @@ export default class Row extends React.Component {
     render(){
         return (
             <React.Fragment>
+                {console.log(this.props)}
                 {this.props.data ? 
                     <tr>
                         <td style={{textAlign: 'center'}}>{this.props.data.ca_id ? this.props.data.ca_id : '--'}</td>
                         <td style={{textAlign: 'center'}}>{this.props.data.name ? this.props.data.name : '--'}</td>
+                        <td style={{textAlign: 'center'}}>{this.props.data.college ? this.props.data.college : '--'}</td>
                         <td style={{textAlign: 'center'}}>{this.props.data.gender ? this.props.data.gender : '--'}</td>
                         <td style={{textAlign: 'center'}}>{this.state.score ? this.state.score : 0}</td>
                         <td style={{textAlign: 'center'}}>{this.state.referrals ? this.state.referrals : 0}</td>

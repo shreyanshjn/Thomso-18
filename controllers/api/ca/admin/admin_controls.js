@@ -135,7 +135,7 @@ exports.getTempUsers = function (req, res) {
 /* GET ALL Users */
 exports.getTempScoreList = function (req, res) {
     TempUsers.find()
-        .select('name ca_id gender score ideas bonus referrals verified')
+        .select('name ca_id gender college score ideas bonus referrals verified')
         .exec(function (err, allUsers) {
             if (err) return res.status(400).send({ success: false, msg: 'Unable to GET Score List', error: err });
             res.json(allUsers);
