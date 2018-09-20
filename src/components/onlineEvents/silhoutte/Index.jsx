@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Navbar from "../beta/home/Navbar.jsx";
+import Navbar from "../../beta/home/Navbar.jsx";
 import "./src/css/Silhoutte.css";
 import silhoutte from "./src/img/silhoutte.jpg";
 

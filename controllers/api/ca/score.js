@@ -63,7 +63,7 @@ exports.getNew = function(req, res) {
                                     if (typeof(eachUser.bonus) === "number") {
                                         bonus = eachUser.bonus;
                                     }
-                                    totalScore = totalScore + eachUser.referrals*25 + bonus;
+                                    totalScore = totalScore + eachUser.referrals*23 + bonus;
                                     var updateData = {
                                         score: totalScore,
                                         likes: totalLikes,
@@ -121,7 +121,7 @@ exports.getFinal = function(req, res) {
                 }
                 request(options, function(err, response, body) {
                     if (err) {
-                        console.log(err, `Request Failed. User ID ${eachUser.email} & Post_ID ${post_id}`);
+                        console.log(err, `Request Failed. User ID ${eachUser.email}`);
                         updateAllUsersResponseCounter();
                     } else if(response && response.body){
                         // console.log('response');
