@@ -22,6 +22,7 @@ import Logout from "./Svg/Logout"
 import Bulb from "./Svg/Bulb"
 import Hand from "./Svg/Hand"
 import Home from "../../main/sidebar/Svg/Home.jsx";
+import Profile from "../profile/Index"
 
 // import logoUser from '../common/images/user.svg';
 
@@ -218,33 +219,37 @@ export default class Sidebar extends React.Component {
               *Scores will be updated at 12 am
             </div> */}
           </div>
-          <div className="campusAmb-sidebar-line">
-          </div>
-          <div className="campusAmb-sidebar-contents">
-            <div
-              className={
-                this.state.facebookConnect
-                  ? "sideNavItem activeSideItem"
-                  : "sideNavItem"
-              }
-              onClick={this.facebookLogin}
-            >
-              <div className="campusAmb-sidebar-posts flex_row">
-                <div className="campusAmb-sidebar-svg-logo">
-                  <Post />
-                </div>
-                <div className="campusAmb-sidebar-navitem-name">
-                  { this.state.facebookConnect ? 'Facebook Connected' : 'Connect With Facebook' }
+          {!this.state.facebookConnect ?  
+          <div>
+            <div className="campusAmb-sidebar-line">
+            </div>
+            <div className="campusAmb-sidebar-contents">
+              <div
+                className={
+                  this.state.facebookConnect
+                    ? "sideNavItem activeSideItem"
+                    : "sideNavItem"
+                }
+                onClick={this.facebookLogin}
+              >
+                <div className="campusAmb-sidebar-posts flex_row">
+                  <div className="campusAmb-sidebar-svg-logo">
+                    <Post />
+                  </div>
+                  <div className="campusAmb-sidebar-navitem-name">
+                    CONNECT WITH FACEBOOK
+                  </div>
                 </div>
               </div>
+              {this.state.errors ? 
+                  <div>
+                    {this.state.errors}
+                  </div>
+                  : null
+              }
             </div>
-            {this.state.errors ? 
-                <div>
-                  {this.state.errors}
-                </div>
-                : null
-            }
-          </div>
+          </div> : null
+          }
           <div className="campusAmb-sidebar-line">
           </div>
           <div className="campusAmb-sidebar-contents">
@@ -265,6 +270,26 @@ export default class Sidebar extends React.Component {
                 </div>
                 <div className="campusAmb-sidebar-navitem-name">
                   RECENT UPDATES
+                </div>
+              </div>
+            </Link>
+            <Link
+              to="/CampusAmbassador/profile"
+              className={
+                this.state.activeState === "home"
+                  ? "sideNavItem activeSideItem"
+                  : "sideNavItem"
+              }
+              onClick={() => {
+                this.setActive("home");
+              }}
+            >
+              <div className="campusAmb-sidebar-ideas flex_row">
+                <div className="campusAmb-sidebar-svg-logo">
+                    <Profile />
+                </div>
+                <div className="campusAmb-sidebar-navitem-name">
+                  PROFILE
                 </div>
               </div>
             </Link>
