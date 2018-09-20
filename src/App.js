@@ -51,6 +51,11 @@ const HomeIndex = Loadable({
     loading: () => <Loader />
 });
 
+const MainHomeIndex = Loadable({
+    loader: () => import("./components/home/Index"),
+    loading: () => <Loader />
+});
+
 const VerifyCerti = Loadable({
     loader: () => import("./components/verifyCerti/Index"),
     loading: () => <Loader />
@@ -138,7 +143,8 @@ class App extends Component {
                             <Route path="/policy" component={Policy} />
                             <Route path="/terms" component={Terms} />
                             <Route path="/main/" component={MainIndex} />
-                            <Route path="/register" render={(props) => (<Redirect to="/main/" />)} />
+                            <Route path="/final" component={MainHomeIndex} />
+                            <Route path="/register" render={() => (<Redirect to="/main/" />)} />
                             <Route path="/events" component={Events} />
                             <Route path="/meme" component={Meme} />
                             <Route path="/Mr&MissThomso" component={MrMissThomso} />

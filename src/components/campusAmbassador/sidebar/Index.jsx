@@ -67,7 +67,7 @@ export default class Sidebar extends React.Component {
       .then(r => {
         if (r && r.data) {
           if (r.data.success) {
-            this.setState({ facebookConnect: true, errors: '' })
+            this.setState({ facebookConnect: true, errors: '', userImage: data.image })
           } else {
             this.setState({ errors: r.data.msg })
           }
@@ -124,6 +124,10 @@ export default class Sidebar extends React.Component {
       days = 0;
     }
     this.setState({ days })
+
+    if (this.props.userData && this.props.userData.image) {
+      this.setState({userImage: this.props.userData.image})
+    }
   }
 
   setActive(state) {
@@ -153,13 +157,14 @@ export default class Sidebar extends React.Component {
         >
         {/* {console.log(this.props.userData)} */}
           <div className="campusAmb-sidebar-user">
-            {(this.props.userData && this.props.userData.image) ? <img src={this.props.userData.image} className="image" alt="User" /> :
+            {this.state.userImage ? <img src={this.state.userImage} className="image" alt="User" /> :
               <React.Fragment>
                 {(this.props.userData && this.props.userData.gender === 'female') ?
                   <img src={girl} className="image" alt="User" /> :
                   <img src={boy} className="image" alt="User" />
                 }
-              </React.Fragment>}
+              </React.Fragment>
+            }
             <div className="campusAmb-sidebar-user-details">
               <div className="text">{this.props.userData ? this.props.userData.name : "User"}</div>
               <div className="cname">{this.props.userData ? this.props.userData.college : "-"}</div>

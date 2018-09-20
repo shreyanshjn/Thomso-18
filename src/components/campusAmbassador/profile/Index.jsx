@@ -49,7 +49,7 @@ export default class ProfileIndex extends React.Component {
                             </div>
                             <div style={{display: 'flex', justifyContent: 'space-around', padding: '1vw'}}>
                                 <div style={{width: '50%', textAlign: 'left', border: 'dashed chartreuse'}}> Facebook Score </div>
-                                <div style={{width: '50%', textAlign: 'center', border: 'dashed chartreuse'}}> {this.state.profileData.score} </div>
+                                <div style={{width: '50%', textAlign: 'center', border: 'dashed chartreuse'}}> {this.state.profileData.fb_score} </div>
                             </div>
                             <div style={{display: 'flex', justifyContent: 'space-around', border: 'dashed chartreuse', padding: '1vw'}}>
                                 <div style={{width: '50%', textAlign: 'left'}}> Referrals </div>
