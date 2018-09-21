@@ -1,0 +1,470 @@
+.whythomso-parent{
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: #e8e6e9;
+}
+.whythomso-child{
+    background-image: url("../src/images/1-01.jpg");
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+}
+.whythomso-child-whythomso{
+    position: relative;
+}
+.whythomso-child-whythomso h3{
+    margin: 0;
+    width: fit-content;
+    padding: 65vh 0px 0px 44px;
+    font-size: 50px;
+    color: white;
+    font-family: Poppins;
+}
+.whythomso-child-whythomso h3::after{
+    content: "";
+    display: block;
+    background-color: white;
+    height: 5px;
+    width: 30%;
+}
+.whythomso-second-child{
+    margin-top: 10px;
+    width: 100vw;
+    height: 100vh;
+}
+.whythomso-second-child-top{
+    height: 24vh;
+    background-image:url("../src/images/7-01.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+.whythomso-second-child-attractions h3{
+    margin: 0;
+    width: fit-content;
+    padding: 15vh 0px 0px 44px;
+    font-size: 30px;
+    color: white;
+    font-family: Poppins;
+}
+.whythomso-second-child-middle{
+    background-color: #e8e6e9;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.whythomso-second-child-the-institute{
+    width: 20%;
+}
+.whythomso-second-child-the-legacy{
+    width: 20%;
+}
+.whythomso-second-child-the-nightmare{
+    width: 20%;
+}
+.whythomso-second-child-the-institute{
+    margin-top: 50px;
+}
+.whythomso-second-child-the-institute-image{
+    height: 150px;
+    width: auto;
+    background-image:url("../../beta/home/src/img/lucknow2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.whythomso-second-child-the-institute-content-heading h3{
+    margin: 0;
+    padding-top: 15px;
+    width: fit-content;
+    font-size: 24px;
+    font-weight: 600;
+    color: black;
+    font-family: Poppins;
+}
+.whythomso-second-child-the-institute-content-heading h3::after{
+    content:"";
+    display: block;
+    background-color: black;
+    height: 3px;
+    width: 50%;
+}
+.whythomso-second-child-the-institute-content-content p{
+    text-align: justify;
+    font-size: 16px;
+    color: black;
+    font-weight: 400;
+    font-family: Poppins;
+}
+.whythomso-second-child-the-legacy{
+    margin-top: 50px;
+}
+.whythomso-second-child-the-legacy-image{
+    height: 150px;
+    width: auto;
+    background-image:url("../../beta/home/src/img/lucknow2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.whythomso-second-child-the-legacy-content-heading h3{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 15px;
+    font-weight: 600;
+    width: fit-content;
+    font-size: 24px;
+    color: black;
+    font-family: Poppins;
+}
+.whythomso-second-child-the-legacy-content-heading h3::after{
+    content:"";
+    display: block;
+    background-color: black;
+    height: 3px;
+    width: 50%;
+}
+.whythomso-second-child-the-legacy-content-content p{
+    text-align: justify;
+    font-size: 16px;
+    color: black;
+    font-weight: 400;
+    font-family: Poppins;
+}
+.whythomso-second-child-the-nightmare{
+    margin-top: 50px;
+}
+.whythomso-second-child-the-nightmare-image{
+    height: 150px;
+    width: auto;
+    background-image:url("../../beta/home/src/img/lucknow2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.whythomso-second-child-the-nightmare-content-heading h3{
+    margin: 0;
+    width: fit-content;
+    font-weight: 600;
+    padding-top: 15px;
+    font-size: 24px;
+    color: black;
+    font-family: Poppins;
+}
+.whythomso-second-child-the-nightmare-content-heading h3::after{
+    content:"";
+    display: block;
+    background-color: black;
+    height: 3px;
+    width: 50%;
+}
+.whythomso-second-child-the-nightmare-content-content p{
+    text-align: justify;
+    font-size: 16px;
+    color: black;
+    font-weight: 400;
+    font-family: Poppins;
+}
+.whythomso-second-child-the-dots{
+    width: 10%;
+}
+.whythomso-third-child{
+    width: 100vw;
+    height: 100vh;
+}
+.whythomso-third-child-top{
+    height: 24vh;
+    background-image:url("../src/images/2-01.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+.whythomso-third-child-review h3{
+    margin: 0;
+    width: fit-content;
+    padding: 15vh 0px 0px 44px;
+    font-size: 30px;
+    color: white;
+    font-family: Poppins;
+}
+.whythomso-third-child-middle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 100%;
+    background-color: #e8e6e9;
+}
+.whythomso-third-child-sliderwrapper{
+    padding-top: 20px;
+    width:60%;
+}
+.whythomso-third-child-slider{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.cards-slider-wrapper {
+    display: flex;
+    position: absolute;
+    width: 600px;
+    left: 600px;
+    overflow: hidden;
+}
+.cards-slider-wrapper div{
+    min-width: 600px;
+}
+.translate-left{
+    transform:translateX(00px);
+    transition: transform ease-out 0.5s;
+}
+.translate-right{
+    transform:translateX(-600px);
+    transition: transform ease-out 0.5s;
+}
+.whythomso-third-child-iit-content-heading h3{
+    margin: 0;
+    width: fit-content;
+    font-weight: 600;
+    padding-top: 15px;
+    font-size: 24px;
+    color: black;
+    font-family: Poppins;
+}
+.whythomso-third-child-iit-content-heading h3::after{
+    content:"";
+    display: block;
+    background-color: black;
+    height: 2px;
+    width: 50%;
+}
+.whythomso-third-child-iit-content-content p{
+    text-align: justify;
+    font-size: 16px;
+    color: black;
+    font-weight: 400;
+    font-family: Poppins;
+}
+.whythomso-fourth-child{
+    width: 100vw;
+    height: 100vh;
+}
+.whythomso-fourth-child-top{
+    height: 24vh;
+    background-image:url("../src/images/3-01.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+.whythomso-fourth-child-blogs h3{
+    margin: 0;
+    width: fit-content;
+    padding: 15vh 0px 0px 44px;
+    font-size: 30px;
+    color: white;
+    font-family: Poppins;
+}
+.whythomso-fourth-child-middle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #e8e6e9;
+}
+.whythomso-fourth-child-recent-heading{
+    background-color: #e8e6e9;
+}
+.whythomso-fourth-child-recent-heading h3{
+    margin: 0;
+    padding: 2vh 0px 0px 70px;
+    width: fit-content;
+    font-size: 16px;
+    font-weight: 400;   
+    color: black;
+    font-family: Poppins;
+}
+.whythomso-fourth-child-recent-heading h3::after{
+    content:"";
+    display: block;
+    background-color: black;
+    height: 2px;
+    width: 50%;
+}
+.whythomso-fourth-child-the-nightmare{
+    width:20%;
+}
+.whythomso-fourth-child-the-daymare{
+    width:20%;
+}
+.whythomso-fourth-child-the-evemare{
+    width:20%;
+}
+.whythomso-fourth-child-the-nightmare{
+    margin-top: 15px;
+}
+.whythomso-fourth-child-the-nightmare-image{
+    height: 150px;
+    width: auto;
+    background-image:url("../../beta/home/src/img/lucknow2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.whythomso-fourth-child-the-nightmare-content-heading h3{
+    margin: 0;
+    width: fit-content;
+    font-weight: 600;
+    padding-top: 15px;
+    font-size: 20px;
+    color: black;
+    font-family: Poppins;
+}
+.whythomso-fourth-child-the-nightmare-content-content p{
+    margin: 0;
+    padding-top: 15px;
+    text-align: justify;
+    font-size: 15px;
+    color: black;
+    font-weight: 400;
+    font-family: Poppins;
+}
+.whythomso-fourth-child-the-nightmare-date h3{
+    margin: 0;
+    width: fit-content;
+    font-weight: 600;
+    padding-top: 5px;
+    font-size: 16px;
+    color: black;
+    font-family: Poppins;
+}
+.whythomso-fourth-child-the-nightmare-date h3::after{
+    content:"";
+    display: block;
+    background-color: black;
+    height: 2px;
+    width: 140%;
+}
+.whythomso-fourth-child-the-daymare{
+    margin-top: 15px;
+}
+.whythomso-fourth-child-the-daymare-image{
+    height: 150px;
+    width: auto;
+    background-image:url("../../beta/home/src/img/lucknow2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.whythomso-fourth-child-the-daymare-content-heading h3{
+    margin: 0;
+    width: fit-content;
+    font-weight: 600;
+    padding-top: 15px;
+    font-size: 20px;
+    color: black;
+    font-family: Poppins;
+}
+.whythomso-fourth-child-the-daymare-content-content p{
+    margin: 0;
+    padding-top: 15px;
+    text-align: justify;
+    font-size: 15px;
+    color: black;
+    font-weight: 400;
+    font-family: Poppins;
+}
+.whythomso-fourth-child-the-daymare-date h3{
+    margin: 0;
+    width: fit-content;
+    font-weight: 600;
+    padding-top: 5px;
+    font-size: 16px;
+    color: black;
+    font-family: Poppins;
+}
+.whythomso-fourth-child-the-daymare-date h3::after{
+    content:"";
+    display: block;
+    background-color: black;
+    height: 2px;
+    width: 140%;
+}
+.whythomso-fourth-child-the-evemare{
+    margin-top: 15px;
+}
+.whythomso-fourth-child-the-evemare-image{
+    height: 150px;
+    width: auto;
+    background-image:url("../../beta/home/src/img/lucknow2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.whythomso-fourth-child-the-evemare-content-heading h3{
+    margin: 0;
+    width: fit-content;
+    font-weight: 600;
+    padding-top: 15px;
+    font-size: 20px;
+    color: black;
+    font-family: Poppins;
+}
+.whythomso-fourth-child-the-evemare-content-content p{
+    margin: 0;
+    padding-top: 15px;
+    text-align: justify;
+    font-size: 15px;
+    color: black;
+    font-weight: 400;
+    font-family: Poppins;
+}
+.whythomso-fourth-child-the-evemare-date h3{
+    margin: 0;
+    width: fit-content;
+    font-weight: 600;
+    padding-top: 5px;
+    font-size: 16px;
+    color: black;
+    font-family: Poppins;
+}
+.whythomso-fourth-child-the-evemare-date h3::after{
+    content:"";
+    display: block;
+    background-color: black;
+    height: 2px;
+    width: 140%;
+}
+.whythomso-fourth-child-viewall{
+    display: flex;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: row;
+    justify-content: flex-end;
+    background-color: #e8e6e9;
+}
+.whythomso-fourth-child-viewall a{
+    background: black;
+    color:white;
+    text-decoration: none;
+    padding: 10px;
+    font-family: Poppins;
+}
+.whythomso-fourth-child-viewall a span{
+    margin-top: 5px;
+    padding:10px 5px 0px 10px;
+}
+.whythomso-fifth-child{
+    width: 100vw;
+    height: 100vh;
+}
+.whythomso-fifth-child-top{
+    height: 24vh;
+    background-image:url("../src/images/4-01.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+.whythomso-fifth-child-previous h3{
+    margin: 0;
+    width: fit-content;
+    padding: 15vh 0px 0px 44px;
+    font-size: 30px;
+    color: white;
+    font-family: Poppins;
+}

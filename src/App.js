@@ -102,6 +102,10 @@ const blog = Loadable({
     loader: () => import("./components/beta/blog/index"),
     loading: () => <Loader />
 });
+const WhyThomso = Loadable({
+    loader: () => import("./components/whyThomso/Index"),
+    loading: () => <Loader />
+});
 class App extends Component {
     render() {
         return (
@@ -121,7 +125,7 @@ class App extends Component {
                             <Route path="/campusAmbassador/" component={CampusIndex} />
                             <Route path="/zonals" component={ZonalsIndex} />
                             <Route path="/blog" component={blog} />
-
+                            <Route path="/whythomso" component={WhyThomso} />
                             <Route path="/verifyCerti/" component={VerifyCerti} />
                             <Route path="/policy" component={Policy} />
                             <Route path="/terms" component={Terms} />
