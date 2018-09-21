@@ -50,7 +50,15 @@ var UserSchema = new mongoose.Schema({
     created_date:{
         type:Date,
         default:Date.now
-    }
+    },
+    last_ip: {
+        type: Array,
+        default: []
+    },
+    updated_date: {
+        type: Date,
+        default: Date.now
+    },
 });
 UserSchema.pre('save', function (next) {
     var user = this;

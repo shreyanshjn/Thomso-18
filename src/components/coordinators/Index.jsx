@@ -34,8 +34,8 @@ export default class MainIndex extends React.Component {
             <React.Fragment>
                 {/* {console.log('hello')} */}
                 {/* <Route exact path="/coordinators/login" component={HomeIndex} /> */}
-                {/* <Route  path="/coordinators" component={LoginIndex} /> */}
-                <Route exact path="/coordinators/" component={RegisterIndex} />
+                <Route  path="/coordinators" component={LoginIndex} />
+                {/* <Route exact path="/coordinators/" component={RegisterIndex} /> */}
             </React.Fragment>
         )
     }

@@ -15,7 +15,7 @@ var corsOptions = require('../config/cors')
 router.use('/', cors(corsOptions));
 
 // -> /api/coordinators/auth
-router.post('/auth/register', coordinatorRegister.coordinator_registration);
+router.post('/auth/register', coordinatorRegister.register);
 router.post('/auth/login', coordinatorRegister.login);
 
 module.exports = router;
