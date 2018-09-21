@@ -17,6 +17,8 @@ export default class DataTable extends React.Component {
     }
     
     download = () => {
+        console.log(this.props.participants)
+        
         if (this.props.participants && this.props.participants.length > 0) {
             downloadCSV({data: this.props.participants, filename: 'participant_registrations.csv'})
         }

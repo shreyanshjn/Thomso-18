@@ -296,7 +296,7 @@
 .form-state{
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 50%;
 }
 .form-state label{
     display: flex;
@@ -309,7 +309,7 @@
 .form-branch{
     display: flex; 
     flex-direction: column;
-    width: 50%;
+    width: 30%;
 }
 .form-branch label{
     display: flex;

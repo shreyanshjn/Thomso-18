@@ -5,9 +5,9 @@ var Associate_Sponsor = require('../../../../models/beta/Associate_Sponsor');
 exports.userInfo = function(req,res){
     if(req){
         Main_User.find()
-            .populate('event', 'name event_id')
-            .populate('primary_event', 'name event_id')
             .select('name email gender thomso_id college address branch contact verified referral')
+            .populate('event', 'name')
+            .populate('primary_event', 'name')
             .exec(function (err, user) {
                 if (err) {
                     return res.status(400).send({ success: false, msg: 'Unable to connect to database. Please try again.' })

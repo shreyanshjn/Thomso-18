@@ -46,13 +46,6 @@ export default class PostIndex extends React.Component {
     }
 
     componentDidMount() {
-        if (window.FB) {
-            window.FB.init({
-                appId: 420618245110151,
-                status: true,
-                xfbml: true
-            });
-        }
         const authtoken = this.Auth.getToken();
         FetchApi('GET', '/api/ca/temp/posts', null, authtoken)
             .then((result) => {

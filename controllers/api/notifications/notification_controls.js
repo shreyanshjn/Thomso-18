@@ -14,7 +14,7 @@ exports.addTopic = function (req, res) {
             }
         };
         request.post(options, function (err, response, body) {
-            if (err) return res.status(400).send({ success: false, msg: 'Firebase returend error.', error: err });
+            if (err) return res.status(400).send({ success: false, msg: 'Firebase returned error.', error: err });
             if (response.statusCode) {
                 return res.status(response.statusCode).send(body);
             }
@@ -38,7 +38,7 @@ exports.addCATopic = function (req, res) {
             }
         };
         request.post(options, function (err, response, body) {
-            if (err) return res.status(400).send({ success: false, msg: 'Firebase returend error.', error: err });
+            if (err) return res.status(400).send({ success: false, msg: 'Firebase returned error.', error: err });
             if (response.statusCode) {
                 var updateData = {
                     notification: {

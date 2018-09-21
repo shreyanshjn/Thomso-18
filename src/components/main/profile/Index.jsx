@@ -29,7 +29,7 @@ export default class Profile extends React.Component {
             FetchApi('GET', '/api/main/events', null, token)
                 .then(r => {
                     if (r && r.data && r.data.body) {
-                        console.log(r.data.body)
+                        // console.log(r.data.body)
                         this.setState({ events: r.data.body })
                     }
                 })
