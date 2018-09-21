@@ -4,6 +4,7 @@ var cors = require('cors');
 
 // Controllers
 var coordinatorRegister = require('../../controllers/api/coordinators/coordinators_register');
+var coordinatorControls = require('../../controllers/api/coordinators/coordinators_controls');
 
 // Middlewares
 var CoordinatorsTokenMiddleware = require("../../middlewares/coordinators/TokenMiddleware");
@@ -17,5 +18,8 @@ router.use('/', cors(corsOptions));
 // -> /api/coordinators/auth
 router.post('/auth/register', coordinatorRegister.register);
 router.post('/auth/login', coordinatorRegister.login);
+
+// -> /api/coordinators/
+router.post('/addWinner', CoordinatorsTokenMiddleware , coordinatorControls.addWinner);
 
 module.exports = router;

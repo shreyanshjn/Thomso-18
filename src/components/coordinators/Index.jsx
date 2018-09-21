@@ -28,6 +28,11 @@ const RegisterIndex = Loadable({
     loading: () => <Loader/>
 });
 
+const AddWinnerIndex = Loadable({
+    loader: () => import("./addWinner/Index"),
+    loading: () => <Loader/>
+});
+
 export default class MainIndex extends React.Component {
     render() {
         return (
@@ -35,6 +40,7 @@ export default class MainIndex extends React.Component {
                 {/* {console.log('hello')} */}
                 {/* <Route exact path="/coordinators/login" component={HomeIndex} /> */}
                 <Route  path="/coordinators" component={LoginIndex} />
+                {/* <Route  path="/coordinators" component={AddWinnerIndex} /> */}
                 {/* <Route exact path="/coordinators/" component={RegisterIndex} /> */}
             </React.Fragment>
         )
