@@ -44,7 +44,7 @@ export default class Sidebar extends React.Component {
     this.Auth = new AuthService();
     if (!window.location.pathname.substring(18)) {
       this.state = {
-        activeState: "home"
+        activeState: "profile"
       };
     }
   }
@@ -258,26 +258,6 @@ export default class Sidebar extends React.Component {
           </div>
           <div className="campusAmb-sidebar-contents">
             <Link
-              to="/CampusAmbassador/"
-              className={
-                (this.state.activeState === "recentUpdate")
-                  ? "sideNavItem activeSideItem"
-                  : "sideNavItem"
-              }
-              onClick={() => {
-                this.setActive("recentUpdate");
-              }}
-            >
-              <div className="campusAmb-sidebar-posts flex_row">
-                <div className="campusAmb-sidebar-svg-logo">
-                  <Post />
-                </div>
-                <div className="campusAmb-sidebar-navitem-name">
-                  RECENT UPDATES
-                </div>
-              </div>
-            </Link>
-            <Link
               to="/CampusAmbassador/profile"
               className={
                 this.state.activeState === "profile"
@@ -294,6 +274,26 @@ export default class Sidebar extends React.Component {
                 </div>
                 <div className="campusAmb-sidebar-navitem-name">
                   PROFILE
+                </div>
+              </div>
+            </Link>
+            <Link
+              to="/CampusAmbassador/"
+              className={
+                (this.state.activeState === "recentUpdate")
+                  ? "sideNavItem activeSideItem"
+                  : "sideNavItem"
+              }
+              onClick={() => {
+                this.setActive("recentUpdate");
+              }}
+            >
+              <div className="campusAmb-sidebar-posts flex_row">
+                <div className="campusAmb-sidebar-svg-logo">
+                  <Post />
+                </div>
+                <div className="campusAmb-sidebar-navitem-name">
+                  RECENT UPDATES
                 </div>
               </div>
             </Link>
