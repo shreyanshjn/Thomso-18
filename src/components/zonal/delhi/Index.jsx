@@ -5,8 +5,8 @@ import Footer from "../common/Footer";
 import ZonalsFormDelhi from "../common/ZonalsFormDelhi";
 import Popup from "../../common/popup/Index";
 import "../src/css/Index.css";
-import painting from "../src/img/Painting1.png";
-import paintingMobile from "../src/img/paintingPortrait.png";
+import painting from "../src/img/Painting1.jpg";
+import paintingMobile from "../src/img/paintingPortrait.jpg";
 
 export default class DelhiIndex extends Component {
     constructor()

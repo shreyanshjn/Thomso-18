@@ -29,6 +29,10 @@
     top:0;
     left:4vw;
     margin-left: 40px;
+    user-select:none;
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none; 
 }
 .beta-footer-days
 {
@@ -45,6 +49,10 @@
     position: absolute;
     right: 4vw;
     top: 0;
+    user-select:none;
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none; 
 }
 .beta-footer-iconsImage
 {
@@ -74,6 +82,10 @@
 }
 .common-cursor{
   cursor : default;
+  user-select:none;
+  -webkit-user-select: none;
+  -moz-user-select: none; 
+  -ms-user-select: none; 
 }
 @media screen and (min-width: 768px)
 {
@@ -208,6 +220,10 @@
     {
         top:86vh;
         font-family:Montserrat;
+        user-select:none;
+        -webkit-user-select: none;
+        -moz-user-select: none; 
+        -ms-user-select: none; 
     }
     .beta-footer-follow
     {

@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:800,600");
-
 .register-parent{
     width: 100%;
     background-image: url("../img/background.png");
@@ -29,6 +28,10 @@
 .register-heading{
     display: flex;
     padding: 10px 40px 0px 30px;
+    user-select:none;
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none; 
 }
 .register-parent-reset
 {
@@ -53,15 +56,15 @@
     justify-content: space-between;
 }
 .register-ca{
+    margin: auto 0px;
     padding-left: 20px;
 }
 .register-ca h1{
-    margin: 0;
-    margin-top: 10px;
     color: white;
     font-weight: 600;
     font-family: Montserrat;
     opacity: 0.8;
+    font-size: 1.6em;
 
 }
 .vertical_line{
@@ -114,12 +117,16 @@
 }
 .register-form form{
     width: 33.5%;
-    margin-top: 10px;
-    padding: 10px;
+    margin-top: 15px;
+    padding: 25px;
     display: flex;
     flex-direction: column;
     background-color:rgba(0,0,0,0.2);
     border-radius: 10px;
+    user-select:none;
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none; 
 }
 .form-heading{
     display: flex;
@@ -289,7 +296,7 @@
 .form-state{
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 50%;
 }
 .form-state label{
     display: flex;
@@ -302,7 +309,7 @@
 .form-branch{
     display: flex; 
     flex-direction: column;
-    width: 50%;
+    width: 30%;
 }
 .form-branch label{
     display: flex;
@@ -390,6 +397,7 @@ input[type=number]::-webkit-outer-spin-button {
     background: none;
     color: white;
     padding: 5px;
+    -webkit-appearance: none;
 }
 .form-inwhy-child textarea::placeholder{
     color: white;
@@ -404,7 +412,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .register button{
     cursor: pointer;
-    padding: 15px;
+    padding: 15px 20px;
     background: none;
     font-family: Montserrat;
     font-weight: 600;
@@ -453,7 +461,26 @@ input[type=number]::-webkit-outer-spin-button {
     flex-direction: row;
     justify-content: center;
 }
+.mobile-logout-main-register
+{
+    display:none;
+}
 @media (max-width:800px){
+    .mobile-logout-main-register
+    {
+        text-decoration:none;
+        color:white;
+        font-size:12px;
+        display:block;
+    }
+    .mobile-logout-main-register h1
+    {
+        text-align: right;
+        margin-top: 0px;
+        cursor: pointer;
+        font-size: 19px;
+        font-weight: 500; 
+    }
     .register-child-child {
         flex-wrap: wrap;
         justify-content: center
@@ -482,27 +509,26 @@ input[type=number]::-webkit-outer-spin-button {
     }
     .register-heading , .register-heading-reset{
         display: flex;
-        flex-direction: column;
         transition: all 0.4s;
     }
     .form-heading h2{
         font-size: 18px;
         transition: all 0.3s;
     }
-    .r-logo{
-        margin: auto;
-    }
     .register-ca{
         text-align: center;
     }
+    .register-form{
+        margin-top: 60px;
+    }
     .register-form form{
         margin-top: 20px;
-        width: 50%;
+        width: 70%;
     }
     .form-first-child{
         display: flex;
         flex-direction:column;
-        margin-top: 5px;
+        margin-top: 20px;
     }
     label{
         padding: 5px;
@@ -516,7 +542,7 @@ input[type=number]::-webkit-outer-spin-button {
         width: 100%;
     }
     .form-email{
-        margin-top: 5px;
+        margin-top: 10px;
         width: 100%;
     }
     .form-state{
@@ -528,7 +554,7 @@ input[type=number]::-webkit-outer-spin-button {
         width: 100%;
     }
     .form-contactnumber{
-        margin-top: 5px;
+        margin-top: 10px;
         width: 100%;
     }
     .form-name{

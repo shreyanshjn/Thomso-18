@@ -3,7 +3,7 @@ import "../../ca/home/updatedcard.css";
 import AuthService from '../../../handlers/ca/temp/AuthService';
 import FetchApi from '../../../utils/FetchAPI';
 
-import Card from '../../ca/home/Card';
+import Card from '../../ca/timeline/Card';
 
 let unmount = false
 export default class PostIndex extends React.Component {
@@ -46,13 +46,6 @@ export default class PostIndex extends React.Component {
     }
 
     componentDidMount() {
-        if (window.FB) {
-            window.FB.init({
-                appId: 420618245110151,
-                status: true,
-                xfbml: true
-            });
-        }
         const authtoken = this.Auth.getToken();
         FetchApi('GET', '/api/ca/temp/posts', null, authtoken)
             .then((result) => {
@@ -64,7 +57,7 @@ export default class PostIndex extends React.Component {
                 if (error.response && error.response.status === 401 && !unmount) {
                     this.setState({ message: 'Token Expired' });
                     // this.props.history.push('/ca/logout')
-                } else if (!unmount){
+                } else if (!unmount) {
                     this.setState({ message: 'Unable to Connect to Server' });
                 }
             });

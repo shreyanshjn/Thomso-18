@@ -27,7 +27,6 @@ export default class EventDetail extends React.Component {
     }
     componentWillMount() {
         const isAuthenticated = this.Auth.hasToken();
-        console.log(isAuthenticated, 'isAuthenticated')
         if (this.props.detail && this.props.detail.subevents) {
             const filteredData = this.props.detail.subevents.filter(e => e.id === this.props.id);
             if (filteredData) {
@@ -98,8 +97,8 @@ export default class EventDetail extends React.Component {
                                 }
                             </React.Fragment>
                         }
-                        {this.state.data.rulebook ?
-                            <a href={`/pdf/events/${this.state.data.rulebook}`} className="be-events-modal-button" target="_blank">Rulebook</a>
+                        {(this.state.data.rulebook) ?
+                            <a href={!this.state.isAuthenticated ? "/main" : this.state.data.rulebook} className="be-events-modal-button" target="_blank">Rulebook</a>
                             : null
                         }
                     </div>

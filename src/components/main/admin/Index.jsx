@@ -48,6 +48,11 @@ const EventUserIndex = Loadable({
     loading: Loading,
 });
 
+const AssociateWithUsIndex = Loadable({
+    loader: () => import('./associateWithUs/Index'),
+    loading: Loading,
+});
+
 
 export default class AdminIndex extends React.Component{
     constructor() {
@@ -62,7 +67,7 @@ export default class AdminIndex extends React.Component{
         const isAuthenticated = this.Auth.hasToken();
         this.setState({isAuthenticated});
     }
-    
+
     handleUpdate = isAuthenticated => {
         this.setState({isAuthenticated})
     }
@@ -70,17 +75,18 @@ export default class AdminIndex extends React.Component{
     render(){
         return(
             <React.Fragment>
-                {this.state.isAuthenticated ? 
+                {this.state.isAuthenticated ?
                     <React.Fragment>
                         <Route path="/main/admin" component={NavbarIndex} />
                         <Route exact path="/main/admin/addEvent" component={AddEventIndex} />
                         <Route exact path="/main/admin/logout" render={ (props) => <LogoutIndex {...props} updateRoutes={this.handleUpdate}/> } />
                         <Route exact path="/main/admin" component={HomeIndex} />
                         <Route exact path="/main/admin/eventUser" component={EventUserIndex} />
+                        <Route exact path="/main/admin/associateWithUs" component={AssociateWithUsIndex} />
                     </React.Fragment>
                 :
                     <React.Fragment>
-                        {/* <Route exact path="/main/admin/register" component={RegisterIndex} /> */}
+                        {/* <Route exact path="/main/admin/register" component={RegisterIndex} />*/}
                         <Route exact path="/main/admin" render={ (props) => <LoginIndex updateRoutes={this.handleUpdate}/> } />
                     </React.Fragment>
                 }

@@ -25,6 +25,7 @@ router.use('/admin', mainAdminRoutes);
 // -> /main/auth
 router.post('/auth/register', participantRegister.participant_registration);
 router.post('/auth/verify', MainUserTokenMiddleware.verifyUser, participantRegister.verifyOTP);
+router.get('/auth/resend', MainUserTokenMiddleware.verifyUser, participantControl.resendOTP);
 router.post('/auth/login' , participantRegister.participant_login);
 
 // -> /main/resetPassword
@@ -36,6 +37,8 @@ router.post('/auth/resetPassword' , participantRegister.reset_password);
 router.get('/user', MainUserTokenMiddleware.verifyUser , participantControl.userInfo);
 router.get('/primary', eventControl.getEvents);
 router.get('/events' , MainUserTokenMiddleware.verify, participantControl.getUserEvents);
+router.post('/updateImage' , MainUserTokenMiddleware.verify, participantControl.update_image);
+router.post('/getImage' , MainUserTokenMiddleware.verify, participantControl.get_image);
 
 router.delete('/removeEvent' , MainUserTokenMiddleware.verify,eventControl.removeEvent);
 

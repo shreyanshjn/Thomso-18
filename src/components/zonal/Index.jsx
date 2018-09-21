@@ -16,17 +16,26 @@ const AdminIndex = Loadable({
     loading: loading
 });
 
-const DelhiIndex= Loadable({
+const DelhiIndex = Loadable({
     loader: () => import("./delhi/Index"),
     loading: loading
 });
 
-const LucknowIndex= Loadable({
+const HomeIndex = Loadable({
+    loader: () => import("./home/Index"),
+    loading: loading
+});
+
+const LucknowIndex = Loadable({
     loader: () => import("./lucknow/Index"),
     loading: loading
 });
-// const JaipurIndex= Loadable({
-//     loader: () => import("./jaipur/Index"),
+const JaipurIndex= Loadable({
+    loader: () => import("./jaipur/Index"),
+    loading: loading
+});
+// const ChandigadhIndex= Loadable({
+//     loader: () => import("./chandigadh/Index"),
 //     loading: loading
 // });
 export default class ZonalsIndex extends React.Component {
@@ -36,7 +45,9 @@ export default class ZonalsIndex extends React.Component {
                 <Route path="/zonals/admin" component={AdminIndex} />
                 <Route path="/zonals/delhi" component={DelhiIndex} />
                 <Route path="/zonals/lucknow" component={LucknowIndex} />
-                {/* <Route path="/zonals/jaipur" component={JaipurIndex} />*/}
+                <Route path="/zonals/home" component={HomeIndex} />
+                <Route path="/zonals/jaipur" component={JaipurIndex} />
+                {/* <Route path="/zonals/chandigadh" component={ChandigadhIndex} /> */}
             </React.Fragment>
         );
     }

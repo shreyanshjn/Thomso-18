@@ -1,4 +1,8 @@
 .sidenav {
+    user-select:none;
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none; 
     height: 100%;
     width: 20.13vw;
     position: fixed;

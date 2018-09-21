@@ -8,6 +8,7 @@ render(){
       <div className="zonals-admin-nav">
         <ul>
           <li><Link to="/main/admin/">Home</Link></li>
+          <li><Link to="/main/admin/associateWithUs">Asso. Us</Link></li>
           <li><Link to="/main/admin/eventUser">Event</Link></li>
           <li><Link to="/main/admin/logout">Logout</Link></li>
         </ul>

@@ -1,27 +1,27 @@
 import React, { Component } from 'react';
 import EventsModal from './EventsModal';
-import {EventDetails} from './events.js';
+import { EventDetails } from './events.js';
 import Navbar from '../beta/home/Navbar.jsx';
 import './src/css/EventsOpening.css';
 
 class EventsOpening extends Component {
-    constructor(){
+    constructor() {
         super();
         this.state = {
             data: false,
             showModal: false,
             eventId: false,
-            dataEvents:EventDetails,
-            showMain:false,
+            dataEvents: EventDetails,
+            showMain: false,
         }
         this.showEventModal = this.showEventModal.bind(this);
     }
     // componentWillMount(){
     //     window.innerWidth > 560 ? this.setState({mobile: false}) : this.setState({mobile: true});
     // }
-    componentDidMount(){
+    componentDidMount() {
         this.setState({
-            dataEvents:EventDetails
+            dataEvents: EventDetails
         });
     }
     // componentDidMount(){
@@ -30,71 +30,71 @@ class EventsOpening extends Component {
     //         .catch(e => console.log(e));
     // }
     showEventModal = (id) => {
-        this.setState({showModal: true, eventId: id, showMain:true})
+        this.setState({ showModal: true, eventId: id, showMain: true })
     }
     render() {
         let [e1, e2, e3] = [[], [], []];
-        for(let i=0; i<14; i++){
-            if(i < 4){
+        for (let i = 0; i < 16; i++) {
+            if (i < 5) {
                 e1.push(EventDetails[i])
             }
-            if(i >=4 && i< 8){
+            if (i >= 5 && i < 10) {
                 e2.push(EventDetails[i])
             }
-            if(i >= 8 && i < 13){
+            if (i >= 10 && i < 15) {
                 e3.push(EventDetails[i])
             }
 
         }
         return (
             <div>
-                {this.state.showModal && this.state.dataEvents ? 
-                        <div className="events-modals-events-opening">
-                            <EventsModal history={this.props.history} id={this.state.eventId} modalClose={() => this.setState({showModal: false})} data={this.state.dataEvents ? this.state.dataEvents : null}/>                 
+                {this.state.showModal && this.state.dataEvents ?
+                    <div className="events-modals-events-opening">
+                        <EventsModal history={this.props.history} id={this.state.eventId} modalClose={() => this.setState({ showModal: false })} data={this.state.dataEvents ? this.state.dataEvents : null} />
+                    </div>
+                    : null}
+                {(this.state.showModal === false) ? <Navbar background="true" events="true" /> : null}
+                <div className={(this.state.showModal === true) ? "events-not-scroll" : " events-scroll"} >
+                    <div className={(this.state.showModal === true) ? "events-opening-main-div events-in-desktop" : "events-opening-main-div events-in-desktop hide-scroll-events"}>
+                        <div className="events-opening-column1">
+                            {e1.map(e =>
+                                <div className={(this.state.showModal === true) ? "events-opening-decrease-opacity" : null} key={e.id} onClick={() => this.showEventModal(e.id)} style={{ overflow: "hidden" }}>
+                                    <figure className="nik-custom-effect-glass black_white_new events-figure">
+                                        <img src={`/img/main/events/${e.image}`} alt={e.name} className="events-images-opening-main" />
+                                        <figcaption>
+                                            <h2 className="events-images-opening-heading">{e.name}</h2>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            )}
                         </div>
-                        : null}
-                        {(this.state.showModal===false)?<Navbar background="true"/>:null}
-                        <div style={{display:"flex",justifyContent:"center"}}>
-                            <div className={(this.state.showModal===true)? "events-opening-main-div events-in-desktop":"events-opening-main-div events-in-desktop hide-scroll-events"}>
-                                <div className="events-opening-column1">
-                                    {e1.map(e => 
-                                        <div className={(this.state.showModal===true) ? "events-opening-decrease-opacity" :null} key={e.id} onClick={() => this.showEventModal(e.id)} style={{overflow:"hidden"}}>
-                                            <figure className="nik-custom-effect-glass black_white_new events-figure">
-                                                <img src={`/img/main/events/${e.image}`} alt={e.name} className="events-images-opening-main"/>
-                                                <figcaption>
-                                                    <h2 className="events-images-opening-heading">{e.name}</h2>
-                                                </figcaption>
-                                            </figure>
-                                        </div>
-                                    )}
+                        <div className="events-opening-column2">
+                            {e2.map(e =>
+                                <div className={(this.state.showModal === true) ? "events-opening-decrease-opacity" : null} key={e.id} onClick={() => this.showEventModal(e.id)} style={{ overflow: "hidden" }}>
+                                    <figure className="nik-custom-effect-glass black_white_new events-figure">
+                                        <img src={`/img/main/events/${e.image}`} alt={e.name} className="events-images-opening-main" />
+                                        <figcaption>
+                                            <h2 className="events-images-opening-heading">{e.name}</h2>
+                                        </figcaption>
+                                    </figure>
                                 </div>
-                                <div className="events-opening-column2">
-                                    {e2.map(e => 
-                                        <div  className={(this.state.showModal===true) ? "events-opening-decrease-opacity" :null} key={e.id} onClick={() => this.showEventModal(e.id)} style={{overflow:"hidden"}}>
-                                            <figure className="nik-custom-effect-glass black_white_new events-figure">
-                                                <img src={`/img/main/events/${e.image}`} alt={e.name} className="events-images-opening-main"/>
-                                                <figcaption>
-                                                    <h2 className="events-images-opening-heading">{e.name}</h2>
-                                                </figcaption>
-                                            </figure>
-                                        </div>
-                                    )}
+                            )}
+                        </div>
+                        <div className="events-opening-column3">
+                            {e3.map(e =>
+                                <div className={(this.state.showModal === true) ? "events-opening-decrease-opacity" : null} key={e.id} onClick={() => this.showEventModal(e.id)} style={{ overflow: "hidden" }}>
+                                    <figure className="nik-custom-effect-glass black_white_new events-figure">
+                                        <img src={`/img/main/events/${e.image}`} alt={e.name} className="events-images-opening-main" />
+                                        <figcaption>
+                                            <h2 className="events-images-opening-heading">{e.name}</h2>
+                                        </figcaption>
+                                    </figure>
                                 </div>
-                                <div className="events-opening-column3">
-                                    {e3.map(e => 
-                                        <div  className={(this.state.showModal===true) ? "events-opening-decrease-opacity" :null} key={e.id} onClick={() => this.showEventModal(e.id)} style={{overflow:"hidden"}}>
-                                            <figure className="nik-custom-effect-glass black_white_new events-figure">
-                                                <img src={`/img/main/events/${e.image}`} alt={e.name} className="events-images-opening-main"/>
-                                                <figcaption>
-                                                    <h2 className="events-images-opening-heading">{e.name}</h2>
-                                                </figcaption>
-                                            </figure>
-                                        </div>
-                                    )}
-                                </div>
-                            </div>
+                            )}
                         </div>
                     </div>
+                </div>
+            </div>
         );
     }
 }

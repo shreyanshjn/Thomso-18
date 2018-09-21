@@ -8,6 +8,7 @@ import StateSelect from "../../campusAmbassador/register/StateSelect";
 import validateInput from '../../../utils/validation/loginValidation';
 import AuthService from '../../../handlers/main/AuthService';
 import EventsSelect from "./EventsSelect";
+import "../verify/verify.css";
 
 import "../../campusAmbassador/register/css/register.css";
 
@@ -36,9 +37,14 @@ export default class RegisterIndex extends React.Component {
     onChange = (e) => {
         const name = e.target.name;
         let value = e.target.value;
+        if (name === 'referred_by' && value) {
+            value = value.trim();
+            value = value.substring(0, 8)
+            value = value.toUpperCase();
+        }
         if (name === 'contact' && value) {
             value = value.trim();
-            value = value.substring(0, 12)
+            value = value.substring(0, 10)
         }
         this.setState({ [name]: value });
     }
@@ -55,42 +61,47 @@ export default class RegisterIndex extends React.Component {
         if (address) address = address.trim()
         if (referred_by) referred_by = referred_by.trim()
         if (primary_event) primary_event = primary_event.trim()
-        if (password === confirmPassword) {
-            const data = { name, email, gender, contact, college, state, branch, address, referred_by, password, primary_event }
-            const check = validateInput(data)
-            if (name && gender && branch && contact && college && state && address && primary_event && check.isValid) {
-                FetchApi('POST', '/api/main/auth/register', data)
-                    .then(res => {
-                        if (res && res.data) {
-                            if (res.data.success === true) {
-                                this.Auth.setToken(res.data.token);
-                                this.props.updateRoutes(true, false);
-                                this.props.history.push('/main/verify')
+        if (!isNaN(contact)) {
+            if (password === confirmPassword) {
+                const data = { name, email, gender, contact, college, state, branch, address, referred_by, password, primary_event }
+                const check = validateInput(data)
+                if (name && gender && branch && contact && college && state && address && primary_event && check.isValid) {
+                    FetchApi('POST', '/api/main/auth/register', data)
+                        .then(res => {
+                            if (res && res.data) {
+                                if (res.data.success === true) {
+                                    this.Auth.setToken(res.data.token);
+                                    this.props.updateRoutes(true, false);
+                                    this.props.history.push('/main/verify')
+                                }
+                                else
+                                    this.setState({ errors: res.data.msg })
                             }
-                            else
-                                this.setState({ errors: res.data.msg })
-                        }
-                    })
-                    .catch(e => {
-                        this.setState({ errors: "Something went wrong." })
-                    });
-            } else if (check.errors && check.errors.email) {
-                this.setState({ errors: check.errors.email })
-            } else if (check.errors && check.errors.password) {
-                this.setState({ errors: check.errors.password })
-            } else {
-                this.setState({ errors: 'Fields cannot be empty' })
+                        })
+                        .catch(e => {
+                            this.setState({ errors: "Something went wrong." })
+                        });
+                } else if (check.errors && check.errors.email) {
+                    this.setState({ errors: check.errors.email })
+                } else if (check.errors && check.errors.password) {
+                    this.setState({ errors: check.errors.password })
+                } else {
+                    this.setState({ errors: 'Fields cannot be empty' })
+                }
+            }
+            else {
+                this.setState({ errors: "Password didn't matched!!" })
             }
         }
         else {
-            this.setState({ errors: "Password didn't matched!!" })
+            this.setState({ errors: "Contact invalid" })
         }
     }
 
     render() {
         const { name, contact, email, gender, branch, address, errors, referred_by, password, confirmPassword } = this.state;
         return (
-            <div className="register-parent">
+            <div className="main-verify-register-parent">
                 <div className="register-child">
                     <div className="register-heading">
                         <div className="r-logo">
@@ -99,7 +110,7 @@ export default class RegisterIndex extends React.Component {
                         <div className="vertical_line">
                         </div>
                         <div className="register-ca common-cursor">
-                            <h1>Participant<br /> Registration</h1>
+                            <h1>Participant Registration</h1>
                         </div>
                     </div>
                     <div className="register-form">
@@ -111,7 +122,7 @@ export default class RegisterIndex extends React.Component {
                                 : null
                             }
                             <div className="form-heading">
-                                <h2>Registration Here</h2>
+                                <h2>Register Here</h2>
                             </div>
                             <div className="form-first-child">
                                 <div className="form-name">
@@ -134,7 +145,7 @@ export default class RegisterIndex extends React.Component {
                                     <label htmlFor="inputContact">Contact Number</label>
                                     <input
                                         id="inputContact"
-                                        type="number"
+                                        type="text"
                                         placeholder="Contact Number"
                                         name="contact"
                                         autoCorrect="off"
@@ -148,7 +159,7 @@ export default class RegisterIndex extends React.Component {
                             </div>
                             <div className="form-first-child">
                                 <div className="form-email">
-                                    <label htmlFor="inputEmail">Email</label>
+                                    <label htmlFor="inputEmail">Email (For OTP)</label>
                                     <input
                                         id="inputEmail"
                                         type="email"
@@ -184,10 +195,6 @@ export default class RegisterIndex extends React.Component {
                                 <CollegeSelect onChange={college => this.setState({ college })} />
                             </div>
                             <div className="form-first-child">
-                                <div className="form-state">
-                                    <label htmlFor="inputState">College State</label>
-                                    <StateSelect onChange={state => this.setState({ state })} />
-                                </div>
                                 <div className="form-branch">
                                     <label htmlFor="inputBranch">Branch and Year</label>
                                     <input
@@ -202,6 +209,31 @@ export default class RegisterIndex extends React.Component {
                                         onChange={this.onChange}
                                         required
                                     />
+                                </div>
+                                <div className="form-state">
+                                    <label htmlFor="inputState">College State</label>
+                                    <StateSelect onChange={state => this.setState({ state })} />
+                                </div>
+                               
+                            </div>
+                            <div className="form-first-child">
+                                <div className="form-branch">
+                                    <label htmlFor="inputRefferedBy">Referral</label>
+                                    <input
+                                        id="inputRefferedBy"
+                                        type="text"
+                                        placeholder="Referral Code (Optional)"
+                                        name="referred_by"
+                                        autoCorrect="off"
+                                        autoComplete="off"
+                                        autoCapitalize="off"
+                                        value={referred_by}
+                                        onChange={this.onChange}
+                                    />
+                                </div>
+                                <div className="form-state">
+                                    <label htmlFor="inputEvents">Primary Event</label>
+                                    <EventsSelect onChange={primary_event => this.setState({ primary_event })} />
                                 </div>
                             </div>
                             <div className="form-add-child">
@@ -220,28 +252,8 @@ export default class RegisterIndex extends React.Component {
                                 />
                             </div>
                             <div className="form-first-child">
-                                <div className="form-state">
-                                    <label htmlFor="inputEvents">Primary Events</label>
-                                    <EventsSelect onChange={primary_event => this.setState({ primary_event })} />
-                                </div>
-                                <div className="form-branch">
-                                    <label htmlFor="inputRefferedBy">Referral</label>
-                                    <input
-                                        id="inputRefferedBy"
-                                        type="text"
-                                        placeholder="Referral Code"
-                                        name="referred_by"
-                                        autoCorrect="off"
-                                        autoComplete="off"
-                                        autoCapitalize="off"
-                                        value={referred_by}
-                                        onChange={this.onChange}
-                                    />
-                                </div>
-                            </div>
-                            <div className="form-first-child">
                                 <div className="form-name">
-                                <label htmlFor="inputPassword">Password</label>
+                                    <label htmlFor="inputPassword">Password</label>
                                     <input
                                         id="inputPassword"
                                         type="password"

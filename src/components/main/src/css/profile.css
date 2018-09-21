@@ -23,6 +23,10 @@
     font-size: 35px;
     font-weight: 600;
     letter-spacing: 0px;
+    user-select:none;
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none; 
 }
 .participant-child-get-seized p{
     margin-top: 10px;
@@ -41,9 +45,14 @@
 .participant-profile-child-left{
     width: 40%;
     padding-right: 10px;
+    user-select:none;
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none; 
 }
 .participant-profile-child-right{
     width: 40%;
+    user-select:none;
 }
 .main-events-add-more-parent
 {
@@ -88,6 +97,10 @@
     font-weight: bolder;
     letter-spacing: 1px;
     padding-bottom: 2px;
+    width: 90%;
+}
+.participant-somedetails:nth-child(2){
+    padding-left: 5px;
 }
 .participant-somedetails-email{
     text-transform: none;
@@ -99,6 +112,7 @@
     background: white;
     padding: 10px;
     min-height: 74px;
+    max-height: 54vh;
     -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.41);
     -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.41);
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.41);
@@ -138,6 +152,9 @@
    height:16px;
    width:auto;
 }
+.participant-profile-child-left-details div:nth-child(2){
+    display: none;
+}
 @media screen and (max-width:768px){
     .participant-profile-parent{
         width: calc(100% - 75px);
@@ -161,5 +178,15 @@
     }
     .participant-profile-child-left-details{
         padding-top: 7px;
+    }
+    .participant-profile-child-left-details:nth-child(1){
+        padding-top: 7px;
+        display: flex;
+        flex-direction: row;
+    }
+}
+@media screen and (min-width:1400px){
+    .participant-profile-parent{
+        width:calc(100% - 25vw);
     }
 }

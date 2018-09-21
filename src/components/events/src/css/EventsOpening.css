@@ -7,11 +7,23 @@
         width:80%;
         margin-top:11%;
         font-family:Montserrat;
+        user-select:none;
+        -webkit-user-select: none;
+        -moz-user-select: none; 
+        -ms-user-select: none; 
     }
 }
 .hide-scroll-events
 {
     overflow:hidden;
+
+}
+.events-parent-main-div
+{
+   user-select:none;
+   -webkit-user-select: none;
+   -moz-user-select: none; 
+   -ms-user-select: none; 
 }
 .events-opening-column1,.events-opening-column2,.events-opening-column3
 {
@@ -36,7 +48,7 @@
 }
 .events-opening-decrease-opacity
 {
-    opacity:0.05; 
+    opacity:0;
 }
 .black_white_new img{
     -webkit-transition: all 0.1s;
@@ -46,14 +58,24 @@
 }
 .black_white_new:hover img{
     -webkit-transform: scale3d(1.1,1.1,1) !important;
-    /* transform: scale3d(1.1,1.1,1); */
+    -moz-transform: scale3d(1.1,1.1,1) !important;
+    transform: scale3d(1.1,1.1,1);
     filter:grayscale(0%);
 }
 figure.nik-custom-effect-glass {
     background: black;
     border-radius: 3px;
 }
-
+.events-scroll{
+    display: flex;
+    justify-content: center;
+}
+.events-not-scroll{
+    display: flex;
+    justify-content: center;
+    height: 95.4vh;
+    overflow: hidden;
+}
 figure.nik-custom-effect-glass img {
     opacity: 1;
     -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
@@ -128,3 +150,4 @@ figure.nik-custom-effect-glass:hover p {
         width: 100%;
     }
 }
+

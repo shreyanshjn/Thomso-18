@@ -20,6 +20,7 @@ export default class DataTable extends React.Component {
         const authtoken = this.Auth.getToken();
         FetchApi('GET','/api/ca/admin/participants', null, authtoken)
             .then((result) => {
+                console.log(result.data)
                 if (result && result.data) {
                     this.setState({ participants: result.data });
                 }
@@ -67,6 +68,7 @@ export default class DataTable extends React.Component {
                         <th style={{width:"5vw"}}>Gender</th>
                         <th style={{width:"13vw"}}>Email</th>
                         <th style={{width:"5vw"}}>Mobile</th>
+                        <th style={{width:"5vw"}}>Refferal</th>
                         <th style={{width:"10vw"}}>Branch</th>
                         <th style={{width:"12vw"}}>College</th>
                         <th style={{width:"8vw"}}>State</th>

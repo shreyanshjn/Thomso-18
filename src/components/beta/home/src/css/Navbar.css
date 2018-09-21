@@ -15,6 +15,13 @@
     right: 9vw;
     top: 3vh;
 }
+.navbar-user-image{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin-top: -5px;
+    margin-right:10px
+}
 #background-image-gradient
 {  
     background-image: linear-gradient(to bottom, #061116eb, #020c1159);
@@ -22,7 +29,7 @@
 .beta-navbar-navtoggle span{
     display:block;
     width:40px;
-    height:2px;
+    height:5px;
     position: absolute;
     top:50%;
     left:50%;
@@ -75,6 +82,10 @@
     height: fit-content;
     position: fixed;
     z-index:20;
+    user-select:none;
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none; 
 }
 .beta-navbar-navbarToggle
 {
@@ -85,9 +96,11 @@
 }
 .beta-navbar-dropdown-content {
     display: none;
+    padding: 15px 0px;
     position: absolute;
     min-width: 100px;
     z-index: 1;
+    background: rgba(0, 0, 0,0.7);
 }
 .beta-navbar-dropdown-content a {
     float: none;
@@ -105,7 +118,6 @@
     width: 20%;
     padding: 25px 30px 20px 87px;
 }
-
 .beta-navbar-t-logo img {
     width: auto;
     height: 65px;
@@ -134,26 +146,29 @@
 }
 
 .beta-navbar-int-ctos ul {
-    cursor: pointer;
     list-style: none;
     display: flex;
     flex-direction: row;
+    justify-content:flex-end;
     flex-wrap: wrap;
     padding: 0 80px 0 0;
     float: right;
+    width:100%;
 }
 .beta-navbar-int-ctos ul li {
-    padding: 0px 35px 0px 0px;
+    padding: 0px 20px 0px 0px;
 }
-.beta-navbar-int-ctos ul li a {
+.beta-navbar-int-ctos ul li a{
     text-decoration: none;
     font-weight: bold;
     font-family: Montserrat;
-    font-size: 12px;
+    font-size: 11px;
     color: white;
     letter-spacing: 2px;
+    padding-left:2px;
+    padding-right:2px; 
 }
-.beta-navbar-int-ctos ul li a::after {
+.beta-navbar-int-ctos ul li a::after{
     content: "";
     display: block;
     margin-top: 1vh;
@@ -163,13 +178,17 @@
     transition: width 0.3s;
 }
 .beta-navbar-int-ctos ul li a:hover::after {
-    width: 100%;
+    width: 90%;
+}
+.beta-navbar-int-ctos ul li .events-offline-navbar-option::after, .beta-navbar-int-ctos ul li .events-online-navbar-option::after{
+    margin-top: 0px;
+    height: 0px;
 }
 .beta-navbar-int-ctos ul li  .linkZonals::after , .beta-navbar-int-ctos ul li .linkCaportal::after , .beta-navbar-int-ctos ul li .linkEvents::after , .beta-navbar-int-ctos ul li .linkTeam::after , .beta-navbar-int-ctos ul li .linkSponsors::after , .beta-navbar-int-ctos ul li .linkFaq::after ,.beta-navbar-int-ctos ul li .linkEventson::after, .beta-navbar-int-ctos ul li .linkEventsoff::after{
     content: "";
     display: block;
     margin-top: 1vh;
-    width: 100%;
+    width: 90%;
     height: 2px;
     background: white;
 }
@@ -177,16 +196,17 @@
 {
    position:relative; 
 }
-.zonals-navbar-new
+.events-delhi-navbar-new
 {
-    top: 28px;
+    background:red;
+    top: 30px;
     position:absolute;
-    background:red;
+    margin-left:-5px;
 }
-.zonals-delhi-navbar-new
+.events-navbar-new
 {
-    background:red;
-    margin-left:5px;
+    margin-top: -5px;
+   position:relative;
 }
 @media (max-width: 816px) {
     .beta-navbar-toggle {
@@ -205,6 +225,10 @@
     }
     .beta-home-navbar {
         z-index:210;
+        user-select:none;
+        -webkit-user-select: none;
+        -moz-user-select: none; 
+        -ms-user-select: none; 
     }
 }
 @media (max-width: 1096px) {

@@ -3,9 +3,10 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
-var cors = require('cors')
+var cors = require('cors');
+var fs = require('fs');
 var mongoose = require('mongoose');
-var routes = require('./routes/routes')
+var routes = require('./routes/routes');
 
 var app = express();
 
@@ -22,8 +23,10 @@ mongoose
   .catch(err => console.error(err));
 
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({'extended':'false'}));
+// app.use(bodyParser.json());
+app.use(bodyParser.json({limit: '500kb'}));
+app.use(bodyParser.urlencoded({limit: '500kb', extended: true}));
+// app.use(bodyParser.urlencoded({'extended':'false'}));
 if (process.env.REACT_APP_SERVER_ENVIORNMENT !== 'dev') {
   app.use(favicon(path.join(__dirname, 'build/favicon.ico')));
 }
@@ -40,6 +43,19 @@ app.get("/static/*.js", function(req, res, next) {
 
 app.get("/pdf/*", function(req, res){
   res.sendFile(req.url);
+});
+
+app.get("/uploads/*", function(req, res){
+  fs.readFile(`.${req.url}`, function (err, content) {
+    if (err) {
+        res.writeHead(400, {'Content-type':'text/html'})
+        console.log(err);
+        res.end("No such image");
+    } else {
+        res.writeHead(200,{'Content-type':'image/jpg'});
+        res.end(content);
+    }
+  });
 });
 
 // app.get('/static/*.css', function (req, res, next) {

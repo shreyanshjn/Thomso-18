@@ -8,7 +8,10 @@
     z-index: 100;
     transition: all 0.5s;
     background: transparent;
-
+    user-select:none;
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none; 
 }
 .ca-landing-heading-dark{
     background: #000;
@@ -17,10 +20,14 @@
 .ca-landing-heading > .ca-landing-ca >h2
 {
     color:white;
+    opacity: 0.8;
+    font-size: 1.6em;
+    font-weight: 600;
     font-family:Montserrat;
 }
 .ca-landing-ca{
     padding-left: 20px;
+    margin: auto 0px;
 }
 .vertical_line{
     height: 35px;
@@ -41,6 +48,9 @@
 }
 @media only screen and (max-width:768px)
 {
+    .ca-landing-heading{
+        padding: 10px 40px 0px 5px;
+    }
     .ca-landing{
         flex-direction:column;
         text-align:center;

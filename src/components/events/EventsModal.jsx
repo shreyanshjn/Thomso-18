@@ -35,7 +35,7 @@ export default class EventsModal extends React.Component {
         window.removeEventListener('keyup', this.handleKeys)
     }
     nextCat = (id) => {
-        if (id === 13) {
+        if (id === 15) {
             this.setState({ eventId: 1 }, () => {
                 let filteredData = EventDetails.filter(e => e.id === this.state.eventId);
                 this.setState(
@@ -57,7 +57,7 @@ export default class EventsModal extends React.Component {
     }
     prevCat = (id) => {
         if (id === 1) {
-            this.setState({ eventId: 13 }, () => {
+            this.setState({ eventId: 15 }, () => {
                 let filteredData = EventDetails.filter(e => e.id === this.state.eventId);
                 this.setState(
                     {
@@ -80,10 +80,12 @@ export default class EventsModal extends React.Component {
         return (
             <div className="events-modala">
                 <div className="events-modala-main-child">
-                    <div style={{ height: "10%", display: "flex", justifyContent: "space-between", borderBottom: "white 1px solid" }}>
-                        <p className="events-modala-p" >
-                            {this.state.data && this.state.data.name}
-                        </p>
+                    <div style={{ height: "10%", display: "flex", justifyContent: "space-between", borderBottom: "white 1px solid", overflow: 'hidden' }}>
+                        {this.state.data && this.state.data.name ?
+                            <p className="events-modala-p events-modala-p-marketing">
+                                {this.state.data.name}
+                            </p> : null
+                        }
                         <span href="" className="events-modal-close" onClick={() => this.props.modalClose()}>
                             &times;
                     </span>

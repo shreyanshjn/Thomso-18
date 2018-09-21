@@ -20,9 +20,10 @@ router.post('/auth/reset', TempCATokenMiddleware.verifyTemp, tempAuth.reset);
 // -> /ca/temp/info
 router.get('/info', TempCATokenMiddleware.verifyTemp, tempControls.getData);
 
-// -> /ca/temp/posts
+// -> /ca/temp/
 router.use('/', TempCATokenMiddleware.verify)
 router.get('/posts', tempControls.getPosts);
+router.post('/updateImage', TempCATokenMiddleware.verifyTemp, tempControls.update_image);
 
 router.post('/idea', tempControls.postIdea);
 router.get('/idea', tempControls.getIdea);
@@ -31,5 +32,10 @@ router.delete('/idea/:id', tempControls.deleteIdea);
 
 router.get('/leaderboard', tempControls.getLeaderboard);
 router.get('/rank', tempControls.getRank);
+
+router.put('/fbtoken', tempControls.setFBToken);
+router.get('/fbtoken', tempControls.checkToken);
+
+router.get('/profile', tempControls.getProfile);
 
 module.exports = router;

@@ -14,7 +14,7 @@ exports.getPosts = function (req, res) {
             var fb_auth_token = user.access_token;
             //171774543014513
             request(`https://graph.facebook.com/v3.1/171774543014513?fields=posts.limit(100){created_time,id,full_picture,message,link}&access_token=${fb_auth_token}`, function (err, response, body) {
-                if (err) return res.status(400).send({ success: false, msg: 'Facebook returend error.', error: err });
+                if (err) return res.status(400).send({ success: false, msg: 'Facebook returned error.', error: err });
                 if (response.statusCode) {
                     return res.status(response.statusCode).send(body);
                 }
@@ -32,7 +32,7 @@ exports.getUserPosts = function (req, res) {
             if (err) return res.status(400).send({ success: false, msg: 'Unable to find user.' });
             var fb_auth_token = user.access_token;
             request(`https://graph.facebook.com/v3.1/me?fields=posts.limit(100){created_time,id,full_picture,message,link,likes.limit(0).summary(true)}&access_token=${fb_auth_token}`, function (err, response, body) {
-                if (err) return res.status(400).send({ success: false, msg: 'Facebook returend error.', error: err });
+                if (err) return res.status(400).send({ success: false, msg: 'Facebook returned error.', error: err });
                 if (response.statusCode) {
                     return res.status(response.statusCode).send(body);
                 }

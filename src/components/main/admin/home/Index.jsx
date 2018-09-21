@@ -15,12 +15,12 @@ export default class HomeIndex extends React.Component {
 
     componentDidMount() { 
         const isAuthenticated = this.Auth.hasToken();
-        console.log(isAuthenticated,  "isAuthenticated");
+        // console.log(isAuthenticated,  "isAuthenticated");
         if (isAuthenticated) {
             const token = this.Auth.getToken()
             FetchApi('GET', '/api/main/admin/user', null, token)
                 .then(r => {
-                    if (r && r.data && r.data.body) {
+                    if (r && r.data) {
                         if (r.data.body) {
                             this.setState({ userData:r.data.body });
                         } else {

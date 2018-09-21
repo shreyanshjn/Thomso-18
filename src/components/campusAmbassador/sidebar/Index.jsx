@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./css/style.css";
 // import "../../ca/sidebar/css/style.css";
+import FetchApi from "../../../utils/FetchAPI";
+import AuthService from "../../../handlers/ca/temp/AuthService";
 import boy from "./img/boy.png";
 import girl from "./img/girl.png";
 import { addCATopic } from '../../../utils/firebasePush';
@@ -19,26 +21,79 @@ import Contact from "./Svg/Contact"
 import Logout from "./Svg/Logout"
 import Bulb from "./Svg/Bulb"
 import Hand from "./Svg/Hand"
+import Home from "../../main/sidebar/Svg/Home.jsx";
+import Profile from "../profile/Index"
 
 // import logoUser from '../common/images/user.svg';
 
 let addTopicTimeout;
+let showReferralTimeout;
 
 export default class Sidebar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       referral: 'AVSHFSAD',
-      activeState: window.location.pathname.substring(18)
+      activeState: window.location.pathname.substring(18),
+      showReferral: false,
+      errors: '',
+      facebookConnect: false
     };
+    this.Auth = new AuthService();
     if (!window.location.pathname.substring(18)) {
       this.state = {
         activeState: "home"
       };
     }
   }
-  componentWillMount() {
+
+  facebookLogin = () => {
+    if (window.FB && !this.state.facebookConnect) {
+      window.FB.login(response => {
+        window.FB.api('/me?fields=id, picture.type(large), link', res => {
+          let accessToken = response.authResponse.accessToken;
+          let { id, link } = res;
+          let image = res.picture.data.url;
+          let data = { id, image, accessToken, link };
+          this.updateFBToken(data)
+        })
+      }, { scope: 'user_likes, user_posts, user_link' });
+    }
+  }
+
+  updateFBToken = data => {
+    const token = this.Auth.getToken();
+    FetchApi('PUT', '/api/ca/temp/fbtoken', data, token)
+      .then(r => {
+        if (r && r.data) {
+          if (r.data.success) {
+            this.setState({ facebookConnect: true, errors: '', userImage: data.image })
+          } else {
+            this.setState({ errors: r.data.msg })
+          }
+        } else {
+          this.setState({errors: 'Something went wrong'})
+        }
+      })
+      .catch(e => {
+        this.setState({errors: 'Something went wrong'})
+        console.log(e)
+      });
+  }
+
+  componentWillUnmount() {
     clearTimeout(addTopicTimeout)
+    clearTimeout(showReferralTimeout)
+  }
+
+  componentWillMount() {
+    if (window.FB) {
+      window.FB.init({
+          appId: process.env.REACT_APP_FB_ID,
+          status: true,
+          xfbml: true
+      });
+    }
   }
 
   componentDidMount() {
@@ -46,7 +101,22 @@ export default class Sidebar extends React.Component {
       addCATopic('tempCA');
     }, 2000)
 
-    const countDownDate = new Date("Oct 25, 2018 00:00:00").getTime();
+    const token = this.Auth.getToken();
+    FetchApi('GET', '/api/ca/temp/fbtoken', null, token)
+      .then(r => {
+        if (r && r.data) {
+          if (r.data.success) {
+            this.setState({ facebookConnect: true, errors: '' })
+          }
+        } else {
+          this.setState({errors: 'Something went wrong'})
+        }
+      })
+      .catch(e => {
+        this.setState({errors: 'Something went wrong'})
+      });
+
+    const countDownDate = new Date("Oct 27, 2018 00:00:00").getTime();
     const now = new Date().getTime();
     const distance = countDownDate - now;
     let days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -54,6 +124,10 @@ export default class Sidebar extends React.Component {
       days = 0;
     }
     this.setState({ days })
+
+    if (this.props.userData && this.props.userData.image) {
+      this.setState({userImage: this.props.userData.image})
+    }
   }
 
   setActive(state) {
@@ -69,20 +143,28 @@ export default class Sidebar extends React.Component {
   render() {
     return (
       <div>
+        {this.state.showReferral ?
+          <div style={{position: 'fixed', display: 'flex', height: '100%', width: '100%', justifyContent: 'center', alignItems: 'center', zIndex: '1000'}} >
+            <div style={{color: 'white', background: '#00000069', padding:'10px', borderRadius: '10px', fontWeight: '600'}}>
+              Referral code copied to clipboard
+            </div>
+          </div>
+        : null}
         <div
           id="mySidenav"
           className="sidenav"
           style={{ backgroundColor: 'white' }}
         >
+        {/* {console.log(this.props.userData)} */}
           <div className="campusAmb-sidebar-user">
-            {(this.props.userData && this.props.userData.image) ? <img src={this.props.userData.image} className="image" alt="User" /> :
+            {this.state.userImage ? <img src={this.state.userImage} className="image" alt="User" /> :
               <React.Fragment>
                 {(this.props.userData && this.props.userData.gender === 'female') ?
                   <img src={girl} className="image" alt="User" /> :
                   <img src={boy} className="image" alt="User" />
                 }
-              </React.Fragment>}
-
+              </React.Fragment>
+            }
             <div className="campusAmb-sidebar-user-details">
               <div className="text">{this.props.userData ? this.props.userData.name : "User"}</div>
               <div className="cname">{this.props.userData ? this.props.userData.college : "-"}</div>
@@ -142,13 +224,64 @@ export default class Sidebar extends React.Component {
               *Scores will be updated at 12 am
             </div> */}
           </div>
+          {!this.state.facebookConnect ?  
+          <div>
+            <div className="campusAmb-sidebar-line">
+            </div>
+            <div className="campusAmb-sidebar-contents">
+              <div
+                className={
+                  this.state.facebookConnect
+                    ? "sideNavItem activeSideItem"
+                    : "sideNavItem"
+                }
+                onClick={this.facebookLogin}
+              >
+                <div className="campusAmb-sidebar-posts flex_row">
+                  <div className="campusAmb-sidebar-svg-logo">
+                    <Post />
+                  </div>
+                  <div className="campusAmb-sidebar-navitem-name">
+                    CONNECT WITH FACEBOOK
+                  </div>
+                </div>
+              </div>
+              {this.state.errors ? 
+                  <div>
+                    {this.state.errors}
+                  </div>
+                  : null
+              }
+            </div>
+          </div> : null
+          }
           <div className="campusAmb-sidebar-line">
           </div>
           <div className="campusAmb-sidebar-contents">
             <Link
               to="/CampusAmbassador/"
               className={
-                (this.state.activeState === "home")
+                (this.state.activeState === "recentUpdate")
+                  ? "sideNavItem activeSideItem"
+                  : "sideNavItem"
+              }
+              onClick={() => {
+                this.setActive("recentUpdate");
+              }}
+            >
+              <div className="campusAmb-sidebar-posts flex_row">
+                <div className="campusAmb-sidebar-svg-logo">
+                  <Post />
+                </div>
+                <div className="campusAmb-sidebar-navitem-name">
+                  RECENT UPDATES
+                </div>
+              </div>
+            </Link>
+            <Link
+              to="/CampusAmbassador/profile"
+              className={
+                this.state.activeState === "home"
                   ? "sideNavItem activeSideItem"
                   : "sideNavItem"
               }
@@ -156,9 +289,29 @@ export default class Sidebar extends React.Component {
                 this.setActive("home");
               }}
             >
-              <div className="campusAmb-sidebar-posts flex_row">
+              <div className="campusAmb-sidebar-ideas flex_row">
                 <div className="campusAmb-sidebar-svg-logo">
-                  <Post />
+                    <Profile />
+                </div>
+                <div className="campusAmb-sidebar-navitem-name">
+                  PROFILE
+                </div>
+              </div>
+            </Link>
+            <Link
+              to="/"
+              className={
+                this.state.activeState === "home"
+                  ? "sideNavItem activeSideItem"
+                  : "sideNavItem"
+              }
+              onClick={() => {
+                this.setActive("home");
+              }}
+            >
+              <div className="campusAmb-sidebar-ideas flex_row">
+                <div className="campusAmb-sidebar-svg-logo">
+                    <Home />
                 </div>
                 <div className="campusAmb-sidebar-navitem-name">
                   HOME
@@ -246,6 +399,26 @@ export default class Sidebar extends React.Component {
               </div>
             </Link> */}
             <Link
+              to="/CampusAmbassador/zonals"
+              className={
+                this.state.activeState === "zonals"
+                  ? "sideNavItem activeSideItem"
+                  : "sideNavItem"
+              }
+              onClick={() => {
+                this.setActive("zonals");
+              }}
+            >
+              <div className="campusAmb-sidebar-ideas flex_row">
+                <div className="campusAmb-sidebar-svg-logo">
+                    <Home />
+                </div>
+                <div className="campusAmb-sidebar-navitem-name">
+                  ZONALS
+                </div>
+              </div>
+            </Link>
+            <Link
               to="/CampusAmbassador/contact"
               className={
                 this.state.activeState === "contact"
@@ -267,26 +440,42 @@ export default class Sidebar extends React.Component {
             </Link>
             {(this.props.userData && this.props.userData.ca_id) ?
               <div
-                className="sideNavItem re"
+                className="sideNavItem re" onClick={() => {
+                  const el = document.createElement('textarea');
+                  el.value = this.props.userData.ca_id;
+                  el.setAttribute('readonly', '');
+                  el.style.position = 'absolute';
+                  el.style.left = '-9999px';
+                  document.body.appendChild(el);
+                  el.select();
+                  document.execCommand('copy');
+                  document.body.removeChild(el);
+                  this.setState({showReferral: true})
+                  showReferralTimeout = setTimeout(() => {
+                    this.setState({showReferral: false})
+                  }, 1000)
+                }}
               >
-                <div className="referral flex_row" title="Click to copy">
-                  <div className="campusAmb-sidebar-svg-logo">
-                    <Referral />
-                  </div>
-                  <div className="campusAmb-sidebar-navitem-name" onClick={() => {
-                    const el = document.createElement('textarea');
-                    el.value = this.props.userData.ca_id;
-                    el.setAttribute('readonly', '');
-                    el.style.position = 'absolute';
-                    el.style.left = '-9999px';
-                    document.body.appendChild(el);
-                    el.select();
-                    document.execCommand('copy');
-                    document.body.removeChild(el);
-                  }}>
-                    REFERRAL CODE : <span id="ca-referral-code">{this.props.userData.ca_id}</span>
-                  </div>
-                </div>
+                  <Link
+                      to="/CampusAmbassador/referral"
+                      className={
+                          this.state.activeState === "referral"
+                              ? "sideNavItem activeSideItem"
+                              : "sideNavItem"
+                      }
+                      onClick={() => {
+                          this.setActive("referral");
+                      }}
+                  >
+                      <div className="referral flex_row" title="Click to copy">
+                          <div className="campusAmb-sidebar-svg-logo">
+                              <Referral />
+                          </div>
+                          <div className="campusAmb-sidebar-navitem-name">
+                              REFERRAL CODE : <span id="ca-referral-code">{this.props.userData.ca_id}</span>
+                          </div>
+                      </div>
+                  </Link>
               </div>
               : null}
             <Link

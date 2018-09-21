@@ -3,12 +3,15 @@ var Temp_User = require('../../../models/ca/CA_Temp_User');
 
 var Ideas = require('../../../models/ca/CA_Temp_Idea');
 
+var client_id = process.env.REACT_APP_FB_ID;
+var client_secret = process.env.FACEBOOK_APP_SECRET;
+
 // Get User Data
 exports.getData = function (req, res) {
     Temp_User.findOne({
         email: req.locals.email
     })
-        .select('name email gender verified ca_id bonus referrals score college')
+        .select('name email gender verified ca_id bonus referrals score college image')
         .exec(function (err, user) {
             if (err) {
                 return res.status(400).send({
@@ -25,13 +28,45 @@ exports.getData = function (req, res) {
         });
 };
 
+exports.update_image = function (req, res) {
+    console.log(req)
+    if(req && req.body && req.body.format){
+        let data = {
+            id:req.locals._id,
+            email:req.locals.email,
+            img:req.body.image,
+            format:req.body.format
+        }
+        let baseImg = data.img.split(',')[1]
+        let binaryData = new Buffer(baseImg, 'base64');
+        let ext = data.format.split('/')[1]
+        let updateData = {image : `${data.id}.${ext}`}
+        require("fs").writeFile(`./public/img/ProfileImage/${updateData.image}`, binaryData, function(err) {
+            if(err) return res.status(400).send({ success: false, msg:"something went wrong"})
+            else{
+                Temp_User.findOneAndUpdate({
+                    email:data.email
+                }, updateData)
+                .exec(function(err){
+                    if (err) return status(401).send({ success: false, msg: "Unable To Upload Image. Please Try Again." })
+                    res.json({ success: true, msg: "Image Uploaded Successfully." })
+                })
+            }
+        })
+    }else res.status(400).send({ success: false, msg: 'Invalid Data' });
+}
+
 /* GET all Posts */
 exports.getPosts = function (req, res) {
     var fb_auth_token = process.env.FB_ACCESS_TOKEN;
     if (fb_auth_token) {
         request(`https://graph.facebook.com/v3.1/171774543014513?fields=posts.since(2018-07-30){created_time,id,full_picture,message,link}&access_token=${fb_auth_token}`, function (err, response, body) {
-            if (err) return res.status(400).send({ success: false, msg: 'Facebook returend error.', error: err });
+            if (err) {
+                console.log(err)
+                return res.status(400).send({ success: false, msg: 'Facebook returned error.', error: err });
+            }
             if (response.statusCode) {
+                console.log('hel')
                 return res.status(response.statusCode).send(body);
             }
             return res.status(400).send({ success: false, msg: 'Facebook didnt return status.' });
@@ -167,5 +202,68 @@ exports.getRank = function (req, res) {
             } else {
                 return res.status(400).send({ success: false, msg: 'Error Reading Score' });
             }
+        })
+};
+
+/* Update Token */
+exports.setFBToken = function (req, res) {
+    if (req.body && req.body.id && req.body.accessToken) {
+        var accessToken = req.body.accessToken;
+        var updateData = {
+            fb_id: req.body.id,
+        }
+        if (req.body.image) {
+            updateData.image = req.body.image 
+        }
+        if (req.body.link) {
+            updateData.fb_link = req.body.link
+        }
+        request(`https://graph.facebook.com/oauth/access_token?grant_type=fb_exchange_token&client_id=${client_id}&client_secret=${client_secret}&fb_exchange_token=${accessToken}`, function(err, response, body){
+            if (err) {
+                return res.json({ success: false, msg: 'Graph API Error' });
+            }
+            var access_token = JSON.parse(response.body).access_token;
+            var saveData = Object.assign(updateData, {fb_access_token: access_token});
+            Temp_User.update({ email: req.locals.email}, saveData)
+                .exec(function (err) {
+                    if (err) {
+                        return res.json({ success: false, msg: 'Failed to update token', error: err });
+                    }
+                    return res.json({ success: true, msg: 'Successfully Updated' });
+                })
+        })
+    } else {
+        return res.json({ success: false, msg: 'Invalid Data' });
+    }
+};
+
+/* Check Facebook Token */
+exports.checkToken = function (req, res) {
+    Temp_User.findOne({ email: req.locals.email, fb_access_token: { $ne: null } })
+        .select('fb_access_token')
+        .exec(function (err, user) {
+            if (err) return res.json({ success: false, msg: 'Unable to find user.' });
+            if (!user) return res.json({ success: false, msg: 'Unable to find user.' });
+            var fb_auth_token = user.fb_access_token;
+            request(`https://graph.facebook.com/v3.1/me?fields=link&access_token=${fb_auth_token}`, function (err, response, body) {
+                if (err) return res.json({ success: false, msg: 'Facebook returned error.', error: err });
+                if (response.statusCode === 200) {
+                    return res.json( { success: true, msg: 'Valid Token'} );
+                }
+                return res.json({ success: false, msg: 'Failed' });
+            })
+        });
+};
+
+/* GET Profile Data */
+exports.getProfile = function (req, res) {
+    Temp_User.findOne({
+        email: req.locals.email,
+    })
+        .select('fb_likes fb_shares fb_score bonus ideas referrals score')
+        .exec(function (err, user) {
+            if (err) return res.status(400).send({ success: false, msg: 'Cannot Find User' });
+            if (!user) return res.status(400).send({ success: false, msg: 'Cannot Find User' });
+            res.json({ success: true, msg: 'Profile Data', body: user });
         })
 };
