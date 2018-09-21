@@ -18,10 +18,10 @@ const LogoutIndex = Loadable({
     loading: Loading,
 });
 
-const RegisterIndex = Loadable({
-    loader: () => import('./register/Index'),
-    loading: Loading,
-});
+// const RegisterIndex = Loadable({
+//     loader: () => import('./register/Index'),
+//     loading: Loading,
+// });
 
 const HomeIndex = Loadable({
     loader: () => import('./home/Index'),

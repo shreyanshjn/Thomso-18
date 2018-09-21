@@ -195,10 +195,6 @@ export default class RegisterIndex extends React.Component {
                                 <CollegeSelect onChange={college => this.setState({ college })} />
                             </div>
                             <div className="form-first-child">
-                                <div className="form-state">
-                                    <label htmlFor="inputState">College State</label>
-                                    <StateSelect onChange={state => this.setState({ state })} />
-                                </div>
                                 <div className="form-branch">
                                     <label htmlFor="inputBranch">Branch and Year</label>
                                     <input
@@ -214,12 +210,13 @@ export default class RegisterIndex extends React.Component {
                                         required
                                     />
                                 </div>
+                                <div className="form-state">
+                                    <label htmlFor="inputState">College State</label>
+                                    <StateSelect onChange={state => this.setState({ state })} />
+                                </div>
+                               
                             </div>
                             <div className="form-first-child">
-                                <div className="form-state">
-                                    <label htmlFor="inputEvents">Primary Event</label>
-                                    <EventsSelect onChange={primary_event => this.setState({ primary_event })} />
-                                </div>
                                 <div className="form-branch">
                                     <label htmlFor="inputRefferedBy">Referral</label>
                                     <input
@@ -233,6 +230,10 @@ export default class RegisterIndex extends React.Component {
                                         value={referred_by}
                                         onChange={this.onChange}
                                     />
+                                </div>
+                                <div className="form-state">
+                                    <label htmlFor="inputEvents">Primary Event</label>
+                                    <EventsSelect onChange={primary_event => this.setState({ primary_event })} />
                                 </div>
                             </div>
                             <div className="form-add-child">

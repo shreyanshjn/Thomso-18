@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import AuthService from "../../handlers/main/AuthService";
 import FetchApi from "../../utils/FetchAPI";
 import './src/css/EventsModals.css';
+import Rupee from './src/Rupee'
 
 export default class EventDetail extends React.Component {
     constructor() {
@@ -60,9 +61,23 @@ export default class EventDetail extends React.Component {
     }
     render() {
         return (
-            <div className="events-details-images-main-div">
+
+            <div className="events-details-images-main-div" style={{
+                backgroundImage: `url(/img/main/events/events/${this.state.data.image})`,
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                backgroundPosition: "center center",
+            }}>
                 <div className="events-details-images-main-div-child">
-                    <p>{this.state.data && this.state.data.name}</p>
+                    <div className="events-details-images-name">
+                        <p>{this.state.data && this.state.data.name}</p>
+                        <p>{this.state.data && this.state.data.details}</p>
+                    </div>
+                    <div className="events-details-modal">
+                        <span className="events-modal-close" onClick={() => this.props.modalClose()}>
+                            &times;
+                        </span>
+                    </div>
                 </div>
                 <div className="events-dropdown">
                     <select className="events-dropdown-select" onChange={(e) => this.handleChange(e.target.value)}>
@@ -73,32 +88,34 @@ export default class EventDetail extends React.Component {
                 </div>
                 {this.state.data ?
                     <div className="events-details-parent">
-                        {this.state.data.image ?
-                            <div className="events-details-image">
-                                <img alt="thomso-events-images" src={`/img/main/events/events/${this.state.data.image}`} />
-                                {this.state.data.prize ?
-                                    <div className="events-price_money">
-                                        <span>Prizes Worth :</span> <span> {this.state.data.prize}K </span>
-                                    </div> : null}
-                            </div>
-                            : null}
+                        <div className="events-details-image">
+                            {this.state.data.prize ?
+                                <div className="events-price_money">
+                                    <div>Prizes Worth</div>
+                                    <div><Rupee /><span>{this.state.data.prize}k</span></div>
+                                </div> : null}
+                        </div>
                         <div className="events-text-scroll-cont">
                             <p className="events-text-child">{this.state.data.content}</p>
                         </div>
                     </div> : null}
                 {this.state.data && this.props.eventsId !== 9 ?
                     <div className="events-addevents">
-                        {this.state.data.link ?
-                            <a className="be-events-modal-button" href={this.state.data.link} target="_blank" rel="noopener noreferrer">Visit Page</a>
-                            :
-                            <React.Fragment>
-                                {this.state.isAuthenticated ? <div className="be-events-modal-button" onClick={this.addEvent}>Add Event</div> :
-                                    <Link className="be-events-modal-button" to="/main">Login/Register</Link>
-                                }
-                            </React.Fragment>
-                        }
+                        <div className="events-addevents-child">
+                            {this.state.data.link ?
+                                <a className="be-events-modal-button" href={this.state.data.link} target="_blank" rel="noopener noreferrer">Visit Page</a>
+                                :
+                                <React.Fragment>
+                                    {this.state.isAuthenticated ? <div className="be-events-modal-button" onClick={this.addEvent}>Add Event</div> :
+                                        <Link className="be-events-modal-button" to="/main">Login/Register</Link>
+                                    }
+                                </React.Fragment>
+                            }
+                        </div>
                         {(this.state.data.rulebook) ?
-                            <a href={!this.state.isAuthenticated ? "/main" : this.state.data.rulebook} className="be-events-modal-button" target="_blank">Rulebook</a>
+                            <div className="events-addevents-child">
+                                <a href={!this.state.isAuthenticated ? "/main" : this.state.data.rulebook} className="be-events-modal-button" target="_blank">Rulebook</a>
+                            </div>
                             : null
                         }
                     </div>

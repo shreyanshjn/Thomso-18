@@ -5,42 +5,56 @@ import Arrow from "./src/svg/arrow"
 import { Link } from "react-router-dom"
 import LeftArr from "./src/svg/leftarr"
 import "./src/arrow.css"
+import { ArtistDetails } from "./src/artists"
 
 
 export default class WhyThomso extends Component {
     constructor() {
         super();
         this.state = {
-            videos: ["https://www.youtube.com/embed/Q0yUYJtCDIE",
-                "https://www.youtube.com/embed/0gosur3db5I",
-                "https://www.youtube.com/embed/owPuQjInzO8",
-                "https://www.youtube.com/embed/owPuQjInzO8"],
-            slideindex: 0
+            videos: [],
+            slideindex: 0,
+            artistdetails: ArtistDetails
         }
     }
     handlePrevious = () => {
-        if (this.state.slideindex >= 0) {
-            this.setState({
-                slideindex: this.state.slideindex - 1
-            })
-            console.log(this.state.slideindex, "slideindex")
+        // if (this.state.slideindex >= 0) {
+        //     this.setState({
+        //         slideindex: this.state.slideindex - 1
+        //     })
+        //     console.log(this.state.slideindex, "slideindex")
 
-            document.getElementById(`i${this.state.slideindex - 1}`).classList = "translate-left"
-            document.getElementById(`i${this.state.slideindex}`).classList = "translate-left"
-        }
+        //     document.getElementById(`i${this.state.slideindex - 1}`).classList = "translate-left"
+        //     document.getElementById(`i${this.state.slideindex}`).classList = "translate-left"
+        // }
     }
     handleNext = () => {
-        if (this.state.slideindex <= this.state.videos.length - 1) {
-            this.setState({
-                slideindex: this.state.slideindex + 1
-            })
-            document.getElementById(`i${this.state.slideindex + 1}`).classList.add("translate-right")
-        }
+        // if (this.state.slideindex <= this.state.videos.length - 1) {
+        //     this.setState({
+        //         slideindex: this.state.slideindex + 1
+        //     })
+        //     if (this.state.slideindex !== 1) {
+        //         document.getElementById(`i${this.state.slideindex}`).classList.add("translate-right")
+        //         document.getElementById(`i${this.state.slideindex + 1}`).classList.add("translate-right")
+        //         document.getElementById(`i${this.state.slideindex + 2}`).classList.add("translate-right")
+        //     }
+        //     if (this.state.slideindex === 1) {
+        //         document.getElementById(`i2`).classList.remove("translate-right")
+        //         document.getElementById(`i2`).classList.add("translate-right")
+        //     }
+
+
+        // }
+    }
+    componentDidMount() {
+        this.setState({
+            artistdetails: ArtistDetails
+        })
     }
     render() {
         return (
             <div className="whythomso-parent">
-                <Navbar background="false" />
+                <Navbar background="true" />
                 <div className="whythomso-child">
                     <div className="whythomso-child-whythomso">
                         <h3>WHY VISIT THOMSO ?</h3>
@@ -89,8 +103,6 @@ export default class WhyThomso extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="whythomso-second-child-the-dots">
-                        </div>
                     </div>
                 </div>
                 <div id="review" className="whythomso-third-child">
@@ -98,19 +110,14 @@ export default class WhyThomso extends Component {
                         <div className="whythomso-third-child-review">
                             <h3>Review Media</h3>
                         </div>
-                        <button className="whythomso-slider-rightarrow" onClick={this.handleNext} disabled={this.state.slideindex === this.state.videos.length - 1}>
-                            NEXT<span className="whythomso-next-arrow"><Arrow /></span>
-                        </button>
-                        <button className="whythomso-slider-leftarrow" onClick={this.handlePrevious} disabled={this.state.slideindex === 0}>
-                            <span className="whythomso-previous-arrow"><LeftArr /></span>PREV
-                        </button>
                     </div>
                     <div className="whythomso-third-child-middle">
                         <div className="whythomso-third-child-sliderwrapper">
                             <div className="whythomso-third-child-slider">
-
-                                <div className="cards-slider-wrapper" style={{
-                                }}>
+                                <button className="whythomso-slider-leftarrow" onClick={this.handlePrevious} disabled={this.state.slideindex === 0}>
+                                    <span className="whythomso-previous-arrow"><LeftArr /></span>PREV
+                                </button>
+                                <div className="cards-slider-wrapper">
                                     {
                                         this.state.videos.map((video, i) => (
                                             <div key={i} className={`ii${i}`} id={`i${i}`}>
@@ -120,7 +127,9 @@ export default class WhyThomso extends Component {
                                         ))
                                     }
                                 </div>
-
+                                <button className="whythomso-slider-rightarrow" onClick={this.handleNext} disabled={this.state.slideindex === this.state.videos.length - 1}>
+                                    NEXT<span className="whythomso-next-arrow"><Arrow /></span>
+                                </button>
                             </div>
                             <div className="whythomso-third-child-iit-content">
                                 <div className="whythomso-third-child-iit-content-heading">
@@ -130,8 +139,6 @@ export default class WhyThomso extends Component {
                                     <p>IIT Roorkee video of IIT Roorkee video IIT Roorkee video IIT Roorkee video </p>
                                 </div>
                             </div>
-                        </div>
-                        <div className="whythomso-second-child-the-dots">
                         </div>
                     </div>
                 </div>
@@ -190,8 +197,6 @@ export default class WhyThomso extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="whythomso-fourth-child-the-dots">
-                        </div>
                     </div>
                     <div className="whythomso-fourth-child-viewall">
                         <Link to="">View all<span><Arrow /></span></Link>
@@ -204,13 +209,17 @@ export default class WhyThomso extends Component {
                         </div>
                     </div>
                     <div className="whythomso-fifth-child-middle">
-                        <div className="whythomso-fifth-child-artist">
-                            <div className="whythomso-fifth-child-bappi-image">
+                        {this.state.artistdetails.map(e =>
+                            <div className="whythomso-fifth-child-artist">
+                                <div className={`whythomso-fifth-child-image`}>
+                                    <img src={`/img/main/events/${e.image}`} />
+                                </div>
+                                <div key={e.id} className="whythomso-fifth-child-name">
+                                    {e.name}
+                                </div>
                             </div>
-                            <div className="whythomso-fifth-child-bappi-name">
-                                Bappi Lehri
-                            </div>
-                        </div>
+
+                        )}
                     </div>
                 </div>
             </div >

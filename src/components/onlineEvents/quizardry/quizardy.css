@@ -10,7 +10,7 @@
 }
 
 .quizardy-parent-body{
-    background-color: #318388;
+    background-color:#0e0d12 ;
     height: 100vh;
     position: relative;
     align-items: center;
@@ -29,7 +29,7 @@
 @media only screen and (min-width:768px)
 {
 .quizardy-child{
-    background: url('./ipl.jpg');
+    background: url('./sacred.jpg');
     background-size: cover;
     height: 100vh;
     background-repeat: no-repeat;
@@ -37,7 +37,7 @@
 }
 }
 .quizardy-button{
-    margin-top:50vh;
+    margin-top:85vh;
 }
 .quizardy-flexcenter {
     margin:auto;
@@ -52,8 +52,8 @@
     font-family: Montserrat;
     font-weight: 600;
     font-size: 16px;
-    color: rgba(0,0,0);
-    border: 1px solid black;
+    color: white;
+    border: 1px solid white;
     background: transparent;
     border-radius: 5px;
     transition: 0.2s all;
@@ -82,8 +82,8 @@
   .quizardy-parent {
     height: 100vh;
     overflow-y: hidden;
-    background: url('./ipl.jpg');
-    background-size:cover;
+    background: url('./sacredphone.jpg');
+    background-size:contain;
     background-repeat: no-repeat;
     background-color:#318388;
   }

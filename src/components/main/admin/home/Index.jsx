@@ -15,7 +15,7 @@ export default class HomeIndex extends React.Component {
 
     componentDidMount() { 
         const isAuthenticated = this.Auth.hasToken();
-        console.log(isAuthenticated,  "isAuthenticated");
+        // console.log(isAuthenticated,  "isAuthenticated");
         if (isAuthenticated) {
             const token = this.Auth.getToken()
             FetchApi('GET', '/api/main/admin/user', null, token)

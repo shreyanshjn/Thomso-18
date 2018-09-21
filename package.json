@@ -46,7 +46,7 @@
     "compression-webpack-plugin": "^1.1.11",
     "https": "^1.0.0",
     "image-webpack-loader": "^4.3.1",
-    "nodemon": "^1.18.3",
+    "nodemon": "^1.18.4",
     "rewire": "^4.0.1"
   }
 }

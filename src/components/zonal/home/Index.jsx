@@ -25,17 +25,24 @@ export default class HomeIndex extends Component {
                     </div>
                     
                     <div className="zonals-mainpage-cards">
-                    <Link to="/zonals/lucknow">
-                        <div className="zonals-mainpage-cards-image-lucknow">
-                        </div>
-                    </Link>
+                        {/* <Link to="/zonals/chandigadh"> */}
+                            <div className="zonals-mainpage-cards-image-chandigadh">
+                            </div>
+                        {/* </Link> */}
                         <div className="zonals-mainpage-cards-title">
-                            Lucknow Zonals
+                            Chandigadh Zonals
                         </div>
+                        {/* <div className="zonals-mainpage-cards-button">
+                            <Link to="/zonals/chandigadh">
+                                    Register
+                            </Link>
+                        </div> */}
                         <div className="zonals-mainpage-cards-text">
-                                SUCCESSFULLY ORGANIZED.
+                                COMING SOON.
                         </div>
                     </div>
+
+                    
                 </div>
                 <div className="zonals-mainpage-parent-child">
                     <div className="zonals-mainpage-cards">
@@ -50,16 +57,17 @@ export default class HomeIndex extends Component {
                                 SUCCESSFULLY ORGANIZED.
                         </div>
                     </div>
+
                     <div className="zonals-mainpage-cards">
-                    {/* <Link to="/zonals/chandigadh"> */}
-                        <div className="zonals-mainpage-cards-image-chandigadh">
+                    <Link to="/zonals/lucknow">
+                        <div className="zonals-mainpage-cards-image-lucknow">
                         </div>
-                    {/* </Link> */}
+                    </Link>
                         <div className="zonals-mainpage-cards-title">
-                            Chandigadh Zonals
+                            Lucknow Zonals
                         </div>
                         <div className="zonals-mainpage-cards-text">
-                            COMING SOON
+                                SUCCESSFULLY ORGANIZED.
                         </div>
                     </div>
                 </div>

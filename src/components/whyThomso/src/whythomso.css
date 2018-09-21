@@ -1,3 +1,4 @@
+
 .whythomso-parent{
     height: 100%;
     width: 100%;
@@ -201,14 +202,12 @@
 .whythomso-third-child-slider{
     display: flex;
     justify-content: space-between;
-    position: relative;
 }
 .cards-slider-wrapper {
     display: flex;
-    position: absolute;
     width: 600px;
-    left: 600px;
-    overflow: hidden;
+    left: 200px;
+    /* overflow: hidden; */
 }
 .cards-slider-wrapper div{
     min-width: 600px;
@@ -466,5 +465,34 @@
     padding: 15vh 0px 0px 44px;
     font-size: 30px;
     color: white;
+    font-family: Poppins;
+}
+.whythomso-fifth-child-middle{
+    overflow: scroll;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    height: 60vh;
+}
+.whythomso-fifth-child-artist{
+    width: 18%;
+    margin-top: 10px;
+}
+.whythomso-fifth-child-image{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.whythomso-fifth-child-image img{
+    height: 300px;
+    width: auto;
+    border-radius: 4px;
+}
+.whythomso-fifth-child-name{
+    text-align: center;
+    font-size: 16px;
     font-family: Poppins;
 }

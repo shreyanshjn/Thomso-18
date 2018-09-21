@@ -82,6 +82,27 @@ var UserSchema = new mongoose.Schema({
     },
     blocked: {
         type: Boolean
+    },
+    fb_id: {
+        type: String
+    },
+    fb_link: {
+        type: String
+    },
+    fb_access_token: {
+        type: String
+    },
+    fb_likes: {
+        type: Number,
+        default: 0
+    },
+    fb_shares: {
+        type: Number,
+        default: 0
+    },
+    fb_score: {
+        type: Number,
+        default: 0
     }
 });
 

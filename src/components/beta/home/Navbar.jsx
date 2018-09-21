@@ -8,6 +8,8 @@ import "./src/css/Navbar.css";
 import FetchApi from '../../../utils/FetchAPI';
 
 import img from "./src/img/logo.png";
+// import boy from "../../campusAmbassador/sidebar/img/boy.png";
+// import girl from "../../campusAmbassador/sidebar/img/girl.png";
 
 class Navbar extends Component {
     constructor() {
@@ -118,35 +120,9 @@ class Navbar extends Component {
                     }}>TEAM CONTACT</Link>
                 </li>*/}
                                 <li className="dropdown">
-                                    <Link to="#" className="events-online-navbar-option" style={{}}>
+                                    <Link to="/onlineevents" className="events-online-navbar-option" style={{}}>
                                         ONGOING EVENTS
                                     </Link>
-                                    <div className="beta-navbar-dropdown-content">
-                                        <Link to="/quizardry" style={{ marginLeft: "15px" }} className={(this.state.activeState === "quizardry") ? "linkEventson" : null}
-                                            onClick={() => {
-                                                this.setActive("quizardry");
-                                            }}>QUIZARDRY
-                                        </Link>
-                                        <Link to="/campusclicks" style={{ marginLeft: "15px" }} className={(this.state.activeState === "campusclicks") ? "linkEventson" : null}
-                                            onClick={() => {
-                                                this.setActive("campusclicks");
-                                            }}>CAMPUS CLICKS
-                                        </Link>
-                                        <Link to="/silhoutte" style={{ marginLeft: "15px" }} className={(this.state.activeState === "silhoutte") ? "linkEventson" : null}
-                                            onClick={() => {
-                                                this.setActive("silhoutte");
-                                            }}>SILHOUETTE
-                                        </Link>
-                                        <Link to="/xpression" style={{ marginLeft: "15px" }} className={(this.state.activeState === "xpression") ? "linkEventson" : null}
-                                            onClick={() => {
-                                                this.setActive("xpression");
-                                            }}>XPRESSION
-                                        </Link>
-                                        {/*  <Link to="" className={(this.state.activeState === "linkEventsoff") ? "linkEventsoff" : null}
-                    onClick={() => {
-                                    this.setActive("linkEventsoff");
-                    }}>OFFLINE EVENTS</Link>*/}
-                                    </div>
                                 </li>
                                 {this.props.events === "true" ? null : <li>
                                     <Link to="/associate" className={(this.state.activeState === "linkAssociate") ? "linkSponsors" : null}

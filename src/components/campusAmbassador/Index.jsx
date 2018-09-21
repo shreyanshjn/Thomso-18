@@ -80,6 +80,11 @@ const ZonalCampusIndex = Loadable({
     loading: Loading
 });
 
+const ProfileIndex = Loadable({
+    loader: () => import("./profile/Index"),
+    loading: Loading
+});
+
 export default class CampusIndex extends React.Component {
     constructor() {
         super();
@@ -139,6 +144,7 @@ export default class CampusIndex extends React.Component {
                               <Route exact path="/campusAmbassador" component={PostIndex} />
                               <Route exact path="/campusAmbassador/referral" component={ReferralIndex} />
                               <Route exact path="/campusAmbassador/zonals" component={ZonalCampusIndex} />
+                              <Route exact path="/campusAmbassador/profile" render={props => (<ProfileIndex {...props} userData={this.state.userData} />)} />
                           </React.Fragment>
                       }
                       <Route exact path="/campusAmbassador/logout" render={props => (<LogoutIndex {...props} updateRoutes={this.handleUpdate} />)} />

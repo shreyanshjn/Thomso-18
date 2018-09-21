@@ -14,13 +14,23 @@ const convertArrayOfObjectsToCSV = args => {
     result = '';
     result += keys.join(columnDelimiter);
     result += lineDelimiter;
-    console.log(data)
     data.forEach(item => {
         ctr = 0;
         keys.forEach(key => {
             if (ctr > 0) result += columnDelimiter;
-
-            result += JSON.stringify(item[key]);
+            if (item[key] && typeof item[key] === "object") {
+                if (item[key].length > 0 && key === "event") {
+                    let tempResult = "";
+                    for(let i = 0; i < item[key].length; i++ ) {
+                        tempResult += `${item[key][i].name}, `;
+                    }
+                    result += JSON.stringify(tempResult);
+                } else {
+                    result += JSON.stringify(item[key]);
+                }
+            } else {
+                result += JSON.stringify(item[key]);
+            }
             ctr++;
         });
         result += lineDelimiter;

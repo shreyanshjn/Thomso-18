@@ -3,12 +3,12 @@ import React from "react";
 import "./quizardy.css";
 import Instructions from "./Instructions";
 import Footer from "./Footer";
-import Navbar from "../home/Navbar";
+import Navbar from "../../beta/home/Navbar";
 import { addTopic } from "../../../utils/firebasePush";
 
 import "./Index.css";
 
-let addTopicTimeout;
+let addTopicTimeout
 
 export default class QuizardryIndex extends React.Component {
     constructor() {

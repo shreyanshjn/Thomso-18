@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Navbar from "../beta/home/Navbar.jsx";
+import Navbar from "../../beta/home/Navbar.jsx";
 import "./src/css/Xpression.css";
 import xpression from "./src/img/xpression.jpg";
 

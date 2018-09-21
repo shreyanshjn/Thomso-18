@@ -37,7 +37,7 @@ const AccociateIndex = Loadable({
 });
 
 const QuizardryIndex = Loadable({
-    loader: () => import("./components/beta/quizardry/index"),
+    loader: () => import("./components/onlineEvents/quizardry/index"),
     loading: () => <Loader />
 });
 
@@ -48,6 +48,11 @@ const TeamIndex = Loadable({
 
 const HomeIndex = Loadable({
     loader: () => import("./components/beta/home/Index"),
+    loading: () => <Loader />
+});
+
+const MainHomeIndex = Loadable({
+    loader: () => import("./components/home/Index"),
     loading: () => <Loader />
 });
 
@@ -87,15 +92,23 @@ const Events = Loadable({
 });
 
 const CampusClicks = Loadable({
-    loader: () => import("./components/campusClicks/Index"),
+    loader: () => import("./components/onlineEvents/campusClicks/Index"),
+    loading: () => <Loader />
+});
+const Meme = Loadable({
+    loader: () => import("./components/onlineEvents/meme/Index"),
+    loading: () => <Loader />
+});
+const MrMissThomso= Loadable({
+    loader: () => import("./components/onlineEvents/mrmissthomso/Index"),
     loading: () => <Loader />
 });
 const Silhoutte = Loadable({
-    loader: () => import("./components/silhoutte/Index"),
+    loader: () => import("./components/onlineEvents/silhoutte/Index"),
     loading: () => <Loader />
 });
 const Xpression = Loadable({
-    loader: () => import("./components/xpression/Index"),
+    loader: () => import("./components/onlineEvents/xpression/Index"),
     loading: () => <Loader />
 });
 const blog = Loadable({
@@ -106,6 +119,10 @@ const WhyThomso = Loadable({
     loader: () => import("./components/whyThomso/Index"),
     loading: () => <Loader />
 });
+const onlineevents = Loadable({
+    loader: () => import("./components/onlineEvents/Index"),
+    loading: () => <Loader />
+})
 class App extends Component {
     render() {
         return (
@@ -126,12 +143,16 @@ class App extends Component {
                             <Route path="/zonals" component={ZonalsIndex} />
                             <Route path="/blog" component={blog} />
                             <Route path="/whythomso" component={WhyThomso} />
+                            <Route path="/onlineevents" component={onlineevents} />
                             <Route path="/verifyCerti/" component={VerifyCerti} />
                             <Route path="/policy" component={Policy} />
                             <Route path="/terms" component={Terms} />
                             <Route path="/main/" component={MainIndex} />
-                            <Route path="/register" render={(props) => (<Redirect to="/main/" />)} />
+                            <Route path="/final" component={MainHomeIndex} />
+                            <Route path="/register" render={() => (<Redirect to="/main/" />)} />
                             <Route path="/events" component={Events} />
+                            <Route path="/meme" component={Meme} />
+                            <Route path="/Mr&MissThomso" component={MrMissThomso} />
                             <Route path="/campusclicks" component={CampusClicks} />
                             <Route path="/silhoutte" component={Silhoutte} />
                             <Route path="/xpression" component={Xpression} />
@@ -140,8 +161,8 @@ class App extends Component {
                     </Switch>
                 </React.Fragment>
             </BrowserRouter>
-        );
+        )
     }
 }
 
-export default App;
+export default App
