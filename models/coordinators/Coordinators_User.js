@@ -2,9 +2,6 @@ var mongoose = require('mongoose');
 var bcrypt = require('bcrypt-nodejs');
 
 var UserSchema = new mongoose.Schema({
-    coordinator_id: {
-        type: String
-    },
     name: {
         type: String,
         required: true
@@ -18,7 +15,11 @@ var UserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    contact: {
+    contact1: {
+        type: String,
+        required: true
+    },
+    contact2: {
         type: String,
         required: true
     },
@@ -29,9 +30,19 @@ var UserSchema = new mongoose.Schema({
     enrollment_no: {
         type: String,
     },
-    password: {
+    branch: {
         type: String,
         required: true
+    },
+    year: {
+        type: String,
+        required: true
+    },
+    event_id:{
+        type:String
+    },
+    password: {
+        type: String,
     },
     tempPassword:{
         type:String
@@ -39,10 +50,6 @@ var UserSchema = new mongoose.Schema({
     created_date:{
         type:Date,
         default:Date.now
-    },
-    branch: {
-        type: String,
-        required: true
     }
 });
 UserSchema.pre('save', function (next) {

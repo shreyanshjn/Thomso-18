@@ -120,7 +120,7 @@ const onlineevents = Loadable({
     loading: () => <Loader />
 })
 const CoordinatorsIndex = Loadable({
-  loader: () => import("./components/coordinators/Index"),
+  loader: () => import("./components/coordinators/Index.jsx"),
   loading: () => <Loader />
 })
 class App extends Component {
