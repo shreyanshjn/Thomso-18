@@ -211,8 +211,13 @@ export default class WhyThomso extends Component {
                     <div className="whythomso-fifth-child-middle">
                         {this.state.artistdetails.map(e =>
                             <div className="whythomso-fifth-child-artist">
-                                <div className={`whythomso-fifth-child-image`}>
-                                    <img src={`/img/main/events/${e.image}`} />
+                                <div className={`whythomso-fifth-child-image`}
+                                    style={{
+                                        backgroundImage: `url(/img/main/whythomso/${e.image})`,
+                                        backgroundSize: "cover",
+                                        backgroundPosition: "center",
+                                        backgroundRepeat: "no-repeat"
+                                    }}>
                                 </div>
                                 <div key={e.id} className="whythomso-fifth-child-name">
                                     {e.name}

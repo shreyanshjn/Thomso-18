@@ -74,7 +74,7 @@ export default class EventDetail extends React.Component {
                         <p>{this.state.data && this.state.data.details}</p>
                     </div>
                     <div className="events-details-modal">
-                        <span className="events-modal-close" onClick={() => this.props.modalClose()}>
+                        <span className="events-modal-close" onClick={this.props.close}>
                             &times;
                         </span>
                     </div>
@@ -120,7 +120,7 @@ export default class EventDetail extends React.Component {
                         }
                     </div>
                     : null}
-                {this.state.data && this.props.eventsId === 9 ? <div className="events-registration">Registrations for this event will me made on the spot</div> : null}
+                {this.state.data && this.props.eventsId === 9 ? <div className="events-registration">*Registrations for this event will me made on the spot</div> : null}
             </div>
         )
     }

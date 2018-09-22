@@ -93,7 +93,7 @@ export default class EventsModal extends React.Component {
                                 )}
                             </ul>
                         </div>
-                        {this.state.data ? <EventDetail history={this.props.history} id={this.state.subEventId} detail={this.state.data} eventsId={this.state.eventId} subevents={this.state.data.subevents} data={this.props.data} /> : null}
+                        {this.state.data ? <EventDetail history={this.props.history} id={this.state.subEventId} detail={this.state.data} eventsId={this.state.eventId} close={this.props.modalClose} subevents={this.state.data.subevents} data={this.props.data} /> : null}
                     </div>
                     <div className="events-modals-last-arrow">
                         <p href="" className="arrow-button-events" onClick={() => this.prevCat(this.state.eventId)}>

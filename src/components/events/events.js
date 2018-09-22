@@ -11,7 +11,7 @@ export const EventDetails =
                     details: "Stage Dance Competition",
                     content: "Are you passionate about dancing? Do you have tingling sensations run down your feet when you hear music? Then come let yourself loose. Dance to express. It's said that in order to find your true self, you first have to lose yourself. Come get lost amid the likes of yourself.Prepare, perfect, perform and if you stumble then make it a part of the dance.",
                     rulebook: "https://drive.google.com/open?id=1inLU2fKJglROpFDV9YTlULrzcfqPOeGl",
-                    image: "gigapixel-1.jpg",
+                    image: "street-dancer.jpg",
                     prize: "150"
                 },
                 {
@@ -20,7 +20,7 @@ export const EventDetails =
                     details: "Street Dance Competition",
                     content: "Have you ever had the desire to express the hidden language of your soul, make the music visible and simply be insane? We'll provide you the level field to be fearless, limitless and well,as we promised before, insane. Dance to the beat of your own drum; don't let anyone tell you it can't be done. There are no spring floors, no spotlights, no stage, and no boundaries. Come on the streets to glide, to spin, to fly or to expression to all your instincts, bring your style on the floor. Dance on the random music being played and show your instincts to dance. Step-Up is an on-the-spot street dance competition.",
                     rulebook: "https://drive.google.com/open?id=1UtzxNQSBFrRZNVWDhHsOk_B8ieCeu52D",
-                    image: "step_up.jpg",
+                    image: "streetdance.jpg",
                     prize: "60"
                 },
                 {
@@ -44,7 +44,7 @@ export const EventDetails =
                         details: "Stage Play Competition",
                         content: "All the world's a stage, and all the men and women are merely players. This event is for those who act, write, dance, run, cry and laugh just for the ethereal beauty of the act. Stand on a stage and hold the hearts of men in your hands. Make them laugh with a gesture and cry with words. Turn the spotlight towards you, perfecting acting skills, coordination, expressions and stellar dialogue delivery.We have this event planned to cater to all those patrons of direction, acting and screenplay. So, participate and hypnotize people with the power of words and expressions and you will Shine brighter than any praise or fame or glory.",
                         rulebook: "https://drive.google.com/open?id=1uKkdervhdr90-mGpWr0PyYOwp5BKRZO3",
-                        image: "abhivyakti.jpeg",
+                        image: "Abhivyakti.jpeg",
                         prize: "100"
                     },
                     {
@@ -53,7 +53,7 @@ export const EventDetails =
                         details: "Street Play Competition",
                         content: "Nukkad Natak is a street-play competition of Dramatics at Thomso where you speak in the lingo of the common folks to outline captivating issues which are also socially relevant.The main endeavor is to convey a social and political message in an entertaining environment, amidst the intimate and effective means of theatre by means of shout,chants, drums and catchy songs. This is your chance to be the change you think of bringing about.",
                         rulebook: "https://drive.google.com/open?id=1sQaBBhETPHLo5IWYlSwWNTId2ceA53JM",
-                        image: "nukkad_natak.jpg",
+                        image: "NukkadNatak.jpeg",
                         prize: "100"
                     }
                 ]
@@ -125,7 +125,7 @@ export const EventDetails =
                         name: "Battle of Bands",
                         content: "Do you think your voice matters? Do you have the power to change the mood or move the world with a single tone? If you think you can make the crowd forget themselves in your performance, then this is the place to be in. Thomso welcomes you to B.O.B (Battle of Bands), an arena to battle against India’s best bands. With massive enthusiasm and fearsome competition, this event brings out the best in its participants striving for glory. If you have the band that just can’t lose and have hunger for more, then come and perform against the most formidable bands in India.",
                         rulebook: "https://drive.google.com/open?id=1SoRKx8MDGxRPEZtgqfbbumlZTQQsm6vJ",
-                        image: "battle_of_bands.jpeg",
+                        image: "battle_of_bands.jpg",
                         prize: "100"
                     },
                     {
@@ -336,7 +336,7 @@ export const EventDetails =
                         name: "Naqaab",
                         content: "Your partner is your canvas as we take make-ups to a whole new level! Let your creativity out loose and paint your partner’s face to serve as a mask, because being yourself might be cool, but it’s cooler to be Batman!",
                         rulebook: "https://drive.google.com/open?id=15k9OJfyvGl3qVHP5uVPiTaMVgmcqBlSC",
-                        image: "naqaab.jpg",
+                        image: "Naqaab.jpeg",
                         prize: "20"
                     },
                     {

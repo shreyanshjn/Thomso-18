@@ -40,6 +40,7 @@
     position: absolute;
     bottom:15vh;
     width: 75%;
+    height: 50vh;
 }
 .events-details-images-main-div{
     position: absolute;
@@ -49,12 +50,15 @@
 }
 .events-registration{
     color: white;
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: Poppins;
+    text-transform: uppercase;
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
     position: absolute;
-    bottom: 5vh;
+    bottom: 8vh;
     left: 25%;
     user-select:none;
     -webkit-user-select: none;
@@ -94,7 +98,7 @@
     width: 97%;
     display: flex;
     justify-content: space-between; 
-    padding: 10px 40px 10px 20px;
+    padding: 10px 40px 10px 10px;
     user-select:none;
     -webkit-user-select: none;
     -moz-user-select: none; 
@@ -157,11 +161,14 @@
     font-family: Poppins;
     cursor: pointer;
     z-index: 100;
+    transition: all 0.1s ease-in-out;
 }
 .events-addevents-child:hover{
     background: none;
     color: white;
-    transition: all 0.2s ease-in-out;
+}
+.be-events-modal-button:hover{
+    color: white;
 }
 .be-events-modal-button
 {
@@ -185,7 +192,9 @@
     color:white;
     overflow: hidden;
     font-family: Poppins;
-    font-size: 15px;  
+    font-size: 15px; 
+    position: absolute;
+    top: 17vh; 
 }
 .events-modals-events-opening
 {
@@ -432,7 +441,7 @@
     }
     .events-modala-second-child
     {
-        margin-top:20px;
+        margin-top:20px;  
     }
     .events-registration{
         bottom: 10vh;
