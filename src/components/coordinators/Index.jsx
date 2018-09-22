@@ -2,8 +2,8 @@ import React from "react";
 import { Route } from "react-router-dom";
 import Loadable from "react-loadable";
 
-import FetchApi from "../../utils/FetchAPI";
-import AuthService from "../../handlers/main/AuthService";
+// import FetchApi from "../../utils/FetchAPI";
+// import AuthService from "../../handlers/main/AuthService";
 import Loader from "../common/Loader";
 
 const Loading = ({ error }) => {
@@ -33,14 +33,20 @@ const AddWinnerIndex = Loadable({
     loading: () => <Loader/>
 });
 
+const ShowWinnerIndex = Loadable({
+    loader: () => import("./showWinner/Index"),
+    loading: () => <Loader/>
+});
+
 export default class MainIndex extends React.Component {
     render() {
         return (
             <React.Fragment>
                 {/* {console.log('hello')} */}
                 {/* <Route exact path="/coordinators/login" component={HomeIndex} /> */}
-                <Route  path="/coordinators" component={LoginIndex} />
+                {/* <Route  path="/coordinators" component={LoginIndex} /> */}
                 {/* <Route  path="/coordinators" component={AddWinnerIndex} /> */}
+                <Route  path="/coordinators" component={ShowWinnerIndex} />
                 {/* <Route exact path="/coordinators/" component={RegisterIndex} /> */}
             </React.Fragment>
         )

@@ -58,7 +58,7 @@ exports.register = function (req, res) {
             var newUser = new Coordinators_User(data);
             newUser.save(function (err) {
                 if (err) {
-                    console.log(err)
+                    // console.log(err)
                     return res.json({ success: false, msg: 'Username already exists.' });
                 }
                 var newPass = Generator.generatePassword(20);

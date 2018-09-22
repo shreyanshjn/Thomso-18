@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import AuthService from '../../../handlers/ca/admin/AuthService';
+import AuthService from '../../../handlers/coordinators/AuthService';
 import validateInput from '../../../utils/validation/loginValidation';
 import FetchApi from '../../../utils/FetchAPI';
 

@@ -20,6 +20,7 @@ router.post('/auth/register', coordinatorRegister.register);
 router.post('/auth/login', coordinatorRegister.login);
 
 // -> /api/coordinators/
-router.post('/addWinner', CoordinatorsTokenMiddleware , coordinatorControls.addWinner);
+router.post('/addWinner', coordinatorControls.addWinner);
+router.get('/getWinner', coordinatorControls.getWinner);
 
 module.exports = router;

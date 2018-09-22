@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import FetchApi from "../../../utils/FetchAPI";
-import validateInput from '../../../utils/validation/loginValidation';
 import AuthService from '../../../handlers/main/AuthService';
 
 export default class AddWinnerIndex extends React.Component{
@@ -34,7 +33,7 @@ export default class AddWinnerIndex extends React.Component{
             value = value.trim();
             value = value.substring(0, 10)
         }
-        this.setState({ [name]: value });
+        this.setState({ [name]: value,errors:'' });
     }
 
     resetChange = () => {
@@ -45,7 +44,6 @@ export default class AddWinnerIndex extends React.Component{
             ifsc_code:'',
             account_no:'',
             bank_name:'',
-            errors:''
         })
         this.Auth = new AuthService();
     }
@@ -58,7 +56,7 @@ export default class AddWinnerIndex extends React.Component{
 
     onSubmit = (e) => {
         e.preventDefault();
-        let coordinator_name = 'Prashat';
+        let coordinator_email = 'prashantverma1223@gmail.com';
         let { thomso_id, event_name, position, ifsc_code, account_no, bank_name }= this.state;
         if (thomso_id) thomso_id = thomso_id.trim()
         if (event_name) event_name = event_name.trim()
@@ -67,16 +65,21 @@ export default class AddWinnerIndex extends React.Component{
         if (account_no) account_no = account_no.trim()
         if (bank_name) bank_name = bank_name.trim()
 
-        const data = {thomso_id, event_name, position, ifsc_code, bank_name, account_no, coordinator_name};
-        const check = validateInput(data);
+        const data = {thomso_id, event_name, position, ifsc_code, bank_name, account_no, coordinator_email};
         const isAuthenticated = this.Auth.hasToken();
-        if(check.isValid){
+        if(thomso_id && event_name && position && ifsc_code && account_no && bank_name){
             if(isAuthenticated){
-                const token = this.Auth.getToken()
-                FetchApi('POST', '/api/coordinators/addWinner', data, token)
+                const token = this.Auth.getToken();
+                // console.log(token)
+                FetchApi('POST', '/api/coordinators/addWinner', data)
                 .then( res => {
                     if(res && res.data && res.data.success){
-                        this.setState({errors:'Winner Added'})
+                        if(this.state.event_type){
+                            this.resetChange()
+                            this.setState({errors:'Winner Added'})
+                        }else{
+                            this.setState({thomso_id:'', errors:"Winner Added"})
+                        }
                     }
                     else{
                         this.setState({errors:"Unable To Add. Please Try Again!!"})
@@ -97,6 +100,7 @@ export default class AddWinnerIndex extends React.Component{
         return(
             <div>
                 <h1> Add Winner </h1>
+                <Link to="/coordinators/showWinner"> Show Winner's List </Link>
                 <div>
                     <div style={{display:"inline", fontSize:"25px", paddingLeft:"10%"}}>
                         <span><input onChange={this.eventOptionChange} type="radio" name="single" value="single"  checked={event_type}   /></span><span>Single</span>
@@ -107,12 +111,7 @@ export default class AddWinnerIndex extends React.Component{
                 </div>
                 
                 <div>
-                    {errors ?
-                        <div style={{ textAlign: 'center', color: 'red', fontWeight: '600', fontSize:"25px" }}>
-                            {errors}
-                        </div>
-                        : null
-                    }
+                    
                     <form id="addWinnerForm" onSubmit={this.onSubmit}>
                         <div style={{paddingLeft:"2%", fontSize:"20px",width:"60%",display:"flex",marginTop:"10px", justifyContent:"space-evenly"}}>
                             <label style={{width:"20%"}} htmlFor="inputThomsoId">Thomso ID</label>
@@ -142,10 +141,10 @@ export default class AddWinnerIndex extends React.Component{
                                 style={{marginLeft:"5%", borderRadius:"5px", padding:"10px 5px", width:"20%"}}
                             >
                                 <option value="" disabled={disabled}> Position </option>
-                                <option value="male"> First </option>
-                                <option value="female"> Second </option>
-                                <option value="other"> Third </option>
-                                <option value="other"> None </option>
+                                <option value="first"> First </option>
+                                <option value="second"> Second </option>
+                                <option value="third"> Third </option>
+                                <option value="none"> None </option>
                             </select>
                         </div>
                         
@@ -221,10 +220,14 @@ export default class AddWinnerIndex extends React.Component{
                                 <input type="button" onClick={this.resetChange} style={{fontSize:"20px", padding:"5px"}} value="Reset" />
                             : null}
                         </div>
-                        
+                        {errors ?
+                        <div style={{ textAlign: 'center', color: 'red', fontWeight: '600', fontSize:"25px" }}>
+                            {errors}
+                        </div>
+                        : null
+                    }
                     </form>
                 </div>
-
             </div>
         )
     }

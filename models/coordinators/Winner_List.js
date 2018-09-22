@@ -1,12 +1,27 @@
 var mongoose = require('mongoose');
-var bcrypt = require('bcrypt-nodejs');
 
 var UserSchema = new mongoose.Schema({
-    coordinator_name: {
+    coordinator_email: {
         type: String,
         required: true
     },
     thomso_id: {
+        type: String,
+        required: true
+    },
+    name: {
+        type: String,
+        required: true
+    },
+    college: {
+        type: String,
+        required: true
+    },
+    email: {
+        type: String,
+        required: true
+    },
+    contact: {
         type: String,
         required: true
     },
@@ -36,26 +51,8 @@ var UserSchema = new mongoose.Schema({
     },
     created_date:{
         type:Date,
-        default:Date.now
-    },
-});
-UserSchema.pre('save', function (next) {
-    var user = this;
-    if (this.isModified('password') || this.isNew) {
-        bcrypt.genSalt(10, function (err, salt) {
-            if (err) {
-                return next(err);
-            }
-            bcrypt.hash(user.password, salt, null, function (err, hash) {
-                if (err) {
-                    return next(err);
-                }
-                user.password = hash;
-                next();
-            });
-        });
-    } else {
-        return next();
+        default:Date.now,
     }
 });
+
 module.exports = mongoose.model('Winner_List', UserSchema);
