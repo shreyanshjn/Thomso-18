@@ -107,10 +107,14 @@ const Silhoutte = Loadable({
     loader: () => import("./components/onlineEvents/silhoutte/Index"),
     loading: () => <Loader />
 });
-const Xpression = Loadable({
-    loader: () => import("./components/onlineEvents/xpression/Index"),
+const Cupid = Loadable({
+    loader: () => import("./components/onlineEvents/cupid/Index"),
     loading: () => <Loader />
 });
+// const Xpression = Loadable({
+//     loader: () => import("./components/onlineEvents/xpression/Index"),
+//     loading: () => <Loader />
+// });
 const blog = Loadable({
     loader: () => import("./components/beta/blog/index"),
     loading: () => <Loader />
@@ -150,7 +154,8 @@ class App extends Component {
                             <Route path="/Mr&MissThomso" component={MrMissThomso} />
                             <Route path="/campusclicks" component={CampusClicks} />
                             <Route path="/silhoutte" component={Silhoutte} />
-                            <Route path="/xpression" component={Xpression} />
+                            <Route path="/cupid" component={Cupid} /> 
+                            {/* <Route path="/xpression" component={Xpression} /> */}
                             {/* <Route component={Error404} /> */}
                         </React.Fragment>
                     </Switch>
