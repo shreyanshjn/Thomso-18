@@ -99,17 +99,26 @@ export default class AddWinnerIndex extends React.Component{
         let {event_type, thomso_id, event_name, position, ifsc_code, account_no, bank_name, errors, disabled} = this.state;
         return(
             <div>
-                <h1> Add Winner </h1>
-                <Link to="/coordinators/showWinner"> Show Winner's List </Link>
+                {this.props && this.props.userData && this.props.userData.name ? <h3> Hello, {this.props.userData.name}</h3> :null}
                 <div>
+                    <h4 style={{display:"inline"}}  > Add Winner </h4>
+                    <span  style={{display:"inline"}}  ><Link to="/coordinators/showWinner"> Show Winner's List </Link></span>
+                </div>               
+                <div style={{marginTop:"25px"}}>
                     <div style={{display:"inline", fontSize:"25px", paddingLeft:"10%"}}>
                         <span><input onChange={this.eventOptionChange} type="radio" name="single" value="single"  checked={event_type}   /></span><span>Single</span>
                     </div>
                     <div style={{display:"inline", fontSize:"25px", paddingLeft:"10%"}}>
-                        <span><input onChange={this.eventOptionChange} type="radio" name="multiple" value="multiple" checked={!event_type}   /></span><span>Multiple</span>
+                        <span><input onChange={this.eventOptionChange} type="radio" name="multiple" value="multiple" checked={!event_type}   /></span><span>Group Event</span>
                     </div>
                 </div>
-                
+                <div>
+                    <ul> <b>Instructions</b>
+                        <li>Single And Multiple are two options for adding winners of single participant and double/group event.</li>
+                        <li>In group event only thomso id field will be cleared on adding winner. You can clear whole form on clicking Clear button</li>
+                        <li>Please Cross check the entries by visiting show winner. Strict Action will be taken against that coordinator if any fake entry is found</li>
+                    </ul>
+                </div>
                 <div>
                     
                     <form id="addWinnerForm" onSubmit={this.onSubmit}>

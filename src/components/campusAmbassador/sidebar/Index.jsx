@@ -499,7 +499,7 @@ export default class Sidebar extends React.Component {
               </div>
             </Link>
           </div>
-          <div className="campusAmb-sidebar-hand flex_row">
+          {/* <div className="campusAmb-sidebar-hand flex_row">
             <div className="campusAmb-sidebar-hand-child">
               <div className="campusAmb-sidebar-svg-logo">
                 <Hand />
@@ -508,7 +508,7 @@ export default class Sidebar extends React.Component {
                 {this.state.days} DAYS LEFT
             </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     );

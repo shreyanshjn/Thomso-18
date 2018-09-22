@@ -18,7 +18,8 @@ export default class ShowWinnerIndex extends React.Component{
         const isAuth = this.Auth.hasToken();
         if(isAuth){
             const token = this.Auth.getToken(); 
-            FetchApi('GET','/api/coordinators/getWinner',null, token)
+            console.log(token)
+            FetchApi('GET','/api/coordinators/getWinner',null)
             .then( res =>{
                 if(res && res.data && res.data.success){
                     if(res.data.body){

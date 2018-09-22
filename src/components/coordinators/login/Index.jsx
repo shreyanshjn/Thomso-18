@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import AuthService from '../../../handlers/coordinators/AuthService';
 import validateInput from '../../../utils/validation/loginValidation';
 import FetchApi from '../../../utils/FetchAPI';
 
-// import './style.css';
-
 export default class LoginIndex extends Component {
-
     constructor() {
         super();
         this.state = {
@@ -84,6 +82,8 @@ export default class LoginIndex extends Component {
                     />
                     <button type="submit">Login</button>
                 </form>
+
+                <Link to="/coordinators/register">Register</Link>
             </div>
         );
     }

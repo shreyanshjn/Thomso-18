@@ -2,8 +2,8 @@ import React from "react";
 import { Route } from "react-router-dom";
 import Loadable from "react-loadable";
 
-// import FetchApi from "../../utils/FetchAPI";
-// import AuthService from "../../handlers/main/AuthService";
+import FetchApi from "../../utils/FetchAPI";
+import AuthService from "../../handlers/coordinators/AuthService";
 import Loader from "../common/Loader";
 
 const Loading = ({ error }) => {
@@ -13,10 +13,10 @@ const Loading = ({ error }) => {
         return <Loader />;
 };
 
-const HomeIndex = Loadable({
-    loader: () => import("./home/Index.jsx"),
-    loading: Loading
-});
+// const HomeIndex = Loadable({
+//     loader: () => import("./home/Index.jsx"),
+//     loading: Loading
+// });
 
 const LoginIndex = Loadable({
     loader: () => import("./login/Index.jsx"),
@@ -39,15 +39,47 @@ const ShowWinnerIndex = Loadable({
 });
 
 export default class MainIndex extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            isAuthenticated: false,
+            userData: "",
+            errors:""
+        }
+        this.Auth = new AuthService();
+    }
+    
+    componentWillMount() {
+        const isAuthenticated = this.Auth.hasToken();
+        if (isAuthenticated) {
+            const token = this.Auth.getToken()
+            FetchApi('GET', '/api/coordinators/info', null, token)
+                .then(r => {
+                    if (r && r.data && r.data.success && r.data.body) {
+                        this.setState({isAuthenticated:true, userData: r.data.body });
+                    }
+                })
+                .catch(e => {
+                    console.log(e)
+                });
+        }
+    }
+   
     render() {
+        let { isAuthenticated, userData} = this.state;
         return (
             <React.Fragment>
-                {/* {console.log('hello')} */}
-                {/* <Route exact path="/coordinators/login" component={HomeIndex} /> */}
-                {/* <Route  path="/coordinators" component={LoginIndex} /> */}
-                {/* <Route  path="/coordinators" component={AddWinnerIndex} /> */}
-                <Route  path="/coordinators" component={ShowWinnerIndex} />
-                {/* <Route exact path="/coordinators/" component={RegisterIndex} /> */}
+                {isAuthenticated ? 
+                    <React.Fragment>
+                        <Route  path="/coordinators" render={props => (<AddWinnerIndex {...props} userData={this.state.userData} />)}  />
+                        <Route  path="/coordinators/showWinner" component={ShowWinnerIndex} />
+                    </React.Fragment>
+                    :
+                    <React.Fragment>
+                        <Route  path="/coordinators" component={LoginIndex} />
+                        <Route exact path="/coordinators/register" component={RegisterIndex} />
+                    </React.Fragment>
+                }
             </React.Fragment>
         )
     }
