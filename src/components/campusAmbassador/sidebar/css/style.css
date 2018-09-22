@@ -19,7 +19,16 @@
     flex-direction: column;
     font-family: Montserrat;
     color: #58595B;
-    /* overflow: hidden; */
+    overflow: hidden;
+}
+.facebook-connect-image
+{
+    height:100%;
+    width:100%;
+}
+.facebook-connect-image:hover
+{
+    cursor:pointer;
 }
 @media screen and (min-width:1400px){
 
@@ -72,6 +81,9 @@
     }
     .sidenav > .campusAmb-sidebar-contents > .activeSideItem > .campusAmb-sidebar-events > .campusAmb-sidebar-svg-logo svg .eventspath{
         fill: #4C8AE5;
+    }
+    .sidenav > .campusAmb-sidebar-contents > .activeSideItem > .campusAmb-sidebar-home > .campusAmb-sidebar-svg-logo svg .homepath{
+        fill: #00e6e6;
     }
     .campusAmb-sidebar-likes-child{
         display: flex;
@@ -170,7 +182,7 @@
         font-size: 12px;
         font-weight: 600;
     }
-    
+
     .campusAmb-sidebar-line{
         height:1px;
         background-color:#BEBEBE;
@@ -303,6 +315,12 @@
     .sidenav > .campusAmb-sidebar-contents > .activeSideItem > .campusAmb-sidebar-events > .campusAmb-sidebar-svg-logo svg .eventspath{
         fill: #4C8AE5;
     }
+    .sidenav > .campusAmb-sidebar-contents > .activeSideItem > .campusAmb-sidebar-profile > .campusAmb-sidebar-svg-logo svg .profilepath{
+        fill:#b30059;
+    }
+    .sidenav > .campusAmb-sidebar-contents > .activeSideItem > .campusAmb-sidebar-profile > .campusAmb-sidebar-svg-logo svg .zonalspath{
+        fill:#339933;
+    }
     .campusAmb-sidebar-svg-logo svg{
         padding: 0 3px 0 3px;
         height: auto;
@@ -313,6 +331,9 @@
     }
     .sidenav .sideNavItem:hover .campusAmb-sidebar-svg-logo svg .leaderpath{
         fill:green;
+    }
+    .sidenav .sideNavItem:hover .campusAmb-sidebar-svg-logo svg .profilepath{
+        fill:#b30059;
     }
     .sidenav .sideNavItem:hover .campusAmb-sidebar-svg-logo svg .guidepath{
         fill:purple;
@@ -331,6 +352,12 @@
     }
     .sidenav .sideNavItem:hover .campusAmb-sidebar-svg-logo svg .postpath{
         fill:red;
+    }
+    .sidenav .sideNavItem:hover .campusAmb-sidebar-svg-logo svg .homepath{
+        fill:#00e6e6;
+    }
+    .sidenav .sideNavItem:hover .campusAmb-sidebar-svg-logo svg .zonalspath{
+        fill:#339933;
     }
     .referral:hover .campusAmb-sidebar-svg-logo svg .referralpath{
         cursor: pointer;

@@ -22,7 +22,9 @@ import Logout from "./Svg/Logout"
 import Bulb from "./Svg/Bulb"
 import Hand from "./Svg/Hand"
 import Home from "../../main/sidebar/Svg/Home.jsx";
-import Profile from "../profile/Index"
+import Profile from "./Svg/Profile.jsx"
+import FacebookImg from './img/fb.svg'
+import Zonals from './Svg/Zonals'
 
 // import logoUser from '../common/images/user.svg';
 
@@ -42,7 +44,7 @@ export default class Sidebar extends React.Component {
     this.Auth = new AuthService();
     if (!window.location.pathname.substring(18)) {
       this.state = {
-        activeState: "home"
+        activeState: "profile"
       };
     }
   }
@@ -67,7 +69,7 @@ export default class Sidebar extends React.Component {
       .then(r => {
         if (r && r.data) {
           if (r.data.success) {
-            this.setState({ facebookConnect: true, errors: '' })
+            this.setState({ facebookConnect: true, errors: '', userImage: data.image })
           } else {
             this.setState({ errors: r.data.msg })
           }
@@ -124,6 +126,10 @@ export default class Sidebar extends React.Component {
       days = 0;
     }
     this.setState({ days })
+
+    if (this.props.userData && this.props.userData.image) {
+      this.setState({userImage: this.props.userData.image})
+    }
   }
 
   setActive(state) {
@@ -153,13 +159,14 @@ export default class Sidebar extends React.Component {
         >
         {/* {console.log(this.props.userData)} */}
           <div className="campusAmb-sidebar-user">
-            {(this.props.userData && this.props.userData.image) ? <img src={this.props.userData.image} className="image" alt="User" /> :
+            {this.state.userImage ? <img src={this.state.userImage} className="image" alt="User" /> :
               <React.Fragment>
                 {(this.props.userData && this.props.userData.gender === 'female') ?
                   <img src={girl} className="image" alt="User" /> :
                   <img src={boy} className="image" alt="User" />
                 }
-              </React.Fragment>}
+              </React.Fragment>
+            }
             <div className="campusAmb-sidebar-user-details">
               <div className="text">{this.props.userData ? this.props.userData.name : "User"}</div>
               <div className="cname">{this.props.userData ? this.props.userData.college : "-"}</div>
@@ -169,8 +176,8 @@ export default class Sidebar extends React.Component {
           <div className="campusAmb-sidebar-line">
           </div>
           : null}
-          <div className="campusAmb-sidebar-like-share-score">
-            {this.props.userData && this.props.userData.score ?
+          {/*<div className="campusAmb-sidebar-like-share-score">
+             {this.props.userData && this.props.userData.score ?
               <div className="campusAmb-sidebar-like-share-score-child">
                 <div className="campusAmb-sidebar-likes">
                   <div className="campusAmb-sidebar-likes-child">
@@ -214,11 +221,11 @@ export default class Sidebar extends React.Component {
                 </div>
                 </div>
               </div>
-            : null}
+            : null}*/}
             {/* <div className="campusAmb-sidebar-updatenews">
               *Scores will be updated at 12 am
-            </div> */}
-          </div>
+            </div> 
+          </div>*/}
           {!this.state.facebookConnect ?  
           <div>
             <div className="campusAmb-sidebar-line">
@@ -228,16 +235,13 @@ export default class Sidebar extends React.Component {
                 className={
                   this.state.facebookConnect
                     ? "sideNavItem activeSideItem"
-                    : "sideNavItem"
+                    : "facebooksideNavItem"
                 }
                 onClick={this.facebookLogin}
               >
                 <div className="campusAmb-sidebar-posts flex_row">
-                  <div className="campusAmb-sidebar-svg-logo">
-                    <Post />
-                  </div>
                   <div className="campusAmb-sidebar-navitem-name">
-                    CONNECT WITH FACEBOOK
+                          <img src={FacebookImg} alt="CONNECT WITH FACEBOOK" className="facebook-connect-image"/>
                   </div>
                 </div>
               </div>
@@ -253,6 +257,26 @@ export default class Sidebar extends React.Component {
           <div className="campusAmb-sidebar-line">
           </div>
           <div className="campusAmb-sidebar-contents">
+            <Link
+              to="/CampusAmbassador/profile"
+              className={
+                this.state.activeState === "profile"
+                  ? "sideNavItem activeSideItem"
+                  : "sideNavItem"
+              }
+              onClick={() => {
+                this.setActive("profile");
+              }}
+            >
+              <div className="campusAmb-sidebar-profile flex_row">
+                <div className="campusAmb-sidebar-svg-logo">
+                    <Profile />
+                </div>
+                <div className="campusAmb-sidebar-navitem-name">
+                  PROFILE
+                </div>
+              </div>
+            </Link>
             <Link
               to="/CampusAmbassador/"
               className={
@@ -274,26 +298,6 @@ export default class Sidebar extends React.Component {
               </div>
             </Link>
             <Link
-              to="/CampusAmbassador/profile"
-              className={
-                this.state.activeState === "home"
-                  ? "sideNavItem activeSideItem"
-                  : "sideNavItem"
-              }
-              onClick={() => {
-                this.setActive("home");
-              }}
-            >
-              <div className="campusAmb-sidebar-ideas flex_row">
-                <div className="campusAmb-sidebar-svg-logo">
-                    <Profile />
-                </div>
-                <div className="campusAmb-sidebar-navitem-name">
-                  PROFILE
-                </div>
-              </div>
-            </Link>
-            <Link
               to="/"
               className={
                 this.state.activeState === "home"
@@ -304,7 +308,7 @@ export default class Sidebar extends React.Component {
                 this.setActive("home");
               }}
             >
-              <div className="campusAmb-sidebar-ideas flex_row">
+              <div className="campusAmb-sidebar-home flex_row">
                 <div className="campusAmb-sidebar-svg-logo">
                     <Home />
                 </div>
@@ -404,9 +408,9 @@ export default class Sidebar extends React.Component {
                 this.setActive("zonals");
               }}
             >
-              <div className="campusAmb-sidebar-ideas flex_row">
+              <div className="campusAmb-sidebar-zonals flex_row">
                 <div className="campusAmb-sidebar-svg-logo">
-                    <Home />
+                    <Zonals />
                 </div>
                 <div className="campusAmb-sidebar-navitem-name">
                   ZONALS
