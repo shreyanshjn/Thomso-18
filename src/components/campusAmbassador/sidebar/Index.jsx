@@ -7,9 +7,9 @@ import AuthService from "../../../handlers/ca/temp/AuthService";
 import boy from "./img/boy.png";
 import girl from "./img/girl.png";
 import { addCATopic } from '../../../utils/firebasePush';
-import ReferralPoint from "./Svg/Referralpoint";
-import Bonus from "./Svg/Bonus";
-import Score from "./Svg/Score";
+// import ReferralPoint from "./Svg/Referralpoint";
+// import Bonus from "./Svg/Bonus";
+// import Score from "./Svg/Score";
 // import share from "./img/share.png"
 // import score from "./img/star.png"
 import Post from "./Svg/Post"
@@ -25,6 +25,7 @@ import Home from "../../main/sidebar/Svg/Home.jsx";
 import Profile from "./Svg/Profile.jsx"
 import FacebookImg from './img/fb.svg'
 import Zonals from './Svg/Zonals'
+import Facebook from './Svg/Facebook.jsx'
 
 // import logoUser from '../common/images/user.svg';
 
@@ -210,9 +211,7 @@ export default class Sidebar extends React.Component {
                 <div className="campusAmb-sidebar-score">
                   <div className="campusAmb-sidebar-likes-child">
                     <div className="campusAmb-sidebar-likes-grandchild-number">
-                      {this.props.userData ? this.props.userData.score : "0"}
-                    </div>
-                    <div className="campusAmb-sidebar-svg-logo">
+                      {this.props.userData ? this.props.userData.score : "0"} </div> <div className="campusAmb-sidebar-svg-logo">
                       <Score />
                     </div>
                   </div>
@@ -239,7 +238,10 @@ export default class Sidebar extends React.Component {
                 }
                 onClick={this.facebookLogin}
               >
-                <div className="campusAmb-sidebar-posts flex_row">
+                <div className="campusAmb-sidebar-facebook flex_row">
+                <div className="campusAmb-sidebar-svg-logo mobile-facebook">
+                    <Facebook />
+                </div>
                   <div className="campusAmb-sidebar-navitem-name">
                           <img src={FacebookImg} alt="CONNECT WITH FACEBOOK" className="facebook-connect-image"/>
                   </div>
@@ -258,7 +260,7 @@ export default class Sidebar extends React.Component {
           </div>
           <div className="campusAmb-sidebar-contents">
             <Link
-              to="/CampusAmbassador/profile"
+              to="/CampusAmbassador"
               className={
                 this.state.activeState === "profile"
                   ? "sideNavItem activeSideItem"
@@ -278,7 +280,7 @@ export default class Sidebar extends React.Component {
               </div>
             </Link>
             <Link
-              to="/CampusAmbassador/"
+              to="/CampusAmbassador/recentupdates"
               className={
                 (this.state.activeState === "recentUpdate")
                   ? "sideNavItem activeSideItem"

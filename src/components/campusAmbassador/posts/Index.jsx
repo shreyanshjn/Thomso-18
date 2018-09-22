@@ -3,7 +3,7 @@ import "../../ca/home/updatedcard.css";
 import AuthService from '../../../handlers/ca/temp/AuthService';
 import FetchApi from '../../../utils/FetchAPI';
 
-import Card from '../../ca/timeline/Card';
+import Card from '../../ca/home/Card';
 
 let unmount = false
 export default class PostIndex extends React.Component {

@@ -58,6 +58,9 @@
         text-decoration: none;
         text-transform: none;
     }
+    .sidenav > .campusAmb-sidebar-contents > .activeSideItem > .campusAmb-sidebar-facebook > .campusAmb-sidebar-svg-logo svg .facebookpath{
+        fill: blue;
+    }
     .sidenav > .campusAmb-sidebar-contents > .activeSideItem > .campusAmb-sidebar-posts > .campusAmb-sidebar-svg-logo svg .postpath{
         fill: red;
     }
@@ -517,12 +520,23 @@
         padding: 0 0px;
     }
 }
+@media only screen and (min-width:768px)
+{
+    .mobile-facebook
+    {
+        display:none; 
+    }
+}
 @media screen and (max-width:1000px) and (min-width:768px){
     .campusAmb-sidebar-likes-number{
         font-size: 10px;
     }
 }
 @media screen and (max-width: 768px) {
+    .mobile-facebook
+    {
+        cursor:pointer;
+    }
     .sidenav{
         width: 35px;
         min-width: 35px;
