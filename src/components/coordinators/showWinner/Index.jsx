@@ -46,7 +46,12 @@ export default class ShowWinnerIndex extends React.Component{
         let {winnerData, errors} = this.state;
         return(
             <div>
-                <Link to="/coordinators/addWinner"> Add Winners </Link>
+                <div style={{display:"inline", paddingLeft:"50px",paddingBottom:"30px"}}>
+                    <Link to="/coordinators/addWinner"> Add Winners </Link>
+                </div>
+                <div style={{display:"inline", paddingLeft:"50px",paddingBottom:"30px"}}>
+                    <Link to="/coordinators/logout"> Logout </Link>
+                </div>
                 {errors ?
                         <div style={{ textAlign: 'center', color: 'red', fontWeight: '600', fontSize:"25px" }}>
                             {errors}

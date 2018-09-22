@@ -1,11 +1,24 @@
 import React from 'react';
 import Row from './Row';
+import $ from 'jquery'
 
 export default class DataTable extends React.Component {
-
+    handleFilter(e){
+        e.preventDefault();
+        $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function() {
+                return $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    }
     render() {
       return (
         <div>
+            <div style={{marginTop:"25px", marginLeft:"50px"}}>
+                <input id="myInput" type="text" onChange={(e) => this.handleFilter(e)} placeholder="Type here to search..." 
+                style={{padding:"7px", borderRadius:"3px"}} />
+            </div>
             <table style={{borderCollapse: 'collapse',marginTop:"15px"}}>
                 <thead>
                     <tr>

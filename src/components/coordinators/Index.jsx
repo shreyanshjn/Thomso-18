@@ -37,13 +37,18 @@ const ShowWinnerIndex = Loadable({
     loader: () => import("./showWinner/Index"),
     loading: () => <Loader/>
 });
+const LogoutIndex = Loadable({
+    loader: () => import("./logout/Index"),
+    loading: () => <Loader/>
+});
+
 
 export default class MainIndex extends React.Component {
     constructor() {
         super();
         this.state = {
             isAuthenticated: false,
-            userData: "",
+            userData: [],
             errors:""
         }
         this.Auth = new AuthService();
@@ -64,6 +69,16 @@ export default class MainIndex extends React.Component {
                 });
         }
     }
+
+    handleUpdate = (isAuthenticated) => {
+        this.setState({ isAuthenticated})
+    };
+
+    setUserData = data => {
+        this.setState({
+            userData: data
+        });
+    };
    
     render() {
         let { isAuthenticated, userData} = this.state;
@@ -71,12 +86,13 @@ export default class MainIndex extends React.Component {
             <React.Fragment>
                 {isAuthenticated ? 
                     <React.Fragment>
-                        <Route  path="/coordinators" render={props => (<AddWinnerIndex {...props} userData={this.state.userData} />)}  />
-                        {/* <Route  path="/coordinators/" render={props => (<ShowWinnerIndex {...props} userData={this.state.userData} />)} /> */}
+                        <Route exact path="/coordinators" render={props => (<AddWinnerIndex {...props} userData={userData} />)}  />
+                        <Route  path="/coordinators/showWinner" render={props => (<ShowWinnerIndex {...props} userData={this.state.userData} />)} />
+                        <Route  path="/coordinators/logout" component={LogoutIndex} />
                     </React.Fragment>
                     :
                     <React.Fragment>
-                        <Route  path="/coordinators" component={LoginIndex} />
+                        <Route  path="/coordinators" render={props => (<LoginIndex {...props} updateRoutes={this.handleUpdate} setUserData={this.setUserData} />)} />
                         <Route exact path="/coordinators/register" component={RegisterIndex} />
                     </React.Fragment>
                 }

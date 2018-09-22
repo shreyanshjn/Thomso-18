@@ -15,7 +15,7 @@ export default class AddWinnerIndex extends React.Component{
             ifsc_code:'',
             account_no:'',
             bank_name:'',
-            errors:'sdf',
+            errors:'',
             disabled:false
         }
         this.Auth = new AuthService();
@@ -103,9 +103,17 @@ export default class AddWinnerIndex extends React.Component{
                 {this.props && this.props.userData && this.props.userData.name ? <h3> Hello, {this.props.userData.name}</h3> :null}
                 <div>
                     <h4 style={{display:"inline"}}  > Add Winner </h4>
-                    <span  style={{display:"inline"}}  ><Link to="/coordinators/showWinner"> Show Winner's List </Link></span>
-                </div>               
-                <div style={{marginTop:"25px"}}>
+                    <span  style={{display:"inline",marginLeft:"80px"}}  ><Link to="/coordinators/showWinner"> Show Winner's List </Link></span>
+                    <span  style={{display:"inline",marginLeft:"80px"}}  ><Link to="/coordinators/logout"> Logout </Link></span>
+                </div>       
+                <div>
+                    <ul> <b>Instructions</b>
+                        <li>Single And Multiple are two options for adding winners of single participant and double/group event.</li>
+                        <li>In group event only thomso id field will be cleared on adding winner. You can clear whole form on clicking Clear button</li>
+                        <li>Please Cross check and remove the entries by visiting show winner from above link. Strict Action will be taken against coordinator if any fake entry is added by them.</li>
+                    </ul>
+                </div>        
+                <div style={{marginTop:"50px"}}>
                     <div style={{display:"inline", fontSize:"25px", paddingLeft:"10%"}}>
                         <span><input onChange={this.eventOptionChange} type="radio" name="single" value="single"  checked={event_type}   /></span><span>Single</span>
                     </div>
@@ -113,15 +121,8 @@ export default class AddWinnerIndex extends React.Component{
                         <span><input onChange={this.eventOptionChange} type="radio" name="multiple" value="multiple" checked={!event_type}   /></span><span>Group Event</span>
                     </div>
                 </div>
-                <div>
-                    <ul> <b>Instructions</b>
-                        <li>Single And Multiple are two options for adding winners of single participant and double/group event.</li>
-                        <li>In group event only thomso id field will be cleared on adding winner. You can clear whole form on clicking Clear button</li>
-                        <li>Please Cross check and edit or remove the entries by visiting show winner from above link. Strict Action will be taken against coordinator if any fake entry is added by them.</li>
-                    </ul>
-                </div>
-                <div>
-                    
+                
+                <div style={{marginTop:"30px"}}>
                     <form id="addWinnerForm" onSubmit={this.onSubmit}>
                         <div style={{paddingLeft:"2%", fontSize:"20px",width:"60%",display:"flex",marginTop:"10px", justifyContent:"space-evenly"}}>
                             <label style={{width:"20%"}} htmlFor="inputThomsoId">Thomso ID</label>
@@ -227,7 +228,7 @@ export default class AddWinnerIndex extends React.Component{
                         <div style={{marginLeft:"20%", marginTop:"30px"}}>
                             <button type="submit" style={{fontSize:"20px", padding:"5px"}}>Add Winner</button>
                             {!event_type ? 
-                                <input type="button" onClick={this.resetChange} style={{fontSize:"20px", padding:"5px"}} value="Reset" />
+                                <input type="button" onClick={this.resetChange} style={{fontSize:"20px", padding:"5px", marginLeft:"50px"}} value="Reset" />
                             : null}
                         </div>
                         {errors ?

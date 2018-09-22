@@ -119,10 +119,10 @@ const onlineevents = Loadable({
     loader: () => import("./components/onlineEvents/Index"),
     loading: () => <Loader />
 })
-const CoordinatorsIndex = Loadable({
-  loader: () => import("./components/coordinators/Index.jsx"),
-  loading: () => <Loader />
-})
+// const CoordinatorsIndex = Loadable({
+//   loader: () => import("./components/coordinators/Index.jsx"),
+//   loading: () => <Loader />
+// })
 class App extends Component {
     render() {
         return (
@@ -155,7 +155,7 @@ class App extends Component {
                             <Route path="/campusclicks" component={CampusClicks} />
                             <Route path="/silhoutte" component={Silhoutte} />
                             <Route path="/xpression" component={Xpression} />
-                            <Route exact path="/coordinators" component={CoordinatorsIndex} />
+                            {/* <Route exact path="/coordinators" component={CoordinatorsIndex} /> */}
                             {/* <Route component={Error404} /> */}
                         </React.Fragment>
                     </Switch>

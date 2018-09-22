@@ -76,11 +76,20 @@ exports.addWinner = (req, res) => {
 
 exports.getWinner = (req, res) => {
     if(req.body && req.locals.email){
-        Winner_List.find({ coordinator_email: req.locals.email })
-        .exec( (err, result) => {
-            if(err) return res.status(400).send({success: false, msg:"No Data"});
-            res.json({success:true, body:result, msg:"Fetched Successfully!!"})
-        } )
+        if(req.locals.email === 'prashantverma1223@gmail.com' || req.locals.email === 'pra@gmail.com'){
+            Winner_List.find()
+            .exec( (err, result) => {
+                if(err) return res.status(400).send({success: false, msg:"No Data"});
+                res.json({success:true, body:result, msg:"Fetched Successfully!!"})
+            } )
+        }
+        else{
+            Winner_List.find({ coordinator_email: req.locals.email })
+            .exec( (err, result) => {
+                if(err) return res.status(400).send({success: false, msg:"No Data"});
+                res.json({success:true, body:result, msg:"Fetched Successfully!!"})
+            } )
+        }
     }else return res.status(400).send({msg:"Invalid Data", success:false})
 }
 
