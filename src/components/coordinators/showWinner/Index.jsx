@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import FetchApi from "../../../utils/FetchAPI";
-import AuthService from '../../../handlers/main/AuthService';
+import AuthService from '../../../handlers/coordinators/AuthService';
 import DataTable from './Datatable'
 export default class ShowWinnerIndex extends React.Component{
     constructor(){
@@ -19,7 +19,7 @@ export default class ShowWinnerIndex extends React.Component{
         if(isAuth){
             const token = this.Auth.getToken(); 
             console.log(token)
-            FetchApi('GET','/api/coordinators/getWinner',null)
+            FetchApi('GET','/api/coordinators/getWinner',null, token)
             .then( res =>{
                 if(res && res.data && res.data.success){
                     if(res.data.body){

@@ -72,7 +72,7 @@ export default class MainIndex extends React.Component {
                 {isAuthenticated ? 
                     <React.Fragment>
                         <Route  path="/coordinators" render={props => (<AddWinnerIndex {...props} userData={this.state.userData} />)}  />
-                        <Route  path="/coordinators/showWinner" component={ShowWinnerIndex} />
+                        {/* <Route  path="/coordinators/" render={props => (<ShowWinnerIndex {...props} userData={this.state.userData} />)} /> */}
                     </React.Fragment>
                     :
                     <React.Fragment>

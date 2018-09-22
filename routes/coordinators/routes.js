@@ -22,7 +22,8 @@ router.post('/auth/login', coordinatorRegister.login);
 
 // -> /api/coordinators/
 router.get('/info', CoordinatorsTokenMiddleware.verifyUser, coordinatorControls.info);
-router.post('/addWinner', winnerControls.addWinner);
-router.get('/getWinner', winnerControls.getWinner);
+router.post('/addWinner', CoordinatorsTokenMiddleware.verifyUser, winnerControls.addWinner);
+router.get('/getWinner', CoordinatorsTokenMiddleware.verifyUser, winnerControls.getWinner);
+router.put('/removeWinner', CoordinatorsTokenMiddleware.verifyUser, winnerControls.remove_winner);
 
 module.exports = router;

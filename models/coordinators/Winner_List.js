@@ -3,47 +3,52 @@ var mongoose = require('mongoose');
 var UserSchema = new mongoose.Schema({
     coordinator_email: {
         type: String,
-        required: true
+        unique:false
     },
     thomso_id: {
         type: String,
-        required: true
+        unique:false
+
     },
     name: {
         type: String,
-        required: true
+        unique:false
     },
     college: {
         type: String,
-        required: true
+        unique:false
     },
     email: {
         type: String,
-        required: true
+        unique:false
     },
     contact: {
         type: String,
-        required: true
+        unique:false
     },
     event_name: {
         type: String,
-        required: true
+        unique:false
     },
     position: {
         type: String,
-        required: true
+        unique:false
+    },
+    event_name_email: {
+        type: String,
+        unique:true
     },
     ifsc_code: {
         type: String,
-        required: true
+        unique:false
     },
     account_no: {
         type: String,
-        required: true
+        unique:false
     },
     bank_name: {
         type: String,
-        required: true
+        unique:false
     },
     verified:{
         type:Boolean,

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import FetchApi from "../../../utils/FetchAPI";
-import AuthService from '../../../handlers/main/AuthService';
+import AuthService from '../../../handlers/coordinators/AuthService';
 
 export default class AddWinnerIndex extends React.Component{
     constructor(){
@@ -56,7 +56,8 @@ export default class AddWinnerIndex extends React.Component{
 
     onSubmit = (e) => {
         e.preventDefault();
-        let coordinator_email = 'prashantverma1223@gmail.com';
+        let coordinator_email = this.props.userData.email;
+        console.log(coordinator_email)
         let { thomso_id, event_name, position, ifsc_code, account_no, bank_name }= this.state;
         if (thomso_id) thomso_id = thomso_id.trim()
         if (event_name) event_name = event_name.trim()
@@ -70,8 +71,8 @@ export default class AddWinnerIndex extends React.Component{
         if(thomso_id && event_name && position && ifsc_code && account_no && bank_name){
             if(isAuthenticated){
                 const token = this.Auth.getToken();
-                // console.log(token)
-                FetchApi('POST', '/api/coordinators/addWinner', data)
+                console.log(token)
+                FetchApi('POST', '/api/coordinators/addWinner', data, token)
                 .then( res => {
                     if(res && res.data && res.data.success){
                         if(this.state.event_type){
@@ -82,7 +83,7 @@ export default class AddWinnerIndex extends React.Component{
                         }
                     }
                     else{
-                        this.setState({errors:"Unable To Add. Please Try Again!!"})
+                        this.setState({errors:res.data.msg})
                     }
                 })
                 .catch( err=> {
@@ -116,7 +117,7 @@ export default class AddWinnerIndex extends React.Component{
                     <ul> <b>Instructions</b>
                         <li>Single And Multiple are two options for adding winners of single participant and double/group event.</li>
                         <li>In group event only thomso id field will be cleared on adding winner. You can clear whole form on clicking Clear button</li>
-                        <li>Please Cross check the entries by visiting show winner. Strict Action will be taken against that coordinator if any fake entry is found</li>
+                        <li>Please Cross check and edit or remove the entries by visiting show winner from above link. Strict Action will be taken against coordinator if any fake entry is added by them.</li>
                     </ul>
                 </div>
                 <div>

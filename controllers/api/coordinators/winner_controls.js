@@ -9,7 +9,7 @@ var TokenHelper = require('../../../helpers/TokenHelper');
 var Generator = require("../../../helpers/GeneratePassword");
 
 exports.addWinner = (req, res) => {
-    if(req.body && req.body.thomso_id && req.body.event_name && req.body.position && req.body.account_no && req.body.bank_name && req.body.ifsc_code && req.body.coordinator_email){
+    if(req.body && req.body.thomso_id && req.body.event_name && req.body.position && req.body.account_no && req.body.bank_name && req.body.ifsc_code && req.locals.email){
         console.log(req.body.thomso_id,'1')
         if (req.body.thomso_id) {
             req.body.thomso_id = req.body.thomso_id.trim();
@@ -29,66 +29,71 @@ exports.addWinner = (req, res) => {
         if (req.body.bank_name) {
             req.body.bank_name = req.body.bank_name.trim();
         }
-        if (req.body.coordinator_email) {
-            req.body.coordinator_email = req.body.coordinator_email.trim();
-        }
 
-        var data = {
-            thomso_id:req.body.thomso_id,
-            event_name:req.body.event_name,
-            position:req.body.position,
-            account_no:req.body.account_no,
-            ifsc_code:req.body.ifsc_code,
-            bank_name:req.body.bank_name,
-            coordinator_email:req.body.coordinator_email,
-        }
-
-        if(data && data.thomso_id && data.event_name && data.account_no && data.position && data.bank_name && data.coordinator_email && data.account_no){
-        console.log(req.body.thomso_id,'2')
-            Main_User.findOne({thomso_id:data.thomso_id})
+        if(req.body.thomso_id){
+            console.log(req.body.thomso_id,'2')
+            Main_User.findOne({thomso_id:req.body.thomso_id})
             .select('name college email contact')
             .exec( (errr, result) => {
                 if(errr) return res.status(400).send({success:false, msg:"winner data not found"})
-                var newUser = new Winner_List(data);
-
-                console.log(req.body.thomso_id,'5')
-                data = {
-                    college:result.college,
-                    name:result.name,
-                    email:result.email,
-                    contact:result.contact
-                }
-                newUser.save( function(err){
-                    if(err) {
-                        console.log(err,'1')
-                        return res.status(400).send({success:false, msg:"Something Went Wrong"})
+                else if(!result) return res.json({success:false, msg:"Incorrect Thomso ID"});
+                else{
+                    var data = {
+                        thomso_id:req.body.thomso_id,
+                        event_name:req.body.event_name,
+                        position:req.body.position,
+                        account_no:req.body.account_no,
+                        ifsc_code:req.body.ifsc_code,
+                        bank_name:req.body.bank_name,
+                        coordinator_email:req.locals.email,
+                        college:result.college,
+                        name:result.name,
+                        email:result.email,
+                        contact:result.contact,
+                        event_name_email:req.body.event_name + result.email
                     }
-                    console.log(req.body.thomso_id,'3')
-
-                    Counter.findByIdAndUpdate({ _id: 'winners_count' }, { $inc: { seq: 1 } }, { upsert: true, new: true }, function (error) {
-                        if(error) {return res.status(400).send({success:false, msg:"unable to add count"})}
-                            res.json({ success: true, msg: 'Successfully Registered' });
-                    })
-                } )
-                .catch( r => {
-                    res.status(400).send({success:false, msg:"Something Went Wrong"})
-                })
+                    var newUser = new Winner_List(data);
+                    newUser.save( function(err){
+                        if(err) {
+                            return res.status(400).send({success:false, msg:"Something Went Wrong1"})
+                        }
+                        Counter.findByIdAndUpdate({ _id: 'winners_count' }, { $inc: { seq: 1 } }, { upsert: true, new: true }, function (error) {
+                            if(error) {return res.status(400).send({success:false, msg:"unable to add count"})}
+                                res.json({ success: true, msg: 'Successfully Registered' });
+                        })
+                    } )
+                }
+                
             }) 
         }
         else{
-            return res.status(400).send({success:false, msg:"Something Went Wrong"})
+            return res.status(400).send({success:false, msg:"Something Went Wrong2"})
         }
     } else{
-       return res.status(400).send({success:false, msg:"Something Went Wrong"})
+       return res.status(400).send({success:false, msg:"Something Went Wrong3"})
     }       
 }
 
 exports.getWinner = (req, res) => {
-    if(req.body && req.body.email){
-        Winner_List.find({ coordinator_email: req.body.email })
+    if(req.body && req.locals.email){
+        Winner_List.find({ coordinator_email: req.locals.email })
         .exec( (err, result) => {
             if(err) return res.status(400).send({success: false, msg:"No Data"});
             res.json({success:true, body:result, msg:"Fetched Successfully!!"})
         } )
     }else return res.status(400).send({msg:"Invalid Data", success:false})
 }
+
+exports.remove_winner = (req, res) => {
+    console.log(req.body, req.locals)
+    if(req.body && req.locals.email &&  req.body.id){
+        Winner_List.findOneAndUpdate({_id:req.body.id}, {verified:false})
+        .select('_id name')
+        .exec( (err, result)=> {
+            if(err) return res.state(400).send({success:false, msg:"User not found"})
+            console.log(result)
+            res.json({success:true, msg:"Successfully removed"})
+        })
+    }else return res.status(400).send({msg:"Invalid Data", success:false})
+}
+
