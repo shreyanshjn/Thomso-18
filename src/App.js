@@ -123,6 +123,10 @@ const onlineevents = Loadable({
     loader: () => import("./components/onlineEvents/Index"),
     loading: () => <Loader />
 })
+const Carousel = Loadable({
+    loader: () => import("./components/carousel/Index"),
+    loading: () => <Loader />
+})
 class App extends Component {
     render() {
         return (
@@ -153,6 +157,7 @@ class App extends Component {
                             <Route path="/events" component={Events} />
                             <Route path="/meme" component={Meme} />
                             <Route path="/Mr&MissThomso" component={MrMissThomso} />
+                            <Route path="/c" component={Carousel} />
                             <Route path="/campusclicks" component={CampusClicks} />
                             <Route path="/silhoutte" component={Silhoutte} />
                             <Route path="/xpression" component={Xpression} />

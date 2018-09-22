@@ -27,7 +27,7 @@ export const EventDetails =
                     id: '1_3',
                     name: "Flash Mob",
                     content: "A flash mob is a group of people who assemble at a public place and perform an unusual and seemingly pointless act for a brief time for the purpose of entertainment and artistic expression and then they disperse. Its about doing something crazy and bizarre to entertain people around.",
-                    image: "flash_mob.jpeg",
+                    image: "Flashmob.jpg",
                 }
 
             ]
@@ -125,7 +125,7 @@ export const EventDetails =
                         name: "Battle of Bands",
                         content: "Do you think your voice matters? Do you have the power to change the mood or move the world with a single tone? If you think you can make the crowd forget themselves in your performance, then this is the place to be in. Thomso welcomes you to B.O.B (Battle of Bands), an arena to battle against India’s best bands. With massive enthusiasm and fearsome competition, this event brings out the best in its participants striving for glory. If you have the band that just can’t lose and have hunger for more, then come and perform against the most formidable bands in India.",
                         rulebook: "https://drive.google.com/open?id=1SoRKx8MDGxRPEZtgqfbbumlZTQQsm6vJ",
-                        image: "battle_of_bands.jpg",
+                        image: "battleOFbands.jpg",
                         prize: "100"
                     },
                     {
@@ -155,7 +155,7 @@ export const EventDetails =
                         name: "Telly Sporcle",
                         content: "This event will comprise of questionnaires related to 5 popular American TV Series: Suits, How I Met Your Mother, Sherlock, F.R.I.E.N.D.S. and Game of Thrones. Participants will participate in teams of two.",
                         rulebook: "https://drive.google.com/open?id=1W9s3UKb1qRX2wfOjXTNBChu_buD5TUkW",
-                        image: "tellysporcle.jpg",
+                        image: "tellySporcle.jpeg",
                         prize: "10"
                     }]
         },
@@ -248,7 +248,7 @@ export const EventDetails =
                         name: "Campus Diva",
                         content: "Girls this one is for you all. Have you ever speculated how sumptuous and gorgeous you would look when you dress up like Cinderella or Snow White or any other Disney Princess? When thousands of people are gazing at you and you mesmerize them with your beauty leaving them awestruck. When you realize that your childhood dream has come true and you are living it.Ever wanted to feel the beauty within you and show the world the real you, Thomso 2018 with the theme of ‘Seized By Stardust’, is giving you all the opportunity to become Amparo Munoz or Janelle Commissiong of this event which will be beating at this year’s Thomso.",
                         rulebook: "https://drive.google.com/open?id=1zNxvEKt0CciRDQrb9Rzk1Dak3xBa0D22",
-                        image: "campus_princess.jpeg",
+                        image: "CampusDiva.jpg",
                         prize: "75"
                     },
                     {
@@ -264,7 +264,7 @@ export const EventDetails =
                         name: "Vogue",
                         content: "Fashion is a way to speak who you are without having to speak. Do you love owning the world with your elegance and glamour? So why fit in when you were born to stand out? With the adage “Classy and Fabulous” on back of our minds, we have this event planned out to cater to the fashionista in all of us. A breath stopper at Thomso where sculpted males and gorgeous females sizzle the ramp with their display of sensational apparels, radiating confidence and mystique.If you are the one to let your style speak for yourself, then this is the place to be. We invite you to break out of the mould and scintillate the world with your glamour and confidence, on a stage graced with the likes of Sushmita Sen, Annie Thomas, Udita Goswami and other bigwigs in the past.",
                         rulebook: "https://drive.google.com/open?id=1ETuszdLYOEEuRnjtbp9QxI-Qr2-T00q0",
-                        image: "vogue.jpeg",
+                        image: "Vogue.jpeg",
                         prize: "125"
                     }
                 ]
@@ -280,7 +280,7 @@ export const EventDetails =
                         name: "Apocalypse",
                         content: "Beating a game is a journey. Therein lies the fun.Are you one of those who think gaming is their DNA? Do you get an adrenaline rush every time you conquer a game? Welcome to Apocalypse, a cut throat competition with intense competition and massive crowds,this is one gaming competition you wouldn’t want to miss. So gear up and let your game speak for you. Strike new camaraderie and build up envious rivalries in this hard fought event, where shots are traded across battle lines. Show us your hard acquired gaming skills and aim to vanquish all.So if you think you are the one to obliterate the competition, then Apocalypse is the place to be!Level up, fall down, respawn and get back up to earn the coveted crown.",
                         rulebook: "https://drive.google.com/open?id=18KzLDFXJkzc-kDkX6CkInPhZHzc1CUJv",
-                        image: "apocalypse.jpeg",
+                        image: "apocalpse.jpeg",
                         prize: "50"
                     },
                     {
@@ -288,7 +288,7 @@ export const EventDetails =
                         name: "Queen's Gambit",
                         content: "Do you pursue good chess skills,but do not feel like playing those 30+minute games? If yes, then this is the best platform to show off your skills.Instead of playing tediously long matches on a chess board, this is a unique 'Chess tactics solving competition.'",
                         rulebook: "https://drive.google.com/open?id=1TD7_ZMNIJvCcC-6Ym0a1AmZrWaRUkzFN",
-                        image: "queen_gambit.jpg",
+                        image: "chess.jpeg",
                         prize: "10"
                     },
                     {
@@ -296,7 +296,7 @@ export const EventDetails =
                         name: "Snooker Elite",
                         content: " Do you think what it take to be the master of cues? If yes, come forth and compete with your contemporaries and prove your mettle; because if you can’t prove, you don’t have. This event gives you an opportunity to compete with the elites and let the world witness your flair. The table is set, now is the time for you to hit.The event consist of the following two of the table games: Snooker & Pool, which are by far, the benchmarks of precision and skill.",
                         rulebook: "https://drive.google.com/open?id=1LwQfu69j6JZuCMIy0QEB6HWcf3ydhYS7",
-                        image: "snooker_elite.jpg",
+                        image: "snooker.jpg",
                         prize: "10"
                     }
                 ]
@@ -360,7 +360,7 @@ export const EventDetails =
                         name: "Junkyard",
                         content: 'All Hands on the boat!!" Well, as usual the “Black Pearl” is gone, and our Dear Captain Sparrow is once again left behind on an island. Help Sparrow build a boat from the junk he is left with on the island, which will leads him towards the treasure far away in the Caribbean. Make use of the Junk made available to you to build a boat.',
                         rulebook: "https://drive.google.com/file/d/1BCBvq7DzEVaMom34V84hQKr4wEBYK9Sn/view?usp=sharing",
-                        image: "junkyard.jpeg",
+                        image: "junkyard.jpg",
                         prize: "20"
                     }
                 ]
@@ -376,7 +376,7 @@ export const EventDetails =
                         name: "Thomso's Got Talent",
                         content: "Talent is entrusted to a man as a treasure which must not be squandered. Do you have a flair towards the extraordinary? Do you have the motivation to transform your talent into genius? This Thomso, we offer you a chance to spread your wings and explore your talents in front of a captivating audience. This event has its participants showcasing their superfluity of talents, be it singing, dancing, comedy, magic or any quirky thing you are passionately curious about. So get all riled up, practice, perfect and work your way towards glory in this gem of an event.",
                         rulebook: "https://drive.google.com/open?id=1s1QbdEa3hD77RzuASKhsm_93lpKXB3Bs",
-                        image: "tgt.jpeg",
+                        image: "thomsogottalent.jpg",
                         prize: "50"
                     },
                     {
@@ -400,7 +400,7 @@ export const EventDetails =
                         name: "Scavenger Hunt",
                         content: "The quintessential pleasure in a quest is not the conclusion, but it's the journey that makes all the difference. Simple, crazy and exhilarating, Scavenger Hunt is as exciting as the name promises. An exciting event that promises to take participants on a wild ride around the campus in search for elusive artefacts, with a single agenda in mind, Catch them all. This Thomso, we invite you to embark on a quest to uncover hidden treasures and trudge your way towards glory. So compete, enjoy and seek your inner adventurer in this kooky pursuit of wondrous exaltation.",
                         rulebook: "https://drive.google.com/open?id=1AbiD2D2AQryxp8pH_QuxCckrnjQ5hjBk",
-                        image: "scavenger_hunt.jpg",
+                        image: "scavengerhunt.jpg",
                         prize: "10"
                     }]
         },
@@ -432,7 +432,7 @@ export const EventDetails =
                         name: "Open Mic",
                         content: "Open mic is an event where anyone can grab the mic and perform. The performer is handed the mic to perform live on the stage in front of the audience. The event is focused on performance arts like poetry, spoken word, song, stand-up comedy, etc.",
                         rulebook: "",
-                        image: "open_mic.jpeg",
+                        image: "openmic.jpg",
                         prize: "20"
                     },
                     {
