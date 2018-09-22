@@ -98,7 +98,7 @@ export const EventDetails =
                         content: "In the recent years, memesters have successfully managed to tickle our funny bones by hijacking our social medias with their MAYMAYS. The trend says memes but we are here with 'MAYMAY' - the online meme making competition of Thomso'18. With this we have begun our quest to find the ultimate memelord. Put on your thinking caps memesta’s because the competition is going to be fierce. Pour all your creativity, spill the humour and be the pro.",
                         rulebook: "https://drive.google.com/open?id=1QMbZO0WojWjvnfvF8pqkTKfzh1T4V7QR",
                         image: "may_may.jpeg",
-                        prize: "50"
+                        prize: "100"
                     },
                     {
                         id: '3_6',
@@ -213,7 +213,7 @@ export const EventDetails =
                         content: "Have you ever felt a problem too trivial to be ignored for so long yet remains unsolved till now? Or an idea of utmost importance but lacks the feasibility which you have been able to unearth? Then this is your chance to showcase your problem-solving skills and analytic acumen as you put on a business hat and devise a business plan that could change the world as we see it. Envision and let your thoughts transcend into reality in the form of a winning game plan.",
                         rulebook: "https://drive.google.com/open?id=1aWWvdZNT4VisHkpHJi96D6ADIafppk8E",
                         image: "negotium_consillium.jpg",
-                        prize:"20"
+                        prize:"15"
                     },
                     {
                         id: '12_5',

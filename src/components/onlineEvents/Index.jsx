@@ -16,7 +16,7 @@ class OnlineEventsIndex extends Component {
                                 </div>
                             </Link>
                             <div className="onlineevents-mainpage-cards-title">
-                                Quizardry
+                                QUIZARDRY
                             </div>
                             <div className="onlineevents-mainpage-cards-button">
                                 <Link to="/quizardry">
@@ -32,7 +32,7 @@ class OnlineEventsIndex extends Component {
                                 </div>
                             </Link>
                             <div className="onlineevents-mainpage-cards-title">
-                                Campus Clicks
+                                CAMPUS CLICKS
                             </div>
                             <div className="onlineevents-mainpage-cards-button">
                                 <Link to="/campusclicks">
@@ -43,15 +43,15 @@ class OnlineEventsIndex extends Component {
                     </div>
                     <div className="onlineevents-mainpage-parent-child">
                         <div className="onlineevents-mainpage-cards">
-                            <Link to="/xpression">
-                                <div className="onlineevents-mainpage-cards-image-xpression">
+                            <Link to="/meme">
+                                <div className="onlineevents-mainpage-cards-image-meme">
                                 </div>
                             </Link>
                             <div className="onlineevents-mainpage-cards-title">
-                                Xpression 
+                                MAY MAY MAKING
                             </div>
                             <div className="onlineevents-mainpage-cards-button">
-                                <Link to="/xpression">
+                                <Link to="/meme">
                                     View
                                 </Link>
                             </div>
@@ -66,7 +66,7 @@ class OnlineEventsIndex extends Component {
                                 </div>
                             </Link>
                             <div className="onlineevents-mainpage-cards-title">
-                                Silhoutte 
+                                SILHOUETTE 
                             </div>
                             <div className="onlineevents-mainpage-cards-button">
                                 <Link to="/silhoutte">
@@ -75,22 +75,7 @@ class OnlineEventsIndex extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="onlineevents-mainpage-parent-child">
-                        <div className="onlineevents-mainpage-cards">
-                            <Link to="/meme">
-                                <div className="onlineevents-mainpage-cards-image-meme">
-                                </div>
-                            </Link>
-                            <div className="onlineevents-mainpage-cards-title">
-                                Meme
-                            </div>
-                            <div className="onlineevents-mainpage-cards-button">
-                                <Link to="/meme">
-                                    View
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div className="onlineevents-mainpage-parent-child">
                         <div className="onlineevents-mainpage-cards">
                             <Link to="/Mr&MissThomso">
@@ -98,7 +83,7 @@ class OnlineEventsIndex extends Component {
                                 </div>
                             </Link>
                             <div className="onlineevents-mainpage-cards-title">
-                                Mr and Miss Thomso
+                                Mr. AND Ms. THOMSO ONLINE
                             </div>
                             <div className="onlineevents-mainpage-cards-button">
                                 <Link to="/Mr&MissThomso">

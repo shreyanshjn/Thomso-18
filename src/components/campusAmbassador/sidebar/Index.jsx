@@ -7,9 +7,9 @@ import AuthService from "../../../handlers/ca/temp/AuthService";
 import boy from "./img/boy.png";
 import girl from "./img/girl.png";
 import { addCATopic } from '../../../utils/firebasePush';
-import ReferralPoint from "./Svg/Referralpoint";
-import Bonus from "./Svg/Bonus";
-import Score from "./Svg/Score";
+// import ReferralPoint from "./Svg/Referralpoint";
+// import Bonus from "./Svg/Bonus";
+// import Score from "./Svg/Score";
 // import share from "./img/share.png"
 // import score from "./img/star.png"
 import Post from "./Svg/Post"
@@ -22,7 +22,10 @@ import Logout from "./Svg/Logout"
 import Bulb from "./Svg/Bulb"
 import Hand from "./Svg/Hand"
 import Home from "../../main/sidebar/Svg/Home.jsx";
-import Profile from "../profile/Index"
+import Profile from "./Svg/Profile.jsx"
+import FacebookImg from './img/fb.svg'
+import Zonals from './Svg/Zonals'
+import Facebook from './Svg/Facebook.jsx'
 
 // import logoUser from '../common/images/user.svg';
 
@@ -42,7 +45,7 @@ export default class Sidebar extends React.Component {
     this.Auth = new AuthService();
     if (!window.location.pathname.substring(18)) {
       this.state = {
-        activeState: "home"
+        activeState: "profile"
       };
     }
   }
@@ -174,8 +177,8 @@ export default class Sidebar extends React.Component {
           <div className="campusAmb-sidebar-line">
           </div>
           : null}
-          <div className="campusAmb-sidebar-like-share-score">
-            {this.props.userData && this.props.userData.score ?
+          {/*<div className="campusAmb-sidebar-like-share-score">
+             {this.props.userData && this.props.userData.score ?
               <div className="campusAmb-sidebar-like-share-score-child">
                 <div className="campusAmb-sidebar-likes">
                   <div className="campusAmb-sidebar-likes-child">
@@ -208,9 +211,7 @@ export default class Sidebar extends React.Component {
                 <div className="campusAmb-sidebar-score">
                   <div className="campusAmb-sidebar-likes-child">
                     <div className="campusAmb-sidebar-likes-grandchild-number">
-                      {this.props.userData ? this.props.userData.score : "0"}
-                    </div>
-                    <div className="campusAmb-sidebar-svg-logo">
+                      {this.props.userData ? this.props.userData.score : "0"} </div> <div className="campusAmb-sidebar-svg-logo">
                       <Score />
                     </div>
                   </div>
@@ -219,11 +220,11 @@ export default class Sidebar extends React.Component {
                 </div>
                 </div>
               </div>
-            : null}
+            : null}*/}
             {/* <div className="campusAmb-sidebar-updatenews">
               *Scores will be updated at 12 am
-            </div> */}
-          </div>
+            </div> 
+          </div>*/}
           {!this.state.facebookConnect ?  
           <div>
             <div className="campusAmb-sidebar-line">
@@ -233,16 +234,16 @@ export default class Sidebar extends React.Component {
                 className={
                   this.state.facebookConnect
                     ? "sideNavItem activeSideItem"
-                    : "sideNavItem"
+                    : "facebooksideNavItem"
                 }
                 onClick={this.facebookLogin}
               >
-                <div className="campusAmb-sidebar-posts flex_row">
-                  <div className="campusAmb-sidebar-svg-logo">
-                    <Post />
-                  </div>
+                <div className="campusAmb-sidebar-facebook flex_row">
+                <div className="campusAmb-sidebar-svg-logo mobile-facebook">
+                    <Facebook />
+                </div>
                   <div className="campusAmb-sidebar-navitem-name">
-                    CONNECT WITH FACEBOOK
+                          <img src={FacebookImg} alt="CONNECT WITH FACEBOOK" className="facebook-connect-image"/>
                   </div>
                 </div>
               </div>
@@ -259,7 +260,27 @@ export default class Sidebar extends React.Component {
           </div>
           <div className="campusAmb-sidebar-contents">
             <Link
-              to="/CampusAmbassador/"
+              to="/CampusAmbassador"
+              className={
+                this.state.activeState === "profile"
+                  ? "sideNavItem activeSideItem"
+                  : "sideNavItem"
+              }
+              onClick={() => {
+                this.setActive("profile");
+              }}
+            >
+              <div className="campusAmb-sidebar-profile flex_row">
+                <div className="campusAmb-sidebar-svg-logo">
+                    <Profile />
+                </div>
+                <div className="campusAmb-sidebar-navitem-name">
+                  PROFILE
+                </div>
+              </div>
+            </Link>
+            <Link
+              to="/CampusAmbassador/recentupdates"
               className={
                 (this.state.activeState === "recentUpdate")
                   ? "sideNavItem activeSideItem"
@@ -278,46 +299,7 @@ export default class Sidebar extends React.Component {
                 </div>
               </div>
             </Link>
-            <Link
-              to="/CampusAmbassador/profile"
-              className={
-                this.state.activeState === "home"
-                  ? "sideNavItem activeSideItem"
-                  : "sideNavItem"
-              }
-              onClick={() => {
-                this.setActive("home");
-              }}
-            >
-              <div className="campusAmb-sidebar-ideas flex_row">
-                <div className="campusAmb-sidebar-svg-logo">
-                    <Profile />
-                </div>
-                <div className="campusAmb-sidebar-navitem-name">
-                  PROFILE
-                </div>
-              </div>
-            </Link>
-            <Link
-              to="/"
-              className={
-                this.state.activeState === "home"
-                  ? "sideNavItem activeSideItem"
-                  : "sideNavItem"
-              }
-              onClick={() => {
-                this.setActive("home");
-              }}
-            >
-              <div className="campusAmb-sidebar-ideas flex_row">
-                <div className="campusAmb-sidebar-svg-logo">
-                    <Home />
-                </div>
-                <div className="campusAmb-sidebar-navitem-name">
-                  HOME
-                </div>
-              </div>
-            </Link>
+            
             <Link
               to="/CampusAmbassador/leaderboard"
               className={
@@ -409,9 +391,9 @@ export default class Sidebar extends React.Component {
                 this.setActive("zonals");
               }}
             >
-              <div className="campusAmb-sidebar-ideas flex_row">
+              <div className="campusAmb-sidebar-zonals flex_row">
                 <div className="campusAmb-sidebar-svg-logo">
-                    <Home />
+                    <Zonals />
                 </div>
                 <div className="campusAmb-sidebar-navitem-name">
                   ZONALS
@@ -478,6 +460,26 @@ export default class Sidebar extends React.Component {
                   </Link>
               </div>
               : null}
+              <Link
+              to="/"
+              className={
+                this.state.activeState === "home"
+                  ? "sideNavItem activeSideItem"
+                  : "sideNavItem"
+              }
+              onClick={() => {
+                this.setActive("home");
+              }}
+            >
+              <div className="campusAmb-sidebar-home flex_row">
+                <div className="campusAmb-sidebar-svg-logo">
+                    <Home />
+                </div>
+                <div className="campusAmb-sidebar-navitem-name">
+                  HOME
+                </div>
+              </div>
+            </Link>
             <Link
               to="/CampusAmbassador/logout"
               className={

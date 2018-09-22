@@ -71,27 +71,11 @@ class List extends Component {
           <a href="">TEAM CONTACT</a>
         </li>*/}
                 <li>
-                    <Link to="/campusclicks" className={(this.state.activeStateLink === "campusclicks") ? "list-quiz-link" : null}
+                    <Link to="/onlineevents" className={(this.state.activeStateLink === "onlineevents") ? "list-quiz-link" : null}
                         onClick={() => {
-                            this.setActiveLink("campusclicks");
+                            this.setActiveLink("onlinevents");
                         }}>
-                        CAMPUS CLICKS
-                    </Link>
-                </li>
-                <li>
-                    <Link to="/silhoutte" className={(this.state.activeStateLink === "silhoutte") ? "list-spons-link" : null}
-                        onClick={() => {
-                            this.setActiveLink("silhoutte")
-                        }}>
-                        SILHOUETTE
-                    </Link>
-                </li>
-                <li>
-                    <Link to="/xpression" className={(this.state.activeStateLink === "xpression") ? "list-spons-link" : null}
-                        onClick={() => {
-                            this.setActiveLink("xpression")
-                        }}>
-                        XPRESSION
+                        ONLINE EVENTS
                     </Link>
                 </li>
                 <li>
