@@ -299,26 +299,7 @@ export default class Sidebar extends React.Component {
                 </div>
               </div>
             </Link>
-            <Link
-              to="/"
-              className={
-                this.state.activeState === "home"
-                  ? "sideNavItem activeSideItem"
-                  : "sideNavItem"
-              }
-              onClick={() => {
-                this.setActive("home");
-              }}
-            >
-              <div className="campusAmb-sidebar-home flex_row">
-                <div className="campusAmb-sidebar-svg-logo">
-                    <Home />
-                </div>
-                <div className="campusAmb-sidebar-navitem-name">
-                  HOME
-                </div>
-              </div>
-            </Link>
+            
             <Link
               to="/CampusAmbassador/leaderboard"
               className={
@@ -479,6 +460,26 @@ export default class Sidebar extends React.Component {
                   </Link>
               </div>
               : null}
+              <Link
+              to="/"
+              className={
+                this.state.activeState === "home"
+                  ? "sideNavItem activeSideItem"
+                  : "sideNavItem"
+              }
+              onClick={() => {
+                this.setActive("home");
+              }}
+            >
+              <div className="campusAmb-sidebar-home flex_row">
+                <div className="campusAmb-sidebar-svg-logo">
+                    <Home />
+                </div>
+                <div className="campusAmb-sidebar-navitem-name">
+                  HOME
+                </div>
+              </div>
+            </Link>
             <Link
               to="/CampusAmbassador/logout"
               className={
