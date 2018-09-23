@@ -313,7 +313,7 @@
 .whythomso-fourth-child-the-nightmare-image{
     height: 200px;
     width: auto;
-    background-image:url("../../beta/blog/image/thomsoblog.jpeg");
+    background-image:url("../../beta/blog/blog1/image/thomsoblog.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -467,7 +467,7 @@
 }
 .whythomso-fifth-child{
     width: 100vw;
-    height: 100vh;
+    height: 100%;
 }
 .whythomso-fifth-child-top{
     height: 24vh;
@@ -489,14 +489,12 @@
     flex-direction: column;
 }
 .whythomso-fifth-child-middle{
-    overflow: scroll;
     padding: 30px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     flex-wrap: wrap;
     overflow-x: hidden;
-    height: 60vh;
 }
 .whythomso-fifth-child-artist{
     width: 18%;
@@ -589,5 +587,37 @@
     }
     .whythomso-fifth-child-artist{
         width: 90%;
+    }
+    .whythomso-text{
+        height: 100%;
+        background: #e8e6e9;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .cards-slider-wrapper{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+                                                                                                                                                            width: 100%;
+    }
+    .cards-slider-wrapper iframe{
+        padding: 10px 0px;
+    }
+    .whythomso-third-child{
+        height: 100%;
+    }
+    .whythomso-third-child-sliderwrapper{
+        padding: 5px 0px;
+    }
+    .whythomso-child-whythomso h3 {
+        margin: 0;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content;
+        padding: 40vh 0px 0px 26px;
+        font-size: 50px;
+        color: white;
+        font-family: Poppins;
     }
 }

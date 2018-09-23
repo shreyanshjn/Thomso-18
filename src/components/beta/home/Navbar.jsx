@@ -111,7 +111,7 @@ class Navbar extends Component {
                                     <Link to="/events" className={(this.state.activeState === "#") ? "linkEvents" : null}
                                         onClick={() => {
                                             this.setActive("#");
-                                        }}><span className="events-navbar-new">EVENTS</span><span className="events-delhi-navbar-new">new</span></Link>
+                                        }}><span className="events-navbar-new">EVENTS</span></Link>
                                 </li>}
                                 {/*    <li>
                   <Link to="" className={(this.state.activeState === "linkTeam") ? "linkTeam" : null}
@@ -146,7 +146,7 @@ class Navbar extends Component {
                                     <Link to="/main" className={(this.state.activeState === "main") ? "linkSponsors" : null}
                                         onClick={() => {
                                             this.setActive("main");
-                                        }}>{verified ? (this.state.imageData && this.state.imageData.image) ? <img className="navbar-user-image" src={imageUrl} alt="DASHBOARD" /> : 'DASHBOARD' : <span><span className="events-navbar-new">REGISTER</span><span className="events-delhi-navbar-new">new</span></span>}</Link>
+                                        }}>{verified ? (this.state.imageData && this.state.imageData.image) ? <img className="navbar-user-image" src={imageUrl} alt="DASHBOARD" /> : 'DASHBOARD' : <span><span className="events-navbar-new">REGISTER</span></span>}</Link>
 
                                 </li>
                                 {/* <li>
