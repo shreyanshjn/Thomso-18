@@ -115,10 +115,6 @@ const Cupid = Loadable({
 //     loader: () => import("./components/onlineEvents/xpression/Index"),
 //     loading: () => <Loader />
 // });
-const blog = Loadable({
-    loader: () => import("./components/beta/blog/index"),
-    loading: () => <Loader />
-});
 const onlineevents = Loadable({
     loader: () => import("./components/onlineEvents/Index"),
     loading: () => <Loader />
@@ -145,7 +141,6 @@ class App extends Component {
                             <Route path="/ca/" component={CAIndex} />
                             <Route path="/campusAmbassador/" component={CampusIndex} />
                             <Route path="/zonals" component={ZonalsIndex} />
-                            <Route path="/blog" component={blog} />
                             <Route path="/onlineevents" component={onlineevents} />
                             <Route path="/verifyCerti/" component={VerifyCerti} />
                             <Route path="/policy" component={Policy} />
