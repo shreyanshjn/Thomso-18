@@ -123,10 +123,14 @@ const onlineevents = Loadable({
     loader: () => import("./components/onlineEvents/Index"),
     loading: () => <Loader />
 })
-// const CoordinatorsIndex = Loadable({
-//   loader: () => import("./components/coordinators/Index.jsx"),
-//   loading: () => <Loader />
-// })
+const CoordinatorsIndex = Loadable({
+  loader: () => import("./components/coordinators/Index.jsx"),
+  loading: () => <Loader />
+})
+const ControlsIndex = Loadable({
+    loader: () => import("./components/controls/Index.jsx"),
+    loading: () => <Loader />
+  })
 class App extends Component {
     render() {
         return (
@@ -159,6 +163,7 @@ class App extends Component {
                             <Route path="/campusclicks" component={CampusClicks} />
                             <Route path="/silhoutte" component={Silhoutte} />
                             {/* <Route exact path="/coordinators" component={CoordinatorsIndex} /> */}
+                            <Route exact path="/controls" component={ControlsIndex} />
                             <Route path="/cupid" component={Cupid} /> 
                             {/* <Route path="/xpression" component={Xpression} /> */}
                             {/* <Route component={Error404} /> */}
