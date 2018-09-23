@@ -80,29 +80,20 @@ export default class EventsModal extends React.Component {
         return (
             <div className="events-modala">
                 <div className="events-modala-main-child">
-                    <div style={{ height: "10%", display: "flex", justifyContent: "space-between", borderBottom: "white 1px solid", overflow: 'hidden' }}>
-                        {this.state.data && this.state.data.name ?
-                            <p className="events-modala-p events-modala-p-marketing">
-                                {this.state.data.name}
-                            </p> : null
-                        }
-                        <span href="" className="events-modal-close" onClick={() => this.props.modalClose()}>
-                            &times;
-                    </span>
-                    </div>
                     <div className="events-modala-second-child">
                         <div className="events-list-child">
                             <ul>
                                 {this.state.data && this.state.data.subevents.map(e =>
                                     <li key={e.id} onClick={() => {
                                         this.setState({ subEventId: e.id })
-                                    }}>
+
+                                    }} className={e.id === this.state.subEventId ? "events-active" : null}>
                                         <p className="events-custom-selection">{e.name}</p>
                                     </li>
                                 )}
                             </ul>
                         </div>
-                        {this.state.data ? <EventDetail history={this.props.history} id={this.state.subEventId} detail={this.state.data} eventsId={this.state.eventId} subevents={this.state.data.subevents} data={this.props.data} /> : null}
+                        {this.state.data ? <EventDetail history={this.props.history} id={this.state.subEventId} detail={this.state.data} eventsId={this.state.eventId} close={this.props.modalClose} subevents={this.state.data.subevents} data={this.props.data} /> : null}
                     </div>
                     <div className="events-modals-last-arrow">
                         <p href="" className="arrow-button-events" onClick={() => this.prevCat(this.state.eventId)}>
@@ -112,7 +103,6 @@ export default class EventsModal extends React.Component {
                             <img src="/img/main/events/rightarrow.png" alt="right-arrow" width="15px" onClick={() => this.nextCat(this.state.eventId)} />
                         </p>
                     </div>
-                    {/* <hr className="events-horizontal" /> */}
                 </div>
             </div>
         )

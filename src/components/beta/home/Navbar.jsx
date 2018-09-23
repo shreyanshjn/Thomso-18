@@ -131,10 +131,10 @@ class Navbar extends Component {
                                         }}>ASSOCIATE WITH US</Link>
                                 </li>}
                                 {this.props.events === "true" ? null : <li>
-                                    <Link to="/blog" className={(this.state.activeState === "linkBlog") ? "linkBLog" : null}
+                                    <Link to="/whythomso" className={(this.state.activeState === "linkBlog") ? "linkBLog" : null}
                                         onClick={() => {
                                             this.setActive("linkBlog");
-                                        }}>BLOG</Link>
+                                        }}>WHY THOMSO</Link>
                                 </li>}
                                 {this.props.events === "true" ? null : <li className="dropdown">
                                     <Link to="/zonals/home" className={(this.state.activeState === "lucknow") ? "linkLucknow" : null}
