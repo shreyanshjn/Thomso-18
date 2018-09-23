@@ -24,7 +24,7 @@ export default class HomeIndex extends React.Component {
                         if (r.data.body) {
                             this.setState({ userData:r.data.body });
                         } else {
-                            this.setState({ errors:"Doesn't Able To Fetch" })
+                            this.setState({ errors:"Unable To Fetch" })
                         }
                     }
                 })

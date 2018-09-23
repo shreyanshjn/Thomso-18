@@ -107,27 +107,35 @@ const Silhoutte = Loadable({
     loader: () => import("./components/onlineEvents/silhoutte/Index"),
     loading: () => <Loader />
 });
-const Xpression = Loadable({
-    loader: () => import("./components/onlineEvents/xpression/Index"),
+const Cupid = Loadable({
+    loader: () => import("./components/onlineEvents/cupid/Index"),
     loading: () => <Loader />
 });
-const blog = Loadable({
-    loader: () => import("./components/beta/blog/index"),
-    loading: () => <Loader />
-});
+// const Xpression = Loadable({
+//     loader: () => import("./components/onlineEvents/xpression/Index"),
+//     loading: () => <Loader />
+// });
 const WhyThomso = Loadable({
     loader: () => import("./components/whyThomso/Index"),
     loading: () => <Loader />
 });
+// const WhyThomso = Loadable({
+//     loader: () => import("./components/whyThomso/Index"),
+//     loading: () => <Loader />
+// });
 const onlineevents = Loadable({
     loader: () => import("./components/onlineEvents/Index"),
     loading: () => <Loader />
 })
-const Carousel = Loadable({
-    loader: () => import("./components/carousel/Index"),
-    loading: () => <Loader />
-})
+// const Carousel = Loadable({
+//     loader: () => import("./components/carousel/Index"),
+//     loading: () => <Loader />
+// })
 
+// const CoordinatorsIndex = Loadable({
+//   loader: () => import("./components/coordinators/Index.jsx"),
+//   loading: () => <Loader />
+// })
 class App extends Component {
     render() {
         return (
@@ -146,7 +154,7 @@ class App extends Component {
                             <Route path="/ca/" component={CAIndex} />
                             <Route path="/campusAmbassador/" component={CampusIndex} />
                             <Route path="/zonals" component={ZonalsIndex} />
-                            <Route path="/blog" component={blog} />
+                            {/* <Route path="/blog" component={blog} /> */}
                             <Route path="/whythomso" component={WhyThomso} />
                             <Route path="/onlineevents" component={onlineevents} />
                             <Route path="/verifyCerti/" component={VerifyCerti} />
@@ -158,10 +166,12 @@ class App extends Component {
                             <Route path="/events" component={Events} />
                             <Route path="/meme" component={Meme} />
                             <Route path="/Mr&MissThomso" component={MrMissThomso} />
-                            <Route path="/c" component={Carousel} />
+                            {/* <Route path="/c" component={Carousel} /> */}
                             <Route path="/campusclicks" component={CampusClicks} />
                             <Route path="/silhoutte" component={Silhoutte} />
-                            <Route path="/xpression" component={Xpression} />
+                            {/* <Route exact path="/coordinators" component={CoordinatorsIndex} /> */}
+                            <Route path="/cupid" component={Cupid} />
+                            {/* <Route path="/xpression" component={Xpression} /> */}
                             {/* <Route component={Error404} /> */}
                         </React.Fragment>
                     </Switch>

@@ -145,7 +145,7 @@ exports.verifyOTP = function (req, res) {
                                         verified: true,
                                         thomso_id: thomso_id
                                     };
-                                    Main_User_Token.update({ email: req.locals.email }, { verified: true }, { multi: true })
+                                    Main_User_Token.updateOne({ email: req.locals.email }, { verified: true }, { multi: true })
                                         .exec(function (err) {
                                             if (err) {
                                                 return console.log(err)

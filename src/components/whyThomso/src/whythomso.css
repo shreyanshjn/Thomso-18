@@ -30,6 +30,19 @@
     height: 5px;
     width: 30%;
 }
+.whythomso-text{
+    height: 20vh;
+    background: #e8e6e9;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.whythomso-text p{
+    font-family: Poppins;
+    font-size: 16px;
+    text-align: justify;
+    padding-top: 10px;
+}
 .whythomso-second-child{
     margin-top: 0px;
     width: 100vw;

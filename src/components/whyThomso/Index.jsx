@@ -62,11 +62,9 @@ export default class WhyThomso extends Component {
                         <h3>WHY VISIT THOMSO ?</h3>
                     </div>
                 </div>
-                <div style={{
-                    height: "20vh",
-                    background: "#e8e6e9",
-
-                }}>
+                <div className="whythomso-text">
+                    <p>Thomso is the largest cultural festivals of North India attracting a crowd of over 30000 people. With over 150+ events in line,
+                        Thomso is a three day cultural extravaganza playing host to eminent celebrities and talented scholars.</p>
                 </div>
                 <div id="attractions" className="whythomso-second-child">
                     <div className="whythomso-second-child-top">
@@ -77,7 +75,7 @@ export default class WhyThomso extends Component {
                     <div className="whythomso-second-child-middle">
                         <div className="whythomso-second-child-the-institute">
                             <div className="whythomso-second-child-the-institute-image">
-                                <iframe src="https://www.youtube.com/embed/6T_T07hglvk" height="150px" width="100%" frameBorder="0" allowFullScreen>
+                                <iframe src="https://www.youtube.com/embed/6T_T07hglvk" title="IITR Drone View" height="150px" width="100%" frameBorder="0" allowFullScreen>
                                 </iframe>
                             </div>
                             <div className="whythomso-second-child-the-institute-content">
@@ -131,7 +129,7 @@ export default class WhyThomso extends Component {
                                     {
                                         this.state.videos.map((video, i) => (
                                             <div key={i} className={`ii${i}`} id={`i${i}`}>
-                                                <iframe key={i} src={video} height="300" width="500" frameBorder="0" allowFullScreen>
+                                                <iframe key={i} title={video} src={video} height="300" width="500" frameBorder="0" allowFullScreen>
                                                 </iframe>
                                             </div>
                                         ))

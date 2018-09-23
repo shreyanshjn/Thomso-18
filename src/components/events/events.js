@@ -11,7 +11,7 @@ export const EventDetails =
                     details: "Stage Dance Competition",
                     content: "Are you passionate about dancing? Do you have tingling sensations run down your feet when you hear music? Then come let yourself loose. Dance to express. It's said that in order to find your true self, you first have to lose yourself. Come get lost amid the likes of yourself.Prepare, perfect, perform and if you stumble then make it a part of the dance.",
                     rulebook: "https://drive.google.com/open?id=1inLU2fKJglROpFDV9YTlULrzcfqPOeGl",
-                    image: "street-dancer.jpg",
+                    image: "footloose.jpg",
                     prize: "150"
                 },
                 {
@@ -20,14 +20,14 @@ export const EventDetails =
                     details: "Street Dance Competition",
                     content: "Have you ever had the desire to express the hidden language of your soul, make the music visible and simply be insane? We'll provide you the level field to be fearless, limitless and well,as we promised before, insane. Dance to the beat of your own drum; don't let anyone tell you it can't be done. There are no spring floors, no spotlights, no stage, and no boundaries. Come on the streets to glide, to spin, to fly or to expression to all your instincts, bring your style on the floor. Dance on the random music being played and show your instincts to dance. Step-Up is an on-the-spot street dance competition.",
                     rulebook: "https://drive.google.com/open?id=1UtzxNQSBFrRZNVWDhHsOk_B8ieCeu52D",
-                    image: "stepup.jpg",
+                    image: "stepup.jpeg",
                     prize: "60"
                 },
                 {
                     id: '1_3',
                     name: "Flash Mob",
                     content: "A flash mob is a group of people who assemble at a public place and perform an unusual and seemingly pointless act for a brief time for the purpose of entertainment and artistic expression and then they disperse. Its about doing something crazy and bizarre to entertain people around.",
-                    image: "flashmob.jpg",
+                    image: "flashmob.jpeg",
                 }
 
             ]
@@ -78,7 +78,7 @@ export const EventDetails =
                         name: "Campus Clicks",
                         content: "The birds chirping all around, the whisper of the trees or the plain undeemed sky - we move around with a bag full of stories strolling all around us. So let the pictures do all the speaking as Thomso ‘18 paves the way for you to come up with your stories through it's ‘Campus Clicks’. Let it be - the hangout places, the clubs or merely anything. Come up with your own craft and win exciting prizes for yourself.",
                         rulebook: "https://drive.google.com/open?id=1a_ce2HXsmoDC8J32kBeoKeKMCvt35Ymu",
-                        image: "campusclicks.jpg",
+                        image: "campusclicks.jpeg",
                         prize: "10"
                     },
                     {
@@ -94,15 +94,15 @@ export const EventDetails =
                         name: "Online Mr. & Ms. Thomso",
                         content: "Beauty attracts the eyes but personality captures the heart. The charm of personality is the very essence of grace and elegance. So get in the chase to win the eminent titles of Mr. and Miss Thomso and let your charisma shine out to reach new heights of fame. The winners will get the opportunity to reach the final round of Mr. and Miss. Thomso.",
                         rulebook: "https://drive.google.com/file/d/1B9qCT4fdnxjr_25m0pxWhAYjrHzZyCaA/view?usp=sharing",
-                        image: "mr&mrsthomsoonline.jpg",
+                        image: "mrmrsthomsoonline.jpeg",
                     },
                     {
                         id: '3_5',
                         name: "May May",
                         content: "In the recent years, memesters have successfully managed to tickle our funny bones by hijacking our social medias with their MAYMAYS. The trend says memes but we are here with 'MAYMAY' - the online meme making competition of Thomso'18. With this we have begun our quest to find the ultimate memelord. Put on your thinking caps memesta’s because the competition is going to be fierce. Pour all your creativity, spill the humour and be the pro.",
                         rulebook: "https://drive.google.com/open?id=1QMbZO0WojWjvnfvF8pqkTKfzh1T4V7QR",
-                        image: "may_may.jpeg",
-                        prize: "50"
+                        image: "maymay.jpeg",
+                        prize: "100"
                     },
                     {
                         id: '3_6',
@@ -110,6 +110,14 @@ export const EventDetails =
                         content: "‘Thoughts that flow like waves and feelings so deep as oceans. Imagination that flies like a bird and voices submerged in emotions’. All our words are but crumbs that fall down from the feast of the mind. So, pick up your pens and scribble away all your expressions. Pave a path for your innermost thoughts to reach the world and let your expressions reach out to us!",
                         rulebook: "https://drive.google.com/open?id=1YLtixeZyUwCEgxmrEgsCIHjjRYHV3Ti9",
                         image: "xpressions.jpeg",
+                        prize: "10"
+                    },
+                    {
+                        id: '3_7',
+                        name: "Cupid",
+                        content: "",
+                        rulebook: "https://drive.google.com/open?id=1Z71Z6z24APrI0zFKd-dTudy9EgZ9x11w",
+                        image: "cupid.jpg",
                         prize: "10"
                     },
                 ]
@@ -125,7 +133,7 @@ export const EventDetails =
                         name: "Battle of Bands",
                         content: "Do you think your voice matters? Do you have the power to change the mood or move the world with a single tone? If you think you can make the crowd forget themselves in your performance, then this is the place to be in. Thomso welcomes you to B.O.B (Battle of Bands), an arena to battle against India’s best bands. With massive enthusiasm and fearsome competition, this event brings out the best in its participants striving for glory. If you have the band that just can’t lose and have hunger for more, then come and perform against the most formidable bands in India.",
                         rulebook: "https://drive.google.com/open?id=1SoRKx8MDGxRPEZtgqfbbumlZTQQsm6vJ",
-                        image: "bob1.jpg",
+                        image: "bob1.jpeg",
                         prize: "100"
                     },
                     {
@@ -133,7 +141,7 @@ export const EventDetails =
                         name: "Sargam",
                         content: "In the words of Plato: Music gives a soul to the universe, wings to the mind, flight to the imagination and life to everything.This is your chance to flaunt your gift. Here’s an opportunity to get on stage and tell your story through your flair. It’s the IITR’s premier singing contest. If you believe in yourself then come compete with the elite.You can sing or play an instrument. Just be your best self and own the stage. !",
                         rulebook: "https://drive.google.com/open?id=1GHvKKC8gRCVKlzrXCRDmPRmffaEsHIqe",
-                        image: "sargam.jpg",
+                        image: "sargam.jpeg",
                         prize: "125"
                     }]
         }, {
@@ -147,7 +155,7 @@ export const EventDetails =
                         name: "Quriosity",
                         content: "Do you know everything from the fun facts about infinity war to the intricacies of global economics? Are you generally shunned among peers for being a 'know-it-all'? (OR: does information unintentionally comes blurting out whenever you open your mouth?) Well, here you can actually win prizes for that! So come and embrace the chance to show the ignoramuses that information is the real wealth! Five quizzing events shall be held. \n 1. Titans of Trivia– The general quiz. \n  2. The MELA – Music, Entertainment, Literature and Art \n  3. The India Quiz \n  4. The Sports Quiz \n  5. The Business Quiz",
                         rulebook: "https://drive.google.com/open?id=1uOb-EbhNS4dVh1tFBTx7YsSm0RtPqW2V",
-                        image: "quriosity.jpg",
+                        image: "Quriosity.jpeg",
                         prize: "25"
                     },
                     {
@@ -170,7 +178,7 @@ export const EventDetails =
                         name: "16 Frames",
                         content: "The event consists of two parts:• Screening of short movies made by famous film/documentary makers.• Short movie making competition organized by Cinematic Section. It is a two-day competition.• Day 1 – Top 20 entries are screened.• Winners are finalized and awarded.",
                         rulebook: "https://drive.google.com/open?id=1-ivhtMXTKHUPc9tcWLStX4Yj9yQjKIAh",
-                        image: "16frames.jpeg",
+                        image: "16frames1.jpeg",
                         prize: "30"
                     },
                     {
@@ -178,7 +186,7 @@ export const EventDetails =
                         name: "Box Office",
                         content: " Participants have to form a team of 2-3 members. It will be held in two rounds.Round1: Some movie related questions will be asked and participants have to predict the name of the movie. Round2: Participants have to make a parody of a given movie scenes.",
                         rulebook: "https://drive.google.com/open?id=10J6oOgNW4aVk0eIP9sqxQGylVWr8dAW7",
-                        image: "boxoffice1.jpg",
+                        image: "boxoffice1.jpeg",
                         prize: "20"
                     }]
         }, {
@@ -192,7 +200,7 @@ export const EventDetails =
                         name: "Auction frenzy",
                         content: "It’s the time of the year when players go under the hammer.Welcome to Thomso’s edition of IPL auction. It’s time to place your bid. But beware. Don’t forget to analyse and assess the situation before expending. Build your dream team. Choose among the top players from around the world. Trust your intuition and spend wisely in the high paced bidding frenzy.",
                         rulebook: "https://drive.google.com/open?id=1F8Dq2QsafLdynG8Qq0zXUXJ8jUnQ8nEA",
-                        image: "auctionfrenzy.jpg",
+                        image: "auctionfrenzy.jpeg",
                         prize: "20"
                     },
                     {
@@ -208,7 +216,7 @@ export const EventDetails =
                         name: "Mark Sense",
                         content: "Introduction Mark - Sense: Marketing Event For Poster Quotes that can be used: Marketing is a race without a finishing line ― Philip Kotler.",
                         rulebook: "https://drive.google.com/open?id=1oACFxco2795nqSQKi1cyIZrj4OaCc2xw",
-                        image: "Marksense.jpg",
+                        image: "Marksense.jpeg",
                         prize: "15"
                     },
                     {
@@ -224,7 +232,7 @@ export const EventDetails =
                         name: "A(D)ESIGN",
                         content: "How often do you find yourself skipping advertisements or impatiently waiting for an ad to get over? And how often do you come across ones that you could watch over and over again because they are witty and humorous?! Surely, there aren’t half as many! So, here’s your chance to take charge! IIT Roorkee gives you a chance to create your very own advertisement and be as creative, funny, educational and entertaining as possible! The only ads that we actually watch are the ones we find most engaging, so here is an opportunity to command the attention of thousands and to showcase your creativity and directing skills in an advertisement that will spread your message on a tremendous platform!",
                         rulebook: "https://drive.google.com/open?id=1ZU63Fj3UH4MofsT0TYD7reHbiu1tnXl2",
-                        image: "adesign.png",
+                        image: "addesign.jpeg",
                         prize: "20"
                     },
                     {
@@ -248,7 +256,7 @@ export const EventDetails =
                         name: "Campus Diva",
                         content: "Girls this one is for you all. Have you ever speculated how sumptuous and gorgeous you would look when you dress up like Cinderella or Snow White or any other Disney Princess? When thousands of people are gazing at you and you mesmerize them with your beauty leaving them awestruck. When you realize that your childhood dream has come true and you are living it.Ever wanted to feel the beauty within you and show the world the real you, Thomso 2018 with the theme of ‘Seized By Stardust’, is giving you all the opportunity to become Amparo Munoz or Janelle Commissiong of this event which will be beating at this year’s Thomso.",
                         rulebook: "https://drive.google.com/open?id=1zNxvEKt0CciRDQrb9Rzk1Dak3xBa0D22",
-                        image: "CampusDiva.jpg",
+                        image: "CampusDiva.jpeg",
                         prize: "75"
                     },
                     {
@@ -256,7 +264,7 @@ export const EventDetails =
                         name: "Mr & Ms Thomso",
                         content: "One of the biggest regrets in life is projecting yourself as what people want you to be,rather than being yourself. So do you think yourself as the right blend of beauty, attitude and wit? Do you have what it takes to win the prestigious crown? We offer you a chance to break out of conformity and get a shot at glory. Mr and Ms Thomso is an illustrious event probing the charismatic as well as the intellectual side of the participants. Embrace your uniqueness in this stellar event of individuality and temperament. Come and experience the joy of new encounters and an endlessly changing horizon.",
                         rulebook: "https://drive.google.com/file/d/1dLMJAIDEug0ivdY0NJLbiqT5X7cmmlzi/view?usp=sharing",
-                        image: "mrmrsthomso.jpg",
+                        image: "mrmrsthomso.jpeg",
                         prize: "60"
                     },
                     {
@@ -296,7 +304,7 @@ export const EventDetails =
                         name: "Snooker Elite",
                         content: " Do you think what it take to be the master of cues? If yes, come forth and compete with your contemporaries and prove your mettle; because if you can’t prove, you don’t have. This event gives you an opportunity to compete with the elites and let the world witness your flair. The table is set, now is the time for you to hit.The event consist of the following two of the table games: Snooker & Pool, which are by far, the benchmarks of precision and skill.",
                         rulebook: "https://drive.google.com/open?id=1LwQfu69j6JZuCMIy0QEB6HWcf3ydhYS7",
-                        image: "snooker.jpg",
+                        image: "snooker.jpeg",
                         prize: "10"
                     }
                 ]
@@ -328,7 +336,7 @@ export const EventDetails =
                         name: "Art Talkies",
                         content: "In the modern era, the movies & their posters are highly digitized. Somewhere between this evolution of cinema, a great form of human art was pushed to extinction. There is an unparalleled charisma in the posters of Mughal-e-Azam, Sholay, Guide and even the one overseas Godfather, Marry Poppins & The sound of music. Let's bring this art-form back to life. Art Talkies invites folks to have an enriching experience at this on-the-spot poster making competition and witness the art meeting cinema.",
                         rulebook: "https://drive.google.com/file/d/1wdvpNINDkBlZPYLCkPwM2krdi_1YCAhJ",
-                        image: "arttalkies.jpg",
+                        image: "arttalkies.jpeg",
                         prize: "15"
                     },
                     {
@@ -344,7 +352,7 @@ export const EventDetails =
                         name: "Paint Fiesta",
                         content: "Painting, by nature, is one luminous language; a language that never runs out of words and expression. Plutarch once said 'Painting is silent poetry, and poetry is painting that speaks. This Thomso, nothing stops you as you reveal what’s on your mind, your way, with all the colours you can manage!",
                         rulebook: "https://drive.google.com/open?id=1j4rTO226OcNzQhYK_eYpTDKfujVPvums",
-                        image: "paintfiesta.jpg",
+                        image: "paintfiesta.jpeg",
                         prize: "15"
                     },
                     {
@@ -352,7 +360,7 @@ export const EventDetails =
                         name: "Costume Design",
                         content: "A great dress can make you remember what is beautiful about life. This Thomso let your creativity go bersek and gear up to dress up your friend in the most innovative fashion.",
                         rulebook: "https://drive.google.com/file/d/1WVRIL7B1ELaKHEA6ATuQNUbGwqBNsAkb/view?usp=sharing",
-                        image: "costumedesign.jpg",
+                        image: "costumedesign1.jpeg",
                         prize: "30"
                     },
                     {
@@ -360,7 +368,7 @@ export const EventDetails =
                         name: "Junkyard",
                         content: 'All Hands on the boat!!" Well, as usual the “Black Pearl” is gone, and our Dear Captain Sparrow is once again left behind on an island. Help Sparrow build a boat from the junk he is left with on the island, which will leads him towards the treasure far away in the Caribbean. Make use of the Junk made available to you to build a boat.',
                         rulebook: "https://drive.google.com/file/d/1BCBvq7DzEVaMom34V84hQKr4wEBYK9Sn/view?usp=sharing",
-                        image: "junkyard.jpg",
+                        image: "junkyard.jpeg",
                         prize: "20"
                     }
                 ]
@@ -376,7 +384,7 @@ export const EventDetails =
                         name: "Thomso's Got Talent",
                         content: "Talent is entrusted to a man as a treasure which must not be squandered. Do you have a flair towards the extraordinary? Do you have the motivation to transform your talent into genius? This Thomso, we offer you a chance to spread your wings and explore your talents in front of a captivating audience. This event has its participants showcasing their superfluity of talents, be it singing, dancing, comedy, magic or any quirky thing you are passionately curious about. So get all riled up, practice, perfect and work your way towards glory in this gem of an event.",
                         rulebook: "https://drive.google.com/open?id=1s1QbdEa3hD77RzuASKhsm_93lpKXB3Bs",
-                        image: "thomsogottalent.jpg",
+                        image: "thomsogottalent.jpeg",
                         prize: "50"
                     },
                     {
@@ -392,7 +400,7 @@ export const EventDetails =
                         name: "Street Soccer",
                         content: "Makeshift goalposts, the nudges and pushes, the adrenaline, goals, spectators and dramatic matches. If you love playing football street style, then this is the place to be! Street Soccer focuses on flair, style and trickery, reflecting the cultures of street football and freestyle football played in streets and backlots across the world. It encompasses a number of informal varieties of association football, marking a return to the roots of the game.So shove, prod and force your way through the opposition in this vicious and cut-throat event catering specifically to the street smarts!",
                         rulebook: "https://drive.google.com/open?id=1SJT6fiQR6KkUocqshrsjc5jehMedilGb",
-                        image: "streetsoccer.jpg",
+                        image: "streetsoccer.jpeg",
                         prize: "15"
                     },
                     {
@@ -424,7 +432,7 @@ export const EventDetails =
                         name: "Spin A yarn",
                         content: "Are you passionate about entrancing people in the mystique of yourstories? Do characters come alive in your mind, flourishing under the light of creativity and doing a better job than truth itself? This event lets the participants put their heads together over an intriguing comic strip to create enthralling stories in front of an engaging audience. Storytelling is an art, and even more so when people want to listen. So buckle your seatbelts and let the story take over in this magical journey of storytelling and adventure, enrapturing listeners to your world.",
                         rulebook: "https://drive.google.com/open?id=1GWgUNwnGmbH22nESPN6n1JzrrCf5yhDU",
-                        image: "spinayarn.jpg",
+                        image: "spinayarn.jpeg",
                         prize: "10"
                     },
                     {
@@ -432,7 +440,7 @@ export const EventDetails =
                         name: "Open Mic",
                         content: "Open mic is an event where anyone can grab the mic and perform. The performer is handed the mic to perform live on the stage in front of the audience. The event is focused on performance arts like poetry, spoken word, song, stand-up comedy, etc.",
                         rulebook: "",
-                        image: "openmic.jpg",
+                        image: "openmic.jpeg",
                         prize: "20"
                     },
                     {
@@ -447,27 +455,27 @@ export const EventDetails =
                         name: "Desi Twist",
                         content: "Remodel popular stories the way you want, modify endings and give literary classics that tangy twist.",
                         rulebook: "",
-                        image: "desi_twist.jpg",
+                        image: "desitwist.jpg",
                         prize: "10"
                     },
                     {
                         id: '11_6',
                         name: "Kavi Sammelan",
                         content: "A poem defines the very sense of serenity and provides evasion from the idea of materialism.Poetry is when an emotion has found its thought and the thought has found words. Kavi Sammelan is a gathering of poets where the participants recite their poetry to each other and have a general discussion of literary issues. Do come to sense the overflow of feelings.",
-                        image: "kavisammelan.jpg",
+                        image: "kavisammelan.jpeg",
                     },
                     {
                         id: '11_7',
                         name: "Slam Poetry",
                         content: "Literature tends to gravitate toward concepts universal to the human experience, but there is something special about the experience of watching an author recite a poem tailor made for performance. We invite you on a journey to experience poetry in its most natural and raw form, and to witness our slam poets performing live at the Thomso LITFest.",
-                        image: "slampoetry.jpg",
+                        image: "slampoetry.jpeg",
                     },
                     {
                         id: '11_8',
                         name: "Parliamentary Debate",
                         content: `“Standing up there, the faces looking up at me, the things in my head coming out of my mouth, while my brain searched for the next best thing to follow what I was saying, and if I could sway them to my side by handling it right, then I had won the debate--once my feet got wet, I was gone on debating”. – Malcolm X.  Debating is an integral part of a democracy. Debate stimulates and refines communication skills that empower individuals to speak for themselves, to discover and use their own voices. This is your chance to showcase your skills as an orator and have fun as well."`,
                         rulebook: "https://drive.google.com/open?id=1vy3xD__awFh5iJvOyQTp2hNt5YCblURQ",
-                        image: "parliament.jpg",
+                        image: "parliament.jpeg",
                         prize: "50"
                     },
                     {
@@ -493,7 +501,7 @@ export const EventDetails =
                         name: "Silent DJ",
                         content: "Witness Music screaming aloud in silence with Silent DJ hitting the lands of Thomso’18. Coolness is overloaded as the dynamics of DJing flip into headphone tactics. This silent disco gig is a gem in the crown of Thomso. Partying all night with headphones on will be a experience worth everyone's remembrance.",
                         rulebook: "",
-                        image: "silentdj.jpg",
+                        image: "silentdj.jpeg",
                     },
                     {
                         id: '14_2',
@@ -514,28 +522,28 @@ export const EventDetails =
                         name: "Paintball",
                         content: "Paintball is a fun sport in which players eliminate opponents from play by hitting them with dye-filled paintballs or pellets, shot from a paintball marker or gun. The players must attempt to accomplish a goal without being shot and marked with a paintball. Masks and goggles are used as safety equipments.",
                         rulebook: "",
-                        image: "paintball.jpg",
+                        image: "paintball.jpeg",
                     },
                     {
                         id: '9_2',
                         name: "Body Zorbing",
                         content: "Imagine yourself falling,  bumping and rolling clumsily as you are enclosed in a transparent bubble ball. This is body zorbing, a super fun sport with the participant wearing a large and colourless inflattable capsule. Along with extreme fun and enjoyment, the body zorb ensures complete safety and comfortable breathing. So lets enjoy this high - energy, fun - time sport.",
                         rulebook: "",
-                        image: "bodyzorb.jpg",
+                        image: "BodyZorb.jpeg",
                     },
                     {
                         id: '9_3',
                         name: "Human foosball",
                         content: "The human Foosball is like the classic table top Foosball, however, it is played with real people, a soccer ball and in a large enclosed arena. The players- humans this time- hold on to the rods in set positions. The two teams compete against each other to score the most goals in the allotted time. It is the life-sized version of regular foosball.",
                         rulebook: "",
-                        image: "humanfoosball.jpg",
+                        image: "humanfoosball.jpeg",
                     },
                     {
                         id: '9_4',
                         name: "The Boulevard Games",
                         content: "Thomso’18 presents it very own version of the popular English game-show, Minute to Win It. This event is an aggregation of fun and fast-paced tasks that are to be performed in a given duration. Being the master doesn’t help your cause here, the one thing that does, is you being the jack of these trades. So giddy up, and join the fun ride.",
                         rulebook: "",
-                        image: "boulevardgames.jpg",
+                        image: "boulevardgames.jpeg",
                     },
                     {
                         id: '9_5',
