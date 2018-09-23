@@ -120,7 +120,7 @@ export default class EventDetail extends React.Component {
                         }
                     </div>
                     : null}
-                {this.state.data && this.props.eventsId === 9 ? <div className="events-registration">*Registrations for this event will me made on the spot</div> : null}
+                {this.state.data && this.props.eventsId === 9 ? <div className="events-registration">*Registrations for this event will be made on the spot</div> : null}
             </div>
         )
     }

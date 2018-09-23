@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
 import "./src/whythomso.css";
 import Navbar from "../beta/home/Navbar.jsx";
-import Arrow from "./src/svg/arrow"
+// import Arrow from "./src/svg/arrow"
 import { Link } from "react-router-dom"
-import LeftArr from "./src/svg/leftarr"
+// import LeftArr from "./src/svg/leftarr"
 import "./src/arrow.css"
-import { ArtistDetails } from "./src/artists"
+import { ArtistDetails, More_artists } from "./src/artists"
 
 
 export default class WhyThomso extends Component {
     constructor() {
         super();
         this.state = {
-            videos: [],
+            videos: ["https://www.youtube.com/embed/kD8ZvzmgVlo", "https://www.youtube.com/embed/89xE9rcwtIo"],
             slideindex: 0,
-            artistdetails: ArtistDetails
+            artistdetails: ArtistDetails,
+            moreartists: More_artists,
+            viewmore: false,
         }
     }
     handlePrevious = () => {
@@ -60,6 +62,12 @@ export default class WhyThomso extends Component {
                         <h3>WHY VISIT THOMSO ?</h3>
                     </div>
                 </div>
+                <div style={{
+                    height: "20vh",
+                    background: "#e8e6e9",
+
+                }}>
+                </div>
                 <div id="attractions" className="whythomso-second-child">
                     <div className="whythomso-second-child-top">
                         <div className="whythomso-second-child-attractions">
@@ -69,6 +77,8 @@ export default class WhyThomso extends Component {
                     <div className="whythomso-second-child-middle">
                         <div className="whythomso-second-child-the-institute">
                             <div className="whythomso-second-child-the-institute-image">
+                                <iframe src="https://www.youtube.com/embed/6T_T07hglvk" height="150px" width="100%" frameBorder="0" allowFullScreen>
+                                </iframe>
                             </div>
                             <div className="whythomso-second-child-the-institute-content">
                                 <div className="whythomso-second-child-the-institute-content-heading">
@@ -114,31 +124,28 @@ export default class WhyThomso extends Component {
                     <div className="whythomso-third-child-middle">
                         <div className="whythomso-third-child-sliderwrapper">
                             <div className="whythomso-third-child-slider">
-                                <button className="whythomso-slider-leftarrow" onClick={this.handlePrevious} disabled={this.state.slideindex === 0}>
+                                {/* <button className="whythomso-slider-leftarrow" onClick={this.handlePrevious} disabled={this.state.slideindex === 0}>
                                     <span className="whythomso-previous-arrow"><LeftArr /></span>PREV
-                                </button>
+                                </button> */}
                                 <div className="cards-slider-wrapper">
                                     {
                                         this.state.videos.map((video, i) => (
                                             <div key={i} className={`ii${i}`} id={`i${i}`}>
-                                                <iframe key={i} src={video} height="300" width="600" frameBorder="0" allowFullScreen>
+                                                <iframe key={i} src={video} height="300" width="500" frameBorder="0" allowFullScreen>
                                                 </iframe>
                                             </div>
                                         ))
                                     }
                                 </div>
-                                <button className="whythomso-slider-rightarrow" onClick={this.handleNext} disabled={this.state.slideindex === this.state.videos.length - 1}>
+                                {/* <button className="whythomso-slider-rightarrow" onClick={this.handleNext} disabled={this.state.slideindex === this.state.videos.length - 1}>
                                     NEXT<span className="whythomso-next-arrow"><Arrow /></span>
-                                </button>
+                                </button> */}
                             </div>
-                            <div className="whythomso-third-child-iit-content">
+                            {/* <div className="whythomso-third-child-iit-content">
                                 <div className="whythomso-third-child-iit-content-heading">
                                     <h3>IIT Roorkee</h3>
                                 </div>
-                                <div className="whythomso-third-child-iit-content-content">
-                                    <p>IIT Roorkee video of IIT Roorkee video IIT Roorkee video IIT Roorkee video </p>
-                                </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
@@ -153,36 +160,44 @@ export default class WhyThomso extends Component {
                     </div>
                     <div className="whythomso-fourth-child-middle">
                         <div className="whythomso-fourth-child-the-nightmare">
-                            <div className="whythomso-fourth-child-the-nightmare-image">
-                            </div>
+                            <Link to="/blog/Behind_the_scenes">
+                                <div className="whythomso-fourth-child-the-nightmare-image">
+                                </div>
+                            </Link>
                             <div className="whythomso-fourth-child-the-nightmare-content">
                                 <div className="whythomso-fourth-child-the-nightmare-content-heading">
-                                    <h3>The Nightmare</h3>
+                                    <Link to="/blog/Behind_the_scenes">
+                                        <h3>Behind The Scenes</h3>
+                                    </Link>
                                 </div>
                                 <div className="whythomso-fourth-child-the-nightmare-date">
-                                    <h3>06.09.2069</h3>
+                                    <h3>01.09.18</h3>
                                 </div>
                                 <div className="whythomso-fourth-child-the-nightmare-content-content">
-                                    <p>Amidst the foothills of Himalayas,fastering the spirit of adventure and excitement is located IIT Roorkee</p>
+                                    <p>“Rome wasn’t built in a day”, neither is Thomso. Be it a magnificent city or a magnificent fest, you have to lay bricks every hour to make things happen.</p>
                                 </div>
                             </div>
                         </div>
                         <div className="whythomso-fourth-child-the-daymare">
-                            <div className="whythomso-fourth-child-the-daymare-image">
-                            </div>
+                            <Link to="/blog/litfest">
+                                <div className="whythomso-fourth-child-the-daymare-image">
+                                </div>
+                            </Link>
                             <div className="whythomso-fourth-child-the-daymare-content">
                                 <div className="whythomso-fourth-child-the-daymare-content-heading">
-                                    <h3>The Daymare</h3>
+                                    <Link to="/blog/litfest">
+                                        <h3>Litfest</h3>
+                                    </Link>
                                 </div>
                                 <div className="whythomso-fourth-child-the-daymare-date">
-                                    <h3>06.09.2069</h3>
+                                    <h3>23.09.18</h3>
                                 </div>
                                 <div className="whythomso-fourth-child-the-daymare-content-content">
-                                    <p>The 170 years old legacy of IIT Roorkee and 35+ successful years of Thomso are itself a testimony to the fest's grandeur</p>
+                                    <p>Literature is the thread that we use the array of words with the power of expressions.It is the symphony of creative thoughts and orchestration of platitudes.</p>
                                 </div>
                             </div>
                         </div>
-                        <div className="whythomso-fourth-child-the-evemare">
+                        {/* <div className="whythomso-fourth-child-the-evemare">
                             <div className="whythomso-fourth-child-the-evemare-image">
                             </div>
                             <div className="whythomso-fourth-child-the-evemare-content">
@@ -196,11 +211,11 @@ export default class WhyThomso extends Component {
                                     <p>With 150+ events and prizes woth more than 30 lakhs, Thomso attracts a crowd of over 30000 people</p>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
-                    <div className="whythomso-fourth-child-viewall">
+                    {/* <div className="whythomso-fourth-child-viewall">
                         <Link to="">View all<span><Arrow /></span></Link>
-                    </div>
+                    </div> */}
                 </div>
                 <div id="previous" className="whythomso-fifth-child">
                     <div className="whythomso-fifth-child-top">
@@ -208,23 +223,51 @@ export default class WhyThomso extends Component {
                             <h3>Previous Artists</h3>
                         </div>
                     </div>
-                    <div className="whythomso-fifth-child-middle">
-                        {this.state.artistdetails.map(e =>
-                            <div className="whythomso-fifth-child-artist">
-                                <div className={`whythomso-fifth-child-image`}
-                                    style={{
-                                        backgroundImage: `url(/img/main/whythomso/${e.image})`,
-                                        backgroundSize: "cover",
-                                        backgroundPosition: "center",
-                                        backgroundRepeat: "no-repeat"
-                                    }}>
+                    <div className="whythomso-fifth-child-middle-parent">
+                        <div className="whythomso-fifth-child-middle">
+                            {this.state.artistdetails.map(e =>
+                                <div className="whythomso-fifth-child-artist">
+                                    <div className={`whythomso-fifth-child-image`}
+                                        style={{
+                                            backgroundImage: `url(/img/main/whythomso/${e.image})`,
+                                            backgroundSize: "cover",
+                                            backgroundPosition: "center",
+                                            backgroundRepeat: "no-repeat"
+                                        }}>
+                                    </div>
+                                    <div key={e.id} className="whythomso-fifth-child-name">
+                                        {e.name}
+                                    </div>
                                 </div>
-                                <div key={e.id} className="whythomso-fifth-child-name">
-                                    {e.name}
-                                </div>
-                            </div>
 
-                        )}
+                            )}
+
+                            {
+                                this.state.viewmore && this.state.moreartists.map(e =>
+                                    <div className="whythomso-fifth-child-artist">
+                                        <div className={`whythomso-fifth-child-image`}
+                                            style={{
+                                                backgroundImage: `url(/img/main/whythomso/${e.image})`,
+                                                backgroundSize: "cover",
+                                                backgroundPosition: "center",
+                                                backgroundRepeat: "no-repeat"
+                                            }}>
+                                        </div>
+                                        <div key={e.id} className="whythomso-fifth-child-name">
+                                            {e.name}
+                                        </div>
+                                    </div>
+                                )}
+                            <div className="whythomso-fifth-child-view-more-less">
+                                {!this.state.viewmore ?
+                                    <p onClick={() => this.setState({
+                                        viewmore: !this.state.viewmore
+                                    })}>View More...</p>
+                                    : <p onClick={() => this.setState({
+                                        viewmore: !this.state.viewmore
+                                    })}>View Less.....</p>}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div >

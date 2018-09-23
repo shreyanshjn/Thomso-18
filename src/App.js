@@ -99,7 +99,7 @@ const Meme = Loadable({
     loader: () => import("./components/onlineEvents/meme/Index"),
     loading: () => <Loader />
 });
-const MrMissThomso= Loadable({
+const MrMissThomso = Loadable({
     loader: () => import("./components/onlineEvents/mrmissthomso/Index"),
     loading: () => <Loader />
 });
@@ -127,6 +127,7 @@ const Carousel = Loadable({
     loader: () => import("./components/carousel/Index"),
     loading: () => <Loader />
 })
+
 class App extends Component {
     render() {
         return (
