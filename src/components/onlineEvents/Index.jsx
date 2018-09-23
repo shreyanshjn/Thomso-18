@@ -92,6 +92,22 @@ class OnlineEventsIndex extends Component {
                             </div>
                         </div>
                     </div>
+                    <div className="onlineevents-mainpage-parent-child">
+                        <div className="onlineevents-mainpage-cards">
+                            <Link to="/cupid">
+                                <div className="onlineevents-mainpage-cards-image-cupid">
+                                </div>
+                            </Link>
+                            <div className="onlineevents-mainpage-cards-title">
+                                Cupid's Attack
+                            </div>
+                            <div className="onlineevents-mainpage-cards-button">
+                                <Link to="/cupid">
+                                    View
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         )
