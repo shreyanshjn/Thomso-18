@@ -25,10 +25,10 @@ export default class blog extends React.Component {
         <div className="main-blog-child">
           <div className="main-blog-firstchild">
             <div className="main-blog-bodyparent-name">
-              Behind The Scenes
+              LitFest
             </div>
             <div className="main-blog-bodyparent-date">
-              Posted on 1st September'18
+              Posted on 23st September'18
             </div>
           </div>
           <div className="main-blog-secondchild">
@@ -49,7 +49,6 @@ export default class blog extends React.Component {
           </div>
           <div className="main-blog-thirdchild">
             <div className="main-blog-body-text">
-            <strong><h1><center>Litfest</center></h1></strong><br/>
             Literature is the thread that weaves the array of words with the power of expressions. It is the symphony of creative thoughts and the orchestration of platitudes. Literature tends to gravitate the universe to the experiences of human lives and levitate the imagination of the human mind to exorbitant levels. The beauty of literature cannot be quantified, it can only be felt by one's heart. It has the potential to fill life into the lifeless things, light into the dullest objects and colours into the most colourless entities. To explore this soft intellectual side of the human mind, Thomso- the annual cultural festival of IIT Roorkee- has decided to take up the ambitious venture to conduct Litfest, a Literature Festival. Sensing the growing inclination of the youth towards the works of literature Thomso felt the need to broaden its horizons and quench the thirst of proficient writers, eloquent poets and all the other literature lovers. Embracing the beauty of literature, Litfest brings the following events for you to rejoice.<br/> <br/>
 
 

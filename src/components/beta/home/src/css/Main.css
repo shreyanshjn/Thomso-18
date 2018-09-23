@@ -23,8 +23,8 @@
 
 #submenu {display: block;
 position: absolute;
-width: 200px;
-padding-left:10px;
+width: 110px;
+padding-left:50px;
 list-style: none;
 line-height: 2em;
 overflow: hidden;
@@ -37,7 +37,7 @@ overflow: hidden;
 }
 .sticky li:hover #submenu{
 max-height: 200px;
-font-size: 14px;
+font-size: 11.5px;
 }
 
 

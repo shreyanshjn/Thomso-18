@@ -127,7 +127,7 @@
 }
 .main-blog-image-child{
   width: 100%;
-  background-image: url("./image/thomsoblog.jpeg");
+  background-image: url("../../../whyThomso/src/images/litfest.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;

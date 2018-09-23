@@ -119,6 +119,10 @@ const WhyThomso = Loadable({
     loader: () => import("./components/whyThomso/Index"),
     loading: () => <Loader />
 });
+const blog = Loadable({
+    loader: () => import("./components/beta/blog/index"),
+    loading: () => <Loader />
+});
 // const WhyThomso = Loadable({
 //     loader: () => import("./components/whyThomso/Index"),
 //     loading: () => <Loader />
@@ -154,7 +158,7 @@ class App extends Component {
                             <Route path="/ca/" component={CAIndex} />
                             <Route path="/campusAmbassador/" component={CampusIndex} />
                             <Route path="/zonals" component={ZonalsIndex} />
-                            {/* <Route path="/blog" component={blog} /> */}
+                            <Route path="/blog" component={blog} />
                             <Route path="/whythomso" component={WhyThomso} />
                             <Route path="/onlineevents" component={onlineevents} />
                             <Route path="/verifyCerti/" component={VerifyCerti} />

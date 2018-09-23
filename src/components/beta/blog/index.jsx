@@ -25,8 +25,8 @@ export default class BlogIndex extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <Route path="/blog/blog1" component={behindmyscenes} />
-                <Route path="/blog/blog2" component={litfest} />
+                <Route path="/blog/Behind_the_scenes" component={behindmyscenes} />
+                <Route path="/blog/litfest" component={litfest} />
             </React.Fragment>
         );
     }

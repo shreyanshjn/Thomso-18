@@ -104,7 +104,7 @@ export default class WhyThomso extends Component {
                             </div>
                             <div className="whythomso-second-child-the-nightmare-content">
                                 <div className="whythomso-second-child-the-nightmare-content-heading">
-                                    <h3>The Nightmare</h3>
+                                    <h3>The Prosperity</h3>
                                 </div>
                                 <div className="whythomso-second-child-the-nightmare-content-content">
                                     <p>With 150+ events and prizes woth more than 30 lakhs, Thomso attracts a crowd of over 30000 people</p>
