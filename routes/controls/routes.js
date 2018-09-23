@@ -6,7 +6,7 @@ var cors = require('cors');
 var controlsRegister = require('../../controllers/api/controls/controls_register');
 
 // Middlewares
-var ControlsTokenMiddleware = require("../../middlewares/coordinators/TokenMiddleware");
+var ControlsTokenMiddleware = require("../../middlewares/controls/TokenMiddleware");
 
 // CORS Config
 var corsOptions = require('../config/cors')
