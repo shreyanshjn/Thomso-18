@@ -15,6 +15,7 @@ var corsOptions = require('../config/cors')
 router.use('/', cors(corsOptions));
 
 // -> /api/controls/auth
+router.post('/auth/login', controlsRegister.login)
 router.post('/auth/register', controlsRegister.register);
 
 module.exports = router;
