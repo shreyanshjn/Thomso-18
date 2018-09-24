@@ -61,9 +61,7 @@ exports.register = function (req, res) {
                     // console.log(err)
                     return res.json({ success: false, msg: 'Username already exists.' });
                 }
-                var newPass = Generator.generatePassword(20);
-                if (newPass) {
-                    var generateHash = Generator.generateHash(newPass);
+                    var generateHash = Generator.generateHash(req.body.password);
                     generateHash.then(
                         function (newHash) {
                             if (newHash) {
@@ -90,9 +88,6 @@ exports.register = function (req, res) {
                         .catch(function (err) {
                             res.status(400).send({ success: false, msg: 'Failed to generate new hash' });
                         })
-                } else {
-                    res.status(400).send({ success: false, msg: 'Failed to generate new password' });
-                }
             });
         } else {
             res.status(400).send({ success: false, msg: 'Invalid Data' });
@@ -107,20 +102,20 @@ exports.login = function(req, res) {
         req.body.username = req.body.username.toLowerCase();
         req.body.username = req.body.username.trim()
     }
-    // console.log(req.body)
+    console.log(req.body)
     var ip = (req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress).split(",")[0];
     Coordinators_User.findOne({
         email: req.body.username
     })
-    .select('email')
+    .select('email password')
     .exec(function(err, user) {
         if (err) throw err;
 
         if (!user) {
             res.status(401).send({success: false, msg: 'Authentication failed. User not found.'});
         } else {
-            // Coordinators_User.comparePassword(req.body.password, function (err, isMatch) {
-            //     if (isMatch && !err) {
+            user.comparePassword(req.body.password, function (err, isMatch) {
+                if (isMatch && !err) {
                     Coordinators_User.updateOne({email: req.body.username},
                         {
                             updated_date: new Date(),
@@ -168,10 +163,10 @@ exports.login = function(req, res) {
                             }
                         }
                     );
-            //     } else {
-            //         res.status(401).send({success: false, msg: 'Authentication failed. Wrong password.'});
-            //     }
-            // });
+                } else {
+                    res.status(401).send({success: false, msg: 'Authentication failed. Wrong password.'});
+                }
+            });
         }
     });
 };

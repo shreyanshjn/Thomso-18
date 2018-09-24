@@ -3,7 +3,7 @@ import { Route } from "react-router-dom";
 import Loadable from "react-loadable";
 
 import FetchApi from "../../utils/FetchAPI";
-import AuthService from "../../handlers/controls/";
+import AuthService from "../../handlers/controls/AuthService";
 import Loader from "../common/Loader";
 
 const Loading = ({ error }) => {
@@ -33,6 +33,10 @@ const HomeIndex = Loadable({
     loading: () => Loading
 });
 
+const LogoutIndex = Loadable({
+    loader: () => import("./logout/Index"),
+    loading: () => Loading
+});
 
 
 export default class MainIndex extends React.Component {
@@ -48,14 +52,11 @@ export default class MainIndex extends React.Component {
     
     componentWillMount() {
         const isAuthenticated = this.Auth.hasToken();
-        console.log(isAuthenticated)
         if (isAuthenticated) {
             const token = this.Auth.getToken()
-            console.og(token)
             FetchApi('GET', '/api/controls/info', null, token)
                 .then(r => {
                     if (r && r.data && r.data.success && r.data.body) {
-                        console.log(r.data)
                         this.setState({isAuthenticated:true, userData: r.data.body });
                     }
                 })
@@ -81,7 +82,7 @@ export default class MainIndex extends React.Component {
             <React.Fragment>
                 {isAuthenticated ? 
                      <React.Fragment> 
-                        <Route  path="/controls" component={HomeIndex} />
+                        <Route exact path="/controls" render={props => (<HomeIndex {...props} userData={userData} />)}  />
                          <Route  path="/controls/logout" component={LogoutIndex} /> 
                      </React.Fragment> 
                      : 

@@ -47,7 +47,7 @@ export default class ShowWinnerIndex extends React.Component{
         return(
             <div>
                 <div style={{display:"inline", paddingLeft:"50px",paddingBottom:"30px"}}>
-                    <Link to="/coordinators/addWinner"> Add Winners </Link>
+                    <Link to="/coordinators"> Add Winners </Link>
                 </div>
                 <div style={{display:"inline", paddingLeft:"50px",paddingBottom:"30px"}}>
                     <Link to="/coordinators/logout"> Logout </Link>

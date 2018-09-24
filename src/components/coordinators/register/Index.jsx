@@ -69,7 +69,7 @@ export default class RegisterIndex extends React.Component {
                                 if (res.data.success === true) {
                                     this.Auth.setToken(res.data.token);
                                     // this.props.updateRoutes(true, false);
-                                    this.props.history.push('/coordinators/login')
+                                    this.props.history.push('/coordinators')
                                 }
                                 else
                                     this.setState({ errors: res.data.msg })

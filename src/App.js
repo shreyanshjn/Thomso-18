@@ -162,7 +162,7 @@ class App extends Component {
                             <Route path="/Mr&MissThomso" component={MrMissThomso} />
                             <Route path="/campusclicks" component={CampusClicks} />
                             <Route path="/silhoutte" component={Silhoutte} />
-                            {/* <Route  path="/coordinators" component={CoordinatorsIndex} /> */}
+                            <Route  path="/coordinators" component={CoordinatorsIndex} />
                             <Route  path="/controls" component={ControlsIndex} />
                             <Route path="/cupid" component={Cupid} /> 
                             {/* <Route path="/xpression" component={Xpression} /> */}

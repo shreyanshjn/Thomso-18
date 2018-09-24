@@ -48,7 +48,6 @@ UserSchema.methods.comparePassword = function (password, cb) {
             return cb(err);
 
         }
-        console.log(isMatch)
         cb(null, isMatch);
     });
 };
