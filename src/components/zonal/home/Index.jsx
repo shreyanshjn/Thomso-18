@@ -17,11 +17,14 @@ export default class HomeIndex extends Component {
                         <div className="zonals-mainpage-cards-title">
                             Jaipur Zonals
                         </div>
-                            <div className="zonals-mainpage-cards-button">
-                                <Link to="/zonals/jaipur">
-                                    Register
-                                </Link>
-                            </div>
+                        {/* <div className="zonals-mainpage-cards-button">
+                            <Link to="/zonals/jaipur">
+                                Register
+                            </Link>
+                        </div> */}
+                        <div className="zonals-mainpage-cards-text">
+                                SUCCESSFULLY ORGANIZED.
+                        </div>
                     </div>
                     
                     <div className="zonals-mainpage-cards">

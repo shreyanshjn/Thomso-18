@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import AuthService from "../../handlers/main/AuthService";
 import FetchApi from "../../utils/FetchAPI";
 import './src/css/EventsModals.css';
-import Rupee from './src/Rupee'
+import Rupee from './src/Rupee';
 
 export default class EventDetail extends React.Component {
     constructor() {

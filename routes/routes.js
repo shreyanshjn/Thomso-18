@@ -8,7 +8,7 @@ var betaRoutes = require('./beta/routes');
 var notificationRoutes = require('./notification/routes');
 var zonalsRoutes = require('./zonals/routes');
 var mainRoutes = require('./main/routes');
-var coordinatorsRoutes = require('./coordinators/routes');
+// var coordinatorsRoutes = require('./coordinators/routes');
 // Controllers
 var viewController = require('../controllers/view_controller');
 var verifyCerti = require('../controllers/api/Certificates/verifyCertificates');

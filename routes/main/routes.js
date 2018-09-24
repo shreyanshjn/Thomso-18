@@ -45,4 +45,6 @@ router.delete('/removeEvent' , MainUserTokenMiddleware.verify,eventControl.remov
 router.post('/addParticipant' , MainUserTokenMiddleware.verify, eventControl.addParticipant);
 router.post('/removeParticipant', MainUserTokenMiddleware.verify , eventControl.removeParticipant);
 
+router.post('/answerMUN', MainUserTokenMiddleware.verify , participantControl.munAnswer);
+
 module.exports = router;

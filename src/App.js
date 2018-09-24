@@ -131,6 +131,12 @@ const onlineevents = Loadable({
     loader: () => import("./components/onlineEvents/Index"),
     loading: () => <Loader />
 })
+
+const MUNIndex = Loadable({
+    loader: () => import("./components/beta/mun/Index"),
+    loading: () => <Loader />
+})
+
 // const Carousel = Loadable({
 //     loader: () => import("./components/carousel/Index"),
 //     loading: () => <Loader />
@@ -169,12 +175,13 @@ class App extends Component {
                             <Route path="/register" render={() => (<Redirect to="/main/" />)} />
                             <Route path="/events" component={Events} />
                             <Route path="/meme" component={Meme} />
-                            <Route path="/Mr&MissThomso" component={MrMissThomso} />
+                            <Route path="/MrMissThomso" component={MrMissThomso} />
                             {/* <Route path="/c" component={Carousel} /> */}
                             <Route path="/campusclicks" component={CampusClicks} />
                             <Route path="/silhoutte" component={Silhoutte} />
                             {/* <Route exact path="/coordinators" component={CoordinatorsIndex} /> */}
                             <Route path="/cupid" component={Cupid} />
+                            <Route path="/mun" component={MUNIndex} />
                             {/* <Route path="/xpression" component={Xpression} /> */}
                             {/* <Route component={Error404} /> */}
                         </React.Fragment>
