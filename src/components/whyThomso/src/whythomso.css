@@ -533,6 +533,234 @@
     margin: 0px;
     margin-top: 4px;
 }
+.whythomso-sixth-child{
+    margin-top: 0px;
+    width: 100vw;
+    height: 100%;
+}
+.whythomso-sixth-child-top{
+    height: 24vh;
+    background-image:url("../src/images/previous.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+.whythomso-sixth-child-faq h3{
+    margin: 0;
+    width: fit-content;
+    padding: 15vh 0px 0px 44px;
+    font-size: 30px;
+    color: white;
+    font-family: Poppins;
+}
+.whythomso-sixth-child-middle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.whythomso-sixth-child-middle-columnone{
+    width: 25%;
+    height: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.whythomso-faqs-ansque-one{
+    height: 24vh;
+    margin-top: 10px;
+    margin-bottom:10px;
+    padding: 10px;
+    font-family: Poppins;
+    font-size: 16px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+.whythomso-faqs-ansque-two{
+    height: 22vh;
+    margin-top: 10px;
+    margin-bottom:10px;
+    padding: 10px;
+    font-family: Poppins;
+    font-size: 16px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+.whythomso-faqs-ansque-three{
+    height: 32vh;
+    margin-top: 10px;
+    margin-bottom:10px;
+    padding: 10px;
+    font-family: Poppins;
+    font-size: 16px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+.whythomso-faqs-ansque-four{
+    height: 35.5vh;
+    margin-top: 10px;
+    margin-bottom:10px;
+    padding: 10px;
+    font-family: Poppins;
+    font-size: 16px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+.whythomso-faqs-ansque-fifth{
+    height: 45vh;
+    margin-top: 10px;
+    margin-bottom:10px;
+    padding: 10px;
+    font-family: Poppins;
+    font-size: 16px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+.whythomso-faqs-ansque-sixth{
+    height: 30vh;
+    margin-top: 10px;
+    margin-bottom:10px;
+    padding: 10px;
+    font-family: Poppins;
+    font-size: 16px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+.whythomso-faqs-question{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+.whythomso-faqs-question span{
+    padding: 0px 5px;
+}
+.whythomso-faqs-question span:nth-child(1){
+    width:5%;
+    height: 100%;
+}
+.whythomso-faqs-question span:nth-child(2){
+    width: 95%;
+}
+.whythomso-faqs-answer{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+.whythomso-faqs-answer span{
+    padding: 0px 5px;
+}
+.whythomso-faqs-answer span:nth-child(1){
+    width:5%;
+    height: 100%;
+}
+.whythomso-faqs-answer span:nth-child(2){
+    width: 95%;
+    overflow-wrap: break-word;
+}
+.whythomso-sixth-child-middle-columntwo{
+    width: 25%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.whythomso-faqs-ansque-columntwo-one{
+    height: 20vh;
+    margin-top: 10px;
+    margin-bottom:10px;
+    padding: 10px;
+    font-family: Poppins;
+    font-size: 16px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+.whythomso-faqs-ansque-columntwo-two{
+    height: 35vh;
+    margin-top: 10px;
+    margin-bottom:10px;
+    padding: 10px;
+    font-family: Poppins;
+    font-size: 16px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+.whythomso-faqs-ansque-columntwo-three{
+    height: 110vh;
+    margin-top: 10px;
+    margin-bottom:10px;
+    padding: 10px;
+    font-family: Poppins;
+    font-size: 16px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+.whythomso-faqs-ansque-columntwo-four{
+    height: 36vh;
+    margin-top: 10px;
+    margin-bottom:10px;
+    padding: 10px;
+    font-family: Poppins;
+    font-size: 16px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+.whythomso-sixth-child-middle-columnthree{
+    width: 25%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.whythomso-faqs-ansque-columnthree-one{
+    height: 28vh;
+    margin-top: 10px;
+    margin-bottom:10px;
+    padding: 10px;
+    font-family: Poppins;
+    font-size: 16px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+.whythomso-faqs-ansque-columnthree-two{
+    height: 39vh;
+    margin-top: 10px;
+    margin-bottom:10px;
+    padding: 10px;
+    font-family: Poppins;
+    font-size: 16px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+.whythomso-faqs-ansque-columnthree-three{
+    height: 22vh;
+    margin-top: 10px;
+    margin-bottom:10px;
+    padding: 10px;
+    font-family: Poppins;
+    font-size: 16px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+.whythomso-faqs-ansque-columnthree-four{
+    height: 43vh;
+    margin-top: 10px;
+    margin-bottom:10px;
+    padding: 10px;
+    font-family: Poppins;
+    font-size: 16px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+.whythomso-faqs-ansque-columnthree-fifth{
+    height: 63vh;
+    margin-top: 10px;
+    margin-bottom:10px;
+    padding: 10px;
+    font-family: Poppins;
+    font-size: 16px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
 @media only screen and (max-width:768px){
     .whythomso-second-child{
         margin-top: 10px;
@@ -598,8 +826,7 @@
     .cards-slider-wrapper{
         margin-top: 20px;
         display: flex;
-        flex-direction: column;
-                                                                                                                                                            width: 100%;
+        flex-direction: column;                                                                                                                                            width: 100%;
     }
     .cards-slider-wrapper iframe{
         padding: 10px 0px;
@@ -619,5 +846,19 @@
         font-size: 50px;
         color: white;
         font-family: Poppins;
+    }
+    .whythomso-sixth-child-middle{
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+    }
+    .whythomso-sixth-child-middle-columnone{
+        width: 100%;
+    }
+    .whythomso-sixth-child-middle-columntwo{
+        width: 100%;
+    }
+    .whythomso-sixth-child-middle-columnthree{
+        width: 100%;
     }
 }

@@ -18,7 +18,7 @@ export default class FAQIndex extends React.Component {
                             <div className="question"><div className="dot"></div>Are there any EXTRA CHANGES for pronites?</div>
                             <div> <p><strong>NO</strong>, Registration fee is inclusive of pronites passes..</p></div>
 
-                            <div className="question"><div className="dot"></div>Where to REGISTER for Thomso’18?</div>
+                            <div className="question"><div className="dot"></div>Where to REGISTER for Thomso’180?</div>
                             <div>
                                 <p>You can register at
                                     <div>
