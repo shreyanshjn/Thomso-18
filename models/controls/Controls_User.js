@@ -41,11 +41,14 @@ UserSchema.pre('save', function (next) {
     }
 });
 
-UserSchema.methods.comparePassword = function (passw, cb) {
-    bcrypt.compare(passw, this.password, function (err, isMatch) {
+UserSchema.methods.comparePassword = function (password, cb) {
+    bcrypt.compare(password, this.password, function (err, isMatch) {
         if (err) {
+            console.log(err, isMatch)
             return cb(err);
+
         }
+        console.log(isMatch)
         cb(null, isMatch);
     });
 };

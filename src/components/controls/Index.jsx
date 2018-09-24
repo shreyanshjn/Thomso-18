@@ -3,7 +3,7 @@ import { Route } from "react-router-dom";
 import Loadable from "react-loadable";
 
 import FetchApi from "../../utils/FetchAPI";
-import AuthService from "../../handlers/coordinators/AuthService";
+import AuthService from "../../handlers/controls/";
 import Loader from "../common/Loader";
 
 const Loading = ({ error }) => {
@@ -19,69 +19,77 @@ const Loading = ({ error }) => {
 // });
 
 const LoginIndex = Loadable({
-    loader: () => import("./login/Index.jsx"),
-    loading: () => <Loader/>
+    loader: () => import("./login/Index"),
+    loading: () => Loading
 });
 
 const RegisterIndex = Loadable({
     loader: () => import("./register/Index"),
-    loading: () => <Loader/>
+    loading: () => Loading
+});
+
+const HomeIndex = Loadable({
+    loader: () => import("./home/Index"),
+    loading: () => Loading
 });
 
 
 
 export default class MainIndex extends React.Component {
-    // constructor() {
-    //     super();
-    //     this.state = {
-    //         isAuthenticated: false,
-    //         userData: [],
-    //         errors:""
-    //     }
-    //     this.Auth = new AuthService();
-    // }
+    constructor() {
+        super();
+        this.state = {
+            isAuthenticated: false,
+            userData: [],
+            errors:""
+        }
+        this.Auth = new AuthService();
+    }
     
-    // componentWillMount() {
-    //     const isAuthenticated = this.Auth.hasToken();
-    //     if (isAuthenticated) {
-    //         const token = this.Auth.getToken()
-    //         FetchApi('GET', '/api/coordinators/info', null, token)
-    //             .then(r => {
-    //                 if (r && r.data && r.data.success && r.data.body) {
-    //                     this.setState({isAuthenticated:true, userData: r.data.body });
-    //                 }
-    //             })
-    //             .catch(e => {
-    //                 console.log(e)
-    //             });
-    //     }
-    // }
+    componentWillMount() {
+        const isAuthenticated = this.Auth.hasToken();
+        console.log(isAuthenticated)
+        if (isAuthenticated) {
+            const token = this.Auth.getToken()
+            console.og(token)
+            FetchApi('GET', '/api/controls/info', null, token)
+                .then(r => {
+                    if (r && r.data && r.data.success && r.data.body) {
+                        console.log(r.data)
+                        this.setState({isAuthenticated:true, userData: r.data.body });
+                    }
+                })
+                .catch(e => {
+                    console.log(e)
+                });
+        }
+    }
 
-    // handleUpdate = (isAuthenticated) => {
-    //     this.setState({ isAuthenticated})
-    // };
+    handleUpdate = (isAuthenticated) => {
+        this.setState({ isAuthenticated})
+    };
 
-    // setUserData = data => {
-    //     this.setState({
-    //         userData: data
-    //     });
-    // };
+    setUserData = data => {
+        this.setState({
+            userData: data
+        });
+    };
    
     render() {
-        // let { isAuthenticated, userData} = this.state;
+        let { isAuthenticated, userData} = this.state;
         return (
             <React.Fragment>
-                {/* {isAuthenticated ?  */}
-                    {/* <React.Fragment> */}
-                        {/* <Route  path="/controls/logout" component={LogoutIndex} /> */}
-                    {/* </React.Fragment> */}
-                    {/* : */}
-                    {/* <React.Fragment> */}
-                        {/* <Route  path="/controls" render={props => (<LoginIndex {...props} updateRoutes={this.handleUpdate} setUserData={this.setUserData} />)} /> */}
-                        <Route exact path="/controls/register" component={RegisterIndex} />
-                        <Route exact path="/controls/" component={LoginIndex} />
-                    {/* </React.Fragment> */}
-                {/* } */}
+                {isAuthenticated ? 
+                     <React.Fragment> 
+                        <Route  path="/controls" component={HomeIndex} />
+                         <Route  path="/controls/logout" component={LogoutIndex} /> 
+                     </React.Fragment> 
+                     : 
+                     <React.Fragment> 
+                         <Route exact path="/controls" render={props => (<LoginIndex {...props} updateRoutes={this.handleUpdate} setUserData={this.setUserData} />)} /> 
+                        <Route  path="/controls/register" component={RegisterIndex} />
+                     </React.Fragment> 
+                 } 
             </React.Fragment>
         )
     }

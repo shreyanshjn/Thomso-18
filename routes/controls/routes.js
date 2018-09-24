@@ -4,7 +4,7 @@ var cors = require('cors');
 
 // Controllers
 var controlsRegister = require('../../controllers/api/controls/controls_register');
-
+var controlsControl = require('../../controllers/api/controls/controls_control');
 // Middlewares
 var ControlsTokenMiddleware = require("../../middlewares/controls/TokenMiddleware");
 
@@ -17,5 +17,9 @@ router.use('/', cors(corsOptions));
 // -> /api/controls/auth
 router.post('/auth/login', controlsRegister.login)
 router.post('/auth/register', controlsRegister.register);
+
+// -> /api/controls/
+router.get('/info', ControlsTokenMiddleware.verifyUser, controlsControl.info);
+
 
 module.exports = router;

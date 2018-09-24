@@ -34,9 +34,8 @@ export default class LoginIndex extends Component {
                     if (result.data) {
                         this.Auth.setToken(result.data.token)
                         this.setState({ message: 'login' })
-                        // this.props.history.push('/coordinators')
-                        // this.props.updateRoutes(true)
-                        // this.props.setUserData(result.data)
+                        this.props.updateRoutes(true)
+                        this.props.setUserData(result.data)
                     }
                 })
                 .catch(error => {

@@ -30,7 +30,7 @@ export default class RegisterIndex extends Component {
                     if (res && res.data) {
                         if (res.data.success) {
                             this.setState({ error: res.data.msg })
-                            // this.props.history.push("/controls/login")
+                            this.props.history.push("/controls")
                         } else {
                             this.setState({ error: res.data.msg })
                         }

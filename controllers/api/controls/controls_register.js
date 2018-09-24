@@ -6,8 +6,7 @@ var TokenHelper = require('../../../helpers/TokenHelper');
 var Generator = require("../../../helpers/GeneratePassword");
 
 exports.register = function (req, res) {
-    if (req.body) {
-        // console.log(req.body, "sd")
+    if (req.body && req.body.email && req.body.password) {
         if (req.body.email) {
             req.body.email = req.body.email.toLowerCase();
             req.body.email = req.body.email.trim();
@@ -23,9 +22,7 @@ exports.register = function (req, res) {
                     console.log(err)
                     return res.json({ success: false, msg: 'Username already exists.' });
                 }
-                var newPass = Generator.generatePassword(20);
-                if (newPass) {
-                    var generateHash = Generator.generateHash(newPass);
+                    var generateHash = Generator.generateHash(req.body.password);
                     generateHash.then(
                         function (newHash) {
                             if (newHash) {
@@ -53,9 +50,6 @@ exports.register = function (req, res) {
                         .catch(function (err) {
                             res.status(400).send({ success: false, msg: 'Failed to generate new hash' });
                         })
-                } else {
-                    return res.status(400).send({ success: false, msg: 'Failed to generate new password' });
-                }
             });
         } else {
             return res.status(400).send({ success: false, msg: 'Invalid Data' });
@@ -75,14 +69,14 @@ exports.login = function(req, res) {
     Controls_user.findOne({
         email: req.body.username
     })
-    .select('email')
+    .select('email password')
     .exec(function(err, user) {
         if (err) throw err;
 
         if (!user) {
-            res.status(401).send({success: false, msg: 'Authentication failed. User not found.'});
+            return res.status(400).send({success:false, msg:"Connection failed. User not found."});
         } else {
-            Controls_user.comparePassword(req.body.password, function (err, isMatch) {
+            user.comparePassword(req.body.password, function (err, isMatch) {
                 if (isMatch && !err) {
                     Controls_user.updateOne({email: req.body.username},
                         {
