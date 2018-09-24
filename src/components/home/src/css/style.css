@@ -2,16 +2,16 @@
   font-family: 'MyWebFont';
   /* src: url('webfont.eot'); IE9 Compat Modes */
   src:   
-       url(Slow\ Life.ttf)
+       url(/fonts/SlowLife.ttf)
        
 }
 @font-face{
     font-family: 'aboutuscontentfont';
-    src:url(HansKendrick-Regular.otf)
+    src:url(/fonts/HansKendrick-Regular.otf);
 }
 @font-face{
     font-family:"georgiafont";
-    src:url(georgiab.ttf);
+    src:url(/fonts/georgiab.ttf);
 }
 *{
     margin:0px;

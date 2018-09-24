@@ -177,7 +177,7 @@ export default class HomeIndex extends React.Component{
                                 </div>
                                 <div className="secondpagebottomrect">
                                     <div className="secondbottomrectleft">
-                                        <h1 id="numberchange3" id="trigger2"><span>150</span>+</h1>
+                                        <h1 id="numberchange3"><span>150</span>+</h1>
                                         <h3>Events</h3>
                                     </div>
                                     <div className="secondbottomrectright"> <img src={events} alt="events"/></div>
