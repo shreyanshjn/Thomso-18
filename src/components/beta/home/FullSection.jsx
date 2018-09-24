@@ -2,12 +2,13 @@ import React , { Component } from "react";
 import { SectionsContainer, Section } from "react-fullpage";
 import logo from "./src/img/logomain.svg";
 import arrow from "./src/img/arrow.svg";
+import bell from "./src/img/bell.png";
 import "./src/css/Main.css";
 import About from "./About";
 import Footfall from "./Footfall";
 import Celebrity from "./Celebrity";
 import Contact from "./Contact";
-
+import {Link} from "react-router-dom";
 export default class FullSection extends Component {
     render() {
         let options = {
@@ -21,6 +22,23 @@ export default class FullSection extends Component {
             arrowNavigation: true
         };
         return (
+
+            <div>
+
+    
+            <div className="sticky-container">
+            <ul className="sticky">
+            <li>
+            <img src={bell} width="32" height="32"/>
+            <p>WHAT'S NEW <br/><br/></p>
+	         <div id="submenu">
+             <Link to="/cupid" >Cupid</Link>
+             <br/><Link to="/whythomso">Why Thomso</Link>
+             <br/><Link to="/main">Register</Link><br/></div>
+             </li>
+        
+            </ul>
+            </div>
             <SectionsContainer {...options}>
 
                 <Section>
@@ -54,6 +72,7 @@ export default class FullSection extends Component {
                 </Section>
 
             </SectionsContainer>
+            </div>
         );
     }
 }
