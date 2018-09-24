@@ -167,7 +167,7 @@
 .leftarrow{
   z-index: 100;
   position: absolute;
-  left: 220px;
+  left: 25%;
   top: 250px;
   width: fit-content;
   cursor: pointer;
@@ -175,7 +175,7 @@
 .rightarrow{
   z-index: 100;
   position: absolute;
-  right: 220px;
+  right: 25%;
   top: 250px;
   width: fit-content;
   cursor: pointer;
@@ -193,6 +193,14 @@
   font-size: 20px;
   font-family: Montserrat;
 }
+@media only screen and (max-width:1920px){
+  .leftarrow{
+    left: 15%;
+  }
+  .rightarrow{
+    right: 15%;
+  }
+}
 @media only screen and (max-width:768px){
   .leftarrow{
     left: 10px;
@@ -201,12 +209,17 @@
     left: 310px;
   }
 
-  .card-carousel .my-card.prev,.card-carousel .my-card.next{
+  .card-carousel .my-card.prev,.card-carousel .my-card.next,.card-carousel .my-card.active:not(){
     height: 0px;
     width: 0px;
   }
   .my-card-child{
-    left: -80%;
+    left: -140%;
   }
-
+  .card-carousel .my-card.my-card.active{
+    width: 200%;
+  }
+  .card-carousel .my-card.next,.card-carousel .my-card.prev{
+    width: 0%;
+  }
 } 

@@ -16,12 +16,12 @@ const Function = () => {
           setTimeout(function(){
               countupid.innerText=currCount+=temp;
               counting(countup,countupid,currCount,temp);
-          },50);
+          },75);
       }
       else{
           setTimeout(function(){  
               countupid.innerText=countup;
-          },5);
+          },75);
       }
     }
     var UID = {
@@ -184,9 +184,16 @@ const Function = () => {
                 ));
       
       var secondpagemovetween=new TimelineMax()
-         .add (TweenMax.fromTo("#aboutuspagemove",1,
-          {y:400},{y:0,ease:Power0.ease}
-                  ));
+         .add (TweenMax.fromTo("#aboutuspagemoveleft",1.7,
+          {x:-280},{x:0,ease:Power0.ease}
+                  ))        
+                  ;
+      var secondpagemovetweenright=new TimelineMax()
+         .add (TweenMax.fromTo("#aboutuspagemoveright",1.4,
+          {x:320},{x:0,ease:Power0.ease}
+                  ))        
+                  ;
+                  
           //lITFEST svg tween starts here
       var litfestsvgtween = new TimelineMax()
           .add(TweenMax.to(litfestsvgline1, 1, {
@@ -422,7 +429,14 @@ const Function = () => {
           .setTween(secondpagemovetween)  
           .addIndicators() // add indicators (requires plugin)
           .addTo(controller);
-        
+          var secondwholepagescene1 = new ScrollMagic.Scene({
+            triggerElement: "#aboutuspagerevealer",
+            offset:0,
+            tweenChanges: true
+        })
+        .setTween(secondpagemovetweenright)  
+        .addIndicators() // add indicators (requires plugin)
+        .addTo(controller);
       
     
           var litfestsvgscene = new ScrollMagic.Scene({
@@ -435,7 +449,7 @@ const Function = () => {
           .addTo(controller);
           var litfestshatterscene = new ScrollMagic.Scene({
               triggerElement: "#litfestanimationtrigger",
-              offset:-window.innerHeight*.1489,
+              offset:-window.innerHeight*.1589,
               tweenChanges: true
           })
           .on('start',function(){
@@ -474,7 +488,7 @@ const Function = () => {
           .addTo(controller);
           
           var zonalsshatterscene = new ScrollMagic.Scene({
-              offset:-window.innerHeight*.1489,
+              offset:-window.innerHeight*.1589,
               triggerElement: "#zonalssvgtrigger",
               tweenChanges: true
           })
@@ -494,7 +508,7 @@ const Function = () => {
           .addTo(controller);
           
           var zonalsshatterscene = new ScrollMagic.Scene({
-              offset:-window.innerHeight*.1489,
+              offset:-window.innerHeight*.1589,
               triggerElement: "#onlineeventssvgtrigger",
               tweenChanges: true
           })

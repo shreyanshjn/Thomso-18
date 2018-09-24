@@ -152,7 +152,7 @@ export default class HomeIndex extends React.Component{
                             <div className="maincontainersecondleft">
 
                             </div>
-                            <div className="maincontainersecondright" id="aboutuspagemove">
+                            <div className="maincontainersecondright" id="aboutuspagemoveleft">
                                 <h4>Thomso , the Annual Cultural Festival of IIT Roorkee is a majestic three days cultural fest,recognised as one of the greatest pomp youth festivals of India.Thomso
                                     encompasses lavish history , splendid culture and a profoundly rich heritage of IIT Roorkee. Recognising this event of gigantic proportions ,
                                     the Government proclaimed Thomso as the "Annual Youth Festival Of Uttarakhand " in 2005. Thomso has acquired the credentials of being the largest cultural fest of Northern India
@@ -160,7 +160,7 @@ export default class HomeIndex extends React.Component{
                                     year's theme being "Siezed by Stardust".
                                 </h4>
                             </div>
-                            <div className="secondpagebottom">
+                            <div className="secondpagebottom" id="aboutuspagemoveright">
                                 <div className="secondpagebottomrect" id="pagereveal">
                                     <div className="secondbottomrectleft">
                                         <h1 id="numberchange1"><span>100</span>k+</h1>

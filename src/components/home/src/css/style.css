@@ -578,7 +578,7 @@ body{
     letter-spacing:1.8px;
     font-size: 1.1rem;
     text-align:right;
-    line-height:35px;
+    line-height:2.13rem;
     font-family: 'aboutuscontentfont';
 }
 .secondpagebottom{
@@ -656,6 +656,38 @@ body{
 #numberchange3{
     left:50%;
 }
+@media only screen and (max-width:1700px){
+    .maincontainersecondright>h4{
+        word-spacing:1.1px;
+        letter-spacing: 1px;
+        line-height: 2.12rem;
+        font-size: 1.05rem;
+    }
+}
+
+@media only screen and (max-width:1464px){
+    .maincontainersecondright>h4{
+        word-spacing:1px;
+        letter-spacing: .9px;
+        line-height: 2rem;
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width:1366px){
+    .maincontainersecondright>h4{
+        word-spacing:.8px;
+        letter-spacing: .6px;
+        line-height: 2rem;
+        font-size: .9rem;
+    }
+}
+@media only screen and (max-height:821px){
+    .maincontainersecond{
+        height:80%;
+    }
+}
+
 @media only screen and (max-width:900px){
     .mainsecond{
         height:300vh;
@@ -675,7 +707,7 @@ body{
         /* padding-top: 20%; */
     }
     .maincontainersecondright>h4{
-        word-spacing:1.1px;
+        word-spacing:1px;
         letter-spacing: 1px;
     }
     .maincontainersecondinner{
@@ -689,11 +721,12 @@ body{
         border:0px;
         margin:4px;
         border-radius: 0px;
+        padding: 2%;
     }
 
     .maincontainersecondright>h4{
-        word-spacing: 1.4px;
-        letter-spacing:1.2px;
+        word-spacing: 1px;
+        letter-spacing:1px;
         font-size: .9rem;
     }
     /* .maincontainersecondright>h1{
@@ -736,7 +769,7 @@ body{
         width:69%;
     }
     .maincontainersecondright>h4{
-        line-height: 30px;
+        line-height: 28px;
         text-align: justify;
         
     }
@@ -782,6 +815,7 @@ body{
     height:20%;
     margin:0 auto;
     top:0;
+    padding-top: 3%;
     display: flex;
     
     justify-content:center;
@@ -902,6 +936,25 @@ body{
         text-align: justify;
     }
     }
+@media only screen and (max-width:1500px){
+    .mainattractioninternaltextcontainer{
+        font-size:1.15rem;
+        text-align: justify;
+    }
+    }
+@media only screen and (max-height:900px){
+    .splitsvgcont1{
+        height: 40%;
+    }
+    .lit{
+        top:66%;
+    }
+    .onlinegongoncont{
+        top:54%;
+    }
+    }
+        
+
 @media only screen and (max-width:900px)
     {   .thomsomainattractions{
         top:-10%;
