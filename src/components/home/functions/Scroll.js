@@ -1,23 +1,23 @@
 const Function = () => {
-        var countid1=document.getElementById('numberchange1');
-        var count1=countid1.innerText;
-        var countid2=document.getElementById('numberchange2');
-        var count2=countid2.innerText;
-        var countid3=document.getElementById('trigger2');
-        var count3=countid3.innerText;
+      var countid1=document.querySelector('#numberchange1 span');
+      var count1=document.querySelector('#numberchange1 span').innerText;
+      var countid2=document.querySelector('#numberchange2 span');
+      var count2=document.querySelector('#numberchange2 span').innerText;
+      var countid3=document.querySelector('#numberchange3 span');
+      var count3=document.querySelector('#numberchange3 span').innerText;
 
-        function counting(countup,countupid, currCount){
+        function counting(countup,countupid, currCount,temp){
             //   var temp=0;
             if(currCount<=countup){
                 setTimeout(function(){
-                    countupid.innerText=currCount+=5;
-                    counting(countup,countupid,currCount);
-                },1);
+                    countupid.innerText=currCount+=temp
+                    counting(countup,countupid,currCount,temp)
+                },50);
             }
             else{
                 setTimeout(function(){  
                     countupid.innerText=countup;
-                },1);
+                },5);
             }
         }
 
@@ -352,12 +352,12 @@ const Function = () => {
         })
             .on('start',function()
             {
-                counting(count1,countid1,0),
-                    counting(count2,countid2,0),
-                    counting(count3,countid3,0)
+                 counting(count1,countid1,0,5),
+                 counting(count2,countid2,0,40),
+                 counting(count3,countid3,0,5)
             }
             )
-            .addIndicators()
+        .addIndicators()
             .addTo(controller);
         
         
