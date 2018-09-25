@@ -20,7 +20,7 @@ import Guide from "./Svg/Guide"
 import Contact from "./Svg/Contact"
 import Logout from "./Svg/Logout"
 import Bulb from "./Svg/Bulb"
-import Hand from "./Svg/Hand"
+// import Hand from "./Svg/Hand"
 import Home from "../../main/sidebar/Svg/Home.jsx";
 import Profile from "./Svg/Profile.jsx"
 import FacebookImg from './img/fb.svg'
@@ -75,11 +75,11 @@ export default class Sidebar extends React.Component {
             this.setState({ errors: r.data.msg })
           }
         } else {
-          this.setState({errors: 'Something went wrong'})
+          this.setState({ errors: 'Something went wrong' })
         }
       })
       .catch(e => {
-        this.setState({errors: 'Something went wrong'})
+        this.setState({ errors: 'Something went wrong' })
         console.log(e)
       });
   }
@@ -92,9 +92,9 @@ export default class Sidebar extends React.Component {
   componentWillMount() {
     if (window.FB) {
       window.FB.init({
-          appId: process.env.REACT_APP_FB_ID,
-          status: true,
-          xfbml: true
+        appId: process.env.REACT_APP_FB_ID,
+        status: true,
+        xfbml: true
       });
     }
   }
@@ -112,11 +112,11 @@ export default class Sidebar extends React.Component {
             this.setState({ facebookConnect: true, errors: '' })
           }
         } else {
-          this.setState({errors: 'Something went wrong'})
+          this.setState({ errors: 'Something went wrong' })
         }
       })
       .catch(e => {
-        this.setState({errors: 'Something went wrong'})
+        this.setState({ errors: 'Something went wrong' })
       });
 
     const countDownDate = new Date("Oct 27, 2018 00:00:00").getTime();
@@ -129,7 +129,7 @@ export default class Sidebar extends React.Component {
     this.setState({ days })
 
     if (this.props.userData && this.props.userData.image) {
-      this.setState({userImage: this.props.userData.image})
+      this.setState({ userImage: this.props.userData.image })
     }
   }
 
@@ -147,18 +147,18 @@ export default class Sidebar extends React.Component {
     return (
       <div>
         {this.state.showReferral ?
-          <div style={{position: 'fixed', display: 'flex', height: '100%', width: '100%', justifyContent: 'center', alignItems: 'center', zIndex: '1000'}} >
-            <div style={{color: 'white', background: '#00000069', padding:'10px', borderRadius: '10px', fontWeight: '600'}}>
+          <div style={{ position: 'fixed', display: 'flex', height: '100%', width: '100%', justifyContent: 'center', alignItems: 'center', zIndex: '1000' }} >
+            <div style={{ color: 'white', background: '#00000069', padding: '10px', borderRadius: '10px', fontWeight: '600' }}>
               Referral code copied to clipboard
             </div>
           </div>
-        : null}
+          : null}
         <div
           id="mySidenav"
           className="sidenav"
           style={{ backgroundColor: 'white' }}
         >
-        {/* {console.log(this.props.userData)} */}
+          {/* {console.log(this.props.userData)} */}
           <div className="campusAmb-sidebar-user">
             {this.state.userImage ? <img src={this.state.userImage} className="image" alt="User" /> :
               <React.Fragment>
@@ -174,9 +174,9 @@ export default class Sidebar extends React.Component {
             </div>
           </div>
           {this.props.userData && this.props.userData.score ?
-          <div className="campusAmb-sidebar-line">
-          </div>
-          : null}
+            <div className="campusAmb-sidebar-line">
+            </div>
+            : null}
           {/*<div className="campusAmb-sidebar-like-share-score">
              {this.props.userData && this.props.userData.score ?
               <div className="campusAmb-sidebar-like-share-score-child">
@@ -221,40 +221,40 @@ export default class Sidebar extends React.Component {
                 </div>
               </div>
             : null}*/}
-            {/* <div className="campusAmb-sidebar-updatenews">
+          {/* <div className="campusAmb-sidebar-updatenews">
               *Scores will be updated at 12 am
             </div> 
           </div>*/}
-          {!this.state.facebookConnect ?  
-          <div>
-            <div className="campusAmb-sidebar-line">
-            </div>
-            <div className="campusAmb-sidebar-contents">
-              <div
-                className={
-                  this.state.facebookConnect
-                    ? "sideNavItem activeSideItem"
-                    : "facebooksideNavItem"
-                }
-                onClick={this.facebookLogin}
-              >
-                <div className="campusAmb-sidebar-facebook flex_row">
-                <div className="campusAmb-sidebar-svg-logo mobile-facebook">
-                    <Facebook />
-                </div>
-                  <div className="campusAmb-sidebar-navitem-name">
-                          <img src={FacebookImg} alt="CONNECT WITH FACEBOOK" className="facebook-connect-image"/>
+          {!this.state.facebookConnect ?
+            <div>
+              <div className="campusAmb-sidebar-line">
+              </div>
+              <div className="campusAmb-sidebar-contents">
+                <div
+                  className={
+                    this.state.facebookConnect
+                      ? "sideNavItem activeSideItem"
+                      : "facebooksideNavItem"
+                  }
+                  onClick={this.facebookLogin}
+                >
+                  <div className="campusAmb-sidebar-facebook flex_row">
+                    <div className="campusAmb-sidebar-svg-logo mobile-facebook">
+                      <Facebook />
+                    </div>
+                    <div className="campusAmb-sidebar-navitem-name">
+                      <img src={FacebookImg} alt="CONNECT WITH FACEBOOK" className="facebook-connect-image" />
+                    </div>
                   </div>
                 </div>
-              </div>
-              {this.state.errors ? 
+                {this.state.errors ?
                   <div>
                     {this.state.errors}
                   </div>
                   : null
-              }
-            </div>
-          </div> : null
+                }
+              </div>
+            </div> : null
           }
           <div className="campusAmb-sidebar-line">
           </div>
@@ -272,7 +272,7 @@ export default class Sidebar extends React.Component {
             >
               <div className="campusAmb-sidebar-profile flex_row">
                 <div className="campusAmb-sidebar-svg-logo">
-                    <Profile />
+                  <Profile />
                 </div>
                 <div className="campusAmb-sidebar-navitem-name">
                   PROFILE
@@ -299,7 +299,7 @@ export default class Sidebar extends React.Component {
                 </div>
               </div>
             </Link>
-            
+
             <Link
               to="/CampusAmbassador/leaderboard"
               className={
@@ -393,7 +393,7 @@ export default class Sidebar extends React.Component {
             >
               <div className="campusAmb-sidebar-zonals flex_row">
                 <div className="campusAmb-sidebar-svg-logo">
-                    <Zonals />
+                  <Zonals />
                 </div>
                 <div className="campusAmb-sidebar-navitem-name">
                   ZONALS
@@ -432,35 +432,35 @@ export default class Sidebar extends React.Component {
                   el.select();
                   document.execCommand('copy');
                   document.body.removeChild(el);
-                  this.setState({showReferral: true})
+                  this.setState({ showReferral: true })
                   showReferralTimeout = setTimeout(() => {
-                    this.setState({showReferral: false})
+                    this.setState({ showReferral: false })
                   }, 1000)
                 }}
               >
-                  <Link
-                      to="/CampusAmbassador/referral"
-                      className={
-                          this.state.activeState === "referral"
-                              ? "sideNavItem activeSideItem"
-                              : "sideNavItem"
-                      }
-                      onClick={() => {
-                          this.setActive("referral");
-                      }}
-                  >
-                      <div className="referral flex_row" title="Click to copy">
-                          <div className="campusAmb-sidebar-svg-logo">
-                              <Referral />
-                          </div>
-                          <div className="campusAmb-sidebar-navitem-name">
-                              REFERRAL CODE : <span id="ca-referral-code">{this.props.userData.ca_id}</span>
-                          </div>
-                      </div>
-                  </Link>
+                <Link
+                  to="/CampusAmbassador/referral"
+                  className={
+                    this.state.activeState === "referral"
+                      ? "sideNavItem activeSideItem"
+                      : "sideNavItem"
+                  }
+                  onClick={() => {
+                    this.setActive("referral");
+                  }}
+                >
+                  <div className="referral flex_row" title="Click to copy">
+                    <div className="campusAmb-sidebar-svg-logo">
+                      <Referral />
+                    </div>
+                    <div className="campusAmb-sidebar-navitem-name">
+                      REFERRAL CODE : <span id="ca-referral-code">{this.props.userData.ca_id}</span>
+                    </div>
+                  </div>
+                </Link>
               </div>
               : null}
-              <Link
+            <Link
               to="/"
               className={
                 this.state.activeState === "home"
@@ -473,7 +473,7 @@ export default class Sidebar extends React.Component {
             >
               <div className="campusAmb-sidebar-home flex_row">
                 <div className="campusAmb-sidebar-svg-logo">
-                    <Home />
+                  <Home />
                 </div>
                 <div className="campusAmb-sidebar-navitem-name">
                   HOME

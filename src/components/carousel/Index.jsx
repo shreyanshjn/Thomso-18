@@ -26,7 +26,7 @@ export default class Carousel extends Component {
                     <div className="my-card" >
                         <div className="my-card-child">
                             <p>
-                                "it was an amazing expreience here"
+                                "Loved the exhilarating atmosphere at IIT Roorkee"
                             </p>
                             <Sunidhi />
 
@@ -43,7 +43,7 @@ export default class Carousel extends Component {
                     <div className="my-card" >
                         <div className="my-card-child">
                             <p>
-                                "it was an amazing expreience here"
+                                "The energy of the crowd kept me charged"
                             </p>
                             <Farhan />
                         </div>
@@ -51,7 +51,7 @@ export default class Carousel extends Component {
                     <div className="my-card" >
                         <div className="my-card-child">
                             <p>
-                                "it was an amazing expreience here"
+                                "Didn’t expect so much fun at a technical institute"
                             </p>
                             <Nucleya />
                         </div>
@@ -59,7 +59,7 @@ export default class Carousel extends Component {
                     <div className="my-card" >
                         <div className="my-card-child">
                             <p>
-                                "it was an amazing expreience here"
+                                "The Junta at IITR was so dynamic"
                             </p>
                             <Sonu />
                         </div>

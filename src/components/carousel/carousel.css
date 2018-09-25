@@ -198,6 +198,20 @@
   color:rgb(20,20,20);
   font-family: Poppins;
 }
+.card-carousel .my-card:nth-child(1) .my-card-child p{
+  left: -181px;
+}
+.card-carousel .my-card:nth-child(3) .my-card-child p{
+  left: -155px;
+}
+
+.card-carousel .my-card:nth-child(4) .my-card-child p{
+  left: -190px;
+}
+
+.card-carousel .my-card:nth-child(5) .my-card-child p{
+  left:-90px;
+}
 .my-card-child svg{
   position: absolute;
   left: -63px;

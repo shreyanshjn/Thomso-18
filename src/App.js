@@ -131,25 +131,25 @@ const onlineevents = Loadable({
     loader: () => import("./components/onlineEvents/Index"),
     loading: () => <Loader />
 })
-const ControlsIndex = Loadable({
-    loader: () => import("./components/controls/Index.jsx"),
-    loading: () => <Loader />
-  })
+// const ControlsIndex = Loadable({
+//     loader: () => import("./components/controls/Index.jsx"),
+//     loading: () => <Loader />
+// })
 
 const MUNIndex = Loadable({
     loader: () => import("./components/beta/mun/Index"),
     loading: () => <Loader />
 })
 
-const Carousel = Loadable({
-    loader: () => import("./components/carousel/Index"),
-    loading: () => <Loader />
-})
+// const Carousel = Loadable({
+//     loader: () => import("./components/carousel/Index"),
+//     loading: () => <Loader />
+// })
 
-const CoordinatorsIndex = Loadable({
-  loader: () => import("./components/coordinators/Index.jsx"),
-  loading: () => <Loader />
-})
+// const CoordinatorsIndex = Loadable({
+//     loader: () => import("./components/coordinators/Index.jsx"),
+//     loading: () => <Loader />
+// })
 class App extends Component {
     render() {
         return (

@@ -2586,7 +2586,7 @@ export default class HomeIndex extends React.Component {
                                 <div className="mainpage5container-inner">
                                     <div className="mainpage5container-inner-in">
                                         <div className="mainpage5imgandtextcont">
-                                            <div className="mainpage5container-inner-in-left"><img src={address} alt="address" srcSet="" /></div>
+                                            <div className="mainpage5container-inner-in-left"><img src={address} alt="address" /></div>
                                             <div className="mainpage5container-inner-in-right">
                                                 <h1>Address</h1>
                                                 <h4>THOMSO OFFICE</h4>
@@ -2600,7 +2600,7 @@ export default class HomeIndex extends React.Component {
                                             <div className="mainpagecontainer-outer-rightin">
                                                 <div className="mainpagecontainer-outer-rightin-inner">
                                                     <div className="mainpagecontainer-outer-rightin-inner-inside">
-                                                        <a>Get Directions <span><img src={rightarrow} alt="right-arrow" srcSet="" /></span></a>
+                                                        <a target="_blank" rel="noopener noreferrer" href="https://goo.gl/maps/b9xPn3VcGVF2">Get Directions <span><img src={rightarrow} alt="right-arrow" /></span></a>
                                                         {/*- <div className="mainpage5internalsvgcontainer">
                                                                             <img src="./right-arrow.svg" alt="right-arrow" srcSet="">
                                                                      </div>    */}

@@ -1,6 +1,6 @@
 import $ from 'jquery';
-var carousel;
-export default carousel = () => {
+
+const carousel = () => {
     var num = $('.my-card').length;
     var even = num / 2;
     var odd = (num + 1) / 2;
@@ -54,3 +54,4 @@ export default carousel = () => {
 
 }
 
+export default carousel;
