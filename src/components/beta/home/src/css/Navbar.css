@@ -37,6 +37,8 @@
 .new-navbar-lists-child
 {
     position:fixed;
+    font-family: Montserrat;
+    letter-spacing: 1px;
     height:100vh;
     width:25%;
     transition:width 0.4s;

@@ -131,11 +131,10 @@ const onlineevents = Loadable({
     loader: () => import("./components/onlineEvents/Index"),
     loading: () => <Loader />
 })
-// const Carousel = Loadable({
-//     loader: () => import("./components/carousel/Index"),
-//     loading: () => <Loader />
-// })
-
+const Carousel = Loadable({
+    loader: () => import("./components/carousel/Index"),
+    loading: () => <Loader />
+})
 // const CoordinatorsIndex = Loadable({
 //   loader: () => import("./components/coordinators/Index.jsx"),
 //   loading: () => <Loader />
@@ -170,7 +169,7 @@ class App extends Component {
                             <Route path="/events" component={Events} />
                             <Route path="/meme" component={Meme} />
                             <Route path="/Mr&MissThomso" component={MrMissThomso} />
-                            {/* <Route path="/c" component={Carousel} /> */}
+                            <Route path="/c" component={Carousel} />
                             <Route path="/campusclicks" component={CampusClicks} />
                             <Route path="/silhoutte" component={Silhoutte} />
                             {/* <Route exact path="/coordinators" component={CoordinatorsIndex} /> */}
