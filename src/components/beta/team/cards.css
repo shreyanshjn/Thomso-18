@@ -1,0 +1,104 @@
+
+@font-face {
+    font-family: "Salma";
+    
+    src:url('./font/Salma.ttf')  format('truetype');
+
+    }
+
+.card-maindiv{
+    padding: 100px 50px;
+    height: 200vh;
+    background:#071829;
+
+}
+.wrapper{
+    display:flex;
+    flex-direction: row;
+    height: 50vh;
+    width: 100%;
+    padding: 20px;
+}
+.card-inner{
+    background: blue;
+    width: 100%;
+    
+    position: relative;
+    
+}
+.card-inner img{
+    height:50vh;
+    width:auto;
+}
+.overlay {
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    right: 0;
+    background-color: #071829;
+    box-shadow: 0 0 10px 10px  #071829;
+    opacity: .7;
+    width: 100%;
+    overflow: hidden;
+    height: 0;
+    transition: .5s ease;
+  }
+  
+  .card-inner:hover .overlay {
+    height: 100%;
+  }
+  .card-inner:hover .text{
+      top: 10%;
+  }
+  .text {
+    color: white;
+    font-size: 44px;
+    position: absolute;
+    z-index: 100;
+    top: 90%;
+    overflow:visible;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    transition: .5s ease;
+    font-family:Salma;
+  }
+  .info {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family:Salma;
+  }
+
+  .card-footer-mainIcons
+  {
+      height:50px;
+      width:50px;
+      display: flex;
+      flex-direction: row;
+    
+  }
+
+  .card-footer-fbdiv
+  {
+      height: 50px;
+      width: 50px;
+  }
+
+  .card-footer-instadiv{
+    height: 50px;
+    width: 50px;
+  }
+
+  .card-footer-iconsImage{
+      height: 50px;
+      width: auto;
+  }
