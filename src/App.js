@@ -159,7 +159,8 @@ class App extends Component {
                     <Switch>
                         <React.Fragment>
                             {/* <Route path="/beta" component={BetaIndex} /> */}
-                            <Route exact path="/" component={HomeIndex} />
+                            {/* <Route exact path="/" component={HomeIndex} /> */}
+                            <Route exact path="/" component={MainHomeIndex} />
                             <Route exact path="/sponsors" component={SponsorsIndex} />
                             <Route exact path="/associate" component={AccociateIndex} />
                             <Route exact path="/quizardry" component={QuizardryIndex} />
@@ -175,7 +176,6 @@ class App extends Component {
                             <Route path="/policy" component={Policy} />
                             <Route path="/terms" component={Terms} />
                             <Route path="/main/" component={MainIndex} />
-                            <Route path="/final" component={MainHomeIndex} />
                             <Route path="/register" render={() => (<Redirect to="/main/" />)} />
                             <Route path="/events" component={Events} />
                             <Route path="/meme" component={Meme} />

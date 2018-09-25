@@ -11,16 +11,17 @@ const Function = () => {
     function counting(countup, countupid, currCount, temp) {
         //   var temp=0;
 
-        if (currCount <= countup) {
+        if (currCount < countup) {
+            currCount += temp;
+            countupid.innerText = currCount;
             setTimeout(function () {
-                countupid.innerText = currCount += temp;
-                counting(countup, countupid, currCount, temp);
+                if (currCount < countup) {
+                    counting(countup, countupid, currCount, temp);
+                }
             }, 75);
         }
         else {
-            setTimeout(function () {
-                countupid.innerText = countup;
-            }, 75);
+            countupid.innerText = countup;
         }
     }
     var UID = {

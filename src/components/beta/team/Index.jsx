@@ -1,10 +1,15 @@
-import React from 'react';
+import React from 'react'
+import './TeamIndex.css'
+import Navbar from '../../beta/home/Navbar.jsx'
 
 export default class TeamIndex extends React.Component{
     render(){
         return (
             <div>
-               Team 
+                <Navbar/>
+                <div className="team-main-div">
+                    Coming Soon
+                </div>
             </div>
         )
     }

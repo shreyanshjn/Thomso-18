@@ -72,6 +72,7 @@
 }
 .hideNavbar
 {
+    z-index:300;
     width:0vw;
     height:100vh;
     transition:width 0.5s, border-radius 1s;
@@ -81,13 +82,14 @@
 }
 .new-navbar-lists-child >li
 {
-    padding:20px;
+    padding:15px;
     list-style-type:none;
 }
 .new-navbar-lists-child >li >a
 {
     text-decoration:none;
     color:white;
+    white-space:nowrap;
 }
 .new-navbar-lists-child >li > a::after{
     content: "";
@@ -393,5 +395,12 @@
     .new-navbar-i
     {
         display:none;
+    }
+}
+@media only screen and (min-width:768px)
+{
+    .address-last-page
+    {
+        margin-top:10vh;
     }
 }
