@@ -73,6 +73,14 @@ const Function = () => {
               togcir.pseudoStyle("before","transform","scale(1)");
           }
     }
+    var svgcorrection=document.querySelector("#mainattractioninternalsvgcontainerlitfestsvg");
+    {console.log(window.innerWidth,"ff")}
+    if (window.innerWidth<=900){
+     svgcorrection.setAttribute("viewBox", "0 -60 251.333 146.333");
+    }
+    else{
+     svgcorrection.setAttribute("viewBox", "0 0 251.333 106.333");
+    }  
      function pathPrepare(el) {
       var lineLength = el.getTotalLength();
       el.style.strokeDasharray = lineLength;
@@ -91,9 +99,6 @@ const Function = () => {
       pathPrepare(onlineeventssvgline);
       pathPrepare(onlineeventssvgline1);
       pathPrepare(carnivalssvgline);
-      
-      
-      
       // init controller
       var ScrollMagic = window.ScrollMagic
       var controller = new ScrollMagic.Controller();

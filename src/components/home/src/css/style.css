@@ -893,6 +893,7 @@ body{
 }
 .lit{
     top:60%;
+    height:40%;
 }
 .zonal{
     top:47%;
@@ -1045,6 +1046,19 @@ body{
 height: 100%;
 width: 100%;
 } */
+.mainpage4{
+    width:100vw;
+    height:100vh;
+    position:relative;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+.mainpage-carousel-desktop{
+    display: block;
+}
+.mainpage-carousel-mobile{
+    display: none;
+}
 .mainpage5{
     width:100vw;
     height:100vh;
@@ -1269,4 +1283,12 @@ width: 100%;
         top:10%;
         width:90%
     }
+
+    .mainpage-carousel-desktop{
+        display: none;
+    }
+    .mainpage-carousel-mobile{
+        display: block;
+    }
+
  }

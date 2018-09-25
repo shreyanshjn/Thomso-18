@@ -4,6 +4,7 @@
   height: 100vh;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 10%;
 }
 .card-carousel {
     display: flex;
@@ -14,8 +15,8 @@
   }
   
   .card-carousel .my-card {
-    height: 20rem;
-    width: 15rem;
+    height: 25rem;
+    width: 18rem;
     position: relative;
     z-index: 1;
     -webkit-transform: scale(0.6) translateY(-2rem);
@@ -26,21 +27,21 @@
     background: linear-gradient(to top, #2e5266, #6e8898);
     transition: 1s;
   }
-  .card-carousel .my-card:nth-child(1){
+  .card-carousel .my-card:nth-child(3){
     background-image: url("/img/main/whythomso/Farhaan.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 2px;
   }
-  .card-carousel .my-card:nth-child(2){
+  .card-carousel .my-card:nth-child(1){
     background-image: url("/img/main/whythomso/sunidhichauhan.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 2px;
   }
-  .card-carousel .my-card:nth-child(3){
+  .card-carousel .my-card:nth-child(2){
     background-image: url("/img/main/whythomso/shaan.jpeg");
     background-size: cover;
     background-position: center;
@@ -55,7 +56,7 @@
     border-radius: 2px;
   }
   .card-carousel .my-card:nth-child(5){
-    background-image: url("/img/main/whythomso/Palashsen.jpeg");
+    background-image: url("/img/main/whythomso/sonunigam.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -188,10 +189,20 @@
   margin: 0px;
   margin-top: 0px;
   position: relative;
-  top: 30px;
+  white-space: nowrap;
+  width: 115%;
+  top: -53px;
+  left: -93px;
   text-align: center;
-  font-size: 20px;
+  font-size: 24px;
   font-family: Montserrat;
+}
+.my-card-child svg{
+  position: absolute;
+  left: -40px;
+  top:-20px;
+  width:24.5rem;
+	height:120px;
 }
 @media only screen and (max-width:1920px){
   .leftarrow{
@@ -201,25 +212,9 @@
     right: 15%;
   }
 }
-@media only screen and (max-width:768px){
-  .leftarrow{
-    left: 10px;
+@media only screen and (min-width:1700px){
+  .card-carousel .my-card{
+    height: 22rem;
+    width: 19rem;
   }
-  .rightarrow{
-    left: 310px;
-  }
-
-  .card-carousel .my-card.prev,.card-carousel .my-card.next,.card-carousel .my-card.active:not(){
-    height: 0px;
-    width: 0px;
-  }
-  .my-card-child{
-    left: -140%;
-  }
-  .card-carousel .my-card.my-card.active{
-    width: 200%;
-  }
-  .card-carousel .my-card.next,.card-carousel .my-card.prev{
-    width: 0%;
-  }
-} 
+}

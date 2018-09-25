@@ -22,14 +22,7 @@ export default class Carousel extends Component {
                     <LeftArrow />
                 </div>
                 <div className="card-carousel">
-                    <div className="my-card" >
-                        <div className="my-card-child">
-                            <p>
-                                "Its time for sex baby"
-                            </p>
-                            <Farhan />
-                        </div>
-                    </div>
+
                     <div className="my-card" >
                         <div className="my-card-child">
                             <p>
@@ -45,6 +38,14 @@ export default class Carousel extends Component {
                                 "Its time for sex baby"
                             </p>
                             <Shaan />
+                        </div>
+                    </div>
+                    <div className="my-card" >
+                        <div className="my-card-child">
+                            <p>
+                                "it was an amazing expreience here"
+                            </p>
+                            <Farhan />
                         </div>
                     </div>
                     <div className="my-card" >

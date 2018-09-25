@@ -16,8 +16,10 @@ import phone from './src/img/phone svg-01.svg'
 import rightarrow from './src/img/right-arrow.svg'
 import logosvg from './src/img/thomso logo svg-01.svg'
 import address from './src/img/address svg-01.svg'
+import Carousel from '../carousel/Index'
 
 import './src/css/style.css'
+import MobileCarousel from '../mobilecarousel/Index';
 
 let scrollInit = false
 
@@ -571,7 +573,7 @@ export default class HomeIndex extends React.Component{
                             <div className="mainattractioninternalsvgcontainer">
                                 {/*  <Litfest />*/}
                                 <svg version="1.1" id="mainattractioninternalsvgcontainerlitfestsvg" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                    viewBox="0 0 251.333 93.333" enableBackground="new 0 0 251.333 93.333"
+                                    viewBox="0 0 251.333 106.333" enableBackground="new 0 0 251.333 93.333"
                                     xmlSpace="preserve">
                                     <g id="Layer_3" display="none">
                                     </g>
@@ -2536,6 +2538,14 @@ export default class HomeIndex extends React.Component{
                         </div>
                     </div>
                 </div> 
+                <div className="mainpage4">
+                    <div className="mainpage-carousel-desktop">
+                        <Carousel />
+                    </div>
+                    <div className="mainpage-carousel-mobile">
+                        <MobileCarousel />
+                    </div>
+                </div>
                 <div class="mainpage5">
                     <div class="mainpage5-thomsologo">
                         <img src={logosvg} alt=""/ >
