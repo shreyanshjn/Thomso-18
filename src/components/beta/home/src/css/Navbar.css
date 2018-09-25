@@ -1,6 +1,8 @@
 .new-navbar-i
 {
-    padding: 18px;
+    padding: 16px;
+    padding-top: 15px;
+    padding-bottom: 20px;
     border-radius: 50%;
     position:fixed;
     top:29px;
@@ -54,7 +56,10 @@
 }
 .hideNavbar > li
 {
+    transition:all 1s;
     visibility:hidden;
+    padding:20px;
+    list-style-type:none;
 }
 .hideNavbar-Link
 {
@@ -66,10 +71,11 @@
 .hideNavbar
 {
     width:0vw;
-    height:0vh;
+    height:100vh;
     transition:width 0.5s, border-radius 1s;
     background-color:#091d23;
     right:0;
+    position:fixed;
 }
 .new-navbar-lists-child >li
 {
@@ -135,6 +141,7 @@
     padding:0px;
     right: 9vw;
     top: 3vh;
+    z-index:200;
 }
 .navbar-user-image{
     height: 30px;
@@ -381,7 +388,7 @@
 }
 @media only screen and (max-width:768px)
 {
-    .new-navbar-lists
+    .new-navbar-i
     {
         display:none;
     }

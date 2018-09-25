@@ -36,9 +36,9 @@
   .beta-home-list {
     display: flex;
     flex-direction: column;
-  }
-  .beta-home-list {
     padding: 60px 20px 0 0;
+    position:absolute;
+    right:0px;
   }
   .beta-home-list li {
     display: flex;

@@ -12,7 +12,6 @@ const Function = () => {
       //   var temp=0;
       
       if(currCount<=countup){
-          console.log(window.innerHeight)
           setTimeout(function(){
               countupid.innerText=currCount+=temp;
               counting(countup,countupid,currCount,temp);
@@ -402,7 +401,7 @@ const Function = () => {
               counting(count3,countid3,0,5)
       }
       )
-      .addIndicators()
+    //   .addIndicators()
       .addTo(controller);
     
     
@@ -412,7 +411,7 @@ const Function = () => {
               tweenChanges: true
           })
           .setTween(thirdpagemovetween)  
-          .addIndicators() // add indicators (requires plugin)
+        //   .addIndicators() // add indicators (requires plugin)
           .addTo(controller);
           var secondwholepagescene = new ScrollMagic.Scene({
               triggerElement: "#aboutuspagerevealer",
@@ -420,7 +419,7 @@ const Function = () => {
               tweenChanges: true
           })
           .setTween(secondpagemovetween)  
-          .addIndicators() // add indicators (requires plugin)
+        //   .addIndicators() // add indicators (requires plugin)
           .addTo(controller);
         
       
@@ -431,7 +430,7 @@ const Function = () => {
               tweenChanges: true
           })
           .setTween(litfestsvgtween)  
-          .addIndicators() // add indicators (requires plugin)
+        //   .addIndicators() // add indicators (requires plugin)
           .addTo(controller);
           var litfestshatterscene = new ScrollMagic.Scene({
               triggerElement: "#litfestanimationtrigger",
@@ -442,7 +441,7 @@ const Function = () => {
               ab(litgon);
           }
           ) 
-          .addIndicators() // add indicators (requires plugin)
+        //   .addIndicators() // add indicators (requires plugin)
           .addTo(controller);
           var workshopssvgscene = new ScrollMagic.Scene({
               triggerElement: "#workshopssvgtrigger",
@@ -450,7 +449,7 @@ const Function = () => {
               tweenChanges: true
           })
           .setTween(workshopssvgtween)  
-          .addIndicators() // add indicators (requires plugin)
+        //   .addIndicators() // add indicators (requires plugin)
           .addTo(controller);
           var workshatterscene = new ScrollMagic.Scene({
               triggerElement: "#workshopssvgtrigger",
@@ -462,7 +461,7 @@ const Function = () => {
               ab(workgon);
           }
           )  
-          .addIndicators() // add indicators (requires plugin)
+        //   .addIndicators() // add indicators (requires plugin)
           .addTo(controller);
           var zonalssvgscene = new ScrollMagic.Scene({
               offset:window.innerHeight*.1546,
@@ -470,7 +469,7 @@ const Function = () => {
               tweenChanges: true
           })
           .setTween(zonalssvgtween)  
-          .addIndicators() // add indicators (requires plugin)
+        //   .addIndicators() // add indicators (requires plugin)
           .addTo(controller);
           
           var zonalsshatterscene = new ScrollMagic.Scene({
@@ -482,7 +481,7 @@ const Function = () => {
               ab(zongon);
           }
           )  
-          .addIndicators() // add indicators (requires plugin)
+        //   .addIndicators() // add indicators (requires plugin)
           .addTo(controller);
           var onlineeventssvgscene = new ScrollMagic.Scene({
               triggerElement: "#onlineeventssvgtrigger",
@@ -490,7 +489,7 @@ const Function = () => {
               tweenChanges: true
           })
           .setTween(onlineeventssvgtween)  
-          .addIndicators() // add indicators (requires plugin)
+        //   .addIndicators() // add indicators (requires plugin)
           .addTo(controller);
           
           var zonalsshatterscene = new ScrollMagic.Scene({
@@ -502,7 +501,7 @@ const Function = () => {
               ab(onlinegon);
           }
           )  
-          .addIndicators() // add indicators (requires plugin)
+        //   .addIndicators() // add indicators (requires plugin)
           .addTo(controller);
           
           var carnivalsscene = new ScrollMagic.Scene({
@@ -511,7 +510,7 @@ const Function = () => {
               offset:window.innerHeight*.1546
           })
           .setTween(carnivalssvgtween)  
-          .addIndicators() // add indicators (requires plugin)
+        //   .addIndicators() // add indicators (requires plugin)
           .addTo(controller);
           var carnivalsshatterscene = new ScrollMagic.Scene({
               triggerElement: "#carnivalsssvgtrigger",
@@ -522,7 +521,7 @@ const Function = () => {
               ab(carngon);
           }
           )  
-          .addIndicators() // add indicators (requires plugin)
+        //   .addIndicators() // add indicators (requires plugin)
           .addTo(controller);
           var page3page1scene = new ScrollMagic.Scene({
               triggerElement: "#litfestanimationtrigger",
@@ -530,7 +529,7 @@ const Function = () => {
               tweenChanges: true
           })
           .setTween(page3secrevtween)  
-          .addIndicators() // add indicators (requires plugin)
+        //   .addIndicators() // add indicators (requires plugin)
           .addTo(controller);
           var page3page2scene = new ScrollMagic.Scene({
               triggerElement: "#workshopssvgtrigger",
@@ -538,7 +537,7 @@ const Function = () => {
               tweenChanges: true
           })
           .setTween(page3secrev1tween)  
-          .addIndicators() // add indicators (requires plugin)
+        //   .addIndicators() // add indicators (requires plugin)
           .addTo(controller);
           var page3page3scene = new ScrollMagic.Scene({
               triggerElement: "#zonalssvgtrigger",
@@ -546,7 +545,7 @@ const Function = () => {
               tweenChanges: true
           })
           .setTween(page3secrev2tween)  
-          .addIndicators() // add indicators (requires plugin)
+        //   .addIndicators() // add indicators (requires plugin)
           .addTo(controller);
           
           var page3page4scene = new ScrollMagic.Scene({
@@ -555,7 +554,7 @@ const Function = () => {
               tweenChanges: true
           })
           .setTween(page3secrev3tween)  
-          .addIndicators() // add indicators (requires plugin)
+        //   .addIndicators() // add indicators (requires plugin)
           .addTo(controller);
           
           var page3page4scene = new ScrollMagic.Scene({
@@ -564,7 +563,7 @@ const Function = () => {
               tweenChanges: true
           })
           .setTween(page3secrev4tween)  
-          .addIndicators() // add indicators (requires plugin)
+        //   .addIndicators() // add indicators (requires plugin)
           .addTo(controller);
 //     var lFollowX = 0,
 //         lFollowY = 0,

@@ -1,12 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import ScrollFunction from './functions/Scroll'
-// import Mainattraction from './Svg/Mainattraction'
-// import Litfest  from './Svg/Litfest'
-// import Litfestpen from './Svg/Litfestpen'
-// import Workshopbulb from './Svg/Workshopbulb'
-// import Workshops from './Svg/Workshops'
-// import Karvaan from './Svg/Karvaan'
 import logo from './src/img/thomso logo-01.png'
 import thomsomain from './src/img/thomsomain.png'
 import foot from './src/img/foot svg-01.svg'
@@ -16,6 +11,7 @@ import phone from './src/img/phone svg-01.svg'
 import rightarrow from './src/img/right-arrow.svg'
 import logosvg from './src/img/thomso logo svg-01.svg'
 import address from './src/img/address svg-01.svg'
+import Navbar from '../beta/home/Navbar'
 
 import './src/css/style.css'
 
@@ -49,6 +45,7 @@ export default class HomeIndex extends React.Component{
     render(){
         return(
             <div>
+                <Navbar logohide="true"/>
                 {/* Main web 1 */}
                 <div className="mainfirst" id="main parallaxscene">
                     {/* <div className="mainfirst3"></div>  */}
@@ -61,12 +58,12 @@ export default class HomeIndex extends React.Component{
                                     <img src={logo} alt=""/>
                                 </div>
                                 <div className="homenavbarctos">
-                                    <div className="toggle" onClick="mobileoptionsreveal()">
+                                    {/* <div className="toggle" onClick="mobileoptionsreveal()">
                                         <span></span>
                                         <span></span>
                                         <span></span>
                                         <span></span>	
-                                    </div>
+                                    </div>*/}
 
 
                                 </div>
@@ -76,18 +73,18 @@ export default class HomeIndex extends React.Component{
                             <div className="leftsidebar">
                                 <div className="leftsidebarcontent ">
                                     {/* <a href="" className="leftsidebarevents" onmouseover="float" >Events</a> */}
-                                    <a href="" className="leftsidebarevents">Events</a>
+                                    <Link to="/events" className="leftsidebarevents">Events</Link>
                                 </div>
                                 <div className="leftsidebarcontent">
-                                    <a href="" className="leftsidebarpronites">Pronites</a>
+                                     <Link to=" " className="leftsidebarpronites">Pronites</Link>
                                 </div>
                                 <div className="leftsidebarcontent">
-                                    <a href="" className="leftsidebarsponsors">Sponsors</a>
+                                     <Link to="/sponsors" className="leftsidebarsponsors">Sponsors</Link>
                                 </div>
                                 <div className="leftsidebarcontent">
-                                    <a href="" id="aboutuspagerevealer" className="leftsidebarcontactus">
+                                     <Link to=" " id="aboutuspagerevealer" className="leftsidebarcontactus">
                                         Contact Us
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                             <div className="centreimage" id="centreimagetrans">
@@ -95,19 +92,19 @@ export default class HomeIndex extends React.Component{
                             </div>
                             <div className="rightsidebar">
                                 <div className="rightsidebarcontent">
-                                    <a href="">Register/Login</a>
+                                    <Link to="/main">Register/Login</Link>
                                 </div>
                                 <div className="rightsidebarcontent">
-                                    <a href="">Why Thomso</a></div>
+                                    <Link to="/whythomso">Why Thomso</Link></div>
 
                                 <div className="rightsidebarcontent">
-                                    <a href="">Zonals</a></div>    
+                                    <Link to="/zonals">Zonals</Link></div>    
                                 <div className="rightsidebarcontent">
-                                    <a>Follow And Share</a></div>
+                                    <Link to="">Follow And Share</Link></div>
 
 
                             </div>
-                            <div className="mobileviewoptions-parent">
+                            {/*<div className="mobileviewoptions-parent">
                                 <div className="mobileviewoptions" id="mobopid">
                                     <div className="mobileviewoptionscontent">
                                         <a href="http://" target="_blank" rel="noopener noreferrer">Register/Login</a>
@@ -137,7 +134,7 @@ export default class HomeIndex extends React.Component{
                                         <a href="http://" target="_blank" rel="noopener noreferrer">Follow & Share</a>
                                     </div>
                                 </div>
-                            </div>
+                            </div>*/}
                         </div>
                     </div>   
 
@@ -2536,17 +2533,17 @@ export default class HomeIndex extends React.Component{
                         </div>
                     </div>
                 </div> 
-                <div class="mainpage5">
-                    <div class="mainpage5-thomsologo">
+                <div className="mainpage5">
+                    <div className="mainpage5-thomsologo">
                         <img src={logosvg} alt=""/ >
                     </div>
-                    <div class="mainpage5con">
-                        <div class="mainpagecontainer-outer-left">
-                            <div class="mainpage5container-inner">
-                                <div class="mainpage5container-inner-in">   
-                                    <div class="mainpage5imgandtextcont">
-                                        <div class="mainpage5container-inner-in-left"><img src={phone} alt="" srcSet="" /></div>
-                                        <div class="mainpage5container-inner-in-right">
+                    <div className="mainpage5con">
+                        <div className="mainpagecontainer-outer-left">
+                            <div className="mainpage5container-inner">
+                                <div className="mainpage5container-inner-in">   
+                                    <div className="mainpage5imgandtextcont">
+                                        <div className="mainpage5container-inner-in-left"><img src={phone} alt="" srcSet="" /></div>
+                                        <div className="mainpage5container-inner-in-right">
                                             <h1>Contact</h1>
                                             <h4>Suyash Singh (Convener)</h4>
                                             <h4>+91-8417954805</h4>
@@ -2554,13 +2551,13 @@ export default class HomeIndex extends React.Component{
                                             <h4>+91-7979071260</h4>
                                         </div>
                                     </div>
-                                    <div class="mainpage5container-inner-in-right-righter">
-                                        <div class="mainpagecontainer-outer-rightin">
-                                            <div class="mainpagecontainer-outer-rightin-inner">
-                                                <div class="mainpagecontainer-outer-rightin-inner-inside"><a>Team Page<span><img src={rightarrow} alt="right-arrow" srcSet=""/></span></a>
+                                    <div className="mainpage5container-inner-in-right-righter">
+                                        <div className="mainpagecontainer-outer-rightin">
+                                            <div className="mainpagecontainer-outer-rightin-inner">
+                                                <div className="mainpagecontainer-outer-rightin-inner-inside"><Link to="">Team Page<span><img src={rightarrow} alt="right-arrow" srcSet=""/></span></Link>
 
-                                                    {/* <div class="mainpage5internalsvgcontainer">
-                                                                    <img src="./right-arrow.svg" alt="right-arrow" srcset="">
+                                                    {/* <div className="mainpage5internalsvgcontainer">
+                                                                    <img src="./right-arrow.svg" alt="right-arrow" srcSet="">
                                                              </div>    */}
 
                                                 </div>
@@ -2568,11 +2565,11 @@ export default class HomeIndex extends React.Component{
                                         </div> 
                                     </div>
                                 </div>
-                                <div class="mainpage5container-inner">
-                                    <div class="mainpage5container-inner-in">
-                                        <div class="mainpage5imgandtextcont">    
-                                            <div class="mainpage5container-inner-in-left"><img src={address} alt="address" srcSet=""/></div>
-                                            <div class="mainpage5container-inner-in-right">
+                                <div className="mainpage5container-inner">
+                                    <div className="mainpage5container-inner-in">
+                                        <div className="mainpage5imgandtextcont">    
+                                            <div className="mainpage5container-inner-in-left"><img src={address} alt="address" srcSet=""/></div>
+                                            <div className="mainpage5container-inner-in-right">
                                                 <h1>Address</h1>
                                                 <h4>THOMSO OFFICE</h4>
                                                 <h4> Multi Activity Centre</h4>
@@ -2581,13 +2578,13 @@ export default class HomeIndex extends React.Component{
                                                 <h4>646774373474</h4>
                                             </div>
                                         </div>
-                                        <div class="mainpage5container-inner-in-right-righter">
-                                            <div class="mainpagecontainer-outer-rightin">
-                                                <div class="mainpagecontainer-outer-rightin-inner">
-                                                    <div class="mainpagecontainer-outer-rightin-inner-inside">
-                                                        <a>Get Directions <span><img src={rightarrow} alt="right-arrow" srcset=""/></span></a>
-                                                        {/*- <div class="mainpage5internalsvgcontainer">
-                                                                            <img src="./right-arrow.svg" alt="right-arrow" srcset="">
+                                        <div className="mainpage5container-inner-in-right-righter">
+                                            <div className="mainpagecontainer-outer-rightin">
+                                                <div className="mainpagecontainer-outer-rightin-inner">
+                                                    <div className="mainpagecontainer-outer-rightin-inner-inside">
+                                                        <a>Get Directions <span><img src={rightarrow} alt="right-arrow" srcSet=""/></span></a>
+                                                        {/*- <div className="mainpage5internalsvgcontainer">
+                                                                            <img src="./right-arrow.svg" alt="right-arrow" srcSet="">
                                                                      </div>    */}
                                                     </div>
                                                 </div>
@@ -2595,25 +2592,25 @@ export default class HomeIndex extends React.Component{
                                         </div>
                                     </div>    
                                 </div>
-                                {/*<div class="mainpagecontainer-outer-right">
-                        <div class="mainpagecontainer-outer-rightin">
-                            <div class="mainpagecontainer-outer-rightin-inner">
+                                {/*<div className="mainpagecontainer-outer-right">
+                        <div className="mainpagecontainer-outer-rightin">
+                            <div className="mainpagecontainer-outer-rightin-inner">
                             </div>
 
                         </div>
-                        <div class="mainpagecontainer-outer-rightin">
-                                <div class="mainpagecontainer-outer-rightin-inner">
+                        <div className="mainpagecontainer-outer-rightin">
+                                <div className="mainpagecontainer-outer-rightin-inner">
                                 </div>
                         </div>                     */}
 
                             </div>
 
 
-                            {/* <div class="mainpagecontainer-outer">
-                <div class="mainpage5container-inner"><h1>Contact</h1>
-                    <div class="mainpage5container-inner-in">
-                            <div class="mainpage5container-inner-in-left"><img src="./phone svg-01.svg" alt="" srcset=""></div>
-                            <div class="mainpage5container-inner-in-right">
+                            {/* <div className="mainpagecontainer-outer">
+                <div className="mainpage5container-inner"><h1>Contact</h1>
+                    <div className="mainpage5container-inner-in">
+                            <div className="mainpage5container-inner-in-left"><img src="./phone svg-01.svg" alt="" srcSet=""></div>
+                            <div className="mainpage5container-inner-in-right">
                                 <h4>John Doe (John Doe)</h4>
                                 <h4>43566237757</h4>
                                 <br>
@@ -2622,11 +2619,11 @@ export default class HomeIndex extends React.Component{
                             </div>
                     </div>
                 </div>
-                <div class="mainpage5container-inner mainpage5container-innersec">
+                <div className="mainpage5container-inner mainpage5container-innersec">
                     <h1>Address</h1>
-                    <div class="mainpage5container-inner-in">
-                            <div class="mainpage5container-inner-in-left"><img src="./address svg-01.svg" alt="" srcset=""></div>
-                            <div class="mainpage5container-inner-in-right">
+                    <div className="mainpage5container-inner-in">
+                            <div className="mainpage5container-inner-in-left"><img src="./address svg-01.svg" alt="" srcSet=""></div>
+                            <div className="mainpage5container-inner-in-right">
                                 <h4>THOMSO OFFICE</h4>
                                 <h4> Multi Activity Centre</h4>
                                 <h4>Indian Institute of Technology</h4> 
@@ -2636,11 +2633,11 @@ export default class HomeIndex extends React.Component{
                     </div>
                 </div>
             </div>
-            <div class="mainpagecontainer-outerright">
-                <div class="getdirectionscontainerlink">
+            <div className="mainpagecontainer-outerright">
+                <div className="getdirectionscontainerlink">
 
                 </div>
-                <div class="teampagecontainerlink">
+                <div className="teampagecontainerlink">
                 </div>
             </div> */}
                         </div>

@@ -80,14 +80,14 @@ class Navbar extends Component {
         }
         return (
             <div>
-                <div className={this.state.displayNavbar ? 'new-navbar-i' : 'new-navbar-i span-cross'} onClick={this.toggleNavbar} on>
+                <div className={this.state.displayNavbar ? 'new-navbar-i' : 'new-navbar-i span-cross'} onClick={this.toggleNavbar}>
                     <span><i>border</i></span>
                     <span><i>border</i></span>
                     <span><i>border</i></span>
                 </div>
                 <div>
-                    <div  style={{position:this.state.displayNavbar ? 'fixed':'fixed',height:this.state.displayNavbar ?"100vh":"100vh"}} className={this.state.displayNavbar ? 'hideNavbar':'new-navbar-lists-child'}>
-                        {this.props.events === "true" ? null : <li >
+                    <div style={{height:'100vh',position:'fixed'}} className={this.state.displayNavbar ? 'hideNavbar':'new-navbar-lists-child'}>
+                        {this.props.events === true ? null : <li >
                             <Link to="/campusambassador/" className={(this.state.activeState === "campusambassador/") ? "linkCaportal " :null}
                                 onClick={() => {
                                     this.setActive("linkCaportal");
@@ -95,7 +95,7 @@ class Navbar extends Component {
                                 CAMPUS AMBASSADOR
                             </Link>
                         </li>}
-                        {this.props.events === "true" ? null : <li >
+                        {this.props.events === true ? null : <li >
                             <Link to="/events" className={(this.state.activeState === "#") ? "linkEvents" : null}
                                 onClick={() => {
                                     this.setActive("#");
@@ -113,19 +113,19 @@ class Navbar extends Component {
                                     this.setActive("ongoingevents")
                                 }}>ONGOING EVENTS </Link>
                         </li>
-                        {this.props.events === "true" ? null : <li>
+                        {this.props.events === true ? null : <li>
                             <Link to="/associate" className={(this.state.activeState === "linkAssociate") ? "linkSponsors" : null}
                                 onClick={() => {
                                     this.setActive("linkAssociate");
                                 }}>ASSOCIATE WITH US</Link>
                         </li>}
-                        {this.props.events === "true" ? null : <li>
+                        {this.props.events === true ? null : <li>
                             <Link to="/whythomso" className={(this.state.activeState === "linkBlog") ? "linkBLog" : null}
                                 onClick={() => {
                                     this.setActive("linkBlog");
                                 }}>WHY THOMSO</Link>
                         </li>}
-                        {this.props.events === "true" ? null : <li className="dropdown">
+                        {this.props.events === true ? null : <li className="dropdown">
                             <Link to="/zonals/home" className={(this.state.activeState === "lucknow") ? "linkLucknow" : null}
                                 onClick={() => {
                                     this.setActive("lucknow");
@@ -147,8 +147,8 @@ class Navbar extends Component {
                     </div>
                 </div>
                 <div className="beta-navbar-contain">
-                    <div className={this.state.hamburger ? "beta-home-navbar" : "beta-home-navbar beta-navbar-overlay beta-navbar-navbarToggle"} id={(this.props.background === "true") ? "background-image-gradient" : null}>
-                        <div className="beta-navbar-t-logo">
+                    <div className={this.state.hamburger ? "beta-home-navbar" : "beta-home-navbar beta-navbar-overlay beta-navbar-navbarToggle"} id={(this.props.background === true) ? "background-image-gradient" : null}>
+                        <div style={{display:this.props.logohide ? 'none':'block'}} className="beta-navbar-t-logo">
                             <Link to="/"> <img src={img} alt="" /></Link>
                         </div>
                         <div className="beta-navbar-t-ctos">
@@ -161,7 +161,7 @@ class Navbar extends Component {
                                 </div>
                             </div>
                             <div className={this.state.isHidden ? "list_" : "list_ beta-navbar-active"}>
-                                {!this.state.isHidden && <List events={this.props.events === "true" ? "true" : null} />}
+                                {!this.state.isHidden && <List events={this.props.events === true ? true : null} />}
                             </div>
                             <div className="beta-navbar-int-ctos">
                             </div>
