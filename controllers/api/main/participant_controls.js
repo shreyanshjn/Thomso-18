@@ -1,4 +1,7 @@
 var Main_User = require('../../../models/main/Main_User');
+var MUN_Answer = require('../../../models/mun/MUN_Answer');
+var EventSchema = require('../../../models/main/Thomso_Event');
+
 var mailer = require('../../common/mailer');
 
 exports.userInfo = function (req, res) {
@@ -88,13 +91,14 @@ exports.update_image = function (req, res) {
                     email:data.email
                 }, updateData)
                 .exec(function(err){
-                    if (err) return status(401).send({ success: false, msg: "Unable To Upload Image. Please Try Again." })
+                    if (err) return res.status(400).send({ success: false, msg: "Unable To Upload Image. Please Try Again." })
                     res.json({ success: true, body:url, msg: "Image Uploaded Successfully." })
                 })
             }
         })
     }else res.status(400).send({ success: false, msg: 'Invalid Data' });
 }
+
 exports.resendOTP = function (req, res) {
     if (req.locals.email) {
         Main_User.findOne({
@@ -116,5 +120,53 @@ exports.resendOTP = function (req, res) {
                     res.json({ success: true, msg: 'Successfully sent email', body: user.email });
                 }
             });
+    } else {
+        res.status(400).send({ success: false, msg: 'User Not Found' });
+    }
+};
+
+exports.munAnswer = function (req, res) {
+    if (req.locals._id && req.locals.email && req.body.answerOne && req.body.answerTwo && req.body.answerThree) {
+        var data = {
+            answerOne: req.body.answerOne,
+            answerTwo: req.body.answerTwo,
+            answerThree: req.body.answerThree,
+            user: req.locals._id,
+            email: req.locals.email
+        }
+        MUN_Answer.findOneAndUpdate({ email: req.locals.email }, data, { upsert: true, new:true })
+        .exec(function (err, answer) {
+            if (err) {
+                return res.json({success: false, msg: 'Error'});
+            } else if (!answer) {
+                return res.json({success: false, msg: 'Unable to save'});
+            } else {
+                Main_User.findOneAndUpdate({
+                    _id:req.locals._id
+                }, {
+                    mun: answer._id,
+                    $addToSet: { event: "5b8456af1715f612ef4192c4" }
+                }).exec(function(err, ans){
+                    if (err) return res.json({ success: false, msg: "Unable to add answer" });
+                    if (!ans) return res.json({ success: false, msg: "Unable to add answer, user not found" });
+                    EventSchema.findOneAndUpdate(
+                        { _id: "5b8456af1715f612ef4192c4" },
+                        { $addToSet: { users: req.locals._id } }
+                    )
+                        .exec(function (err, result) {
+                            if (err) {
+                                return res.json({ success: false, msg: 'Unable to add participant' });
+                            }
+                            if (result) {
+                                return res.json({ success: true, msg: 'Event added in participant' });
+                            } else {
+                                return res.json({ success: false, msg: 'No such event Exists' });
+                            }
+                        });
+                })
+            }
+        });
+    } else {
+        res.status(400).send({ success: false, msg: 'User Not Found' });
     }
 };

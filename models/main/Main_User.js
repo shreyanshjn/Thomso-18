@@ -72,7 +72,11 @@ var UserSchema = new mongoose.Schema({
     },
     otp: {
         type: String
-    }
+    },
+    mun: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'MUN_Answer'
+    },
 });
 UserSchema.pre('save', function (next) {
     var user = this;

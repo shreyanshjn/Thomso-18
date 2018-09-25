@@ -95,7 +95,7 @@ exports.removeParticipant = function (req, res) {
                                 if (err) {
                                     return res.state(400).send({ success: false, msg: 'unable to remove participant' });
                                 }
-                                if (results.event_id === data.event_id) {
+                                if (results && results.event_id === data.event_id) {
                                     return res.json({ success: false, msg: "Primary Event Can't be deleted" });
                                 }
                                 else {

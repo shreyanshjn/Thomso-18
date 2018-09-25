@@ -127,7 +127,7 @@ exports.putBonus = function (req, res) {
 /* GET All Temp Users */
 exports.getTempUsers = function (req, res) {
     TempUsers.find()
-        .select('name email ca_id verified gender contact college state branch address why create_date')
+        .select('name email ca_id verified referrals gender contact college state branch address why create_date')
         .exec(function (err, allUsers) {
             if (err) return res.status(400).send({ success: false, msg: 'Unable to GET Participants', error: err });
             res.json(allUsers);
@@ -137,7 +137,8 @@ exports.getTempUsers = function (req, res) {
 /* GET ALL Users */
 exports.getTempScoreList = function (req, res) {
     TempUsers.find()
-        .select('name ca_id gender college score ideas bonus referrals verified')
+        .select('name ca_id gender college score ideas bonus fb_score referrals verified')
+        .sort({'referrals' : -1})
         .exec(function (err, allUsers) {
             if (err) return res.status(400).send({ success: false, msg: 'Unable to GET Score List', error: err });
             res.json(allUsers);

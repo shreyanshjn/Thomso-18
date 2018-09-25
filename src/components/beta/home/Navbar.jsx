@@ -111,7 +111,7 @@ class Navbar extends Component {
                                     <Link to="/events" className={(this.state.activeState === "#") ? "linkEvents" : null}
                                         onClick={() => {
                                             this.setActive("#");
-                                        }}><span className="events-navbar-new">EVENTS</span><span className="events-delhi-navbar-new">new</span></Link>
+                                        }}><span className="events-navbar-new">EVENTS</span></Link>
                                 </li>}
                                 {/*    <li>
                   <Link to="" className={(this.state.activeState === "linkTeam") ? "linkTeam" : null}
@@ -131,22 +131,22 @@ class Navbar extends Component {
                                         }}>ASSOCIATE WITH US</Link>
                                 </li>}
                                 {this.props.events === "true" ? null : <li>
-                                    <Link to="/blog" className={(this.state.activeState === "linkBlog") ? "linkBLog" : null}
+                                    <Link to="/whythomso" className={(this.state.activeState === "linkBlog") ? "linkBLog" : null}
                                         onClick={() => {
                                             this.setActive("linkBlog");
-                                        }}>BLOG</Link>
+                                        }}>WHY THOMSO</Link>
                                 </li>}
                                 {this.props.events === "true" ? null : <li className="dropdown">
-                                    <Link to="/zonals/home" className={(this.state.activeState === "lucknow") ? "linkLucknow" : null}
+                                    <Link to="/mun" className={(this.state.activeState === "mun") ? "linkLucknow" : null}
                                         onClick={() => {
-                                            this.setActive("lucknow");
-                                        }}>ZONALS</Link>
+                                            this.setActive("mun");
+                                        }}>IITR MUN</Link>
                                 </li>}
                                 <li>
                                     <Link to="/main" className={(this.state.activeState === "main") ? "linkSponsors" : null}
                                         onClick={() => {
                                             this.setActive("main");
-                                        }}>{verified ? (this.state.imageData && this.state.imageData.image) ? <img className="navbar-user-image" src={imageUrl} alt="DASHBOARD" /> : 'DASHBOARD' : <span><span className="events-navbar-new">REGISTER</span><span className="events-delhi-navbar-new">new</span></span>}</Link>
+                                        }}>{verified ? (this.state.imageData && this.state.imageData.image) ? <img className="navbar-user-image" src={imageUrl} alt="DASHBOARD" /> : 'DASHBOARD' : <span><span className="events-navbar-new">REGISTER</span></span>}</Link>
 
                                 </li>
                                 {/* <li>

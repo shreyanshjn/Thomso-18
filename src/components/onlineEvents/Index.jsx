@@ -78,7 +78,7 @@ class OnlineEventsIndex extends Component {
                     
                     <div className="onlineevents-mainpage-parent-child">
                         <div className="onlineevents-mainpage-cards">
-                            <Link to="/Mr&MissThomso">
+                            <Link to="/MrMissThomso">
                                 <div className="onlineevents-mainpage-cards-image-mrmissthomso">
                                 </div>
                             </Link>
@@ -86,7 +86,7 @@ class OnlineEventsIndex extends Component {
                                 Mr. AND Ms. THOMSO ONLINE
                             </div>
                             <div className="onlineevents-mainpage-cards-button">
-                                <Link to="/Mr&MissThomso">
+                                <Link to="/MrMissThomso">
                                     View
                                 </Link>
                             </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import img from "../../campusAmbassador/register//img/logo.png";
+import img from "../../campusAmbassador/register/img/logo.png";
 import FetchApi from '../../../utils/FetchAPI';
 import validateInput from '../../../utils/validation/loginValidation';
 import Popup from '../../common/popup/Index';

@@ -87,19 +87,19 @@ class List extends Component {
                     </Link>
                 </li>
                 {this.props.events === "true" ? null : <li>
-                    <Link to="/zonals/home" className={(this.state.activeStateLink === "zonals-home") ? "list-zonals-link" : null}
+                    <Link to="/mun" className={(this.state.activeStateLink === "mun") ? "list-zonals-link" : null}
                         onClick={() => {
-                            this.setActiveLink("list-zonals-home")
+                            this.setActiveLink("mun")
                         }}>
-                        ZONALS
+                        IITR MUN
             </Link>
                 </li>}
                 {this.props.events === "true" ? null : <li>
-                    <Link to="/blog" className={(this.state.activeStateLink === "linkBlog") ? "list-blog-link" : null}
+                    <Link to="/whythomso" className={(this.state.activeStateLink === "linkBlog") ? "list-blog-link" : null}
                         onClick={() => {
                             this.setActiveLink("linkBlog")
                         }}>
-                        BLOG
+                        WHY THOMSO
             </Link>
                 </li>}
                 {this.props.events === "true" ? null : <li>

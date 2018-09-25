@@ -27,10 +27,10 @@ const LogoutIndex = Loadable({
   loading: Loading
 });
 
-const RegisterIndex = Loadable({
-  loader: () => import("./register/Index"),
-  loading: Loading
-});
+// const RegisterIndex = Loadable({
+//   loader: () => import("./register/Index"),
+//   loading: Loading
+// });
 
 const HomeIndex = Loadable({
   loader: () => import("./home/Index"),
@@ -52,10 +52,10 @@ const IdeasIndex = Loadable({
   loading: Loading
 });
 
-const LoginIndex = Loadable({
-  loader: () => import("./login/Index"),
-  loading: Loading
-});
+// const LoginIndex = Loadable({
+//   loader: () => import("./login/Index"),
+//   loading: Loading
+// });
 
 const TimelineIndex = Loadable({
   loader: () => import("./timeline/Index"),
@@ -119,8 +119,8 @@ export default class CAIndex extends React.Component {
           </div>
         ) : (
             <div>
-              <Route exact path="/ca/register" render={props => (<RegisterIndex {...props} updateRoutes={this.handleUpdate} setUserData={this.setUserData} userData={this.state.userData} />)} />
-              <Route exact path="/ca/" render={props => (<LoginIndex {...props} updateRoutes={this.handleUpdate} setUserData={this.setUserData} userData={this.state.userData} />)} />
+              {/* <Route exact path="/ca/register" render={props => (<RegisterIndex {...props} updateRoutes={this.handleUpdate} setUserData={this.setUserData} userData={this.state.userData} />)} /> */}
+              {/* <Route exact path="/ca/" render={props => (<LoginIndex {...props} updateRoutes={this.handleUpdate} setUserData={this.setUserData} userData={this.state.userData} />)} /> */}
             </div>
           )}
       </React.Fragment>

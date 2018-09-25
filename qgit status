@@ -153,7 +153,7 @@
 [32m+[m[41m                    [m
                      <div className="onlineevents-mainpage-parent-child">[m
                          <div className="onlineevents-mainpage-cards">[m
-                             <Link to="/Mr&MissThomso">[m
+                             <Link to="/MrMissThomso">[m
 [36m@@ -98,7 +83,7 @@[m [mclass OnlineEventsIndex extends Component {[m
                                  </div>[m
                              </Link>[m
@@ -162,4 +162,4 @@
 [32m+[m[32m                                Mr. AND Ms. THOMSO ONLINE[m
                              </div>[m
                              <div className="onlineevents-mainpage-cards-button">[m
-                                 <Link to="/Mr&MissThomso">[m
+                                 <Link to="/MrMissThomso">[m
