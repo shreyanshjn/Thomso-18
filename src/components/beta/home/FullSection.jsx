@@ -20,59 +20,56 @@ export default class FullSection extends Component {
             sectionPaddingTop: "0px",
             slidesNavPosition: "bottom",
             arrowNavigation: true
-        };
-        return (
-
+        }
+        return(
             <div>
+                <div className="sticky-container">
+                    <ul className="sticky">
+                        <li>
+                            <img src={bell} width="32" height="32" alt="bell-icon"/>
+                            <p>WHAT'S NEW <br/><br/></p>
+                            <div id="submenu">
+                                <Link to="/cupid" >Cupid</Link>
+                                <br/><Link to="/whythomso">Why Thomso</Link>
+                                <br/><Link to="/main">Register</Link><br/></div>
+                        </li>
 
-    
-            <div className="sticky-container">
-            <ul className="sticky">
-            <li>
-            <img src={bell} width="32" height="32"/>
-            <p>WHAT'S NEW <br/><br/></p>
-	         <div id="submenu">
-             <Link to="/cupid" >Cupid</Link>
-             <br/><Link to="/whythomso">Why Thomso</Link>
-             <br/><Link to="/main">Register</Link><br/></div>
-             </li>
-        
-            </ul>
-            </div>
-            <SectionsContainer {...options}>
+                    </ul>
+                </div>
+                <SectionsContainer {...options}>
 
-                <Section>
-                    <div className="body">
-                        <div className="imagelogo" align="center">
-                            <img src={logo} alt="logo" className="mainlogo" height="200px" />
-                            <div className="arrowmove">
-                                <a href="#aboutUs" address="true">
-                                    <img src={arrow} className="betahomedownarrow bounce" alt="a" />
-                                </a>
+                    <Section>
+                        <div className="body">
+                            <div className="imagelogo" align="center">
+                                <img src={logo} alt="logo" className="mainlogo" height="200px" />
+                                <div className="arrowmove">
+                                    <a href="#aboutUs" address="true">
+                                        <img src={arrow} className="betahomedownarrow bounce" alt="a" />
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </Section>
+                    </Section>
 
 
-                <Section>
-                    <Footfall />
-                </Section>
+                    <Section>
+                        <Footfall />
+                    </Section>
 
-                <Section>
-                    <Celebrity />
-                </Section>
+                    <Section>
+                        <Celebrity />
+                    </Section>
 
-                <Section>
-                    <About />
-                </Section>
+                    <Section>
+                        <About />
+                    </Section>
 
-                <Section>
-                    <Contact />
-                </Section>
+                    <Section>
+                        <Contact />
+                    </Section>
 
-            </SectionsContainer>
+                </SectionsContainer>
             </div>
-        );
+        )
     }
 }

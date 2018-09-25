@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import ScrollFunction from './functions/Scroll'
+
+import bell from '../beta/home/src/img/bell.png' 
 import logo from './src/img/thomso logo-01.png'
 import thomsomain from './src/img/thomsomain.png'
 import foot from './src/img/foot svg-01.svg'
@@ -56,6 +58,19 @@ export default class HomeIndex extends React.Component {
         return (
             <div>
                 <Navbar logohide="true" />
+                <div className="sticky-container">
+                    <ul className="sticky">
+                        <li>
+                            <img src={bell} width="32" height="32" alt="bell-icon"/>
+                            <p>WHAT'S NEW <br/><br/></p>
+                            <div id="submenu">
+                                <Link to="/cupid" >Cupid</Link>
+                                <br/><Link to="/whythomso">Why Thomso</Link>
+                                <br/><Link to="/main">Register</Link><br/></div>
+                        </li>
+
+                    </ul>
+                </div>
                 {/* Main web 1 */}
                 <div className="mainfirst" id="main parallaxscene">
                     {/* <div className="mainfirst3"></div>  */}
@@ -2565,6 +2580,8 @@ export default class HomeIndex extends React.Component {
                                             <h1>Contact</h1>
                                             <h4>Suyash Singh (Convener)</h4>
                                             <h4>+91-8417954805</h4>
+                                            <h4>Samarth Gubrele(Co-Convener)</h4>
+                                            <h4>+91-9425101043</h4>
                                             <h4>Abhishek Kumar (Co-Convener)</h4>
                                             <h4>+91-7979071260</h4>
                                         </div>
@@ -2572,7 +2589,7 @@ export default class HomeIndex extends React.Component {
                                     <div className="mainpage5container-inner-in-right-righter">
                                         <div className="mainpagecontainer-outer-rightin">
                                             <div className="mainpagecontainer-outer-rightin-inner">
-                                                <div className="mainpagecontainer-outer-rightin-inner-inside"><Link to="">Team Page<span><img src={rightarrow} alt="right-arrow" srcSet="" /></span></Link>
+                                                <div className="mainpagecontainer-outer-rightin-inner-inside"><Link to="/team">Team Page<span><img src={rightarrow} alt="right-arrow" srcSet="" /></span></Link>
 
                                                     {/* <div className="mainpage5internalsvgcontainer">
                                                                     <img src="./right-arrow.svg" alt="right-arrow" srcSet="">
@@ -2583,7 +2600,7 @@ export default class HomeIndex extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="mainpage5container-inner">
+                                <div className="mainpage5container-inner address-last-page">
                                     <div className="mainpage5container-inner-in">
                                         <div className="mainpage5imgandtextcont">
                                             <div className="mainpage5container-inner-in-left"><img src={address} alt="address" srcSet="" /></div>
