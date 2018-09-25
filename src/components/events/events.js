@@ -114,11 +114,7 @@ export const EventDetails =
                     },
                     {
                         id: '3_7',
-                        name: "Cupid Attack",
                         content: "",
-                        rulebook: "https://drive.google.com/open?id=1Z71Z6z24APrI0zFKd-dTudy9EgZ9x11w",
-                        image: "cupid.jpg",
-                        prize: "10"
                     },
                 ]
         },
