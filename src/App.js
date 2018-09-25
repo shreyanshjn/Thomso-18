@@ -141,10 +141,10 @@ const MUNIndex = Loadable({
     loading: () => <Loader />
 })
 
-// const Carousel = Loadable({
-//     loader: () => import("./components/carousel/Index"),
-//     loading: () => <Loader />
-// })
+const Carousel = Loadable({
+    loader: () => import("./components/carousel/Index"),
+    loading: () => <Loader />
+})
 
 const CoordinatorsIndex = Loadable({
   loader: () => import("./components/coordinators/Index.jsx"),

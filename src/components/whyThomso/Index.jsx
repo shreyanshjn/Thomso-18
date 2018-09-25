@@ -56,7 +56,7 @@ export default class WhyThomso extends Component {
     render() {
         return (
             <div className="whythomso-parent">
-                <Navbar background="true" />
+                <Navbar />
                 <div className="whythomso-child">
                     <div className="whythomso-child-whythomso">
                         <h3>WHY VISIT THOMSO ?</h3>

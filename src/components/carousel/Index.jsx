@@ -22,18 +22,11 @@ export default class Carousel extends Component {
                     <LeftArrow />
                 </div>
                 <div className="card-carousel">
+
                     <div className="my-card" >
                         <div className="my-card-child">
                             <p>
-                                "Its time for sex baby"
-                            </p>
-                            <Farhan />
-                        </div>
-                    </div>
-                    <div className="my-card" >
-                        <div className="my-card-child">
-                            <p>
-                                "Its time for sex baby"
+                                "it was an amazing expreience here"
                             </p>
                             <Sunidhi />
 
@@ -42,7 +35,7 @@ export default class Carousel extends Component {
                     <div className="my-card" >
                         <div className="my-card-child">
                             <p>
-                                "Its time for sex baby"
+                                "it was an amazing expreience here"
                             </p>
                             <Shaan />
                         </div>
@@ -50,7 +43,15 @@ export default class Carousel extends Component {
                     <div className="my-card" >
                         <div className="my-card-child">
                             <p>
-                                "Its time for sex baby"
+                                "it was an amazing expreience here"
+                            </p>
+                            <Farhan />
+                        </div>
+                    </div>
+                    <div className="my-card" >
+                        <div className="my-card-child">
+                            <p>
+                                "it was an amazing expreience here"
                             </p>
                             <Nucleya />
                         </div>
@@ -58,7 +59,7 @@ export default class Carousel extends Component {
                     <div className="my-card" >
                         <div className="my-card-child">
                             <p>
-                                "Its time for sex baby"
+                                "it was an amazing expreience here"
                             </p>
                             <Sonu />
                         </div>

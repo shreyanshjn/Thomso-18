@@ -7,7 +7,7 @@ class OnlineEventsIndex extends Component {
     render() {
         return (
             <div className="onlineevents-mainpage-parent">
-                <Navbar background='true'/>
+                <Navbar/>
                 <div className="main-parent-online-events-1">
                     <div className="onlineevents-mainpage-parent-child">
                         <div className="onlineevents-mainpage-cards">

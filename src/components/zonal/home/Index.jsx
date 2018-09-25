@@ -7,7 +7,7 @@ export default class HomeIndex extends Component {
     render() {
         return (
             <div className="zonals-mainpage-parent">
-                <Navbar background="true" />
+                <Navbar />
                 <div className="zonals-mainpage-parent-child">
                     <div className="zonals-mainpage-cards">
                         <Link to="/zonals/jaipur">
