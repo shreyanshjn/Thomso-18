@@ -13,10 +13,15 @@ var UserSchema = new mongoose.Schema({
         type:String,
         required:true
     },
+    email: {
+        type:String,
+        required:true,
+        unique: true
+    },
     user : {
         type:mongoose.Schema.Types.ObjectId,
         ref:'Main_User'    
     }
 });
 
-module.exports = mongoose.model('MUN_User',UserSchema);
+module.exports = mongoose.model('MUN_Answer',UserSchema);

@@ -75,7 +75,7 @@ var UserSchema = new mongoose.Schema({
     },
     mun: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'MUN_User'
+        ref: 'MUN_Answer'
     },
 });
 UserSchema.pre('save', function (next) {
