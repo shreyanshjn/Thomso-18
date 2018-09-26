@@ -150,7 +150,15 @@ const MUNIndex = Loadable({
 //     loader: () => import("./components/coordinators/Index.jsx"),
 //     loading: () => <Loader />
 // })
+
 class App extends Component {
+
+    componentDidMount() {
+        if (window.screen) {
+            window.screen.lockOrientation("portrait");
+        }
+    }
+
     render() {
         return (
             <BrowserRouter>

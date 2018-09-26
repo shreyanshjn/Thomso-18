@@ -8,6 +8,7 @@ var betaRoutes = require('./beta/routes');
 var notificationRoutes = require('./notification/routes');
 var zonalsRoutes = require('./zonals/routes');
 var mainRoutes = require('./main/routes');
+var munRoutes = require('./mun/routes');
 // var coordinatorsRoutes = require('./coordinators/routes');
 // var controlsRoutes = require('./controls/routes');
 // Controllers
@@ -23,6 +24,7 @@ router.use('/api/notification', notificationRoutes);
 router.use('/api/certiVerify', cors(corsOptions),  verifyCerti.certi_verify );
 router.use('/api/zonals', zonalsRoutes);
 router.use('/api/main', mainRoutes);
+router.use('/api/mun', munRoutes);
 // router.use('/api/coordinators', coordinatorsRoutes);
 // router.use('/api/controls', controlsRoutes);
 // -> /*

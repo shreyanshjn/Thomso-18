@@ -1,10 +1,10 @@
 import React from 'react';
 
 
-import AuthService from "../../../handlers/main/AuthService";
-import FetchApi from '../../../utils/FetchAPI';
+import AuthService from "../../../../handlers/main/AuthService";
+import FetchApi from '../../../../utils/FetchAPI';
 
-import "../../campusAmbassador/register/css/register.css";
+import "../../../campusAmbassador/register/css/register.css";
 
 export default class Form extends React.Component {
     constructor() {
