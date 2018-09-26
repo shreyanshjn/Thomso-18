@@ -1,4 +1,4 @@
-.sticky-container{
+.mainfinalsticky-container{
     padding:0px;
     margin:0px;
     position:fixed;
@@ -23,11 +23,11 @@
     text-decoration: none;
     color: white;
 }
-.sticky li:hover #submenu{
+.mainfinalsticky li:hover #submenu{
     max-height: 200px;
     font-size: 16.5px;
 }
-.sticky li{
+.mainfinalsticky li{
     list-style-type:none;
     color:white;
     height:43px;
@@ -40,25 +40,25 @@
     transition:all 0.25s ease-in-out;
     cursor: default;;
 }
-.sticky li:hover{
+.mainfinalsticky li:hover{
     margin-left:-124px;
 }
-.sticky li img{
+.mainfinalsticky li img{
     float:left;
     margin:5px 4px;
     margin-right:5px;
 }
-.sticky li p{
+.mainfinalsticky li p{
     padding-top:10px;
     margin:0px;
     line-height:16px;
     font-size:14px;
 }
-.sticky li p a{
+.mainfinalsticky li p a{
     text-decoration:none;
     color:#2C3539;
 }
-.sticky li p a:hover{
+.mainfinalsticky li p a:hover{
     text-decoration:underline;
 }
 @font-face {
@@ -80,7 +80,7 @@
     margin:0px;
     padding:0px;
 }
-body{
+.bodymainfinal{
     padding: 0px;
     margin:0px;
     width:100%;
@@ -88,7 +88,7 @@ body{
     position: relative;
     overflow-x: hidden;
 }
-.mainfirst{
+.mainfinalmainfirst{
     width:100vw;
     height:100vh;
     position:relative;
@@ -99,7 +99,7 @@ body{
     background-position: 50%;
     background-size:cover;
 }
-.mainfirst11{
+.mainfinalmainfirst11{
     width:100vw;
     height:100vh;
     position:relative;
@@ -110,7 +110,7 @@ body{
     background-size:cover;
 
 } 
-.mainfirst1{
+.mainfinalmainfirst1{
     width:100vw;
     height:100vh;
     position: absolute;
@@ -123,7 +123,7 @@ body{
     transition:all linear 0.5s;
 
 }
-.mainfirst3{
+.mainfinalmainfirst3{
     width:100vw;
     height:100vh;
     animation: backgroundchange2 infinite 5.7s;
@@ -136,7 +136,7 @@ body{
     top:0;
     transition: all linear .5s;
 }
-.mainfirst2{
+.mainfinalmainfirst2{
     width:100vw;
     height:100vh;
     animation: backgroundchange1 infinite 5.7s;
@@ -249,32 +249,32 @@ background: url("../img/bg\ bg-01.png")
 
     }
 
-    .mainnavbarcontainer{
+    .mainfinalmainnavbarcontainer{
         display:flex;
         width:100%;
         z-index:2;
     }
-    .mainnavhome{
+    .mainfinalmainnavhome{
         display: flex;
         flex-direction: row;
         width:100%;
         height:fit-content;
     }
-    .home-navbar-logo{
+    .mainfinalhome-navbar-logo{
         width: 20%;
         padding: 2% 4% 2.5% 3%;
     }
 
-    .home-navbar-logo img{
+    .mainfinalhome-navbar-logo img{
         width:50%;
     }
-    .homenavbarctos{
+    .mainfinalhomenavbarctos{
         width:80%;
         position:relative;
 
     }
 
-    .toggle{
+    .mainfinaltoggle{
         position:absolute;
         top: 50%;
         right:3%;
@@ -285,7 +285,7 @@ background: url("../img/bg\ bg-01.png")
         z-index:1000;
 
     }
-    .toggle:before{
+    .mainfinaltoggle:before{
         content: '';
         width:100%;
         height:100%;
@@ -295,7 +295,7 @@ background: url("../img/bg\ bg-01.png")
         background:rgba(26,26,26,.7);
         transition:all linear .5s;
     }
-    .toggle span{
+    .mainfinaltoggle span{
         display:block;
         width:40px;
         height:3px;
@@ -308,32 +308,32 @@ background: url("../img/bg\ bg-01.png")
         box-shadow:0 2px 2px rgba(0,0,0,.20);
 
     }
-    .toggle span:nth-child(1){
+    .mainfinaltoggle span:nth-child(1){
         transform:translate(-50%,-50%)translateY(-14px);
         transition: .2s;
     }
 
-    .toggle span:nth-child(4){
+    .mainfinaltoggle span:nth-child(4){
         transform:translate(-50%,-50%)translateY(14px);
         transition: .2s;
     }
 
-    .togt1{
+    .mainfinaltogt1{
         transform:translate(-50%,-50%)translateY(-35px);
         opacity: 0;
     }
 
-    .togt4{
+    .mainfinaltogt4{
         transform:translate(-50%,-50%)translateY(35px);
         opacity: 0;
     }
-    .togt2{
+    .mainfinaltogt2{
         transform:translate(-50%,-50%)rotate(-45deg);
         transition-delay: .2s;
 
     }
 
-    .togt3{
+    .mainfinaltogt3{
         transform:translate(-50%,-50%)rotate(45deg);
         transition-delay: .2s;
 
@@ -362,7 +362,7 @@ background: url("../img/bg\ bg-01.png")
 
 
 
-    .mainregisterlogin{
+    .mainfinalmainregisterlogin{
         position:absolute;
         top:50%;
         left:80%;
@@ -371,34 +371,34 @@ background: url("../img/bg\ bg-01.png")
         font-size:1.5rem;
         color:white;
     }
-    .containermaincontent{
+    .mainfinalcontainermaincontent{
         display:flex;
         width:90%;
         height:60%;
         margin:auto;
     }
-    .leftsidebar{
+    .mainfinalleftsidebar{
         flex:1.1;
         height:100%;
         display:flex;
         flex-direction: column;
         color:white
     }
-    .centreimage{
+    .mainfinalcentreimage{
         flex:2.6;
         height:100%;
         position: relative;
     }
-    .rightsidebar{
+    .mainfinalrightsidebar{
         flex:1.3;
         height:100%;
     }
-    .leftsidebarcontent{
+    .mainfinalleftsidebarcontent{
         flex:1;
         position: relative;
     }
 
-    .leftsidebarcontent>a{
+    .mainfinalleftsidebarcontent>a{
         position: relative;;
         top:50%;
         float:right;
@@ -410,7 +410,7 @@ background: url("../img/bg\ bg-01.png")
         font-family: "MyWebFont";
         transition: all linear .5s;
     }
-    .leftsidebarcontent>a:hover{
+    .mainfinalleftsidebarcontent>a:hover{
         text-shadow: 0 0 3px green,0 0 5px green , 0 0 7px green;
         letter-spacing: 2px;
         animation:floating infinite 3s;
@@ -436,7 +436,7 @@ background: url("../img/bg\ bg-01.png")
         }
     }
 
-    .centreimage >img{
+    .mainfinalcentreimage >img{
         position:absolute;
         top:30%;
         left:50%;
@@ -462,13 +462,13 @@ background: url("../img/bg\ bg-01.png")
 
 
 
-    .rightsidebarcontent{
+    .mainfinalrightsidebarcontent{
 
         height:25%;
         position: relative;
         color:white;
     }
-    .rightsidebarcontent>a{
+    .mainfinalrightsidebarcontent>a{
         position: relative;
         top:50%;
         float:left;
@@ -481,17 +481,17 @@ background: url("../img/bg\ bg-01.png")
         transition: all linear .5s;
 
     }
-    .rightsidebarcontentlast{
+    .mainfinalrightsidebarcontentlast{
         margin-top: 60%;
         font-size:5rem;
         font-family: 'MyWebFont';
     }
-    .rightsidebarcontent>a:hover{
+    .mainfinalrightsidebarcontent>a:hover{
         text-shadow: 0 0 2px green,0 0 5px green,0 0 7px green;
         letter-spacing: 2px;
         animation:floating infinite 2s;
     }
-    .mobileviewoptions{
+    .mainfinalmobileviewoptions{
         width:102%;
         height:140%;
         position: absolute;
@@ -503,7 +503,7 @@ background: url("../img/bg\ bg-01.png")
         transition: visibility 0s, opacity 0.5s linear;
         z-index: 2000;
     }
-    .mobileviewoptionscontent{
+    .mainfinalmobileviewoptionscontent{
         flex:1;
         box-sizing: border-box;
         padding:4%;
@@ -511,7 +511,7 @@ background: url("../img/bg\ bg-01.png")
         display: flex;
         justify-content: center;
     }
-    .mobileviewoptionscontent>a{
+    .mainfinalmobileviewoptionscontent>a{
         text-decoration: none;
         color:white;
         margin: auto;
@@ -519,40 +519,40 @@ background: url("../img/bg\ bg-01.png")
         font-family: "MyWebFont";
     }
     @media only screen and (max-width: 1600px) {
-        .rightsidebarcontent>a{
+        .mainfinalrightsidebarcontent>a{
             font-size:5rem;
         }
-        .leftsidebarcontent>a{
+        .mainfinalleftsidebarcontent>a{
             font-size:5rem;
         }
     }
     @media only screen and (max-width: 900px) {
-        .leftsidebar{
+        .mainfinalleftsidebar{
             display:none
         }
-        .rightsidebar{
+        .mainfinalrightsidebar{
             display:none
         }
-        .centreimage >img{
+        .mainfinalcentreimage >img{
             top: 38%;
             width:90%;
             z-index: -1;
         }
-        .toggle{
+        .mainfinaltoggle{
             display:block;
         }
-        .home-navbar-logo img{
+        .mainfinalhome-navbar-logo img{
             width:164%;
         }
 
-        .containermaincontent{
+        .mainfinalcontainermaincontent{
             display:block;
             position: relative;
         }
-        .mobileviewoptions{
+        .mainfinalmobileviewoptions{
             display: flex;
         }
-        .mobileviewoptions-parent{
+        .mainfinalmobileviewoptions-parent{
             position: absolute;
             width:108%;
             height:108%;
@@ -562,7 +562,7 @@ background: url("../img/bg\ bg-01.png")
     }
 
 
-    .mainsecond{
+    .mainfinalmainsecond{
         width: 100vw;
         height:100vh;
         position:relative;
@@ -571,7 +571,7 @@ background: url("../img/bg\ bg-01.png")
         color:white;
     }
 
-    .maincontainersecond{
+    .mainfinalmaincontainersecond{
         width:100%;
         height:70%;
         margin:0px auto;
@@ -583,7 +583,7 @@ background: url("../img/bg\ bg-01.png")
 
         justify-content: flex-start;
     }
-    .mainsecondaboutusheading{
+    .mainfinalmainsecondaboutusheading{
         margin:0 auto;
         width:100%;
         height:10%;
@@ -591,7 +591,7 @@ background: url("../img/bg\ bg-01.png")
         position: absolute;
         top:4%;
     }
-    .maincontainersecondinner{
+    .mainfinalmaincontainersecondinner{
         display:flex;
         flex:1;
     }
@@ -601,7 +601,7 @@ background: url("../img/bg\ bg-01.png")
         padding-bottom:3%;
         font-family: Poppins;
     }
-    .maincontainersecondleft{
+    .mainfinalmaincontainersecondleft{
         flex:1;
         order:2;
         display:flex; 
@@ -611,13 +611,13 @@ background: url("../img/bg\ bg-01.png")
         transition: all linear 0.5s;
 
     }
-    .maincontainersecondleft:hover{
+    .mainfinalmaincontainersecondleft:hover{
         background:url("../img/bright-01.png");
         background-position: bottom;
         background-repeat: no-repeat;
 
     }
-    .maincontainersecondright{
+    .mainfinalmaincontainersecondright{
         flex:1;
         order:1;
         color:white;
@@ -633,32 +633,32 @@ background: url("../img/bg\ bg-01.png")
         transition: all linear 0.5s;
     } 
 
-    .maincontainersecondright>h1{
+    .mainfinalmaincontainersecondright>h1{
         font-size:2.5rem;
         padding-bottom: 3%;
     }
-    .maincontainersecondright>p{
+    .mainfinalmaincontainersecondright>p{
         word-spacing: 1px;
         letter-spacing: 1.8px;
         margin-top: 10px;
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         text-align: right;
-        line-height: 1.6rem;
+        line-height: 2.4rem;
         font-family: 'aboutuscontentfont';
     }
-    @media only screen and (min-width:1600px){
-        .maincontainersecondright>p{
+@media only screen and (max-width:1600px){
+        .mainfinalmaincontainersecondright>p{
             word-spacing: 1px;
             letter-spacing: 1.8px;
             margin-top: 10px;
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             text-align: right;
             line-height: 2.15rem;
             font-family: 'aboutuscontentfont';
         }
     }
 
-    .secondpagebottom{
+.mainfinalsecondpagebottom{
         flex:1;
         order:3;
         height: 80%;
@@ -672,7 +672,7 @@ background: url("../img/bg\ bg-01.png")
     box-sizing: border-box;
 
 }
-.secondpagebottomrect{
+.mainfinalsecondpagebottomrect{
     width:100%;
     height:30%;
     border:1px solid  rgba(255,255,255,.4);
@@ -683,19 +683,19 @@ background: url("../img/bg\ bg-01.png")
     position:relative;
     transition:all linear .5s;    
 }
-.maincontainersecondright:hover{
+.mainfinalmaincontainersecondright:hover{
     border:1px solid rgba(255,255,255)  ;
     box-shadow:0px 0px 10px 3px rgba(255,255,255,.7);     
 }
-.secondpagebottomrect:hover
+.mainfinalsecondpagebottomrect:hover
 {box-shadow:0px 0px 10px 3px rgba(255,255,255,.7);}
-.secondbottomrectleft{
+.mainfinalsecondbottomrectleft{
     flex:1;
     position:relative;
     box-sizing: border-box;
     padding:6%;
 }
-.secondbottomrectleft >h1{
+.mainfinalsecondbottomrectleft >h1{
     position: absolute;
     font-size:3rem;
     top:40%;
@@ -705,7 +705,7 @@ background: url("../img/bg\ bg-01.png")
     font-family: Poppins;
 }
 
-.secondbottomrectleft >h3{
+.mainfinalsecondbottomrectleft >h3{
     position: absolute;
     top:70%;
     left:50%;
@@ -713,11 +713,11 @@ background: url("../img/bg\ bg-01.png")
     transform: translate(-50%, -50%);
     font-family: Poppins;
 }
-.secondbottomrectright{
+.mainfinalsecondbottomrectright{
     flex:1;
     position: relative;
 }
-.secondbottomrectright>img{
+.mainfinalsecondbottomrectright>img{
     position:absolute;
     top:50%;
     left:50%;
@@ -735,7 +735,7 @@ background: url("../img/bg\ bg-01.png")
     left:50%;
 }
 @media only screen and (max-width:1700px){
-    .maincontainersecondright>p{
+    .mainfinalmaincontainersecondright>p{
         word-spacing:1.1px;
         letter-spacing: 1px;
         line-height: 2.12rem;
@@ -744,7 +744,7 @@ background: url("../img/bg\ bg-01.png")
 }
 
 @media only screen and (max-width:1464px){
-    .maincontainersecondright>p{
+    .mainfinalmaincontainersecondright>p{
         word-spacing:1px;
         letter-spacing: .9px;
         line-height: 2rem;
@@ -753,7 +753,7 @@ background: url("../img/bg\ bg-01.png")
 }
 
 @media only screen and (max-width:1366px){
-    .maincontainersecondright>p{
+    .mainfinalmaincontainersecondright>p{
         word-spacing:.8px;
         letter-spacing: .6px;
         line-height: 2rem;
@@ -761,19 +761,19 @@ background: url("../img/bg\ bg-01.png")
     }
 }
 @media only screen and (max-height:821px){
-    .maincontainersecond{
+    .mainfinalmaincontainersecond{
         height:90%;
     }
 }
 
 @media only screen and (max-width:900px){
-    .mainsecond{
+    .mainfinalmainsecond{
         height:300vh;
         text-align: center;
         display: flex;
         flex-direction: column;
     }
-    .maincontainersecond{
+    .mainfinalmaincontainersecond{
         flex-direction: column;
         position:relative;
         width: 100%;
@@ -784,25 +784,25 @@ background: url("../img/bg\ bg-01.png")
         box-sizing: border-box;
         /* padding-top: 20%; */
     }
-    .maincontainersecondright>p{
+    .mainfinalmaincontainersecondright>p{
         word-spacing:1px;
         letter-spacing: 1px;
     }
-    .maincontainersecondinner{
+    .mainfinalmaincontainersecondinner{
         flex-direction: column;
     }
 
-    .secondbottomrectleft >h3{
+    .mainfinalsecondbottomrectleft >h3{
         font-size:1.4rem;
     }
-    .maincontainersecondright{
+    .mainfinalmaincontainersecondright{
         border:0px;
         margin:4px;
         border-radius: 0px;
         padding: 2%;
     }
 
-    .maincontainersecondright>p{
+    .mainfinalmaincontainersecondright>p{
         word-spacing: 1px;
         letter-spacing:1px;
         font-size: .9rem;
@@ -810,14 +810,14 @@ background: url("../img/bg\ bg-01.png")
     /* .maincontainersecondright>h1{
     padding-bottom: 6%;
     } */
-    .mainsecondaboutusheading{
+    .mainfinalmainsecondaboutusheading{
         top:2%;
     }
-    .maincontainersecondleft{
+    .mainfinalmaincontainersecondleft{
         position: relative;
         top:-18vh;
     }
-    .secondpagebottom{
+    .mainfinalsecondpagebottom{
         position: relative;
         /* top:20vh; */
         top:-30vh;
@@ -829,24 +829,24 @@ background: url("../img/bg\ bg-01.png")
         transform: none;
         justify-content:space-evenly;
     }
-    .secondpagebottomrect{
+    .mainfinalsecondpagebottomrect{
         width:68%;
         margin: 0 auto;
         height:18%;
     }
-    .secondbottomrectleft >h1 {
+    .mainfinalsecondbottomrectleft >h1 {
         font-size:2.5rem;
     }
 
 
-    .secondbottomrectright>img {
+    .mainfinalsecondbottomrectright>img {
         width:auto;
         height:60%;
     }
-    .secondpagebottomrect:nth-child(2)>.secondbottomrectright>img{
+    .mainfinalsecondpagebottomrect:nth-child(2)>.mainfinalsecondbottomrectright>img{
         width:69%;
     }
-    .maincontainersecondright>p{
+    .mainfinalmaincontainersecondright>p{
         line-height: 28px;
         text-align: justify;
 
@@ -854,40 +854,40 @@ background: url("../img/bg\ bg-01.png")
 }
 /* Main page3css */
 
-.mainthirdpagecontainer{
+.mainfinalmainthirdpagecontainer{
     width:100vw;
     height:500vh;
     position: relative;
     background: url("../img/main\ bg\ compressed-01.jpg");
 
 }
-.mainthirdinternalcontainer{
+.mainfinalmainthirdinternalcontainer{
     width:100%;
     height:20%;
 }
-.mainthirdinternalcontainer:nth-child(1){
+.mainfinalmainthirdinternalcontainer:nth-child(1){
 
     position: relative;
 }
 
-.mainthirdinternalcontainer:nth-child(2){
+.mainfinalmainthirdinternalcontainer:nth-child(2){
     position: relative;
 }
-.mainthirdinternalcontainer:nth-child(3){
-
-    position: relative;
-}
-.mainthirdinternalcontainer:nth-child(4){
+.mainfinalmainthirdinternalcontainer:nth-child(3){
 
     position: relative;
 }
-.mainthirdinternalcontainer:nth-child(5){
+.mainfinalmainthirdinternalcontainer:nth-child(4){
+
+    position: relative;
+}
+.mainfinalmainthirdinternalcontainer:nth-child(5){
 
     position: relative;
 }
 
 
-.thomsomainattractions
+.mainfinalthomsomainattractions
 {
     width:60%;
     height:20%;
@@ -898,11 +898,11 @@ background: url("../img/bg\ bg-01.png")
 
     justify-content:center;
 }
-.thomsomainattractions{
+.mainfinalthomsomainattractions{
     flex:1;
 }
 
-.mainattractioninternal{
+.mainfinalmainattractioninternal{
     width:40%;
     height: auto;
     position: absolute;
@@ -910,13 +910,13 @@ background: url("../img/bg\ bg-01.png")
     transform: translateY(-40%);
     color: white;  
 }
-.attraction1{
+.mainfinalattraction1{
     right:3%;
 }
-.attraction2{
+.mainfinalattraction2{
     left:3%;
 }
-.mainattractioninternalsvgcontainer{
+.mainfinalmainattractioninternalsvgcontainer{
 
     height:20%;
     width:100%;
@@ -924,11 +924,11 @@ background: url("../img/bg\ bg-01.png")
     text-align: center;
     display: flex;
 }
-.mainattractioninternalsvgcontainer>svg{
+.mainfinalmainattractioninternalsvgcontainer>svg{
     flex:1;
 }
 
-.mainattractioninternaltextcontainer{
+.mainfinalmainattractioninternaltextcontainer{
     width:100%;
     text-align:justify;
     letter-spacing:1.7px;
@@ -962,35 +962,35 @@ background: url("../img/bg\ bg-01.png")
 #zonalstrigger{
     top:25%;
 }
-.splitsvgcont1{
+.mainfinalsplitsvgcont1{
     width: 50%;
     height: 50%;
     position: absolute;
     top:47%;
     transform: translateY(-50%);
 }
-.lit{
+.mainfinallit{
     top:60%;
     height:40%;
 }
-.zonal{
+.mainfinalzonal{
     top:47%;
 }
-.carn{
+.mainfinalcarn{
     top:40%;
 }
-.work{
+.mainfinalwork{
 
 }
 
 #litfestsvgtrigger{
     top:40%;
 }
-.workgoncont{
+.mainfinalworkgoncont{
     right:5%;
     top:46%;
 }
-.onlinegongoncont{
+.mainfinalonlinegongoncont{
     right:5%;
     top:46%;  
 }
@@ -1003,84 +1003,84 @@ background: url("../img/bg\ bg-01.png")
 .zongon{
     opacity: 0;
 }
-.splitlit{
+.mainfinalsplitlit{
     width:100%;
     height:100%;
 }
 /* media query font */
 
 @media only screen and (max-width:1500px){
-    .mainattractioninternaltextcontainer{
+    .mainfinalmainattractioninternaltextcontainer{
         font-size:1.4rem;
         text-align: justify;
     }
 }
 @media only screen and (max-width:1500px){
-    .mainattractioninternaltextcontainer{
+    .mainfinalmainattractioninternaltextcontainer{
         font-size:1.15rem;
         text-align: justify;
     }
 }
 @media only screen and (max-height:900px){
-    .splitsvgcont1{
+    .mainfinalsplitsvgcont1{
         height: 40%;
     }
-    .lit{
+    .mainfinallit{
         top:66%;
     }
-    .onlinegongoncont{
+    .mainfinalonlinegongoncont{
         top:54%;
     }
 }
 
 
 @media only screen and (max-width:900px)
-{   .thomsomainattractions{
+{   .mainfinalthomsomainattractions{
         top:-10%;
     }
-    .mainattractioninternal{
+    .mainfinalmainattractioninternal{
         width:100%;
     }
-    .thomsomainattractions{
+    .mainfinalthomsomainattractions{
         width:100%;
     }
     #mainattractionsvg{
         width:86%;
         height:72%;
     }
-    .attraction1{
+    .mainfinalattraction1{
         right: 0%;
         top:11%;
     } 
-    .attraction2{
+    .mainfinalattraction2{
         left:0%;
         top:11%;
     }
     #mainattractioninternalsvgcontainerlitfestsvg{
         height:auto;
     }
-    .mainattractioninternaltextcontainer{
+    .mainfinalmainattractioninternaltextcontainer{
         font-size:1rem;
         letter-spacing: 1px;
         word-spacing:2px;
     }
-    .mainattractioninternalsvgcontainer>svg{
+    .mainfinalmainattractioninternalsvgcontainer>svg{
         height:30%;
     }
-    .splitsvgcont1{
+    .mainfinalsplitsvgcont1{
         top:60%;
         left:50%;
         width:80%;
         transform:translateX(-50%);
     }
-    .workgoncont{
+    .mainfinalworkgoncont{
         top:60%;
         width:40%;
     }
-    .lit{
+    .mainfinallit{
         width:40%;
     }
-    .onlinegongoncont{
+    .mainfinalonlinegongoncont{
         top:50%;
 
     }
@@ -1124,7 +1124,7 @@ transform: translate(-50%,-50%);
 height: 100%;
 width: 100%;
 } */
-    .mainpage4{
+    .mainfinalmainpage4{
         width:100vw;
         height:100vh;
         position:relative;
@@ -1132,20 +1132,20 @@ width: 100%;
         overflow-x: hidden;
         overflow-y: hidden;
     }
-    .mainpage-carousel-desktop{
+    .mainfinalmainpage-carousel-desktop{
         display: block;
     }
-    .mainpage-carousel-mobile{
+    .mainfinalmainpage-carousel-mobile{
         display: none;
     }
-    .mainpage5{
+    .mainfinalmainpage5{
         width:100vw;
         height:100vh;
         position:relative;
         background-attachment: fixed;
         font-family: Montserrat;
     }
-    .mainpage5-thomsologo{
+    .mainfinalmainpage5-thomsologo{
         width:20%;
         height:auto;
         position:absolute;
@@ -1156,12 +1156,12 @@ width: 100%;
         justify-content: center;
         align-items: flex-start;
     }
-    .mainpage5-thomsologo > img{
+    .mainfinalmainpage5-thomsologo > img{
         width:55%;
         height: auto;
 
     }
-    .mainpage5con{
+    .mainfinalmainpage5con{
         display: flex;
         height: 49%;
         width: 60%;
@@ -1173,14 +1173,14 @@ width: 100%;
         justify-content: space-between;
         transform: translate(-50%,-50%);
     }
-    .mainpagecontainer-outer-right{
+    .mainfinalmainpagecontainer-outer-right{
         display: flex;
         flex:1;
         height:100%;
         height: 100%;
         flex-direction: column;
     }
-    .mainpagecontainer-outer-left{
+    .mainfinalmainpagecontainer-outer-left{
         width:43%;
         flex:2;
         /* top:60%;
@@ -1191,7 +1191,7 @@ width: 100%;
     flex-direction: column;
     justify-content: space-between;
 }
-.mainpage5container-inner{
+.mainfinalmainpage5container-inner{
     text-align: center;
     font-family: "aboutuscontentfont";
     letter-spacing: 1px;
@@ -1208,7 +1208,7 @@ width: 100%;
 /* .mainpage5container-inner >h1{
 padding:1%;
 } */
-    .mainpage5container-inner-in{
+    .mainfinalmainpage5container-inner-in{
         width:100%;
         flex:1;
         height: auto;
@@ -1216,37 +1216,37 @@ padding:1%;
         justify-content: space-between;
 
     }
-    .mainpage5container-inner-in-left{
+    .mainfinalmainpage5container-inner-in-left{
         display:flex;
         justify-content: center;
 
     }
-    .mainpage5imgandtextcont{
+    .mainfinalmainpage5imgandtextcont{
         display: flex;
         flex:1;
         height:auto;
     }
-    .mainpage5container-inner-in-right-righter{
+    .mainfinalmainpage5container-inner-in-right-righter{
         width:36%;
         display:flex;
     }
-    .mainpage5container-inner-in-right{
+    .mainfinalmainpage5container-inner-in-right{
 
         flex:1;
         text-align: left;
         white-space: nowrap
     }
-    .mainpage5container-inner-in-right>h4{
+    .mainfinalmainpage5container-inner-in-right>h4{
         font-weight: 300;
     }
-    .mainpage5container-inner-in-right>h1{
+    .mainfinalmainpage5container-inner-in-right>h1{
         font-weight: 400;
         font-family:Montserrat;
         font-size:2rem;
         text-transform: uppercase;
         padding-bottom:2%;
     }
-    .mainpagecontainer-outer-rightin{
+    .mainfinalmainpagecontainer-outer-rightin{
         width:100%;
         flex:1;
         /* background:rgb(24, 19, 19); */
@@ -1254,7 +1254,7 @@ padding:1%;
         justify-content: center;
         align-items: center;
     }
-    .mainpagecontainer-outer-rightin-inner{
+    .mainfinalmainpagecontainer-outer-rightin-inner{
         width:100%;
         /* height:35%; */
         background:#282828;
@@ -1263,22 +1263,22 @@ padding:1%;
         text-align:left;
         justify-content: space-between;
     }
-    .mainpagecontainer-outer-rightin-inner a{
+    .mainfinalmainpagecontainer-outer-rightin-inner a{
         color:rgb(240, 235, 230);
         text-transform: uppercase;
         font-family: Montserrat;
 
     }
-    .mainpagecontainer-outer-rightin-inner a:hover{
+    .mainfinalmainpagecontainer-outer-rightin-inner a:hover{
         cursor: pointer;
     }
-    .mainpagecontainer-outer-rightin-inner-inside{
+    .mainfinalmainpagecontainer-outer-rightin-inner-inside{
         display:flex;
         flex:1;
         justify-content:space-around;
         align-items: center;
     }
-    .mainpagecontainer-outer-rightin-inner-inside>a{
+    .mainfinalmainpagecontainer-outer-rightin-inner-inside>a{
         display:flex;
         width:100%;
         height: 100%;
@@ -1289,50 +1289,50 @@ padding:1%;
         align-items: center;
         justify-content: space-around;
     }
-    .mainpagecontainer-outer-rightin-inner-inside>a:hover{
+    .mainfinalmainpagecontainer-outer-rightin-inner-inside>a:hover{
         color:#282828;
         height:100%;
         letter-spacing: 2px;
         background:rgb(240, 235, 230);
 
     }
-    .mainpage5internalsvgcontainer
+    .mainfinalmainpage5internalsvgcontainer
     {   flex:1;
         display:flex;
 
     }
-    .mainpage5internalsvgcontainer>img{
+    .mainfinalmainpage5internalsvgcontainer>img{
         width:45px;
     }
-    .mainpagecontainer-outer-rightin-inner  img{
+    .mainfinalmainpagecontainer-outer-rightin-inner  img{
         width:45px;
     }
-    .mainpage5container-innersec{
+    .mainfinalmainpage5container-innersec{
         padding-top: 5%;
     }
-    .getdirectionscontainerlink{
+    .mainfinalgetdirectionscontainerlink{
         height:50%;
 
     }
 
     @media only screen and (max-height:600px){
-        .mainpage5con{
+        .mainfinalmainpage5con{
             top:10%;
             transform: translateX(0%) translateY(-42%);
 
         }    
 
-        .mainpage5-thomsologo{
+        .mainfinalmainpage5-thomsologo{
             width:80%;
             top:6.5%;
 
         }
-        .mainpage5container-inner >h1{
+        .mainfinalmainpage5container-inner >h1{
             padding-top:4%;
         }
     }
     @media only screen and (max-width: 900px) {
-        .mainpage5con{
+        .mainfinalmainpage5con{
             width:100%;
             margin: 0 auto;
             left:0;
@@ -1341,41 +1341,41 @@ padding:1%;
             top:30%;
             /* top:80%; */
         }
-        .mainpage5container-inner-in{
+        .mainfinalmainpage5container-inner-in{
             flex-direction: column;
         }
-        .mainpage5container-inner-in-right-righter{
+        .mainfinalmainpage5container-inner-in-right-righter{
             width:80%;
             margin:15px auto;
         }
         /* .mainpagecontainer-outer h1{
         font-size:1.2em
         } */
-    .mainpage5container-inner-in-right>h1{
+    .mainfinalmainpage5container-inner-in-right>h1{
         font-size: 1.35rem;
     }
-    .mainpage5container-inner-in-right{
+    .mainfinalmainpage5container-inner-in-right{
         white-space: normal;
         font-size: .7em;
     }
-    .mainpagecontainer-outer-rightin-inner-inside{
+    .mainfinalmainpagecontainer-outer-rightin-inner-inside{
         font-size: 1rem;
     }
-    .mainpage5-thomsologo{
+    .mainfinalmainpage5-thomsologo{
         top:10%;
         width:90%
     }
 
-    .mainpage-carousel-desktop{
+    .mainfinalmainpage-carousel-desktop{
         display: none;
     }
-    .mainpage-carousel-mobile{
+    .mainfinalmainpage-carousel-mobile{
         display: block;
     }
 
 }
 @media only screen and (max-width: 1400px){
-    .mainpage5container-inner{
+    .mainfinalmainpage5container-inner{
         font-size:1.14rem;
     }
 }
