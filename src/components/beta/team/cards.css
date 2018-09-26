@@ -14,20 +14,37 @@
 }
 .wrapper{
     display:flex;
-    flex-direction: row;
-    height: 50vh;
     width: 100%;
     padding: 20px;
 }
 .card-inner{
-    background: blue;
-    width: 50%;
+    
+    padding:40px;
     position: relative;
     
 }
+.card-innerdiv{
+    
+    position: relative;
+    
+}
+
 .card-inner-img{
     height:50vh;
     width:auto;
+}
+
+.card-inner-bottom{
+    width:100%;
+    height: 10vh;
+
+}
+.card-position{
+    font-size: 30px;
+    color:#2DCCD3;
+    text-align: center;
+    padding: 20px;
+
 }
 .overlay {
     position: absolute;
@@ -42,20 +59,30 @@
     height: 0;
     transition: .5s ease;
   }
-  
-  .card-inner:hover .overlay {
+  .overlay-email{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: .5s ease;
+  }
+  .card-innerdiv:hover .overlay-email{
+      width: 100%;
+  }
+  .card-innerdiv:hover .overlay {
     height: 100%;
   }
-  .card-inner:hover .text{
-      top: 10%;
-  }
+  
   .text {
     color: white;
     font-size: 44px;
     position: absolute;
     z-index: 100;
     top: 95%;
-    line-height: 1em;
+    line-height: .5em;
     overflow:visible;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
@@ -77,15 +104,16 @@
   }
   .info {
     color: white;
-    font-size: 20px;
+    font-size: 15px;
     position: absolute;
+    line-height: 1em;
     top: 40%;
-    left: 18%;
+    left: 30%;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
-    font-family:Salma;
+    font-family:Montserrat;
   }
 
   @-webkit-keyframes glow {
@@ -128,7 +156,7 @@
     width:20%;
     float:right;
     position: absolute;
-    top: 80%;
+    top: 65%;
     left:8%;
     user-select:none;
     -webkit-user-select: none;
@@ -137,8 +165,7 @@
 }
 
 
-@media screen and (min-width: 768px)
-{
+
    
     .card-footer-fbdiv:hover
     {
@@ -153,4 +180,3 @@
     .common-cursor{
       cursor : default;
     }
-}
