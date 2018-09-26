@@ -46,12 +46,12 @@ exports.getNew = function(req, res) {
                                         var score = 0;
                                         if(likes > 4){
                                             if(likes > 50) {
-                                                score = 50 + (likes-50)*2 + 5;
+                                                score = 50 + (likes-50)*4 + 13;
                                             } else {
-                                                score = 5 + likes;
+                                                score = 13 + likes*2;
                                             }
                                         } else {
-                                            score = 5 + likes/2;
+                                            score = 13 + likes;
                                         }
                                         totalLikes = totalLikes + likes;
                                         totalScore = totalScore + score;
@@ -139,12 +139,12 @@ exports.getFinal = function(req, res) {
                                         var score = 0;
                                         if(likes > 4){
                                             if(likes > 50) {
-                                                score = 50 + (likes-50)*2 + 5;
+                                                score = 50 + (likes-50)*4 + 13;
                                             } else {
-                                                score = 5 + likes;
+                                                score = 13 + likes*2;
                                             }
                                         } else {
-                                            score = 5 + likes/2;
+                                            score = 13 + likes;
                                         }
                                         totalLikes = totalLikes + likes;
                                         totalScore = totalScore + score;

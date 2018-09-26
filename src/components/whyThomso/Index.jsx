@@ -320,7 +320,7 @@ export default class WhyThomso extends Component {
                                         <span>What is the REGISTRATION FEE for Thomso’18?</span>
                                     </div>
                                     <div className="whythomso-faqs-answer">
-                                        <span><strong>A</strong></span> <span>Registration fee with accommodation is Rs. 2000 and Rs. 1500 without accommodation. Once paid, fee is non-refundable.</span>
+                                        <span><strong>A</strong></span> <span>Registration fee with accommodation is Rs. 2100 and Rs. 1700 without accommodation. Once paid, fee is non-refundable.</span>
                                     </div>
                                 </div>
                                 <div className="whythomso-faqs-ansque-sixth">
@@ -436,11 +436,11 @@ export default class WhyThomso extends Component {
                                 <div className="whythomso-faqs-ansque-columnthree-fifth">
                                     <div className="whythomso-faqs-question">
                                         <span><strong>Q</strong></span>
-                                        <span>Is personal vehicle allowed inside the campus?</span>
+                                        <span>Will there be accommodation facility for me?</span>
                                     </div>
                                     <div className="whythomso-faqs-answer">
                                         <span><strong>A</strong></span>
-                                        <span>Will there be accommodation facility for me?
+                                        <span>
                                          There are many Hostels which would be available for the accommodation, the
                                          registration for allotment would be done on Thomso website.</span>
                                     </div>
