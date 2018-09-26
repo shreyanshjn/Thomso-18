@@ -696,6 +696,7 @@ background: url("../img/bg\ bg-01.png")
     font-size:3rem;
     top:40%;
     left:43%;
+    margin:0px;
     transform: translate(-50%, -50%);
     padding-bottom: 2px;
     font-family: Poppins;
@@ -705,6 +706,7 @@ background: url("../img/bg\ bg-01.png")
     position: absolute;
     top:70%;
     left:50%;
+    margin:0px;
     font-size: 1.85rem;
     transform: translate(-50%, -50%);
     font-family: Poppins;
@@ -1239,12 +1241,14 @@ padding:1%;
         white-space: nowrap
     }
     .mainfinalmainpage5container-inner-in-right>h4{
+        margin:0px;
         font-weight: 300;
     }
     .mainfinalmainpage5container-inner-in-right>h1{
         font-weight: 400;
         font-family:Montserrat;
         font-size:2rem;
+        margin:0px;
         text-transform: uppercase;
         padding-bottom:2%;
     }
