@@ -3,8 +3,13 @@ var Thomso_Event = require('../../../../models/main/Thomso_Event');
 var Associate_Sponsor = require('../../../../models/beta/Associate_Sponsor');
 
 exports.userInfo = function(req,res){
-    if(req){
+    if(req.params && req.params.page){
+        var limit = 2000;
+        var skip = (parseInt(req.params.page) - 1)*limit;
+
         Main_User.find()
+            .skip(skip)
+            .limit(limit)
             .select('name email gender thomso_id college address branch contact verified referral')
             .populate('event', 'name')
             .populate('primary_event', 'name')

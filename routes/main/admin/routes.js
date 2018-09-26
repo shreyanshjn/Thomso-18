@@ -16,7 +16,7 @@ var MainAdminTokenMiddleware = require("../../../middlewares/main/admin/TokenMid
 router.post('/auth/login', adminAuth.login);
 
 // -> /main/admin
-router.get('/user', MainAdminTokenMiddleware.verify, adminControls.userInfo);
+router.get('/user/:page', MainAdminTokenMiddleware.verify, adminControls.userInfo);
 router.post('/addEvent', MainAdminTokenMiddleware.verify, adminControls.addEvent);
 router.post('/eventUser', MainAdminTokenMiddleware.verify,adminControls.eventUser);
 router.get('/fetchEvents', MainAdminTokenMiddleware.verify,adminControls.fetchEvents);
