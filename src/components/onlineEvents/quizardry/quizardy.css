@@ -83,7 +83,7 @@
     height: 100vh;
     overflow-y: hidden;
     background: url('./WebFriends.png');
-    background-size:contain;
+    background-size:cover;
     background-repeat: no-repeat;
     background-color:#318388;
   }
