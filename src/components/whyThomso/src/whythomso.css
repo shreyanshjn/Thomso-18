@@ -563,13 +563,13 @@
 }
 .whythomso-sixth-child-middle-columnone{
     width: 25%;
-    height: 100%;
     margin-top: 20px;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
 }
 .whythomso-faqs-ansque-one{
-    height: 24vh;
+    /* height: 38vh; */
     margin-top: 10px;
     margin-bottom:10px;
     padding: 10px;
@@ -578,8 +578,11 @@
     border: 1px solid black;
     border-radius: 3px;
 }
+.whythomso-faqs-height{
+    min-height: fit-content;
+}
 .whythomso-faqs-ansque-two{
-    height: 22vh;
+    /* height: 22vh; */
     margin-top: 10px;
     margin-bottom:10px;
     padding: 10px;
@@ -589,7 +592,7 @@
     border-radius: 3px;
 }
 .whythomso-faqs-ansque-three{
-    height: 32vh;
+    /* height: 32vh; */
     margin-top: 10px;
     margin-bottom:10px;
     padding: 10px;
@@ -599,7 +602,7 @@
     border-radius: 3px;
 }
 .whythomso-faqs-ansque-four{
-    height: 35.5vh;
+    /* height: 35.5vh; */
     margin-top: 10px;
     margin-bottom:10px;
     padding: 10px;
@@ -609,7 +612,7 @@
     border-radius: 3px;
 }
 .whythomso-faqs-ansque-fifth{
-    height: 45vh;
+    /* height: 31vh; */
     margin-top: 10px;
     margin-bottom:10px;
     padding: 10px;
@@ -619,7 +622,7 @@
     border-radius: 3px;
 }
 .whythomso-faqs-ansque-sixth{
-    height: 30vh;
+    /* height: 30vh; */
     margin-top: 10px;
     margin-bottom:10px;
     padding: 10px;
@@ -664,6 +667,7 @@
     margin-top: 20px;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
 }
 .whythomso-faqs-ansque-columntwo-one{
     height: 20vh;
@@ -676,7 +680,7 @@
     border-radius: 3px;
 }
 .whythomso-faqs-ansque-columntwo-two{
-    height: 35vh;
+    /* height: 35vh; */
     margin-top: 10px;
     margin-bottom:10px;
     padding: 10px;
@@ -686,7 +690,7 @@
     border-radius: 3px;
 }
 .whythomso-faqs-ansque-columntwo-three{
-    height: 110vh;
+    /* height: 110vh; */
     margin-top: 10px;
     margin-bottom:10px;
     padding: 10px;
@@ -696,7 +700,7 @@
     border-radius: 3px;
 }
 .whythomso-faqs-ansque-columntwo-four{
-    height: 36vh;
+    /* height: 36vh; */
     margin-top: 10px;
     margin-bottom:10px;
     padding: 10px;
@@ -710,9 +714,10 @@
     margin-top: 20px;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
 }
 .whythomso-faqs-ansque-columnthree-one{
-    height: 28vh;
+    /* height: 57vh; */
     margin-top: 10px;
     margin-bottom:10px;
     padding: 10px;
@@ -722,7 +727,7 @@
     border-radius: 3px;
 }
 .whythomso-faqs-ansque-columnthree-two{
-    height: 39vh;
+    /* height: 39vh; */
     margin-top: 10px;
     margin-bottom:10px;
     padding: 10px;
@@ -732,7 +737,7 @@
     border-radius: 3px;
 }
 .whythomso-faqs-ansque-columnthree-three{
-    height: 22vh;
+    /* height: 22vh; */
     margin-top: 10px;
     margin-bottom:10px;
     padding: 10px;
@@ -742,7 +747,7 @@
     border-radius: 3px;
 }
 .whythomso-faqs-ansque-columnthree-four{
-    height: 43vh;
+    /* height: 43vh; */
     margin-top: 10px;
     margin-bottom:10px;
     padding: 10px;
@@ -752,7 +757,7 @@
     border-radius: 3px;
 }
 .whythomso-faqs-ansque-columnthree-fifth{
-    height: 63vh;
+    /* height: 46vh; */
     margin-top: 10px;
     margin-bottom:10px;
     padding: 10px;
@@ -760,6 +765,9 @@
     font-size: 16px;
     border: 1px solid black;
     border-radius: 3px;
+}
+.whythomso-sixth-child a{
+    text-decoration: none;
 }
 @media only screen and (max-width:768px){
     .whythomso-second-child{

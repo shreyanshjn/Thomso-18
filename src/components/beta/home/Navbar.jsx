@@ -20,10 +20,10 @@ class Navbar extends Component {
             isAuthenticated: false,
             activeState: window.location.pathname.substring(1),
             imageData: [],
-            displayNavbar:true
+            displayNavbar: true
         };
         this.setActive = this.setActive.bind(this);
-        this.toggleNavbar= this.toggleNavbar.bind(this);
+        this.toggleNavbar = this.toggleNavbar.bind(this);
         this.Auth = new AuthService();
     }
     componentWillMount() {
@@ -63,9 +63,9 @@ class Navbar extends Component {
             activeState: state
         });
     }
-    toggleNavbar(){
+    toggleNavbar() {
         this.setState({
-            displayNavbar:!this.state.displayNavbar
+            displayNavbar: !this.state.displayNavbar
         })
     }
     render() {
@@ -86,9 +86,9 @@ class Navbar extends Component {
                     <span><i>border</i></span>
                 </div>
                 <div>
-                    <div style={{height:'100vh',position:'fixed'}} className={this.state.displayNavbar ? 'hideNavbar':'new-navbar-lists-child'}>
+                    <div style={{ height: '100vh', position: 'fixed' }} className={this.state.displayNavbar ? 'hideNavbar' : 'new-navbar-lists-child'}>
                         {this.props.events === true ? null : <li >
-                            <Link to="/campusambassador/" className={(this.state.activeState === "campusambassador/") ? "linkCaportal " :null}
+                            <Link to="/campusambassador/" className={(this.state.activeState === "campusambassador/") ? "linkCaportal " : null}
                                 onClick={() => {
                                     this.setActive("linkCaportal");
                                 }}>
@@ -108,7 +108,7 @@ class Navbar extends Component {
                         }}>TEAM CONTACT</Link>
                     </li>*/}
                         <li className="dropdown">
-                            <Link to="/onlineevents"  className={(this.state.activeState === "onlineevents") ? "linkonline" : null}
+                            <Link to="/onlineevents" className={(this.state.activeState === "onlineevents") ? "linkonline" : null}
                                 onClick={() => {
                                     this.setActive("ongoingevents")
                                 }}>ONGOING EVENTS </Link>
@@ -138,6 +138,12 @@ class Navbar extends Component {
                                 }}>IITR MUN</Link>
                         </li>}
                         <li>
+                            <Link to="/" className={(this.state.activeState === "payment") ? "payment" : null}
+                                onClick={() => {
+                                    this.setActive("payment");
+                                }}>PAYMENT</Link>
+                        </li>
+                        <li>
                             <Link to="/main" className={(this.state.activeState === "main") ? "linkSponsors" : null}
                                 onClick={() => {
                                     this.setActive("main");
@@ -154,7 +160,7 @@ class Navbar extends Component {
                 </div>
                 <div className="beta-navbar-contain">
                     <div className={this.state.hamburger ? "beta-home-navbar" : "beta-home-navbar beta-navbar-overlay beta-navbar-navbarToggle"} id={(this.props.background === true) ? "background-image-gradient" : null}>
-                        <div style={{display:this.props.logohide ? 'none':'block'}} className="beta-navbar-t-logo">
+                        <div style={{ display: this.props.logohide ? 'none' : 'block' }} className="beta-navbar-t-logo">
                             <Link to="/"> <img src={img} alt="" /></Link>
                         </div>
                         <div className="beta-navbar-t-ctos">
