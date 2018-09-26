@@ -2923,11 +2923,11 @@ export default class HomeIndex extends React.Component {
                                         <div className="mainfinalmainpage5container-inner-in-right">
                                             <h1><b>Contact</b></h1>
                                             <h4>Suyash Singh (Convener)</h4>
-                                            <h4>+91-8417954805</h4>
+                                            <h4 className="mainfinalmainpage5container-inner-in-righth4">+91-8417954805</h4>
                                             <h4>Abhishek Kumar (Co-Convener)</h4>
-                                            <h4>+91-7979071260</h4>
-                                            <h4>Samarth Gubrele(Co-Convener)</h4>
-                                            <h4>+91-9425101043</h4>
+                                            <h4 className="mainfinalmainpage5container-inner-in-righth4">+91-7979071260</h4>
+                                            <h4 > Samarth Gubrele(Co-Convener)</h4>
+                                            <h4 className="mainfinalmainpage5container-inner-in-righth4">+91-9425101043</h4>
                                             
                                         </div>
                                     </div>
@@ -2955,7 +2955,7 @@ export default class HomeIndex extends React.Component {
                                                 <h4> Multi Activity Centre</h4>
                                                 <h4>Indian Institute of Technology</h4>
                                                 <h4>  Roorkee</h4>
-                                                <h4>646774373474</h4>
+                                                <h4>247667</h4>
                                             </div>
                                         </div>
                                         <div className="mainfinalmainpage5container-inner-in-right-righter">

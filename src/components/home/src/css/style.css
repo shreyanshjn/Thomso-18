@@ -1314,6 +1314,9 @@ padding:1%;
         height:50%;
 
     }
+    .mainfinalmainpage5container-inner-in-righth4{
+        font-size:1.22rem;
+      }
 
     @media only screen and (max-height:600px){
         .mainfinalmainpage5con{
@@ -1346,8 +1349,12 @@ padding:1%;
         }
         .mainfinalmainpage5container-inner-in-right-righter{
             width:80%;
-            margin:15px auto;
+            margin:18px auto;
         }
+        .mainfinalmainpage5container-inner-in-righth4{
+            font-size:.85rem;
+          }
+    
         /* .mainpagecontainer-outer h1{
         font-size:1.2em
         } */
@@ -1360,6 +1367,7 @@ padding:1%;
     }
     .mainfinalmainpagecontainer-outer-rightin-inner-inside{
         font-size: 1rem;
+        height:38px;
     }
     .mainfinalmainpage5-thomsologo{
         top:10%;
