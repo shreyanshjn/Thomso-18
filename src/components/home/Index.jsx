@@ -56,10 +56,11 @@ export default class HomeIndex extends React.Component {
 
     render() {
         return (
+            <div className="bodymainfinal">
             <div>
                 <Navbar logohide="true" />
-                <div className="sticky-container">
-                    <ul className="sticky">
+                <div className="mainfinalsticky-container">
+                    <ul className="mainfinalsticky">
                         <li>
                             <img src={bell} width="32" height="32" alt="bell-icon"/>
                             <p>WHAT'S NEW <br/><br/></p>
@@ -72,17 +73,17 @@ export default class HomeIndex extends React.Component {
                     </ul>
                 </div>
                 {/* Main web 1 */}
-                <div className="mainfirst" id="main parallaxscene">
+                <div className="mainfinalmainfirst" id="main parallaxscene">
                     {/* <div className="mainfirst3"></div>  */}
-                    <div className="mainfirst2"></div>
-                    <div className="mainfirst3"></div>
-                    <div className="mainfirst1" data-depth="0.6">
-                        <div className="mainnavbarcontainer">
-                            <div className="mainnavhome">
-                                <div className="home-navbar-logo">
+                    <div className="mainfinalmainfirst2"></div>
+                    <div className="mainfinalmainfirst3"></div>
+                    <div className="mainfinalmainfirst1" data-depth="0.6">
+                        <div className="mainfinalmainnavbarcontainer">
+                            <div className="mainfinalmainnavhome">
+                                <div className="mainfinalhome-navbar-logo">
                                     <img src={logo} alt="" />
                                 </div>
-                                <div className="homenavbarctos">
+                                <div className="mainfinalhomenavbarctos">
                                     {/* <div className="toggle" onClick="mobileoptionsreveal()">
                                         <span></span>
                                         <span></span>
@@ -94,68 +95,68 @@ export default class HomeIndex extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="containermaincontent">
-                            <div className="leftsidebar">
-                                <div className="leftsidebarcontent ">
+                        <div className="mainfinalcontainermaincontent">
+                            <div className="mainfinalleftsidebar">
+                                <div className="mainfinalleftsidebarcontent ">
                                     {/* <a href="" className="leftsidebarevents" onmouseover="float" >Events</a> */}
-                                    <Link to="/events" className="leftsidebarevents">Events</Link>
+                                    <Link to="/events" className="mainfinalleftsidebarevents">Events</Link>
                                 </div>
-                                <div className="leftsidebarcontent">
-                                    <Link to="/comingSoon" className="leftsidebarpronites">Pronites</Link>
+                                <div className="mainfinalleftsidebarcontent">
+                                    <Link to="/comingSoon" className="mainfinalleftsidebarpronites">Pronites</Link>
                                 </div>
-                                <div className="leftsidebarcontent">
-                                    <Link to="/sponsors" className="leftsidebarsponsors">Sponsors</Link>
+                                <div className="mainfinalleftsidebarcontent">
+                                    <Link to="/sponsors" className="mainfinalleftsidebarsponsors">Sponsors</Link>
                                 </div>
-                                <div className="leftsidebarcontent">
-                                    <Link to="/comingSoon" id="aboutuspagerevealer" className="leftsidebarcontactus">
+                                <div className="mainfinalleftsidebarcontent">
+                                    <Link to="/comingSoon" id="aboutuspagerevealer" className="mainfinalleftsidebarcontactus">
                                         Contact Us
                                     </Link>
                                 </div>
                             </div>
-                            <div className="centreimage" id="centreimagetrans">
+                            <div className="mainfinalcentreimage" id="centreimagetrans">
                                 <img src={thomsomain} alt="thomso-main" />
                             </div>
-                            <div className="rightsidebar">
-                                <div className="rightsidebarcontent">
+                            <div className="mainfinalrightsidebar">
+                                <div className="mainfinalrightsidebarcontent">
                                     <Link to="/main">Register/Login</Link>
                                 </div>
-                                <div className="rightsidebarcontent">
+                                <div className="mainfinalrightsidebarcontent">
                                     <Link to="/whythomso">Why Thomso</Link></div>
 
-                                <div className="rightsidebarcontent">
+                                <div className="mainfinalrightsidebarcontent">
                                     <Link to="/zonals/home">Zonals</Link></div>
-                                <div className="rightsidebarcontent">
+                                <div className="mainfinalrightsidebarcontent">
                                     <Link to="/campusambassador">Campus Ambassdor</Link></div>
 
 
                             </div>
-                            {/*<div className="mobileviewoptions-parent">
-                                <div className="mobileviewoptions" id="mobopid">
-                                    <div className="mobileviewoptionscontent">
+                            {/*<div className="mainfinalmobileviewoptions-parent">
+                                <div className="mainfinalmobileviewoptions" id="mobopid">
+                                    <div className="mainfinalmobileviewoptionscontent">
                                         <a href="http://" target="_blank" rel="noopener noreferrer">Register/Login</a>
 
                                     </div>
-                                    <div className="mobileviewoptionscontent">
+                                    <div className="mainfinalmobileviewoptionscontent">
                                         <a href="http://" target="_blank" rel="noopener noreferrer">Events</a>
 
                                     </div>
-                                    <div className="mobileviewoptionscontent">
+                                    <div className="mainfinalmobileviewoptionscontent">
                                         <a href="http://" target="_blank" rel="noopener noreferrer">Pronites </a>
                                     </div>
-                                    <div className="mobileviewoptionscontent">
+                                    <div className="mainfinalmobileviewoptionscontent">
                                         <a href="http://" target="_blank" rel="noopener noreferrer">Sponsors</a>
                                     </div>
-                                    <div className="mobileviewoptionscontent">
+                                    <div className="mainfinalmobileviewoptionscontent">
                                         <a href="http://" target="_blank" rel="noopener noreferrer">Zonals</a>
                                     </div>
 
-                                    <div className="mobileviewoptionscontent">
+                                    <div className="mainfinalmobileviewoptionscontent">
                                         <a href="http://" target="_blank" rel="noopener noreferrer">Why Thomso</a>
                                     </div>
-                                    <div className="mobileviewoptionscontent">
+                                    <div className="mainfinalmobileviewoptionscontent">
                                         <a href="http://" target="_blank" rel="noopener noreferrer">Contact Us</a>
                                     </div>
-                                    <div className="mobileviewoptionscontent">
+                                    <div className="mainfinalmobileviewoptionscontent">
                                         <a href="http://" target="_blank" rel="noopener noreferrer">Follow & Share</a>
                                     </div>
                                 </div>
@@ -164,17 +165,17 @@ export default class HomeIndex extends React.Component {
                     </div>
 
                 </div>
-                <div className="mainsecond" >
-                    <div className="mainsecondaboutusheading">
+                <div className="mainfinalmainsecond" >
+                    <div className="mainfinalmainsecondaboutusheading">
                         <h1 id="aboutus">About Us</h1>
                     </div>
-                    <div className="maincontainersecond">
+                    <div className="mainfinalmaincontainersecond">
 
-                        <div className="maincontainersecondinner">
-                            <div className="maincontainersecondleft">
+                        <div className="mainfinalmaincontainersecondinner">
+                            <div className="mainfinalmaincontainersecondleft">
 
                             </div>
-                            <div className="maincontainersecondright" id="aboutuspagemoveleft">
+                            <div className="mainfinalmaincontainersecondright" id="aboutuspagemoveleft">
                                 <p>Thomso , the Annual Cultural Festival of IIT Roorkee is a majestic three days cultural fest,recognised as one of the greatest pomp youth festivals of India.Thomso
                                     encompasses lavish history , splendid culture and a profoundly rich heritage of IIT Roorkee. Recognising this event of gigantic proportions ,
                                     the Government proclaimed Thomso as the "Annual Youth Festival Of Uttarakhand " in 2005. Thomso has acquired the credentials of being the largest cultural fest of Northern India
@@ -182,62 +183,62 @@ export default class HomeIndex extends React.Component {
                                     year's theme being "Siezed by Stardust".
                                 </p>
                             </div>
-                            <div className="secondpagebottom" id="aboutuspagemoveright">
-                                <div className="secondpagebottomrect" id="pagereveal">
-                                    <div className="secondbottomrectleft">
+                            <div className="mainfinalsecondpagebottom" id="aboutuspagemoveright">
+                                <div className="mainfinalsecondpagebottomrect" id="pagereveal">
+                                    <div className="mainfinalsecondbottomrectleft">
                                         <h1 id="numberchange1"><span>100</span>k+</h1>
                                         <h3>Footfall</h3>
                                     </div>
-                                    <div className="secondbottomrectright"> <img src={foot} alt="footfall" /></div>
+                                    <div className="mainfinalsecondbottomrectright"> <img src={foot} alt="footfall" /></div>
                                 </div>
-                                <div className="secondpagebottomrect">
-                                    <div className="secondbottomrectleft">
+                                <div className="mainfinalsecondpagebottomrect">
+                                    <div className="mainfinalsecondbottomrectleft">
                                         <h1 id="numberchange2"><span>1000</span>+</h1>
                                         <h3 >Colleges</h3>
                                     </div>
-                                    <div className="secondbottomrectright"> <img src={college} alt="college" /></div>
+                                    <div className="mainfinalsecondbottomrectright"> <img src={college} alt="college" /></div>
                                 </div>
-                                <div className="secondpagebottomrect">
-                                    <div className="secondbottomrectleft">
+                                <div className="mainfinalsecondpagebottomrect">
+                                    <div className="mainfinalsecondbottomrectleft">
                                         <h1 id="numberchange3"><span>150</span>+</h1>
                                         <h3>Events</h3>
                                     </div>
-                                    <div className="secondbottomrectright"> <img src={events} alt="events" /></div>
+                                    <div className="mainfinalsecondbottomrectright"> <img src={events} alt="events" /></div>
                                 </div>
                             </div>
                         </div>
 
                     </div>
-                    {/* <div className="secondpagebottom">
-                <div className="secondpagebottomrect" id="pagereveal">
-                    <div className="secondbottomrectleft">
+                    {/* <div className="mainfinalsecondpagebottom">
+                <div className="mainfinalsecondpagebottomrect" id="pagereveal">
+                    <div className="mainfinalsecondbottomrectleft">
                             <h1 id="numberchange1"><span>100</span>k+</h1>
                             <h3>Footfall</h3>
                     </div>
-                    <div className="secondbottomrectright"> <img src="./foot svg-01.svg" alt=""></div>
+                    <div className="mainfinalsecondbottomrectright"> <img src="./foot svg-01.svg" alt=""></div>
             </div>
-                <div className="secondpagebottomrect">
-                    <div className="secondbottomrectleft">
+                <div className="mainfinalsecondpagebottomrect">
+                    <div className="mainfinalsecondbottomrectleft">
                             <h1 id="numberchange2"><span>1000</span>+</h1>
                             <h3 >Colleges</h3>
                     </div>
-                    <div className="secondbottomrectright"> <img src="./college svg-01.svg" alt=""></div>
+                    <div className="mainfinalsecondbottomrectright"> <img src="./college svg-01.svg" alt=""></div>
             </div>
-                <div className="secondpagebottomrect">
-                    <div className="secondbottomrectleft">
+                <div className="mainfinalsecondpagebottomrect">
+                    <div className="mainfinalsecondbottomrectleft">
                         <h1 id="numberchange3" id="trigger2"><span>150</span>+</h1>
                         <h3>Events</h3>
                     </div>
-                    <div className="secondbottomrectright"> <img src="./events svg-01.svg" alt=""></div>
+                    <div className="mainfinalsecondbottomrectright"> <img src="./events svg-01.svg" alt=""></div>
             </div>
             </div> */}
                 </div>
-                <div className="mainthirdpagecontainer" >
+                <div className="mainfinalmainthirdpagecontainer" >
 
-                    <div className="mainthirdinternalcontainer" id="litfestanimationtrigger">
-                        <div className="splitsvgcont1 lit">
+                    <div className="mainfinalmainthirdinternalcontainer" id="litfestanimationtrigger">
+                        <div className="mainfinalsplitsvgcont1 mainfinallit">
                             {/* <Litfestpen />*/}
-                            <svg version="1.1" className="splitlit" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            <svg version="1.1" className="mainfinalsplitlit" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                 width="612px" height="792px" viewBox="0 0 612 792" enableBackground="new 0 0 612 792" xmlSpace="preserve">
                                 <g>
                                     <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#41B6C4" points="450.397,438.752 341.321,490.775 336.055,402.83 
@@ -312,7 +313,7 @@ export default class HomeIndex extends React.Component {
                                 </g>
                             </svg>
                         </div>
-                        <div className="thomsomainattractions" id="m3move">
+                        <div className="mainfinalthomsomainattractions" id="m3move">
                             {/*    <Mainattraction />*/}
                             <svg id="mainattractionsvg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                 width="609.333px" height="212.171px" viewBox="0 0 609.333 212.171" enableBackground="new 0 0 609.333 212.171"
@@ -589,8 +590,8 @@ export default class HomeIndex extends React.Component {
 
                         </div>
 
-                        <div className="mainattractioninternal attraction1" id="litfestsvgtrigger">
-                            <div className="mainattractioninternalsvgcontainer">
+                        <div className="mainfinalmainattractioninternal mainfinalattraction1" id="litfestsvgtrigger">
+                            <div className="mainfinalmainattractioninternalsvgcontainer">
                                 {/*  <Litfest />*/}
                                 <svg version="1.1" id="mainattractioninternalsvgcontainerlitfestsvg" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                     viewBox="0 0 251.333 106.333" enableBackground="new 0 0 251.333 93.333"
@@ -706,17 +707,17 @@ export default class HomeIndex extends React.Component {
                                     </g>
                                 </svg>
                             </div>
-                            <div className="mainattractioninternaltextcontainer" id="pagethirdsecondpagerevealtrigger" >
+                            <div className="mainfinalmainattractioninternaltextcontainer" id="pagethirdsecondpagerevealtrigger" >
 
                                 <p id="litfestsvgtext">A plethora of events under banner of literati for quenching thirst of professional writers,eloquent poets and literature lovers.The Litfest brings together a seminal array of writers , authors , columnists , cartoonists , publishers , lyricists and our dear readers.</p>
                             </div>
                         </div>
 
                     </div>
-                    <div className="mainthirdinternalcontainer" id="workshopssvgtrigger" >
-                        <div className="splitsvgcont1 workgoncont work" >
+                    <div className="mainfinalmainthirdinternalcontainer" id="workshopssvgtrigger" >
+                        <div className="mainfinalsplitsvgcont1 mainfinalworkgoncont mainfinalwork" >
                             {/* <Workshopbulb /> */}
-                            <svg version="1.1" className="splitlit splitlit2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            <svg version="1.1" className="mainfinalsplitlit mainfinalsplitlit2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                 width="612px" height="792px" viewBox="0 0 612 792" enableBackground="new 0 0 612 792" xmlSpace="preserve">
                                 <g>
                                     <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="295.322,78.412 249.482,101.096 255.13,39.817 	" />
@@ -863,8 +864,8 @@ export default class HomeIndex extends React.Component {
                                 </g>
                             </svg>
                         </div>
-                        <div className="mainattractioninternal attraction2" id="workshoptrigger2">
-                            <div className="mainattractioninternalsvgcontainer">
+                        <div className="mainfinalmainattractioninternal mainfinalattraction2" id="workshoptrigger2">
+                            <div className="mainfinalmainattractioninternalsvgcontainer">
                                 {/*    <Workshops /> */}
                                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                     viewBox="0 0 3403 446.825" enableBackground="new 0 0 3403 446.825" xmlSpace="preserve">
@@ -1030,16 +1031,16 @@ export default class HomeIndex extends React.Component {
                                     </g>
                                 </svg>
                             </div>
-                            <div className="mainattractioninternaltextcontainer">
+                            <div className="mainfinalmainattractioninternaltextcontainer">
                                 <p id="workshoptext">To transform passive listening into interactive learning. Thomso organises workshops where knowledgeable personalities share their insightful experiences and conduct comprehensive sessions for students.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div className="mainthirdinternalcontainer" id="zonalssvgtrigger">
-                        <div className="splitsvgcont1 zonalgoncont zonal">
+                    <div className="mainfinalmainthirdinternalcontainer" id="zonalssvgtrigger">
+                        <div className="mainfinalsplitsvgcont1 mainfinalzonalgoncont mainfinalzonal">
                             {/* <Karvaan />*/}
-                            <svg version="1.1" className="splitlit splitlit2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            <svg version="1.1" className="mainfinalsplitlit mainfinalsplitlit2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                 width="841.89px" height="595.276px" viewBox="0 0 841.89 595.276" enableBackground="new 0 0 841.89 595.276"
                                 xmlSpace="preserve">
                                 <g>
@@ -1253,8 +1254,8 @@ export default class HomeIndex extends React.Component {
                                 </g>
                             </svg>
                         </div>
-                        <div className="mainattractioninternal attraction1" id="zonalstrigger">
-                            <div className="mainattractioninternalsvgcontainer">
+                        <div className="mainfinalmainattractioninternal mainfinalattraction1" id="zonalstrigger">
+                            <div className="mainfinalmainattractioninternalsvgcontainer">
                                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                     viewBox="0 0 3403 446.825" enableBackground="new 0 0 3403 446.825" xmlSpace="preserve">
                                     <g>
@@ -1363,7 +1364,7 @@ export default class HomeIndex extends React.Component {
                                     </g>
                                 </svg>
                             </div>
-                            <div className="mainattractioninternaltextcontainer">
+                            <div className="mainfinalmainattractioninternaltextcontainer">
 
                                 <p id="zonalstext">'Karwaan'-the Zonals of Thomso, IIT Roorkee are on initiative to connect Thomso to regions across the length and breadth of the country. Thomso carries out its 'Talent Hunt' at several cities to providethe college students and the cultural societies an opportunity to enter the finals of highly diverse and competitive events of Thomso.</p>
                             </div>
@@ -1371,9 +1372,9 @@ export default class HomeIndex extends React.Component {
 
                     </div>
 
-                    <div className="mainthirdinternalcontainer" id="onlineeventssvgtrigger">
-                        <div className="splitsvgcont1 onlinegongoncont online">
-                            <svg className="splitlit splitlit2" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    <div className="mainfinalmainthirdinternalcontainer" id="onlineeventssvgtrigger">
+                        <div className="mainfinalsplitsvgcont1 mainfinalonlinegongoncont mainfinalonline">
+                            <svg className="mainfinalsplitlit mainfinalsplitlit2" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                 width="800px" height="800px" viewBox="0 0 800 800" enableBackground="new 0 0 800 800" xmlSpace="preserve">
                                 <polygon className="onlinegon" fill="#A71E36" points="344.676,236.348 332.55,229.058 337.471,222.029 " />
                                 <polygon className="onlinegon" fill="#F38888" points="349.773,248.214 332.199,250.499 344.676,236.348 " />
@@ -1877,8 +1878,8 @@ export default class HomeIndex extends React.Component {
                             </svg>
 
                         </div>
-                        <div className="mainattractioninternal attraction2" id="onlinetrigger" >
-                            <div className="mainattractioninternalsvgcontainer">
+                        <div className="mainfinalmainattractioninternal mainfinalattraction2" id="onlinetrigger" >
+                            <div className="mainfinalmainattractioninternalsvgcontainer">
                                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                     viewBox="0 0 3403 446.825" enableBackground="new 0 0 3403 446.825" xmlSpace="preserve">
                                     <g>
@@ -2055,15 +2056,15 @@ export default class HomeIndex extends React.Component {
                                 </svg>
 
                             </div>
-                            <div className="mainattractioninternaltextcontainer">
+                            <div className="mainfinalmainattractioninternaltextcontainer">
 
-                                <p id="onlineeventstext">A plethora of events under banner of literati for quenching thirst of professional writers,eloquent poets and literature lovers.The Litfest brings together a seminal array of writers , authors , columnists , cartoonists , publishers , lyricists and our dear readers.</p>
+                                <p id="mainfinalonlineeventstext">A plethora of events under banner of literati for quenching thirst of professional writers,eloquent poets and literature lovers.The Litfest brings together a seminal array of writers , authors , columnists , cartoonists , publishers , lyricists and our dear readers.</p>
                             </div>
                         </div>
                     </div>
-                    <div className="mainthirdinternalcontainer" id="carnivalsssvgtrigger">
-                        <div className="splitsvgcont1 carnivalgoncont carn">
-                            <svg version="1.1" className="splitlit splitlit2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    <div className="mainfinalmainthirdinternalcontainer" id="carnivalsssvgtrigger">
+                        <div className="mainfinalsplitsvgcont1 mainfinalcarnivalgoncont mainfinalcarn">
+                            <svg version="1.1" className="mainfinalsplitlit mainfinalsplitlit2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                 width="841.89px" height="595.276px" viewBox="0 0 841.89 595.276" enableBackground="new 0 0 841.89 595.276"
                                 xmlSpace="preserve">
                                 <polygon className="carngon" fill="#FFF85F" points="463.135,469.63 422.585,488.7 421.965,488.7 414.745,469.63 " />
@@ -2427,8 +2428,8 @@ export default class HomeIndex extends React.Component {
                             </svg>
 
                         </div>
-                        <div className="mainattractioninternal attraction1" id="carnivalstrigger">
-                            <div className="mainattractioninternalsvgcontainer">
+                        <div className="mainfinalmainattractioninternal mainfinalattraction1" id="carnivalstrigger">
+                            <div className="mainfinalmainattractioninternalsvgcontainer">
                                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                     viewBox="0 0 3403 446.825" enableBackground="new 0 0 3403 446.825" xmlSpace="preserve">
                                     <g>
@@ -2551,32 +2552,32 @@ export default class HomeIndex extends React.Component {
                                     </g>
                                 </svg>
                             </div>
-                            <div className="mainattractioninternaltextcontainer">
+                            <div className="mainfinalmainattractioninternaltextcontainer">
 
                                 <p id="carnivaltext">A carnival exhilerates the fanatics with euphoria and ecstasy, Thomso carnival is no exception to the fact. With events ranging from Paintball to Body Zorbing , Human foosball to dodgeball, magic shows to boulevard games , it is the showstopper of Thomso for the whole three days.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="mainpage4">
-                    <div className="mainpage-carousel-desktop">
+                <div className="mainfinalmainpage4">
+                    <div className="mainfinalmainpage-carousel-desktop">
                         {this.state.carouselDisplay ? null : <Carousel />}
                     </div>
-                    <div className="mainpage-carousel-mobile">
+                    <div className="mainfinalmainpage-carousel-mobile">
                         {this.state.carouselDisplay ? <MobileCarousel /> :null}
                     </div>
                 </div>
-                <div className="mainpage5">
-                    <div className="mainpage5-thomsologo">
+                <div className="mainfinalmainpage5">
+                    <div className="mainfinalmainpage5-thomsologo">
                         <img src={logosvg} alt="" />
                     </div>
-                    <div className="mainpage5con">
-                        <div className="mainpagecontainer-outer-left">
-                            <div className="mainpage5container-inner">
-                                <div className="mainpage5container-inner-in">
-                                    <div className="mainpage5imgandtextcont">
-                                        <div className="mainpage5container-inner-in-left"><img src={phone} alt="" srcSet="" /></div>
-                                        <div className="mainpage5container-inner-in-right">
+                    <div className="mainfinalmainpage5con">
+                        <div className="mainfinalmainpagecontainer-outer-left">
+                            <div className="mainfinalmainpage5container-inner">
+                                <div className="mainfinalmainpage5container-inner-in">
+                                    <div className="mainfinalmainpage5imgandtextcont">
+                                        <div className="mainfinalmainpage5container-inner-in-left"><img src={phone} alt="" srcSet="" /></div>
+                                        <div className="mainfinalmainpage5container-inner-in-right">
                                             <h1><b>Contact</b></h1>
                                             <h4>Suyash Singh (Convener)</h4>
                                             <h4>+91-8417954805</h4>
@@ -2587,12 +2588,12 @@ export default class HomeIndex extends React.Component {
                                             
                                         </div>
                                     </div>
-                                    <div className="mainpage5container-inner-in-right-righter">
-                                        <div className="mainpagecontainer-outer-rightin">
-                                            <div className="mainpagecontainer-outer-rightin-inner">
-                                                <div className="mainpagecontainer-outer-rightin-inner-inside"><Link to="/comingSoon">Team Page<span><img src={rightarrow} alt="right-arrow" srcSet="" /></span></Link>
+                                    <div className="mainfinalmainpage5container-inner-in-right-righter">
+                                        <div className="mainfinalmainpagecontainer-outer-rightin">
+                                            <div className="mainfinalmainpagecontainer-outer-rightin-inner">
+                                                <div className="mainfinalmainpagecontainer-outer-rightin-inner-inside"><Link to="/comingSoon">Team Page<span><img src={rightarrow} alt="right-arrow" srcSet="" /></span></Link>
 
-                                                    {/* <div className="mainpage5internalsvgcontainer">
+                                                    {/* <div className="mainfinalmainpage5internalsvgcontainer">
                                                                     <img src="./right-arrow.svg" alt="right-arrow" srcSet="">
                                                              </div>    */}
 
@@ -2601,11 +2602,11 @@ export default class HomeIndex extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="mainpage5container-inner address-last-page">
-                                    <div className="mainpage5container-inner-in">
-                                        <div className="mainpage5imgandtextcont">
-                                            <div className="mainpage5container-inner-in-left"><img src={address} alt="address" /></div>
-                                            <div className="mainpage5container-inner-in-right">
+                                <div className="mainfinalmainpage5container-inner address-last-page">
+                                    <div className="mainfinalmainpage5container-inner-in">
+                                        <div className="mainfinalmainpage5imgandtextcont">
+                                            <div className="mainfinalmainpage5container-inner-in-left"><img src={address} alt="address" /></div>
+                                            <div className="mainfinalmainpage5container-inner-in-right">
                                                 <h1><b>Address</b></h1>
                                                 <h4>THOMSO OFFICE</h4>
                                                 <h4> Multi Activity Centre</h4>
@@ -2614,12 +2615,12 @@ export default class HomeIndex extends React.Component {
                                                 <h4>646774373474</h4>
                                             </div>
                                         </div>
-                                        <div className="mainpage5container-inner-in-right-righter">
-                                            <div className="mainpagecontainer-outer-rightin">
-                                                <div className="mainpagecontainer-outer-rightin-inner">
-                                                    <div className="mainpagecontainer-outer-rightin-inner-inside">
+                                        <div className="mainfinalmainpage5container-inner-in-right-righter">
+                                            <div className="mainfinalmainpagecontainer-outer-rightin">
+                                                <div className="mainfinalmainpagecontainer-outer-rightin-inner">
+                                                    <div className="mainfinalmainpagecontainer-outer-rightin-inner-inside">
                                                         <a target="_blank" rel="noopener noreferrer" href="https://goo.gl/maps/b9xPn3VcGVF2">Get Directions <span><img src={rightarrow} alt="right-arrow" /></span></a>
-                                                        {/*- <div className="mainpage5internalsvgcontainer">
+                                                        {/*- <div className="mainfinalmainpage5internalsvgcontainer">
                                                                             <img src="./right-arrow.svg" alt="right-arrow" srcSet="">
                                                                      </div>    */}
                                                     </div>
@@ -2679,6 +2680,7 @@ export default class HomeIndex extends React.Component {
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         )
     }
