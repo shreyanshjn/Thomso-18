@@ -2401,7 +2401,7 @@ export default class HomeIndex extends React.Component {
                             </div>
                             <div className="mainfinalmainattractioninternaltextcontainer">
 
-                                <p id="mainfinalonlineeventstext">A plethora of events under banner of literati for quenching thirst of professional writers,eloquent poets and literature lovers.The Litfest brings together a seminal array of writers , authors , columnists , cartoonists , publishers , lyricists and our dear readers.</p>
+                                <p id="mainfinalonlineeventstext">With Several online events in line, the reach of Thomso is more than just 3 days. Expanding its horizons to reach out to a wider audience, Thomso organises various online events as well. From Sketching to Photography, literature to Fashion, travel to quizzing, these events cover the whole hog of culture and intellect.</p>
                             </div>
                         </div>
                     </div>

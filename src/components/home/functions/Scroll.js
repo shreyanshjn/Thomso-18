@@ -457,7 +457,7 @@ const Function = () => {
         .addTo(controller);
     new ScrollMagic.Scene({
         triggerElement: "#litfestanimationtrigger",
-        offset: -window.innerHeight * .1589,
+        offset: -window.innerHeight * .1614,
         tweenChanges: true
     })
         .on('start', function () {
@@ -496,7 +496,7 @@ const Function = () => {
         .addTo(controller);
 
     new ScrollMagic.Scene({
-        offset: -window.innerHeight * .1589,
+        offset: -window.innerHeight * .1614,
         triggerElement: "#zonalssvgtrigger",
         tweenChanges: true
     })
@@ -516,7 +516,7 @@ const Function = () => {
         .addTo(controller);
 
     new ScrollMagic.Scene({
-        offset: -window.innerHeight * .1589,
+        offset: -window.innerHeight * .1614,
         triggerElement: "#onlineeventssvgtrigger",
         tweenChanges: true
     })
