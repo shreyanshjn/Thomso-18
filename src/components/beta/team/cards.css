@@ -21,12 +21,11 @@
 }
 .card-inner{
     background: blue;
-    width: 100%;
-    
+    width: 50%;
     position: relative;
     
 }
-.card-inner img{
+.card-inner-img{
     height:50vh;
     width:auto;
 }
@@ -55,7 +54,8 @@
     font-size: 44px;
     position: absolute;
     z-index: 100;
-    top: 90%;
+    top: 95%;
+    line-height: 1em;
     overflow:visible;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
@@ -64,13 +64,23 @@
     text-align: center;
     transition: .5s ease;
     font-family:Salma;
+  
+    -webkit-animation-duration: 1s;
+    -webkit-animation-name: glow;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-iteration-count: infinite;
+    animation-duration: 2s;
+    animation-name: glow;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+
   }
   .info {
     color: white;
     font-size: 20px;
     position: absolute;
-    top: 50%;
-    left: 10%;
+    top: 40%;
+    left: 18%;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -78,27 +88,69 @@
     font-family:Salma;
   }
 
+  @-webkit-keyframes glow {
+    from { text-shadow: 0 0 0px white; }
+    to { text-shadow: 0 0 20px #071829; }
+}
+
+  
+
+  
   .card-footer-mainIcons
-  {
-      height:50px;
-      width:50px;
-      display: flex;
-      flex-direction: row;
+{
+    margin-top:2px;
+    display:inline-flex;
+}
+
+
+.card-footer-fbdiv, .card-footer-ytdiv , .card-footer-instadiv , .card-footer-linkediv
+{
+    width:40px;
+    height:40px;
+    margin-left:10px;
+    border-radius:50%;
+    transition: 0.5s;
+}
+
+.card-footer-iconsImage
+{
+    width:40px;
+    height:40px;
+}
+.card-footer-mainIcons
+{
+    margin-top:2px;
+    display:inline-flex;
+}
+
+.card-footer-icons
+{
+    width:20%;
+    float:right;
+    position: absolute;
+    top: 80%;
+    left:8%;
+    user-select:none;
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+}
+
+
+@media screen and (min-width: 768px)
+{
+   
+    .card-footer-fbdiv:hover
+    {
+        background:black;
+    }
     
-  }
-
-  .card-footer-fbdiv
-  {
-      height: 50px;
-      width: 50px;
-  }
-
-  .card-footer-instadiv{
-    height: 50px;
-    width: 50px;
-  }
-
-  .card-footer-iconsImage{
-      height: 50px;
-      width: auto;
-  }
+    .card-footer-instadiv:hover
+    {
+        background:black;
+    }
+   
+    .common-cursor{
+      cursor : default;
+    }
+}
