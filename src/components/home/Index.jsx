@@ -1878,7 +1878,7 @@ export default class HomeIndex extends React.Component {
                                 <polygon className="onlinegon" fill="#EF5054" points="622.195,560.778 608.251,568.813 607.429,547.291 607.508,547.291 " />
                             </svg> */}
                                             <svg className="mainfinalsplitlit mainfinalsplitlit2" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                    width="841.89px" height="595.276px" viewBox="0 0 841.89 595.276" enable-background="new 0 0 841.89 595.276"
+                    width="841.89px" height="595.276px" viewBox="0 0 841.89 595.276" enableBackground="new 0 0 841.89 595.276"
                     xmlSpace="preserve">
                 <g>
                     <g>
@@ -2401,7 +2401,7 @@ export default class HomeIndex extends React.Component {
                             </div>
                             <div className="mainfinalmainattractioninternaltextcontainer">
 
-                                <p id="mainfinalonlineeventstext">With Several online events in line, the reach of Thomso is more than just 3 days. Expanding its horizons to reach out to a wider audience, Thomso organises various online events as well. From Sketching to Photography, literature to Fashion, travel to quizzing, these events cover the whole hog of culture and intellect.</p>
+                                <p id="mainfinalonlineeventstext">With Several online events in line, the reach of Thomso is more than just 3 days. Expanding its horizons to reach out to a wider audience, Thomso organises various online events as well. From Sketching to Photography, Literature to Fashion, Travel to Quizzing, these events cover the whole hog of culture and intellect.</p>
                             </div>
                         </div>
                     </div>
