@@ -57,11 +57,11 @@
     visibility:hidden;
 }
 .hideNavbar > li
-{
-    transition:all 1s;
+{   
     visibility:hidden;
     padding:20px;
     list-style-type:none;
+    color:white;
 }
 .hideNavbar-Link
 {
@@ -89,6 +89,11 @@
 {
     text-decoration:none;
     color:white;
+    white-space:nowrap;
+}
+.hideNavbar > li > a
+{
+    visibility: hidden;
     white-space:nowrap;
 }
 .new-navbar-lists-child >li > a::after{

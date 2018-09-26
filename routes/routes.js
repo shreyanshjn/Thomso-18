@@ -23,8 +23,8 @@ router.use('/api/notification', notificationRoutes);
 router.use('/api/certiVerify', cors(corsOptions),  verifyCerti.certi_verify );
 router.use('/api/zonals', zonalsRoutes);
 router.use('/api/main', mainRoutes);
-router.use('/api/coordinators', coordinatorsRoutes);
-router.use('/api/controls', controlsRoutes);
+// router.use('/api/coordinators', coordinatorsRoutes);
+// router.use('/api/controls', controlsRoutes);
 // -> /*
 router.get('/*', viewController);
 

@@ -64,7 +64,7 @@ export default class HomeIndex extends React.Component {
                             <img src={bell} width="32" height="32" alt="bell-icon"/>
                             <p>WHAT'S NEW <br/><br/></p>
                             <div id="submenu">
-                                <Link to="/cupid" >Cupid</Link>
+                                <Link to="/cupid" >Cupid's Attack</Link>
                                 <br/><Link to="/whythomso">Why Thomso</Link>
                                 <br/><Link to="/main">Register</Link><br/></div>
                         </li>
@@ -101,13 +101,13 @@ export default class HomeIndex extends React.Component {
                                     <Link to="/events" className="leftsidebarevents">Events</Link>
                                 </div>
                                 <div className="leftsidebarcontent">
-                                    <Link to=" " className="leftsidebarpronites">Pronites</Link>
+                                    <Link to="/comingSoon" className="leftsidebarpronites">Pronites</Link>
                                 </div>
                                 <div className="leftsidebarcontent">
                                     <Link to="/sponsors" className="leftsidebarsponsors">Sponsors</Link>
                                 </div>
                                 <div className="leftsidebarcontent">
-                                    <Link to=" " id="aboutuspagerevealer" className="leftsidebarcontactus">
+                                    <Link to="/comingSoon" id="aboutuspagerevealer" className="leftsidebarcontactus">
                                         Contact Us
                                     </Link>
                                 </div>
@@ -123,9 +123,9 @@ export default class HomeIndex extends React.Component {
                                     <Link to="/whythomso">Why Thomso</Link></div>
 
                                 <div className="rightsidebarcontent">
-                                    <Link to="/zonals">Zonals</Link></div>
+                                    <Link to="/zonals/home">Zonals</Link></div>
                                 <div className="rightsidebarcontent">
-                                    <Link to="">Follow And Share</Link></div>
+                                    <Link to="/campusambassador">Campus Ambassdor</Link></div>
 
 
                             </div>
@@ -2577,19 +2577,20 @@ export default class HomeIndex extends React.Component {
                                     <div className="mainpage5imgandtextcont">
                                         <div className="mainpage5container-inner-in-left"><img src={phone} alt="" srcSet="" /></div>
                                         <div className="mainpage5container-inner-in-right">
-                                            <h1>Contact</h1>
+                                            <h1><b>Contact</b></h1>
                                             <h4>Suyash Singh (Convener)</h4>
                                             <h4>+91-8417954805</h4>
-                                            <h4>Samarth Gubrele(Co-Convener)</h4>
-                                            <h4>+91-9425101043</h4>
                                             <h4>Abhishek Kumar (Co-Convener)</h4>
                                             <h4>+91-7979071260</h4>
+                                            <h4>Samarth Gubrele(Co-Convener)</h4>
+                                            <h4>+91-9425101043</h4>
+                                            
                                         </div>
                                     </div>
                                     <div className="mainpage5container-inner-in-right-righter">
                                         <div className="mainpagecontainer-outer-rightin">
                                             <div className="mainpagecontainer-outer-rightin-inner">
-                                                <div className="mainpagecontainer-outer-rightin-inner-inside"><Link to="/team">Team Page<span><img src={rightarrow} alt="right-arrow" srcSet="" /></span></Link>
+                                                <div className="mainpagecontainer-outer-rightin-inner-inside"><Link to="/comingSoon">Team Page<span><img src={rightarrow} alt="right-arrow" srcSet="" /></span></Link>
 
                                                     {/* <div className="mainpage5internalsvgcontainer">
                                                                     <img src="./right-arrow.svg" alt="right-arrow" srcSet="">
@@ -2605,7 +2606,7 @@ export default class HomeIndex extends React.Component {
                                         <div className="mainpage5imgandtextcont">
                                             <div className="mainpage5container-inner-in-left"><img src={address} alt="address" /></div>
                                             <div className="mainpage5container-inner-in-right">
-                                                <h1>Address</h1>
+                                                <h1><b>Address</b></h1>
                                                 <h4>THOMSO OFFICE</h4>
                                                 <h4> Multi Activity Centre</h4>
                                                 <h4>Indian Institute of Technology</h4>

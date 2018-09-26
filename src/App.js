@@ -70,10 +70,10 @@ const Terms = Loadable({
     loader: () => import("./components/common/Terms"),
     loading: () => <Loader />
 });
-const Error404 = Loadable({
-    loader: () => import("./components/common/Errorpage"),
-    loading: () => <Loader />
-});
+// const Error404 = Loadable({
+//     loader: () => import("./components/common/Errorpage"),
+//     loading: () => <Loader />
+// });
 const CampusIndex = Loadable({
     loader: () => import("./components/campusAmbassador/Index"),
     loading: () => <Loader />,
@@ -159,12 +159,12 @@ class App extends Component {
                     <Switch>
                         <React.Fragment>
                             {/* <Route path="/beta" component={BetaIndex} /> */}
-                            {/* <Route exact path="/" component={HomeIndex} /> */}
-                            <Route exact path="/" component={MainHomeIndex} />
+                            <Route exact path="/" component={HomeIndex} />
+                            <Route exact path="/final" component={MainHomeIndex} />
                             <Route exact path="/sponsors" component={SponsorsIndex} />
                             <Route exact path="/associate" component={AccociateIndex} />
                             <Route exact path="/quizardry" component={QuizardryIndex} />
-                            <Route exact path="/team" component={TeamIndex} />
+                            <Route exact path="/comingSoon" component={TeamIndex} />
                             <Route exact path="/faq" component={FAQIndex} />
                             <Route path="/ca/" component={CAIndex} />
                             <Route path="/campusAmbassador/" component={CampusIndex} />

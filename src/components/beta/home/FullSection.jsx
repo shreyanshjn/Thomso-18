@@ -26,18 +26,6 @@ export default class FullSection extends Component {
                 <div className="sticky-container">
                     <ul className="sticky">
                         <li>
-                            <img src={bell} width="32" height="32" alt="bell-icon"/>
-                            <p>WHAT'S NEW <br/><br/></p>
-                            <div id="submenu">
-                                <Link to="/cupid" >Cupid</Link>
-                                <br/><Link to="/whythomso">Why Thomso</Link>
-                                <br/><Link to="/main">Register</Link><br/></div>
-                        </li>
-                    </ul>
-                </div>
-                <div className="sticky-container">
-                    <ul className="sticky">
-                        <li>
                             <img src={bell} width="32" height="32" alt="Notifications" />
                             <p>WHAT'S NEW <br /><br /></p>
                             <div id="submenu">
