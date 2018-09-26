@@ -51,6 +51,15 @@ class Navbar extends Component {
         } else if (isAuthenticated) {
             this.setState({ isAuthenticated })
         }
+        window.addEventListener('keyup', this.handleKeys, false)
+    }
+    handleKeys = e => {
+        if (e.keyCode === 27) {
+            this.toggleNavbar()
+        }
+    }
+    componentWillUnmount() {
+        window.removeEventListener('keyup', this.handleKeys)
     }
     toggleHidden() {
         this.setState({
