@@ -111,12 +111,12 @@ class List extends Component {
             </Link>
                 </li>}
                 {this.props.events === "true" ? null : <li>
-                    <Link to="/" className={(this.state.activeStateLink === "linkpayment") ? "list-payment-link" : null}
+                    <a href="https://www.thecollegefever.com/events/thomso" className={(this.state.activeStateLink === "linkpayment") ? "list-payment-a" : null}
                         onClick={() => {
-                            this.setActiveLink("linkpayment")
+                            this.setActiveLink("payment")
                         }}>
                         PAYMENT
-            </Link>
+            </a>
                 </li>}
 
                 {/* <li>

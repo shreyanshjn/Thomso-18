@@ -143,6 +143,12 @@ class Navbar extends Component {
                                     this.setActive("payment");
                                 }}>PAYMENT</Link>
                         </li>
+                        {/* <li>
+                            <Link to="/whythomso/#faqs" className={(this.state.activeState === "faq") ? "faq" : null}
+                                onClick={() => {
+                                    this.setActive("faq");
+                                }}>FAQS</Link>
+                        </li> */}
                         <li>
                             <Link to="/main" className={(this.state.activeState === "main") ? "linkSponsors" : null}
                                 onClick={() => {
