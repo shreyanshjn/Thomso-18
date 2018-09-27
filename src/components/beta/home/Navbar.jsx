@@ -147,17 +147,17 @@ class Navbar extends Component {
                                 }}>IITR MUN</Link>
                         </li>}
                         <li>
-                            <Link to="/" className={(this.state.activeState === "payment") ? "payment" : null}
+                            <a href="https://www.thecollegefever.com/events/thomso" className={(this.state.activeState === "payment") ? "payment" : null}
                                 onClick={() => {
                                     this.setActive("payment");
-                                }}>PAYMENT</Link>
+                                }}>PAYMENT</a>
                         </li>
-                        {/* <li>
-                            <Link to="/whythomso/#faqs" className={(this.state.activeState === "faq") ? "faq" : null}
+                        <li>
+                            <a href="/whythomso#faqs" rel="noopener noreferrer" className={(this.state.activeState === "faq") ? "faq" : null}
                                 onClick={() => {
                                     this.setActive("faq");
-                                }}>FAQS</Link>
-                        </li> */}
+                                }}>FAQS</a>
+                        </li>
                         <li>
                             <Link to="/main" className={(this.state.activeState === "main") ? "linkSponsors" : null}
                                 onClick={() => {

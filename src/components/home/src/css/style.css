@@ -22,6 +22,14 @@
 .mainpage-payment-register-buttons{
     display: none;
 }
+.mainpage4{
+    position: relative;
+}
+.mainpage4-heading{
+    position: absolute;
+    left: calc(50% - 306px);
+    top: -40px;
+}
 #submenu a{
     text-decoration: none;
     color: white;

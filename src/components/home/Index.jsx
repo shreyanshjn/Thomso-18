@@ -17,9 +17,9 @@ import Navbar from '../beta/home/Navbar'
 import Carousel from '../carousel/Index'
 import register from "./src/img/register.png"
 // import payment from "./src/img/payment.png"
-
 import './src/css/style.css'
 import MobileCarousel from '../mobilecarousel/Index';
+import Celebrities from './src/celebrities';
 
 let scrollInit = false
 
@@ -3093,8 +3093,11 @@ export default class HomeIndex extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className="mainfinalmainpage4">
-                    <div className="mainfinalmainpage-carousel-desktop">
+                <div className="mainpage4">
+                    <div className="mainpage4-heading">
+                        <Celebrities />
+                    </div> 
+                    <div className="mainpage-carousel-desktop">
                         {this.state.carouselDisplay ? null : <Carousel />}
                     </div>
                     <div className="mainfinalmainpage-carousel-mobile">

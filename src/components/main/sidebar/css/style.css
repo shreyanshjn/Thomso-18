@@ -77,7 +77,9 @@
     .sidenav > .main-sidebar-contents > .activeSideItem > .main-sidebar-events > .main-sidebar-svg-logo svg .eventspath{
         fill: purple;
     }
-
+    .sidenav > .main-sidebar-contents > .activeSideItem > .main-sidebar-payment > .main-sidebar-svg-logo svg .paypath{
+        fill: gold;
+    }
     .main-sidebar-likes-child{
         display: flex;
         flex-direction: row;
@@ -109,6 +111,9 @@
     }
     .sidenav .sideNavItem:hover .main-sidebar-svg-logo svg .profilepath{
         fill:#E5904A;
+    }
+    .sidenav .sideNavItem:hover .main-sidebar-svg-logo svg .paypath{
+        fill:gold;
     }
     .main-sidebar-contents{
         padding: 15px 0px;
@@ -300,6 +305,9 @@
     .sidenav > .main-sidebar-contents > .activeSideItem > .main-sidebar-ideas > .main-sidebar-svg-logo svg .bulbpath{
         fill: yellow;
     }
+    .sidenav > .main-sidebar-contents > .activeSideItem > .main-sidebar-payment > .main-sidebar-svg-logo svg .paypath{
+        fill: gold;
+    }
     .main-sidebar-svg-logo svg{
         padding: 0 3px 0 3px;
         height: auto;
@@ -331,6 +339,9 @@
     }
     .sidenav .sideNavItem:hover .main-sidebar-svg-logo svg .bulbpath{
         fill:yellow;
+    }
+    .sidenav .sideNavItem:hover .main-sidebar-svg-logo svg .paypath{
+        fill:gold;
     }
     /* .referral:hover .main-sidebar-svg-logo svg .referralpath{ */
     /*     cursor: pointer; */
