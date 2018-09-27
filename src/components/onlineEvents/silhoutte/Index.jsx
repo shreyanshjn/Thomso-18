@@ -8,9 +8,14 @@ class Silhoutte extends Component {
         return (
             <div>
                 <Navbar background="true" />
-                <div className="silhoutte-campus-image">
+                <div className="silhoutte-image">
                     <div>
-                        <img className="silhoutte-campus-image-child" src={silhoutte} alt="silhoutte" />
+                        <img className="silhoutte-image-child" src={silhoutte} alt="silhoutte" />
+                        <a href="https://drive.google.com/file/d/1qEMg0XYHL3kYuEdWVBCDRVPAteS7tQeY/view" rel="noopener noreferrer" target="_blank">
+                            <p className="silhoutte-online-events-rulebook">
+                                RuleBook
+                            </p>
+                        </a>
                     </div>
                 </div>
             </div>

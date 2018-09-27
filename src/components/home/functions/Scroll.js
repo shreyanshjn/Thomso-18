@@ -400,7 +400,7 @@ const Function = () => {
         ;
     var cigmove = new TimelineMax({ repeat: -1, yoyo: true });
     cigmove.fromTo("#centreimagetrans", 3, { y: -10, ease: Power1.easeIn }, { y: 10, ease: Power1.easeIn });
-    var eventf = document.querySelector(".leftsidebarevents");
+    var eventf = document.querySelector(".mainfinalleftsidebarevents");
     var oneventshover = (e) => {
         // var eventfloat=new TimelineMax({repeat:-1,yoyo:true})
         // eventfloat.fromTo(eventf,2,{y:-10,ease:Power3.easeout},{y:10,ease:Power3.easeIn});

@@ -152,10 +152,15 @@ const MUNIndex = Loadable({
 // })
 
 class App extends Component {
-
-    componentDidMount() {
-        if (window.screen && window.screen.lockOrientation) {
-            window.screen.lockOrientation("portrait");
+    constructor(){
+        super();
+        this.state = {
+        }
+    }
+    componentWillMount() {
+        console.log(window.screen)
+        if (window.screen) {
+            // window.screen.lockOrientation("portrait");
         }
     }
 

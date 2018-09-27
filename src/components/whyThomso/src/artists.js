@@ -69,7 +69,7 @@ export const More_artists = [
     },
     {
         id: 8,
-        name: "Dilabagh Singh",
+        name: "Dilbagh Singh",
         image: "dilbaghsingh.jpeg",
     },
     {

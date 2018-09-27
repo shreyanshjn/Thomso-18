@@ -15,6 +15,8 @@ import logosvg from './src/img/thomso logo svg-01.svg'
 import address from './src/img/address svg-01.svg'
 import Navbar from '../beta/home/Navbar'
 import Carousel from '../carousel/Index'
+import register from "./src/img/register.png"
+// import payment from "./src/img/payment.png"
 
 import './src/css/style.css'
 import MobileCarousel from '../mobilecarousel/Index';
@@ -56,10 +58,11 @@ export default class HomeIndex extends React.Component {
 
     render() {
         return (
+            <div className="bodymainfinal">
             <div>
                 <Navbar logohide="true" />
-                <div className="sticky-container">
-                    <ul className="sticky">
+                <div className="mainfinalsticky-container">
+                    <ul className="mainfinalsticky">
                         <li>
                             <img src={bell} width="32" height="32" alt="bell-icon"/>
                             <p>WHAT'S NEW <br/><br/></p>
@@ -72,17 +75,27 @@ export default class HomeIndex extends React.Component {
                     </ul>
                 </div>
                 {/* Main web 1 */}
-                <div className="mainfirst" id="main parallaxscene">
+                <div className="mainfinalmainfirst" id="main parallaxscene">
                     {/* <div className="mainfirst3"></div>  */}
                     <div className="mainfirst2"></div>
                     <div className="mainfirst3"></div>
                     <div className="mainfirst1" data-depth="0.6">
                         <div className="mainnavbarcontainer">
                             <div className="mainnavhome">
+                                <div className="mainpage-payment-register-buttons">
+                                    {/* <button>
+                                        <img src={register} alt="register"/>
+                                        <Link to="">Register</Link>
+                                    </button> */}
+                                    <button>
+                                        <img src={register} alt="register"/>
+                                        <Link to="/main/register">Register</Link>
+                                    </button>
+                                </div>
                                 <div className="home-navbar-logo">
                                     <img src={logo} alt="" />
                                 </div>
-                                <div className="homenavbarctos">
+                                <div className="mainfinalhomenavbarctos">
                                     {/* <div className="toggle" onClick="mobileoptionsreveal()">
                                         <span></span>
                                         <span></span>
@@ -94,68 +107,68 @@ export default class HomeIndex extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="containermaincontent">
-                            <div className="leftsidebar">
-                                <div className="leftsidebarcontent ">
+                        <div className="mainfinalcontainermaincontent">
+                            <div className="mainfinalleftsidebar">
+                                <div className="mainfinalleftsidebarcontent ">
                                     {/* <a href="" className="leftsidebarevents" onmouseover="float" >Events</a> */}
-                                    <Link to="/events" className="leftsidebarevents">Events</Link>
+                                    <Link to="/events" className="mainfinalleftsidebarevents">Events</Link>
                                 </div>
-                                <div className="leftsidebarcontent">
-                                    <Link to="/comingSoon" className="leftsidebarpronites">Pronites</Link>
+                                <div className="mainfinalleftsidebarcontent">
+                                    <Link to="/comingSoon" className="mainfinalleftsidebarpronites">Pronites</Link>
                                 </div>
-                                <div className="leftsidebarcontent">
-                                    <Link to="/sponsors" className="leftsidebarsponsors">Sponsors</Link>
+                                <div className="mainfinalleftsidebarcontent">
+                                    <Link to="/sponsors" className="mainfinalleftsidebarsponsors">Sponsors</Link>
                                 </div>
-                                <div className="leftsidebarcontent">
-                                    <Link to="/comingSoon" id="aboutuspagerevealer" className="leftsidebarcontactus">
+                                <div className="mainfinalleftsidebarcontent">
+                                    <Link to="/comingSoon" id="aboutuspagerevealer" className="mainfinalleftsidebarcontactus">
                                         Contact Us
                                     </Link>
                                 </div>
                             </div>
-                            <div className="centreimage" id="centreimagetrans">
+                            <div className="mainfinalcentreimage" id="centreimagetrans">
                                 <img src={thomsomain} alt="thomso-main" />
                             </div>
-                            <div className="rightsidebar">
-                                <div className="rightsidebarcontent">
+                            <div className="mainfinalrightsidebar">
+                                <div className="mainfinalrightsidebarcontent">
                                     <Link to="/main">Register/Login</Link>
                                 </div>
-                                <div className="rightsidebarcontent">
+                                <div className="mainfinalrightsidebarcontent">
                                     <Link to="/whythomso">Why Thomso</Link></div>
 
-                                <div className="rightsidebarcontent">
+                                <div className="mainfinalrightsidebarcontent">
                                     <Link to="/zonals/home">Zonals</Link></div>
-                                <div className="rightsidebarcontent">
+                                <div className="mainfinalrightsidebarcontent">
                                     <Link to="/campusambassador">Campus Ambassdor</Link></div>
 
 
                             </div>
-                            {/*<div className="mobileviewoptions-parent">
-                                <div className="mobileviewoptions" id="mobopid">
-                                    <div className="mobileviewoptionscontent">
+                            {/*<div className="mainfinalmobileviewoptions-parent">
+                                <div className="mainfinalmobileviewoptions" id="mobopid">
+                                    <div className="mainfinalmobileviewoptionscontent">
                                         <a href="http://" target="_blank" rel="noopener noreferrer">Register/Login</a>
 
                                     </div>
-                                    <div className="mobileviewoptionscontent">
+                                    <div className="mainfinalmobileviewoptionscontent">
                                         <a href="http://" target="_blank" rel="noopener noreferrer">Events</a>
 
                                     </div>
-                                    <div className="mobileviewoptionscontent">
+                                    <div className="mainfinalmobileviewoptionscontent">
                                         <a href="http://" target="_blank" rel="noopener noreferrer">Pronites </a>
                                     </div>
-                                    <div className="mobileviewoptionscontent">
+                                    <div className="mainfinalmobileviewoptionscontent">
                                         <a href="http://" target="_blank" rel="noopener noreferrer">Sponsors</a>
                                     </div>
-                                    <div className="mobileviewoptionscontent">
+                                    <div className="mainfinalmobileviewoptionscontent">
                                         <a href="http://" target="_blank" rel="noopener noreferrer">Zonals</a>
                                     </div>
 
-                                    <div className="mobileviewoptionscontent">
+                                    <div className="mainfinalmobileviewoptionscontent">
                                         <a href="http://" target="_blank" rel="noopener noreferrer">Why Thomso</a>
                                     </div>
-                                    <div className="mobileviewoptionscontent">
+                                    <div className="mainfinalmobileviewoptionscontent">
                                         <a href="http://" target="_blank" rel="noopener noreferrer">Contact Us</a>
                                     </div>
-                                    <div className="mobileviewoptionscontent">
+                                    <div className="mainfinalmobileviewoptionscontent">
                                         <a href="http://" target="_blank" rel="noopener noreferrer">Follow & Share</a>
                                     </div>
                                 </div>
@@ -164,17 +177,17 @@ export default class HomeIndex extends React.Component {
                     </div>
 
                 </div>
-                <div className="mainsecond" >
-                    <div className="mainsecondaboutusheading">
+                <div className="mainfinalmainsecond" >
+                    <div className="mainfinalmainsecondaboutusheading">
                         <h1 id="aboutus">About Us</h1>
                     </div>
-                    <div className="maincontainersecond">
+                    <div className="mainfinalmaincontainersecond">
 
-                        <div className="maincontainersecondinner">
-                            <div className="maincontainersecondleft">
+                        <div className="mainfinalmaincontainersecondinner">
+                            <div className="mainfinalmaincontainersecondleft">
 
                             </div>
-                            <div className="maincontainersecondright" id="aboutuspagemoveleft">
+                            <div className="mainfinalmaincontainersecondright" id="aboutuspagemoveleft">
                                 <p>Thomso , the Annual Cultural Festival of IIT Roorkee is a majestic three days cultural fest,recognised as one of the greatest pomp youth festivals of India.Thomso
                                     encompasses lavish history , splendid culture and a profoundly rich heritage of IIT Roorkee. Recognising this event of gigantic proportions ,
                                     the Government proclaimed Thomso as the "Annual Youth Festival Of Uttarakhand " in 2005. Thomso has acquired the credentials of being the largest cultural fest of Northern India
@@ -182,62 +195,62 @@ export default class HomeIndex extends React.Component {
                                     year's theme being "Siezed by Stardust".
                                 </p>
                             </div>
-                            <div className="secondpagebottom" id="aboutuspagemoveright">
-                                <div className="secondpagebottomrect" id="pagereveal">
-                                    <div className="secondbottomrectleft">
+                            <div className="mainfinalsecondpagebottom" id="aboutuspagemoveright">
+                                <div className="mainfinalsecondpagebottomrect" id="pagereveal">
+                                    <div className="mainfinalsecondbottomrectleft">
                                         <h1 id="numberchange1"><span>100</span>k+</h1>
                                         <h3>Footfall</h3>
                                     </div>
-                                    <div className="secondbottomrectright"> <img src={foot} alt="footfall" /></div>
+                                    <div className="mainfinalsecondbottomrectright"> <img src={foot} alt="footfall" /></div>
                                 </div>
-                                <div className="secondpagebottomrect">
-                                    <div className="secondbottomrectleft">
+                                <div className="mainfinalsecondpagebottomrect">
+                                    <div className="mainfinalsecondbottomrectleft">
                                         <h1 id="numberchange2"><span>1000</span>+</h1>
                                         <h3 >Colleges</h3>
                                     </div>
-                                    <div className="secondbottomrectright"> <img src={college} alt="college" /></div>
+                                    <div className="mainfinalsecondbottomrectright"> <img src={college} alt="college" /></div>
                                 </div>
-                                <div className="secondpagebottomrect">
-                                    <div className="secondbottomrectleft">
+                                <div className="mainfinalsecondpagebottomrect">
+                                    <div className="mainfinalsecondbottomrectleft">
                                         <h1 id="numberchange3"><span>150</span>+</h1>
                                         <h3>Events</h3>
                                     </div>
-                                    <div className="secondbottomrectright"> <img src={events} alt="events" /></div>
+                                    <div className="mainfinalsecondbottomrectright"> <img src={events} alt="events" /></div>
                                 </div>
                             </div>
                         </div>
 
                     </div>
-                    {/* <div className="secondpagebottom">
-                <div className="secondpagebottomrect" id="pagereveal">
-                    <div className="secondbottomrectleft">
+                    {/* <div className="mainfinalsecondpagebottom">
+                <div className="mainfinalsecondpagebottomrect" id="pagereveal">
+                    <div className="mainfinalsecondbottomrectleft">
                             <h1 id="numberchange1"><span>100</span>k+</h1>
                             <h3>Footfall</h3>
                     </div>
-                    <div className="secondbottomrectright"> <img src="./foot svg-01.svg" alt=""></div>
+                    <div className="mainfinalsecondbottomrectright"> <img src="./foot svg-01.svg" alt=""></div>
             </div>
-                <div className="secondpagebottomrect">
-                    <div className="secondbottomrectleft">
+                <div className="mainfinalsecondpagebottomrect">
+                    <div className="mainfinalsecondbottomrectleft">
                             <h1 id="numberchange2"><span>1000</span>+</h1>
                             <h3 >Colleges</h3>
                     </div>
-                    <div className="secondbottomrectright"> <img src="./college svg-01.svg" alt=""></div>
+                    <div className="mainfinalsecondbottomrectright"> <img src="./college svg-01.svg" alt=""></div>
             </div>
-                <div className="secondpagebottomrect">
-                    <div className="secondbottomrectleft">
+                <div className="mainfinalsecondpagebottomrect">
+                    <div className="mainfinalsecondbottomrectleft">
                         <h1 id="numberchange3" id="trigger2"><span>150</span>+</h1>
                         <h3>Events</h3>
                     </div>
-                    <div className="secondbottomrectright"> <img src="./events svg-01.svg" alt=""></div>
+                    <div className="mainfinalsecondbottomrectright"> <img src="./events svg-01.svg" alt=""></div>
             </div>
             </div> */}
                 </div>
-                <div className="mainthirdpagecontainer" >
+                <div className="mainfinalmainthirdpagecontainer" >
 
-                    <div className="mainthirdinternalcontainer" id="litfestanimationtrigger">
-                        <div className="splitsvgcont1 lit">
+                    <div className="mainfinalmainthirdinternalcontainer" id="litfestanimationtrigger">
+                        <div className="mainfinalsplitsvgcont1 mainfinallit">
                             {/* <Litfestpen />*/}
-                            <svg version="1.1" className="splitlit" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            <svg version="1.1" className="mainfinalsplitlit" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                 width="612px" height="792px" viewBox="0 0 612 792" enableBackground="new 0 0 612 792" xmlSpace="preserve">
                                 <g>
                                     <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#41B6C4" points="450.397,438.752 341.321,490.775 336.055,402.83 
@@ -312,7 +325,7 @@ export default class HomeIndex extends React.Component {
                                 </g>
                             </svg>
                         </div>
-                        <div className="thomsomainattractions" id="m3move">
+                        <div className="mainfinalthomsomainattractions" id="m3move">
                             {/*    <Mainattraction />*/}
                             <svg id="mainattractionsvg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                 width="609.333px" height="212.171px" viewBox="0 0 609.333 212.171" enableBackground="new 0 0 609.333 212.171"
@@ -589,8 +602,8 @@ export default class HomeIndex extends React.Component {
 
                         </div>
 
-                        <div className="mainattractioninternal attraction1" id="litfestsvgtrigger">
-                            <div className="mainattractioninternalsvgcontainer">
+                        <div className="mainfinalmainattractioninternal mainfinalattraction1" id="litfestsvgtrigger">
+                            <div className="mainfinalmainattractioninternalsvgcontainer">
                                 {/*  <Litfest />*/}
                                 <svg version="1.1" id="mainattractioninternalsvgcontainerlitfestsvg" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                     viewBox="0 0 251.333 106.333" enableBackground="new 0 0 251.333 93.333"
@@ -706,17 +719,17 @@ export default class HomeIndex extends React.Component {
                                     </g>
                                 </svg>
                             </div>
-                            <div className="mainattractioninternaltextcontainer" id="pagethirdsecondpagerevealtrigger" >
+                            <div className="mainfinalmainattractioninternaltextcontainer" id="pagethirdsecondpagerevealtrigger" >
 
                                 <p id="litfestsvgtext">A plethora of events under banner of literati for quenching thirst of professional writers,eloquent poets and literature lovers.The Litfest brings together a seminal array of writers , authors , columnists , cartoonists , publishers , lyricists and our dear readers.</p>
                             </div>
                         </div>
 
                     </div>
-                    <div className="mainthirdinternalcontainer" id="workshopssvgtrigger" >
-                        <div className="splitsvgcont1 workgoncont work" >
+                    <div className="mainfinalmainthirdinternalcontainer" id="workshopssvgtrigger" >
+                        <div className="mainfinalsplitsvgcont1 mainfinalworkgoncont mainfinalwork" >
                             {/* <Workshopbulb /> */}
-                            <svg version="1.1" className="splitlit splitlit2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            <svg version="1.1" className="mainfinalsplitlit mainfinalsplitlit2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                 width="612px" height="792px" viewBox="0 0 612 792" enableBackground="new 0 0 612 792" xmlSpace="preserve">
                                 <g>
                                     <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="295.322,78.412 249.482,101.096 255.13,39.817 	" />
@@ -863,8 +876,8 @@ export default class HomeIndex extends React.Component {
                                 </g>
                             </svg>
                         </div>
-                        <div className="mainattractioninternal attraction2" id="workshoptrigger2">
-                            <div className="mainattractioninternalsvgcontainer">
+                        <div className="mainfinalmainattractioninternal mainfinalattraction2" id="workshoptrigger2">
+                            <div className="mainfinalmainattractioninternalsvgcontainer">
                                 {/*    <Workshops /> */}
                                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                     viewBox="0 0 3403 446.825" enableBackground="new 0 0 3403 446.825" xmlSpace="preserve">
@@ -1030,16 +1043,16 @@ export default class HomeIndex extends React.Component {
                                     </g>
                                 </svg>
                             </div>
-                            <div className="mainattractioninternaltextcontainer">
+                            <div className="mainfinalmainattractioninternaltextcontainer">
                                 <p id="workshoptext">To transform passive listening into interactive learning. Thomso organises workshops where knowledgeable personalities share their insightful experiences and conduct comprehensive sessions for students.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div className="mainthirdinternalcontainer" id="zonalssvgtrigger">
-                        <div className="splitsvgcont1 zonalgoncont zonal">
+                    <div className="mainfinalmainthirdinternalcontainer" id="zonalssvgtrigger">
+                        <div className="mainfinalsplitsvgcont1 mainfinalzonalgoncont mainfinalzonal">
                             {/* <Karvaan />*/}
-                            <svg version="1.1" className="splitlit splitlit2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            <svg version="1.1" className="mainfinalsplitlit mainfinalsplitlit2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                 width="841.89px" height="595.276px" viewBox="0 0 841.89 595.276" enableBackground="new 0 0 841.89 595.276"
                                 xmlSpace="preserve">
                                 <g>
@@ -1253,8 +1266,8 @@ export default class HomeIndex extends React.Component {
                                 </g>
                             </svg>
                         </div>
-                        <div className="mainattractioninternal attraction1" id="zonalstrigger">
-                            <div className="mainattractioninternalsvgcontainer">
+                        <div className="mainfinalmainattractioninternal mainfinalattraction1" id="zonalstrigger">
+                            <div className="mainfinalmainattractioninternalsvgcontainer">
                                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                     viewBox="0 0 3403 446.825" enableBackground="new 0 0 3403 446.825" xmlSpace="preserve">
                                     <g>
@@ -1363,7 +1376,7 @@ export default class HomeIndex extends React.Component {
                                     </g>
                                 </svg>
                             </div>
-                            <div className="mainattractioninternaltextcontainer">
+                            <div className="mainfinalmainattractioninternaltextcontainer">
 
                                 <p id="zonalstext">'Karwaan'-the Zonals of Thomso, IIT Roorkee are on initiative to connect Thomso to regions across the length and breadth of the country. Thomso carries out its 'Talent Hunt' at several cities to providethe college students and the cultural societies an opportunity to enter the finals of highly diverse and competitive events of Thomso.</p>
                             </div>
@@ -1371,9 +1384,10 @@ export default class HomeIndex extends React.Component {
 
                     </div>
 
-                    <div className="mainthirdinternalcontainer" id="onlineeventssvgtrigger">
-                        <div className="splitsvgcont1 onlinegongoncont online">
-                            <svg className="splitlit splitlit2" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    <div className="mainfinalmainthirdinternalcontainer" id="onlineeventssvgtrigger">
+                        <div className="mainfinalsplitsvgcont1 mainfinalonlinegongoncont mainfinalonline">
+                        
+                            {/* <svg className="mainfinalsplitlit mainfinalsplitlit2" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                 width="800px" height="800px" viewBox="0 0 800 800" enableBackground="new 0 0 800 800" xmlSpace="preserve">
                                 <polygon className="onlinegon" fill="#A71E36" points="344.676,236.348 332.55,229.058 337.471,222.029 " />
                                 <polygon className="onlinegon" fill="#F38888" points="349.773,248.214 332.199,250.499 344.676,236.348 " />
@@ -1874,11 +1888,353 @@ export default class HomeIndex extends React.Component {
                                 <polygon className="onlinegon" fill="#F9D7C1" points="560.932,560.126 543.74,567.564 538.956,547.528 " />
                                 <polygon className="onlinegon" fill="#EC3039" points="608.251,568.813 586.87,577.972 593.718,558.653 " />
                                 <polygon className="onlinegon" fill="#EF5054" points="622.195,560.778 608.251,568.813 607.429,547.291 607.508,547.291 " />
-                            </svg>
+                            </svg> */}
+                                            <svg className="mainfinalsplitlit mainfinalsplitlit2" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    width="841.89px" height="595.276px" viewBox="0 0 841.89 595.276" enable-background="new 0 0 841.89 595.276"
+                    xmlSpace="preserve">
+                <g>
+                    <g>
+                        <polygon className="onlinegon" fill="#A81E35" points="377.076,168.045 367.474,162.272 371.371,156.706 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="381.111,177.441 367.196,179.25 377.076,168.045 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="391.199,168.117 377.076,168.045 385.632,162.756 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="385.632,162.756 377.076,168.045 383.06,156.706 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="399.621,172.498 392.896,184.862 391.199,168.117 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="409.918,171.942 404.771,183.052 399.621,172.498 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="416.877,182.663 413.954,188.363 411.45,194.559 404.771,183.052 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="416.877,182.663 404.771,183.052 409.918,171.942 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="411.45,194.559 411.383,204.299 398.551,194.792 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="411.383,204.299 397.906,206.76 398.551,194.792 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="367.614,168.879 362.253,167.767 367.474,162.272 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="367.196,179.25 355.044,181.477 355.044,172.571 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="355.044,172.571 346.46,181.939 343.471,172.292 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="346.46,181.939 336.647,183.982 343.471,172.292 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="357.733,188.712 342.981,193.445 346.46,181.939 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="355.044,199.428 342.563,205.553 342.981,193.445 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="356.759,208.959 342.563,205.553 355.044,199.428 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="362.464,216.685 348.965,215.36 356.759,208.959 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="357.799,227.401 345.208,227.54 348.965,215.36 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="348.965,215.36 345.208,227.54 336.998,214.67 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="348.965,215.36 336.998,214.67 342.563,205.553 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="372.206,220.676 365.803,233.462 365.666,233.246 357.799,227.401 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="382.225,220.676 378.468,230.279 372.206,220.676 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="378.468,230.279 371.371,242.08 365.803,233.462 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="384.664,241.735 371.371,242.08 378.468,230.279 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="391.477,230.813 384.664,241.735 378.468,230.279 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="391.477,230.813 378.468,230.279 382.225,220.676 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="399.343,226.361 391.477,230.813 391.271,216.963 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="417.228,214.526 405.048,213.624 411.383,204.299 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="417.228,214.526 410.681,226.361 405.048,213.624 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="410.681,226.361 399.343,226.361 405.048,213.624 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="383.06,156.706 377.076,168.045 371.371,156.706 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="377.076,168.045 367.614,168.879 367.474,162.272 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="377.076,168.045 367.196,179.25 367.614,168.879 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="367.196,179.25 355.044,172.571 362.253,167.767 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="367.614,168.879 367.196,179.25 362.253,167.767 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="346.46,181.939 342.981,193.445 336.647,183.982 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="355.044,172.571 355.044,181.477 346.46,181.939 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="367.196,179.25 357.733,188.712 355.044,181.477 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="357.733,188.712 346.46,181.939 355.044,181.477 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="357.733,188.712 355.044,199.428 342.981,193.445 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="356.759,208.959 348.965,215.36 342.563,205.553 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="362.464,216.685 357.799,227.401 348.965,215.36 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="372.206,220.676 357.799,227.401 362.464,216.685 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="378.468,230.279 365.803,233.462 372.206,220.676 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="391.477,230.813 382.225,220.676 391.271,216.963 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="405.048,213.624 399.343,226.361 391.271,216.963 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="405.048,213.624 391.271,216.963 397.906,206.76 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="411.383,204.299 405.048,213.624 397.906,206.76 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="411.45,194.559 398.551,194.792 404.771,183.052 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="404.771,183.052 392.896,184.862 399.621,172.498 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="404.771,183.052 398.551,194.792 392.896,184.862 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="391.199,168.117 381.111,177.441 377.076,168.045 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="392.896,184.862 381.111,177.441 391.199,168.117 		"/>
+                    </g>
+                    <g>
+                        <polygon className="onlinegon" fill="#A81E35" points="401.875,298.386 401.913,284.219 410.481,284.839 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="394.294,308.861 383.303,294.929 401.875,298.386 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="410.958,313.762 401.875,298.386 413.166,304.243 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="413.166,304.243 401.875,298.386 418.064,297.527 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="411.665,325.744 393.883,326.464 410.958,313.762 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="418.949,336.56 403.548,338.179 411.665,325.744 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="411.825,351.067 403.743,351.593 395.394,352.893 403.548,338.179 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="411.825,351.067 403.548,338.179 418.949,336.56 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="395.394,352.893 384.776,359.139 386.773,339.045 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="384.776,359.139 373.364,346.106 386.773,339.045 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="394.831,288.655 392.562,282.116 401.913,284.219 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="383.303,294.929 373.005,283.184 382.673,277.407 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="382.673,277.407 366.937,274.167 375.468,264.665 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="366.937,274.167 358.353,264.839 375.468,264.665 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="366.893,290.795 352.191,277.853 366.937,274.167 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="353.52,294.828 338.778,285.254 352.191,277.853 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="344.288,302.87 338.778,285.254 353.52,294.828 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="339.602,314.075 332.284,298.563 344.288,302.87 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="324.946,315.962 316.627,302.386 332.284,298.563 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="332.284,298.563 316.627,302.386 325.271,285.126 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="332.284,298.563 325.271,285.126 338.778,285.254 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="341.588,327.238 323.557,328.583 323.704,328.291 324.946,315.962 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="348.087,338.114 335.228,340.263 341.588,327.238 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="335.228,340.263 317.816,340.213 323.557,328.583 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="326.812,354.417 317.816,340.213 335.228,340.263 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="343.085,354.731 326.812,354.417 335.228,340.263 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="343.085,354.731 335.228,340.263 348.087,338.114 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="353.021,360.379 343.085,354.731 357.985,345.522 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="377.467,372.116 370.546,358.311 384.776,359.139 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="377.467,372.116 360.376,372.686 370.546,358.311 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="360.376,372.686 353.021,360.379 370.546,358.311 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="418.064,297.527 401.875,298.386 410.481,284.839 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="401.875,298.386 394.831,288.655 401.913,284.219 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="401.875,298.386 383.303,294.929 394.831,288.655 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="383.303,294.929 382.673,277.407 392.562,282.116 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="394.831,288.655 383.303,294.929 392.562,282.116 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="366.937,274.167 352.191,277.853 358.353,264.839 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="382.673,277.407 373.005,283.184 366.937,274.167 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="383.303,294.929 366.893,290.795 373.005,283.184 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="366.893,290.795 366.937,274.167 373.005,283.184 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="366.893,290.795 353.52,294.828 352.191,277.853 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="344.288,302.87 332.284,298.563 338.778,285.254 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="339.602,314.075 324.946,315.962 332.284,298.563 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="341.588,327.238 324.946,315.962 339.602,314.075 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="335.228,340.263 323.557,328.583 341.588,327.238 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="343.085,354.731 348.087,338.114 357.985,345.522 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="370.546,358.311 353.021,360.379 357.985,345.522 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="370.546,358.311 357.985,345.522 373.364,346.106 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="384.776,359.139 370.546,358.311 373.364,346.106 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="395.394,352.893 386.773,339.045 403.548,338.179 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="403.548,338.179 393.883,326.464 411.665,325.744 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="403.548,338.179 386.773,339.045 393.883,326.464 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="410.958,313.762 394.294,308.861 401.875,298.386 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="393.883,326.464 394.294,308.861 410.958,313.762 		"/>
+                    </g>
+                    <g>
+                        <polygon className="onlinegon" fill="#A81E35" points="508.201,212.24 499.703,194.48 510.807,190.086 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="505.025,229.928 482.863,219.113 508.201,212.24 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="528.844,226.013 508.201,212.24 525.865,212.763 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="525.865,212.763 508.201,212.24 527.951,201.4 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="536.957,240.59 515.131,252.216 528.844,226.013 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="552.6,249.741 534.295,261.053 536.957,240.59 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="552.43,272.199 542.625,277.732 532.955,284.395 534.295,261.053 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="552.43,272.199 534.295,261.053 552.6,249.741 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="532.955,284.395 523.43,298.618 513.814,272.254 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="523.43,298.618 501.283,289.184 513.814,272.254 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="493.512,204.306 486.727,197.485 499.703,194.48 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="482.863,219.113 462.885,210.619 471.502,197.554 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="471.502,197.554 449.848,202.989 454.797,185.946 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="449.848,202.989 433.477,196.487 454.797,185.946 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="459.824,223.834 433.609,216.498 449.848,202.989 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="445.51,236.949 421.277,233.852 433.609,216.498 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="438.803,252.586 421.277,233.852 445.51,236.949 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="439.693,269.441 421.176,254.433 438.803,252.586 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="422.479,280.642 403.876,268.661 421.176,254.433 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="421.176,254.433 403.876,268.661 404.289,241.838 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="421.176,254.433 404.289,241.838 421.277,233.852 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="450.119,284.722 428.355,297.282 428.361,296.828 422.479,280.642 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="464.814,294.419 450.012,304.867 450.119,284.722 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="450.012,304.867 428.178,315.308 428.355,297.282 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="448.01,327.665 428.178,315.308 450.012,304.867 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="468.574,318.241 448.01,327.665 450.012,304.867 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="468.574,318.241 450.012,304.867 464.814,294.419 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="484.422,319.323 468.574,318.241 481.678,297.728 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="522.105,319.273 505.117,306.163 523.43,298.618 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="522.105,319.273 501.051,330.295 505.117,306.163 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="501.051,330.295 484.422,319.323 505.117,306.163 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="527.951,201.4 508.201,212.24 510.807,190.086 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="508.201,212.24 493.512,204.306 499.703,194.48 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="508.201,212.24 482.863,219.113 493.512,204.306 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="482.863,219.113 471.502,197.554 486.727,197.485 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="493.512,204.306 482.863,219.113 486.727,197.485 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="449.848,202.989 433.609,216.498 433.477,196.487 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="471.502,197.554 462.885,210.619 449.848,202.989 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="482.863,219.113 459.824,223.834 462.885,210.619 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="459.824,223.834 449.848,202.989 462.885,210.619 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="459.824,223.834 445.51,236.949 433.609,216.498 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="438.803,252.586 421.176,254.433 421.277,233.852 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="439.693,269.441 422.479,280.642 421.176,254.433 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="450.119,284.722 422.479,280.642 439.693,269.441 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="450.012,304.867 428.355,297.282 450.119,284.722 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="468.574,318.241 464.814,294.419 481.678,297.728 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="505.117,306.163 484.422,319.323 481.678,297.728 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="505.117,306.163 481.678,297.728 501.283,289.184 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="523.43,298.618 505.117,306.163 501.283,289.184 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="532.955,284.395 513.814,272.254 534.295,261.053 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="534.295,261.053 515.131,252.216 536.957,240.59 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="534.295,261.053 513.814,272.254 515.131,252.216 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="528.844,226.013 505.025,229.928 508.201,212.24 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="515.131,252.216 505.025,229.928 528.844,226.013 		"/>
+                    </g>
+                    <g>
+                        <polygon className="onlinegon" fill="#EF4F54" points="324.45,202.481 312.2,220.22 301.47,202.481 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="312.2,220.22 290.28,220.22 301.47,202.481 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="301.47,202.481 290.28,220.22 278.61,202.481 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="290.28,220.22 272.75,220.22 278.61,202.481 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="278.61,202.481 272.75,220.22 263.49,202.481 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="272.75,220.22 255.79,210.321 263.49,202.481 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="272.75,220.22 255.79,226.701 255.79,210.321 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="272.75,220.22 272.75,234.861 255.79,226.92 255.79,226.701 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="272.75,234.861 255.79,242.05 255.79,226.92 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="272.75,234.861 272.75,250.55 255.79,242.05 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="272.75,250.55 255.79,257.05 255.79,242.05 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="272.75,262.241 255.79,270.67 255.79,257.05 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="272.75,262.241 272.75,275.67 255.79,270.67 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="272.75,275.67 255.79,283.741 255.79,270.67 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="272.75,275.67 272.75,290.11 255.79,283.741 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="272.75,290.11 255.79,297.491 255.79,283.741 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="272.75,290.11 272.75,303.21 255.79,297.491 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="272.75,303.21 255.79,310.55 255.79,297.491 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="272.75,303.21 272.75,317.61 255.79,310.55 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="272.75,317.61 255.79,326.741 255.79,310.55 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="272.75,317.61 272.75,333.05 255.79,326.741 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="272.75,333.05 255.79,341.11 255.79,326.741 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="272.75,333.05 272.75,347.05 255.79,341.11 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="272.75,347.05 272.75,359.93 255.79,352.491 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="272.75,359.93 255.79,367.17 255.79,352.491 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="272.75,359.93 272.75,375.241 255.79,367.17 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="272.75,375.241 255.79,382.36 255.79,367.17 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="272.75,375.241 272.75,386.89 255.79,382.36 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="272.75,386.89 255.79,396.241 255.79,382.36 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="272.75,386.89 263.85,403.94 255.79,396.241 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="280.91,403.94 263.85,403.94 272.75,386.89 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="290.97,386.89 280.91,403.94 272.75,386.89 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="298.15,403.94 280.91,403.94 290.97,386.89 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="308.28,386.89 298.15,403.94 290.97,386.89 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="317.22,403.94 298.15,403.94 308.28,386.89 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="327.15,386.89 317.22,403.94 308.28,386.89 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="335.15,403.94 317.22,403.94 327.15,386.89 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="343.47,386.89 335.15,403.94 327.15,386.89 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="352.34,403.94 335.15,403.94 343.47,386.89 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="360.65,386.89 352.34,403.94 343.47,386.89 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="368.41,403.94 352.34,403.94 360.65,386.89 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="377.47,386.89 368.41,403.94 360.65,386.89 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="385.84,403.94 368.41,403.94 377.47,386.89 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="394.22,386.89 385.84,403.94 377.47,386.89 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="402.78,403.94 385.84,403.94 394.22,386.89 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="411.84,386.89 402.78,403.94 394.22,386.89 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="419.589,403.94 402.78,403.94 411.84,386.89 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="428.029,386.89 419.589,403.94 411.84,386.89 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="435.529,403.94 419.589,403.94 428.029,386.89 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="444.41,386.89 435.529,403.94 428.029,386.89 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="454.91,403.94 435.529,403.94 444.41,386.89 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="463.59,386.89 454.91,403.94 444.41,386.89 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="471.359,403.94 454.91,403.94 463.59,386.89 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="479.59,386.89 471.359,403.94 463.59,386.89 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="486.84,403.94 471.359,403.94 479.59,386.89 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="496.279,386.89 486.84,403.94 479.59,386.89 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="505.65,403.94 486.84,403.94 496.279,386.89 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="513.41,386.89 505.65,403.94 496.279,386.89 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="521.721,403.94 505.65,403.94 513.41,386.89 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="528.32,386.89 521.721,403.94 513.41,386.89 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="535.529,403.94 521.721,403.94 528.32,386.89 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="542.891,386.89 535.529,403.94 528.32,386.89 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="551.74,403.94 535.529,403.94 542.891,386.89 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="557.51,386.89 551.74,403.94 542.891,386.89 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="566.721,403.94 551.74,403.94 557.51,386.89 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="568.41,386.89 566.721,403.94 557.51,386.89 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="578.49,403.94 566.721,403.94 568.41,386.89 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="586.1,395.14 578.49,403.94 568.41,386.89 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="586.1,378.17 586.1,395.14 568.41,386.89 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="586.1,378.17 568.41,386.89 568.41,370.17 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="586.1,361.8 586.1,378.17 568.41,370.17 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="586.1,361.8 568.41,370.17 568.41,355.67 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="586.1,348.3 586.1,361.8 568.41,355.67 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="586.1,348.3 568.41,355.67 568.41,340.61 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="586.1,329.991 586.1,348.3 568.41,340.61 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="586.1,329.991 568.41,340.61 568.41,321.05 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="586.1,309.36 586.1,329.991 568.41,321.05 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="586.1,309.36 568.41,321.05 568.41,300.17 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="586.1,289.55 586.1,309.36 568.41,300.17 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="586.1,289.55 568.41,300.17 568.41,279.05 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="586.1,267.86 586.1,289.55 568.41,279.05 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="586.1,267.86 568.41,279.05 568.41,260.43 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="586.1,252.861 586.1,267.86 568.41,260.43 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="586.1,252.861 568.41,260.43 568.41,246.05 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="586.1,239.93 586.1,252.861 568.41,246.05 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="586.1,239.93 568.41,246.05 568.41,232.43 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="586.1,223.991 586.1,239.93 568.41,232.43 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="586.1,223.991 568.41,232.43 568.41,220.491 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="586.1,208.81 586.1,223.991 568.41,220.491 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="586.1,208.81 568.41,220.491 578.76,202.481 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="578.76,202.481 568.41,220.491 559.91,202.481 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="568.41,220.491 549.699,220.46 559.91,202.481 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="559.91,202.481 549.699,220.46 549.799,202.481 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="324.45,202.481 324.45,220.22 312.2,220.22 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="272.75,250.55 272.75,262.241 255.79,257.05 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="272.75,347.05 255.79,352.491 255.79,341.11 		"/>
+                        <polyline fill="none" stroke="#EF4F54" stroke-miterlimit="10" points="255.79,226.92 255.53,226.8 255.79,226.701 		"/>
+                    </g>
+                    <g>
+                        <g>
+                            <polygon className="onlinegon" fill="#A81E35" points="608.199,422.71 594.221,427.67 601.529,414.22 			"/>
+                            <polygon className="onlinegon" fill="#EF4F54" points="608.199,422.71 608.199,431.27 594.221,427.67 			"/>
+                            <polygon className="onlinegon" fill="#FBD8C2" points="608.199,431.27 602.09,438.57 594.221,427.67 			"/>
+                            <polygon className="onlinegon" fill="#FBD8C2" points="601.529,414.22 577.84,425.17 566.221,414.34 571.209,414.32 585.129,414.27 585.27,414.27 			
+                                "/>
+                            <polygon className="onlinegon" fill="#ED2E38" points="592.59,438.57 570.09,438.57 577.84,425.17 			"/>
+                            <polygon className="onlinegon" fill="#A81E35" points="570.09,438.57 521.721,438.57 551.74,431.43 			"/>
+                            <polygon className="onlinegon" fill="#A81E35" points="542.221,414.42 521.721,438.57 519.471,414.5 530.98,414.46 			"/>
+                            <polygon className="onlinegon" fill="#F38889" points="521.721,438.57 491.279,438.57 499.779,424.3 			"/>
+                            <polygon className="onlinegon" fill="#F38889" points="486.84,414.621 473.699,425.13 460.721,414.71 477.02,414.65 			"/>
+                            <polygon className="onlinegon" fill="#EF4F54" points="473.699,425.13 459.221,419.1 460.721,414.71 			"/>
+                            <polygon className="onlinegon" fill="#EF4F54" points="473.699,425.13 454.539,422.71 459.221,419.1 			"/>
+                            <polygon className="onlinegon" fill="#A81E35" points="466.779,438.57 444.41,438.57 454.539,422.71 			"/>
+                            <polygon className="onlinegon" fill="#FBD8C2" points="454.539,422.71 444.41,438.57 432.949,422.71 			"/>
+                            <polygon className="onlinegon" fill="#F38889" points="444.41,438.57 420.949,438.57 432.949,422.71 			"/>
+                            <polygon className="onlinegon" fill="#ED2E38" points="432.949,422.71 420.949,438.57 408.45,422.71 			"/>
+                            <polygon className="onlinegon" fill="#A81E35" points="420.949,438.57 395.58,438.57 395.56,438.531 408.45,422.71 			"/>
+                            <polygon className="onlinegon" fill="#EF4F54" points="408.45,422.71 395.56,438.531 387.09,422.71 			"/>
+                            <polygon className="onlinegon" fill="#EF4F54" points="395.54,438.55 395.53,438.57 355.61,438.57 375.08,429.3 			"/>
+                            <polygon className="onlinegon" fill="#EF4F54" points="387.09,422.71 375.08,429.3 382.53,419.34 			"/>
+                            <polygon className="onlinegon" fill="#EF4F54" points="382.53,419.34 375.08,429.3 380.56,414.22 			"/>
+                            <polygon className="onlinegon" fill="#A81E35" points="380.56,414.22 359.61,423.8 334.15,414.22 			"/>
+                            <polygon className="onlinegon" fill="#FBD8C2" points="375.08,429.3 355.61,438.57 359.61,423.8 			"/>
+                            <polygon className="onlinegon" fill="#FBD8C2" points="359.61,423.8 335.31,429.86 334.15,414.22 			"/>
+                            <polygon className="onlinegon" fill="#A81E35" points="355.61,438.57 328.72,438.57 335.31,429.86 			"/>
+                            <polygon className="onlinegon" fill="#EF4F54" points="328.72,438.57 310.09,438.57 319.22,426.67 			"/>
+                            <polygon className="onlinegon" fill="#FBD8C2" points="314.41,414.22 296.78,422.55 272.38,414.22 			"/>
+                            <polygon className="onlinegon" fill="#ED2E38" points="296.78,422.55 277.65,428.43 272.38,414.22 			"/>
+                            <polygon className="onlinegon" fill="#F38889" points="291.41,438.57 253.28,438.57 253.53,438.13 277.65,428.43 			"/>
+                            <polygon className="onlinegon" fill="#F38889" points="272.38,414.22 261.53,423.991 253.91,414.22 			"/>
+                            <polygon className="onlinegon" fill="#ED2E38" points="253.28,438.57 241.6,438.57 245.53,426.39 			"/>
+                            <polygon className="onlinegon" fill="#EF4F54" points="245.53,426.39 233.69,431.411 233.69,421.26 			"/>
+                            <polygon className="onlinegon" fill="#EF4F54" points="245.53,426.39 241.6,438.57 241.39,438.38 233.69,431.411 			"/>
+                            <polygon className="onlinegon" fill="#FBD8C2" points="245.53,426.39 233.69,421.26 233.98,420.991 240.95,414.22 			"/>
+                            <polygon className="onlinegon" fill="#EF4F54" points="253.91,414.22 245.53,426.39 240.95,414.22 			"/>
+                            <polygon className="onlinegon" fill="#EF4F54" points="310.09,438.57 291.41,438.57 296.78,422.55 			"/>
+                            <polygon className="onlinegon" fill="#ED2E38" points="334.15,414.22 319.22,426.67 314.41,414.22 			"/>
+                            <polygon className="onlinegon" fill="none" points="395.58,438.57 395.53,438.57 395.54,438.55 395.56,438.531 			"/>
+                            <polygon className="onlinegon" fill="#EF4F54" points="491.279,438.57 466.779,438.57 473.699,425.13 			"/>
+                            <polygon className="onlinegon" fill="#EF4F54" points="519.471,414.5 499.779,424.3 486.84,414.621 492.359,414.6 492.391,414.6 510.869,414.531 			"/>
+                            <polygon className="onlinegon" fill="#ED2E38" points="565.99,414.34 551.74,431.43 542.221,414.42 553.629,414.38 			"/>
+                        </g>
+                        <polygon className="onlinegon" fill="#EF4F54" points="261.53,423.991 253.53,438.13 253.28,438.57 245.53,426.39 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="277.65,428.43 261.53,423.991 272.38,414.22 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="261.53,423.991 245.53,426.39 253.91,414.22 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="296.78,422.55 291.41,438.57 277.65,428.43 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="277.65,428.43 253.53,438.13 261.53,423.991 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="359.61,423.8 355.61,438.57 335.31,429.86 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="335.31,429.86 319.22,426.67 334.15,414.22 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="319.22,426.67 296.78,422.55 314.41,414.22 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="319.22,426.67 310.09,438.57 296.78,422.55 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="335.31,429.86 328.72,438.57 319.22,426.67 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="380.56,414.22 375.08,429.3 359.61,423.8 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="473.699,425.13 466.779,438.57 454.539,422.71 		"/>
+                        <polygon className="onlinegon" fill="#ED2E38" points="521.721,438.57 499.779,424.3 519.471,414.5 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="499.779,424.3 473.699,425.13 486.84,414.621 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="499.779,424.3 491.279,438.57 473.699,425.13 		"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="551.74,431.43 521.721,438.57 542.221,414.42 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="577.84,425.17 570.09,438.57 551.74,431.43 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="577.84,425.17 551.74,431.43 565.99,414.34 566.221,414.34 		"/>
+                        <polygon className="onlinegon" fill="none" points="566.221,414.34 565.99,414.34 566.09,414.22 		"/>
+                        <polygon className="onlinegon" fill="#EF4F54" points="602.09,438.57 592.59,438.57 594.221,427.67 		"/>
+                        <polygon className="onlinegon" fill="#A81E35" points="594.221,427.67 592.59,438.57 577.84,425.17 		"/>
+                        <polygon className="onlinegon" fill="#F38889" points="601.529,414.22 594.221,427.67 577.84,425.17 		"/>
+                        <line fill="none" x1="395.58" y1="438.57" x2="395.54" y2="438.55"/>
+                        <polygon className="onlinegon" fill="#FBD8C2" points="395.56,438.531 395.54,438.55 375.08,429.3 387.09,422.71 		"/>
+                    </g>
+                </g>
+                </svg>
 
                         </div>
-                        <div className="mainattractioninternal attraction2" id="onlinetrigger" >
-                            <div className="mainattractioninternalsvgcontainer">
+                        <div className="mainfinalmainattractioninternal mainfinalattraction2" id="onlinetrigger" >
+                            <div className="mainfinalmainattractioninternalsvgcontainer">
                                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                     viewBox="0 0 3403 446.825" enableBackground="new 0 0 3403 446.825" xmlSpace="preserve">
                                     <g>
@@ -2055,15 +2411,15 @@ export default class HomeIndex extends React.Component {
                                 </svg>
 
                             </div>
-                            <div className="mainattractioninternaltextcontainer">
+                            <div className="mainfinalmainattractioninternaltextcontainer">
 
-                                <p id="onlineeventstext">A plethora of events under banner of literati for quenching thirst of professional writers,eloquent poets and literature lovers.The Litfest brings together a seminal array of writers , authors , columnists , cartoonists , publishers , lyricists and our dear readers.</p>
+                                <p id="mainfinalonlineeventstext">A plethora of events under banner of literati for quenching thirst of professional writers,eloquent poets and literature lovers.The Litfest brings together a seminal array of writers , authors , columnists , cartoonists , publishers , lyricists and our dear readers.</p>
                             </div>
                         </div>
                     </div>
-                    <div className="mainthirdinternalcontainer" id="carnivalsssvgtrigger">
-                        <div className="splitsvgcont1 carnivalgoncont carn">
-                            <svg version="1.1" className="splitlit splitlit2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    <div className="mainfinalmainthirdinternalcontainer" id="carnivalsssvgtrigger">
+                        <div className="mainfinalsplitsvgcont1 mainfinalcarnivalgoncont mainfinalcarn">
+                            <svg version="1.1" className="mainfinalsplitlit mainfinalsplitlit2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                 width="841.89px" height="595.276px" viewBox="0 0 841.89 595.276" enableBackground="new 0 0 841.89 595.276"
                                 xmlSpace="preserve">
                                 <polygon className="carngon" fill="#FFF85F" points="463.135,469.63 422.585,488.7 421.965,488.7 414.745,469.63 " />
@@ -2427,8 +2783,8 @@ export default class HomeIndex extends React.Component {
                             </svg>
 
                         </div>
-                        <div className="mainattractioninternal attraction1" id="carnivalstrigger">
-                            <div className="mainattractioninternalsvgcontainer">
+                        <div className="mainfinalmainattractioninternal mainfinalattraction1" id="carnivalstrigger">
+                            <div className="mainfinalmainattractioninternalsvgcontainer">
                                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                     viewBox="0 0 3403 446.825" enableBackground="new 0 0 3403 446.825" xmlSpace="preserve">
                                     <g>
@@ -2551,32 +2907,32 @@ export default class HomeIndex extends React.Component {
                                     </g>
                                 </svg>
                             </div>
-                            <div className="mainattractioninternaltextcontainer">
+                            <div className="mainfinalmainattractioninternaltextcontainer">
 
                                 <p id="carnivaltext">A carnival exhilerates the fanatics with euphoria and ecstasy, Thomso carnival is no exception to the fact. With events ranging from Paintball to Body Zorbing , Human foosball to dodgeball, magic shows to boulevard games , it is the showstopper of Thomso for the whole three days.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="mainpage4">
-                    <div className="mainpage-carousel-desktop">
+                <div className="mainfinalmainpage4">
+                    <div className="mainfinalmainpage-carousel-desktop">
                         {this.state.carouselDisplay ? null : <Carousel />}
                     </div>
-                    <div className="mainpage-carousel-mobile">
+                    <div className="mainfinalmainpage-carousel-mobile">
                         {this.state.carouselDisplay ? <MobileCarousel /> :null}
                     </div>
                 </div>
-                <div className="mainpage5">
-                    <div className="mainpage5-thomsologo">
+                <div className="mainfinalmainpage5">
+                    <div className="mainfinalmainpage5-thomsologo">
                         <img src={logosvg} alt="" />
                     </div>
-                    <div className="mainpage5con">
-                        <div className="mainpagecontainer-outer-left">
-                            <div className="mainpage5container-inner">
-                                <div className="mainpage5container-inner-in">
-                                    <div className="mainpage5imgandtextcont">
-                                        <div className="mainpage5container-inner-in-left"><img src={phone} alt="" srcSet="" /></div>
-                                        <div className="mainpage5container-inner-in-right">
+                    <div className="mainfinalmainpage5con">
+                        <div className="mainfinalmainpagecontainer-outer-left">
+                            <div className="mainfinalmainpage5container-inner">
+                                <div className="mainfinalmainpage5container-inner-in">
+                                    <div className="mainfinalmainpage5imgandtextcont">
+                                        <div className="mainfinalmainpage5container-inner-in-left"><img src={phone} alt="" srcSet="" /></div>
+                                        <div className="mainfinalmainpage5container-inner-in-right">
                                             <h1><b>Contact</b></h1>
                                             <h4>Suyash Singh (Convener)</h4>
                                             <h4>+91-8417954805</h4>
@@ -2587,12 +2943,12 @@ export default class HomeIndex extends React.Component {
                                             
                                         </div>
                                     </div>
-                                    <div className="mainpage5container-inner-in-right-righter">
-                                        <div className="mainpagecontainer-outer-rightin">
-                                            <div className="mainpagecontainer-outer-rightin-inner">
-                                                <div className="mainpagecontainer-outer-rightin-inner-inside"><Link to="/comingSoon">Team Page<span><img src={rightarrow} alt="right-arrow" srcSet="" /></span></Link>
+                                    <div className="mainfinalmainpage5container-inner-in-right-righter">
+                                        <div className="mainfinalmainpagecontainer-outer-rightin">
+                                            <div className="mainfinalmainpagecontainer-outer-rightin-inner">
+                                                <div className="mainfinalmainpagecontainer-outer-rightin-inner-inside"><Link to="/comingSoon">Team Page<span><img src={rightarrow} alt="right-arrow" srcSet="" /></span></Link>
 
-                                                    {/* <div className="mainpage5internalsvgcontainer">
+                                                    {/* <div className="mainfinalmainpage5internalsvgcontainer">
                                                                     <img src="./right-arrow.svg" alt="right-arrow" srcSet="">
                                                              </div>    */}
 
@@ -2601,11 +2957,11 @@ export default class HomeIndex extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="mainpage5container-inner address-last-page">
-                                    <div className="mainpage5container-inner-in">
-                                        <div className="mainpage5imgandtextcont">
-                                            <div className="mainpage5container-inner-in-left"><img src={address} alt="address" /></div>
-                                            <div className="mainpage5container-inner-in-right">
+                                <div className="mainfinalmainpage5container-inner address-last-page">
+                                    <div className="mainfinalmainpage5container-inner-in">
+                                        <div className="mainfinalmainpage5imgandtextcont">
+                                            <div className="mainfinalmainpage5container-inner-in-left"><img src={address} alt="address" /></div>
+                                            <div className="mainfinalmainpage5container-inner-in-right">
                                                 <h1><b>Address</b></h1>
                                                 <h4>THOMSO OFFICE</h4>
                                                 <h4> Multi Activity Centre</h4>
@@ -2614,12 +2970,12 @@ export default class HomeIndex extends React.Component {
                                                 <h4>646774373474</h4>
                                             </div>
                                         </div>
-                                        <div className="mainpage5container-inner-in-right-righter">
-                                            <div className="mainpagecontainer-outer-rightin">
-                                                <div className="mainpagecontainer-outer-rightin-inner">
-                                                    <div className="mainpagecontainer-outer-rightin-inner-inside">
+                                        <div className="mainfinalmainpage5container-inner-in-right-righter">
+                                            <div className="mainfinalmainpagecontainer-outer-rightin">
+                                                <div className="mainfinalmainpagecontainer-outer-rightin-inner">
+                                                    <div className="mainfinalmainpagecontainer-outer-rightin-inner-inside">
                                                         <a target="_blank" rel="noopener noreferrer" href="https://goo.gl/maps/b9xPn3VcGVF2">Get Directions <span><img src={rightarrow} alt="right-arrow" /></span></a>
-                                                        {/*- <div className="mainpage5internalsvgcontainer">
+                                                        {/*- <div className="mainfinalmainpage5internalsvgcontainer">
                                                                             <img src="./right-arrow.svg" alt="right-arrow" srcSet="">
                                                                      </div>    */}
                                                     </div>
@@ -2679,6 +3035,7 @@ export default class HomeIndex extends React.Component {
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         )
     }

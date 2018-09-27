@@ -73,6 +73,18 @@ export default class WhyThomso extends Component {
                         </div>
                     </div>
                     <div className="whythomso-second-child-middle">
+                        <div className="whythomso-second-child-the-legacy">
+                            <div className="whythomso-second-child-the-legacy-image">
+                            </div>
+                            <div className="whythomso-second-child-the-legacy-content">
+                                <div className="whythomso-second-child-the-legacy-content-heading">
+                                    <h3>The Legacy</h3>
+                                </div>
+                                <div className="whythomso-second-child-the-legacy-content-content">
+                                    <p>The 170 years old legacy of IIT Roorkee and 35+ successful years of Thomso are itself a testimony to the fest's grandeur</p>
+                                </div>
+                            </div>
+                        </div>
                         <div className="whythomso-second-child-the-institute">
                             <div className="whythomso-second-child-the-institute-image">
                                 <iframe src="https://www.youtube.com/embed/6T_T07hglvk" title="IITR Drone View" height="150px" width="100%" frameBorder="0" allowFullScreen>
@@ -84,18 +96,6 @@ export default class WhyThomso extends Component {
                                 </div>
                                 <div className="whythomso-second-child-the-institute-content-content">
                                     <p>Amidst the foothills of Himalayas,fastering the spirit of adventure and excitement is located IIT Roorkee</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="whythomso-second-child-the-legacy">
-                            <div className="whythomso-second-child-the-legacy-image">
-                            </div>
-                            <div className="whythomso-second-child-the-legacy-content">
-                                <div className="whythomso-second-child-the-legacy-content-heading">
-                                    <h3>The Legacy</h3>
-                                </div>
-                                <div className="whythomso-second-child-the-legacy-content-content">
-                                    <p>The 170 years old legacy of IIT Roorkee and 35+ successful years of Thomso are itself a testimony to the fest's grandeur</p>
                                 </div>
                             </div>
                         </div>
@@ -267,187 +267,221 @@ export default class WhyThomso extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="whythomso-sixth-child">
-                        <div className="whythomso-sixth-child-top">
-                            <div className="whythomso-sixth-child-faq">
-                                <h3>FAQS</h3>
+                    <a id="faqs" name="faqs">
+                        <div id="faqs" name="faqs" className="whythomso-sixth-child">
+                            <div className="whythomso-sixth-child-top">
+                                <div className="whythomso-sixth-child-faq">
+                                    <h3>FAQS</h3>
+                                </div>
                             </div>
-                        </div>
-                        <div className="whythomso-sixth-child-middle">
-                            <div className="whythomso-sixth-child-middle-columnone">
-                                <div className="whythomso-faqs-ansque-one">
-                                    <div className="whythomso-faqs-question">
-                                        <span><strong>Q</strong></span>
-                                        <span> Are there any extra changes for pronites?</span>
+                            <div className="whythomso-sixth-child-middle">
+                                <div className="whythomso-sixth-child-middle-columnone">
+                                    <div className="whythomso-faqs-ansque-one">
+                                        <div className="whythomso-faqs-height">
+                                            <div className="whythomso-faqs-question">
+                                                <span><strong>Q</strong></span>
+                                                <span>What is the registration fee for Thomso’18?</span>
+                                            </div>
+                                            <div className="whythomso-faqs-answer">
+                                                <span><strong>A</strong></span> <span>Registration fee with accommodation is Rs. 2100 and Rs. 1600 without accommodation. Once paid, fee is non-refundable</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className="whythomso-faqs-answer">
-                                        <span><strong>A</strong></span> <span>No, Registration fee is inclusive of pronites passes..</span>
+                                    <div className="whythomso-faqs-ansque-two">
+                                        <div className="whythomso-faqs-height">
+                                            <div className="whythomso-faqs-question">
+                                                <span><strong>Q</strong></span>
+                                                <span>Where to REGISTER for Thomso’18?</span>
+                                            </div>
+                                            <div className="whythomso-faqs-answer">
+                                                <span><strong>A</strong></span> <span>You can register at <Link to="/main/register">Register for Thomso'18</Link></span>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="whythomso-faqs-ansque-two">
-                                    <div className="whythomso-faqs-question">
-                                        <span><strong>Q</strong></span>
-                                        <span>Where to REGISTER for Thomso’18?</span>
+                                    <div className="whythomso-faqs-ansque-three">
+                                        <div className="whythomso-faqs-height">
+                                            <div className="whythomso-faqs-question">
+                                                <span><strong>Q</strong></span>
+                                                <span>What is the LAST DATE for registration?</span>
+                                            </div>
+                                            <div className="whythomso-faqs-answer">
+                                                <span><strong>A</strong></span><span>As such there is no last date for registration but there are limited entries, so register as soon as possible.</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className="whythomso-faqs-answer">
-                                        <span><strong>A</strong></span> <span>You can register at <Link to="/">www.thomso.in</Link></span>
+                                    <div className="whythomso-faqs-ansque-fifth">
+                                        <div className="whythomso-faqs-height">
+                                            <div className="whythomso-faqs-question">
+                                                <span><strong>Q</strong></span>
+                                                <span>Are there any extra charges for pronites?</span>
+                                            </div>
+                                            <div className="whythomso-faqs-answer">
+                                                <span><strong>A</strong></span> <span>No, Registration fee is inclusive of pronites passes.</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="whythomso-faqs-ansque-three">
-                                    <div className="whythomso-faqs-question">
-                                        <span><strong>Q</strong></span>
-                                        <span>What is the LAST DATE for registration?</span>
-                                    </div>
-                                    <div className="whythomso-faqs-answer">
-                                        <span><strong>A</strong></span><span>As such there is no last date for registration but there are limited entries, so register as soon as possible.</span>
-                                    </div>
-                                </div>
-                                <div className="whythomso-faqs-ansque-four">
-                                    <div className="whythomso-faqs-question">
-                                        <span><strong>Q</strong></span>
-                                        <span>How to reach IIT Roorkee?</span>
-                                    </div>
-                                    <div className="whythomso-faqs-answer">
-                                        <span><strong>A</strong></span> <span>
-                                            Visit
-                                        <a href="https://www.iitr.ac.in/institute/pages/How_to_reach_IIT_Roorkee.html"> https://www.iitr.ac.in/institute/pages/How_to_reach_IIT_Roorkee.html for complete details.
-                                        </a></span>
-                                    </div>
-                                </div>
-                                <div className="whythomso-faqs-ansque-fifth">
-                                    <div className="whythomso-faqs-question">
-                                        <span><strong>Q</strong></span>
-                                        <span>What is the REGISTRATION FEE for Thomso’18?</span>
-                                    </div>
-                                    <div className="whythomso-faqs-answer">
-                                        <span><strong>A</strong></span> <span>Registration fee with accommodation is Rs. 2100 and Rs. 1700 without accommodation. Once paid, fee is non-refundable.</span>
-                                    </div>
-                                </div>
-                                <div className="whythomso-faqs-ansque-sixth">
-                                    <div className="whythomso-faqs-question">
-                                        <span><strong>Q</strong></span>
-                                        <span>Are there extra charges for workshops?</span>
-                                    </div>
-                                    <div className="whythomso-faqs-answer">
-                                        <span><strong>A</strong></span>
-                                        <span>Yes. Visit
-                                            <a href="http://thomso.in/workshop"> http://thomso.in/workshop </a> for more details.
+                                    <div className="whythomso-faqs-ansque-sixth">
+                                        <div className="whythomso-faqs-height">
+                                            <div className="whythomso-faqs-question">
+                                                <span><strong>Q</strong></span>
+                                                <span>Are there extra charges for workshops?</span>
+                                            </div>
+                                            <div className="whythomso-faqs-answer">
+                                                <span><strong>A</strong></span>
+                                                <span>Yes. Visit
+                                            <a href="http://thomso.in/workshop"> Workshops </a> for more details.
                                         </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="whythomso-faqs-ansque-sixth">
+                                        <div className="whythomso-faqs-height">
+                                            <div className="whythomso-faqs-question">
+                                                <span><strong>Q</strong></span>
+                                                <span>Is personal vehicle allowed inside the campus?</span>
+                                            </div>
+                                            <div className="whythomso-faqs-answer">
+                                                <span><strong>A</strong></span>
+                                                <span>
+                                                    No, personal vehicles are not allowed inside the campus.
+                                        </span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div className="whythomso-sixth-child-middle-columntwo">
-                                <div className="whythomso-faqs-ansque-columntwo-one">
-                                    <div className="whythomso-faqs-question">
-                                        <span><strong>Q</strong></span>
-                                        <span>What is the date of Thomso’18?</span>
+                                <div className="whythomso-sixth-child-middle-columntwo">
+                                    <div className="whythomso-faqs-ansque-columntwo-one">
+                                        <div className="whythomso-faqs-height">
+                                            <div className="whythomso-faqs-question">
+                                                <span><strong>Q</strong></span>
+                                                <span>What is the date of Thomso’18?</span>
+                                            </div>
+                                            <div className="whythomso-faqs-answer">
+                                                <span><strong>A</strong></span> <span>Thomso is from 26th to 28th October.</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className="whythomso-faqs-answer">
-                                        <span><strong>A</strong></span> <span>Thomso is from 26th to 28th October.</span>
+                                    <div className="whythomso-faqs-ansque-columntwo-two">
+                                        <div className="whythomso-faqs-height">
+                                            <div className="whythomso-faqs-question">
+                                                <span><strong>Q</strong></span>
+                                                <span>From where we can get information for events for Thomso’18?</span>
+                                            </div>
+                                            <div className="whythomso-faqs-answer">
+                                                <span><strong>A</strong></span> <span>Visit<Link to="/events"> www.thomso.in/events
+                                        </Link> for details of all the events and their registration.</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="whythomso-faqs-ansque-columntwo-two">
-                                    <div className="whythomso-faqs-question">
-                                        <span><strong>Q</strong></span>
-                                        <span>From where we can get information for events for Thomso’18?</span>
-                                    </div>
-                                    <div className="whythomso-faqs-answer">
-                                        <span><strong>A</strong></span> <span><a href="www.thomso.in/events">Visit www.thomso.in/events for details of all the events and their registration.
-                                        </a></span>
-                                    </div>
-                                </div>
-                                <div className="whythomso-faqs-ansque-columntwo-three">
-                                    <div className="whythomso-faqs-question">
-                                        <span><strong>Q</strong></span>
-                                        <span>How do I get to Roorkee?</span>
-                                    </div>
-                                    <div className="whythomso-faqs-answer">
-                                        <span><strong>A</strong></span><span> By Airways<br />
-                                            The nearest airport to Roorkee is situated in Dehradun, around 70km away, so one
+                                    <div className="whythomso-faqs-ansque-columntwo-three">
+                                        <div className="whythomso-faqs-height">
+                                            <div className="whythomso-faqs-question">
+                                                <span><strong>Q</strong></span>
+                                                <span>How do I get to Roorkee?</span>
+                                            </div>
+                                            <div className="whythomso-faqs-answer">
+                                                <span><strong>A</strong></span><span> By Airways<br />
+                                                    The nearest airport to Roorkee is situated in Dehradun, around 70km away, so one
                                             could easily take a taxi or bus to reach Roorkee.<br />
-                                            By Railways<br />
-                                            Trains are one of the easiest ways through which we could reach Roorkee, especially
+                                                    By Railways<br />
+                                                    Trains are one of the easiest ways through which we could reach Roorkee, especially
                                             for a long distance journey.<br />
-                                            By Bus<br />
-                                            Buses can be obtained either from I.S.B.T. Kashmiri Gate, Delhi or from I.S.B.T.
-                                            Anand Vihar Ghaziabad. A taxi is also an option of course, but you should be warned
+                                                    By Bus<br />
+                                                    Buses can be obtained either from I.S.B.T. Kashmiri Gate, Delhi or from I.S.B.T.
+                                                    Anand Vihar Ghaziabad. A taxi is also an option of course, but you should be warned
                                             that the road isnt exactly an expressway.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="whythomso-faqs-ansque-columnthree-three">
+                                        <div className="whythomso-faqs-height">
+                                            <div className="whythomso-faqs-question">
+                                                <span><strong>Q</strong></span>
+                                                <span>What is the theme of Thomso’18?</span>
+                                            </div>
+                                            <div className="whythomso-faqs-answer">
+                                                <span><strong>A</strong></span><span>Theme of Thomso’18 is “Seized By Stardust”.</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div className="whythomso-faqs-ansque-columntwo-four">
-                                    <div className="whythomso-faqs-question">
-                                        <span><strong>Q</strong></span>
-                                        <span>From where I can get the latest updates related to Thomso’18?</span>
+
+                                <div className="whythomso-sixth-child-middle-columnthree">
+                                    <div className="whythomso-faqs-ansque-columnthree-one">
+                                        <div className="whythomso-faqs-height">
+                                            <div className="whythomso-faqs-question">
+                                                <span><strong>Q</strong></span>
+                                                <span>What’s the climate like? Do I need to bring some winter clothes now?</span>
+                                            </div>
+                                            <div className="whythomso-faqs-answer">
+                                                <span><strong>A</strong></span> <span>The climate during the last week of October is usually chilly with some rainfall likely to occur. During the daytime the weather is warm, however nights are a little cold. Hence, it is advisable to carry some warm clothes.</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className="whythomso-faqs-answer">
-                                        <span><strong>A</strong></span>
-                                        <span>
-                                            You can get latest updates from our Facebook page <a href="www.facebook.com/thomsoiitroorkee/">www.facebook.com/thomsoiitroorkee/</a> .
+                                    <div className="whythomso-faqs-ansque-columntwo-four">
+                                        <div className="whythomso-faqs-height">
+                                            <div className="whythomso-faqs-question">
+                                                <span><strong>Q</strong></span>
+                                                <span>From where I can get the latest updates related to Thomso’18?</span>
+                                            </div>
+                                            <div className="whythomso-faqs-answer">
+                                                <span><strong>A</strong></span>
+                                                <span>
+                                                    You can get latest updates from our Facebook page <a href="www.facebook.com/thomsoiitroorkee/">www.facebook.com/thomsoiitroorkee/</a> .
 
                                         </span>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-
-                            <div className="whythomso-sixth-child-middle-columnthree">
-                                <div className="whythomso-faqs-ansque-columnthree-one">
-                                    <div className="whythomso-faqs-question">
-                                        <span><strong>Q</strong></span>
-                                        <span>What’s the climate like? Do I need to bring some winter clothes now?</span>
-                                    </div>
-                                    <div className="whythomso-faqs-answer">
-                                        <span><strong>A</strong></span> <span>Thomso is from 26th to 28th October.</span>
-                                    </div>
-                                </div>
-                                <div className="whythomso-faqs-ansque-columnthree-two">
-                                    <div className="whythomso-faqs-question">
-                                        <span><strong>Q</strong></span>
-                                        <span>From where we can get information for events for Thomso’18?</span>
-                                    </div>
-                                    <div className="whythomso-faqs-answer">
-                                        <span><strong>A</strong></span> <span>The climate during the last week of October is usually chilly with some rainfall likely to
-                                    occur. Hence some winter clothes will be required.</span>
-                                    </div>
-                                </div>
-                                <div className="whythomso-faqs-ansque-columnthree-three">
-                                    <div className="whythomso-faqs-question">
-                                        <span><strong>Q</strong></span>
-                                        <span>What is the theme of Thomso’18?</span>
-                                    </div>
-                                    <div className="whythomso-faqs-answer">
-                                        <span><strong>A</strong></span><span>Theme of Thomso’18 is “Seized By Stardust”.</span>
-                                    </div>
-                                </div>
-                                <div className="whythomso-faqs-ansque-columnthree-four">
-                                    <div className="whythomso-faqs-question">
-                                        <span><strong>Q</strong></span>
-                                        <span>How to reach IIT Roorkee?</span>
-                                    </div>
-                                    <div className="whythomso-faqs-answer">
-                                        <span><strong>A</strong></span>
-                                        <span>
-                                            Once you reached Roorkee, you can easily take an E-rickshaw, the bus station is
-                                        just 1 km away whereas railway station is just 3 km away from the main gate of IIT
-                                        Roorkee.
+                                    <div className="whythomso-faqs-ansque-columnthree-four">
+                                        <div className="whythomso-faqs-height">
+                                            <div className="whythomso-faqs-question">
+                                                <span><strong>Q</strong></span>
+                                                <span>How to reach IIT Roorkee?</span>
+                                            </div>
+                                            <div className="whythomso-faqs-answer">
+                                                <span><strong>A</strong></span>
+                                                <span>
+                                                    Once you reached Roorkee, you can easily take an E-rickshaw, the bus station is
+                                                just 1 km away whereas railway station is just 3 km away from the main gate of IIT
+                                                Roorkee.
                                         </span>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="whythomso-faqs-ansque-columnthree-fifth">
-                                    <div className="whythomso-faqs-question">
-                                        <span><strong>Q</strong></span>
-                                        <span>Will there be accommodation facility for me?</span>
-                                    </div>
-                                    <div className="whythomso-faqs-answer">
-                                        <span><strong>A</strong></span>
-                                        <span>
-                                         There are many Hostels which would be available for the accommodation, the
+                                    <div className="whythomso-faqs-ansque-columnthree-fifth">
+                                        <div className="whythomso-faqs-height">
+                                            <div className="whythomso-faqs-question">
+                                                <span><strong>Q</strong></span>
+                                                <span>Will there be accommodation facility for me?</span>
+                                            </div>
+                                            <div className="whythomso-faqs-answer">
+                                                <span><strong>A</strong></span>
+                                                <span>
+                                                    There are many Hostels which would be available for the accommodation, the
                                          registration for allotment would be done on Thomso website.</span>
+                                            </div>
+                                        </div>
                                     </div>
+                                    {/* <div className="whythomso-faqs-ansque-columnthree-sixth">
+                                    <div className="whythomso-faqs-height">
+                                        <div className="whythomso-faqs-question">
+                                            <span><strong>Q</strong></span>
+                                            <span>What are the main requiremen?</span>
+                                        </div>
+                                        <div className="whythomso-faqs-answer">
+                                            <span><strong>A</strong></span>
+                                            <span>
+                                                There are many Hostels which would be available for the accommodation, the
+                                         registration for allotment would be done on Thomso website.</span>
+                                        </div>
+                                    </div>
+                                </div> */}
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div >
         );
