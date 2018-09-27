@@ -12,7 +12,9 @@ export default class HomeIndex extends React.Component {
             totalPages: 0,
             limit: 0,
             errors:'',
-            isAuthenticated:false
+            isAuthenticated:false,
+            hideUnverified: false,
+            toggleDisabled: false
         };
         this.Auth = new AuthService();
         this.handleClick = this.handleClick.bind(this);
@@ -24,7 +26,7 @@ export default class HomeIndex extends React.Component {
             currentPage = parseInt(this.props.match.params.page, 10);
         }
         const token = this.Auth.getToken()
-        FetchApi('GET', `/api/main/admin/user/${currentPage}`, null, token)
+        FetchApi('GET', `/api/main/admin/user/page=${currentPage}&registered=${this.state.hideUnverified}`, null, token)
             .then(r => {
                 if (r && r.data) {
                     if (r.data.body && r.data.pages && r.data.limit) {
@@ -42,10 +44,10 @@ export default class HomeIndex extends React.Component {
 
     handleClick(event) {
         if (event.target && event.target.id) {
-            this.props.history.push(`/main/admin/${event.target.id}`);
+            this.props.history.push(`/main/admin/participants/${event.target.id}`);
             const currentPage = event.target.id;
             const token = this.Auth.getToken()
-            FetchApi('GET', `/api/main/admin/user/${currentPage}`, null, token)
+            FetchApi('GET', `/api/main/admin/user/page=${currentPage}&registered=${this.state.hideUnverified}`, null, token)
                 .then(r => {
                     if (r && r.data) {
                         if (r.data.body && r.data.pages && r.data.limit) {
@@ -62,13 +64,28 @@ export default class HomeIndex extends React.Component {
         }
     }
 
-    download = () => {
+    download = part => {
         const token = this.Auth.getToken()
-        FetchApi('GET', `/api/main/admin/user/all`, null, token)
+        if (part === 'quater') {
+            Promise.all([
+                FetchApi('GET', `/api/main/admin/user/page=${part}&part=1`, null, token),
+                FetchApi('GET', `/api/main/admin/user/page=${part}&part=2`, null, token),
+                FetchApi('GET', `/api/main/admin/user/page=${part}&part=3`, null, token),
+                FetchApi('GET', `/api/main/admin/user/page=${part}&part=4`, null, token),
+            ])
+                .then(([r1, r2, r3, r4]) => {
+                    if (r1 && r2 && r3 && r4 && r1.data && r2.data && r3.data && r4.data && r1.data.body && r2.data.body && r3.data.body && r4.data.body) {
+                        let mergedData = [];
+                        mergedData = mergedData.concat(r1.data.body, r2.data.body, r3.data.body, r4.data.body);
+                        downloadCSV({data: mergedData, filename: `${part}_participant_registrations_merged.csv`});
+                    }
+                });
+        } else {
+            FetchApi('GET', `/api/main/admin/user/page=${part}`, null, token)
             .then(r => {
                 if (r && r.data) {
                     if (r.data.body) {
-                        downloadCSV({data: r.data.body, filename: 'participant_registrations.csv'});
+                        downloadCSV({data: r.data.body, filename: `${part}_participant_registrations.csv`});
                     } else {
                         this.setState({ errors:"Unable To Fetch" })
                     }
@@ -77,6 +94,30 @@ export default class HomeIndex extends React.Component {
             .catch(e => {
                 if(e & e.response && e.response.data && e.response.data.msg) this.setState({errors:e.response.data.msg})
                 else this.setState({errors:'Something Went Wrong'})
+            });
+        }
+    }
+
+    toggleUnverified = () => {
+        this.setState({toggleDisabled: true})
+        let currentPage = 1;
+        if (this.props.match && this.props.match.params && this.props.match.params.page) {
+            currentPage = parseInt(this.props.match.params.page, 10);
+        }
+        const token = this.Auth.getToken()
+        FetchApi('GET', `/api/main/admin/user/page=${currentPage}&registered=${this.state.hideUnverified}`, null, token)
+            .then(r => {
+                if (r && r.data) {
+                    if (r.data.body && r.data.pages && r.data.limit) {
+                        this.setState({ userData:r.data.body, totalPages: r.data.pages, limit: r.data.limit, currentPage, hideUnverified: !this.state.hideUnverified, toggleDisabled: false });
+                    } else {
+                        this.setState({ errors:"Unable To Fetch", toggleDisabled: false })
+                    }
+                }
+            })
+            .catch(e => {
+                if(e & e.response && e.response.data && e.response.data.msg) this.setState({errors:e.response.data.msg, toggleDisabled: false})
+                else this.setState({errors:'Something Went Wrong', toggleDisabled: false})
             });
     }
 
@@ -111,15 +152,18 @@ export default class HomeIndex extends React.Component {
                         {errors}
                     </div>
                 : null}
-                <button onClick={this.download}> Download </button>
-
+                <button onClick={() => this.download('all')}> Download </button>
+                <button onClick={() => this.download('quater')}> Download in 4 parts </button>
                 {totalPages ? 
                     <ul style={{listStyle: 'none', display: 'flex'}}>
                         {renderPageNumbers}
                     </ul>
                     : null
                 }
-                {(userData && userData.length) ? <DataTable participants={userData} currentPage={currentPage} limit={limit} /> : "No Data"}
+                <button onClick={this.toggleUnverified} disabled={this.state.toggleDisabled}>
+                    {this.state.hideUnverified ? 'Show Unverified' : 'Hide Unverified'}
+                </button>
+                {(userData && userData.length) ? <DataTable participants={userData} currentPage={currentPage} limit={limit}/> : "No Data"}
                 {totalPages ? 
                     <ul style={{listStyle: 'none', display: 'flex'}}>
                         {renderPageNumbers}

@@ -80,7 +80,8 @@ export default class AdminIndex extends React.Component{
                         <Route path="/main/admin" component={NavbarIndex} />
                         <Route exact path="/main/admin/addEvent" component={AddEventIndex} />
                         <Route exact path="/main/admin/logout" render={ (props) => <LogoutIndex {...props} updateRoutes={this.handleUpdate}/> } />
-                        <Route exact path="/main/admin/:page" render={ (props) => <HomeIndex {...props} updateRoutes={this.handleUpdate} /> } />
+                        <Route exact path="/main/admin/" render={ (props) => <HomeIndex {...props} updateRoutes={this.handleUpdate} /> } />
+                        <Route exact path="/main/admin/participants/:page" render={ (props) => <HomeIndex {...props} updateRoutes={this.handleUpdate} /> } />
                         <Route exact path="/main/admin/eventUser" component={EventUserIndex} />
                         <Route exact path="/main/admin/associateWithUs" component={AssociateWithUsIndex} />
                     </React.Fragment>

@@ -4,8 +4,15 @@ var Associate_Sponsor = require('../../../../models/beta/Associate_Sponsor');
 
 exports.userInfo = function(req,res){
     if(req.params && req.params.page){
-        if (req.params.page === "all") {
-            Main_User.find()
+        var params = JSON.parse('{"' + decodeURI(req.params.page.replace(/&/g, "\",\"").replace(/=/g,"\":\"")) + '"}');
+        var query = {};
+        if (params) {
+            if (params.registered === 'true') {
+                query = {thomso_id: {$ne: null}};
+            }
+        }
+        if (params.page === "all") {
+            Main_User.find(query)
                     .select('name email gender thomso_id college address branch contact verified referral')
                     .populate('event', 'name')
                     .populate('primary_event', 'name')
@@ -16,23 +23,56 @@ exports.userInfo = function(req,res){
                         if (!user) {
                             return res.status(400).send({ success: false, msg: 'User not found' });
                         }
-                        res.json({ success: true, msg: 'Events List', body: user });
+                        res.json({ success: true, msg: 'Participants List', body: user });
                     });
+        } else if (params.page === "quater" && params.part) {
+            var part = parseInt(params.part, 10);
+            if (part > 0) {
+                Main_User.countDocuments({}, function (err, count) {
+                    if (err) {
+                        res.status(400).send({ success: false, msg: 'Count Undefined', error: err });
+                    }
+                    if (count) {
+                        var limit = Math.ceil(count/4);
+                        var skip = limit*(part - 1);
+                        Main_User.find(query)
+                            .skip(skip)
+                            .limit(limit)
+                            .select('name email gender thomso_id college address branch contact verified referral')
+                            .populate('event', 'name')
+                            .populate('primary_event', 'name')
+                            .exec(function (err, user) {
+                                if (err) {
+                                    return res.status(400).send({ success: false, msg: 'Unable to connect to database. Please try again.' })
+                                }
+                                if (!user) {
+                                    return res.status(400).send({ success: false, msg: 'User not found' });
+                                }
+                                res.json({ success: true, msg: 'Participants List', body: user, skip: skip, limit: limit });
+                            });
+                    } else {
+                        return res.status(400).send({ success: false, msg: 'Count not found' });
+                    }
+                })
+            } else {
+                return res.status(400).send({ success: false, msg: 'Count not found' });
+            }
         } else {
-            var limit = 3;
-            var skip = (parseInt(req.params.page) - 1)*limit;
+            var limit = 500;
+            var skip = (parseInt(params.page) - 1)*limit;
 
-            Main_User.count({}, function (err, count) {
+            Main_User.countDocuments(query, function (err, count) {
                 if (err) {
                     res.status(400).send({ success: false, msg: 'Rank Undefined', error: err });
                 }
                 var pages = Math.ceil(count/limit);
-                Main_User.find()
+                Main_User.find(query)
                     .skip(skip)
                     .limit(limit)
                     .select('name email gender thomso_id college address branch contact verified referral')
                     .populate('event', 'name')
                     .populate('primary_event', 'name')
+                    .sort( { "thomso_id": 1, "name": 1 } )
                     .exec(function (err, user) {
                         if (err) {
                             return res.status(400).send({ success: false, msg: 'Unable to connect to database. Please try again.' })
@@ -40,7 +80,7 @@ exports.userInfo = function(req,res){
                         if (!user) {
                             return res.status(400).send({ success: false, msg: 'User not found' });
                         }
-                        res.json({ success: true, msg: 'Events List', body: user, pages: pages, limit: limit });
+                        res.json({ success: true, msg: 'Participants List', body: user, pages: pages, limit: limit });
                     });
             })
         }
