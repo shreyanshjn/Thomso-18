@@ -19,6 +19,9 @@
     max-height:0;
     transition: max-height 0.7s ease-in; 
 }
+.mainpage-payment-register-buttons{
+    display: none;
+}
 #submenu a{
     text-decoration: none;
     color: white;
@@ -1385,4 +1388,40 @@ padding:1%;
         font-size:1.14rem;
     }
 }
-
+@media only screen and (max-width:768px){
+    .mainpage-payment-register-buttons{
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        left: 29%;
+        bottom: 5%;
+        z-index: 10000;
+        justify-content: space-around;
+    
+    }
+    .mainpage-payment-register-buttons button{
+        background: transparent;
+        padding: 10px 20px;
+        border: 1px solid white;
+        display: flex;
+        flex-direction: row;
+        cursor: pointer;
+        border-radius: 2px;
+        width: fit-content;
+        transition: all 0.2s;
+    }
+    .mainpage-payment-register-buttons button img{
+        height: 25px;
+        width: 25px;
+        margin-top: 2px;
+    }
+    .mainpage-payment-register-buttons button a{
+        color: white;
+        font-size: 18px;
+        font-weight: 600;
+        font-family: Montserrat;
+        text-decoration: none;
+        margin-top: 3px;
+        margin-left: 2px;
+    }
+}

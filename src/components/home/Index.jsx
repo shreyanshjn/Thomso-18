@@ -15,6 +15,8 @@ import logosvg from './src/img/thomso logo svg-01.svg'
 import address from './src/img/address svg-01.svg'
 import Navbar from '../beta/home/Navbar'
 import Carousel from '../carousel/Index'
+import register from "./src/img/register.png"
+// import payment from "./src/img/payment.png"
 
 import './src/css/style.css'
 import MobileCarousel from '../mobilecarousel/Index';
@@ -75,12 +77,22 @@ export default class HomeIndex extends React.Component {
                 {/* Main web 1 */}
                 <div className="mainfinalmainfirst" id="main parallaxscene">
                     {/* <div className="mainfirst3"></div>  */}
-                    <div className="mainfinalmainfirst2"></div>
-                    <div className="mainfinalmainfirst3"></div>
-                    <div className="mainfinalmainfirst1" data-depth="0.6">
-                        <div className="mainfinalmainnavbarcontainer">
-                            <div className="mainfinalmainnavhome">
-                                <div className="mainfinalhome-navbar-logo">
+                    <div className="mainfirst2"></div>
+                    <div className="mainfirst3"></div>
+                    <div className="mainfirst1" data-depth="0.6">
+                        <div className="mainnavbarcontainer">
+                            <div className="mainnavhome">
+                                <div className="mainpage-payment-register-buttons">
+                                    {/* <button>
+                                        <img src={register} alt="register"/>
+                                        <Link to="">Register</Link>
+                                    </button> */}
+                                    <button>
+                                        <img src={register} alt="register"/>
+                                        <Link to="/main/register">Register</Link>
+                                    </button>
+                                </div>
+                                <div className="home-navbar-logo">
                                     <img src={logo} alt="" />
                                 </div>
                                 <div className="mainfinalhomenavbarctos">
