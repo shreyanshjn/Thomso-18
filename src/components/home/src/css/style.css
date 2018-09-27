@@ -639,7 +639,7 @@ background: url("../img/bg\ bg-01.png")
     .mainfinalmaincontainersecondright>p{
         word-spacing: 1px;
         letter-spacing: 1.8px;
-        margin-top: 10px;
+        margin-top: 0px;
         font-size: 1.2rem;
         text-align: right;
         line-height: 2.4rem;
@@ -688,11 +688,12 @@ background: url("../img/bg\ bg-01.png")
 }
 .mainfinalsecondpagebottomrect:hover
 {box-shadow:0px 0px 10px 3px rgba(255,255,255,.7);}
+
 .mainfinalsecondbottomrectleft{
     flex:1;
     position:relative;
     box-sizing: border-box;
-    padding:6%;
+    padding:4%;
 }
 .mainfinalsecondbottomrectleft >h1{
     position: absolute;
@@ -702,7 +703,7 @@ background: url("../img/bg\ bg-01.png")
     margin:0px;
     transform: translate(-50%, -50%);
     padding-bottom: 2px;
-    font-family: Poppins;
+    font-family: 'aboutuscontentfont';
 }
 
 .mainfinalsecondbottomrectleft >h3{
@@ -712,7 +713,7 @@ background: url("../img/bg\ bg-01.png")
     margin:0px;
     font-size: 1.85rem;
     transform: translate(-50%, -50%);
-    font-family: Poppins;
+    font-family: 'aboutuscontentfont';
 }
 .mainfinalsecondbottomrectright{
     flex:1;
@@ -727,19 +728,34 @@ background: url("../img/bg\ bg-01.png")
     height:auto;
 }
 #numberchange1{
-    left:50%;
+    left:54%;
 }
 #numberchange2{
-    left:50%;
+    left:54%;
 }
 #numberchange3{
-    left:50%;
+    left:49%;
 }
+#mainfinaleventstext{
+    left:47%;
+}
+.mainfinalst0{fill:#F4A934;}
+	.mainfinalst1{fill:#FCEB55;}
+	.mainfinalst2{fill:#F7CB46;}
+	.mainfinalst3{fill:#F6BF3E;}
+	.mainfinalst4{fill:#FFF85F;}
+	.mainfinalst5{fill:#FD9534;}
+	.mainfinalst6{fill:#FF7C2E;}
+	.mainfinalst7{fill:#FADD53;}
+	.mainfinalst8{fill:none;stroke:#000000;stroke-width:4;stroke-miterlimit:10;}
+	.mainfinalst9{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.mainfinalst10{fill:#FB561C;}
+	.mainfinalst11{fill:none;}
 @media only screen and (max-width:1700px){
     .mainfinalmaincontainersecondright>p{
         word-spacing:1.1px;
         letter-spacing: 1px;
-        line-height: 2.12rem;
+        line-height: 2.30rem;
         font-size: 1.05rem;
     }
 }
@@ -859,7 +875,9 @@ background: url("../img/bg\ bg-01.png")
     width:100vw;
     height:500vh;
     position: relative;
-    background: url("../img/main\ bg\ compressed-01.jpg");
+    background:linear-gradient( rgba(20,20,20,.5), rgba(20,20,20,.5)),url("../img/compressed.jpg");
+    background-size: cover;
+    background-position: center center;
 
 }
 .mainfinalmainthirdinternalcontainer{
@@ -927,6 +945,26 @@ background: url("../img/bg\ bg-01.png")
 }
 .mainfinalmainattractioninternalsvgcontainer>svg{
     flex:1;
+}
+#mainfinalonlinesvgmove{
+    position: relative;
+    right:-18%;
+}
+#mainfinalcarnivalsvgmove{
+    position: relative;
+    left:-25.5%;
+}
+#mainfinalzonalsvgmove{
+    position: relative;
+    left:-29%;
+}
+#mainfinalworkshopsvgmove{
+    position: relative;
+    right:-23%;
+}
+#mainattractioninternalsvgcontainerlitfestsvg{
+    position: relative;
+    left:-26%;
 }
 
 .mainfinalmainattractioninternaltextcontainer{
@@ -1032,6 +1070,7 @@ background: url("../img/bg\ bg-01.png")
     .mainfinalonlinegongoncont{
         top:54%;
     }
+
 }
 
 @media only screen and (max-width:768px)
@@ -1075,7 +1114,7 @@ background: url("../img/bg\ bg-01.png")
         height:30%;
     }
     .mainfinalsplitsvgcont1{
-        top:60%;
+        top:62%;
         left:50%;
         width:80%;
         transform:translateX(-50%);
@@ -1108,6 +1147,9 @@ background: url("../img/bg\ bg-01.png")
     }
     #litfestsvgtext,#workshoptext,#zonalstext,#onlineeventstext,#carnivaltext{
         text-align:center;
+    }
+    #mainfinalonlinesvgmove,#mainfinalcarnivalsvgmove,#mainfinalzonalsvgmove,#mainfinalworkshopsvgmove,#mainattractioninternalsvgcontainerlitfestsvg{
+        left:0%;
     }
 }
 
@@ -1323,6 +1365,9 @@ padding:1%;
         height:50%;
 
     }
+    .mainfinalmainpage5container-inner-in-righth4{
+        font-size:1.22rem;
+      }
 
     @media only screen and (max-height:600px){
         .mainfinalmainpage5con{
@@ -1355,8 +1400,12 @@ padding:1%;
         }
         .mainfinalmainpage5container-inner-in-right-righter{
             width:80%;
-            margin:15px auto;
+            margin:18px auto;
         }
+        .mainfinalmainpage5container-inner-in-righth4{
+            font-size:.85rem;
+          }
+    
         /* .mainpagecontainer-outer h1{
         font-size:1.2em
         } */
@@ -1369,6 +1418,7 @@ padding:1%;
     }
     .mainfinalmainpagecontainer-outer-rightin-inner-inside{
         font-size: 1rem;
+        height:38px;
     }
     .mainfinalmainpage5-thomsologo{
         top:10%;
