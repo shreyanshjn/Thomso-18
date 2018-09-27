@@ -66,7 +66,7 @@ export default class HomeIndex extends React.Component {
                             <p>WHAT'S NEW <br/><br/></p>
                             <div id="submenu">
                                 <Link to="/cupid" >Cupid's Attack</Link>
-                                <br/><Link to="/whythomso">Why Thomso</Link>
+                                <br/><Link to="/whythomso">Why Thomso?</Link>
                                 <br/><Link to="/main">Register</Link><br/></div>
                         </li>
 
@@ -126,7 +126,7 @@ export default class HomeIndex extends React.Component {
                                 <div className="mainfinalrightsidebarcontent">
                                     <Link to="/zonals/home">Zonals</Link></div>
                                 <div className="mainfinalrightsidebarcontent">
-                                    <Link to="/campusambassador">Campus Ambassdor</Link></div>
+                                    <Link to="/campusambassador">Campus Ambassador</Link></div>
 
 
                             </div>
@@ -201,7 +201,7 @@ export default class HomeIndex extends React.Component {
                                 <div className="mainfinalsecondpagebottomrect">
                                     <div className="mainfinalsecondbottomrectleft">
                                         <h1 id="numberchange3"><span>150</span>+</h1>
-                                        <h3>Events</h3>
+                                        <h3 id="mainfinaleventstext">Events</h3>
                                     </div>
                                     <div className="mainfinalsecondbottomrectright"> <img src={events} alt="events" /></div>
                                 </div>
@@ -240,6 +240,7 @@ export default class HomeIndex extends React.Component {
                             {/* <Litfestpen />*/}
                             <svg version="1.1" className="mainfinalsplitlit" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                 width="612px" height="792px" viewBox="0 0 612 792" enableBackground="new 0 0 612 792" xmlSpace="preserve">
+                                <Link to="/events">
                                 <g>
                                     <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#41B6C4" points="450.397,438.752 341.321,490.775 336.055,402.83 
                                         335.322,390.833 356.143,399.503 424.965,428.146 	"/>
@@ -311,6 +312,7 @@ export default class HomeIndex extends React.Component {
                                     <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#80CDBB" points="413.781,745.746 405.188,779.42 370.817,721.555 	" />
                                     <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#3A7ABA" points="473.587,779.42 413.781,745.746 421.293,716.25 	" />
                                 </g>
+                                </Link>
                             </svg>
                         </div>
                         <div className="mainfinalthomsomainattractions" id="m3move">
@@ -594,8 +596,9 @@ export default class HomeIndex extends React.Component {
                             <div className="mainfinalmainattractioninternalsvgcontainer">
                                 {/*  <Litfest />*/}
                                 <svg version="1.1" id="mainattractioninternalsvgcontainerlitfestsvg" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                    viewBox="0 0 251.333 106.333" enableBackground="new 0 0 251.333 93.333"
+                                    viewBox="0 -14 251.333 120.333" enableBackground="new 0 0 251.333 93.333"
                                     xmlSpace="preserve">
+                                    <Link to="/events">
                                     <g id="Layer_3" display="none">
                                     </g>
                                     <g id="bg">
@@ -611,11 +614,11 @@ export default class HomeIndex extends React.Component {
                                     <g id="main_attractions">
                                         <g>
                                             <g>
-                                                <path fill="none" d="M46.149,31.543c-0.48-0.879-1.262-1.42-2.342-1.62c-0.238-0.04-0.5-0.06-0.779-0.06
+                                                <path fill="#fff" d="M46.149,31.543c-0.48-0.879-1.262-1.42-2.342-1.62c-0.238-0.04-0.5-0.06-0.779-0.06
                                                     c-0.801,0-1.539,0.24-2.221,0.72c-0.809,0.56-1.309,1.3-1.5,2.221c-0.119,0.36-0.18,0.699-0.18,1.02c0,0.68,0.201,1.26,0.6,1.74
                                                     c0.521,0.72,1.262,1.16,2.221,1.32c0.279,0.04,0.541,0.06,0.779,0.06c0.682,0,1.32-0.18,1.922-0.54
                                                     c0.869-0.48,1.479-1.28,1.799-2.4c0.08-0.28,0.121-0.58,0.121-0.9C46.569,32.583,46.419,32.063,46.149,31.543z"/>
-                                                <path id="litfestsvg" fill="none" stroke="#fff" strokeWidth="3" d="M225.669,44.322c-0.131-0.64-0.471-1.16-1.031-1.56c-0.559-0.4-1.158-0.54-1.799-0.42
+                                                <path id="litfestsvg" fill="none" stroke="#fff" strokeWidth="3.5" d="M225.669,44.322c-0.131-0.64-0.471-1.16-1.031-1.56c-0.559-0.4-1.158-0.54-1.799-0.42
                                                     c-0.641,0.12-1.16,0.46-1.561,1.02c0,0.04-0.02,0.1-0.061,0.18l-0.049,0.06v0.12c-0.09,0.08-0.15,0.16-0.189,0.24
                                                     c-0.08,0.2-0.191,0.38-0.33,0.54c-0.141,0.16-0.291,0.4-0.451,0.72c-0.16,0.28-0.34,0.57-0.529,0.87
                                                     c-0.211,0.3-0.451,0.63-0.73,0.99c-0.24,0.36-0.52,0.74-0.84,1.14c-0.32,0.4-0.68,0.84-1.08,1.32c-0.35,0.4-0.75,0.84-1.17,1.32
@@ -705,6 +708,7 @@ export default class HomeIndex extends React.Component {
                                     </g>
                                     <g id="landing">
                                     </g>
+                                    </Link>
                                 </svg>
                             </div>
                             <div className="mainfinalmainattractioninternaltextcontainer" id="pagethirdsecondpagerevealtrigger" >
@@ -719,6 +723,7 @@ export default class HomeIndex extends React.Component {
                             {/* <Workshopbulb /> */}
                             <svg version="1.1" className="mainfinalsplitlit mainfinalsplitlit2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                 width="612px" height="792px" viewBox="0 0 612 792" enableBackground="new 0 0 612 792" xmlSpace="preserve">
+                                <Link to="/comingSoon">
                                 <g>
                                     <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="295.322,78.412 249.482,101.096 255.13,39.817 	" />
                                     <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="389.251,50.405 337.701,111.921 335.247,35.945 	" />
@@ -862,13 +867,15 @@ export default class HomeIndex extends React.Component {
                                     <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="334.951,750.375 301.59,722.903 301.565,722.87 
                                         301.565,722.842 301.59,722.279 330.603,698.799 331.964,698.799 	"/>
                                 </g>
+                                </Link>
                             </svg>
                         </div>
                         <div className="mainfinalmainattractioninternal mainfinalattraction2" id="workshoptrigger2">
                             <div className="mainfinalmainattractioninternalsvgcontainer">
                                 {/*    <Workshops /> */}
-                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                <svg version="1.1" id="mainfinalworkshopsvgmove" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                     viewBox="0 0 3403 446.825" enableBackground="new 0 0 3403 446.825" xmlSpace="preserve">
+                                    <Link to="/comingSoon">
                                     <g>
                                         <g>
                                             <path id="workshopssvg" fill="none" stroke="#FFF" strokeWidth="8" d="M2479.736,199.1h-0.92c-2.654,0-4.186,1.326-4.594,3.983c-4.493,33.076-17.867,68.811-40.123,107.2
@@ -1029,6 +1036,7 @@ export default class HomeIndex extends React.Component {
                                                 c2.856,10.828,4.288,21.955,4.288,33.392C2193.355,235.96,2193.049,240.655,2192.435,245.353z"/>
                                         </g>
                                     </g>
+                                    </Link>
                                 </svg>
                             </div>
                             <div className="mainfinalmainattractioninternaltextcontainer">
@@ -1043,6 +1051,7 @@ export default class HomeIndex extends React.Component {
                             <svg version="1.1" className="mainfinalsplitlit mainfinalsplitlit2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                 width="841.89px" height="595.276px" viewBox="0 0 841.89 595.276" enableBackground="new 0 0 841.89 595.276"
                                 xmlSpace="preserve">
+                                <Link to="/zonals/home">
                                 <g>
                                     <polygon className="zongon" fill="#238B45" points="225.876,149.98 198.805,146.542 216.195,139.817 	" />
                                     <polygon className="zongon" fill="#005A32" points="225.876,149.98 189.568,170.249 198.805,146.542 	" />
@@ -1252,12 +1261,14 @@ export default class HomeIndex extends React.Component {
                                     <polyline fill="#282828" points="472.876,239.984 472.837,239.85 472.837,239.829 472.777,239.656 	" />
                                     <line fill="#282828" x1="473.434" y1="239.271" x2="472.876" y2="239.522" />
                                 </g>
+                                </Link>
                             </svg>
                         </div>
                         <div className="mainfinalmainattractioninternal mainfinalattraction1" id="zonalstrigger">
                             <div className="mainfinalmainattractioninternalsvgcontainer">
-                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                <svg version="1.1" id="mainfinalzonalsvgmove" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                     viewBox="0 0 3403 446.825" enableBackground="new 0 0 3403 446.825" xmlSpace="preserve">
+                                    <Link to="/zonals/home">
                                     <g>
                                         <g>
                                             <path id="zonalssvg" fill="none" strokeWidth="8" stroke="#FFF" d="M2260.631,202.129c-0.613-3.27-2.398-5.92-5.26-7.965c-2.855-2.043-5.922-2.756-9.186-2.145
@@ -1362,6 +1373,7 @@ export default class HomeIndex extends React.Component {
                                                 c4.082,0,8.012,1.48,11.945,4.289c2.602,2.093,5.662,5.053,9.188,8.933C1559.584,211.314,1558.619,218.771,1558.006,226.273z"/>
                                         </g>
                                     </g>
+                                    </Link>
                                 </svg>
                             </div>
                             <div className="mainfinalmainattractioninternaltextcontainer">
@@ -1880,6 +1892,7 @@ export default class HomeIndex extends React.Component {
                                             <svg className="mainfinalsplitlit mainfinalsplitlit2" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                     width="841.89px" height="595.276px" viewBox="0 0 841.89 595.276" enableBackground="new 0 0 841.89 595.276"
                     xmlSpace="preserve">
+               <Link to="/onlineevents">
                 <g>
                     <g>
                         <polygon className="onlinegon" fill="#A81E35" points="377.076,168.045 367.474,162.272 371.371,156.706 		"/>
@@ -2218,16 +2231,18 @@ export default class HomeIndex extends React.Component {
                         <polygon className="onlinegon" fill="#FBD8C2" points="395.56,438.531 395.54,438.55 375.08,429.3 387.09,422.71 		"/>
                     </g>
                 </g>
+                </Link>
                 </svg>
 
                         </div>
                         <div className="mainfinalmainattractioninternal mainfinalattraction2" id="onlinetrigger" >
                             <div className="mainfinalmainattractioninternalsvgcontainer">
-                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                <svg version="1.1" id="mainfinalonlinesvgmove" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                     viewBox="0 0 3403 446.825" enableBackground="new 0 0 3403 446.825" xmlSpace="preserve">
+                                  <Link to="/onlineevents">
                                     <g>
                                         <g>
-                                            <path d="M1621.663,144.52c-2.449-4.49-6.43-7.246-11.943-8.27c-1.227-0.203-2.551-0.303-3.982-0.303
+                                            <path fill="#fff" d="M1621.663,144.52c-2.449-4.49-6.43-7.246-11.943-8.27c-1.227-0.203-2.551-0.303-3.982-0.303
                                                 c-4.082,0-7.861,1.221-11.332,3.674c-4.086,2.859-6.638,6.635-7.657,11.336c-0.613,1.834-0.919,3.57-0.919,5.203
                                                 c0,3.471,1.021,6.432,3.063,8.885c2.654,3.674,6.431,5.924,11.333,6.734c1.43,0.205,2.754,0.305,3.98,0.305
                                                 c3.473,0,6.738-0.918,9.802-2.752c4.491-2.451,7.555-6.535,9.19-12.254c0.405-1.426,0.609-2.961,0.609-4.596
@@ -2396,12 +2411,13 @@ export default class HomeIndex extends React.Component {
                                                 "/>
                                         </g>
                                     </g>
+                                    </Link>
                                 </svg>
 
                             </div>
                             <div className="mainfinalmainattractioninternaltextcontainer">
 
-                                <p id="mainfinalonlineeventstext">With Several online events in line, the reach of Thomso is more than just 3 days. Expanding its horizons to reach out to a wider audience, Thomso organises various online events as well. From Sketching to Photography, Literature to Fashion, Travel to Quizzing, these events cover the whole hog of culture and intellect.</p>
+                                <p id="onlineeventstext">With Several online events in line, the reach of Thomso is more than just 3 days. Expanding its horizons to reach out to a wider audience, Thomso organises various online events as well. From Sketching to Photography, Literature to Fashion, Travel to Quizzing, these events cover the whole hog of culture and intellect.</p>
                             </div>
                         </div>
                     </div>
@@ -2773,11 +2789,11 @@ export default class HomeIndex extends React.Component {
                         </div>
                         <div className="mainfinalmainattractioninternal mainfinalattraction1" id="carnivalstrigger">
                             <div className="mainfinalmainattractioninternalsvgcontainer">
-                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                <svg version="1.1" id="mainfinalcarnivalsvgmove" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                     viewBox="0 0 3403 446.825" enableBackground="new 0 0 3403 446.825" xmlSpace="preserve">
                                     <g>
                                         <g>
-                                            <path fill="#010101" d="M1534.009,155.595c-2.451-4.49-6.43-7.248-11.943-8.271c-1.227-0.201-2.553-0.307-3.982-0.307
+                                            <path fill="#fff" d="M1534.009,155.595c-2.451-4.49-6.43-7.248-11.943-8.271c-1.227-0.201-2.553-0.307-3.982-0.307
                                                 c-4.084,0-7.863,1.176-11.332,3.68c-4.084,2.861-6.635,6.635-7.656,11.281c-0.615,1.889-0.924,3.623-0.924,5.258
                                                 c0,3.471,1.021,6.432,3.066,8.883c2.652,3.676,6.43,5.924,11.332,6.688c1.43,0.254,2.756,0.354,3.982,0.354
                                                 c3.469,0,6.74-0.969,9.801-2.752c4.492-2.453,7.553-6.535,9.188-12.254c0.408-1.426,0.613-2.963,0.613-4.646

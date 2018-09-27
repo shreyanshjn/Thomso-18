@@ -636,7 +636,7 @@ background: url("../img/bg\ bg-01.png")
     .mainfinalmaincontainersecondright>p{
         word-spacing: 1px;
         letter-spacing: 1.8px;
-        margin-top: 10px;
+        margin-top: 0px;
         font-size: 1.2rem;
         text-align: right;
         line-height: 2.4rem;
@@ -685,11 +685,12 @@ background: url("../img/bg\ bg-01.png")
 }
 .mainfinalsecondpagebottomrect:hover
 {box-shadow:0px 0px 10px 3px rgba(255,255,255,.7);}
+
 .mainfinalsecondbottomrectleft{
     flex:1;
     position:relative;
     box-sizing: border-box;
-    padding:6%;
+    padding:4%;
 }
 .mainfinalsecondbottomrectleft >h1{
     position: absolute;
@@ -699,7 +700,7 @@ background: url("../img/bg\ bg-01.png")
     margin:0px;
     transform: translate(-50%, -50%);
     padding-bottom: 2px;
-    font-family: Poppins;
+    font-family: 'aboutuscontentfont';
 }
 
 .mainfinalsecondbottomrectleft >h3{
@@ -709,7 +710,7 @@ background: url("../img/bg\ bg-01.png")
     margin:0px;
     font-size: 1.85rem;
     transform: translate(-50%, -50%);
-    font-family: Poppins;
+    font-family: 'aboutuscontentfont';
 }
 .mainfinalsecondbottomrectright{
     flex:1;
@@ -724,19 +725,22 @@ background: url("../img/bg\ bg-01.png")
     height:auto;
 }
 #numberchange1{
-    left:50%;
+    left:54%;
 }
 #numberchange2{
-    left:50%;
+    left:54%;
 }
 #numberchange3{
-    left:50%;
+    left:49%;
+}
+#mainfinaleventstext{
+    left:47%;
 }
 @media only screen and (max-width:1700px){
     .mainfinalmaincontainersecondright>p{
         word-spacing:1.1px;
         letter-spacing: 1px;
-        line-height: 2.12rem;
+        line-height: 2.30rem;
         font-size: 1.05rem;
     }
 }
@@ -925,6 +929,26 @@ background: url("../img/bg\ bg-01.png")
 .mainfinalmainattractioninternalsvgcontainer>svg{
     flex:1;
 }
+#mainfinalonlinesvgmove{
+    position: relative;
+    right:-18%;
+}
+#mainfinalcarnivalsvgmove{
+    position: relative;
+    left:-25.5%;
+}
+#mainfinalzonalsvgmove{
+    position: relative;
+    left:-29%;
+}
+#mainfinalworkshopsvgmove{
+    position: relative;
+    right:-23%;
+}
+#mainattractioninternalsvgcontainerlitfestsvg{
+    position: relative;
+    left:-26%;
+}
 
 .mainfinalmainattractioninternaltextcontainer{
     width:100%;
@@ -1029,6 +1053,7 @@ background: url("../img/bg\ bg-01.png")
     .mainfinalonlinegongoncont{
         top:54%;
     }
+
 }
 
 
@@ -1066,7 +1091,7 @@ background: url("../img/bg\ bg-01.png")
         height:30%;
     }
     .mainfinalsplitsvgcont1{
-        top:60%;
+        top:62%;
         left:50%;
         width:80%;
         transform:translateX(-50%);
@@ -1099,6 +1124,9 @@ background: url("../img/bg\ bg-01.png")
     }
     #litfestsvgtext,#workshoptext,#zonalstext,#onlineeventstext,#carnivaltext{
         text-align:center;
+    }
+    #mainfinalonlinesvgmove,#mainfinalcarnivalsvgmove,#mainfinalzonalsvgmove,#mainfinalworkshopsvgmove,#mainattractioninternalsvgcontainerlitfestsvg{
+        left:0%;
     }
 }
 

@@ -211,7 +211,7 @@ const Function = () => {
             strokeWidth: "0",
             ease: Power0.ease
         }
-        ), "-=.5"
+        )
         )
         ;
     //lITFEST svg tween ends here
@@ -598,10 +598,10 @@ const Function = () => {
     //   y += (lFollowY - y) * friction;
 
     //  var  translate = 'translate(' + x + 'px, ' + y + 'px) scale(1)';
-    //   document.querySelector(".mainfirst2").style.transform=translate;
+    //   document.querySelector(".mainfinalmainfirst2").style.transform=translate;
     //   window.requestAnimationFrame(moveBackground);
     // }
-    // document.querySelector(".mainfirst2").addEventListener('mousemove', function(e) {
+    // document.querySelector(".mainfinalmainfirst2").addEventListener('mousemove', function(e) {
     //   var lMouseX = Math.max(-100, Math.min(100, window.innerWidth/ 2 - e.clientX));
     //   var lMouseY = Math.max(-100, Math.min(100, window.innerHeight / 2 - e.clientY));
     //   lFollowX = (20 * lMouseX) / 100; // 100 : 12 = lMouxeX : lFollow
