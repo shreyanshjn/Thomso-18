@@ -4,24 +4,48 @@ var Associate_Sponsor = require('../../../../models/beta/Associate_Sponsor');
 
 exports.userInfo = function(req,res){
     if(req.params && req.params.page){
-        var limit = 2000;
-        var skip = (parseInt(req.params.page) - 1)*limit;
+        if (req.params.page === "all") {
+            Main_User.find()
+                    .select('name email gender thomso_id college address branch contact verified referral')
+                    .populate('event', 'name')
+                    .populate('primary_event', 'name')
+                    .exec(function (err, user) {
+                        if (err) {
+                            return res.status(400).send({ success: false, msg: 'Unable to connect to database. Please try again.' })
+                        }
+                        if (!user) {
+                            return res.status(400).send({ success: false, msg: 'User not found' });
+                        }
+                        res.json({ success: true, msg: 'Events List', body: user });
+                    });
+        } else {
+            var limit = 3;
+            var skip = (parseInt(req.params.page) - 1)*limit;
 
-        Main_User.find()
-            .skip(skip)
-            .limit(limit)
-            .select('name email gender thomso_id college address branch contact verified referral')
-            .populate('event', 'name')
-            .populate('primary_event', 'name')
-            .exec(function (err, user) {
+            Main_User.count({}, function (err, count) {
                 if (err) {
-                    return res.status(400).send({ success: false, msg: 'Unable to connect to database. Please try again.' })
+                    res.status(400).send({ success: false, msg: 'Rank Undefined', error: err });
                 }
-                if (!user) {
-                    return res.status(400).send({ success: false, msg: 'User not found' });
-                }
-                res.json({ success: true, msg: 'Events List', body: user });
-            });
+                var pages = Math.ceil(count/limit);
+                Main_User.find()
+                    .skip(skip)
+                    .limit(limit)
+                    .select('name email gender thomso_id college address branch contact verified referral')
+                    .populate('event', 'name')
+                    .populate('primary_event', 'name')
+                    .exec(function (err, user) {
+                        if (err) {
+                            return res.status(400).send({ success: false, msg: 'Unable to connect to database. Please try again.' })
+                        }
+                        if (!user) {
+                            return res.status(400).send({ success: false, msg: 'User not found' });
+                        }
+                        res.json({ success: true, msg: 'Events List', body: user, pages: pages, limit: limit });
+                    });
+            })
+        }
+    } else {
+        return res.status(400).send({ success: false, msg: 'Invalid Params' });
     }
 }
 

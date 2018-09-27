@@ -1,37 +1,12 @@
 import React from 'react';
-import $ from 'jquery'
 
-import downloadCSV from '../../../../utils/JSONtoCSV';
 import Row from './Row';
 
 export default class DataTable extends React.Component {
 
-    handleFilter(e){
-        e.preventDefault();
-        $("#myInput").on("keyup", function() {
-            var value = $(this).val().toLowerCase();
-            $("#myTable tr").filter(function() {
-                return $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-            });
-        });
-    }
-    
-    download = () => {
-        console.log(this.props.participants)
-        
-        if (this.props.participants && this.props.participants.length > 0) {
-            downloadCSV({data: this.props.participants, filename: 'participant_registrations.csv'})
-        }
-    }
-
     render() {
       return (
         <div>
-            <div>
-                <input id="myInput" type="text" onChange={(e) => this.handleFilter(e)} placeholder="Type here to search..." />
-            </div>
-            <button onClick={this.download}> Download </button>
-            {console.log(this.props.participants)}
             <table style={{borderCollapse: 'collapse'}}>
                 <thead>
                     <tr>
@@ -49,7 +24,7 @@ export default class DataTable extends React.Component {
                 </thead>
                 {(this.props.participants && this.props.participants.length > 0) ?
                     <tbody id="myTable">
-                        {this.props.participants.map((data,i)=> <Row key={i} index={i} data={data} />)}
+                        {this.props.participants.map((data,i)=> <Row key={i} index={i} data={data} currentPage={this.props.currentPage} limit={this.props.limit} />)}
                     </tbody>
                     : null
                 }

@@ -160,7 +160,7 @@ exports.getRank = function (req, res) {
             if (score !== undefined) {
                 Users.count({ "score": { "$gt": score } }, function (err, rank) {
                     if (err) {
-                        res.status(400).send({ success: false, msg: 'Rank Undefined', error: err });
+                        return res.status(400).send({ success: false, msg: 'Rank Undefined', error: err });
                     }
                     return res.json({ success: true, msg: 'Your CA Rank', rank: rank + 1 });
                 })
