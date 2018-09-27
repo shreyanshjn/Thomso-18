@@ -11,6 +11,11 @@ class CampusClicks extends Component {
                 <div className="campus-image">
                     <div>
                         <img className="campus-image-child" src={campusclicks} alt="campus clicks" />
+                        <a href="https://drive.google.com/file/d/19Tm3-pUE3oEQsYRmhxpz8-tZI7FVAJyf/view" rel="noopener noreferrer" target="_blank">
+                            <p className="campus-online-events-rulebook">
+                                RuleBook
+                            </p>
+                        </a>
                     </div>
                 </div>
             </div>
