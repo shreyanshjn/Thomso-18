@@ -14,7 +14,9 @@ export default class HomeIndex extends React.Component {
             errors:'',
             isAuthenticated:false,
             hideUnverified: false,
-            toggleDisabled: false
+            toggleDisabled: false,
+            searchText: '',
+            searching: false
         };
         this.Auth = new AuthService();
         this.handleClick = this.handleClick.bind(this);
@@ -30,7 +32,7 @@ export default class HomeIndex extends React.Component {
             .then(r => {
                 if (r && r.data) {
                     if (r.data.body && r.data.pages && r.data.limit) {
-                        this.setState({ userData:r.data.body, totalPages: r.data.pages, limit: r.data.limit, currentPage });
+                        this.setState({ userData:r.data.body, totalPages: r.data.pages, limit: r.data.limit, currentPage, errors: '' });
                     } else {
                         this.setState({ errors:"Unable To Fetch" })
                     }
@@ -47,11 +49,11 @@ export default class HomeIndex extends React.Component {
             this.props.history.push(`/main/admin/participants/${event.target.id}`);
             const currentPage = event.target.id;
             const token = this.Auth.getToken()
-            FetchApi('GET', `/api/main/admin/user/page=${currentPage}&registered=${this.state.hideUnverified}`, null, token)
+            FetchApi('GET', `/api/main/admin/user/page=${currentPage}&registered=${this.state.hideUnverified}${this.state.searchText ? `&search=${this.state.searchText}` : ''}`, null, token)
                 .then(r => {
                     if (r && r.data) {
                         if (r.data.body && r.data.pages && r.data.limit) {
-                            this.setState({ userData:r.data.body, totalPages: r.data.pages, limit: r.data.limit, currentPage });
+                            this.setState({ userData:r.data.body, totalPages: r.data.pages, limit: r.data.limit, currentPage, errors: '' });
                         } else {
                             this.setState({ errors:"Unable To Fetch" })
                         }
@@ -105,11 +107,11 @@ export default class HomeIndex extends React.Component {
             currentPage = parseInt(this.props.match.params.page, 10);
         }
         const token = this.Auth.getToken()
-        FetchApi('GET', `/api/main/admin/user/page=${currentPage}&registered=${this.state.hideUnverified}`, null, token)
+        FetchApi('GET', `/api/main/admin/user/page=${currentPage}&registered=${!this.state.hideUnverified}${this.state.searchText ? `&search=${this.state.searchText}` : ''}`, null, token)
             .then(r => {
                 if (r && r.data) {
                     if (r.data.body && r.data.pages && r.data.limit) {
-                        this.setState({ userData:r.data.body, totalPages: r.data.pages, limit: r.data.limit, currentPage, hideUnverified: !this.state.hideUnverified, toggleDisabled: false });
+                        this.setState({ userData:r.data.body, totalPages: r.data.pages, limit: r.data.limit, currentPage, hideUnverified: !this.state.hideUnverified, toggleDisabled: false, errors: ''});
                     } else {
                         this.setState({ errors:"Unable To Fetch", toggleDisabled: false })
                     }
@@ -121,14 +123,47 @@ export default class HomeIndex extends React.Component {
             });
     }
 
+    onChange = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;
+        this.setState({ [name]: value });
+    }
+
+    onSearch = (e) => {
+        e.preventDefault();
+        this.setState({searching: true})
+        if (this.state.searchText && this.state.searchText.length > 2) {
+            let currentPage = 1;
+        if (this.props.match && this.props.match.params && this.props.match.params.page) {
+            currentPage = parseInt(this.props.match.params.page, 10);
+        }
+        const token = this.Auth.getToken()
+        FetchApi('GET', `/api/main/admin/user/page=${currentPage}&registered=${this.state.hideUnverified}${this.state.searchText ? `&search=${this.state.searchText}` : ''}`, null, token)
+            .then(r => {
+                if (r && r.data) {
+                    if (r.data.body && r.data.pages && r.data.limit) {
+                        this.setState({ userData:r.data.body, totalPages: r.data.pages, limit: r.data.limit, currentPage, searching: false, errors: '' });
+                    } else {
+                        this.setState({ errors:"Keyword Not Found", searching: false })
+                    }
+                }
+            })
+            .catch(e => {
+                if(e & e.response && e.response.data && e.response.data.msg) this.setState({errors:e.response.data.msg, searching: false})
+                else this.setState({errors:'Something Went Wrong', searching: false})
+            });
+        } else {
+            this.setState({errors:'Characters not of enough length', searching: false})
+        }
+    }
     render(){
-        const {userData, currentPage, totalPages, limit, errors} = this.state;
+        const {userData, currentPage, totalPages, limit, hideUnverified, searchText, toggleDisabled, searching, errors} = this.state;
 
         let renderPageNumbers;
         const pageNumbers = [];
         if (totalPages) {
             for (let i = 1; i <= totalPages; i++) {
-            pageNumbers.push(i);
+                pageNumbers.push(i);
             }
 
             renderPageNumbers = pageNumbers.map(number => {
@@ -152,6 +187,21 @@ export default class HomeIndex extends React.Component {
                         {errors}
                     </div>
                 : null}
+                <form onSubmit={this.onSearch}>
+                    <input
+                        id="inputSearch"
+                        type="text"
+                        placeholder="name email contact college"
+                        name="searchText"
+                        value={searchText}
+                        autoCorrect="off"
+                        autoComplete="off"
+                        autoCapitalize="off"
+                        onChange={this.onChange}
+                        required
+                    />
+                    <button type="submit" disabled={searching}>Search</button>
+                </form>
                 <button onClick={() => this.download('all')}> Download </button>
                 <button onClick={() => this.download('quater')}> Download in 4 parts </button>
                 {totalPages ? 
@@ -160,8 +210,8 @@ export default class HomeIndex extends React.Component {
                     </ul>
                     : null
                 }
-                <button onClick={this.toggleUnverified} disabled={this.state.toggleDisabled}>
-                    {this.state.hideUnverified ? 'Show Unverified' : 'Hide Unverified'}
+                <button onClick={this.toggleUnverified} disabled={toggleDisabled}>
+                    {hideUnverified ? 'Show Unverified' : 'Hide Unverified'}
                 </button>
                 {(userData && userData.length) ? <DataTable participants={userData} currentPage={currentPage} limit={limit}/> : "No Data"}
                 {totalPages ? 
