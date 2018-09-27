@@ -268,7 +268,7 @@ export default class WhyThomso extends Component {
                         </div>
                     </div>
                     <a id="faqs" name="faqs">
-                        <div id="faqs" name="faqs" className="whythomso-sixth-child">
+                        <div className="whythomso-sixth-child">
                             <div className="whythomso-sixth-child-top">
                                 <div className="whythomso-sixth-child-faq">
                                     <h3>FAQS</h3>

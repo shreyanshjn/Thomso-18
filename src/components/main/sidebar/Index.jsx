@@ -18,6 +18,7 @@ import Post from "./Svg/Post"
 import Bulb from "./Svg/Bulb"
 import boy from "./img/boy.png";
 import girl from "./img/girl.png";
+import Payment from "../../campusAmbassador/sidebar/Svg/Paysvg"
 
 let addTopicTimeout;
 
@@ -28,7 +29,7 @@ export default class Sidebar extends React.Component {
       referral: 'AVSHFSAD',
       activeState: window.location.pathname.substring(6),
       errors: '',
-      user:'',
+      user: '',
       file: '',
       imagePreviewUrl: '',
       disabled: true,
@@ -44,14 +45,14 @@ export default class Sidebar extends React.Component {
   }
   componentWillMount() {
     if (process.env.REACT_APP_SERVER_ENVIORNMENT === "dev" && this.props.userData && this.props.userData.image) {
-      this.setState({user:'https://localhost:' + process.env.REACT_APP_SERVER_PORT + '/uploads/img/ProfileImage/' + this.props.userData.image})
+      this.setState({ user: 'https://localhost:' + process.env.REACT_APP_SERVER_PORT + '/uploads/img/ProfileImage/' + this.props.userData.image })
     }
     else if (this.props.userData && this.props.userData.image) {
-      this.setState({user:'/uploads/img/ProfileImage/' + this.props.userData.image})
+      this.setState({ user: '/uploads/img/ProfileImage/' + this.props.userData.image })
     }
-    else{
-      if(this.props.userData.gender==="male"){this.setState({user:boy})}
-      else{this.setState({user:girl})}
+    else {
+      if (this.props.userData.gender === "male") { this.setState({ user: boy }) }
+      else { this.setState({ user: girl }) }
     }
     clearTimeout(addTopicTimeout)
   }
@@ -83,54 +84,54 @@ export default class Sidebar extends React.Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-      if (this.state.file.size > 101200) {
-        this.setState({ disabled: true, errors: 'Size of image exceeded 100kb' })
-      } 
-      else if (this.state.file.type !== "image/jpeg" && this.state.file.type !== "image/jpg" && this.state.file.type !== "image/png" ) {
-        this.setState({ disabled: true, errors: 'Image Format not supported' })
+    if (this.state.file.size > 101200) {
+      this.setState({ disabled: true, errors: 'Size of image exceeded 100kb' })
+    }
+    else if (this.state.file.type !== "image/jpeg" && this.state.file.type !== "image/jpg" && this.state.file.type !== "image/png") {
+      this.setState({ disabled: true, errors: 'Image Format not supported' })
+    }
+    else {
+      let data = {
+        image: this.state.imagePreviewUrl,
+        format: this.state.file.type
       }
-      else {
-        let data = {
-          image: this.state.imagePreviewUrl,
-          format: this.state.file.type
-        }
-        const token = this.Auth.getToken()
-        FetchApi('post', '/api/main/updateImage', data, token)
-          .then(res => {
-            console.log(res.data)
-            if (res && res.data && res.data.success && res.data.body) {
-              if (process.env.REACT_APP_SERVER_ENVIORNMENT === "dev") { this.setState({user:'https://localhost:' + process.env.REACT_APP_SERVER_PORT + res.data.body,errors:""})}
-              else{ this.setState({user:res.data.body}) }
-            }
-            else {
-              this.setState({ disabled: true, errors: 'Unable to upload' })
-            }
-          })
-          .catch(err => {
-            console.log(err)
-          });
-      }
+      const token = this.Auth.getToken()
+      FetchApi('post', '/api/main/updateImage', data, token)
+        .then(res => {
+          console.log(res.data)
+          if (res && res.data && res.data.success && res.data.body) {
+            if (process.env.REACT_APP_SERVER_ENVIORNMENT === "dev") { this.setState({ user: 'https://localhost:' + process.env.REACT_APP_SERVER_PORT + res.data.body, errors: "" }) }
+            else { this.setState({ user: res.data.body }) }
+          }
+          else {
+            this.setState({ disabled: true, errors: 'Unable to upload' })
+          }
+        })
+        .catch(err => {
+          console.log(err)
+        });
+    }
   }
 
-    handleImageChange(e) {
-      e.preventDefault();
-      let reader = new FileReader();
-      let file = e.target.files[0];
-      reader.onloadend = () => {
-        this.setState({
-          file: file,
-          imagePreviewUrl: reader.result,
-          disabled: false,
-          errors:'',
-          hidden: false
-        });
-        // this.props.imagePrev(reader.result);
-      }
-      reader.readAsDataURL(file)
+  handleImageChange(e) {
+    e.preventDefault();
+    let reader = new FileReader();
+    let file = e.target.files[0];
+    reader.onloadend = () => {
+      this.setState({
+        file: file,
+        imagePreviewUrl: reader.result,
+        disabled: false,
+        errors: '',
+        hidden: false
+      });
+      // this.props.imagePrev(reader.result);
     }
+    reader.readAsDataURL(file)
+  }
 
   render() {
-    let {user,disabled} = this.state
+    let { user, disabled } = this.state
     return (
       <div>
         <div
@@ -140,11 +141,11 @@ export default class Sidebar extends React.Component {
         >
           <div className="main-sidebar-user">
             <div className="main-sidebar-user-child">
-            {/* {(this.props.userData && this.props.userData.image) ?  */}
-                    <div className="upload-image-parent-div">
-                        <img src={user} className="image" alt="User" />
-                    </div> 
-                {/* <React.Fragment>
+              {/* {(this.props.userData && this.props.userData.image) ?  */}
+              <div className="upload-image-parent-div">
+                <img src={user} className="image" alt="User" />
+              </div>
+              {/* <React.Fragment>
                   {(this.props.userData && this.props.userData.gender === 'female') ?
                     <img src={girl} className="image" alt="User" /> :
                     <img src={boy} className="image" alt="User" />
@@ -280,6 +281,26 @@ export default class Sidebar extends React.Component {
                 </div>
                 <div className="main-sidebar-navitem-name">
                   HOME
+                </div>
+              </div>
+            </Link>
+            <Link
+              to="/main/payment"
+              className={
+                this.state.activeState === "payment"
+                  ? "sideNavItem activeSideItem"
+                  : "sideNavItem"
+              }
+              onClick={() => {
+                this.setActive("payment");
+              }}
+            >
+              <div className="main-sidebar-payment flex_row">
+                <div className="main-sidebar-svg-logo">
+                  <Payment />
+                </div>
+                <div className="main-sidebar-navitem-name">
+                  PAYMENT
                 </div>
               </div>
             </Link>

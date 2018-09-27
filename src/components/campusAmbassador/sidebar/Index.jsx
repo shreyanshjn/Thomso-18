@@ -26,6 +26,7 @@ import Profile from "./Svg/Profile.jsx"
 import FacebookImg from './img/fb.svg'
 import Zonals from './Svg/Zonals'
 import Facebook from './Svg/Facebook.jsx'
+import Payment from "./Svg/Paysvg"
 
 // import logoUser from '../common/images/user.svg';
 
@@ -227,8 +228,6 @@ export default class Sidebar extends React.Component {
           </div>*/}
           {!this.state.facebookConnect ?
             <div>
-              <div className="campusAmb-sidebar-line">
-              </div>
               <div className="campusAmb-sidebar-contents">
                 <div
                   className={
@@ -417,6 +416,26 @@ export default class Sidebar extends React.Component {
                 </div>
                 <div className="campusAmb-sidebar-navitem-name">
                   CONTACT US
+                </div>
+              </div>
+            </Link>
+            <Link
+              to="/CampusAmbassador/payment"
+              className={
+                this.state.activeState === "payment"
+                  ? "sideNavItem activeSideItem"
+                  : "sideNavItem"
+              }
+              onClick={() => {
+                this.setActive("payment");
+              }}
+            >
+              <div className="campusAmb-sidebar-payment flex_row">
+                <div className="campusAmb-sidebar-svg-logo">
+                  <Payment />
+                </div>
+                <div className="campusAmb-sidebar-navitem-name">
+                  PAYMENT
                 </div>
               </div>
             </Link>

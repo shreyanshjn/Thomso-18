@@ -88,6 +88,9 @@
     .sidenav > .campusAmb-sidebar-contents > .activeSideItem > .campusAmb-sidebar-home > .campusAmb-sidebar-svg-logo svg .homepath{
         fill: #00e6e6;
     }
+    .sidenav > .campusAmb-sidebar-contents > .activeSideItem > .campusAmb-sidebar-payment > .campusAmb-sidebar-svg-logo svg .paypath{
+        fill: gold;
+    }
     .campusAmb-sidebar-likes-child{
         display: flex;
         flex-direction: row;
@@ -125,6 +128,9 @@
     }
     .sidenav .sideNavItem:hover .campusAmb-sidebar-svg-logo svg .postpath{
         fill:red;
+    }
+    .sidenav .sideNavItem:hover .campusAmb-sidebar-svg-logo svg .paypath{
+        fill:gold;
     }
     .referral:hover .campusAmb-sidebar-svg-logo svg .referralpath{
         cursor: pointer;
@@ -321,8 +327,11 @@
     .sidenav > .campusAmb-sidebar-contents > .activeSideItem > .campusAmb-sidebar-profile > .campusAmb-sidebar-svg-logo svg .profilepath{
         fill:#b30059;
     }
-    .sidenav > .campusAmb-sidebar-contents > .activeSideItem > .campusAmb-sidebar-profile > .campusAmb-sidebar-svg-logo svg .zonalspath{
+    .sidenav > .campusAmb-sidebar-contents > .activeSideItem > .campusAmb-sidebar-zonals > .campusAmb-sidebar-svg-logo svg .zonalspath{
         fill:#339933;
+    }
+    .sidenav > .campusAmb-sidebar-contents > .activeSideItem > .campusAmb-sidebar-payment > .campusAmb-sidebar-svg-logo svg .paypath{
+        fill: gold;
     }
     .campusAmb-sidebar-svg-logo svg{
         padding: 0 3px 0 3px;
@@ -361,6 +370,9 @@
     }
     .sidenav .sideNavItem:hover .campusAmb-sidebar-svg-logo svg .zonalspath{
         fill:#339933;
+    }
+    .sidenav .sideNavItem:hover .campusAmb-sidebar-svg-logo svg .paypath{
+        fill:gold;
     }
     .referral:hover .campusAmb-sidebar-svg-logo svg .referralpath{
         cursor: pointer;
