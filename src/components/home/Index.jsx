@@ -874,7 +874,7 @@ export default class HomeIndex extends React.Component {
                             <div className="mainfinalmainattractioninternalsvgcontainer">
                                 {/*    <Workshops /> */}
                                 <svg version="1.1" id="mainfinalworkshopsvgmove" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                    viewBox="0 0 3403 446.825" enableBackground="new 0 0 3403 446.825" xmlSpace="preserve">
+                                    viewBox="0 -10 3403 446.825" enableBackground="new 0 0 3403 446.825" xmlSpace="preserve">
                                     <Link to="/comingSoon">
                                     <g>
                                         <g>
@@ -1267,7 +1267,7 @@ export default class HomeIndex extends React.Component {
                         <div className="mainfinalmainattractioninternal mainfinalattraction1" id="zonalstrigger">
                             <div className="mainfinalmainattractioninternalsvgcontainer">
                                 <svg version="1.1" id="mainfinalzonalsvgmove" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                    viewBox="0 0 3403 446.825" enableBackground="new 0 0 3403 446.825" xmlSpace="preserve">
+                                    viewBox="0 -10 3403 446.825" enableBackground="new 0 0 3403 446.825" xmlSpace="preserve">
                                     <Link to="/zonals/home">
                                     <g>
                                         <g>
@@ -2238,7 +2238,7 @@ export default class HomeIndex extends React.Component {
                         <div className="mainfinalmainattractioninternal mainfinalattraction2" id="onlinetrigger" >
                             <div className="mainfinalmainattractioninternalsvgcontainer">
                                 <svg version="1.1" id="mainfinalonlinesvgmove" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                    viewBox="0 0 3403 446.825" enableBackground="new 0 0 3403 446.825" xmlSpace="preserve">
+                                    viewBox="0 -10 3403 446.825" enableBackground="new 0 0 3403 446.825" xmlSpace="preserve">
                                   <Link to="/onlineevents">
                                     <g>
                                         <g>
@@ -2423,7 +2423,7 @@ export default class HomeIndex extends React.Component {
                     </div>
                     <div className="mainfinalmainthirdinternalcontainer" id="carnivalsssvgtrigger">
                         <div className="mainfinalsplitsvgcont1 mainfinalcarnivalgoncont mainfinalcarn">
-                            <svg version="1.1" className="mainfinalsplitlit mainfinalsplitlit2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            {/* <svg version="1.1" className="mainfinalsplitlit mainfinalsplitlit2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                 width="841.89px" height="595.276px" viewBox="0 0 841.89 595.276" enableBackground="new 0 0 841.89 595.276"
                                 xmlSpace="preserve">
                                 <polygon className="carngon" fill="#FFF85F" points="463.135,469.63 422.585,488.7 421.965,488.7 414.745,469.63 " />
@@ -2784,13 +2784,176 @@ export default class HomeIndex extends React.Component {
                                 <polygon className="carngon" fill="#F6BF3E" points="492.085,419.231 477.715,442.43 460.425,428.691 " />
                                 <polygon className="carngon" fill="#FADD53" points="492.085,419.231 460.425,428.691 465.425,402.22 " />
                                 <polygon className="carngon" fill="#F7CB46" points="465.425,402.22 460.425,428.691 439.095,408.39 " />
-                            </svg>
-
+                            </svg> */}
+                            
+                            <svg version="1.1" id="Layer_1" className="mainfinalsplitlit mainfinalsplitlit2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	                                viewBox="0 0 4961 3508" enableBackground="new 0 0 4961 3508" xmlSpace="preserve">
+                                    
+                                    <polygon className="carngon mainfinalst0" points="1657,1942 1334,2025.9 1304,1782.6 "/>
+                                        <polygon className="carngon mainfinalst0" points="1419.9,1601.3 1304,1782.6 1296.5,1722.1 1272.3,1592.6 "/>
+                                        <path className="carngon mainfinalst1" d="M1375.4,1493.1l-134-63.2c29.3-45,29.3-45,29.3-45L1375.4,1493.1z"/>
+                                        <polygon className="carngon mainfinalst2" points="1577,1468 1270.7,1384.9 1528.8,1357.3 "/>
+                                        <polygon className="carngon mainfinalst3" points="1789.2,1411 1528.8,1357.3 1782.5,1286.7 "/>
+                                        <polygon className="carngon mainfinalst0" points="1979.5,1326.9 1782.5,1286.7 1962.4,1198.4 "/>
+                                        <polygon className="carngon mainfinalst3" points="2193.4,1027.9 2148.6,1219.4 2084.8,1108.1 "/>
+                                        <polygon className="carngon mainfinalst4" points="2148.6,1219.4 1962.4,1198.4 2084.8,1108.1 "/>
+                                        <polygon className="carngon mainfinalst3" points="1706.9,2270 1343.8,2307 1334,2025.9 "/>
+                                        <polygon className="carngon mainfinalst0" points="1547,2502 1319.7,2556.2 1343.8,2307 "/>
+                                        <polygon className="carngon mainfinalst5" points="1706.9,2270 1547,2502 1343.8,2307 "/>
+                                        <polygon className="carngon mainfinalst1" points="1642.9,2834 1250.5,2759.6 1319.7,2556.2 "/>
+                                        <polygon className="carngon mainfinalst6" points="1346.1,2986 1346,2986 1186.1,2849.4 1250.5,2759.6 "/>
+                                        <polygon className="carngon mainfinalst6" points="1209.6,2985.7 1082.7,2985.1 1156,2867.4 1186.1,2849.4 "/>
+                                        <polygon className="carngon mainfinalst4" points="1346,2986 1270.7,2985.9 1209.6,2985.7 1186.1,2849.4 "/>
+                                        <polygon className="carngon mainfinalst1" points="1156,2867.4 1082.7,2985.1 1071.8,2871.2 "/>
+                                        <polygon className="carngon mainfinalst4" points="1082.7,2985.1 1029.4,2926.2 1071.8,2871.2 "/>
+                                        <polygon className="carngon mainfinalst3" points="1918.2,2986 1759.8,2986 1483.7,2986.1 1346.3,2986 1642.9,2834 "/>
+                                        <polygon className="carngon mainfinalst2" points="1853.2,2822 1642.9,2834 1782.5,2582.6 1805.4,2643.9 "/>
+                                        <polygon className="carngon mainfinalst3" points="1782.5,2582.6 1642.9,2834 1547,2502 "/>
+                                        <polygon className="carngon mainfinalst1" points="1828.3,2448.9 1547,2502 1706.9,2270 "/>
+                                        <polygon className="carngon mainfinalst2" points="1942,2064.1 1657,1942 1935.9,1878 "/>
+                                        <polygon className="carngon mainfinalst1" points="2084.8,2378 1913.2,2429.4 1828.3,2448.9 1860.6,2279.2 1935.8,2306.5 "/>
+                                        <polygon className="carngon mainfinalst7" points="1882,2643.9 1853.2,2822 1805.4,2643.9 "/>
+                                        <polygon className="carngon mainfinalst6" points="2084.8,2270 2084.8,2378 1989,2251.2 "/>
+                                        <polygon className="carngon mainfinalst3" points="2468.7,2986 2323.8,2986 2062.8,2986 1918.8,2986 2165.1,2865.3 "/>
+                                        <polygon className="carngon mainfinalst6" points="3381,2582 3304.9,2986 3063,2599.1 "/>
+                                        <polygon className="carngon mainfinalst2" points="3608.7,2733.5 3381,2582 3548.5,2539.1 "/>
+                                        <polygon className="carngon mainfinalst4" points="3548.5,2539.1 3381,2582 3531.4,2262.8 "/>
+                                        <polygon className="carngon mainfinalst3" points="3381,2582 3023.2,2463.8 3283,2305.9 "/>
+                                        <polygon className="carngon mainfinalst4" points="3381,2582 3063,2599.1 3023.2,2463.8 "/>
+                                        <polygon className="carngon mainfinalst6" points="3553.5,1996.2 3531.4,2262.8 3283,2305.9 "/>
+                                        <polygon className="carngon mainfinalst2" points="3584.3,1817.3 3553.5,1996.2 3201,1982.1 "/>
+                                        <polygon className="carngon mainfinalst6" points="3584.3,1817.3 3201,1982.1 3315,1671.2 "/>
+                                        <polygon className="carngon mainfinalst2" points="2927.4,2305.9 2632.2,2582 2859.8,2265.1 "/>
+                                        <polygon className="carngon mainfinalst3" points="3201,1982.1 2884.6,2066.6 2916.8,1665.9 "/>
+                                        <polygon className="carngon mainfinalst1" points="3201,1982.1 2965.7,2130 2884.6,2066.6 "/>
+                                        <polygon className="carngon mainfinalst2" points="3012.6,2657.6 2877,2830 2947.9,2623.4 "/>
+                                        <polygon className="carngon mainfinalst2" points="2958.5,2421.4 2905.1,2489.7 2927.4,2305.9 "/>
+                                        <polygon className="carngon mainfinalst7" points="3023.2,2463.8 2958.5,2421.4 2978.4,2256.2 "/>
+                                        <polygon className="carngon mainfinalst7" points="2868.3,2986 2707.8,2986.1 2469.1,2986 2751.8,2865.3 "/>
+                                        <polygon className="carngon mainfinalst7" points="3304.9,2986 2965.9,2986 2877,2986 2877,2830 "/>
+                                        <polygon className="carngon mainfinalst1" points="2325.5,1064.7 2193.4,1027.9 2246.9,970.8 "/>
+                                        <polygon className="carngon mainfinalst5" points="2453.7,917.7 2246.9,970.8 2324.1,888.4 "/>
+                                        <polygon className="carngon mainfinalst4" points="2527.2,783.2 2324.1,888.4 2407.4,770.1 "/>
+                                        <polygon className="carngon mainfinalst2" points="2530.1,584.4 2527.2,783.2 2407.4,770.1 "/>
+                                        <polygon className="carngon mainfinalst1" points="2530.1,584.4 2407.4,770.1 2410,582.7 2410,447.7 "/>
+                                        <polygon className="carngon mainfinalst5" points="2531,466.8 2410,447.7 2497.7,414.9 "/>
+                                        <polygon className="carngon mainfinalst7" points="2497.7,414.9 2410,447.7 2460.2,407.4 "/>
+                                        <polygon className="carngon mainfinalst4" points="2643.6,584.3 2530.1,584.4 2643,466.9 "/>
+                                        <polygon className="carngon mainfinalst7" points="2699.3,555.8 2643.6,584.3 2643,466.9 "/>
+                                        <polygon className="carngon mainfinalst0" points="2699.3,495.4 2699.3,555.8 2643,466.9 "/>
+                                        <polygon className="carngon mainfinalst3" points="2561.2,862.7 2453.7,917.7 2527.2,783.2 "/>
+                                        <polygon className="carngon mainfinalst3" points="2724.3,1037.2 2563.5,1045.5 2561.2,862.7 "/>
+                                        <polygon className="carngon mainfinalst6" points="2927.6,1189.5 2704.7,1177 2724.3,1037.2 "/>
+                                        <polygon className="carngon mainfinalst4" points="3162.7,1300.7 2910,1316.6 2927.6,1189.5 "/>
+                                        <polygon className="carngon mainfinalst6" points="3402.5,1361.2 3090.6,1400.1 3162.7,1300.7 "/>
+                                        <polygon className="carngon mainfinalst3" points="3634.3,1384.9 3329.6,1467.2 3402.5,1361.2 "/>
+                                        <polygon className="carngon mainfinalst7" points="3666.3,1431.9 3537.6,1493.3 3634.3,1384.9 "/>
+                                        <polygon className="carngon mainfinalst4" points="3666.3,1431.9 3616.2,1642.6 3537.6,1493.3 "/>
+                                        <polygon className="carngon mainfinalst7" points="3616.2,1642.6 3609.4,1671.2 3584.3,1817.3 3431.5,1630.9 "/>
+                                        <polygon className="carngon mainfinalst4" points="3584.3,1817.3 3315,1671.2 3431.5,1630.9 "/>
+                                        <polygon className="carngon mainfinalst2" points="3753.1,2983.6 3565.9,2986.1 3304.9,2986 3608.7,2733.5 3694.2,2868.3 "/>
+                                        <polygon className="carngon mainfinalst6" points="3861,2870 3753.1,2983.6 3694.2,2868.3 "/>
+                                        <polygon className="carngon mainfinalst2" points="3867.7,2982 3753.1,2983.6 3861,2870 "/>
+                                        <polygon className="carngon mainfinalst4" points="3908.5,2925.9 3867.7,2982 3861,2870 "/>
+                                        <polygon className="carngon mainfinalst0" points="2527.2,783.2 2453.7,917.7 2324.1,888.4 "/>
+                                        <polygon className="carngon mainfinalst0" points="2531,466.8 2530.1,584.4 2410,447.7 "/>
+                                        <polygon className="carngon mainfinalst2" points="2643,466.9 2530.1,584.4 2531,466.8 "/>
+                                        <polygon className="carngon mainfinalst4" points="1657,1942 1304,1782.6 1567.3,1655.4 "/>
+                                        <polygon className="carngon mainfinalst3" points="1567.3,1655.4 1304,1782.6 1419.9,1601.3 "/>
+                                        <polygon className="carngon mainfinalst4" points="1419.9,1601.3 1272.3,1592.6 1266,1558.6 1241.4,1429.9 "/>
+                                        <polygon className="carngon mainfinalst2" points="1419.9,1601.3 1241.4,1429.9 1375.4,1493.1 "/>
+                                        <polygon className="carngon mainfinalst0" points="1577,1468 1375.4,1493.1 1270.7,1384.9 "/>
+                                        <polygon className="carngon mainfinalst7" points="1789.2,1411 1577,1468 1528.8,1357.3 "/>
+                                        <polygon className="carngon mainfinalst4" points="1979.5,1326.9 1789.2,1411 1782.5,1286.7 "/>
+                                        <polygon className="carngon mainfinalst2" points="2148.6,1219.4 1979.5,1326.9 1962.4,1198.4 "/>
+                                        <polygon className="carngon mainfinalst5" points="2325.5,1064.7 2148.6,1219.4 2193.4,1027.9 "/>
+                                        <polygon className="carngon mainfinalst3" points="2453.7,917.7 2325.5,1064.7 2246.9,970.8 "/>
+                                        <polygon className="carngon mainfinalst6" points="2563.5,1045.5 2453.7,917.7 2561.2,862.7 "/>
+                                        <polygon className="carngon mainfinalst4" points="2724.3,1037.2 2704.7,1177 2563.5,1045.5 "/>
+                                        <polygon className="carngon mainfinalst3" points="2927.6,1189.5 2910,1316.6 2704.7,1177 "/>
+                                        <polygon className="carngon mainfinalst2" points="3162.7,1300.7 3090.6,1400.1 2910,1316.6 "/>
+                                        <polygon className="carngon mainfinalst4" points="3402.5,1361.2 3329.6,1467.2 3090.6,1400.1 "/>
+                                        <polygon className="carngon mainfinalst5" points="3634.3,1384.9 3537.6,1493.3 3329.6,1467.2 "/>
+                                        <polygon className="carngon mainfinalst2" points="1706.9,2270 1334,2025.9 1657,1942 "/>
+                                        <polygon className="carngon mainfinalst6" points="1935.9,1878 1657,1942 1706.9,1604.4 "/>
+                                        <polygon className="carngon mainfinalst0" points="1706.9,1604.4 1657,1942 1567.3,1655.4 "/>
+                                        <polygon className="carngon mainfinalst6" points="2293,1754 1935.9,1878 1918.4,1598.9 2036.9,1664.7 "/>
+                                        <polygon className="carngon mainfinalst0" points="2490.6,1648.5 2467.1,1794.5 2373.4,1633.3 "/>
+                                        <polygon className="carngon mainfinalst7" points="2373.4,1633.3 2293,1754 2282.2,1549.3 "/>
+                                        <polygon className="carngon mainfinalst2" points="2293,1754 2219.6,1554.3 2282.2,1549.3 "/>
+                                        <polygon className="carngon mainfinalst4" points="2293,1754 2106.7,1651.3 2219.6,1554.3 "/>
+                                        <polygon className="carngon mainfinalst3" points="2293,1754 2036.9,1664.7 2106.7,1651.3 "/>
+                                        <polygon className="carngon mainfinalst4" points="1918.4,1598.9 1706.9,1604.4 1770.6,1551.4 "/>
+                                        <polygon className="carngon mainfinalst0" points="1918.4,1598.9 1770.6,1551.4 1872.5,1555.8 "/>
+                                        <polygon className="carngon mainfinalst7" points="2643,1882 2490.6,1648.5 2602.1,1577.4 "/>
+                                        <polygon className="carngon mainfinalst4" points="2792.1,1597 2602.1,1577.4 2724.5,1548.4 "/>
+                                        <polygon className="carngon mainfinalst7" points="2916.8,1665.9 2643,1882 2792.1,1597 "/>
+                                        <polygon className="carngon mainfinalst2" points="3315,1671.2 2916.8,1665.9 3027,1601 3139.1,1540.8 3230.6,1610.7 "/>
+                                        <polygon className="carngon mainfinalst3" points="3616.2,1642.6 3431.5,1630.9 3537.6,1493.3 "/>
+                                        <polygon className="carngon mainfinalst5" points="3315,1671.2 3201,1982.1 2916.8,1665.9 "/>
+                                        <polygon className="carngon mainfinalst0" points="3283,2305.9 2965.7,2130 3201,1982.1 "/>
+                                        <polygon className="carngon mainfinalst0" points="2916.8,1665.9 2884.6,2066.6 2643,1882 "/>
+                                        <polygon className="carngon mainfinalst7" points="3553.5,1996.2 3283,2305.9 3201,1982.1 "/>
+                                        <polygon className="carngon mainfinalst6" points="2792.1,1597 2643,1882 2602.1,1577.4 "/>
+                                        <polygon className="carngon mainfinalst2" points="3531.4,2262.8 3381,2582 3283,2305.9 "/>
+                                        <polygon className="carngon mainfinalst2" points="3283,2305.9 2978.4,2256.2 2965.7,2130 "/>
+                                        <polygon className="carngon mainfinalst6" points="3283,2305.9 3023.2,2463.8 2978.4,2256.2 "/>
+                                        <polygon className="carngon mainfinalst5" points="3608.7,2733.5 3304.9,2986 3381,2582 "/>
+                                        <polygon className="carngon mainfinalst6" points="1642.9,2834 1319.7,2556.2 1547,2502 "/>
+                                        <polygon className="carngon mainfinalst4" points="1642.9,2834 1346.3,2986 1346.1,2986 1250.5,2759.6 "/>
+                                        <polyline className="carngon mainfinalst8" points="1346.3,2986 1346.1,2986.1 1346.1,2986 "/>
+                                        <polygon className="carngon mainfinalst4" points="1828.3,2448.9 1782.5,2582.6 1547,2502 "/>
+                                        <line className="carngon mainfinalst8" x1="1346.1" y1="2986.1" x2="1346" y2="2986"/>
+                                        <polygon className="carngon mainfinalst4" points="3304.9,2986 2877,2830 3012.6,2657.6 3063,2599.1 "/>
+                                        <polygon className="carngon mainfinalst7" points="1935.9,1878 1706.9,1604.4 1918.4,1598.9 "/>
+                                        <line className="carngon mainfinalst8" x1="2632.2" y1="2582" x2="2632.2" y2="2582"/>
+                                        <polygon className="carngon mainfinalst2" points="2084.8,2378 1935.8,2306.5 1989,2251.2 "/>
+                                        <polygon className="carngon mainfinalst6" points="1860.6,2279.2 1828.3,2448.9 1706.9,2270 "/>
+                                        <polygon className="carngon mainfinalst1" points="1881.5,2146.7 1860.6,2279.2 1706.9,2270 "/>
+                                        <polygon className="carngon mainfinalst7" points="1881.5,2146.7 1706.9,2270 1657,1942 "/>
+                                        <polygon className="carngon mainfinalst0" points="1942,2064.1 1881.5,2146.7 1657,1942 "/>
+                                        <polygon className="carngon mainfinalst1" points="1918.4,2986 1918.2,2986 1642.9,2834 1853.2,2822 "/>
+                                        <polyline className="carngon mainfinalst8" points="1918.2,2986 1918.4,2986.1 1918.4,2986 "/>
+                                        <polygon className="carngon mainfinalst4" points="2643,1882 2521,2120.1 2495,1965.3 2467.1,1794.5 "/>
+                                        <polygon className="carngon mainfinalst7" points="2467.1,1794.5 2434.2,1980.9 2407.6,2129.7 2293,1754 "/>
+                                        <polygon className="carngon mainfinalst4" points="2467.1,1794.5 2293,1754 2373.4,1633.3 "/>
+                                        <polygon className="carngon mainfinalst2" points="2643,1882 2467.1,1794.5 2490.6,1648.5 "/>
+                                        <polygon className="carngon mainfinalst4" points="2407.6,2129.7 1935.9,1878 2293,1754 "/>
+                                        <polygon className="carngon mainfinalst5" points="2407.6,2129.7 2004.6,2107.1 1935.9,1878 "/>
+                                        <polygon className="carngon mainfinalst0" points="2407.6,2129.7 2084.8,2270 2004.6,2107.1 "/>
+                                        <polygon className="carngon mainfinalst1" points="2084.8,2270 1989,2251.2 2004.6,2107.1 "/>
+                                        <polygon className="carngon mainfinalst0" points="2084.8,2378 1940.1,2493.9 1913.2,2429.4 "/>
+                                        <polygon className="carngon mainfinalst0" points="2333.6,2448.3 2084.8,2477.1 2084.8,2270 "/>
+                                        <polygon className="carngon mainfinalst4" points="2084.8,2378 2084.8,2477.1 1940.1,2493.9 "/>
+                                        <polygon className="carngon mainfinalst7" points="2333.6,2448.3 2282.5,2608.1 2255.8,2673.5 1940.1,2493.9 2084.8,2477.1 "/>
+                                        <polygon className="carngon mainfinalst1" points="2255.8,2673.5 1882,2643.9 1940.1,2493.9 "/>
+                                        <polygon className="carngon mainfinalst3" points="2255.8,2673.5 2225.5,2747.7 2165.1,2865.3 1882,2643.9 "/>
+                                        <polygon className="carngon mainfinalst6" points="2165.1,2865.3 1853.2,2822 1882,2643.9 "/>
+                                        <polygon className="carngon mainfinalst4" points="2165.1,2865.3 1918.8,2986 1918.4,2986 1853.2,2822 "/>
+                                        <polygon className="carngon mainfinalst5" points="2884.6,2066.6 2521,2120.1 2643,1882 "/>
+                                        <polygon className="carngon mainfinalst2" points="2859.8,2265.1 2554.1,2291.1 2521,2120.1 "/>
+                                        <polygon className="carngon mainfinalst7" points="2859.8,2265.1 2632.2,2582 2594.7,2459.8 2554.1,2291.1 "/>
+                                        <polygon className="carngon mainfinalst6" points="2947.9,2623.4 2877,2830 2632.2,2582 2632.2,2582 "/>
+                                        <polygon className="carngon mainfinalst2" points="2877,2830 2751.8,2865.3 2687.1,2729.6 2638.3,2602.1 2632.2,2582 "/>
+                                        <polygon className="carngon mainfinalst6" points="2877,2828.9 2877,2997 2868.2,2987.8 2749.5,2864.8 "/>
+                                        <polygon className="carngon mainfinalst5" points="2751.8,2865.3 2469.1,2986 2468.7,2986 2165.1,2865.3 "/>
+                                        <polygon className="carngon mainfinalst3" points="2407.9,2129.7 2376.8,2278.5 2334,2448.3 2085.1,2270 "/>
+                                        <polyline className="carngon mainfinalst8" points="2584.8,3031.4 2585,3031.5 2585.2,3031.4 "/>
+                                        <line className="carngon mainfinalst8" x1="1918.8" y1="2986" x2="1918.4" y2="2986.1"/>
+                                        <polygon className="carngon mainfinalst0" points="2840.7,2122.1 2859.8,2265.1 2521,2120.1 2884.6,2066.6 "/>
+                                        <line className="carngon mainfinalst8" x1="2632.2" y1="2582" x2="2632.2" y2="2582"/>
+                                        <polygon className="carngon mainfinalst5" points="2927.4,2305.9 2905.1,2489.7 2632.2,2582 "/>
+                                        <polygon className="carngon mainfinalst1" points="2947.9,2623.4 2632.2,2582 2632.2,2582 2905.1,2489.7 "/>
+                                        <polygon className="carngon mainfinalst0" points="2978.4,2256.2 2958.5,2421.4 2927.4,2305.9 "/>
+                                        <polyline className="carngon mainfinalst9" points="1480.4,626 1481.3,624.1 1481.3,625.5 "/>
+                                        <polygon className="carngon mainfinalst0" points="2004.6,2107.1 1942,2064.1 1935.9,1878 "/>
+                                        <line className="carngon mainfinalst8" x1="1209.7" y1="2986.1" x2="1209.6" y2="2985.7"/>
+                                    </svg>
                         </div>
                         <div className="mainfinalmainattractioninternal mainfinalattraction1" id="carnivalstrigger">
                             <div className="mainfinalmainattractioninternalsvgcontainer">
                                 <svg version="1.1" id="mainfinalcarnivalsvgmove" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                    viewBox="0 0 3403 446.825" enableBackground="new 0 0 3403 446.825" xmlSpace="preserve">
+                                    viewBox="0 -10 3403 446.825" enableBackground="new 0 0 3403 446.825" xmlSpace="preserve">
                                     <g>
                                         <g>
                                             <path fill="#fff" d="M1534.009,155.595c-2.451-4.49-6.43-7.248-11.943-8.271c-1.227-0.201-2.553-0.307-3.982-0.307

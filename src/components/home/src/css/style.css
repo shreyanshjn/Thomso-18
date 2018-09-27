@@ -736,6 +736,18 @@ background: url("../img/bg\ bg-01.png")
 #mainfinaleventstext{
     left:47%;
 }
+.mainfinalst0{fill:#F4A934;}
+	.mainfinalst1{fill:#FCEB55;}
+	.mainfinalst2{fill:#F7CB46;}
+	.mainfinalst3{fill:#F6BF3E;}
+	.mainfinalst4{fill:#FFF85F;}
+	.mainfinalst5{fill:#FD9534;}
+	.mainfinalst6{fill:#FF7C2E;}
+	.mainfinalst7{fill:#FADD53;}
+	.mainfinalst8{fill:none;stroke:#000000;stroke-width:4;stroke-miterlimit:10;}
+	.mainfinalst9{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.mainfinalst10{fill:#FB561C;}
+	.mainfinalst11{fill:none;}
 @media only screen and (max-width:1700px){
     .mainfinalmaincontainersecondright>p{
         word-spacing:1.1px;
@@ -860,7 +872,9 @@ background: url("../img/bg\ bg-01.png")
     width:100vw;
     height:500vh;
     position: relative;
-    background: url("../img/main\ bg\ compressed-01.jpg");
+    background:linear-gradient( rgba(20,20,20,.5), rgba(20,20,20,.5)),url("../img/compressed.jpg");
+    background-size: cover;
+    background-position: center center;
 
 }
 .mainfinalmainthirdinternalcontainer{
