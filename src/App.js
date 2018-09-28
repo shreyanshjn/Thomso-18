@@ -46,10 +46,10 @@ const TeamIndex = Loadable({
     loading: () => <Loader />
 });
 
-const HomeIndex = Loadable({
-    loader: () => import("./components/beta/home/Index"),
-    loading: () => <Loader />
-});
+// const HomeIndex = Loadable({
+//     loader: () => import("./components/beta/home/Index"),
+//     loading: () => <Loader />
+// });
 
 const MainHomeIndex = Loadable({
     loader: () => import("./components/home/Index"),
@@ -172,8 +172,8 @@ class App extends Component {
                     <Switch>
                         <React.Fragment>
                             {/* <Route path="/beta" component={BetaIndex} /> */}
-                            <Route exact path="/" component={HomeIndex} />
-                            <Route exact path="/final" component={MainHomeIndex} />
+                            {/* <Route exact path="/" component={HomeIndex} /> */}
+                            <Route exact path="/" component={MainHomeIndex} />
                             <Route exact path="/sponsors" component={SponsorsIndex} />
                             <Route exact path="/associate" component={AccociateIndex} />
                             <Route exact path="/quizardry" component={QuizardryIndex} />

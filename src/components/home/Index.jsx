@@ -67,11 +67,11 @@ export default class HomeIndex extends React.Component {
                             <img src={bell} width="32" height="32" alt="bell-icon"/>
                             <p>WHAT'S NEW <br/><br/></p>
                             <div id="submenu">
-                                <Link to="/cupid" >Cupid's Attack</Link>
+                                <a href="https://www.thecollegefever.com/events/thomso" rel="noopener noreferrer" target="_blank">Payment</a>
+                                <br/><Link to="/cupid" >Cupid's Attack</Link>
                                 <br/><Link to="/whythomso">Why Thomso?</Link>
-                                <br/><Link to="/main">Register</Link><br/></div>
+                                </div>
                         </li>
-
                     </ul>
                 </div>
                 {/* Main web 1 */}

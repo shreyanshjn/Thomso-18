@@ -10,12 +10,12 @@
   width: 25rem;
   color: white;
   text-decoration: none;
-  font-size: 44px;
+  font-size: 30px;
   font-family: Montserrat;
   font-weight: 600;
   overflow-wrap: break-word;
   left: 15%;
-  top: 60px;
+  top: 125px;
   position: relative;
 }
 .card-carousel {

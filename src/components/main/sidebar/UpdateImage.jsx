@@ -18,7 +18,7 @@ export default class UpdateImage extends React.Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    if (this.state.file.size > 101200) {
+    if (this.state && this.state.file && this.state.file.size > 101200) {
       this.setState({ disabled: true, errors: 'Max image sixe of 100 kb exceeded' })
     } else {
       let data = {
