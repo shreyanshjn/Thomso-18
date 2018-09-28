@@ -14,6 +14,32 @@
     justify-content:center;
     align-items:center;
 }
+.main-events-payment-buttons{
+    position: absolute;
+    bottom: 10px;
+    left: calc(50% - 119px);
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top:25px; 
+}
+.main-events-payment-buttons button{
+    color: black;
+    padding: 10px 20px;
+    font-family: Montserrat;
+    font-weight: 600;
+    background: transparent;
+    border: 1px solid black;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+.main-events-payment-buttons button:hover{
+    color: white;
+    background:black;
+    transition: all 0.3s;
+}
 .participant-child-get-seized
 {
     display:flex;
@@ -53,6 +79,7 @@
 .participant-profile-child-right{
     width: 40%;
     user-select:none;
+    position: relative;
 }
 .main-events-add-more-parent
 {
@@ -112,7 +139,7 @@
     background: white;
     padding: 10px;
     min-height: 74px;
-    max-height: 54vh;
+    max-height: 23vh;
     -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.41);
     -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.41);
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.41);
@@ -183,6 +210,9 @@
         padding-top: 7px;
         display: flex;
         flex-direction: row;
+    }
+    .main-events-payment-buttons button{
+        font-size: 16px;
     }
 }
 @media screen and (min-width:1400px){

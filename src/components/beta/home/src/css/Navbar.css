@@ -90,7 +90,7 @@
 }
 .new-navbar-lists-child >li
 {
-    padding:15px;
+    padding:10px;
     list-style-type:none;
 }
 .new-navbar-lists-child >li >a
@@ -101,7 +101,7 @@
 }
 .hideNavbar >li
 {
-    padding:15px;
+    padding:10px;
     list-style-type:none;
 }
 .hideNavbar >li >a

@@ -97,6 +97,9 @@ export default class Profile extends React.Component {
                         <div className="main-events-add-more-parent">
                             <Link to="/events" className="main-events-add-more">Add More events</Link>
                         </div>
+                        <div className="main-events-payment-buttons">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.thecollegefever.com/events/thomso"><button>Proceed for Payment</button></a>
+                        </div>
                     </div>
                 </div>
             </div>
