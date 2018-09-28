@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from "react-router-dom"
 import {mobilecarousel} from "./mobilecarousel.js";
 import "./mobilecarousel.css"
 import LeftArrow from "./leftarrow"
@@ -43,6 +44,13 @@ export default class MobileCarousel extends Component {
                             <div className="slider-slide-child-farhan">
                                     <Sonu />
                                 </div>
+                            </div>
+                            <div className="slider-slide">
+                            <Link to="/whythomso#previous">
+                                <div className="slider-slide-child-see-more">
+                                    See More Artists
+                                </div>
+                            </Link>
                             </div>
                         </div>
                     </div>

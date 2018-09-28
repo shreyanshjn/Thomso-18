@@ -1901,7 +1901,7 @@ export default class HomeIndex extends React.Component {
                                 <polygon className="onlinegon" fill="#EC3039" points="608.251,568.813 586.87,577.972 593.718,558.653 " />
                                 <polygon className="onlinegon" fill="#EF5054" points="622.195,560.778 608.251,568.813 607.429,547.291 607.508,547.291 " />
                             </svg> */}
-                                            <svg className="mainfinalsplitlit mainfinalsplitlit2" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                            <svg className="mainfinalsplitlit mainfinalsplitlit2" version="1.1" id="Layer_1"  xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                     width="841.89px" height="595.276px" viewBox="0 0 841.89 595.276" enableBackground="new 0 0 841.89 595.276"
                     xmlSpace="preserve">
                <Link to="/onlineevents">
@@ -3093,11 +3093,11 @@ export default class HomeIndex extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className="mainpage4">
+                <div className="mainfinalmainpage4">
                     <div className="mainpage4-heading">
                         <Celebrities />
                     </div> 
-                    <div className="mainpage-carousel-desktop">
+                    <div className="mainfinalmainpage-carousel-desktop">
                         {this.state.carouselDisplay ? null : <Carousel />}
                     </div>
                     <div className="mainfinalmainpage-carousel-mobile">
