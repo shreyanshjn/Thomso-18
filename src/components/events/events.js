@@ -98,8 +98,8 @@ export const EventDetails =
                     },
                     {
                         id: '3_5',
-                        name: "May May",
-                        content: "In the recent years, memesters have successfully managed to tickle our funny bones by hijacking our social medias with their MAYMAYS. The trend says memes but we are here with 'MAYMAY' - the online meme making competition of Thomso'18. With this we have begun our quest to find the ultimate memelord. Put on your thinking caps memesta’s because the competition is going to be fierce. Pour all your creativity, spill the humour and be the pro.",
+                        name: "Online Meme Competition",
+                        content: "Hail down, the memelords are here!!! Humour is contagious. Try and spread that. All ya have to do is make a meme and post it on your timeline with hashtags #biubiumemes and #thomso2018. Pour all your creativity, spill the humour and be the pro. Caution: Memestas coming soon to hijack your walls with their memes! Biubiu app (Official meme maker app of Thomso-2018)",
                         rulebook: "https://drive.google.com/open?id=1QMbZO0WojWjvnfvF8pqkTKfzh1T4V7QR",
                         image: "maymay.jpeg",
                         prize: "100"
@@ -271,7 +271,7 @@ export const EventDetails =
                         id: '7_3',
                         name: "Vogue",
                         content: "Fashion is a way to speak who you are without having to speak. Do you love owning the world with your elegance and glamour? So why fit in when you were born to stand out? With the adage “Classy and Fabulous” on back of our minds, we have this event planned out to cater to the fashionista in all of us. A breath stopper at Thomso where sculpted males and gorgeous females sizzle the ramp with their display of sensational apparels, radiating confidence and mystique.If you are the one to let your style speak for yourself, then this is the place to be. We invite you to break out of the mould and scintillate the world with your glamour and confidence, on a stage graced with the likes of Sushmita Sen, Annie Thomas, Udita Goswami and other bigwigs in the past.",
-                        rulebook: "https://drive.google.com/open?id=1ETuszdLYOEEuRnjtbp9QxI-Qr2-T00q0",
+                        rulebook: "https://drive.google.com/open?id=1Jd2Twf4lNSf0s_uteWWpe56ZTBW5Mv_v",
                         image: "Vogue.jpeg",
                         prize: "125"
                     }

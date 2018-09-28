@@ -3098,7 +3098,7 @@ export default class HomeIndex extends React.Component {
                         <Celebrities />
                     </div> 
                     <div className="mainfinalmainpage-carousel-desktop">
-                        {this.state.carouselDisplay ? null : <Carousel />}
+                        {this.state.carouselDisplay ? null : <Carousel history={this.props.history}/>}
                     </div>
                     <div className="mainfinalmainpage-carousel-mobile">
                         {this.state.carouselDisplay ? <MobileCarousel /> :null}
@@ -3128,7 +3128,7 @@ export default class HomeIndex extends React.Component {
                                     <div className="mainfinalmainpage5container-inner-in-right-righter">
                                         <div className="mainfinalmainpagecontainer-outer-rightin">
                                             <div className="mainfinalmainpagecontainer-outer-rightin-inner">
-                                                <div className="mainfinalmainpagecontainer-outer-rightin-inner-inside"><Link to="/team">Team Page<span><img src={rightarrow} alt="right-arrow" srcSet="" /></span></Link>
+                                                <div className="mainfinalmainpagecontainer-outer-rightin-inner-inside"><Link to="/comingSoon">Team Page<span><img src={rightarrow} alt="right-arrow" srcSet="" /></span></Link>
 
                                                     {/* <div className="mainfinalmainpage5internalsvgcontainer">
                                                                     <img src="./right-arrow.svg" alt="right-arrow" srcSet="">

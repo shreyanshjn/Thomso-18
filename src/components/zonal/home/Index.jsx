@@ -29,11 +29,11 @@ export default class HomeIndex extends Component {
                     
                     <div className="zonals-mainpage-cards">
                         {/* <Link to="/zonals/chandigadh"> */}
-                            <div className="zonals-mainpage-cards-image-chandigadh">
+                            <div className="zonals-mainpage-cards-image-bhopal">
                             </div>
                         {/* </Link> */}
                         <div className="zonals-mainpage-cards-title">
-                            Chandigadh Zonals
+                            Bhopal Zonals
                         </div>
                         {/* <div className="zonals-mainpage-cards-button">
                             <Link to="/zonals/chandigadh">
@@ -41,7 +41,7 @@ export default class HomeIndex extends Component {
                             </Link>
                         </div> */}
                         <div className="zonals-mainpage-cards-text">
-                                COMING SOON.
+                            SUCCESSFULLY ORGANIZED.
                         </div>
                     </div>
 
@@ -71,20 +71,6 @@ export default class HomeIndex extends Component {
                         </div>
                         <div className="zonals-mainpage-cards-text">
                                 SUCCESSFULLY ORGANIZED.
-                        </div>
-                    </div>
-                </div>
-                <div className="zonals-mainpage-parent-child">
-                    <div className="zonals-mainpage-cards">
-                        {/* <Link to="/zonals/bhopal"> */}
-                            <div className="zonals-mainpage-cards-image-bhopal">
-                            </div>
-                        {/* </Link> */}
-                        <div className="zonals-mainpage-cards-title">
-                            Bhopal Zonals
-                        </div>
-                        <div className="zonals-mainpage-cards-text">
-                                COMING SOON
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
 import carousel from "./carousel.js";
 import "./carousel.css"
 import LeftArrow from "./leftarrow"
@@ -66,10 +65,8 @@ export default class Carousel extends Component {
                         </div>
                     </div>
                     <div className="my-card">
-                        <div className="my-card-link">
-                            <Link to="/whythomso">
-                                See more artists
-                            </Link>
+                        <div className="my-card-link" onClick={() => this.props.history.push('/whyThomso')}>
+                            See more artists
                         </div>
                     </div>
 
