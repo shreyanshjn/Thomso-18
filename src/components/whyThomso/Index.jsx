@@ -344,7 +344,7 @@ export default class WhyThomso extends Component {
                                                 <span><strong>A</strong></span> 
                                                 <span>Visit
                                                     <Link to="/events">
-                                                     www.thomso.in/events
+                                                     &nbsp;www.thomso.in/events&nbsp;
                                                     </Link>
                                                 for details of all the events and their registration.</span>
                                             </div>
@@ -373,7 +373,7 @@ export default class WhyThomso extends Component {
                                             <div className="whythomso-faqs-answer">
                                                 <span><strong>A</strong></span>
                                                 <span>
-                                                We strongly suggest youto bring an extension cord,small lock,a blanket adn your college ID card to avoid any issues.
+                                                We strongly suggest you to bring an extension cord,small lock,a blanket and your college ID card to avoid any issues.
                                                 </span>
                                             </div>
                                         </div>

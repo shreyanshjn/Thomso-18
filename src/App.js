@@ -141,6 +141,11 @@ const MUNIndex = Loadable({
     loading: () => <Loader />
 })
 
+const ComingSoonIndex = Loadable({
+    loader: () => import("./components/comingSoon/Index"),
+    loading: () => <Loader />
+})
+
 // const Carousel = Loadable({
 //     loader: () => import("./components/carousel/Index"),
 //     loading: () => <Loader />
@@ -177,7 +182,8 @@ class App extends Component {
                             <Route exact path="/sponsors" component={SponsorsIndex} />
                             <Route exact path="/associate" component={AccociateIndex} />
                             <Route exact path="/quizardry" component={QuizardryIndex} />
-                            <Route exact path="/comingSoon" component={TeamIndex} />
+                            <Route exact path="/team" component={TeamIndex} />
+                            <Route exact path="/comingSoon" component={ComingSoonIndex} />
                             <Route exact path="/faq" component={FAQIndex} />
                             <Route path="/ca/" component={CAIndex} />
                             <Route path="/campusAmbassador/" component={CampusIndex} />

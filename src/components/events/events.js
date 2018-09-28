@@ -478,14 +478,14 @@ export const EventDetails =
                         image: "parliament.jpeg",
                         prize: "50"
                     },
-                    {
-                        id: '11_9',
-                        name: "IITR MUN",
-                        content: "True to the spirit of the United Nations, this event strives to foster a constructive forum for open dialogue on complex global issues, including international peace and security, and economic and social progress. During the conference, students learn the importance of balancing national interests with the needs of the international community, while also learning about the powers and limitations of international negotiation. Delegates will preserve their countries’ national policy while negotiating in the face of other, sometimes conflicting, international policies",
-                        rulebook: "https://drive.google.com/open?id=1DT-2RWF85m8ST_yNcGFyy8szl-0mZ64R",
-                        image: "iitrmun.jpeg",
-                        prize: "50"
-                    },
+                    // {
+                    //     id: '11_9',
+                    //     name: "IITR MUN",
+                    //     content: "True to the spirit of the United Nations, this event strives to foster a constructive forum for open dialogue on complex global issues, including international peace and security, and economic and social progress. During the conference, students learn the importance of balancing national interests with the needs of the international community, while also learning about the powers and limitations of international negotiation. Delegates will preserve their countries’ national policy while negotiating in the face of other, sometimes conflicting, international policies",
+                    //     rulebook: "https://drive.google.com/open?id=1DT-2RWF85m8ST_yNcGFyy8szl-0mZ64R",
+                    //     image: "iitrmun.jpeg",
+                    //     prize: "50"
+                    // },
 
 
                 ]

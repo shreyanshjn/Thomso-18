@@ -2,7 +2,7 @@ export const ArtistDetails =
     [
         {
             id: 41,
-            name: "Farhan Aktar",
+            name: "Farhan Akhtar",
             image: "Farhaan.jpg",
         },
         {
@@ -22,7 +22,7 @@ export const ArtistDetails =
         },
         {
             id: 41,
-            name: "Sundhi Chauhan",
+            name: "Sunidhi Chauhan",
             image: "sunidhichauhan.jpeg",
         },
         {
@@ -124,7 +124,7 @@ export const More_artists = [
     },
     {
         id: 27,
-        name: "Pankhudi Gidwani",
+        name: "Pankhuri Gidwani",
         image: "PankhuriGidwani.jpg",
     },
     {
