@@ -14,10 +14,17 @@
 }
 .wrapper{
     display:flex; 
-    flex-direction: row;
+    flex-direction: column;
     padding: 20px;
     flex-wrap: wrap;
+    text-align: center;
     
+}
+.wrapperinnerdiv{
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
 }
 .card-inner{
     
@@ -28,6 +35,7 @@
 .card-innerdiv{
     
     position: relative;
+    width: fit-content;
     
 }
 
@@ -45,7 +53,7 @@
     font-size: 30px;
     color:#2DCCD3;
     text-align: center;
-    padding: 20px;
+    padding: 30px 60px 20px 20px;
 
 }
 .overlay {
@@ -116,12 +124,13 @@
     white-space: nowrap;
     position: relative;
     line-height: 1em;
-    top: 40%;
+    top: 44%;
     left: 60%;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     font-family:Montserrat;
+    text-align: left;
   }
 
   @-webkit-keyframes glow {
@@ -163,7 +172,7 @@
 {
     float:right;
     position: absolute;
-    top: 65%;
+    top: 75%;
     left:6%;
     user-select:none;
     -webkit-user-select: none;
@@ -180,6 +189,10 @@
     {
         background:black;
     }
+    .card-footer-linkediv:hover
+    {
+        background:black;
+    }
    
     .common-cursor{
       cursor : default;
@@ -190,10 +203,26 @@
 
 
 
-        .wrapper{
+        .wrapper {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-direction: column;
             flex-direction: column;
+            padding: 20px;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            text-align: center;
         }
 
+        .wrapperinnerdiv {
+            margin-bottom: 10px;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-direction: row;
+            flex-direction: column;
+            -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+        }
         .card-maindiv {
             padding: 10% 5%;
             height: 1200vh;
@@ -202,5 +231,9 @@
         .card-innerdiv {
             position: relative;
             TEXT-ALIGN: CENTER;
+            width: 100%;
+        }
+        .card-inner{
+            width: 100%;
         }
     }

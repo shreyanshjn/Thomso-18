@@ -95,7 +95,7 @@ export default class WhyThomso extends Component {
                                     <h3>The Institute</h3>
                                 </div>
                                 <div className="whythomso-second-child-the-institute-content-content">
-                                    <p>Amidst the foothills of Himalayas,fastering the spirit of adventure and excitement is located IIT Roorkee</p>
+                                    <p>Amidst the foothills of Himalayas,fostering the spirit of adventure and excitement is located IIT Roorkee</p>
                                 </div>
                             </div>
                         </div>
@@ -107,7 +107,7 @@ export default class WhyThomso extends Component {
                                     <h3>The Prosperity</h3>
                                 </div>
                                 <div className="whythomso-second-child-the-nightmare-content-content">
-                                    <p>With 150+ events and prizes woth more than 30 lakhs, Thomso attracts a crowd of over 50k people</p>
+                                    <p>With 150+ events and prizes worth more than 30 lakhs at stake, Thomso attracts a crowd of over 50k people</p>
                                 </div>
                             </div>
                         </div>
@@ -350,6 +350,20 @@ export default class WhyThomso extends Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <div className="whythomso-faqs-ansque-columntwo-two">
+                                        <div className="whythomso-faqs-height">
+                                            <div className="whythomso-faqs-question">
+                                                <span><strong>Q</strong></span>
+                                                <span>Does Thomso has any age restriction?</span>
+                                            </div>
+                                            <div className="whythomso-faqs-answer">
+                                                <span><strong>A</strong></span> 
+                                                <span>
+
+                                                    As such, there is no such restriction of age for the participants but it is necessary that the participant must be a college-studying student.</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div className="whythomso-sixth-child-middle-columntwo">
@@ -482,6 +496,7 @@ export default class WhyThomso extends Component {
                                             </div>
                                         </div>
                                     </div>
+                                    
                                 </div>
                             </div>
                         </div>
