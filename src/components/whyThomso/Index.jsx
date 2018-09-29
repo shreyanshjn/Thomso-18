@@ -225,7 +225,7 @@ export default class WhyThomso extends Component {
                         <div className="whythomso-fifth-child-middle">
                             {this.state.artistdetails.map(e =>
                                 <div className="whythomso-fifth-child-artist">
-                                    <div className={`whythomso-fifth-child-image`}
+                                    <div className="whythomso-fifth-child-image"
                                         style={{
                                             backgroundImage: `url(/img/main/whythomso/${e.image})`,
                                             backgroundSize: "cover",
@@ -243,7 +243,7 @@ export default class WhyThomso extends Component {
                             {
                                 this.state.viewmore && this.state.moreartists.map(e =>
                                     <div className="whythomso-fifth-child-artist">
-                                        <div className={`whythomso-fifth-child-image`}
+                                        <div className="whythomso-fifth-child-image"
                                             style={{
                                                 backgroundImage: `url(/img/main/whythomso/${e.image})`,
                                                 backgroundSize: "cover",
@@ -329,22 +329,24 @@ export default class WhyThomso extends Component {
                                             <div className="whythomso-faqs-answer">
                                                 <span><strong>A</strong></span>
                                                 <span>Yes. Visit
-                                            <a href="http://thomso.in/workshop"> Workshops </a> for more details.
-                                        </span>
+                                                    <a href="http://thomso.in/workshop"> Workshops </a> for more details.
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="whythomso-faqs-ansque-sixth">
+                                    <div className="whythomso-faqs-ansque-columntwo-two">
                                         <div className="whythomso-faqs-height">
                                             <div className="whythomso-faqs-question">
                                                 <span><strong>Q</strong></span>
-                                                <span>Is personal vehicle allowed inside the campus?</span>
+                                                <span>From where we can get information for events for Thomso’18?</span>
                                             </div>
                                             <div className="whythomso-faqs-answer">
-                                                <span><strong>A</strong></span>
-                                                <span>
-                                                    No, personal vehicles are not allowed inside the campus.
-                                        </span>
+                                                <span><strong>A</strong></span> 
+                                                <span>Visit
+                                                    <Link to="/events">
+                                                     &nbsp;www.thomso.in/events&nbsp;
+                                                    </Link>
+                                                for details of all the events and their registration.</span>
                                             </div>
                                         </div>
                                     </div>
@@ -362,15 +364,17 @@ export default class WhyThomso extends Component {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="whythomso-faqs-ansque-columntwo-two">
+                                    <div className="whythomso-faqs-ansque-columnthree-sixth">
                                         <div className="whythomso-faqs-height">
                                             <div className="whythomso-faqs-question">
                                                 <span><strong>Q</strong></span>
-                                                <span>From where we can get information for events for Thomso’18?</span>
+                                                <span>What are the important things that i should bring along with me to Thomso?</span>
                                             </div>
                                             <div className="whythomso-faqs-answer">
-                                                <span><strong>A</strong></span> <span>Visit<Link to="/events"> www.thomso.in/events
-                                        </Link> for details of all the events and their registration.</span>
+                                                <span><strong>A</strong></span>
+                                                <span>
+                                                We strongly suggest you to bring an extension cord,small lock,a blanket and your college ID card to avoid any issues.
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
@@ -428,9 +432,9 @@ export default class WhyThomso extends Component {
                                             <div className="whythomso-faqs-answer">
                                                 <span><strong>A</strong></span>
                                                 <span>
-                                                    You can get latest updates from our Facebook page <a href="www.facebook.com/thomsoiitroorkee/">www.facebook.com/thomsoiitroorkee/</a> .
-
-                                        </span>
+                                                    You can get latest updates from our Facebook page 
+                                                    <a href="www.facebook.com/thomsoiitroorkee/">www.facebook.com/thomsoiitroorkee/</a> .
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
@@ -446,7 +450,7 @@ export default class WhyThomso extends Component {
                                                     Once you reached Roorkee, you can easily take an E-rickshaw, the bus station is
                                                 just 1 km away whereas railway station is just 3 km away from the main gate of IIT
                                                 Roorkee.
-                                        </span>
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
@@ -464,26 +468,26 @@ export default class WhyThomso extends Component {
                                             </div>
                                         </div>
                                     </div>
-                                    {/* <div className="whythomso-faqs-ansque-columnthree-sixth">
-                                    <div className="whythomso-faqs-height">
-                                        <div className="whythomso-faqs-question">
-                                            <span><strong>Q</strong></span>
-                                            <span>What are the main requiremen?</span>
-                                        </div>
-                                        <div className="whythomso-faqs-answer">
-                                            <span><strong>A</strong></span>
-                                            <span>
-                                                There are many Hostels which would be available for the accommodation, the
-                                         registration for allotment would be done on Thomso website.</span>
+                                    <div className="whythomso-faqs-ansque-sixth">
+                                        <div className="whythomso-faqs-height">
+                                            <div className="whythomso-faqs-question">
+                                                <span><strong>Q</strong></span>
+                                                <span>Is personal vehicle allowed inside the campus?</span>
+                                            </div>
+                                            <div className="whythomso-faqs-answer">
+                                                <span><strong>A</strong></span>
+                                                <span>
+                                                    No, personal vehicles are not allowed inside the campus.
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div> */}
                                 </div>
                             </div>
                         </div>
                     </a>
                 </div>
             </div >
-        );
+        )
     }
 }

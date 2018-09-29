@@ -649,6 +649,7 @@
 .whythomso-faqs-answer{
     display: flex;
     flex-direction: row;
+    overflow-wrap: break-word;
     padding: 10px;
 }
 .whythomso-faqs-answer span{
@@ -757,6 +758,16 @@
     border-radius: 3px;
 }
 .whythomso-faqs-ansque-columnthree-fifth{
+    /* height: 46vh; */
+    margin-top: 10px;
+    margin-bottom:10px;
+    padding: 10px;
+    font-family: Poppins;
+    font-size: 16px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+.whythomso-faqs-ansque-columnthree-sixth{
     /* height: 46vh; */
     margin-top: 10px;
     margin-bottom:10px;

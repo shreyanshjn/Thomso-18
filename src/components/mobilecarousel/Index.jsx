@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {mobilecarousel} from "./mobilecarousel.js";
+import { Link } from "react-router-dom"
+import { mobilecarousel } from "./mobilecarousel.js";
 import "./mobilecarousel.css"
 import LeftArrow from "./leftarrow"
 import RightArrow from "./rightarrow"
@@ -14,47 +15,54 @@ export default class MobileCarousel extends Component {
     componentDidMount() {
         mobilecarousel();
     }
-  
+
     render() {
         return (
-                <div className="simple-slider">
-                    <div className="slider-container">
-                        <div className="slider-inner">
-                            <div className="slider-slide">
+            <div className="simple-slider">
+                <div className="slider-container">
+                    <div className="slider-inner">
+                        <div className="slider-slide">
                             <div className="slider-slide-child-farhan">
-                                    <Sunidhi />
-                                </div>
-                            </div>
-                            <div className="slider-slide">
-                            <div className="slider-slide-child-farhan">
-                                    <Shaan />
-                                </div>
-                            </div>
-                            <div className="slider-slide">
-                                <div className="slider-slide-child-farhan">
-                                    <Farhan />
-                                </div>
-                            </div>
-                            <div className="slider-slide">
-                            <div className="slider-slide-child-farhan">
-                                    <Nucleya />
-                                </div></div>
-                            <div className="slider-slide">
-                            <div className="slider-slide-child-farhan">
-                                    <Sonu />
-                                </div>
+                                <Sunidhi />
                             </div>
                         </div>
+                        <div className="slider-slide">
+                            <div className="slider-slide-child-farhan">
+                                <Shaan />
+                            </div>
+                        </div>
+                        <div className="slider-slide">
+                            <div className="slider-slide-child-farhan">
+                                <Farhan />
+                            </div>
+                        </div>
+                        <div className="slider-slide">
+                            <div className="slider-slide-child-farhan">
+                                <Nucleya />
+                            </div></div>
+                        <div className="slider-slide">
+                            <div className="slider-slide-child-farhan">
+                                <Sonu />
+                            </div>
+                        </div>
+                        <div className="slider-slide">
+                            <Link to="/whythomso#previous">
+                                <div className="slider-slide-child-see-more">
+                                    See More Artists
+                                </div>
+                            </Link>
+                        </div>
                     </div>
-                    <div className="slider-dots">
-                    </div>
-                    <a className="leftarrow slider-previous">
-                    <LeftArrow />
-                    </a>
-                    <a className="rightarrow slider-next">
-                    <RightArrow />
-                    </a>
                 </div>
+                <div className="slider-dots">
+                </div>
+                <a className="leftarrow slider-previous">
+                    <LeftArrow />
+                </a>
+                <a className="rightarrow slider-next">
+                    <RightArrow />
+                </a>
+            </div>
         );
     }
 }

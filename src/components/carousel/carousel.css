@@ -5,17 +5,17 @@
   margin-left: auto;
   margin-right: auto;
 }
-.my-card-link a{
+.my-card-link {
   height: 21rem;
   width: 25rem;
   color: white;
   text-decoration: none;
-  font-size: 44px;
+  font-size: 30px;
   font-family: Montserrat;
   font-weight: 600;
   overflow-wrap: break-word;
   left: 15%;
-  top: 60px;
+  top: 125px;
   position: relative;
 }
 .card-carousel {
@@ -181,7 +181,7 @@
   z-index: 100;
   position: absolute;
   left: 25%;
-  top: calc(50% - 17.5px);
+  top: calc(38% - 17.5px);
   width: fit-content;
   cursor: pointer;
 }
@@ -189,7 +189,7 @@
   z-index: 100;
   position: absolute;
   right: 25%;
-  top: calc(50% - 17.5px);
+  top: calc(38% - 17.5px);
   width: fit-content;
   cursor: pointer;
 }

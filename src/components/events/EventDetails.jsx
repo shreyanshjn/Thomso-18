@@ -23,8 +23,9 @@ export default class EventDetail extends React.Component {
         this.setState({ wait: true, disabled: true });
     }
     handleChange(id) {
-        const filteredData = this.props.subevents.filter(s => s.id === id);
-        this.setState({ data: filteredData[0] });
+        // const filteredData = this.props.subevents.filter(s => s.id === id);
+        // this.setState({ data: filteredData[0] });
+        this.props.updateParentSubEvent(id);
     }
     componentWillMount() {
         const isAuthenticated = this.Auth.hasToken();

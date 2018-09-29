@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
 import carousel from "./carousel.js";
+import { Link } from "react-router-dom";
 import "./carousel.css"
 import LeftArrow from "./leftarrow"
 import RightArrow from "./rightarrow"
@@ -66,11 +66,11 @@ export default class Carousel extends Component {
                         </div>
                     </div>
                     <div className="my-card">
-                        <div className="my-card-link">
-                            <Link to="/whythomso">
+                        <Link to="/whythomso">
+                            <div className="my-card-link">
                                 See more artists
-                            </Link>
-                        </div>
+                            </div>
+                        </Link>
                     </div>
 
                 </div>

@@ -60,9 +60,6 @@ var UserSchema = new mongoose.Schema({
         type:Date,
         default:Date.now
     },
-    state: {
-        type: String
-    },
     branch: {
         type: String,
         required: true
@@ -78,6 +75,9 @@ var UserSchema = new mongoose.Schema({
         ref: 'MUN_Answer'
     },
 });
+
+UserSchema.index({name: 'text', email : 'text', thomso_id: 'text', gender: 'text', contact: 'text', college: 'text'});
+
 UserSchema.pre('save', function (next) {
     var user = this;
     if (this.isModified('password') || this.isNew) {

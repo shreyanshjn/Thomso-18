@@ -8,7 +8,10 @@ exports.userInfo = function(req,res){
         var query = {};
         if (params) {
             if (params.registered === 'true') {
-                query = {thomso_id: {$ne: null}};
+                query = Object.assign({thomso_id: {$ne: null}}, query);
+            }
+            if (params.search && typeof(params.search) === "string" && params.search.length > 3) {
+                query = Object.assign({$text: {$search: params.search}}, query);
             }
         }
         if (params.page === "all") {

@@ -17,18 +17,16 @@ export default class ZonalCampus extends Component {
                             Jaipur Zonals
                         </div>
                         <div className="zonals-mainpage-cards-button">
-                            <Link to="/zonals/jaipur">
-                                Register
-                            </Link>
+                            Successfully Organized.
                         </div>
                     </div>
                     <div className="zonals-mainpage-cards">
                         {/* <Link to="/zonals/chandigadh"> */}
-                            <div className="zonals-mainpage-cards-image-chandigarh">
+                            <div className="zonals-mainpage-cards-image-bhopal">
                             </div>
                         {/* </Link> */}
                         <div className="zonals-mainpage-cards-title">
-                            Chandigarh Zonals
+                            Bhopal Zonals
                         </div>
                         {/* <div className="zonals-mainpage-cards-button">
                             <Link to="/zonals/chandigadh">
@@ -36,7 +34,7 @@ export default class ZonalCampus extends Component {
                             </Link>
                         </div> */}
                         <div className="zonals-mainpage-cards-button">
-                            COMING SOON.
+                            Successfully Organized.
                         </div>
                     </div>
                     <div className="zonals-mainpage-cards">
@@ -61,18 +59,6 @@ export default class ZonalCampus extends Component {
                         </div>
                         <div className="zonals-mainpage-cards-button">
                             Successfully Organized.
-                        </div>
-                    </div>
-                    <div className="zonals-mainpage-cards">
-                        {/* <Link to="/zonals/lucknow"> */}
-                            <div className="zonals-mainpage-cards-image-bhopal">
-                            </div>
-                        {/* </Link> */}
-                        <div className="zonals-mainpage-cards-title">
-                            Bhopal Zonals
-                        </div>
-                        <div className="zonals-mainpage-cards-button">
-                            COMING SOON.
                         </div>
                     </div>
                 </div>

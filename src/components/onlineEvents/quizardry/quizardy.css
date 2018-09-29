@@ -29,7 +29,7 @@
 @media only screen and (min-width:768px)
 {
 .quizardy-child{
-    background: url('./sacred.jpg');
+    background: url('./WebFriends.png');
     background-size: cover;
     height: 100vh;
     background-repeat: no-repeat;
@@ -82,8 +82,8 @@
   .quizardy-parent {
     height: 100vh;
     overflow-y: hidden;
-    background: url('./sacredphone.jpg');
-    background-size:contain;
+    background: url('./WebFriends.png');
+    background-size:cover;
     background-repeat: no-repeat;
     background-color:#318388;
   }
