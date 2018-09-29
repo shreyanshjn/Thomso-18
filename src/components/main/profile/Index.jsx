@@ -98,7 +98,7 @@ export default class Profile extends React.Component {
                             <Link to="/events" className="main-events-add-more">Add More events</Link>
                         </div>
                         <div className="main-events-payment-buttons">
-                            <Link to="/Payment_TermsandConditions"><button>Proceed for Payment</button></Link>
+                            <Link to="/payment"><button>Proceed for Payment</button></Link>
                         </div>
                     </div>
                 </div>

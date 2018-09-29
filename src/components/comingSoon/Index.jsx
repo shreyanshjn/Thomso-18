@@ -2,7 +2,7 @@ import React from 'react'
 import './TeamIndex.css'
 import Navbar from '../beta/home/Navbar.jsx'
 
-export default class TeamIndex extends React.Component{
+export default class ComingSoonIndex extends React.Component{
     render(){
         return (
             <div>

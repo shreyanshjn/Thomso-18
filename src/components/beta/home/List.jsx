@@ -36,13 +36,37 @@ class List extends Component {
     render() {
         return (
             <ul className="beta-home-list">
+                <li>
+                    <Link to="/main" className={(this.state.activeStateLink === "main") ? "list-spons-link" : null}
+                        onClick={() => {
+                            this.setActiveLink("main")
+                        }}>
+                        {this.state.isAuthenticated ? 'DASHBOARD' : 'REGISTER'}
+                    </Link>
+                </li>
                 {this.props.events === "true" ? null : <li>
                     <Link to="/events" className={(this.state.activeStateLink === "events") ? "list-spons-link" : null}
                         onClick={() => {
                             this.setActiveLink("events")
                         }}>
                         EVENTS
-            </Link>
+                     </Link>
+                </li>}
+                <li>
+                    <Link to="/onlineevents" className={(this.state.activeStateLink === "onlineevents") ? "list-quiz-link" : null}
+                        onClick={() => {
+                            this.setActiveLink("onlinevents");
+                        }}>
+                        ONLINE EVENTS
+                    </Link>
+                </li>
+                {this.props.events === "true" ? null : <li>
+                    <Link to="/mun" className={(this.state.activeStateLink === "mun") ? "list-zonals-link" : null}
+                        onClick={() => {
+                            this.setActiveLink("mun")
+                        }}>
+                        IITR MUN
+                    </Link>
                 </li>}
                 {this.props.events === "true" ? null : <li>
                     <Link to="../campusambassador" className={(this.state.activeStateLink
@@ -56,42 +80,35 @@ class List extends Component {
                 {/*       <li>
           <a href="">ZONALS</a>
         </li>*/}
-                <li>
-                    <Link to="../quizardry" className={(this.state.activeStateLink === "quizardry") ? "list-quiz-link" : null}
-                        onClick={() => {
-                            this.setActiveLink("quizardry");
-                        }}>
-                        QUIZARDRY
-                    </Link>
-                </li>
+
                 {/*<li>
           <a href="">OFFINE EVENTS</a>
         </li>*/}
                 {/* <li>
           <a href="">TEAM CONTACT</a>
         </li>*/}
-                <li>
-                    <Link to="/onlineevents" className={(this.state.activeStateLink === "onlineevents") ? "list-quiz-link" : null}
-                        onClick={() => {
-                            this.setActiveLink("onlinevents");
-                        }}>
-                        ONLINE EVENTS
-                    </Link>
-                </li>
-                <li>
-                    <Link to="/main" className={(this.state.activeStateLink === "main") ? "list-spons-link" : null}
-                        onClick={() => {
-                            this.setActiveLink("main")
-                        }}>
-                        {this.state.isAuthenticated ? 'DASHBOARD' : 'PARTICIPATE'}
-                    </Link>
-                </li>
                 {this.props.events === "true" ? null : <li>
-                    <Link to="/mun" className={(this.state.activeStateLink === "mun") ? "list-zonals-link" : null}
+                    <Link to="/associate" className={(this.state.activeStateLink === "linkAssociate") ? "list-spons-link" : null}
                         onClick={() => {
-                            this.setActiveLink("mun")
+                            this.setActiveLink("linkAssociate")
                         }}>
-                        IITR MUN
+                        ASSOCIATE WITH US
+                     </Link>
+                </li>}
+                {this.props.events === "true" ? null : <li>
+                    <Link to="/zonals" className={(this.state.activeStateLink === "zonals") ? "zonals" : null}
+                        onClick={() => {
+                            this.setActiveLink("zonals")
+                        }}>
+                        ZONALS
+                     </Link>
+                </li>}
+                {this.props.events === "true" ? null : <li>
+                    <Link to="/payment" className={(this.state.activeStateLink === "linkpayment") ? "list-payment-a" : null}
+                        onClick={() => {
+                            this.setActiveLink("payment")
+                        }}>
+                        PAYMENT
             </Link>
                 </li>}
                 {this.props.events === "true" ? null : <li>
@@ -100,15 +117,7 @@ class List extends Component {
                             this.setActiveLink("linkBlog")
                         }}>
                         WHY THOMSO
-            </Link>
-                </li>}
-                {this.props.events === "true" ? null : <li>
-                    <Link to="/associate" className={(this.state.activeStateLink === "linkAssociate") ? "list-spons-link" : null}
-                        onClick={() => {
-                            this.setActiveLink("linkAssociate")
-                        }}>
-                        ASSOCIATE WITH US
-            </Link>
+                    </Link>
                 </li>}
                 {this.props.events === "true" ? null : <li>
                     <Link to="/whythomso#faqs" className={(this.state.activeStateLink === "faqs") ? "faqs" : null}
@@ -116,16 +125,9 @@ class List extends Component {
                             this.setActiveLink("faqs")
                         }}>
                         FAQS
-            </Link>
+                    </Link>
                 </li>}
-                {this.props.events === "true" ? null : <li>
-                    <Link to="/Payment_TermsandConditions" className={(this.state.activeStateLink === "linkpayment") ? "list-payment-a" : null}
-                        onClick={() => {
-                            this.setActiveLink("payment")
-                        }}>
-                        PAYMENT
-            </Link>
-                </li>}
+
 
                 {/* <li>
           <a href="">FAQs</a>

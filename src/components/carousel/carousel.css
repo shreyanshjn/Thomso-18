@@ -7,16 +7,17 @@
 }
 .my-card-link {
   height: 21rem;
-  width: 25rem;
   color: white;
   text-decoration: none;
   font-size: 30px;
   font-family: Montserrat;
   font-weight: 600;
   overflow-wrap: break-word;
-  left: 15%;
-  top: 125px;
-  position: relative;
+}
+.my-card-link p{
+  text-align: center;
+  margin-top: 50%;
+  padding: 0px;
 }
 .card-carousel {
     display: flex;
@@ -231,6 +232,9 @@
   top:-57px;
   width:24.5rem;
 	height:120px;
+}
+.my-card a{
+  text-decoration: none;
 }
 @media only screen and (max-width:1920px){
   .leftarrow{

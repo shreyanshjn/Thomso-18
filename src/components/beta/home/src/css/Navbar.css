@@ -1,3 +1,7 @@
+.navbar-the-parent-div > *
+{
+    user-select: none;
+}
 .new-navbar-i
 {
     padding: 16px;
@@ -13,6 +17,7 @@
 }
 .new-navbar-i >span
 {
+    user-select:none;
     transition:all 0.6s;
     border-bottom:2px solid white; 
     display:block;
@@ -36,6 +41,7 @@
 }
 .new-navbar-lists-child
 {
+    user-select:none;
     position:fixed;
     font-family: Montserrat;
     letter-spacing: 1px;
@@ -71,6 +77,7 @@
 }
 .hideNavbar
 {
+    user-select: none;
     position:fixed;
     font-family: Montserrat;
     letter-spacing: 1px;

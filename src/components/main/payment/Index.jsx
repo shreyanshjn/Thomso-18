@@ -28,7 +28,7 @@ export default class PaymentIndex extends Component {
                         </ul>
                     </div>
                     <div className="campusAmb-payment-buttons">
-                        <Link to="/Payment_TermsandConditions"><button>Proceed for Payment</button></Link>
+                        <Link to="/payment"><button>Proceed for Payment</button></Link>
                     </div>
                 </div>
             </div>
