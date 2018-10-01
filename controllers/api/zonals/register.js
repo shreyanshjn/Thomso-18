@@ -1,7 +1,7 @@
 var Zonal_User = require('../../../models/zonals/Zonals_Registration');
 var mailer = require('../../common/mailer');
 
-var register = function(req, res, city) {
+var register = function (req, res, city) {
     if (req.body) {
         // console.log(req.body)
         if (req.body.name) {
@@ -32,20 +32,20 @@ var register = function(req, res, city) {
             events: req.body.events,
             city: city
         };
-        if (data.name && data.college && data.email && data.branch && data.contact && data.city && typeof(data.events) === "object" && data.events.length > 0 ) {
-            Zonal_User.findOne({email: req.body.email}, function(error, exists)   {
+        if (data.name && data.college && data.email && data.branch && data.contact && data.city && typeof (data.events) === "object" && data.events.length > 0) {
+            Zonal_User.findOne({ email: req.body.email }, function (error, exists) {
                 if (error) {
-                    return res.status(400).send({success: false, msg: 'Find Check Failed'});
+                    return res.status(400).send({ success: false, msg: 'Find Check Failed' });
                 }
                 if (!exists) {
                     var newUser = new Zonal_User(data);
-                    newUser.save(function(err, saved) {
+                    newUser.save(function (err, saved) {
                         if (err) {
-                            return res.json({success: false, msg: 'Email already exists', already: true});
+                            return res.json({ success: false, msg: 'Email already exists', already: true });
                         } else if (!saved) {
-                            return res.json({success: false, msg: 'Unable to save'});
+                            return res.json({ success: false, msg: 'Unable to save' });
                         } else {
-                            res.json({success: true, msg: 'Successfully Registered'});
+                            res.json({ success: true, msg: 'Successfully Registered' });
                             if (saved.tz_id && saved.email && saved.name) {
                                 if (city === 'Lucknow') {
                                     mailer.zonalsLucknow({
@@ -77,14 +77,14 @@ var register = function(req, res, city) {
                         }
                     });
                 } else {
-                    return res.json({success: false, msg: 'Email already exists', already: true});
+                    return res.json({ success: false, msg: 'Email already exists', already: true });
                 }
             })
         } else {
-            res.status(400).send({success:false, msg:'Invalid Data'});
+            res.status(400).send({ success: false, msg: 'Invalid Data' });
         }
     } else {
-        res.status(400).send({success:false, msg:'Invalid Data'});
+        res.status(400).send({ success: false, msg: 'Invalid Data' });
     }
 };
 
