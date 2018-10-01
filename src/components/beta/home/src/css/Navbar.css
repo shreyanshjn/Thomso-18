@@ -246,7 +246,6 @@
     height: fit-content;
     position: fixed;
     z-index:450;
-    height: 100%;
     user-select:none;
     -webkit-user-select: none;
     -moz-user-select: none; 
@@ -395,6 +394,7 @@
     }
     .beta-home-navbar {
         z-index:210;
+        height: 100%;
         user-select:none;
         -webkit-user-select: none;
         -moz-user-select: none; 
