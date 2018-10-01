@@ -208,7 +208,7 @@ class App extends Component {
                             <Route path="/meme" component={Meme} />
                             <Route path="/toppr" component={Toppr} />
                             <Route path="/MrMissThomso" component={MrMissThomso} />
-                            <Route path="/Payment_termsAndConditions" component={PaymentIndex} />
+                            <Route path="/Payment" component={PaymentIndex} />
                             {/* <Route path="/c" component={Carousel} /> */}
                             <Route path="/campusclicks" component={CampusClicks} />
                             <Route path="/silhoutte" component={Silhoutte} />

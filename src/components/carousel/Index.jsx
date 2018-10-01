@@ -68,7 +68,7 @@ export default class Carousel extends Component {
                     <div className="my-card">
                         <Link to="/whythomso">
                             <div className="my-card-link">
-                                See more artists
+                                <p>See more artists</p>
                             </div>
                         </Link>
                     </div>

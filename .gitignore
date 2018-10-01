@@ -28,5 +28,6 @@ package-json.json
 
 *.swp
 #profile Images
-public/img/ProfileImage
+/uploads/img/ProfileImage/*.png
+/uploads/img/ProfileImage/*.jpg
 /uploads/img/ProfileImage/*.jpeg

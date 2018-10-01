@@ -91,7 +91,7 @@ export default class LoginIndex extends React.Component {
                         <div className="vertical_line">
                         </div>
                         <div className="register-ca common-cursor">
-                            <h1>Paricipant Login</h1>
+                            <h1>Participant Login</h1>
                         </div>
                     </div>
                     <div className="register-form">

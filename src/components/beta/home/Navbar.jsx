@@ -88,7 +88,7 @@ class Navbar extends Component {
             imageUrl = 'https://localhost:' + process.env.REACT_APP_SERVER_PORT + imageUrl
         }
         return (
-            <div>
+            <div className="navbar-the-parent-div">
                 <div className={this.state.displayNavbar ? 'new-navbar-i' : 'new-navbar-i span-cross'} onClick={this.toggleNavbar}>
                     <span><i>border</i></span>
                     <span><i>border</i></span>
@@ -96,6 +96,31 @@ class Navbar extends Component {
                 </div>
                 <div>
                     <div style={{ height: '100vh', position: 'fixed' }} className={this.state.displayNavbar ? 'hideNavbar' : 'new-navbar-lists-child'}>
+                       <li>
+                            <Link to="/main" className={(this.state.activeState === "main") ? "linkSponsors" : null}
+                                onClick={() => {
+                                    this.setActive("main");
+                                }}>{verified ? (this.state.imageData && this.state.imageData.image) ? <img className="navbar-user-image" src={imageUrl} alt="DASHBOARD" /> : 'DASHBOARD' : <span><span className="events-navbar-new">REGISTER</span></span>}</Link>
+
+                        </li>
+                        {this.props.events === true ? null : <li >
+                            <Link to="/events" className={(this.state.activeState === "#") ? "linkEvents" : null}
+                                onClick={() => {
+                                    this.setActive("#");
+                                }}><span className="events-navbar-new">EVENTS</span></Link>
+                        </li>}
+                        <li className="dropdown">
+                            <Link to="/onlineevents" className={(this.state.activeState === "onlineevents") ? "linkonline" : null}
+                                onClick={() => {
+                                    this.setActive("ongoingevents")
+                                }}>ONGOING EVENTS </Link>
+                        </li>
+                        {this.props.events === true ? null : <li className="dropdown">
+                            <Link to="/mun" className={(this.state.activeState === "mun") ? "mun" : null}
+                                onClick={() => {
+                                    this.setActive("mun");
+                                }}>IITR MUN</Link>
+                        </li>}
                         {this.props.events === true ? null : <li >
                             <Link to="/campusambassador/" className={(this.state.activeState === "campusambassador/") ? "linkCaportal " : null}
                                 onClick={() => {
@@ -104,35 +129,11 @@ class Navbar extends Component {
                                 CAMPUS AMBASSADOR
                             </Link>
                         </li>}
-                        {this.props.events === true ? null : <li >
-                            <Link to="/events" className={(this.state.activeState === "#") ? "linkEvents" : null}
-                                onClick={() => {
-                                    this.setActive("#");
-                                }}><span className="events-navbar-new">EVENTS</span></Link>
-                        </li>}
-                        {/*    <li>
-                      <Link to="" className={(this.state.activeState === "linkTeam") ? "linkTeam" : null}
-                        onClick={() => {
-                                        this.setActive("linkTeam");
-                        }}>TEAM CONTACT</Link>
-                    </li>*/}
-                        <li className="dropdown">
-                            <Link to="/onlineevents" className={(this.state.activeState === "onlineevents") ? "linkonline" : null}
-                                onClick={() => {
-                                    this.setActive("ongoingevents")
-                                }}>ONGOING EVENTS </Link>
-                        </li>
                         {this.props.events === true ? null : <li>
                             <Link to="/associate" className={(this.state.activeState === "linkAssociate") ? "linkSponsors" : null}
                                 onClick={() => {
                                     this.setActive("linkAssociate");
                                 }}>ASSOCIATE WITH US</Link>
-                        </li>}
-                        {this.props.events === true ? null : <li>
-                            <Link to="/whythomso" className={(this.state.activeState === "linkBlog") ? "linkBLog" : null}
-                                onClick={() => {
-                                    this.setActive("linkBlog");
-                                }}>WHY THOMSO</Link>
                         </li>}
                         {this.props.events === true ? null : <li className="dropdown">
                             <Link to="/zonals/home" className={(this.state.activeState === "lucknow") ? "linkLucknow" : null}
@@ -140,37 +141,36 @@ class Navbar extends Component {
                                     this.setActive("lucknow");
                                 }}>ZONALS</Link>
                         </li>}
-                        {this.props.events === true ? null : <li className="dropdown">
-                            <Link to="/mun" className={(this.state.activeState === "mun") ? "mun" : null}
-                                onClick={() => {
-                                    this.setActive("mun");
-                                }}>IITR MUN</Link>
-                        </li>}
-                        <li>
-                            <Link to="/Payment_TermsandConditions" className={(this.state.activeState === "payment") ? "payment" : null}
+                         <li>
+                            <Link to="/payment" className={(this.state.activeState === "payment") ? "payment" : null}
                                 onClick={() => {
                                     this.setActive("payment");
                                 }}>PAYMENT</Link>
                         </li>
+                        {/*    <li>
+                        <Link to="" className={(this.state.activeState === "linkTeam") ? "linkTeam" : null}
+                        onClick={() => {
+                                        this.setActive("linkTeam");
+                        }}>TEAM CONTACT</Link>
+                        </li>*/}
+                        {this.props.events === true ? null : <li>
+                            <Link to="/whythomso" className={(this.state.activeState === "linkBlog") ? "linkBLog" : null}
+                                onClick={() => {
+                                    this.setActive("linkBlog");
+                                }}>WHY THOMSO</Link>
+                        </li>}
                         <li>
                             <a href="/whythomso#faqs" rel="noopener noreferrer" className={(this.state.activeState === "faq") ? "faq" : null}
                                 onClick={() => {
                                     this.setActive("faq");
                                 }}>FAQS</a>
                         </li>
-                        <li>
-                            <Link to="/main" className={(this.state.activeState === "main") ? "linkSponsors" : null}
-                                onClick={() => {
-                                    this.setActive("main");
-                                }}>{verified ? (this.state.imageData && this.state.imageData.image) ? <img className="navbar-user-image" src={imageUrl} alt="DASHBOARD" /> : 'DASHBOARD' : <span><span className="events-navbar-new">REGISTER</span></span>}</Link>
-
-                        </li>
                         {/* <li>
-                      <Link to="" className={(this.state.activeState === "linkFaq") ? "linkFaq" : null}
+                        <Link to="" className={(this.state.activeState === "linkFaq") ? "linkFaq" : null}
                         onClick={() => {
                                         this.setActive("linkFaq");
                         }}>FAQs</Link>
-                    </li>*/}
+                        </li>*/}
                     </div>
                 </div>
                 <div className="beta-navbar-contain">

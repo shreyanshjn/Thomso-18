@@ -1,16 +1,16 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import FetchApi from "../../../utils/FetchAPI";
-import AuthService from '../../../handlers/main/AuthService';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import FetchApi from '../../../utils/FetchAPI'
+import AuthService from '../../../handlers/main/AuthService'
 
-import EventRow from "./EventRow";
-import "../src/css/profile.css"
+import EventRow from './EventRow'
+import '../src/css/profile.css'
 // import UpdateImage from "../sidebar/UpdateImage"
 
 export default class Profile extends React.Component {
 
     constructor(props) {
-        super(props);
+        super(props)
         this.state = {
             event_id: '',
             event_name: '',
@@ -19,7 +19,7 @@ export default class Profile extends React.Component {
             events: [],
             img: ''
         }
-        this.Auth = new AuthService();
+        this.Auth = new AuthService()
     }
 
     componentDidMount() {
@@ -98,7 +98,7 @@ export default class Profile extends React.Component {
                             <Link to="/events" className="main-events-add-more">Add More events</Link>
                         </div>
                         <div className="main-events-payment-buttons">
-                            <a target="_blank" rel="noopener noreferrer" href="https://www.thecollegefever.com/events/thomso"><button>Proceed for Payment</button></a>
+                            <Link to="/payment"><button>Proceed for Payment</button></Link>
                         </div>
                     </div>
                 </div>

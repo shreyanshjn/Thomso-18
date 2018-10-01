@@ -2,7 +2,7 @@
     padding:0px;
     margin:0px;
     position:fixed;
-    right:-130px;
+    right:-134px;
     top:268px;
     width:210px;
     z-index: 280;
@@ -11,7 +11,7 @@
 #submenu {
     display: block;
     position: absolute;
-    width: 110px;
+    width: 115px;
     padding-left:50px;
     list-style: none;
     line-height: 2em;
@@ -37,6 +37,7 @@
 .mainfinalsticky li:hover #submenu{
     max-height: 200px;
     font-size: 16.5px;
+    background-color:#0f0f0f96;
 }
 .mainfinalsticky li{
     list-style-type:none;
@@ -55,15 +56,17 @@
     margin-left:-124px;
 }
 .mainfinalsticky li img{
-    float:left;
-    margin:5px 4px;
-    margin-right:5px;
+    margin-right: 10px;
+    float: left;
+    border: 2px solid #1c8adb;
+    background: #1c8adb;
 }
 .mainfinalsticky li p{
     padding-top:10px;
     margin:0px;
-    line-height:16px;
+    line-height:13px;
     font-size:14px;
+    background-color:#0f0f0f96;
 }
 .mainfinalsticky li p a{
     text-decoration:none;
@@ -630,12 +633,6 @@ background: url("../img/bg\ bg-01.png")
         transition: all linear 0.5s;
 
     }
-    .mainfinalmaincontainersecondleft:hover{
-        background:url("../img/bright-01.png");
-        background-position: bottom;
-        background-repeat: no-repeat;
-
-    }
     .mainfinalmaincontainersecondright{
         flex:1;
         order:1;
@@ -1098,6 +1095,15 @@ background: url("../img/bg\ bg-01.png")
     .mainfinalsticky-container
     {
        display:none;
+    }
+}
+@meia only screen and (min-width:768px)
+{
+    .mainfinalmaincontainersecondleft:hover{
+        background:url("../img/bright-01.png");
+        background-position: bottom;
+        background-repeat: no-repeat;
+
     }
 }
 @media only screen and (max-width:900px)

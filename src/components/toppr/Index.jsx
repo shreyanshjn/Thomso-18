@@ -12,25 +12,25 @@ class Toppr extends Component {
             name: "",
             schoolname: "",
             city: "",
-            Class: "",
+            standard: "",
             mobilenumber: "",
             email: "",
             entry: "",
             errors: ""
         }
     }
-    onChange = (e) => {
+    handleChange = (e) => {
         const name = e.target.name;
         let value = e.target.value;
         if (name === 'mobilenumber' && value) {
             value = value.trim()
-            value = value.substring(0, 12)
+            value = value.substring(0, 10)
         }
         this.setState({ [name]: value });
     }
-    onSubmit = (e) => {
+    handleSubmit = (e) => {
         e.preventDefault();
-        let { name, schoolname, email, city, Class, mobilenumber, entry } = this.state;
+        let { name, schoolname, email, city, standard, mobilenumber, entry } = this.state;
         if (name) {
             name = name.trim()
         }
@@ -43,8 +43,8 @@ class Toppr extends Component {
         if (city) {
             city = city.trim()
         }
-        if (Class) {
-            Class = Class.trim()
+        if (standard) {
+            standard = standard.trim()
         }
         if (mobilenumber) {
             mobilenumber = mobilenumber.trim()
@@ -52,24 +52,26 @@ class Toppr extends Component {
         if (entry) {
             entry = entry.trim()
         }
-        const data = { name, schoolname, email, city, Class, mobilenumber, entry }
+        const data = { name, schoolname, email, city, standard, mobilenumber, entry }
         const check = validateInput(email, 'email')
         if (!isNaN(mobilenumber)) {
-            if (name && mobilenumber && city && Class && email && schoolname && entry && check.isValid) {
-                FetchApi('POST', '/api/toppr', data)
+            if (name && mobilenumber && city && standard && email && schoolname && entry && check.isValid) {
+                FetchApi('POST', '/api/mun/toppr', data)
                     .then(r => {
                         if (r && r.data && this.popup) {
                             if (r.data.success === true) {
-                                this.popup.show(['Thank you for submitting in TOPPR'], ' /toppr')
+                                this.popup.show(['Thank you for submitting in TOPPR'])
                                 this.setState({
                                     name: "",
                                     schoolname: "",
                                     email: "",
                                     city: "",
-                                    Class: "",
+                                    class: "",
                                     mobilenumber: "",
                                     entry: ""
                                 })
+                            } else {
+                                this.popup.show(r.data.msg);
                             }
                         }
                     })
@@ -89,7 +91,7 @@ class Toppr extends Component {
     }
 
     render() {
-        const { name, schoolname, city, Class, mobilenumber, email, entry, errors } = this.state
+        const { name, schoolname, city, standard, mobilenumber, email, entry, errors } = this.state
         return (
 
             <div className="main-toppr-parent" >
@@ -102,9 +104,7 @@ class Toppr extends Component {
                         </div>
                         <div className="main-toppr-child-first-details-content">
                             <p>
-                                LOreum ipseum LOreum ipseumLOreum ipseumLOreum ipseumLOreum ipseumLOreum ipseumLOreum
-                                 ipseumLOreum ipseumLOreum
-                                 ipseumLOreum ipseumLOreum ipseum
+                            'Writing is the painting of the voice.' To bring out the inner writer within you, Thomso in association with Toppr presents to you a writing competition for students with an opportunity to let the world know about your inner potential.
                             </p>
                         </div>
                     </div>
@@ -126,6 +126,7 @@ class Toppr extends Component {
                                 <input
                                     type="text"
                                     value={name}
+                                    name="name"
                                     placeholder="Name"
                                     onChange={this.handleChange}
                                     required
@@ -136,6 +137,7 @@ class Toppr extends Component {
                                 <input
                                     type="text"
                                     value={schoolname}
+                                    name="schoolname"
                                     placeholder="School Name"
                                     onChange={this.handleChange}
                                     required
@@ -146,6 +148,7 @@ class Toppr extends Component {
                                 <input
                                     type="text"
                                     value={city}
+                                    name="city"
                                     placeholder="City"
                                     onChange={this.handleChange}
                                     required
@@ -154,7 +157,8 @@ class Toppr extends Component {
                             <div className="main-toppr-form-fields">
                                 <label>Class(7th to 12th)</label>
                                 <select
-                                    value={Class}
+                                    value={standard}
+                                    name="standard"
                                     onChange={this.handleChange}
                                     required
                                 >
@@ -171,6 +175,7 @@ class Toppr extends Component {
                                 <input
                                     type="number"
                                     value={mobilenumber}
+                                    name="mobilenumber"
                                     placeholder="Mobile Number"
                                     onChange={this.handleChange}
                                     required
@@ -181,6 +186,7 @@ class Toppr extends Component {
                                 <input
                                     type="email"
                                     value={email}
+                                    name="email"
                                     placeholder="Email"
                                     onChange={this.handleChange}
                                     required
@@ -191,6 +197,7 @@ class Toppr extends Component {
                                 <textarea
                                     type="text"
                                     value={entry}
+                                    name="entry"
                                     placeholder="Your Entry"
                                     onChange={this.handleChange}
                                     required
