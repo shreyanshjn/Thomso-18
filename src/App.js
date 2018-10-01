@@ -154,6 +154,7 @@ const Toppr = Loadable({
     loader: () => import("./components/toppr/Index"),
     loading: () => <Loader />
 })
+
 // const Carousel = Loadable({
 //     loader: () => import("./components/carousel/Index"),
 //     loading: () => <Loader />
