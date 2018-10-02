@@ -394,6 +394,7 @@
     }
     .beta-home-navbar {
         z-index:210;
+        height: 100%;
         user-select:none;
         -webkit-user-select: none;
         -moz-user-select: none; 

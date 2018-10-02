@@ -22,7 +22,6 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-fullpage": "^0.1.18",
-    "react-google-recaptcha": "^0.14.0",
     "react-helmet": "^5.2.0",
     "react-loadable": "^5.4.0",
     "react-router": "^4.3.1",
