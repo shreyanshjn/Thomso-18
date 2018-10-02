@@ -18,6 +18,8 @@
     height: fit-content;
     background-attachment: fixed;
     background-image: url("../team/img/teamfinal.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
     
 
 }
@@ -79,7 +81,20 @@
     left: 0;
     right: 0;
     background-color: #071829;
-    box-shadow: 0 0 10px 10px  #071829;
+    box-shadow: 5px -5px 10px 10px  #071829;
+    opacity: .7;
+    width: 100%;
+    overflow: hidden;
+    height: 0;
+    transition: .5s ease;
+  }
+  .main-team-overlay-tech {
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    right: 0;
+    background-color: #071829;
+    box-shadow: 5px -5px 10px 10px  #071829;
     opacity: .7;
     width: 100%;
     overflow: hidden;
@@ -101,6 +116,9 @@
       width: 100%;
   }
   .main-team-card-innerdiv:hover .main-team-overlay {
+    height: 100%;
+  }
+  .main-team-card-innerdiv:hover .main-team-overlay-tech {
     height: 100%;
   }
   .main-team-card-innerdiv:hover .main-team-text {

@@ -50,7 +50,7 @@ export default class EventsModal extends React.Component {
                                         <div className="events-details-image">
                                             <div className="events-price_money">
                                                 <div>Prizes Worth</div>
-                                                <div><Rupee /><span>50k</span></div>
+                                                <div><Rupee /><span>35k</span></div>
                                             </div>
                                             <div className="events-text-scroll-cont">
                                                 <p className="events-text-child">True to the spirit of the United Nations, this event strives to foster a constructive forum for open dialogue on complex global issues, including international peace and security, and economic and social progress. During the conference, students learn the importance of balancing national interests with the needs of the international community, while also learning about the powers and limitations of international negotiation. Delegates will preserve their countries’ national policy while negotiating in the face of other, sometimes conflicting, international policies</p>

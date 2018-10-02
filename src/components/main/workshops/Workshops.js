@@ -21,7 +21,7 @@ export const Workshops = [
         name: "Origami",
         image: "origami.jpeg",
         description: "Origami isn’t just a paper art, it’s a scientific experiment with no fuss. For those who wish to experiment and try their hands on this miscellaneous art, Thomso presents to them it's Origami workshop",
-        price: "free"
+        price: "Free"
     },
     {
         name: "Inhouse Photography",
@@ -39,6 +39,6 @@ export const Workshops = [
         name: "Fitness",
         image: "fitness.jpeg",
         description:"Being fit isn’t a fad or trend, it’s a lifestyle. Realising the importance of this fact, Thomso brings to you a fitness workshop conducted by Rujuta Diwekar, a renowned fitness expert who has trained celebrities like Kareena Kapoor Khan. Thomso brings to you an exclusive chance to get mentored by such a personality.",
-        price: "free"
+        price: "Free"
     }
 ]

@@ -80,6 +80,9 @@
     .sidenav > .main-sidebar-contents > .activeSideItem > .main-sidebar-payment > .main-sidebar-svg-logo svg .paypath{
         fill: gold;
     }
+    .sidenav > .main-sidebar-contents > .activeSideItem > .main-sidebar-workshop > .main-sidebar-svg-logo svg .workshoppath{
+        fill: rgb(119, 42, 19);
+    }
     .main-sidebar-likes-child{
         display: flex;
         flex-direction: row;

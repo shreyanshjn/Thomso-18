@@ -54,18 +54,6 @@ export const MemberDetails=
             "position":"Events",
             "members": [
                 {
-                    id:4,
-                        image:"subham.jpg",
-                        first_name:"Shubham",
-                        last_name:"Jaiswal",
-                        email:"shubham.thomso18@gmail.com",
-                        mobile:"9693482762",
-                        fblink:"https://www.facebook.com/sbhmsh",
-                        instalink:"https://www.instagram.com/shubham_jaiss/",
-                        linkedln:"https://www.linkedin.com/in/sbhmsh/",
-                        position:"Events",
-                },
-                {
                         id:5,
                         image:"Arihant.jpg",
                         first_name:"Arihant",
@@ -77,7 +65,6 @@ export const MemberDetails=
                         instalink:"",
                         position:"Events",
                 },
-
                 {
                     id:6,
                     image:"Chandni.jpg",
@@ -102,6 +89,18 @@ export const MemberDetails=
                     linkedln:"",
                     position:"Events",
                 },
+                // {
+                //     id:4,
+                //         image:"subham.jpg",
+                //         first_name:"Shubham",
+                //         last_name:"Jaiswal",
+                //         email:"shubham.thomso18@gmail.com",
+                //         mobile:"9693482762",
+                //         fblink:"https://www.facebook.com/sbhmsh",
+                //         instalink:"https://www.instagram.com/shubham_jaiss/",
+                //         linkedln:"https://www.linkedin.com/in/sbhmsh/",
+                //         position:"Events",
+                // },
                 {
                     id:8,
                     image:"Tanvi.jpg",
@@ -218,42 +217,6 @@ export const MemberDetails=
     
             ]
         },
-
-        {   
-            "position":"Design",
-            "members": [
-    
-                {
-                    id:18,
-                    image:"Prabal.jpg",
-                    first_name:"Prabal",
-                    last_name:"Gondane",
-                    email:"prabal.gondane17@gmail.com",
-                    mobile:"7055558567",
-                    fblink:"https://www.facebook.com/prbll",
-                    instalink:"https://www.instagram.com/greydesigner/",
-                    linkedln:"https://www.linkedin.com/in/prabal-gondane-029661135/",
-                    position:"Design",
-                },
-                {
-                    id:19,
-                    image:"Divyanshu.jpg",
-                    first_name:"Divyanshu",
-                    last_name:"Kachhap",
-                    email:"Divyanshukachhap@gmail.com",
-                    mobile:"7895025328",
-                    fblink:"https://www.facebook.com/DivyanshuKay",
-                    instalink:"https://www.instagram.com/d.i.v.y.a.n.s.h.u/",
-                    linkedln:"https://www.linkedin.com/in/divyanshukachhap/",
-                    position:"Design",
-                },
-    
-    
-            ]
-        },
-        
-
-
         {   
             "position":"Promotions",
             "members": [
@@ -332,8 +295,38 @@ export const MemberDetails=
                 },
     
             ]
-        },  
-
+        },{   
+            "position":"Design",
+            "members": [
+    
+                {
+                    id:18,
+                    image:"Prabal.jpg",
+                    first_name:"Prabal",
+                    last_name:"Gondane",
+                    email:"prabal.gondane17@gmail.com",
+                    mobile:"7055558567",
+                    fblink:"https://www.facebook.com/prbll",
+                    instalink:"https://www.instagram.com/greydesigner/",
+                    linkedln:"https://www.linkedin.com/in/prabal-gondane-029661135/",
+                    position:"Design",
+                },
+                {
+                    id:19,
+                    image:"Divyanshu.jpg",
+                    first_name:"Divyanshu",
+                    last_name:"Kachhap",
+                    email:"Divyanshukachhap@gmail.com",
+                    mobile:"7895025328",
+                    fblink:"https://www.facebook.com/DivyanshuKay",
+                    instalink:"https://www.instagram.com/d.i.v.y.a.n.s.h.u/",
+                    linkedln:"https://www.linkedin.com/in/divyanshukachhap/",
+                    position:"Design",
+                },
+    
+    
+            ]
+        },
         {   
             "position":"Technical",
             "members": [
@@ -358,7 +351,7 @@ export const MemberDetails=
                     email:"Prashant.thomso@gmail.com ",
                     mobile:"8840592467",
                     fblink:"https://www.facebook.com/prashant.verma.79230",
-                    instalink:"",
+                    instalink:"https://www.instagram.com/prash_1223/",
                     linkedln:"https://www.linkedin.com/in/prashant-verma-7b999a135/",
                     position:"Technical Head",
                 },

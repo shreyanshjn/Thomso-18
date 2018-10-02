@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import cross from './src/img/cross.png'
 import './src/css/WorkshopsIndex.css'
 
@@ -11,9 +10,9 @@ class Description extends Component {
                 <div className="workshops-description-child">
                     <img src={cross} alt="close" onClick={this.props.closeDescription}/>
                     <p className="description-workshops">{this.props.description}</p>
-                    <Link to="/payment" className="paynow-button-workshops">
+                    {this.props.price && this.props.price !== "Free" ? <a href="https://www.thecollegefever.com/events/thomso#openticket" target="_blank" rel="noopener noreferrer" className="paynow-button-workshops">
                         PAY NOW
-                    </Link>
+                    </a> : null}
                 </div>
             </div>
         )

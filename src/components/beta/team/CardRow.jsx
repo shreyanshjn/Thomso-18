@@ -22,8 +22,8 @@ export default class CardRow extends React.Component {
         const {members} = this.state
         return(
                 <div className="main-team-wrapperinnerdiv">
-                {members.map(member => 
-                    <React.Fragment>
+                {members.map((member, index) => 
+                    <React.Fragment key={index}>
                         {member.image?
                         <div className="main-team-card-inner">
                             <div className="main-team-card-innerdiv">
@@ -35,7 +35,7 @@ export default class CardRow extends React.Component {
                                 <div className="main-team-overlay-email">
                                   {member.email && member.mobile?  <div className="main-team-info">email<br/><strong>{member.email}</strong><br/><br/>mobile no<br/><strong><a href={`tel:${member.mobile}`}>{member.mobile}</a></strong></div>:null}
                                 </div>
-                                <div className="main-team-overlay">
+                                <div className={(member.id === 25 || member.id === 26 || member.id === 18 || member.id === 19) ? "main-team-overlay-tech" : "main-team-overlay"}>
                                     <div className="main-team-card-footer-icons">
                                         <div style={{
                                             zIndex:"200000"
@@ -43,7 +43,7 @@ export default class CardRow extends React.Component {
                                             {member.fblink ?  <a href={member.fblink} target="_blank" rel="noopener noreferrer"> <div className="main-team-card-footer-fbdiv">  <img src={fblogo} className="main-team-card-footer-iconsImage" alt="fblogo" /></div></a>: null}
                                             {member.instalink ? <div className="main-team-card-footer-instadiv"><a href={member.instalink} target="_blank" rel="noopener noreferrer"><img src={inlogo} className="main-team-card-footer-iconsImage" alt="inlogo" /></a></div>
                                             : null}
-                                            {member.linkedlnlink ?<div className="main-team-card-footer-linkediv"><a href={member.linkedlnlink} target="_blank" rel="noopener noreferrer"> <img src={ldlogo} className="main-team-card-footer-iconsImage" alt="lilogo" /></a></div>: null}
+                                            {member.linkedln?<div className="main-team-card-footer-linkediv"><a href={member.linkedln} target="_blank" rel="noopener noreferrer"> <img src={ldlogo} className="main-team-card-footer-iconsImage" alt="lilogo" /></a></div>: null}
                             
                                         </div> 
                                     </div>

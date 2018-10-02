@@ -43,7 +43,7 @@ export const EventDetails =
                         name: "Abhivyakti",
                         details: "Stage Play Competition",
                         content: "All the world's a stage, and all the men and women are merely players. This event is for those who act, write, dance, run, cry and laugh just for the ethereal beauty of the act. Stand on a stage and hold the hearts of men in your hands. Make them laugh with a gesture and cry with words. Turn the spotlight towards you, perfecting acting skills, coordination, expressions and stellar dialogue delivery.We have this event planned to cater to all those patrons of direction, acting and screenplay. So, participate and hypnotize people with the power of words and expressions and you will Shine brighter than any praise or fame or glory.",
-                        rulebook: "https://drive.google.com/open?id=1uKkdervhdr90-mGpWr0PyYOwp5BKRZO3",
+                        rulebook: "https://drive.google.com/open?id=1UBeKyQgsz6ChjIUWYuH--efDjK7yOMR8",
                         image: "Abhivyakti.jpeg",
                         prize: "100"
                     },

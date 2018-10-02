@@ -127,7 +127,7 @@ export default class HomeIndex extends React.Component {
                                         <Link to="/sponsors" className="mainfinalleftsidebarsponsors">Sponsors</Link>
                                     </div>
                                     <div className="mainfinalleftsidebarcontent">
-                                        <Link to="/comingSoon" id="aboutuspagerevealer" className="mainfinalleftsidebarcontactus">
+                                        <Link to="/team" id="aboutuspagerevealer" className="mainfinalleftsidebarcontactus">
                                             Contact Us
                                     </Link>
                                     </div>
@@ -259,7 +259,6 @@ export default class HomeIndex extends React.Component {
                                 {/* <Litfestpen />*/}
                                 <svg version="1.1" className="mainfinalsplitlit" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                     width="612px" height="792px" viewBox="0 0 612 792" enableBackground="new 0 0 612 792" xmlSpace="preserve">
-                                    <Link to="/events">
                                         <g>
                                             <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#41B6C4" points="450.397,438.752 341.321,490.775 336.055,402.83 
                                         335.322,390.833 356.143,399.503 424.965,428.146 	"/>
@@ -331,7 +330,6 @@ export default class HomeIndex extends React.Component {
                                             <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#80CDBB" points="413.781,745.746 405.188,779.42 370.817,721.555 	" />
                                             <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#3A7ABA" points="473.587,779.42 413.781,745.746 421.293,716.25 	" />
                                         </g>
-                                    </Link>
                                 </svg>
                             </div>
                             <div className="mainfinalthomsomainattractions" id="m3move">
@@ -617,7 +615,6 @@ export default class HomeIndex extends React.Component {
                                     <svg version="1.1" id="mainattractioninternalsvgcontainerlitfestsvg" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                         viewBox="0 -14 251.333 120.333" enableBackground="new 0 0 251.333 93.333"
                                         xmlSpace="preserve">
-                                        <Link to="/events">
                                             <g id="Layer_3" display="none">
                                             </g>
                                             <g id="bg">
@@ -727,7 +724,6 @@ export default class HomeIndex extends React.Component {
                                             </g>
                                             <g id="landing">
                                             </g>
-                                        </Link>
                                     </svg>
                                 </div>
                                 <div className="mainfinalmainattractioninternaltextcontainer" id="pagethirdsecondpagerevealtrigger" >
@@ -742,7 +738,6 @@ export default class HomeIndex extends React.Component {
                                 {/* <Workshopbulb /> */}
                                 <svg version="1.1" className="mainfinalsplitlit mainfinalsplitlit2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                     width="612px" height="792px" viewBox="0 0 612 792" enableBackground="new 0 0 612 792" xmlSpace="preserve">
-                                    <Link to="/comingSoon">
                                         <g>
                                             <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="295.322,78.412 249.482,101.096 255.13,39.817 	" />
                                             <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="389.251,50.405 337.701,111.921 335.247,35.945 	" />
@@ -886,7 +881,6 @@ export default class HomeIndex extends React.Component {
                                     <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="334.951,750.375 301.59,722.903 301.565,722.87 
                                         301.565,722.842 301.59,722.279 330.603,698.799 331.964,698.799 	"/>
                                 </g>
-                                    </Link>
                                 </svg>
                             </div>
                             <div className="mainfinalmainattractioninternal mainfinalattraction2" id="workshoptrigger2">
@@ -894,7 +888,6 @@ export default class HomeIndex extends React.Component {
                                     {/*    <Workshops /> */}
                                     <svg version="1.1" id="mainfinalworkshopsvgmove" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                         viewBox="0 -10 3403 446.825" enableBackground="new 0 0 3403 446.825" xmlSpace="preserve">
-                                        <Link to="/comingSoon">
                                             <g>
                                                 <g>
                                                     <path id="workshopssvg" fill="none" stroke="#FFF" strokeWidth="8" d="M2479.736,199.1h-0.92c-2.654,0-4.186,1.326-4.594,3.983c-4.493,33.076-17.867,68.811-40.123,107.2
@@ -1055,7 +1048,6 @@ export default class HomeIndex extends React.Component {
                                                 c2.856,10.828,4.288,21.955,4.288,33.392C2193.355,235.96,2193.049,240.655,2192.435,245.353z"/>
                                         </g>
                                             </g>
-                                        </Link>
                                     </svg>
                                 </div>
                                 <div className="mainfinalmainattractioninternaltextcontainer">
@@ -2178,7 +2170,7 @@ export default class HomeIndex extends React.Component {
                                                 <polygon className="onlinegon" fill="#ED2E38" points="324.45,202.481 324.45,220.22 312.2,220.22 		" />
                                                 <polygon className="onlinegon" fill="#F38889" points="272.75,250.55 272.75,262.241 255.79,257.05 		" />
                                                 <polygon className="onlinegon" fill="#EF4F54" points="272.75,347.05 255.79,352.491 255.79,341.11 		" />
-                                                <polyline fill="none" stroke="#EF4F54" stroke-miterlimit="10" points="255.79,226.92 255.53,226.8 255.79,226.701 		" />
+                                                <polyline fill="none" stroke="#EF4F54" strokeMiterlimit="10" points="255.79,226.92 255.53,226.8 255.79,226.701 		" />
                                             </g>
                                             <g>
                                                 <g>
@@ -3135,7 +3127,7 @@ export default class HomeIndex extends React.Component {
                                         <div className="mainfinalmainpage5container-inner-in-right-righter">
                                             <div className="mainfinalmainpagecontainer-outer-rightin">
                                                 <div className="mainfinalmainpagecontainer-outer-rightin-inner">
-                                                    <div className="mainfinalmainpagecontainer-outer-rightin-inner-inside"><Link to="/comingSoon">Team Page<span><img src={rightarrow} alt="right-arrow" srcSet="" /></span></Link>
+                                                    <div className="mainfinalmainpagecontainer-outer-rightin-inner-inside"><Link to="/team">Team Page<span><img src={rightarrow} alt="right-arrow" srcSet="" /></span></Link>
 
                                                         {/* <div className="mainfinalmainpage5internalsvgcontainer">
                                                                     <img src="./right-arrow.svg" alt="right-arrow" srcSet="">

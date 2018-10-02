@@ -31,11 +31,10 @@ export default class Vertical extends React.Component {
                 k++
             }
         }
-        console.log(matrix);
         return (
             <div>
-                {(matrix && matrix.length) ? matrix.map(members => 
-                <CardRow members={members} />) : null}
+                {(matrix && matrix.length) ? matrix.map((members, index) => 
+                <CardRow members={members} key={index} />) : null}
             </div>
         )
     }

@@ -10,6 +10,7 @@ import AuthService from '../../../handlers/main/AuthService';
 import "./css/style.css";
 
 import Profile from "./Svg/Profile"
+import Workshop from "./Svg/Workshop"
 import Events from "../../campusAmbassador/sidebar/Svg/Events"
 import Contact from "../../campusAmbassador/sidebar/Svg/Contact"
 import Logout from "../../campusAmbassador/sidebar/Svg/Logout"
@@ -296,9 +297,9 @@ export default class Sidebar extends React.Component {
                   this.setActive("workshops");
               }}
           >
-              <div className="main-sidebar-payment flex_row">
+              <div className="main-sidebar-workshop flex_row">
                   <div className="main-sidebar-svg-logo">
-                      <Payment />
+                      <Workshop />
                   </div>
                   <div className="main-sidebar-navitem-name">
                       WORKSHOPS
