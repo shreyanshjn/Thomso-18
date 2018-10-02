@@ -8,10 +8,11 @@
 
 .card-maindiv{
     padding: 100px 50px;
-    height: 200vh;
+    height: 2000vh;
     background:#071829;
 
 }
+
 .wrapper{
     display:flex; 
     flex-direction: column;
@@ -23,19 +24,24 @@
 .wrapperinnerdiv{
     margin-bottom: 10px;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content:space-evenly;
+    grid-template-columns: repeat(auto-fill,minmax(160px, 1fr));
 }
 .card-inner{
     
     position: relative;
-    width: 25%;
+    width: 33.33%;
+    margin: auto;
+    margin-top:40px;
     
 }
 .card-innerdiv{
     
     position: relative;
     width: fit-content;
+    margin: auto;
     
 }
 
@@ -53,7 +59,7 @@
     font-size: 30px;
     color:#2DCCD3;
     text-align: center;
-    padding: 30px 60px 20px 20px;
+    padding: 30px 60px 20px 60px;
 
 }
 .overlay {
