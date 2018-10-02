@@ -12,7 +12,7 @@ export default class FakeNotification extends React.Component{
       show: false
     };
   }
-
+ 
   componentWillMount() {
     if (!("Notification" in window)) {
       console.log("This browser does not support system notifications");
@@ -33,9 +33,9 @@ export default class FakeNotification extends React.Component{
               <div className="Notification-div-T">
                 <h1>Notification</h1><p> Press 'Allow' to continue </p>
               </div>
-              <div className="notification-div-A">
-                <button type="button" className="notification-div-B1" onClick={() => this.setState({show: false})}>Deny</button>
-                <button type="button" className="notification-div-B2" onClick={() => {
+              <div className="Notification-div-A">
+                <button type="button"  onClick={() => this.setState({show: false})}>Deny</button>
+                <button type="button"  onClick={() => {
                   this.setState({show: false})
                   firebaseInit()
                   }}>Allow</button>

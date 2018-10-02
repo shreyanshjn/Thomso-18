@@ -14,6 +14,23 @@
     box-shadow: 0 0 1px rgba(0,0,0,0.3);
     z-index: -1;
 }
+.Notifications-button {
+        font-size: 100%;
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        -webkit-box-shadow: 0 2px 1px rgba(0,0,0,.1);
+        box-shadow: 0 2px 1px rgba(0,0,0,.1);
+        background-color: #fff;
+        padding: 3px 7px!important;
+        display: inline-block;
+        margin-left: 8px!important;
+        cursor: pointer;
+    }
+.Notification-div-A{
+    margin-left: 156px;
+    }
+
+
 .Notification-div-O{
   -webkit-animation-duration: .5s;
     animation-duration: .5s;
