@@ -20,7 +20,7 @@ class WorskhopsIndex extends Component {
                 <h1 className="workshops-heading-main">WORKSHOPS</h1>
                 <div className="workshops-cards-display">
                     {
-                        Workshops.map(workshop => <CardIndex showDescription={() => this.setState({ description: workshop.description })} heading={workshop.name} />)
+                        Workshops.map(workshop => <CardIndex showDescription={() => this.setState({ description: workshop.description })} heading={workshop.name} price={workshop.price} workshopImage={workshop.image} />)
                     }
                 </div>
             </div>

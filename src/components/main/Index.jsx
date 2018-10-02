@@ -79,10 +79,10 @@ const PaymentIndex = Loadable({
     loader: () => import("./payment/Index"),
     loading: Loading
 });
-// const WorskhopsIndex = Loadable({
-//     loader: () => import("./workshops/Index"),
-//     loading: () => <Loader />
-// })
+const WorskhopsIndex = Loadable({
+    loader: () => import('./workshops/Index'),
+    loading: () => <Loader />
+})
 export default class MainIndex extends React.Component {
     constructor() {
         super();
@@ -147,7 +147,7 @@ export default class MainIndex extends React.Component {
                                 <Route exact path="/main/post" component={PostIndex} />
                                 <Route exact path="/main/payment" component={PaymentIndex} />
                                 <Route exact path="/main/zonals" render={props => (<ZonalsMainIndex  {...props} mainBackground="true" />)} />
-                                {/* <Route exact path="/main/workshops" component={WorskhopsIndex} />*/}
+                                <Route exact path="/main/workshops" component={WorskhopsIndex} />
                             </React.Fragment>
                         }
                         <Route exact path="/main/logout" render={props => (<LogoutIndex {...props} updateRoutes={this.handleUpdate} />)} />

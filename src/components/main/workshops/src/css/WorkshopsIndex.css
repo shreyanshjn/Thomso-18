@@ -12,6 +12,7 @@
     letter-spacing: 1px;
     font-size: 13px;
     margin-top:-17px;
+    font-family:Montserrat;
 }
 .workshops-description-child
 {
@@ -22,6 +23,7 @@
     margin:auto;
     display:flex;
     justify-content:center;
+    flex-direction:column;
     align-items:center;
     position:relative;
 }
@@ -49,8 +51,8 @@
 .workshops-heading-main
 {
     color:black;
-    margin-bottom:20px;
-    margin-left:50px;
+    text-align:center;
+    margin-bottom:0px;
 }
 .workshops-main-child-one
 {
@@ -96,8 +98,26 @@
 }
 .paynow-button-workshops
 {
-    position:absolute;
     bottom:20px;
+    padding: 10px 25px;
+    background: #0000007a;
+    color: white;
+    text-decoration:none;
+    margin-top:14px;
+}
+.description-workshops
+{
+    font-size: 15px;
+    width: 90%;
+    overflow: auto;
+    font-family: Mont;
+    margin-top:50px;
+}
+.workshops-price-card
+{
+    color:gold;
+    font-weight: 600;
+    font-size: 20px;
 }
 @media only screen and (max-width:768px)
 {
@@ -108,5 +128,14 @@
     .workshops-main-parent-div
     {
         width:calc(100% - 56px)
+    }
+    .workshops-description-one
+    {  
+        width:calc(100% - 56px)
+    }
+    .workshops-description-child
+    {
+        width:93%;
+        height:36%;
     }
 }

@@ -19,9 +19,6 @@
     max-height:0;
     transition: max-height 0.7s ease-in; 
 }
-.mainpage-payment-register-buttons{
-    display: none;
-}
 .mainpage4{
     position: relative;
 }
@@ -1089,7 +1086,13 @@ background: url("../img/bg\ bg-01.png")
     }
 
 }
-
+@media only screen and (min-width:768px)
+{
+    .mainpage-payment-register-buttons
+    {
+        display: none;
+    }
+}
 @media only screen and (max-width:768px)
 {
     .mainfinalsticky-container
@@ -1465,15 +1468,22 @@ padding:1%;
     }
 }
 @media only screen and (max-width:768px){
+    .mainpage-payment-parent-div
+    {
+        display:flex;
+        justify-content:center;
+        display: flex;
+        -ms-flex-pack: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 5%;
+        width: 100vw;
+    }
     .mainpage-payment-register-buttons{
         display: flex;
         flex-direction: row;
-        position: absolute;
-        left: 29%;
-        bottom: 5%;
         z-index: 10000;
         justify-content: space-around;
-    
     }
     .mainpage-payment-register-buttons button{
         background: transparent;
