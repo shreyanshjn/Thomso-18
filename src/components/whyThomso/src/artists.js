@@ -150,7 +150,7 @@ export const More_artists = [
     {
         id: 3,
         name: "Alankrita Sahai",
-        image: "alankritasahai.jpeg",
+        image: "alankritasahai.jpg",
     },
     {
         id: 9,
@@ -175,7 +175,7 @@ export const More_artists = [
     {
         id: 1,
         name: "Abhiruchi Singh",
-        image: "abhiruchi.jpeg",
+        image: "abhiruchi.jpg",
     },
     {
         id: 34,
