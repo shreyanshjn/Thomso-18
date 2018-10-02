@@ -21,7 +21,7 @@ export const MemberDetails=
 
         {   
             "position":"Co-Convenor",
-            "members": [
+            "members": [ 
                
                 {
                     id:3,
@@ -37,7 +37,7 @@ export const MemberDetails=
                 },
                 {
                     id:2,
-                    image:"virat.jpg",
+                    image:"",
                     first_name:"Samarth",
                     last_name:"Gubrele",
                     email:"samarth.thomso@gmail.com",
@@ -74,7 +74,8 @@ export const MemberDetails=
                         mobile:"",
                         fblink:"",
                         linkedln:"",
-                        instalink:"Events",
+                        instalink:"",
+                        position:"Events",
                 },
 
                 {
