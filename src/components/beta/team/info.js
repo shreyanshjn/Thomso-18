@@ -6,7 +6,7 @@ export const MemberDetails=
             "members": [
                 {
                     id:1,
-                    image:"",
+                    image:"Suyash.jpg",
                     first_name:"Suyash",
                     last_name:"Singh",
                     email:"suyash.thomso@gmail.com", 
@@ -136,7 +136,7 @@ export const MemberDetails=
                 },
                 {
                     id:10,
-                    image:"",
+                    image:"Anurag.jpg",
                     first_name:"Anurag",
                     last_name:"Tiwari",
                     email:"anurag.thomso@gmail.com",
@@ -148,7 +148,7 @@ export const MemberDetails=
                 },
                 {
                     id:11,
-                    image:"",
+                    image:"Manu.jpg",
                     first_name:"Manu",
                     last_name:"Garg",
                     email:"",
@@ -173,7 +173,7 @@ export const MemberDetails=
                  
                 {
                     id:27,
-                    image:"",
+                    image:"Saakshya.jpg",
                     first_name:"Saakshya",
                     last_name:" devat",
                     email:"saakshya.thomso@gmail.com",
@@ -225,7 +225,7 @@ export const MemberDetails=
     
                 {
                     id:18,
-                    image:"",
+                    image:"Prabal.jpg",
                     first_name:"Prabal",
                     last_name:"Gondane",
                     email:"prabal.gondane17@gmail.com",
@@ -318,6 +318,18 @@ export const MemberDetails=
                     linkedln:"https://www.linkedin.com/in/suraj-kumar-bb8a1a137/",
                     position:"Promotions",
                 },
+                {
+                    id:15,
+                    image:"",
+                    first_name:"Abdulahad",
+                    last_name:"Khan",
+                    email:"abdul.thomso@gmail.com",
+                    mobile:"9834653974",
+                    fblink:"https://www.facebook.com/qadbury0123456789",
+                    instalink:"https://www.instagram.com/qadbury123/",
+                    linkedln:"https://www.linkedin.com/in/abdulahad-khan-profile/",
+                    position:"Promotions ",
+                },
     
             ]
         },  
@@ -382,18 +394,7 @@ export const MemberDetails=
             //     linkedln:"",
             //     position:"",
             // },
-            // {
-                //     id:15,
-                //     image:"AbdulahadKhan.jpg",
-                //     first_name:"Abdulahad",
-                //     last_name:"Khan",
-                //     email:"abdul.thomso@gmail.com",
-                //     mobile:"9834653974",
-                //     fblink:"https://www.facebook.com/qadbury0123456789",
-                //     instalink:"https://www.instagram.com/qadbury123/",
-                //     linkedln:"https://www.linkedin.com/in/abdulahad-khan-profile/",
-                //     position:"Promotions ",
-                // },
+            
 
             // {
                 //     id:15,

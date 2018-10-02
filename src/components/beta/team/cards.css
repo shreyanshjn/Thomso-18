@@ -15,8 +15,10 @@
 
 .main-team-card-maindiv{
     padding: 100px 50px;
-    height: 2000vh;
-    background:#071829;
+    height: fit-content;
+    background-attachment: fixed;
+    background-image: url("../team/img/teamfinal.jpg");
+    
 
 }
 
@@ -41,7 +43,7 @@
     
     position: relative;
     width: auto;
-    margin: 1vw;
+    margin: 2vw;
     margin-top:40px;
     
 }
