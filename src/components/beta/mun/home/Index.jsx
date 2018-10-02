@@ -68,7 +68,7 @@ export default class EventsModal extends React.Component {
                                             </React.Fragment>
                                         </div>
                                         <div className="events-addevents-child">
-                                            <a href="https://drive.google.com/open?id=1gv0uMPpq-4FIpGy1mQezwaUKGNufd6Yf" className="be-events-modal-button" target="_blank" rel="noopener noreferrer">Rulebook</a>
+                                            <a href="https://drive.google.com/open?id=1DT-2RWF85m8ST_yNcGFyy8szl-0mZ64R" className="be-events-modal-button" target="_blank" rel="noopener noreferrer">Rulebook</a>
                                         </div>
                                     </div>
                                 </div>
