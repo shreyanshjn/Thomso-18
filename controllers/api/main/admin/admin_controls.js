@@ -31,7 +31,7 @@ exports.userInfo = function(req,res){
         } else if (params.page === "quater" && params.part) {
             var part = parseInt(params.part, 10);
             if (part > 0) {
-                Main_User.countDocuments({}, function (err, count) {
+                Main_User.countDocuments(query, function (err, count) {
                     if (err) {
                         res.status(400).send({ success: false, msg: 'Count Undefined', error: err });
                     }
@@ -43,7 +43,37 @@ exports.userInfo = function(req,res){
                             .limit(limit)
                             .select('name email gender thomso_id college address branch contact verified referral')
                             .populate('event', 'name')
-                            .populate('primary_event', 'name')
+                            .exec(function (err, user) {
+                                if (err) {
+                                    return res.status(400).send({ success: false, msg: 'Unable to connect to database. Please try again.' })
+                                }
+                                if (!user) {
+                                    return res.status(400).send({ success: false, msg: 'User not found' });
+                                }
+                                res.json({ success: true, msg: 'Participants List', body: user, skip: skip, limit: limit });
+                            });
+                    } else {
+                        return res.status(400).send({ success: false, msg: 'Count not found' });
+                    }
+                })
+            } else {
+                return res.status(400).send({ success: false, msg: 'Count not found' });
+            }
+        } else if (params.page === "sixteen" && params.part) {
+            var part = parseInt(params.part, 10);
+            if (part > 0) {
+                Main_User.countDocuments(query, function (err, count) {
+                    if (err) {
+                        res.status(400).send({ success: false, msg: 'Count Undefined', error: err });
+                    }
+                    if (count) {
+                        var limit = Math.ceil(count/16);
+                        var skip = limit*(part - 1);
+                        Main_User.find(query)
+                            .skip(skip)
+                            .limit(limit)
+                            .select('name email gender thomso_id college address branch contact verified referral')
+                            .populate('event', 'name')
                             .exec(function (err, user) {
                                 if (err) {
                                     return res.status(400).send({ success: false, msg: 'Unable to connect to database. Please try again.' })

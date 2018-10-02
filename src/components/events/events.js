@@ -177,7 +177,7 @@ export const EventDetails =
                         id: '6_1',
                         name: "16 Frames",
                         content: "The event consists of two parts:• Screening of short movies made by famous film/documentary makers.• Short movie making competition organized by Cinematic Section. It is a two-day competition.• Day 1 – Top 20 entries are screened.• Winners are finalized and awarded.",
-                        rulebook: "https://drive.google.com/open?id=1-ivhtMXTKHUPc9tcWLStX4Yj9yQjKIAh",
+                        rulebook: "https://drive.google.com/open?id=1HwRxIrak2cMsdfNUyxV8EwjuYda6xBg7",
                         image: "16frames1.jpeg",
                         prize: "30"
                     },
@@ -231,7 +231,7 @@ export const EventDetails =
                         id: '12_5',
                         name: "A(D)ESIGN",
                         content: "How often do you find yourself skipping advertisements or impatiently waiting for an ad to get over? And how often do you come across ones that you could watch over and over again because they are witty and humorous?! Surely, there aren’t half as many! So, here’s your chance to take charge! IIT Roorkee gives you a chance to create your very own advertisement and be as creative, funny, educational and entertaining as possible! The only ads that we actually watch are the ones we find most engaging, so here is an opportunity to command the attention of thousands and to showcase your creativity and directing skills in an advertisement that will spread your message on a tremendous platform!",
-                        rulebook: "https://drive.google.com/open?id=1ZU63Fj3UH4MofsT0TYD7reHbiu1tnXl2",
+                        rulebook: "https://drive.google.com/open?id=13YuulipnMZSBMGtT5YxmAv9Wub0ad8R3",
                         image: "addesign.jpeg",
                         prize: "20"
                     },
@@ -319,7 +319,7 @@ export const EventDetails =
                         id: '15_1',
                         name: "Food Fiesta",
                         content: "Can the aroma of your food water the mouths of people around you or can the magic of your flavours make their taste buds sway? If yes, then this is the place to be. Cook some lip-smacking dishes in the event and prove your mettle against the cooks of the same calibre as yours. Summon your inner Masterchef and get grinding, chopping and baking as you make your own chef-d'oeuvre at Thomso.",
-                        rulebook: "",
+                        rulebook: "https://drive.google.com/open?id=1yK-rSZr24umgXZQVqq6LNZ93MXbSTb7F",
                         image: "foodfiesta.jpeg",
                         prize: "50"
                     }
@@ -351,7 +351,7 @@ export const EventDetails =
                         id: '10_3',
                         name: "Paint Fiesta",
                         content: "Painting, by nature, is one luminous language; a language that never runs out of words and expression. Plutarch once said 'Painting is silent poetry, and poetry is painting that speaks. This Thomso, nothing stops you as you reveal what’s on your mind, your way, with all the colours you can manage!",
-                        rulebook: "https://drive.google.com/open?id=1j4rTO226OcNzQhYK_eYpTDKfujVPvums",
+                        rulebook: "https://drive.google.com/open?id=1nNrwsRRGaCklfB6or00zzxKtblwkC7fU",
                         image: "paintfiesta.jpeg",
                         prize: "15"
                     },
@@ -383,7 +383,7 @@ export const EventDetails =
                         id: '5_1',
                         name: "Thomso's Got Talent",
                         content: "Talent is entrusted to a man as a treasure which must not be squandered. Do you have a flair towards the extraordinary? Do you have the motivation to transform your talent into genius? This Thomso, we offer you a chance to spread your wings and explore your talents in front of a captivating audience. This event has its participants showcasing their superfluity of talents, be it singing, dancing, comedy, magic or any quirky thing you are passionately curious about. So get all riled up, practice, perfect and work your way towards glory in this gem of an event.",
-                        rulebook: "https://drive.google.com/open?id=1s1QbdEa3hD77RzuASKhsm_93lpKXB3Bs",
+                        rulebook: "https://drive.google.com/open?id=1NtBRAMK6pc5sGFs3zqLeQKk1oJCeHTYI",
                         image: "thomsogottalent.jpeg",
                         prize: "50"
                     },
