@@ -172,7 +172,6 @@ class App extends Component {
         }
     }
     componentWillMount() {
-        console.log(window.screen)
         if (window.screen) {
             // window.screen.lockOrientation("portrait");
         }

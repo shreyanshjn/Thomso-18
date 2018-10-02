@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import ScrollFunction from './functions/Scroll'
 
-import bell from '../beta/home/src/img/bell.png' 
+import bell from '../beta/home/src/img/bell.png'
 import logo from './src/img/thomso logo-01.png'
 import thomsomain from './src/img/thomsomain.png'
 import foot from './src/img/foot svg-01.svg'
@@ -59,45 +59,51 @@ export default class HomeIndex extends React.Component {
     render() {
         return (
             <div className="bodymainfinal">
-            <div>
-                <Navbar logohide="true" />
-                <div className="mainfinalsticky-container">
-                    <ul className="mainfinalsticky">
-                        <li>
-                            <img src={bell} width="32" height="32" alt="bell-icon"/>
-                            <p>WHAT'S NEW <br/><br/></p>
-                            <div id="submenu">
-                                <Link to="/payment" >Payment</Link>
-                                <br/><Link to="/cupid" >Cupid's Attack</Link>
-                                <br/><Link to="/whythomso">Why Thomso?</Link>
-                                <br/><Link to="/toppr">Toppr</Link>
+                <div>
+                    <Navbar logohide="true" />
+                    <div className="mainfinalsticky-container">
+                        <ul className="mainfinalsticky">
+                            <li>
+                                <img src={bell} width="32" height="32" alt="bell-icon" />
+                                <p>WHAT'S NEW <br /><br /></p>
+                                <div id="submenu">
+                                    <Link to="/payment" >Payment</Link>
+                                    <br /><Link to="/cupid" >Cupid's Attack</Link>
+                                    <br /><Link to="/whythomso">Why Thomso?</Link>
+                                    <br /><Link to="/toppr">Toppr</Link>
                                 </div>
-                        </li>
-                    </ul>
-                </div>
-                {/* Main web 1 */}
-                <div className="mainfinalmainfirst" id="main parallaxscene">
-                    {/* <div className="mainfirst3"></div>  */}
-                    <div className="mainfinalmainfirst2"></div>
-                    <div className="mainfinalmainfirst3"></div>
-                    <div className="mainfinalmainfirst1" data-depth="0.6">
-                        <div className="mainnavbarcontainer">
-                            <div className="mainnavhome">
-                                <div className="mainpage-payment-register-buttons">
-                                    {/* <button>
+                            </li>
+                        </ul>
+                    </div>
+                    {/* Main web 1 */}
+                    <div className="mainfinalmainfirst" id="main parallaxscene">
+                        {/* <div className="mainfirst3"></div>  */}
+                        <div className="mainfinalmainfirst2"></div>
+                        <div className="mainfinalmainfirst3"></div>
+                        <div className="mainfinalmainfirst1" data-depth="0.6">
+                            <div className="mainnavbarcontainer">
+                                <div className="mainnavhome">
+                                  <div className="mainpage-payment-parent-div">
+                                    <div className="mainpage-payment-register-buttons">
+                                        {/* <button>
                                         <img src={register} alt="register"/>
                                         <Link to="">Register</Link>
                                     </button> */}
-                                    <button>
-                                        <img src={register} alt="register"/>
-                                        <Link to="/main/register">Register</Link>
-                                    </button>
-                                </div>
-                                <div className="mainfinalhome-navbar-logo">
-                                    <img src={logo} alt="" />
-                                </div>
-                                <div className="mainfinalhomenavbarctos">
-                                    {/* <div className="toggle" onClick="mobileoptionsreveal()">
+                                        <button>
+                                            <img src={register} alt="register" />
+                                            <Link to="/main/register">Register</Link>
+                                        </button>
+                                        <button>
+                                            <img src={register} alt="register" />
+                                            <Link to="/whythomso">Why thomso</Link>
+                                        </button>
+                                    </div>
+                                  </div>
+                                    <div className="mainfinalhome-navbar-logo">
+                                        <img src={logo} alt="" />
+                                    </div>
+                                    <div className="mainfinalhomenavbarctos">
+                                        {/* <div className="toggle" onClick="mobileoptionsreveal()">
                                         <span></span>
                                         <span></span>
                                         <span></span>
@@ -105,45 +111,45 @@ export default class HomeIndex extends React.Component {
                                     </div>*/}
 
 
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="mainfinalcontainermaincontent">
-                            <div className="mainfinalleftsidebar">
-                                <div className="mainfinalleftsidebarcontent ">
-                                    {/* <a href="" className="leftsidebarevents" onmouseover="float" >Events</a> */}
-                                    <Link to="/events" className="mainfinalleftsidebarevents">Events</Link>
-                                </div>
-                                <div className="mainfinalleftsidebarcontent">
-                                    <Link to="/comingSoon" className="mainfinalleftsidebarpronites">Pronites</Link>
-                                </div>
-                                <div className="mainfinalleftsidebarcontent">
-                                    <Link to="/sponsors" className="mainfinalleftsidebarsponsors">Sponsors</Link>
-                                </div>
-                                <div className="mainfinalleftsidebarcontent">
-                                    <Link to="/comingSoon" id="aboutuspagerevealer" className="mainfinalleftsidebarcontactus">
-                                        Contact Us
+                            <div className="mainfinalcontainermaincontent">
+                                <div className="mainfinalleftsidebar">
+                                    <div className="mainfinalleftsidebarcontent ">
+                                        {/* <a href="" className="leftsidebarevents" onmouseover="float" >Events</a> */}
+                                        <Link to="/events" className="mainfinalleftsidebarevents">Events</Link>
+                                    </div>
+                                    <div className="mainfinalleftsidebarcontent">
+                                        <Link to="/comingSoon" className="mainfinalleftsidebarpronites">Pronites</Link>
+                                    </div>
+                                    <div className="mainfinalleftsidebarcontent">
+                                        <Link to="/sponsors" className="mainfinalleftsidebarsponsors">Sponsors</Link>
+                                    </div>
+                                    <div className="mainfinalleftsidebarcontent">
+                                        <Link to="/comingSoon" id="aboutuspagerevealer" className="mainfinalleftsidebarcontactus">
+                                            Contact Us
                                     </Link>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="mainfinalcentreimage" id="centreimagetrans">
-                                <img src={thomsomain} alt="thomso-main" />
-                            </div>
-                            <div className="mainfinalrightsidebar">
-                                <div className="mainfinalrightsidebarcontent">
-                                    <Link to="/main">Register/Login</Link>
+                                <div className="mainfinalcentreimage" id="centreimagetrans">
+                                    <img src={thomsomain} alt="thomso-main" />
                                 </div>
-                                <div className="mainfinalrightsidebarcontent">
-                                    <Link to="/whythomso">Why Thomso</Link></div>
+                                <div className="mainfinalrightsidebar">
+                                    <div className="mainfinalrightsidebarcontent">
+                                        <Link to="/main">Register/Login</Link>
+                                    </div>
+                                    <div className="mainfinalrightsidebarcontent">
+                                        <Link to="/whythomso">Why Thomso</Link></div>
 
-                                <div className="mainfinalrightsidebarcontent">
-                                    <Link to="/zonals/home">Zonals</Link></div>
-                                <div className="mainfinalrightsidebarcontent">
-                                    <Link to="/campusambassador">Campus Ambassador</Link></div>
+                                    <div className="mainfinalrightsidebarcontent">
+                                        <Link to="/zonals/home">Zonals</Link></div>
+                                    <div className="mainfinalrightsidebarcontent">
+                                        <Link to="/campusambassador">Campus Ambassador</Link></div>
 
 
-                            </div>
-                            {/*<div className="mainfinalmobileviewoptions-parent">
+                                </div>
+                                {/*<div className="mainfinalmobileviewoptions-parent">
                                 <div className="mainfinalmobileviewoptions" id="mobopid">
                                     <div className="mainfinalmobileviewoptionscontent">
                                         <a href="http://" target="_blank" rel="noopener noreferrer">Register/Login</a>
@@ -174,55 +180,55 @@ export default class HomeIndex extends React.Component {
                                     </div>
                                 </div>
                             </div>*/}
-                        </div>
-                    </div>
-
-                </div>
-                <div className="mainfinalmainsecond" >
-                    <div className="mainfinalmainsecondaboutusheading">
-                        <h1 id="aboutus">About Us</h1>
-                    </div>
-                    <div className="mainfinalmaincontainersecond">
-
-                        <div className="mainfinalmaincontainersecondinner">
-                            <div className="mainfinalmaincontainersecondleft">
-
                             </div>
-                            <div className="mainfinalmaincontainersecondright" id="aboutuspagemoveleft">
-                                <p>Thomso , the Annual Cultural Festival of IIT Roorkee is a majestic three days cultural fest,recognised as one of the greatest pomp youth festivals of India.Thomso
+                        </div>
+
+                    </div>
+                    <div className="mainfinalmainsecond" >
+                        <div className="mainfinalmainsecondaboutusheading">
+                            <h1 id="aboutus">About Us</h1>
+                        </div>
+                        <div className="mainfinalmaincontainersecond">
+
+                            <div className="mainfinalmaincontainersecondinner">
+                                <div className="mainfinalmaincontainersecondleft">
+
+                                </div>
+                                <div className="mainfinalmaincontainersecondright" id="aboutuspagemoveleft">
+                                    <p>Thomso , the Annual Cultural Festival of IIT Roorkee is a majestic three days cultural fest,recognised as one of the greatest pomp youth festivals of India.Thomso
                                     encompasses lavish history , splendid culture and a profoundly rich heritage of IIT Roorkee. Recognising this event of gigantic proportions ,
                                     the Government proclaimed Thomso as the "Annual Youth Festival Of Uttarakhand " in 2005. Thomso has acquired the credentials of being the largest cultural fest of Northern India
                                     by playing host to a multitude of talented scholars and media moguls in an annual celebration of culture and intellect. Thomso now celebrates its 36th year with this
                                     year's theme being "Siezed by Stardust".
                                 </p>
+                                </div>
+                                <div className="mainfinalsecondpagebottom" id="aboutuspagemoveright">
+                                    <div className="mainfinalsecondpagebottomrect" id="pagereveal">
+                                        <div className="mainfinalsecondbottomrectleft">
+                                            <h1 id="numberchange1"><span>100</span>k+</h1>
+                                            <h3>Footfall</h3>
+                                        </div>
+                                        <div className="mainfinalsecondbottomrectright"> <img src={foot} alt="footfall" /></div>
+                                    </div>
+                                    <div className="mainfinalsecondpagebottomrect">
+                                        <div className="mainfinalsecondbottomrectleft">
+                                            <h1 id="numberchange2"><span>1000</span>+</h1>
+                                            <h3 >Colleges</h3>
+                                        </div>
+                                        <div className="mainfinalsecondbottomrectright"> <img src={college} alt="college" /></div>
+                                    </div>
+                                    <div className="mainfinalsecondpagebottomrect">
+                                        <div className="mainfinalsecondbottomrectleft">
+                                            <h1 id="numberchange3"><span>150</span>+</h1>
+                                            <h3 id="mainfinaleventstext">Events</h3>
+                                        </div>
+                                        <div className="mainfinalsecondbottomrectright"> <img src={events} alt="events" /></div>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="mainfinalsecondpagebottom" id="aboutuspagemoveright">
-                                <div className="mainfinalsecondpagebottomrect" id="pagereveal">
-                                    <div className="mainfinalsecondbottomrectleft">
-                                        <h1 id="numberchange1"><span>100</span>k+</h1>
-                                        <h3>Footfall</h3>
-                                    </div>
-                                    <div className="mainfinalsecondbottomrectright"> <img src={foot} alt="footfall" /></div>
-                                </div>
-                                <div className="mainfinalsecondpagebottomrect">
-                                    <div className="mainfinalsecondbottomrectleft">
-                                        <h1 id="numberchange2"><span>1000</span>+</h1>
-                                        <h3 >Colleges</h3>
-                                    </div>
-                                    <div className="mainfinalsecondbottomrectright"> <img src={college} alt="college" /></div>
-                                </div>
-                                <div className="mainfinalsecondpagebottomrect">
-                                    <div className="mainfinalsecondbottomrectleft">
-                                        <h1 id="numberchange3"><span>150</span>+</h1>
-                                        <h3 id="mainfinaleventstext">Events</h3>
-                                    </div>
-                                    <div className="mainfinalsecondbottomrectright"> <img src={events} alt="events" /></div>
-                                </div>
-                            </div>
-                        </div>
 
-                    </div>
-                    {/* <div className="mainfinalsecondpagebottom">
+                        </div>
+                        {/* <div className="mainfinalsecondpagebottom">
                 <div className="mainfinalsecondpagebottomrect" id="pagereveal">
                     <div className="mainfinalsecondbottomrectleft">
                             <h1 id="numberchange1"><span>100</span>k+</h1>
@@ -245,109 +251,109 @@ export default class HomeIndex extends React.Component {
                     <div className="mainfinalsecondbottomrectright"> <img src="./events svg-01.svg" alt=""></div>
             </div>
             </div> */}
-                </div>
-                <div className="mainfinalmainthirdpagecontainer" >
+                    </div>
+                    <div className="mainfinalmainthirdpagecontainer" >
 
-                    <div className="mainfinalmainthirdinternalcontainer" id="litfestanimationtrigger">
-                        <div className="mainfinalsplitsvgcont1 mainfinallit">
-                            {/* <Litfestpen />*/}
-                            <svg version="1.1" className="mainfinalsplitlit" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                width="612px" height="792px" viewBox="0 0 612 792" enableBackground="new 0 0 612 792" xmlSpace="preserve">
-                                <Link to="/events">
-                                <g>
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#41B6C4" points="450.397,438.752 341.321,490.775 336.055,402.83 
+                        <div className="mainfinalmainthirdinternalcontainer" id="litfestanimationtrigger">
+                            <div className="mainfinalsplitsvgcont1 mainfinallit">
+                                {/* <Litfestpen />*/}
+                                <svg version="1.1" className="mainfinalsplitlit" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                    width="612px" height="792px" viewBox="0 0 612 792" enableBackground="new 0 0 612 792" xmlSpace="preserve">
+                                    <Link to="/events">
+                                        <g>
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#41B6C4" points="450.397,438.752 341.321,490.775 336.055,402.83 
                                         335.322,390.833 356.143,399.503 424.965,428.146 	"/>
                                     <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#3A7ABA" points="417.224,630.045 215.79,629.816 283.259,568.193 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#80CDBB" points="215.443,629.816 192.605,629.777 194.733,577.443 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#1F91C0" points="362.26,134.238 310.971,13.276 325.027,13.276 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#41B6C4" points="399.963,237.396 311.05,159.747 311.05,158.393 
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#80CDBB" points="215.443,629.816 192.605,629.777 194.733,577.443 	" />
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#1F91C0" points="362.26,134.238 310.971,13.276 325.027,13.276 	" />
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#41B6C4" points="399.963,237.396 311.05,159.747 311.05,158.393 
                                         362.26,134.238 	"/>
                                     <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#41B6C4" points="416.609,286.09 311.127,270.528 311.127,269.755 
                                         399.963,237.396 	"/>
                                     <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#41B6C4" points="475.173,379.764 392.258,379.49 416.609,286.09 	" />
-                                    <polygon className="gon" fill="#3A7ABA" points="416.609,286.09 311.164,341.558 311.127,270.528 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#3A7ABA" points="362.26,134.238 311.05,158.393 310.971,13.276 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#1F91C0" points="399.963,237.396 311.127,269.755 311.05,159.747 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#1F91C0" points="278.383,392.459 172.322,467.127 137.563,379.84 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#1F91C0" points="299.594,28.376 275.52,151.115 286.897,12.58 
+                                            <polygon className="gon" fill="#3A7ABA" points="416.609,286.09 311.164,341.558 311.127,270.528 	" />
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#3A7ABA" points="362.26,134.238 311.05,158.393 310.971,13.276 	" />
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#1F91C0" points="399.963,237.396 311.127,269.755 311.05,159.747 	" />
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#1F91C0" points="278.383,392.459 172.322,467.127 137.563,379.84 	" />
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#1F91C0" points="299.594,28.376 275.52,151.115 286.897,12.58 
                                         299.479,12.699 	"/>
                                     <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#3A7ABA" points="301.878,341.521 254.229,279.818 300.831,198.224 
                                         300.831,200.354 	"/>
                                     <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#41B6C4" points="254.229,279.818 137.563,379.84 192.18,285.856 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#1F91C0" points="300.831,198.224 254.229,279.818 192.18,285.856 
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#1F91C0" points="300.831,198.224 254.229,279.818 192.18,285.856 
                                         299.709,199.112 300.792,198.224 	"/>
                                     <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#41B6C4" points="300.792,198.224 299.709,199.112 192.18,285.856 
                                         235.688,176.779 255.39,183.67 293.825,196.21 	"/>
                                     <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#1F91C0" points="300.792,198.224 293.825,196.21 255.39,183.67 
                                         235.688,176.779 235.879,176.277 239.598,164.354 275.52,151.115 	"/>
                                     <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#3A7ABA" points="286.897,12.58 275.52,151.115 239.598,164.354 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#41B6C4" points="300.831,195.206 300.831,198.224 300.792,198.224 
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#41B6C4" points="300.831,195.206 300.831,198.224 300.792,198.224 
                                         275.52,151.115 299.594,28.376 	"/>
                                     <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#41B6C4" points="301.878,341.521 300.177,342.72 278.383,357.121 
                                         254.229,279.818 	"/>
                                     <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#282828" points="301.878,341.521 300.33,342.911 300.177,342.72 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#41B6C4" points="306.367,407.748 194.733,577.443 172.322,467.127 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#41B6C4" points="278.383,357.121 278.383,392.459 137.563,379.84 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#80CDBB" points="278.383,357.121 137.563,379.84 254.229,279.818 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#80CDBB" points="306.367,407.748 172.322,467.127 278.383,392.459 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#1F91C0" points="416.609,286.09 335.322,390.833 335.289,357.121 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#41B6C4" points="416.609,286.09 335.289,357.121 311.164,341.558 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#80CDBB" points="416.609,286.09 392.258,379.49 335.322,390.833 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#3A7ABA" points="450.397,438.752 424.965,428.146 356.143,399.503 
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#41B6C4" points="306.367,407.748 194.733,577.443 172.322,467.127 	" />
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#41B6C4" points="278.383,357.121 278.383,392.459 137.563,379.84 	" />
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#80CDBB" points="278.383,357.121 137.563,379.84 254.229,279.818 	" />
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#80CDBB" points="306.367,407.748 172.322,467.127 278.383,392.459 	" />
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#1F91C0" points="416.609,286.09 335.322,390.833 335.289,357.121 	" />
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#41B6C4" points="416.609,286.09 335.289,357.121 311.164,341.558 	" />
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#80CDBB" points="416.609,286.09 392.258,379.49 335.322,390.833 	" />
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#3A7ABA" points="450.397,438.752 424.965,428.146 356.143,399.503 
                                         335.322,390.833 392.258,379.49 404.107,391.532 432.707,420.715 	"/>
                                     <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#3A7ABA" points="341.321,490.775 306.367,407.748 335.322,390.833 
                                         336.055,402.83 	"/>
                                     <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#1F91C0" points="341.321,490.775 194.733,577.443 306.367,407.748 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#41B6C4" points="421.293,547.096 283.259,568.193 341.321,490.775 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#3A7ABA" points="341.321,490.775 283.259,568.193 194.733,577.443 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#1F91C0" points="283.259,568.193 215.79,629.816 215.443,629.816 
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#41B6C4" points="421.293,547.096 283.259,568.193 341.321,490.775 	" />
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#3A7ABA" points="341.321,490.775 283.259,568.193 194.733,577.443 	" />
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#1F91C0" points="283.259,568.193 215.79,629.816 215.443,629.816 
                                         194.733,577.443 	"/>
                                     <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#282828" points="215.79,629.816 215.52,630.045 215.443,629.816 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#1F91C0" points="421.293,547.096 417.224,630.045 283.259,568.193 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#1F91C0" points="450.397,438.752 421.293,547.096 341.321,490.775 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#1F91C0" points="475.173,379.764 450.397,438.752 432.707,420.715 
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#1F91C0" points="421.293,547.096 417.224,630.045 283.259,568.193 	" />
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#1F91C0" points="450.397,438.752 421.293,547.096 341.321,490.775 	" />
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#1F91C0" points="475.173,379.764 450.397,438.752 432.707,420.715 
                                         404.107,391.532 392.258,379.49 	"/>
                                     <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#1F91C0" points="210.178,713.813 136.827,779.42 175.535,643.051 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#41B6C4" points="322.544,779.42 136.827,779.42 236.81,743.848 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#41B6C4" points="244.552,677.039 236.81,743.848 210.178,713.813 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#3A7ABA" points="370.817,721.555 236.81,743.848 244.552,677.039 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#1F91C0" points="313.762,643.051 244.552,677.039 175.535,643.051 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#80CDBB" points="434.878,643.051 370.817,721.555 313.762,643.051 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#1F91C0" points="473.587,779.42 421.293,716.25 434.878,643.051 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#41B6C4" points="473.587,779.42 405.188,779.42 413.781,745.746 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#1F91C0" points="405.188,779.42 322.544,779.42 370.817,721.555 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#41B6C4" points="421.293,716.25 413.781,745.746 370.817,721.555 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#80CDBB" points="236.81,743.848 136.827,779.42 210.178,713.813 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#80CDBB" points="244.552,677.039 210.178,713.813 175.535,643.051 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#41B6C4" points="370.817,721.555 322.544,779.42 236.81,743.848 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#41B6C4" points="370.817,721.555 244.552,677.039 313.762,643.051 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#1F91C0" points="434.878,643.051 421.293,716.25 370.817,721.555 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#80CDBB" points="413.781,745.746 405.188,779.42 370.817,721.555 	" />
-                                    <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#3A7ABA" points="473.587,779.42 413.781,745.746 421.293,716.25 	" />
-                                </g>
-                                </Link>
-                            </svg>
-                        </div>
-                        <div className="mainfinalthomsomainattractions" id="m3move">
-                            {/*    <Mainattraction />*/}
-                            <svg id="mainattractionsvg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                width="609.333px" height="212.171px" viewBox="0 0 609.333 212.171" enableBackground="new 0 0 609.333 212.171"
-                                xmlSpace="preserve">
-                                <g id="Layer_3" display="none">
-                                </g>
-                                <g id="bg">
-                                </g>
-                                <g id="Layer_2">
-                                </g>
-                                <g id="team_page">
-                                </g>
-                                <g id="footer">
-                                </g>
-                                <g id="pronites">
-                                </g>
-                                <g id="main_attractions">
-                                    <path fill="#fff" d="M147.142,114.696c0.2,0.4,0.2,0.8,0,1.2c-0.4,0.933-0.867,1.666-1.4,2.2c-0.666,0.666-1.434,1-2.299,1
-                                        c-2.268,0-4.234-1.2-5.9-3.6c-1.467-2.134-2.801-5.333-4-9.6c-2.2-7.8-3.301-17.2-3.301-28.2c0-2.6,0.166-5.283,0.5-8.05
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#41B6C4" points="322.544,779.42 136.827,779.42 236.81,743.848 	" />
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#41B6C4" points="244.552,677.039 236.81,743.848 210.178,713.813 	" />
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#3A7ABA" points="370.817,721.555 236.81,743.848 244.552,677.039 	" />
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#1F91C0" points="313.762,643.051 244.552,677.039 175.535,643.051 	" />
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#80CDBB" points="434.878,643.051 370.817,721.555 313.762,643.051 	" />
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#1F91C0" points="473.587,779.42 421.293,716.25 434.878,643.051 	" />
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#41B6C4" points="473.587,779.42 405.188,779.42 413.781,745.746 	" />
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#1F91C0" points="405.188,779.42 322.544,779.42 370.817,721.555 	" />
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#41B6C4" points="421.293,716.25 413.781,745.746 370.817,721.555 	" />
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#80CDBB" points="236.81,743.848 136.827,779.42 210.178,713.813 	" />
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#80CDBB" points="244.552,677.039 210.178,713.813 175.535,643.051 	" />
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#41B6C4" points="370.817,721.555 322.544,779.42 236.81,743.848 	" />
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#41B6C4" points="370.817,721.555 244.552,677.039 313.762,643.051 	" />
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#1F91C0" points="434.878,643.051 421.293,716.25 370.817,721.555 	" />
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#80CDBB" points="413.781,745.746 405.188,779.42 370.817,721.555 	" />
+                                            <polygon className="gon" fillRule="evenodd" clipRule="evenodd" fill="#3A7ABA" points="473.587,779.42 413.781,745.746 421.293,716.25 	" />
+                                        </g>
+                                    </Link>
+                                </svg>
+                            </div>
+                            <div className="mainfinalthomsomainattractions" id="m3move">
+                                {/*    <Mainattraction />*/}
+                                <svg id="mainattractionsvg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                    width="609.333px" height="212.171px" viewBox="0 0 609.333 212.171" enableBackground="new 0 0 609.333 212.171"
+                                    xmlSpace="preserve">
+                                    <g id="Layer_3" display="none">
+                                    </g>
+                                    <g id="bg">
+                                    </g>
+                                    <g id="Layer_2">
+                                    </g>
+                                    <g id="team_page">
+                                    </g>
+                                    <g id="footer">
+                                    </g>
+                                    <g id="pronites">
+                                    </g>
+                                    <g id="main_attractions">
+                                        <path fill="#fff" d="M147.142,114.696c0.2,0.4,0.2,0.8,0,1.2c-0.4,0.933-0.867,1.666-1.4,2.2c-0.666,0.666-1.434,1-2.299,1
+                                            c-2.268,0-4.234-1.2-5.9-3.6c-1.467-2.134-2.801-5.333-4-9.6c-2.2-7.8-3.301-17.2-3.301-28.2c0-2.6,0.166-5.283,0.5-8.05
                                         c0.334-2.766,0.566-5.65,0.701-8.65v-0.2c-0.535,3.4-1.268,6.917-2.201,10.55c-0.934,3.634-1.867,7.717-2.799,12.25
                                         c-0.535,2.067-0.984,3.85-1.351,5.35c-0.367,1.5-0.75,2.917-1.149,4.25c-0.4,1.334-0.885,2.7-1.451,4.1s-1.316,3-2.25,4.8
                                         c-0.533,1.134-1.117,2.1-1.75,2.9c-0.634,0.8-1.25,1.467-1.85,2c-1.4,1.268-2.734,1.9-4,1.9c-1.6,0-3.135-0.633-4.6-1.9
@@ -597,42 +603,42 @@ export default class HomeIndex extends React.Component {
                                         c-0.229,0.21-0.48,0.399-0.74,0.557c-0.086,0.054-0.174,0.104-0.264,0.15l-0.102,0.051c-0.122,0.057,0.008,0,0.088-0.027
                                         c0.104-0.039,0.201-0.074,0.293-0.108c0.873-0.305,1.323-0.462,1.323-0.462L49.995,184.429z"/>
                                 </g>
-                                <g id="about_us">
-                                </g>
-                                <g id="landing">
-                                </g>
-                            </svg>
+                                    <g id="about_us">
+                                    </g>
+                                    <g id="landing">
+                                    </g>
+                                </svg>
 
-                        </div>
+                            </div>
 
-                        <div className="mainfinalmainattractioninternal mainfinalattraction1" id="litfestsvgtrigger">
-                            <div className="mainfinalmainattractioninternalsvgcontainer">
-                                {/*  <Litfest />*/}
-                                <svg version="1.1" id="mainattractioninternalsvgcontainerlitfestsvg" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                    viewBox="0 -14 251.333 120.333" enableBackground="new 0 0 251.333 93.333"
-                                    xmlSpace="preserve">
-                                    <Link to="/events">
-                                    <g id="Layer_3" display="none">
-                                    </g>
-                                    <g id="bg">
-                                    </g>
-                                    <g id="Layer_2">
-                                    </g>
-                                    <g id="team_page">
-                                    </g>
-                                    <g id="footer">
-                                    </g>
-                                    <g id="pronites">
-                                    </g>
-                                    <g id="main_attractions">
-                                        <g>
-                                            <g>
-                                                <path fill="#fff" d="M46.149,31.543c-0.48-0.879-1.262-1.42-2.342-1.62c-0.238-0.04-0.5-0.06-0.779-0.06
-                                                    c-0.801,0-1.539,0.24-2.221,0.72c-0.809,0.56-1.309,1.3-1.5,2.221c-0.119,0.36-0.18,0.699-0.18,1.02c0,0.68,0.201,1.26,0.6,1.74
+                            <div className="mainfinalmainattractioninternal mainfinalattraction1" id="litfestsvgtrigger">
+                                <div className="mainfinalmainattractioninternalsvgcontainer">
+                                    {/*  <Litfest />*/}
+                                    <svg version="1.1" id="mainattractioninternalsvgcontainerlitfestsvg" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                        viewBox="0 -14 251.333 120.333" enableBackground="new 0 0 251.333 93.333"
+                                        xmlSpace="preserve">
+                                        <Link to="/events">
+                                            <g id="Layer_3" display="none">
+                                            </g>
+                                            <g id="bg">
+                                            </g>
+                                            <g id="Layer_2">
+                                            </g>
+                                            <g id="team_page">
+                                            </g>
+                                            <g id="footer">
+                                            </g>
+                                            <g id="pronites">
+                                            </g>
+                                            <g id="main_attractions">
+                                                <g>
+                                                    <g>
+                                                        <path fill="#fff" d="M46.149,31.543c-0.48-0.879-1.262-1.42-2.342-1.62c-0.238-0.04-0.5-0.06-0.779-0.06
+                                                            c-0.801,0-1.539,0.24-2.221,0.72c-0.809,0.56-1.309,1.3-1.5,2.221c-0.119,0.36-0.18,0.699-0.18,1.02c0,0.68,0.201,1.26,0.6,1.74
                                                     c0.521,0.72,1.262,1.16,2.221,1.32c0.279,0.04,0.541,0.06,0.779,0.06c0.682,0,1.32-0.18,1.922-0.54
                                                     c0.869-0.48,1.479-1.28,1.799-2.4c0.08-0.28,0.121-0.58,0.121-0.9C46.569,32.583,46.419,32.063,46.149,31.543z"/>
                                                 <path id="litfestsvg" fill="none" stroke="#fff" strokeWidth="3.5" d="M225.669,44.322c-0.131-0.64-0.471-1.16-1.031-1.56c-0.559-0.4-1.158-0.54-1.799-0.42
-                                                    c-0.641,0.12-1.16,0.46-1.561,1.02c0,0.04-0.02,0.1-0.061,0.18l-0.049,0.06v0.12c-0.09,0.08-0.15,0.16-0.189,0.24
+                                                            c-0.641,0.12-1.16,0.46-1.561,1.02c0,0.04-0.02,0.1-0.061,0.18l-0.049,0.06v0.12c-0.09,0.08-0.15,0.16-0.189,0.24
                                                     c-0.08,0.2-0.191,0.38-0.33,0.54c-0.141,0.16-0.291,0.4-0.451,0.72c-0.16,0.28-0.34,0.57-0.529,0.87
                                                     c-0.211,0.3-0.451,0.63-0.73,0.99c-0.24,0.36-0.52,0.74-0.84,1.14c-0.32,0.4-0.68,0.84-1.08,1.32c-0.35,0.4-0.75,0.84-1.17,1.32
                                                     s-0.91,0.96-1.471,1.44c-1,1-2.139,2-3.42,3c-1.32,1-2.74,1.98-4.26,2.94c-0.799,0.44-1.629,0.9-2.49,1.38
@@ -715,143 +721,143 @@ export default class HomeIndex extends React.Component {
                                                     c0.439-1.32,1.15-1.98,2.141-1.98c0.709,0,1.359,0.42,1.949,1.26c0.561,0.8,0.84,1.56,0.84,2.28c0,1.4-0.6,2.42-1.789,3.06
                                                     c-0.91,0.52-2.131,0.84-3.67,0.96C85.749,45.542,85.919,43.683,86.278,42.522z"/>
                                             </g>
-                                        </g>
-                                    </g>
-                                    <g id="about_us">
-                                    </g>
-                                    <g id="landing">
-                                    </g>
-                                    </Link>
-                                </svg>
-                            </div>
-                            <div className="mainfinalmainattractioninternaltextcontainer" id="pagethirdsecondpagerevealtrigger" >
+                                                </g>
+                                            </g>
+                                            <g id="about_us">
+                                            </g>
+                                            <g id="landing">
+                                            </g>
+                                        </Link>
+                                    </svg>
+                                </div>
+                                <div className="mainfinalmainattractioninternaltextcontainer" id="pagethirdsecondpagerevealtrigger" >
 
-                                <p id="litfestsvgtext">A plethora of events under banner of literati for quenching thirst of professional writers,eloquent poets and literature lovers.The Litfest brings together a seminal array of writers , authors , columnists , cartoonists , publishers , lyricists and our dear readers.</p>
+                                    <p id="litfestsvgtext">A plethora of events under banner of literati for quenching thirst of professional writers,eloquent poets and literature lovers.The Litfest brings together a seminal array of writers , authors , columnists , cartoonists , publishers , lyricists and our dear readers.</p>
+                                </div>
                             </div>
+
                         </div>
-
-                    </div>
-                    <div className="mainfinalmainthirdinternalcontainer" id="workshopssvgtrigger" >
-                        <div className="mainfinalsplitsvgcont1 mainfinalworkgoncont mainfinalwork" >
-                            {/* <Workshopbulb /> */}
-                            <svg version="1.1" className="mainfinalsplitlit mainfinalsplitlit2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                width="612px" height="792px" viewBox="0 0 612 792" enableBackground="new 0 0 612 792" xmlSpace="preserve">
-                                <Link to="/comingSoon">
-                                <g>
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="295.322,78.412 249.482,101.096 255.13,39.817 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="389.251,50.405 337.701,111.921 335.247,35.945 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="454.729,93.348 405.724,106.508 389.251,50.405 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="187.997,69.008 169.128,116.858 126.421,131.646 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="157.298,170.092 99.452,192.303 126.421,131.646 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="295.322,78.412 251.936,154.33 249.482,101.096 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E21F26" points="337.701,111.921 251.936,154.33 295.322,78.412 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#B11F29" points="405.724,106.508 375.646,187.337 337.701,111.921 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="174.54,210.018 92.915,263.227 99.452,192.303 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E21F26" points="498.264,153.561 435.299,161.222 454.729,93.348 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="163.835,269.051 163.568,270.501 105.159,318.204 
+                        <div className="mainfinalmainthirdinternalcontainer" id="workshopssvgtrigger" >
+                            <div className="mainfinalsplitsvgcont1 mainfinalworkgoncont mainfinalwork" >
+                                {/* <Workshopbulb /> */}
+                                <svg version="1.1" className="mainfinalsplitlit mainfinalsplitlit2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                    width="612px" height="792px" viewBox="0 0 612 792" enableBackground="new 0 0 612 792" xmlSpace="preserve">
+                                    <Link to="/comingSoon">
+                                        <g>
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="295.322,78.412 249.482,101.096 255.13,39.817 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="389.251,50.405 337.701,111.921 335.247,35.945 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="454.729,93.348 405.724,106.508 389.251,50.405 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="187.997,69.008 169.128,116.858 126.421,131.646 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="157.298,170.092 99.452,192.303 126.421,131.646 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="295.322,78.412 251.936,154.33 249.482,101.096 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E21F26" points="337.701,111.921 251.936,154.33 295.322,78.412 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#B11F29" points="405.724,106.508 375.646,187.337 337.701,111.921 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="174.54,210.018 92.915,263.227 99.452,192.303 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E21F26" points="498.264,153.561 435.299,161.222 454.729,93.348 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="163.835,269.051 163.568,270.501 105.159,318.204 
                                         92.915,263.227 	"/>
                                     <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="163.862,273.28 131.805,371.854 105.159,318.204 
                                         163.568,270.501 	"/>
                                     <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="none" stroke="#000000" strokeMiterlimit="10" points="163.862,273.28 
                                         163.568,270.501 163.835,269.051 165.194,269.17 164.899,270.055 	"/>
                                     <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="478.182,381.64 432.252,453.772 407.203,379.099 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="309.608,540.16 198.969,540.16 271.159,487.044 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FED978" points="271.159,487.044 198.969,540.16 192.493,484.294 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="271.159,432.807 192.493,484.294 166.525,428.898 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="173.564,368.244 166.525,428.898 131.805,371.854 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="none" stroke="#000000" strokeMiterlimit="10" points="249.305,375.491 
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="309.608,540.16 198.969,540.16 271.159,487.044 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FED978" points="271.159,487.044 198.969,540.16 192.493,484.294 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="271.159,432.807 192.493,484.294 166.525,428.898 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="173.564,368.244 166.525,428.898 131.805,371.854 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="none" stroke="#000000" strokeMiterlimit="10" points="249.305,375.491 
                                         246.819,377.086 245.52,374.159 247.411,374.809 	"/>
                                     <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="415.428,500.767 411.757,540.16 338.679,484.294 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E21F26" points="432.252,453.772 415.428,500.767 384.52,453.772 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E21F26" points="508.999,305.311 478.182,381.64 441.716,325.865 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="519.085,224.452 453.545,216.438 498.264,153.561 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E21F26" points="335.247,35.945 295.322,78.412 255.13,39.817 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="337.701,111.921 295.322,78.412 335.247,35.945 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E21F26" points="405.724,106.508 337.701,111.921 389.251,50.405 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="454.729,93.348 435.299,161.222 405.724,106.508 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="498.264,153.561 453.545,216.438 435.299,161.222 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="519.085,224.452 508.999,305.311 457.479,265.233 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="508.999,305.311 441.716,325.865 457.479,265.233 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="478.182,381.64 407.203,379.099 441.716,325.865 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="432.252,453.772 384.52,453.772 407.203,379.099 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FED978" points="411.757,540.16 309.608,540.16 338.679,484.294 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="338.679,484.294 309.608,540.16 271.159,487.044 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FED978" points="415.428,500.767 338.679,484.294 384.52,453.772 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="519.085,224.452 457.479,265.233 453.545,216.438 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#B11F29" points="255.13,39.817 249.482,101.096 187.997,69.008 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="249.482,101.096 169.128,116.858 187.997,69.008 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#B11F29" points="169.128,116.858 157.298,170.092 126.421,131.646 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="174.54,210.018 99.452,192.303 157.298,170.092 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E21F26" points="174.54,210.018 163.835,269.051 92.915,263.227 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E21F26" points="432.252,453.772 415.428,500.767 384.52,453.772 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E21F26" points="508.999,305.311 478.182,381.64 441.716,325.865 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="519.085,224.452 453.545,216.438 498.264,153.561 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E21F26" points="335.247,35.945 295.322,78.412 255.13,39.817 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="337.701,111.921 295.322,78.412 335.247,35.945 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E21F26" points="405.724,106.508 337.701,111.921 389.251,50.405 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="454.729,93.348 435.299,161.222 405.724,106.508 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="498.264,153.561 453.545,216.438 435.299,161.222 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="519.085,224.452 508.999,305.311 457.479,265.233 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="508.999,305.311 441.716,325.865 457.479,265.233 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="478.182,381.64 407.203,379.099 441.716,325.865 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="432.252,453.772 384.52,453.772 407.203,379.099 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FED978" points="411.757,540.16 309.608,540.16 338.679,484.294 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="338.679,484.294 309.608,540.16 271.159,487.044 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FED978" points="415.428,500.767 338.679,484.294 384.52,453.772 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="519.085,224.452 457.479,265.233 453.545,216.438 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#B11F29" points="255.13,39.817 249.482,101.096 187.997,69.008 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="249.482,101.096 169.128,116.858 187.997,69.008 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#B11F29" points="169.128,116.858 157.298,170.092 126.421,131.646 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="174.54,210.018 99.452,192.303 157.298,170.092 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E21F26" points="174.54,210.018 163.835,269.051 92.915,263.227 	" />
 
-                                    <line fillRule="evenodd" clipRule="evenodd" fill="none" stroke="#000000" strokeMiterlimit="10" x1="165.194" y1="269.17" x2="163.568" y2="270.501" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="214.969,253.671 173.564,368.244 163.862,273.28 
+                                            <line fillRule="evenodd" clipRule="evenodd" fill="none" stroke="#000000" strokeMiterlimit="10" x1="165.194" y1="269.17" x2="163.568" y2="270.501" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="214.969,253.671 173.564,368.244 163.862,273.28 
                                         164.899,270.055 	"/>
                                     <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="173.564,368.244 131.805,371.854 163.862,273.28 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="271.661,280.498 247.411,374.809 245.52,374.159 
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="271.661,280.498 247.411,374.809 245.52,374.159 
                                         214.969,253.671 	"/>
                                     <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FED978" points="407.203,379.099 384.52,453.772 338.205,406.691 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E21F26" points="338.205,406.691 271.159,487.044 271.159,432.807 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="384.52,453.772 338.679,484.294 338.205,406.691 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="338.679,484.294 271.159,487.044 338.205,406.691 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FED978" points="245.52,374.159 166.525,428.898 173.564,368.244 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="271.159,432.807 271.159,487.044 192.493,484.294 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="441.716,325.865 407.203,379.099 348.794,310.958 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="348.794,310.958 338.205,406.691 249.305,375.491 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FED978" points="338.205,406.691 271.159,432.807 246.819,377.086 
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E21F26" points="338.205,406.691 271.159,487.044 271.159,432.807 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="384.52,453.772 338.679,484.294 338.205,406.691 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="338.679,484.294 271.159,487.044 338.205,406.691 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FED978" points="245.52,374.159 166.525,428.898 173.564,368.244 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="271.159,432.807 271.159,487.044 192.493,484.294 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="441.716,325.865 407.203,379.099 348.794,310.958 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="348.794,310.958 338.205,406.691 249.305,375.491 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FED978" points="338.205,406.691 271.159,432.807 246.819,377.086 
                                         249.305,375.491 	"/>
                                     <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="375.646,187.337 251.936,154.33 337.701,111.921 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E21F26" points="375.646,187.337 360.385,231.698 267.699,206.561 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E21F26" points="453.545,216.438 375.646,187.337 435.299,161.222 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FED978" points="457.479,265.233 348.794,310.958 360.385,231.698 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="457.479,265.233 360.385,231.698 453.545,216.438 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E21F26" points="251.936,154.33 174.54,210.018 157.298,170.092 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="164.899,270.055 165.194,269.17 163.835,269.051 
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E21F26" points="375.646,187.337 360.385,231.698 267.699,206.561 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E21F26" points="453.545,216.438 375.646,187.337 435.299,161.222 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FED978" points="457.479,265.233 348.794,310.958 360.385,231.698 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="457.479,265.233 360.385,231.698 453.545,216.438 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E21F26" points="251.936,154.33 174.54,210.018 157.298,170.092 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="164.899,270.055 165.194,269.17 163.835,269.051 
                                         174.54,210.018 214.969,253.671 	"/>
                                     <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E21F26" points="245.52,374.159 173.564,368.244 214.969,253.671 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="271.159,432.807 166.525,428.898 245.52,374.159 
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="271.159,432.807 166.525,428.898 245.52,374.159 
                                         246.819,377.086 	"/>
 
                                     <line fillRule="evenodd" clipRule="evenodd" fill="none" stroke="#000000" strokeMiterlimit="10" x1="164.899" y1="270.055" x2="163.568" y2="270.501" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E21F26" points="249.482,101.096 157.298,170.092 169.128,116.858 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="251.936,154.33 157.298,170.092 249.482,101.096 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#B11F29" points="267.699,206.561 214.969,253.671 251.936,154.33 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="251.936,154.33 214.969,253.671 174.54,210.018 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="435.299,161.222 375.646,187.337 405.724,106.508 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="375.646,187.337 267.699,206.561 251.936,154.33 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#B11F29" points="360.385,231.698 271.661,280.498 267.699,206.561 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="453.545,216.438 360.385,231.698 375.646,187.337 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="360.385,231.698 348.794,310.958 271.661,280.498 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="271.661,280.498 214.969,253.671 267.699,206.561 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FED978" points="348.794,310.958 249.305,375.491 247.411,374.809 
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E21F26" points="249.482,101.096 157.298,170.092 169.128,116.858 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="251.936,154.33 157.298,170.092 249.482,101.096 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#B11F29" points="267.699,206.561 214.969,253.671 251.936,154.33 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="251.936,154.33 214.969,253.671 174.54,210.018 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="435.299,161.222 375.646,187.337 405.724,106.508 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="375.646,187.337 267.699,206.561 251.936,154.33 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#B11F29" points="360.385,231.698 271.661,280.498 267.699,206.561 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="453.545,216.438 360.385,231.698 375.646,187.337 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="360.385,231.698 348.794,310.958 271.661,280.498 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="271.661,280.498 214.969,253.671 267.699,206.561 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FED978" points="348.794,310.958 249.305,375.491 247.411,374.809 
                                         271.661,280.498 	"/>
 
                                     <line fillRule="evenodd" clipRule="evenodd" fill="none" stroke="#000000" strokeMiterlimit="10" x1="247.411" y1="374.809" x2="246.819" y2="377.086" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="407.203,379.099 338.205,406.691 348.794,310.958 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="457.479,265.233 441.716,325.865 348.794,310.958 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="256.728,587.836 201.513,576.772 214.614,564.944 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="292.424,564.589 256.728,587.836 214.614,564.944 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="307.213,606.97 214.614,607.265 256.728,587.836 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FED978" points="341.371,564.352 307.213,606.97 292.424,564.589 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="398.479,606.674 307.213,606.97 341.371,564.352 
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="407.203,379.099 338.205,406.691 348.794,310.958 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="457.479,265.233 441.716,325.865 348.794,310.958 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="256.728,587.836 201.513,576.772 214.614,564.944 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="292.424,564.589 256.728,587.836 214.614,564.944 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="307.213,606.97 214.614,607.265 256.728,587.836 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FED978" points="341.371,564.352 307.213,606.97 292.424,564.589 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="398.479,606.674 307.213,606.97 341.371,564.352 
                                         341.931,564.352 	"/>
                                     <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FED978" points="411.433,579.111 411.017,594.727 398.479,606.674 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="411.433,579.111 342.821,564.352 398.329,564.089 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="223.102,660.413 214.614,674.161 201.04,660.709 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="259.33,674.017 214.614,674.161 223.102,660.413 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FED978" points="254.364,652.575 201.513,643.644 214.614,631.841 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E21F26" points="285.208,631.518 254.364,652.575 214.614,631.841 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="336.962,631.28 303.456,673.866 285.208,631.518 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E21F26" points="345.716,673.746 303.456,673.866 336.962,631.28 
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="411.433,579.111 342.821,564.352 398.329,564.089 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="223.102,660.413 214.614,674.161 201.04,660.709 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="259.33,674.017 214.614,674.161 223.102,660.413 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FED978" points="254.364,652.575 201.513,643.644 214.614,631.841 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E21F26" points="285.208,631.518 254.364,652.575 214.614,631.841 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="336.962,631.28 303.456,673.866 285.208,631.518 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E21F26" points="345.716,673.746 303.456,673.866 336.962,631.28 
                                         337.258,631.28 	"/>
                                     <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="377.804,631.075 346.044,673.746 345.716,673.746 
                                         337.258,631.28 	"/>
                                     <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="398.479,673.574 346.044,673.746 377.804,631.075 
                                         377.895,631.075 	"/>
                                     <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E21F26" points="411.433,646.008 411.017,661.594 398.479,673.574 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E21F26" points="411.433,646.008 378.073,631.075 398.329,630.985 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="288.729,699.123 249.363,729.113 239.367,699.48 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#B11F29" points="289.289,699.123 271.159,747.745 249.363,729.113 
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E21F26" points="411.433,646.008 378.073,631.075 398.329,630.985 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="288.729,699.123 249.363,729.113 239.367,699.48 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#B11F29" points="289.289,699.123 271.159,747.745 249.363,729.113 
                                         288.729,699.123 	"/>
                                     <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E21F26" points="330.603,698.799 301.59,722.279 301.385,722.459 
                                         289.819,699.094 	"/>
@@ -862,37 +868,37 @@ export default class HomeIndex extends React.Component {
                                     <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FED978" points="362.633,729.973 334.951,750.375 331.964,698.799 
                                         332.883,698.799 	"/>
                                     <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="372.511,698.501 362.633,729.973 332.883,698.799 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E21F26" points="307.213,606.97 256.728,587.836 292.424,564.589 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E21F26" points="411.433,579.111 398.479,606.674 341.931,564.352 
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E21F26" points="307.213,606.97 256.728,587.836 292.424,564.589 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E21F26" points="411.433,579.111 398.479,606.674 341.931,564.352 
                                         342.821,564.352 	"/>
                                     <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="214.614,607.265 201.04,593.809 201.513,576.772 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#B11F29" points="256.728,587.836 214.614,607.265 201.513,576.772 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="303.456,673.866 254.364,652.575 285.208,631.518 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="411.433,646.008 398.479,673.574 377.895,631.075 
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#B11F29" points="256.728,587.836 214.614,607.265 201.513,576.772 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="303.456,673.866 254.364,652.575 285.208,631.518 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="411.433,646.008 398.479,673.574 377.895,631.075 
                                         378.073,631.075 	"/>
                                     <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#B11F29" points="223.102,660.413 201.04,660.709 201.513,643.644 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="261.282,674.017 259.33,674.017 223.102,660.413 
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="261.282,674.017 259.33,674.017 223.102,660.413 
                                         254.364,652.575 	"/>
                                     <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="254.364,652.575 223.102,660.413 201.513,643.644 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FED978" points="303.456,673.866 261.282,674.017 254.364,652.575 	" />
-                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="301.385,722.459 271.159,747.745 289.289,699.123 
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FED978" points="303.456,673.866 261.282,674.017 254.364,652.575 	" />
+                                            <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FBB14E" points="301.385,722.459 271.159,747.745 289.289,699.123 
                                         289.819,699.094 	"/>
                                     <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="334.951,750.375 301.59,722.903 301.565,722.87 
                                         301.565,722.842 301.59,722.279 330.603,698.799 331.964,698.799 	"/>
                                 </g>
-                                </Link>
-                            </svg>
-                        </div>
-                        <div className="mainfinalmainattractioninternal mainfinalattraction2" id="workshoptrigger2">
-                            <div className="mainfinalmainattractioninternalsvgcontainer">
-                                {/*    <Workshops /> */}
-                                <svg version="1.1" id="mainfinalworkshopsvgmove" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                    viewBox="0 -10 3403 446.825" enableBackground="new 0 0 3403 446.825" xmlSpace="preserve">
-                                    <Link to="/comingSoon">
-                                    <g>
-                                        <g>
-                                            <path id="workshopssvg" fill="none" stroke="#FFF" strokeWidth="8" d="M2479.736,199.1h-0.92c-2.654,0-4.186,1.326-4.594,3.983c-4.493,33.076-17.867,68.811-40.123,107.2
-                                                c1.223-10.618,1.734-20.114,1.529-28.485c0-12.457-7.352-28.789-22.051-49.004l-4.291-5.818l-3.98-5.513
+                                    </Link>
+                                </svg>
+                            </div>
+                            <div className="mainfinalmainattractioninternal mainfinalattraction2" id="workshoptrigger2">
+                                <div className="mainfinalmainattractioninternalsvgcontainer">
+                                    {/*    <Workshops /> */}
+                                    <svg version="1.1" id="mainfinalworkshopsvgmove" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                        viewBox="0 -10 3403 446.825" enableBackground="new 0 0 3403 446.825" xmlSpace="preserve">
+                                        <Link to="/comingSoon">
+                                            <g>
+                                                <g>
+                                                    <path id="workshopssvg" fill="none" stroke="#FFF" strokeWidth="8" d="M2479.736,199.1h-0.92c-2.654,0-4.186,1.326-4.594,3.983c-4.493,33.076-17.867,68.811-40.123,107.2
+                                                        c1.223-10.618,1.734-20.114,1.529-28.485c0-12.457-7.352-28.789-22.051-49.004l-4.291-5.818l-3.98-5.513
                                                 c-3.063-4.087-5.411-7.558-7.045-10.419c-4.697-7.348-7.046-13.579-7.046-18.686c0-8.164,7.046-12.247,21.136-12.247h1.836
                                                 c2.859,0,4.392-1.53,4.596-4.593v-0.309c0-3.061-1.532-4.596-4.596-4.596h-2.756c-12.047,0-21.951,1.943-29.71,5.823
                                                 c-11.026,5.513-16.538,14.595-16.538,27.259c0,3.164,0.406,6.33,1.174,9.596v0.055c-3.624,9.95-10.517,19.447-20.778,28.635
@@ -1048,244 +1054,244 @@ export default class HomeIndex extends React.Component {
                                                 c0.816,0,1.531,0.204,2.145,0.612c2.449,1.022,4.695,4.083,6.736,9.188c1.432,3.676,2.758,8.172,3.983,13.475
                                                 c2.856,10.828,4.288,21.955,4.288,33.392C2193.355,235.96,2193.049,240.655,2192.435,245.353z"/>
                                         </g>
-                                    </g>
+                                            </g>
+                                        </Link>
+                                    </svg>
+                                </div>
+                                <div className="mainfinalmainattractioninternaltextcontainer">
+                                    <p id="workshoptext">To transform passive listening into interactive learning. Thomso organises workshops where knowledgeable personalities share their insightful experiences and conduct comprehensive sessions for students.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="mainfinalmainthirdinternalcontainer" id="zonalssvgtrigger">
+                            <div className="mainfinalsplitsvgcont1 mainfinalzonalgoncont mainfinalzonal">
+                                {/* <Karvaan />*/}
+                                <svg version="1.1" className="mainfinalsplitlit mainfinalsplitlit2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                    width="841.89px" height="595.276px" viewBox="0 0 841.89 595.276" enableBackground="new 0 0 841.89 595.276"
+                                    xmlSpace="preserve">
+                                    <Link to="/zonals/home">
+                                        <g>
+                                            <polygon className="zongon" fill="#238B45" points="225.876,149.98 198.805,146.542 216.195,139.817 	" />
+                                            <polygon className="zongon" fill="#005A32" points="225.876,149.98 189.568,170.249 198.805,146.542 	" />
+                                            <polygon className="zongon" fill="#238B45" points="225.876,149.98 221.45,177.284 189.568,170.249 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="221.45,177.284 179.598,209.495 189.568,170.249 	" />
+                                            <polygon className="zongon" fill="#005A32" points="221.45,177.284 203.577,219.89 179.598,209.495 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="203.577,219.89 198.127,235.87 179.598,209.495 	" />
+                                            <polygon className="zongon" fill="#74C476" points="179.598,209.495 175.56,226.594 155.097,212.953 	" />
+                                            <polygon className="zongon" fill="#238B45" points="155.097,212.953 152.391,236.508 131.176,232.836 	" />
+                                            <polygon className="zongon" fill="#74C476" points="140.16,258.902 121.921,264.002 131.176,232.836 	" />
+                                            <polygon className="zongon" fill="#A1D99B" points="145.823,282.688 129.38,294.396 121.921,264.002 	" />
+                                            <polygon className="zongon" fill="#74C476" points="145.823,282.688 144.934,308.696 129.38,294.396 	" />
+                                            <polygon className="zongon" fill="#A1D99B" points="162.306,291.943 159.309,310.763 144.934,308.696 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="166.768,400.574 157.881,402.951 154.769,370.915 	" />
+                                            <polygon className="zongon" fill="#74C476" points="171.02,360.421 154.769,370.915 156.992,341.602 	" />
+                                            <polygon className="zongon" fill="#238B45" points="171.02,360.421 166.768,400.574 154.769,370.915 	" />
+                                            <polygon className="zongon" fill="#74C476" points="181.009,303.228 177.163,325.237 159.309,310.763 	" />
+                                            <polygon className="zongon" fill="#238B45" points="177.163,325.237 156.992,341.602 159.309,310.763 	" />
+                                            <polygon className="zongon" fill="#238B45" points="187.078,272.893 162.306,291.943 171.465,246.826 	" />
+                                            <polygon className="zongon" fill="#238B45" points="204.351,281.257 181.009,303.228 187.078,272.893 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="224.813,261.993 204.351,281.257 213.82,249.241 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="225.798,239.425 213.82,249.241 203.577,219.89 	" />
+                                            <polygon className="zongon" fill="#74C476" points="213.82,249.241 198.127,235.87 203.577,219.89 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="256,272.119 224.813,261.993 237.102,250.979 	" />
+                                            <polygon className="zongon" fill="#74C476" points="264.095,309.256 224.813,261.993 256,272.119 	" />
+                                            <polygon className="zongon" fill="#238B45" points="291.128,309.256 264.095,309.256 256,272.119 270.356,288.175 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="309.02,350.317 264.095,309.256 291.128,309.256 	" />
+                                            <polygon className="zongon" fill="#74C476" points="333.812,343.225 309.02,350.317 291.128,309.256 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="353.56,370.875 309.02,350.317 333.812,343.225 	" />
+                                            <polygon className="zongon" fill="#238B45" points="405.537,371.531 353.56,370.875 364.726,349.332 	" />
+                                            <polygon className="zongon" fill="#74C476" points="405.537,371.531 364.726,349.332 395.313,345.447 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="431.796,354.877 405.537,371.531 395.313,345.447 	" />
+                                            <polygon className="zongon" fill="#238B45" points="431.796,354.877 395.313,345.447 426.482,344.751 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="259.593,233.01 237.102,250.979 225.798,239.425 	" />
+                                            <polygon className="zongon" fill="#74C476" points="269.468,207.813 259.593,233.01 225.798,239.425 	" />
+                                            <polygon className="zongon" fill="#238B45" points="305.483,206.382 259.593,233.01 269.468,207.813 	" />
+                                            <polygon className="zongon" fill="#005A32" points="324.342,179.061 305.483,206.382 269.468,207.813 	" />
+                                            <polygon className="zongon" fill="#238B45" points="353.287,187.175 305.483,206.382 324.342,179.061 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="368.455,163.988 353.287,187.175 324.342,179.061 	" />
+                                            <polygon className="zongon" fill="#74C476" points="412.821,173.382 353.287,187.175 368.455,163.988 	" />
+                                            <polygon className="zongon" fill="#238B45" points="437.32,152.203 412.821,173.382 368.455,163.988 	" />
+                                            <polygon className="zongon" fill="#74C476" points="474.188,171.159 412.821,173.382 437.32,152.203 	" />
+                                            <polygon className="zongon" fill="#005A32" points="491.617,153.187 474.188,171.159 437.32,152.203 	" />
+                                            <polygon className="zongon" fill="#238B45" points="528.389,184.839 474.188,171.159 491.617,153.187 	" />
+                                            <polygon className="zongon" fill="#74C476" points="535.229,161.767 528.389,184.839 491.617,153.187 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="554.396,196.064 528.389,184.839 535.229,161.767 	" />
+                                            <polygon className="zongon" fill="#74C476" points="598.063,186.424 554.396,196.064 535.229,161.767 579.708,178.849 	" />
+                                            <polygon className="zongon" fill="#A1D99B" points="598.063,186.424 583.496,208.645 554.396,196.064 	" />
+                                            <polygon className="zongon" fill="#005A32" points="596.112,230.42 596.112,230.459 583.571,225.881 583.496,208.645 	" />
+                                            <polygon className="zongon" fill="#A1D99B" points="583.571,225.881 568.54,235.521 557.313,214.77 	" />
+                                            <polygon className="zongon" fill="#238B45" points="557.313,214.77 551.268,235.153 537.395,218.729 	" />
+                                            <polygon className="zongon" fill="#238B45" points="539.284,248.004 523.208,234.072 537.395,218.729 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="539.284,248.004 518.532,260.506 523.208,234.072 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="537.488,264.446 526.979,287.229 518.532,260.506 	" />
+                                            <polygon className="zongon" fill="#A1D99B" points="542.686,277.201 526.979,287.229 537.488,264.446 	" />
+                                            <polygon className="zongon" fill="#238B45" points="552,286.512 547.693,304.85 526.979,287.229 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="572.442,308.714 547.693,304.85 552,286.512 	" />
+                                            <polygon className="zongon" fill="#238B45" points="572.442,308.714 552,286.512 566.491,289.45 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="592.73,293.489 589.388,322.609 572.442,308.714 	" />
+                                            <polygon className="zongon" fill="#74C476" points="589.388,322.609 562.996,337.872 572.442,308.714 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="589.388,322.609 578.703,374.547 562.996,337.872 	" />
+                                            <polygon className="zongon" fill="#74C476" points="578.703,374.547 555.305,361.56 562.996,337.872 	" />
+                                            <polygon className="zongon" fill="#238B45" points="578.703,374.547 565.411,385.639 564.83,385.231 555.305,361.56 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="564.83,385.231 553.218,377.253 555.305,361.56 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="594.588,277.201 592.73,293.489 578.318,285.276 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="597.426,252.409 594.588,277.201 580.462,267.598 	" />
+                                            <polygon className="zongon" fill="#238B45" points="597.426,252.409 580.462,267.598 583.032,246.38 	" />
+                                            <polygon className="zongon" fill="#238B45" points="618.723,194.944 595.165,214.421 598.063,186.424 	" />
+                                            <polygon className="zongon" fill="#005A32" points="618.723,194.944 617.775,225.145 595.165,214.421 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="627.746,229.725 616.635,247.095 617.775,225.145 	" />
+                                            <polygon className="zongon" fill="#238B45" points="631.126,274.649 616.635,247.095 627.746,229.725 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="631.126,274.649 614.566,286.552 616.635,247.095 	" />
+                                            <polygon className="zongon" fill="#74C476" points="631.126,274.649 626.817,320.676 614.566,286.552 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="626.817,320.676 602.102,344.442 614.566,286.552 	" />
+                                            <polygon className="zongon" fill="#238B45" points="626.817,320.676 619.145,363.165 602.102,344.442 	" />
+                                            <polygon className="zongon" fill="#74C476" points="619.145,363.165 591.67,376.498 602.102,344.442 	" />
+                                            <polygon className="zongon" fill="#238B45" points="619.145,363.165 614.488,389.001 591.67,376.517 591.67,376.498 	" />
+                                            <polygon className="zongon" fill="#74C476" points="614.488,389.001 603.573,406.138 586.142,393.463 	" />
+                                            <polygon className="zongon" fill="#238B45" points="603.573,406.138 590.142,404.788 586.142,393.463 	" />
+                                            <polygon className="zongon" fill="#74C476" points="646.177,207.098 627.746,229.725 618.723,194.944 621.715,196.18 	" />
+                                            <polygon className="zongon" fill="#238B45" points="662.813,244.448 627.746,229.725 646.177,207.098 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="665.866,213.377 662.813,244.448 646.177,207.098 	" />
+                                            <polygon className="zongon" fill="#74C476" points="681.112,244.448 662.813,244.448 665.866,213.377 	" />
+                                            <polygon className="zongon" fill="#74C476" points="694.117,220.084 665.866,213.377 681.422,211.966 	" />
+                                            <polygon className="zongon" fill="#005A32" points="694.117,220.084 694.117,235.481 681.112,244.448 	" />
+                                            <polygon className="zongon" fill="#74C476" points="598.075,152.58 593.977,138.918 605.302,140.851 	" />
+                                            <polygon className="zongon" fill="#A1D99B" points="598.075,152.58 605.302,140.851 611.31,151.595 	" />
+                                            <polygon className="zongon" fill="#005A32" points="607.525,161.988 598.075,152.58 611.31,151.595 	" />
+                                            <polygon className="zongon" fill="#238B45" points="596.701,166.26 598.075,152.58 607.525,161.988 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="596.701,166.26 585.496,159.38 598.075,152.58 	" />
+                                            <polygon className="zongon" fill="#A1D99B" points="585.496,159.38 584.84,146.704 598.075,152.58 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="598.075,152.58 584.84,146.704 593.977,138.918 	" />
+                                            <polygon className="zongon" fill="#238B45" points="297.002,268.988 273.64,286.958 272.096,273.798 	" />
+                                            <polygon className="zongon" fill="#74C476" points="297.002,268.988 296.77,269.413 283.999,292.464 273.64,286.958 	" />
+                                            <polygon className="zongon" fill="#238B45" points="298.857,288.967 283.999,292.464 296.77,269.413 297.042,269.471 	" />
+                                            <polygon className="zongon" fill="#74C476" points="318.7,273.549 298.857,288.967 297.042,269.471 	" />
+                                            <polygon className="zongon" fill="#282828" points="296.77,269.413 297.002,268.988 297.042,269.471 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="344.884,239.695 343.317,253.992 337.638,272.987 329.501,242.902 	" />
+                                            <polygon className="zongon" fill="#74C476" points="344.884,239.695 329.501,242.902 342.584,232.932 341.249,237.203 	" />
+                                            <polygon className="zongon" fill="#238B45" points="342.584,232.932 329.501,242.902 339.163,224.953 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="339.163,224.953 329.501,242.902 326.448,221.59 	" />
+                                            <polygon className="zongon" fill="#238B45" points="329.501,242.902 302.586,232.951 326.448,221.59 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="329.501,242.902 317.696,244.97 302.586,232.951 	" />
+                                            <polygon className="zongon" fill="#238B45" points="302.586,232.951 302.449,257.782 278.761,257.782 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="339.607,284.137 321.985,290.766 318.7,273.549 	" />
+                                            <polygon className="zongon" fill="#238B45" points="339.607,284.137 335.049,299.944 321.985,290.766 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="350.024,300.31 335.049,299.944 339.607,284.137 	" />
+                                            <polygon className="zongon" fill="#74C476" points="350.024,300.31 339.607,284.137 349.733,284.87 	" />
+                                            <polygon className="zongon" fill="#238B45" points="364.726,291.015 350.024,300.31 349.733,284.87 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="364.726,291.015 349.733,284.87 357.208,280.041 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="382.947,268.988 357.208,280.041 368.187,253.221 368.398,253.026 	" />
+                                            <polygon className="zongon" fill="#238B45" points="382.947,268.988 380.92,290.841 364.726,291.015 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="404.956,273.509 404.665,273.723 380.92,290.841 382.947,268.988 	" />
+                                            <polygon className="zongon" fill="#238B45" points="388.396,257.782 368.398,253.026 387.739,233.743 	" />
+                                            <polygon className="zongon" fill="#74C476" points="411.663,221.707 403.643,244.97 387.739,233.743 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="424.973,224.586 415.447,242.902 411.663,221.707 	" />
+                                            <polygon className="zongon" fill="#238B45" points="428.935,232.604 415.447,242.902 424.973,224.586 	" />
+                                            <polygon className="zongon" fill="#74C476" points="431.06,239.676 415.447,242.902 428.935,232.604 427.562,237.203 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="431.06,239.676 430.46,251.887 415.447,242.902 	" />
+                                            <polygon className="zongon" fill="#74C476" points="424.396,269.626 424.414,269.896 424.377,269.896 424.335,269.779 415.447,242.902 430.46,251.887 
+                                        "/>
+                                            <polygon className="zongon" fill="#41AB5D" points="424.897,282.688 404.993,273.878 404.975,273.664 424.396,269.974 424.377,269.896 
+                                        424.414,269.896 	"/>
+                                    <line fill="#282828" x1="424.396" y1="269.974" x2="424.331" y2="269.786" />
+                                            <polygon className="zongon" fill="#41AB5D" points="424.396,269.974 403.314,255.655 415.447,242.902 	" />
+                                            <polygon className="zongon" fill="#74C476" points="424.396,269.974 404.975,273.664 404.956,273.509 403.314,255.655 	" />
+                                            <polygon className="zongon" fill="#238B45" points="424.897,282.688 406.696,287.478 404.993,273.878 	" />
+                                            <polygon className="zongon" fill="#74C476" points="424.897,282.688 417.169,298.589 406.696,287.478 	" />
+                                            <polygon className="zongon" fill="#74C476" points="433.012,285.528 433.012,301.103 417.169,298.589 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="446.382,294.898 433.012,301.103 442.925,280.427 	" />
+                                            <polygon className="zongon" fill="#74C476" points="460.7,296.851 446.382,294.898 442.925,280.427 	" />
+                                            <polygon className="zongon" fill="#238B45" points="470.422,276.775 442.925,280.427 448.412,258.379 	" />
+                                            <polygon className="zongon" fill="#74C476" points="478.517,260.099 470.422,276.775 448.412,258.379 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="478.517,260.099 448.412,258.379 451.466,246.09 	" />
+                                            <polygon className="zongon" fill="#74C476" points="472.796,240.082 451.466,246.09 455.757,219.33 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="471.347,215.426 455.757,219.33 459.968,215.831 	" />
+                                            <polygon className="zongon" fill="#74C476" points="475.328,221.184 472.876,239.522 472.758,239.58 471.347,215.426 	" />
+                                            <polygon className="zongon" fill="#282828" points="472.876,239.522 472.837,239.829 472.837,239.85 472.796,240.082 472.777,239.656 472.758,239.58 	
+                                        "/>
+                                            <polygon className="zongon" fill="#41AB5D" points="496.005,229.145 478.517,260.099 472.876,239.984 473.434,239.271 	" />
+                                            <polygon className="zongon" fill="#74C476" points="496.005,229.145 473.434,239.271 486.631,222.478 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="504.195,214.517 496.005,229.145 486.631,222.478 	" />
+                                            <polygon className="zongon" fill="#74C476" points="516.66,219.909 496.005,229.145 504.195,214.517 	" />
+                                            <polygon className="zongon" fill="#238B45" points="516.66,219.909 505.704,242.708 496.005,229.145 	" />
+                                            <polygon className="zongon" fill="#74C476" points="519.85,231.812 505.704,242.708 516.66,219.909 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="519.85,231.812 515.596,242.15 505.704,242.708 	" />
+                                            <polygon className="zongon" fill="#238B45" points="559.461,444.918 534.764,456.358 532.254,448.628 	" />
+                                            <polygon className="zongon" fill="#74C476" points="584.425,421.983 559.461,444.918 532.254,448.628 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="600.015,426.158 559.461,444.918 584.425,421.983 	" />
+                                            <polygon className="zongon" fill="#74C476" points="609.39,411.916 600.015,426.158 584.425,421.983 	" />
+                                            <polygon className="zongon" fill="#238B45" points="632.361,415.511 600.015,426.158 609.39,411.916 609.39,411.898 609.408,411.898 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="647.569,396.496 632.361,415.511 609.408,411.898 	" />
+                                            <polygon className="zongon" fill="#74C476" points="662.544,410.313 632.361,415.511 647.569,396.496 	" />
+                                            <polygon className="zongon" fill="#238B45" points="685.713,388.593 662.544,410.313 647.569,396.496 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="708.84,417.173 688.03,414.12 662.544,410.313 685.713,388.593 	" />
+                                            <polygon className="zongon" fill="#A1D99B" points="717.033,394.625 708.84,417.173 685.713,388.593 	" />
+                                            <polygon className="zongon" fill="#005A32" points="719.969,409.867 708.84,417.173 717.033,394.625 	" />
+                                            <polygon className="zongon" fill="#238B45" points="198.127,235.87 175.56,226.594 179.598,209.495 	" />
+                                            <polygon className="zongon" fill="#005A32" points="175.56,226.594 152.391,236.508 155.097,212.953 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="152.391,236.508 140.16,258.902 131.176,232.836 	" />
+                                            <polygon className="zongon" fill="#238B45" points="145.823,282.688 121.921,264.002 140.16,258.902 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="162.306,291.943 144.934,308.696 145.823,282.688 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="181.009,303.228 159.309,310.763 162.306,291.943 	" />
+                                            <polygon className="zongon" fill="#74C476" points="187.078,272.893 181.009,303.228 162.306,291.943 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="177.163,325.237 171.02,360.421 156.992,341.602 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="198.127,235.87 171.465,246.826 175.56,226.594 	" />
+                                            <polygon className="zongon" fill="#A1D99B" points="198.127,235.87 187.078,272.893 171.465,246.826 	" />
+                                            <polygon className="zongon" fill="#74C476" points="213.82,249.241 204.351,281.257 187.078,272.893 	" />
+                                            <polygon className="zongon" fill="#238B45" points="225.798,239.425 224.813,261.993 213.82,249.241 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="598.063,186.424 595.165,214.421 583.496,208.645 	" />
+                                            <polygon className="zongon" fill="#238B45" points="627.746,229.725 617.775,225.145 618.723,194.944 	" />
+                                            <polygon className="zongon" fill="#74C476" points="237.102,250.979 224.813,261.993 225.798,239.425 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="614.488,389.001 586.142,393.463 591.652,376.517 591.67,376.517 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="694.117,220.084 681.112,244.448 665.866,213.377 	" />
+                                            <polygon className="zongon" fill="#74C476" points="596.112,230.42 583.496,208.645 595.165,214.421 	" />
+                                            <polyline fill="#282828" points="596.112,230.42 596.132,230.459 596.112,230.459 	" />
+                                            <polygon className="zongon" fill="#238B45" points="583.571,225.881 583.032,246.38 568.54,235.521 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="568.54,235.521 551.268,235.153 557.313,214.77 	" />
+                                            <polygon className="zongon" fill="#74C476" points="551.268,235.153 539.284,248.004 537.395,218.729 	" />
+                                            <polygon className="zongon" fill="#238B45" points="539.284,248.004 537.488,264.446 518.532,260.506 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="552,286.512 526.979,287.229 542.686,277.201 542.882,277.702 	" />
+                                            <polygon className="zongon" fill="#74C476" points="578.318,285.276 572.442,308.714 566.491,289.45 	" />
+                                            <polygon className="zongon" fill="#238B45" points="592.73,293.489 572.442,308.714 578.318,285.276 	" />
+                                            <polygon className="zongon" fill="#74C476" points="597.426,252.409 583.032,246.38 596.112,230.477 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="596.112,230.459 596.112,230.477 583.032,246.38 583.571,225.881 	" />
+                                            <line fill="#282828" x1="596.132" y1="230.459" x2="596.112" y2="230.477" />
+                                            <polygon className="zongon" fill="#74C476" points="594.588,277.201 578.318,285.276 580.462,267.598 	" />
+                                            <polygon className="zongon" fill="#74C476" points="364.726,349.332 353.56,370.875 333.812,343.225 	" />
+                                            <polygon className="zongon" fill="#74C476" points="317.696,244.97 302.449,257.782 302.586,232.951 	" />
+                                            <polygon className="zongon" fill="#74C476" points="302.449,257.782 272.096,273.798 278.761,257.782 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="302.449,257.782 297.002,268.988 272.096,273.798 	" />
+                                            <polygon className="zongon" fill="#74C476" points="337.638,272.987 317.078,255.946 329.501,242.902 	" />
+                                            <polygon className="zongon" fill="#238B45" points="318.7,273.549 297.042,269.471 297.002,268.988 317.078,255.946 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="337.638,272.987 318.7,273.549 317.078,255.946 	" />
+                                            <polygon className="zongon" fill="#74C476" points="339.607,284.137 318.7,273.549 337.638,272.987 	" />
+                                            <polygon className="zongon" fill="#74C476" points="382.947,268.988 364.726,291.015 357.208,280.041 	" />
+                                            <polygon className="zongon" fill="#74C476" points="388.396,257.782 382.947,268.988 368.398,253.026 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="403.643,244.97 388.396,257.782 387.739,233.743 	" />
+                                            <polygon className="zongon" fill="#238B45" points="415.447,242.902 403.643,244.97 411.663,221.707 	" />
+                                            <polygon className="zongon" fill="#238B45" points="404.956,273.509 382.947,268.988 403.023,255.946 403.314,255.655 	" />
+                                            <polyline fill="#282828" points="404.975,273.664 404.665,273.723 404.993,273.878 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="433.012,285.528 417.169,298.589 424.897,282.688 	" />
+                                            <polygon className="zongon" fill="#238B45" points="442.925,280.427 433.012,301.103 433.012,285.528 	" />
+                                            <polygon className="zongon" fill="#41AB5D" points="470.422,276.775 460.7,296.851 442.925,280.427 	" />
+                                            <polygon className="zongon" fill="#238B45" points="478.517,260.099 451.466,246.09 472.796,240.082 472.876,239.984 	" />
+                                            <polygon className="zongon" fill="#238B45" points="472.796,240.082 455.757,219.33 471.347,215.426 472.758,239.58 472.777,239.656 	" />
+                                            <polyline fill="#282828" points="472.876,239.984 472.837,239.85 472.837,239.829 472.777,239.656 	" />
+                                            <line fill="#282828" x1="473.434" y1="239.271" x2="472.876" y2="239.522" />
+                                        </g>
                                     </Link>
                                 </svg>
                             </div>
-                            <div className="mainfinalmainattractioninternaltextcontainer">
-                                <p id="workshoptext">To transform passive listening into interactive learning. Thomso organises workshops where knowledgeable personalities share their insightful experiences and conduct comprehensive sessions for students.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="mainfinalmainthirdinternalcontainer" id="zonalssvgtrigger">
-                        <div className="mainfinalsplitsvgcont1 mainfinalzonalgoncont mainfinalzonal">
-                            {/* <Karvaan />*/}
-                            <svg version="1.1" className="mainfinalsplitlit mainfinalsplitlit2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                width="841.89px" height="595.276px" viewBox="0 0 841.89 595.276" enableBackground="new 0 0 841.89 595.276"
-                                xmlSpace="preserve">
-                                <Link to="/zonals/home">
-                                <g>
-                                    <polygon className="zongon" fill="#238B45" points="225.876,149.98 198.805,146.542 216.195,139.817 	" />
-                                    <polygon className="zongon" fill="#005A32" points="225.876,149.98 189.568,170.249 198.805,146.542 	" />
-                                    <polygon className="zongon" fill="#238B45" points="225.876,149.98 221.45,177.284 189.568,170.249 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="221.45,177.284 179.598,209.495 189.568,170.249 	" />
-                                    <polygon className="zongon" fill="#005A32" points="221.45,177.284 203.577,219.89 179.598,209.495 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="203.577,219.89 198.127,235.87 179.598,209.495 	" />
-                                    <polygon className="zongon" fill="#74C476" points="179.598,209.495 175.56,226.594 155.097,212.953 	" />
-                                    <polygon className="zongon" fill="#238B45" points="155.097,212.953 152.391,236.508 131.176,232.836 	" />
-                                    <polygon className="zongon" fill="#74C476" points="140.16,258.902 121.921,264.002 131.176,232.836 	" />
-                                    <polygon className="zongon" fill="#A1D99B" points="145.823,282.688 129.38,294.396 121.921,264.002 	" />
-                                    <polygon className="zongon" fill="#74C476" points="145.823,282.688 144.934,308.696 129.38,294.396 	" />
-                                    <polygon className="zongon" fill="#A1D99B" points="162.306,291.943 159.309,310.763 144.934,308.696 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="166.768,400.574 157.881,402.951 154.769,370.915 	" />
-                                    <polygon className="zongon" fill="#74C476" points="171.02,360.421 154.769,370.915 156.992,341.602 	" />
-                                    <polygon className="zongon" fill="#238B45" points="171.02,360.421 166.768,400.574 154.769,370.915 	" />
-                                    <polygon className="zongon" fill="#74C476" points="181.009,303.228 177.163,325.237 159.309,310.763 	" />
-                                    <polygon className="zongon" fill="#238B45" points="177.163,325.237 156.992,341.602 159.309,310.763 	" />
-                                    <polygon className="zongon" fill="#238B45" points="187.078,272.893 162.306,291.943 171.465,246.826 	" />
-                                    <polygon className="zongon" fill="#238B45" points="204.351,281.257 181.009,303.228 187.078,272.893 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="224.813,261.993 204.351,281.257 213.82,249.241 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="225.798,239.425 213.82,249.241 203.577,219.89 	" />
-                                    <polygon className="zongon" fill="#74C476" points="213.82,249.241 198.127,235.87 203.577,219.89 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="256,272.119 224.813,261.993 237.102,250.979 	" />
-                                    <polygon className="zongon" fill="#74C476" points="264.095,309.256 224.813,261.993 256,272.119 	" />
-                                    <polygon className="zongon" fill="#238B45" points="291.128,309.256 264.095,309.256 256,272.119 270.356,288.175 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="309.02,350.317 264.095,309.256 291.128,309.256 	" />
-                                    <polygon className="zongon" fill="#74C476" points="333.812,343.225 309.02,350.317 291.128,309.256 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="353.56,370.875 309.02,350.317 333.812,343.225 	" />
-                                    <polygon className="zongon" fill="#238B45" points="405.537,371.531 353.56,370.875 364.726,349.332 	" />
-                                    <polygon className="zongon" fill="#74C476" points="405.537,371.531 364.726,349.332 395.313,345.447 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="431.796,354.877 405.537,371.531 395.313,345.447 	" />
-                                    <polygon className="zongon" fill="#238B45" points="431.796,354.877 395.313,345.447 426.482,344.751 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="259.593,233.01 237.102,250.979 225.798,239.425 	" />
-                                    <polygon className="zongon" fill="#74C476" points="269.468,207.813 259.593,233.01 225.798,239.425 	" />
-                                    <polygon className="zongon" fill="#238B45" points="305.483,206.382 259.593,233.01 269.468,207.813 	" />
-                                    <polygon className="zongon" fill="#005A32" points="324.342,179.061 305.483,206.382 269.468,207.813 	" />
-                                    <polygon className="zongon" fill="#238B45" points="353.287,187.175 305.483,206.382 324.342,179.061 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="368.455,163.988 353.287,187.175 324.342,179.061 	" />
-                                    <polygon className="zongon" fill="#74C476" points="412.821,173.382 353.287,187.175 368.455,163.988 	" />
-                                    <polygon className="zongon" fill="#238B45" points="437.32,152.203 412.821,173.382 368.455,163.988 	" />
-                                    <polygon className="zongon" fill="#74C476" points="474.188,171.159 412.821,173.382 437.32,152.203 	" />
-                                    <polygon className="zongon" fill="#005A32" points="491.617,153.187 474.188,171.159 437.32,152.203 	" />
-                                    <polygon className="zongon" fill="#238B45" points="528.389,184.839 474.188,171.159 491.617,153.187 	" />
-                                    <polygon className="zongon" fill="#74C476" points="535.229,161.767 528.389,184.839 491.617,153.187 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="554.396,196.064 528.389,184.839 535.229,161.767 	" />
-                                    <polygon className="zongon" fill="#74C476" points="598.063,186.424 554.396,196.064 535.229,161.767 579.708,178.849 	" />
-                                    <polygon className="zongon" fill="#A1D99B" points="598.063,186.424 583.496,208.645 554.396,196.064 	" />
-                                    <polygon className="zongon" fill="#005A32" points="596.112,230.42 596.112,230.459 583.571,225.881 583.496,208.645 	" />
-                                    <polygon className="zongon" fill="#A1D99B" points="583.571,225.881 568.54,235.521 557.313,214.77 	" />
-                                    <polygon className="zongon" fill="#238B45" points="557.313,214.77 551.268,235.153 537.395,218.729 	" />
-                                    <polygon className="zongon" fill="#238B45" points="539.284,248.004 523.208,234.072 537.395,218.729 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="539.284,248.004 518.532,260.506 523.208,234.072 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="537.488,264.446 526.979,287.229 518.532,260.506 	" />
-                                    <polygon className="zongon" fill="#A1D99B" points="542.686,277.201 526.979,287.229 537.488,264.446 	" />
-                                    <polygon className="zongon" fill="#238B45" points="552,286.512 547.693,304.85 526.979,287.229 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="572.442,308.714 547.693,304.85 552,286.512 	" />
-                                    <polygon className="zongon" fill="#238B45" points="572.442,308.714 552,286.512 566.491,289.45 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="592.73,293.489 589.388,322.609 572.442,308.714 	" />
-                                    <polygon className="zongon" fill="#74C476" points="589.388,322.609 562.996,337.872 572.442,308.714 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="589.388,322.609 578.703,374.547 562.996,337.872 	" />
-                                    <polygon className="zongon" fill="#74C476" points="578.703,374.547 555.305,361.56 562.996,337.872 	" />
-                                    <polygon className="zongon" fill="#238B45" points="578.703,374.547 565.411,385.639 564.83,385.231 555.305,361.56 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="564.83,385.231 553.218,377.253 555.305,361.56 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="594.588,277.201 592.73,293.489 578.318,285.276 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="597.426,252.409 594.588,277.201 580.462,267.598 	" />
-                                    <polygon className="zongon" fill="#238B45" points="597.426,252.409 580.462,267.598 583.032,246.38 	" />
-                                    <polygon className="zongon" fill="#238B45" points="618.723,194.944 595.165,214.421 598.063,186.424 	" />
-                                    <polygon className="zongon" fill="#005A32" points="618.723,194.944 617.775,225.145 595.165,214.421 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="627.746,229.725 616.635,247.095 617.775,225.145 	" />
-                                    <polygon className="zongon" fill="#238B45" points="631.126,274.649 616.635,247.095 627.746,229.725 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="631.126,274.649 614.566,286.552 616.635,247.095 	" />
-                                    <polygon className="zongon" fill="#74C476" points="631.126,274.649 626.817,320.676 614.566,286.552 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="626.817,320.676 602.102,344.442 614.566,286.552 	" />
-                                    <polygon className="zongon" fill="#238B45" points="626.817,320.676 619.145,363.165 602.102,344.442 	" />
-                                    <polygon className="zongon" fill="#74C476" points="619.145,363.165 591.67,376.498 602.102,344.442 	" />
-                                    <polygon className="zongon" fill="#238B45" points="619.145,363.165 614.488,389.001 591.67,376.517 591.67,376.498 	" />
-                                    <polygon className="zongon" fill="#74C476" points="614.488,389.001 603.573,406.138 586.142,393.463 	" />
-                                    <polygon className="zongon" fill="#238B45" points="603.573,406.138 590.142,404.788 586.142,393.463 	" />
-                                    <polygon className="zongon" fill="#74C476" points="646.177,207.098 627.746,229.725 618.723,194.944 621.715,196.18 	" />
-                                    <polygon className="zongon" fill="#238B45" points="662.813,244.448 627.746,229.725 646.177,207.098 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="665.866,213.377 662.813,244.448 646.177,207.098 	" />
-                                    <polygon className="zongon" fill="#74C476" points="681.112,244.448 662.813,244.448 665.866,213.377 	" />
-                                    <polygon className="zongon" fill="#74C476" points="694.117,220.084 665.866,213.377 681.422,211.966 	" />
-                                    <polygon className="zongon" fill="#005A32" points="694.117,220.084 694.117,235.481 681.112,244.448 	" />
-                                    <polygon className="zongon" fill="#74C476" points="598.075,152.58 593.977,138.918 605.302,140.851 	" />
-                                    <polygon className="zongon" fill="#A1D99B" points="598.075,152.58 605.302,140.851 611.31,151.595 	" />
-                                    <polygon className="zongon" fill="#005A32" points="607.525,161.988 598.075,152.58 611.31,151.595 	" />
-                                    <polygon className="zongon" fill="#238B45" points="596.701,166.26 598.075,152.58 607.525,161.988 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="596.701,166.26 585.496,159.38 598.075,152.58 	" />
-                                    <polygon className="zongon" fill="#A1D99B" points="585.496,159.38 584.84,146.704 598.075,152.58 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="598.075,152.58 584.84,146.704 593.977,138.918 	" />
-                                    <polygon className="zongon" fill="#238B45" points="297.002,268.988 273.64,286.958 272.096,273.798 	" />
-                                    <polygon className="zongon" fill="#74C476" points="297.002,268.988 296.77,269.413 283.999,292.464 273.64,286.958 	" />
-                                    <polygon className="zongon" fill="#238B45" points="298.857,288.967 283.999,292.464 296.77,269.413 297.042,269.471 	" />
-                                    <polygon className="zongon" fill="#74C476" points="318.7,273.549 298.857,288.967 297.042,269.471 	" />
-                                    <polygon className="zongon" fill="#282828" points="296.77,269.413 297.002,268.988 297.042,269.471 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="344.884,239.695 343.317,253.992 337.638,272.987 329.501,242.902 	" />
-                                    <polygon className="zongon" fill="#74C476" points="344.884,239.695 329.501,242.902 342.584,232.932 341.249,237.203 	" />
-                                    <polygon className="zongon" fill="#238B45" points="342.584,232.932 329.501,242.902 339.163,224.953 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="339.163,224.953 329.501,242.902 326.448,221.59 	" />
-                                    <polygon className="zongon" fill="#238B45" points="329.501,242.902 302.586,232.951 326.448,221.59 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="329.501,242.902 317.696,244.97 302.586,232.951 	" />
-                                    <polygon className="zongon" fill="#238B45" points="302.586,232.951 302.449,257.782 278.761,257.782 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="339.607,284.137 321.985,290.766 318.7,273.549 	" />
-                                    <polygon className="zongon" fill="#238B45" points="339.607,284.137 335.049,299.944 321.985,290.766 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="350.024,300.31 335.049,299.944 339.607,284.137 	" />
-                                    <polygon className="zongon" fill="#74C476" points="350.024,300.31 339.607,284.137 349.733,284.87 	" />
-                                    <polygon className="zongon" fill="#238B45" points="364.726,291.015 350.024,300.31 349.733,284.87 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="364.726,291.015 349.733,284.87 357.208,280.041 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="382.947,268.988 357.208,280.041 368.187,253.221 368.398,253.026 	" />
-                                    <polygon className="zongon" fill="#238B45" points="382.947,268.988 380.92,290.841 364.726,291.015 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="404.956,273.509 404.665,273.723 380.92,290.841 382.947,268.988 	" />
-                                    <polygon className="zongon" fill="#238B45" points="388.396,257.782 368.398,253.026 387.739,233.743 	" />
-                                    <polygon className="zongon" fill="#74C476" points="411.663,221.707 403.643,244.97 387.739,233.743 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="424.973,224.586 415.447,242.902 411.663,221.707 	" />
-                                    <polygon className="zongon" fill="#238B45" points="428.935,232.604 415.447,242.902 424.973,224.586 	" />
-                                    <polygon className="zongon" fill="#74C476" points="431.06,239.676 415.447,242.902 428.935,232.604 427.562,237.203 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="431.06,239.676 430.46,251.887 415.447,242.902 	" />
-                                    <polygon className="zongon" fill="#74C476" points="424.396,269.626 424.414,269.896 424.377,269.896 424.335,269.779 415.447,242.902 430.46,251.887 
-                                        "/>
-                                    <polygon className="zongon" fill="#41AB5D" points="424.897,282.688 404.993,273.878 404.975,273.664 424.396,269.974 424.377,269.896 
-                                        424.414,269.896 	"/>
-                                    <line fill="#282828" x1="424.396" y1="269.974" x2="424.331" y2="269.786" />
-                                    <polygon className="zongon" fill="#41AB5D" points="424.396,269.974 403.314,255.655 415.447,242.902 	" />
-                                    <polygon className="zongon" fill="#74C476" points="424.396,269.974 404.975,273.664 404.956,273.509 403.314,255.655 	" />
-                                    <polygon className="zongon" fill="#238B45" points="424.897,282.688 406.696,287.478 404.993,273.878 	" />
-                                    <polygon className="zongon" fill="#74C476" points="424.897,282.688 417.169,298.589 406.696,287.478 	" />
-                                    <polygon className="zongon" fill="#74C476" points="433.012,285.528 433.012,301.103 417.169,298.589 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="446.382,294.898 433.012,301.103 442.925,280.427 	" />
-                                    <polygon className="zongon" fill="#74C476" points="460.7,296.851 446.382,294.898 442.925,280.427 	" />
-                                    <polygon className="zongon" fill="#238B45" points="470.422,276.775 442.925,280.427 448.412,258.379 	" />
-                                    <polygon className="zongon" fill="#74C476" points="478.517,260.099 470.422,276.775 448.412,258.379 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="478.517,260.099 448.412,258.379 451.466,246.09 	" />
-                                    <polygon className="zongon" fill="#74C476" points="472.796,240.082 451.466,246.09 455.757,219.33 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="471.347,215.426 455.757,219.33 459.968,215.831 	" />
-                                    <polygon className="zongon" fill="#74C476" points="475.328,221.184 472.876,239.522 472.758,239.58 471.347,215.426 	" />
-                                    <polygon className="zongon" fill="#282828" points="472.876,239.522 472.837,239.829 472.837,239.85 472.796,240.082 472.777,239.656 472.758,239.58 	
-                                        "/>
-                                    <polygon className="zongon" fill="#41AB5D" points="496.005,229.145 478.517,260.099 472.876,239.984 473.434,239.271 	" />
-                                    <polygon className="zongon" fill="#74C476" points="496.005,229.145 473.434,239.271 486.631,222.478 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="504.195,214.517 496.005,229.145 486.631,222.478 	" />
-                                    <polygon className="zongon" fill="#74C476" points="516.66,219.909 496.005,229.145 504.195,214.517 	" />
-                                    <polygon className="zongon" fill="#238B45" points="516.66,219.909 505.704,242.708 496.005,229.145 	" />
-                                    <polygon className="zongon" fill="#74C476" points="519.85,231.812 505.704,242.708 516.66,219.909 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="519.85,231.812 515.596,242.15 505.704,242.708 	" />
-                                    <polygon className="zongon" fill="#238B45" points="559.461,444.918 534.764,456.358 532.254,448.628 	" />
-                                    <polygon className="zongon" fill="#74C476" points="584.425,421.983 559.461,444.918 532.254,448.628 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="600.015,426.158 559.461,444.918 584.425,421.983 	" />
-                                    <polygon className="zongon" fill="#74C476" points="609.39,411.916 600.015,426.158 584.425,421.983 	" />
-                                    <polygon className="zongon" fill="#238B45" points="632.361,415.511 600.015,426.158 609.39,411.916 609.39,411.898 609.408,411.898 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="647.569,396.496 632.361,415.511 609.408,411.898 	" />
-                                    <polygon className="zongon" fill="#74C476" points="662.544,410.313 632.361,415.511 647.569,396.496 	" />
-                                    <polygon className="zongon" fill="#238B45" points="685.713,388.593 662.544,410.313 647.569,396.496 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="708.84,417.173 688.03,414.12 662.544,410.313 685.713,388.593 	" />
-                                    <polygon className="zongon" fill="#A1D99B" points="717.033,394.625 708.84,417.173 685.713,388.593 	" />
-                                    <polygon className="zongon" fill="#005A32" points="719.969,409.867 708.84,417.173 717.033,394.625 	" />
-                                    <polygon className="zongon" fill="#238B45" points="198.127,235.87 175.56,226.594 179.598,209.495 	" />
-                                    <polygon className="zongon" fill="#005A32" points="175.56,226.594 152.391,236.508 155.097,212.953 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="152.391,236.508 140.16,258.902 131.176,232.836 	" />
-                                    <polygon className="zongon" fill="#238B45" points="145.823,282.688 121.921,264.002 140.16,258.902 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="162.306,291.943 144.934,308.696 145.823,282.688 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="181.009,303.228 159.309,310.763 162.306,291.943 	" />
-                                    <polygon className="zongon" fill="#74C476" points="187.078,272.893 181.009,303.228 162.306,291.943 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="177.163,325.237 171.02,360.421 156.992,341.602 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="198.127,235.87 171.465,246.826 175.56,226.594 	" />
-                                    <polygon className="zongon" fill="#A1D99B" points="198.127,235.87 187.078,272.893 171.465,246.826 	" />
-                                    <polygon className="zongon" fill="#74C476" points="213.82,249.241 204.351,281.257 187.078,272.893 	" />
-                                    <polygon className="zongon" fill="#238B45" points="225.798,239.425 224.813,261.993 213.82,249.241 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="598.063,186.424 595.165,214.421 583.496,208.645 	" />
-                                    <polygon className="zongon" fill="#238B45" points="627.746,229.725 617.775,225.145 618.723,194.944 	" />
-                                    <polygon className="zongon" fill="#74C476" points="237.102,250.979 224.813,261.993 225.798,239.425 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="614.488,389.001 586.142,393.463 591.652,376.517 591.67,376.517 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="694.117,220.084 681.112,244.448 665.866,213.377 	" />
-                                    <polygon className="zongon" fill="#74C476" points="596.112,230.42 583.496,208.645 595.165,214.421 	" />
-                                    <polyline fill="#282828" points="596.112,230.42 596.132,230.459 596.112,230.459 	" />
-                                    <polygon className="zongon" fill="#238B45" points="583.571,225.881 583.032,246.38 568.54,235.521 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="568.54,235.521 551.268,235.153 557.313,214.77 	" />
-                                    <polygon className="zongon" fill="#74C476" points="551.268,235.153 539.284,248.004 537.395,218.729 	" />
-                                    <polygon className="zongon" fill="#238B45" points="539.284,248.004 537.488,264.446 518.532,260.506 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="552,286.512 526.979,287.229 542.686,277.201 542.882,277.702 	" />
-                                    <polygon className="zongon" fill="#74C476" points="578.318,285.276 572.442,308.714 566.491,289.45 	" />
-                                    <polygon className="zongon" fill="#238B45" points="592.73,293.489 572.442,308.714 578.318,285.276 	" />
-                                    <polygon className="zongon" fill="#74C476" points="597.426,252.409 583.032,246.38 596.112,230.477 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="596.112,230.459 596.112,230.477 583.032,246.38 583.571,225.881 	" />
-                                    <line fill="#282828" x1="596.132" y1="230.459" x2="596.112" y2="230.477" />
-                                    <polygon className="zongon" fill="#74C476" points="594.588,277.201 578.318,285.276 580.462,267.598 	" />
-                                    <polygon className="zongon" fill="#74C476" points="364.726,349.332 353.56,370.875 333.812,343.225 	" />
-                                    <polygon className="zongon" fill="#74C476" points="317.696,244.97 302.449,257.782 302.586,232.951 	" />
-                                    <polygon className="zongon" fill="#74C476" points="302.449,257.782 272.096,273.798 278.761,257.782 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="302.449,257.782 297.002,268.988 272.096,273.798 	" />
-                                    <polygon className="zongon" fill="#74C476" points="337.638,272.987 317.078,255.946 329.501,242.902 	" />
-                                    <polygon className="zongon" fill="#238B45" points="318.7,273.549 297.042,269.471 297.002,268.988 317.078,255.946 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="337.638,272.987 318.7,273.549 317.078,255.946 	" />
-                                    <polygon className="zongon" fill="#74C476" points="339.607,284.137 318.7,273.549 337.638,272.987 	" />
-                                    <polygon className="zongon" fill="#74C476" points="382.947,268.988 364.726,291.015 357.208,280.041 	" />
-                                    <polygon className="zongon" fill="#74C476" points="388.396,257.782 382.947,268.988 368.398,253.026 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="403.643,244.97 388.396,257.782 387.739,233.743 	" />
-                                    <polygon className="zongon" fill="#238B45" points="415.447,242.902 403.643,244.97 411.663,221.707 	" />
-                                    <polygon className="zongon" fill="#238B45" points="404.956,273.509 382.947,268.988 403.023,255.946 403.314,255.655 	" />
-                                    <polyline fill="#282828" points="404.975,273.664 404.665,273.723 404.993,273.878 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="433.012,285.528 417.169,298.589 424.897,282.688 	" />
-                                    <polygon className="zongon" fill="#238B45" points="442.925,280.427 433.012,301.103 433.012,285.528 	" />
-                                    <polygon className="zongon" fill="#41AB5D" points="470.422,276.775 460.7,296.851 442.925,280.427 	" />
-                                    <polygon className="zongon" fill="#238B45" points="478.517,260.099 451.466,246.09 472.796,240.082 472.876,239.984 	" />
-                                    <polygon className="zongon" fill="#238B45" points="472.796,240.082 455.757,219.33 471.347,215.426 472.758,239.58 472.777,239.656 	" />
-                                    <polyline fill="#282828" points="472.876,239.984 472.837,239.85 472.837,239.829 472.777,239.656 	" />
-                                    <line fill="#282828" x1="473.434" y1="239.271" x2="472.876" y2="239.522" />
-                                </g>
-                                </Link>
-                            </svg>
-                        </div>
-                        <div className="mainfinalmainattractioninternal mainfinalattraction1" id="zonalstrigger">
-                            <div className="mainfinalmainattractioninternalsvgcontainer">
-                                <svg version="1.1" id="mainfinalzonalsvgmove" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                    viewBox="0 -10 3403 446.825" enableBackground="new 0 0 3403 446.825" xmlSpace="preserve">
-                                    <Link to="/zonals/home">
-                                    <g>
-                                        <g>
-                                            <path id="zonalssvg" fill="none" strokeWidth="8" stroke="#FFF" d="M2260.631,202.129c-0.613-3.27-2.398-5.92-5.26-7.965c-2.855-2.043-5.922-2.756-9.186-2.145
-                                                c-3.268,0.613-5.924,2.349-7.912,5.155c0,0.259-0.156,0.563-0.359,0.972l-0.256,0.256v0.662c-0.457,0.408-0.766,0.817-0.971,1.227
+                            <div className="mainfinalmainattractioninternal mainfinalattraction1" id="zonalstrigger">
+                                <div className="mainfinalmainattractioninternalsvgcontainer">
+                                    <svg version="1.1" id="mainfinalzonalsvgmove" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                        viewBox="0 -10 3403 446.825" enableBackground="new 0 0 3403 446.825" xmlSpace="preserve">
+                                        <Link to="/zonals/home">
+                                            <g>
+                                                <g>
+                                                    <path id="zonalssvg" fill="none" strokeWidth="8" stroke="#FFF" d="M2260.631,202.129c-0.613-3.27-2.398-5.92-5.26-7.965c-2.855-2.043-5.922-2.756-9.186-2.145
+                                                        c-3.268,0.613-5.924,2.349-7.912,5.155c0,0.259-0.156,0.563-0.359,0.972l-0.256,0.256v0.662c-0.457,0.408-0.766,0.817-0.971,1.227
                                                 c-0.404,1.022-0.967,1.939-1.682,2.758c-0.717,0.816-1.479,2.043-2.246,3.673c-0.818,1.432-1.785,2.911-2.758,4.442
                                                 c-1.072,1.48-2.297,3.215-3.729,5.054c-1.172,1.786-2.652,3.78-4.287,5.819c-1.631,2.039-3.469,4.236-5.514,6.738
                                                 c-1.785,2.039-3.828,4.289-5.973,6.686c-2.145,2.504-4.646,4.955-7.502,7.403c-5.105,5.104-10.924,10.209-17.459,15.315
@@ -1385,22 +1391,22 @@ export default class HomeIndex extends React.Component {
                                                 c0-2.398,0.15-5.358,0.559-8.833c0.613-4.337,1.43-8.166,2.502-11.636c2.807-9.596,6.74-14.447,11.641-14.447
                                                 c4.082,0,8.012,1.48,11.945,4.289c2.602,2.093,5.662,5.053,9.188,8.933C1559.584,211.314,1558.619,218.771,1558.006,226.273z"/>
                                         </g>
-                                    </g>
-                                    </Link>
-                                </svg>
-                            </div>
-                            <div className="mainfinalmainattractioninternaltextcontainer">
+                                            </g>
+                                        </Link>
+                                    </svg>
+                                </div>
+                                <div className="mainfinalmainattractioninternaltextcontainer">
 
-                                <p id="zonalstext">'Karwaan'-the Zonals of Thomso, IIT Roorkee are on initiative to connect Thomso to regions across the length and breadth of the country. Thomso carries out its 'Talent Hunt' at several cities to providethe college students and the cultural societies an opportunity to enter the finals of highly diverse and competitive events of Thomso.</p>
+                                    <p id="zonalstext">'Karwaan'-the Zonals of Thomso, IIT Roorkee are on initiative to connect Thomso to regions across the length and breadth of the country. Thomso carries out its 'Talent Hunt' at several cities to providethe college students and the cultural societies an opportunity to enter the finals of highly diverse and competitive events of Thomso.</p>
+                                </div>
                             </div>
+
                         </div>
 
-                    </div>
+                        <div className="mainfinalmainthirdinternalcontainer" id="onlineeventssvgtrigger">
+                            <div className="mainfinalsplitsvgcont1 mainfinalonlinegongoncont mainfinalonline">
 
-                    <div className="mainfinalmainthirdinternalcontainer" id="onlineeventssvgtrigger">
-                        <div className="mainfinalsplitsvgcont1 mainfinalonlinegongoncont mainfinalonline">
-                        
-                            {/* <svg className="mainfinalsplitlit mainfinalsplitlit2" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                {/* <svg className="mainfinalsplitlit mainfinalsplitlit2" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                 width="800px" height="800px" viewBox="0 0 800 800" enableBackground="new 0 0 800 800" xmlSpace="preserve">
                                 <polygon className="onlinegon" fill="#A71E36" points="344.676,236.348 332.55,229.058 337.471,222.029 " />
                                 <polygon className="onlinegon" fill="#F38888" points="349.773,248.214 332.199,250.499 344.676,236.348 " />
@@ -1902,366 +1908,366 @@ export default class HomeIndex extends React.Component {
                                 <polygon className="onlinegon" fill="#EC3039" points="608.251,568.813 586.87,577.972 593.718,558.653 " />
                                 <polygon className="onlinegon" fill="#EF5054" points="622.195,560.778 608.251,568.813 607.429,547.291 607.508,547.291 " />
                             </svg> */}
-                                            <svg className="mainfinalsplitlit mainfinalsplitlit2" version="1.1" id="Layer_1"  xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                    width="841.89px" height="595.276px" viewBox="0 0 841.89 595.276" enableBackground="new 0 0 841.89 595.276"
-                    xmlSpace="preserve">
-               <Link to="/onlineevents">
-                <g>
-                    <g>
-                        <polygon className="onlinegon" fill="#A81E35" points="377.076,168.045 367.474,162.272 371.371,156.706 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="381.111,177.441 367.196,179.25 377.076,168.045 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="391.199,168.117 377.076,168.045 385.632,162.756 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="385.632,162.756 377.076,168.045 383.06,156.706 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="399.621,172.498 392.896,184.862 391.199,168.117 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="409.918,171.942 404.771,183.052 399.621,172.498 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="416.877,182.663 413.954,188.363 411.45,194.559 404.771,183.052 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="416.877,182.663 404.771,183.052 409.918,171.942 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="411.45,194.559 411.383,204.299 398.551,194.792 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="411.383,204.299 397.906,206.76 398.551,194.792 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="367.614,168.879 362.253,167.767 367.474,162.272 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="367.196,179.25 355.044,181.477 355.044,172.571 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="355.044,172.571 346.46,181.939 343.471,172.292 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="346.46,181.939 336.647,183.982 343.471,172.292 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="357.733,188.712 342.981,193.445 346.46,181.939 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="355.044,199.428 342.563,205.553 342.981,193.445 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="356.759,208.959 342.563,205.553 355.044,199.428 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="362.464,216.685 348.965,215.36 356.759,208.959 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="357.799,227.401 345.208,227.54 348.965,215.36 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="348.965,215.36 345.208,227.54 336.998,214.67 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="348.965,215.36 336.998,214.67 342.563,205.553 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="372.206,220.676 365.803,233.462 365.666,233.246 357.799,227.401 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="382.225,220.676 378.468,230.279 372.206,220.676 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="378.468,230.279 371.371,242.08 365.803,233.462 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="384.664,241.735 371.371,242.08 378.468,230.279 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="391.477,230.813 384.664,241.735 378.468,230.279 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="391.477,230.813 378.468,230.279 382.225,220.676 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="399.343,226.361 391.477,230.813 391.271,216.963 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="417.228,214.526 405.048,213.624 411.383,204.299 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="417.228,214.526 410.681,226.361 405.048,213.624 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="410.681,226.361 399.343,226.361 405.048,213.624 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="383.06,156.706 377.076,168.045 371.371,156.706 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="377.076,168.045 367.614,168.879 367.474,162.272 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="377.076,168.045 367.196,179.25 367.614,168.879 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="367.196,179.25 355.044,172.571 362.253,167.767 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="367.614,168.879 367.196,179.25 362.253,167.767 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="346.46,181.939 342.981,193.445 336.647,183.982 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="355.044,172.571 355.044,181.477 346.46,181.939 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="367.196,179.25 357.733,188.712 355.044,181.477 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="357.733,188.712 346.46,181.939 355.044,181.477 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="357.733,188.712 355.044,199.428 342.981,193.445 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="356.759,208.959 348.965,215.36 342.563,205.553 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="362.464,216.685 357.799,227.401 348.965,215.36 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="372.206,220.676 357.799,227.401 362.464,216.685 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="378.468,230.279 365.803,233.462 372.206,220.676 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="391.477,230.813 382.225,220.676 391.271,216.963 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="405.048,213.624 399.343,226.361 391.271,216.963 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="405.048,213.624 391.271,216.963 397.906,206.76 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="411.383,204.299 405.048,213.624 397.906,206.76 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="411.45,194.559 398.551,194.792 404.771,183.052 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="404.771,183.052 392.896,184.862 399.621,172.498 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="404.771,183.052 398.551,194.792 392.896,184.862 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="391.199,168.117 381.111,177.441 377.076,168.045 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="392.896,184.862 381.111,177.441 391.199,168.117 		"/>
-                    </g>
-                    <g>
-                        <polygon className="onlinegon" fill="#A81E35" points="401.875,298.386 401.913,284.219 410.481,284.839 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="394.294,308.861 383.303,294.929 401.875,298.386 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="410.958,313.762 401.875,298.386 413.166,304.243 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="413.166,304.243 401.875,298.386 418.064,297.527 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="411.665,325.744 393.883,326.464 410.958,313.762 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="418.949,336.56 403.548,338.179 411.665,325.744 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="411.825,351.067 403.743,351.593 395.394,352.893 403.548,338.179 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="411.825,351.067 403.548,338.179 418.949,336.56 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="395.394,352.893 384.776,359.139 386.773,339.045 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="384.776,359.139 373.364,346.106 386.773,339.045 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="394.831,288.655 392.562,282.116 401.913,284.219 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="383.303,294.929 373.005,283.184 382.673,277.407 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="382.673,277.407 366.937,274.167 375.468,264.665 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="366.937,274.167 358.353,264.839 375.468,264.665 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="366.893,290.795 352.191,277.853 366.937,274.167 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="353.52,294.828 338.778,285.254 352.191,277.853 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="344.288,302.87 338.778,285.254 353.52,294.828 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="339.602,314.075 332.284,298.563 344.288,302.87 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="324.946,315.962 316.627,302.386 332.284,298.563 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="332.284,298.563 316.627,302.386 325.271,285.126 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="332.284,298.563 325.271,285.126 338.778,285.254 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="341.588,327.238 323.557,328.583 323.704,328.291 324.946,315.962 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="348.087,338.114 335.228,340.263 341.588,327.238 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="335.228,340.263 317.816,340.213 323.557,328.583 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="326.812,354.417 317.816,340.213 335.228,340.263 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="343.085,354.731 326.812,354.417 335.228,340.263 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="343.085,354.731 335.228,340.263 348.087,338.114 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="353.021,360.379 343.085,354.731 357.985,345.522 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="377.467,372.116 370.546,358.311 384.776,359.139 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="377.467,372.116 360.376,372.686 370.546,358.311 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="360.376,372.686 353.021,360.379 370.546,358.311 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="418.064,297.527 401.875,298.386 410.481,284.839 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="401.875,298.386 394.831,288.655 401.913,284.219 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="401.875,298.386 383.303,294.929 394.831,288.655 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="383.303,294.929 382.673,277.407 392.562,282.116 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="394.831,288.655 383.303,294.929 392.562,282.116 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="366.937,274.167 352.191,277.853 358.353,264.839 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="382.673,277.407 373.005,283.184 366.937,274.167 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="383.303,294.929 366.893,290.795 373.005,283.184 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="366.893,290.795 366.937,274.167 373.005,283.184 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="366.893,290.795 353.52,294.828 352.191,277.853 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="344.288,302.87 332.284,298.563 338.778,285.254 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="339.602,314.075 324.946,315.962 332.284,298.563 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="341.588,327.238 324.946,315.962 339.602,314.075 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="335.228,340.263 323.557,328.583 341.588,327.238 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="343.085,354.731 348.087,338.114 357.985,345.522 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="370.546,358.311 353.021,360.379 357.985,345.522 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="370.546,358.311 357.985,345.522 373.364,346.106 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="384.776,359.139 370.546,358.311 373.364,346.106 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="395.394,352.893 386.773,339.045 403.548,338.179 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="403.548,338.179 393.883,326.464 411.665,325.744 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="403.548,338.179 386.773,339.045 393.883,326.464 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="410.958,313.762 394.294,308.861 401.875,298.386 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="393.883,326.464 394.294,308.861 410.958,313.762 		"/>
-                    </g>
-                    <g>
-                        <polygon className="onlinegon" fill="#A81E35" points="508.201,212.24 499.703,194.48 510.807,190.086 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="505.025,229.928 482.863,219.113 508.201,212.24 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="528.844,226.013 508.201,212.24 525.865,212.763 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="525.865,212.763 508.201,212.24 527.951,201.4 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="536.957,240.59 515.131,252.216 528.844,226.013 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="552.6,249.741 534.295,261.053 536.957,240.59 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="552.43,272.199 542.625,277.732 532.955,284.395 534.295,261.053 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="552.43,272.199 534.295,261.053 552.6,249.741 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="532.955,284.395 523.43,298.618 513.814,272.254 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="523.43,298.618 501.283,289.184 513.814,272.254 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="493.512,204.306 486.727,197.485 499.703,194.48 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="482.863,219.113 462.885,210.619 471.502,197.554 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="471.502,197.554 449.848,202.989 454.797,185.946 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="449.848,202.989 433.477,196.487 454.797,185.946 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="459.824,223.834 433.609,216.498 449.848,202.989 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="445.51,236.949 421.277,233.852 433.609,216.498 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="438.803,252.586 421.277,233.852 445.51,236.949 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="439.693,269.441 421.176,254.433 438.803,252.586 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="422.479,280.642 403.876,268.661 421.176,254.433 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="421.176,254.433 403.876,268.661 404.289,241.838 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="421.176,254.433 404.289,241.838 421.277,233.852 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="450.119,284.722 428.355,297.282 428.361,296.828 422.479,280.642 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="464.814,294.419 450.012,304.867 450.119,284.722 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="450.012,304.867 428.178,315.308 428.355,297.282 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="448.01,327.665 428.178,315.308 450.012,304.867 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="468.574,318.241 448.01,327.665 450.012,304.867 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="468.574,318.241 450.012,304.867 464.814,294.419 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="484.422,319.323 468.574,318.241 481.678,297.728 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="522.105,319.273 505.117,306.163 523.43,298.618 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="522.105,319.273 501.051,330.295 505.117,306.163 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="501.051,330.295 484.422,319.323 505.117,306.163 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="527.951,201.4 508.201,212.24 510.807,190.086 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="508.201,212.24 493.512,204.306 499.703,194.48 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="508.201,212.24 482.863,219.113 493.512,204.306 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="482.863,219.113 471.502,197.554 486.727,197.485 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="493.512,204.306 482.863,219.113 486.727,197.485 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="449.848,202.989 433.609,216.498 433.477,196.487 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="471.502,197.554 462.885,210.619 449.848,202.989 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="482.863,219.113 459.824,223.834 462.885,210.619 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="459.824,223.834 449.848,202.989 462.885,210.619 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="459.824,223.834 445.51,236.949 433.609,216.498 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="438.803,252.586 421.176,254.433 421.277,233.852 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="439.693,269.441 422.479,280.642 421.176,254.433 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="450.119,284.722 422.479,280.642 439.693,269.441 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="450.012,304.867 428.355,297.282 450.119,284.722 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="468.574,318.241 464.814,294.419 481.678,297.728 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="505.117,306.163 484.422,319.323 481.678,297.728 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="505.117,306.163 481.678,297.728 501.283,289.184 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="523.43,298.618 505.117,306.163 501.283,289.184 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="532.955,284.395 513.814,272.254 534.295,261.053 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="534.295,261.053 515.131,252.216 536.957,240.59 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="534.295,261.053 513.814,272.254 515.131,252.216 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="528.844,226.013 505.025,229.928 508.201,212.24 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="515.131,252.216 505.025,229.928 528.844,226.013 		"/>
-                    </g>
-                    <g>
-                        <polygon className="onlinegon" fill="#EF4F54" points="324.45,202.481 312.2,220.22 301.47,202.481 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="312.2,220.22 290.28,220.22 301.47,202.481 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="301.47,202.481 290.28,220.22 278.61,202.481 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="290.28,220.22 272.75,220.22 278.61,202.481 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="278.61,202.481 272.75,220.22 263.49,202.481 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="272.75,220.22 255.79,210.321 263.49,202.481 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="272.75,220.22 255.79,226.701 255.79,210.321 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="272.75,220.22 272.75,234.861 255.79,226.92 255.79,226.701 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="272.75,234.861 255.79,242.05 255.79,226.92 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="272.75,234.861 272.75,250.55 255.79,242.05 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="272.75,250.55 255.79,257.05 255.79,242.05 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="272.75,262.241 255.79,270.67 255.79,257.05 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="272.75,262.241 272.75,275.67 255.79,270.67 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="272.75,275.67 255.79,283.741 255.79,270.67 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="272.75,275.67 272.75,290.11 255.79,283.741 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="272.75,290.11 255.79,297.491 255.79,283.741 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="272.75,290.11 272.75,303.21 255.79,297.491 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="272.75,303.21 255.79,310.55 255.79,297.491 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="272.75,303.21 272.75,317.61 255.79,310.55 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="272.75,317.61 255.79,326.741 255.79,310.55 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="272.75,317.61 272.75,333.05 255.79,326.741 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="272.75,333.05 255.79,341.11 255.79,326.741 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="272.75,333.05 272.75,347.05 255.79,341.11 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="272.75,347.05 272.75,359.93 255.79,352.491 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="272.75,359.93 255.79,367.17 255.79,352.491 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="272.75,359.93 272.75,375.241 255.79,367.17 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="272.75,375.241 255.79,382.36 255.79,367.17 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="272.75,375.241 272.75,386.89 255.79,382.36 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="272.75,386.89 255.79,396.241 255.79,382.36 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="272.75,386.89 263.85,403.94 255.79,396.241 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="280.91,403.94 263.85,403.94 272.75,386.89 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="290.97,386.89 280.91,403.94 272.75,386.89 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="298.15,403.94 280.91,403.94 290.97,386.89 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="308.28,386.89 298.15,403.94 290.97,386.89 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="317.22,403.94 298.15,403.94 308.28,386.89 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="327.15,386.89 317.22,403.94 308.28,386.89 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="335.15,403.94 317.22,403.94 327.15,386.89 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="343.47,386.89 335.15,403.94 327.15,386.89 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="352.34,403.94 335.15,403.94 343.47,386.89 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="360.65,386.89 352.34,403.94 343.47,386.89 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="368.41,403.94 352.34,403.94 360.65,386.89 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="377.47,386.89 368.41,403.94 360.65,386.89 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="385.84,403.94 368.41,403.94 377.47,386.89 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="394.22,386.89 385.84,403.94 377.47,386.89 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="402.78,403.94 385.84,403.94 394.22,386.89 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="411.84,386.89 402.78,403.94 394.22,386.89 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="419.589,403.94 402.78,403.94 411.84,386.89 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="428.029,386.89 419.589,403.94 411.84,386.89 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="435.529,403.94 419.589,403.94 428.029,386.89 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="444.41,386.89 435.529,403.94 428.029,386.89 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="454.91,403.94 435.529,403.94 444.41,386.89 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="463.59,386.89 454.91,403.94 444.41,386.89 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="471.359,403.94 454.91,403.94 463.59,386.89 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="479.59,386.89 471.359,403.94 463.59,386.89 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="486.84,403.94 471.359,403.94 479.59,386.89 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="496.279,386.89 486.84,403.94 479.59,386.89 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="505.65,403.94 486.84,403.94 496.279,386.89 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="513.41,386.89 505.65,403.94 496.279,386.89 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="521.721,403.94 505.65,403.94 513.41,386.89 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="528.32,386.89 521.721,403.94 513.41,386.89 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="535.529,403.94 521.721,403.94 528.32,386.89 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="542.891,386.89 535.529,403.94 528.32,386.89 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="551.74,403.94 535.529,403.94 542.891,386.89 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="557.51,386.89 551.74,403.94 542.891,386.89 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="566.721,403.94 551.74,403.94 557.51,386.89 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="568.41,386.89 566.721,403.94 557.51,386.89 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="578.49,403.94 566.721,403.94 568.41,386.89 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="586.1,395.14 578.49,403.94 568.41,386.89 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="586.1,378.17 586.1,395.14 568.41,386.89 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="586.1,378.17 568.41,386.89 568.41,370.17 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="586.1,361.8 586.1,378.17 568.41,370.17 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="586.1,361.8 568.41,370.17 568.41,355.67 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="586.1,348.3 586.1,361.8 568.41,355.67 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="586.1,348.3 568.41,355.67 568.41,340.61 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="586.1,329.991 586.1,348.3 568.41,340.61 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="586.1,329.991 568.41,340.61 568.41,321.05 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="586.1,309.36 586.1,329.991 568.41,321.05 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="586.1,309.36 568.41,321.05 568.41,300.17 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="586.1,289.55 586.1,309.36 568.41,300.17 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="586.1,289.55 568.41,300.17 568.41,279.05 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="586.1,267.86 586.1,289.55 568.41,279.05 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="586.1,267.86 568.41,279.05 568.41,260.43 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="586.1,252.861 586.1,267.86 568.41,260.43 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="586.1,252.861 568.41,260.43 568.41,246.05 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="586.1,239.93 586.1,252.861 568.41,246.05 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="586.1,239.93 568.41,246.05 568.41,232.43 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="586.1,223.991 586.1,239.93 568.41,232.43 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="586.1,223.991 568.41,232.43 568.41,220.491 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="586.1,208.81 586.1,223.991 568.41,220.491 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="586.1,208.81 568.41,220.491 578.76,202.481 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="578.76,202.481 568.41,220.491 559.91,202.481 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="568.41,220.491 549.699,220.46 559.91,202.481 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="559.91,202.481 549.699,220.46 549.799,202.481 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="324.45,202.481 324.45,220.22 312.2,220.22 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="272.75,250.55 272.75,262.241 255.79,257.05 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="272.75,347.05 255.79,352.491 255.79,341.11 		"/>
-                        <polyline fill="none" stroke="#EF4F54" stroke-miterlimit="10" points="255.79,226.92 255.53,226.8 255.79,226.701 		"/>
-                    </g>
-                    <g>
-                        <g>
-                            <polygon className="onlinegon" fill="#A81E35" points="608.199,422.71 594.221,427.67 601.529,414.22 			"/>
-                            <polygon className="onlinegon" fill="#EF4F54" points="608.199,422.71 608.199,431.27 594.221,427.67 			"/>
-                            <polygon className="onlinegon" fill="#FBD8C2" points="608.199,431.27 602.09,438.57 594.221,427.67 			"/>
-                            <polygon className="onlinegon" fill="#FBD8C2" points="601.529,414.22 577.84,425.17 566.221,414.34 571.209,414.32 585.129,414.27 585.27,414.27 			
-                                "/>
-                            <polygon className="onlinegon" fill="#ED2E38" points="592.59,438.57 570.09,438.57 577.84,425.17 			"/>
-                            <polygon className="onlinegon" fill="#A81E35" points="570.09,438.57 521.721,438.57 551.74,431.43 			"/>
-                            <polygon className="onlinegon" fill="#A81E35" points="542.221,414.42 521.721,438.57 519.471,414.5 530.98,414.46 			"/>
-                            <polygon className="onlinegon" fill="#F38889" points="521.721,438.57 491.279,438.57 499.779,424.3 			"/>
-                            <polygon className="onlinegon" fill="#F38889" points="486.84,414.621 473.699,425.13 460.721,414.71 477.02,414.65 			"/>
-                            <polygon className="onlinegon" fill="#EF4F54" points="473.699,425.13 459.221,419.1 460.721,414.71 			"/>
-                            <polygon className="onlinegon" fill="#EF4F54" points="473.699,425.13 454.539,422.71 459.221,419.1 			"/>
-                            <polygon className="onlinegon" fill="#A81E35" points="466.779,438.57 444.41,438.57 454.539,422.71 			"/>
-                            <polygon className="onlinegon" fill="#FBD8C2" points="454.539,422.71 444.41,438.57 432.949,422.71 			"/>
-                            <polygon className="onlinegon" fill="#F38889" points="444.41,438.57 420.949,438.57 432.949,422.71 			"/>
-                            <polygon className="onlinegon" fill="#ED2E38" points="432.949,422.71 420.949,438.57 408.45,422.71 			"/>
-                            <polygon className="onlinegon" fill="#A81E35" points="420.949,438.57 395.58,438.57 395.56,438.531 408.45,422.71 			"/>
-                            <polygon className="onlinegon" fill="#EF4F54" points="408.45,422.71 395.56,438.531 387.09,422.71 			"/>
-                            <polygon className="onlinegon" fill="#EF4F54" points="395.54,438.55 395.53,438.57 355.61,438.57 375.08,429.3 			"/>
-                            <polygon className="onlinegon" fill="#EF4F54" points="387.09,422.71 375.08,429.3 382.53,419.34 			"/>
-                            <polygon className="onlinegon" fill="#EF4F54" points="382.53,419.34 375.08,429.3 380.56,414.22 			"/>
-                            <polygon className="onlinegon" fill="#A81E35" points="380.56,414.22 359.61,423.8 334.15,414.22 			"/>
-                            <polygon className="onlinegon" fill="#FBD8C2" points="375.08,429.3 355.61,438.57 359.61,423.8 			"/>
-                            <polygon className="onlinegon" fill="#FBD8C2" points="359.61,423.8 335.31,429.86 334.15,414.22 			"/>
-                            <polygon className="onlinegon" fill="#A81E35" points="355.61,438.57 328.72,438.57 335.31,429.86 			"/>
-                            <polygon className="onlinegon" fill="#EF4F54" points="328.72,438.57 310.09,438.57 319.22,426.67 			"/>
-                            <polygon className="onlinegon" fill="#FBD8C2" points="314.41,414.22 296.78,422.55 272.38,414.22 			"/>
-                            <polygon className="onlinegon" fill="#ED2E38" points="296.78,422.55 277.65,428.43 272.38,414.22 			"/>
-                            <polygon className="onlinegon" fill="#F38889" points="291.41,438.57 253.28,438.57 253.53,438.13 277.65,428.43 			"/>
-                            <polygon className="onlinegon" fill="#F38889" points="272.38,414.22 261.53,423.991 253.91,414.22 			"/>
-                            <polygon className="onlinegon" fill="#ED2E38" points="253.28,438.57 241.6,438.57 245.53,426.39 			"/>
-                            <polygon className="onlinegon" fill="#EF4F54" points="245.53,426.39 233.69,431.411 233.69,421.26 			"/>
-                            <polygon className="onlinegon" fill="#EF4F54" points="245.53,426.39 241.6,438.57 241.39,438.38 233.69,431.411 			"/>
-                            <polygon className="onlinegon" fill="#FBD8C2" points="245.53,426.39 233.69,421.26 233.98,420.991 240.95,414.22 			"/>
-                            <polygon className="onlinegon" fill="#EF4F54" points="253.91,414.22 245.53,426.39 240.95,414.22 			"/>
-                            <polygon className="onlinegon" fill="#EF4F54" points="310.09,438.57 291.41,438.57 296.78,422.55 			"/>
-                            <polygon className="onlinegon" fill="#ED2E38" points="334.15,414.22 319.22,426.67 314.41,414.22 			"/>
-                            <polygon className="onlinegon" fill="none" points="395.58,438.57 395.53,438.57 395.54,438.55 395.56,438.531 			"/>
-                            <polygon className="onlinegon" fill="#EF4F54" points="491.279,438.57 466.779,438.57 473.699,425.13 			"/>
-                            <polygon className="onlinegon" fill="#EF4F54" points="519.471,414.5 499.779,424.3 486.84,414.621 492.359,414.6 492.391,414.6 510.869,414.531 			"/>
-                            <polygon className="onlinegon" fill="#ED2E38" points="565.99,414.34 551.74,431.43 542.221,414.42 553.629,414.38 			"/>
-                        </g>
-                        <polygon className="onlinegon" fill="#EF4F54" points="261.53,423.991 253.53,438.13 253.28,438.57 245.53,426.39 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="277.65,428.43 261.53,423.991 272.38,414.22 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="261.53,423.991 245.53,426.39 253.91,414.22 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="296.78,422.55 291.41,438.57 277.65,428.43 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="277.65,428.43 253.53,438.13 261.53,423.991 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="359.61,423.8 355.61,438.57 335.31,429.86 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="335.31,429.86 319.22,426.67 334.15,414.22 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="319.22,426.67 296.78,422.55 314.41,414.22 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="319.22,426.67 310.09,438.57 296.78,422.55 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="335.31,429.86 328.72,438.57 319.22,426.67 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="380.56,414.22 375.08,429.3 359.61,423.8 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="473.699,425.13 466.779,438.57 454.539,422.71 		"/>
-                        <polygon className="onlinegon" fill="#ED2E38" points="521.721,438.57 499.779,424.3 519.471,414.5 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="499.779,424.3 473.699,425.13 486.84,414.621 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="499.779,424.3 491.279,438.57 473.699,425.13 		"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="551.74,431.43 521.721,438.57 542.221,414.42 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="577.84,425.17 570.09,438.57 551.74,431.43 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="577.84,425.17 551.74,431.43 565.99,414.34 566.221,414.34 		"/>
-                        <polygon className="onlinegon" fill="none" points="566.221,414.34 565.99,414.34 566.09,414.22 		"/>
-                        <polygon className="onlinegon" fill="#EF4F54" points="602.09,438.57 592.59,438.57 594.221,427.67 		"/>
-                        <polygon className="onlinegon" fill="#A81E35" points="594.221,427.67 592.59,438.57 577.84,425.17 		"/>
-                        <polygon className="onlinegon" fill="#F38889" points="601.529,414.22 594.221,427.67 577.84,425.17 		"/>
-                        <line fill="none" x1="395.58" y1="438.57" x2="395.54" y2="438.55"/>
-                        <polygon className="onlinegon" fill="#FBD8C2" points="395.56,438.531 395.54,438.55 375.08,429.3 387.09,422.71 		"/>
-                    </g>
-                </g>
-                </Link>
-                </svg>
-
-                        </div>
-                        <div className="mainfinalmainattractioninternal mainfinalattraction2" id="onlinetrigger" >
-                            <div className="mainfinalmainattractioninternalsvgcontainer">
-                                <svg version="1.1" id="mainfinalonlinesvgmove" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                    viewBox="0 -10 3403 446.825" enableBackground="new 0 0 3403 446.825" xmlSpace="preserve">
-                                  <Link to="/onlineevents">
-                                    <g>
+                                <svg className="mainfinalsplitlit mainfinalsplitlit2" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                    width="841.89px" height="595.276px" viewBox="0 0 841.89 595.276" enableBackground="new 0 0 841.89 595.276"
+                                    xmlSpace="preserve">
+                                    <Link to="/onlineevents">
                                         <g>
-                                            <path fill="#fff" d="M1621.663,144.52c-2.449-4.49-6.43-7.246-11.943-8.27c-1.227-0.203-2.551-0.303-3.982-0.303
-                                                c-4.082,0-7.861,1.221-11.332,3.674c-4.086,2.859-6.638,6.635-7.657,11.336c-0.613,1.834-0.919,3.57-0.919,5.203
+                                            <g>
+                                                <polygon className="onlinegon" fill="#A81E35" points="377.076,168.045 367.474,162.272 371.371,156.706 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="381.111,177.441 367.196,179.25 377.076,168.045 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="391.199,168.117 377.076,168.045 385.632,162.756 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="385.632,162.756 377.076,168.045 383.06,156.706 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="399.621,172.498 392.896,184.862 391.199,168.117 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="409.918,171.942 404.771,183.052 399.621,172.498 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="416.877,182.663 413.954,188.363 411.45,194.559 404.771,183.052 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="416.877,182.663 404.771,183.052 409.918,171.942 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="411.45,194.559 411.383,204.299 398.551,194.792 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="411.383,204.299 397.906,206.76 398.551,194.792 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="367.614,168.879 362.253,167.767 367.474,162.272 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="367.196,179.25 355.044,181.477 355.044,172.571 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="355.044,172.571 346.46,181.939 343.471,172.292 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="346.46,181.939 336.647,183.982 343.471,172.292 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="357.733,188.712 342.981,193.445 346.46,181.939 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="355.044,199.428 342.563,205.553 342.981,193.445 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="356.759,208.959 342.563,205.553 355.044,199.428 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="362.464,216.685 348.965,215.36 356.759,208.959 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="357.799,227.401 345.208,227.54 348.965,215.36 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="348.965,215.36 345.208,227.54 336.998,214.67 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="348.965,215.36 336.998,214.67 342.563,205.553 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="372.206,220.676 365.803,233.462 365.666,233.246 357.799,227.401 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="382.225,220.676 378.468,230.279 372.206,220.676 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="378.468,230.279 371.371,242.08 365.803,233.462 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="384.664,241.735 371.371,242.08 378.468,230.279 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="391.477,230.813 384.664,241.735 378.468,230.279 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="391.477,230.813 378.468,230.279 382.225,220.676 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="399.343,226.361 391.477,230.813 391.271,216.963 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="417.228,214.526 405.048,213.624 411.383,204.299 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="417.228,214.526 410.681,226.361 405.048,213.624 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="410.681,226.361 399.343,226.361 405.048,213.624 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="383.06,156.706 377.076,168.045 371.371,156.706 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="377.076,168.045 367.614,168.879 367.474,162.272 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="377.076,168.045 367.196,179.25 367.614,168.879 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="367.196,179.25 355.044,172.571 362.253,167.767 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="367.614,168.879 367.196,179.25 362.253,167.767 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="346.46,181.939 342.981,193.445 336.647,183.982 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="355.044,172.571 355.044,181.477 346.46,181.939 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="367.196,179.25 357.733,188.712 355.044,181.477 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="357.733,188.712 346.46,181.939 355.044,181.477 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="357.733,188.712 355.044,199.428 342.981,193.445 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="356.759,208.959 348.965,215.36 342.563,205.553 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="362.464,216.685 357.799,227.401 348.965,215.36 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="372.206,220.676 357.799,227.401 362.464,216.685 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="378.468,230.279 365.803,233.462 372.206,220.676 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="391.477,230.813 382.225,220.676 391.271,216.963 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="405.048,213.624 399.343,226.361 391.271,216.963 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="405.048,213.624 391.271,216.963 397.906,206.76 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="411.383,204.299 405.048,213.624 397.906,206.76 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="411.45,194.559 398.551,194.792 404.771,183.052 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="404.771,183.052 392.896,184.862 399.621,172.498 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="404.771,183.052 398.551,194.792 392.896,184.862 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="391.199,168.117 381.111,177.441 377.076,168.045 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="392.896,184.862 381.111,177.441 391.199,168.117 		" />
+                                            </g>
+                                            <g>
+                                                <polygon className="onlinegon" fill="#A81E35" points="401.875,298.386 401.913,284.219 410.481,284.839 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="394.294,308.861 383.303,294.929 401.875,298.386 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="410.958,313.762 401.875,298.386 413.166,304.243 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="413.166,304.243 401.875,298.386 418.064,297.527 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="411.665,325.744 393.883,326.464 410.958,313.762 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="418.949,336.56 403.548,338.179 411.665,325.744 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="411.825,351.067 403.743,351.593 395.394,352.893 403.548,338.179 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="411.825,351.067 403.548,338.179 418.949,336.56 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="395.394,352.893 384.776,359.139 386.773,339.045 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="384.776,359.139 373.364,346.106 386.773,339.045 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="394.831,288.655 392.562,282.116 401.913,284.219 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="383.303,294.929 373.005,283.184 382.673,277.407 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="382.673,277.407 366.937,274.167 375.468,264.665 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="366.937,274.167 358.353,264.839 375.468,264.665 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="366.893,290.795 352.191,277.853 366.937,274.167 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="353.52,294.828 338.778,285.254 352.191,277.853 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="344.288,302.87 338.778,285.254 353.52,294.828 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="339.602,314.075 332.284,298.563 344.288,302.87 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="324.946,315.962 316.627,302.386 332.284,298.563 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="332.284,298.563 316.627,302.386 325.271,285.126 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="332.284,298.563 325.271,285.126 338.778,285.254 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="341.588,327.238 323.557,328.583 323.704,328.291 324.946,315.962 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="348.087,338.114 335.228,340.263 341.588,327.238 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="335.228,340.263 317.816,340.213 323.557,328.583 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="326.812,354.417 317.816,340.213 335.228,340.263 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="343.085,354.731 326.812,354.417 335.228,340.263 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="343.085,354.731 335.228,340.263 348.087,338.114 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="353.021,360.379 343.085,354.731 357.985,345.522 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="377.467,372.116 370.546,358.311 384.776,359.139 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="377.467,372.116 360.376,372.686 370.546,358.311 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="360.376,372.686 353.021,360.379 370.546,358.311 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="418.064,297.527 401.875,298.386 410.481,284.839 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="401.875,298.386 394.831,288.655 401.913,284.219 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="401.875,298.386 383.303,294.929 394.831,288.655 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="383.303,294.929 382.673,277.407 392.562,282.116 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="394.831,288.655 383.303,294.929 392.562,282.116 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="366.937,274.167 352.191,277.853 358.353,264.839 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="382.673,277.407 373.005,283.184 366.937,274.167 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="383.303,294.929 366.893,290.795 373.005,283.184 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="366.893,290.795 366.937,274.167 373.005,283.184 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="366.893,290.795 353.52,294.828 352.191,277.853 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="344.288,302.87 332.284,298.563 338.778,285.254 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="339.602,314.075 324.946,315.962 332.284,298.563 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="341.588,327.238 324.946,315.962 339.602,314.075 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="335.228,340.263 323.557,328.583 341.588,327.238 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="343.085,354.731 348.087,338.114 357.985,345.522 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="370.546,358.311 353.021,360.379 357.985,345.522 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="370.546,358.311 357.985,345.522 373.364,346.106 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="384.776,359.139 370.546,358.311 373.364,346.106 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="395.394,352.893 386.773,339.045 403.548,338.179 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="403.548,338.179 393.883,326.464 411.665,325.744 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="403.548,338.179 386.773,339.045 393.883,326.464 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="410.958,313.762 394.294,308.861 401.875,298.386 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="393.883,326.464 394.294,308.861 410.958,313.762 		" />
+                                            </g>
+                                            <g>
+                                                <polygon className="onlinegon" fill="#A81E35" points="508.201,212.24 499.703,194.48 510.807,190.086 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="505.025,229.928 482.863,219.113 508.201,212.24 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="528.844,226.013 508.201,212.24 525.865,212.763 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="525.865,212.763 508.201,212.24 527.951,201.4 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="536.957,240.59 515.131,252.216 528.844,226.013 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="552.6,249.741 534.295,261.053 536.957,240.59 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="552.43,272.199 542.625,277.732 532.955,284.395 534.295,261.053 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="552.43,272.199 534.295,261.053 552.6,249.741 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="532.955,284.395 523.43,298.618 513.814,272.254 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="523.43,298.618 501.283,289.184 513.814,272.254 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="493.512,204.306 486.727,197.485 499.703,194.48 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="482.863,219.113 462.885,210.619 471.502,197.554 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="471.502,197.554 449.848,202.989 454.797,185.946 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="449.848,202.989 433.477,196.487 454.797,185.946 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="459.824,223.834 433.609,216.498 449.848,202.989 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="445.51,236.949 421.277,233.852 433.609,216.498 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="438.803,252.586 421.277,233.852 445.51,236.949 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="439.693,269.441 421.176,254.433 438.803,252.586 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="422.479,280.642 403.876,268.661 421.176,254.433 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="421.176,254.433 403.876,268.661 404.289,241.838 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="421.176,254.433 404.289,241.838 421.277,233.852 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="450.119,284.722 428.355,297.282 428.361,296.828 422.479,280.642 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="464.814,294.419 450.012,304.867 450.119,284.722 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="450.012,304.867 428.178,315.308 428.355,297.282 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="448.01,327.665 428.178,315.308 450.012,304.867 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="468.574,318.241 448.01,327.665 450.012,304.867 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="468.574,318.241 450.012,304.867 464.814,294.419 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="484.422,319.323 468.574,318.241 481.678,297.728 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="522.105,319.273 505.117,306.163 523.43,298.618 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="522.105,319.273 501.051,330.295 505.117,306.163 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="501.051,330.295 484.422,319.323 505.117,306.163 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="527.951,201.4 508.201,212.24 510.807,190.086 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="508.201,212.24 493.512,204.306 499.703,194.48 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="508.201,212.24 482.863,219.113 493.512,204.306 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="482.863,219.113 471.502,197.554 486.727,197.485 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="493.512,204.306 482.863,219.113 486.727,197.485 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="449.848,202.989 433.609,216.498 433.477,196.487 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="471.502,197.554 462.885,210.619 449.848,202.989 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="482.863,219.113 459.824,223.834 462.885,210.619 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="459.824,223.834 449.848,202.989 462.885,210.619 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="459.824,223.834 445.51,236.949 433.609,216.498 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="438.803,252.586 421.176,254.433 421.277,233.852 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="439.693,269.441 422.479,280.642 421.176,254.433 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="450.119,284.722 422.479,280.642 439.693,269.441 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="450.012,304.867 428.355,297.282 450.119,284.722 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="468.574,318.241 464.814,294.419 481.678,297.728 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="505.117,306.163 484.422,319.323 481.678,297.728 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="505.117,306.163 481.678,297.728 501.283,289.184 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="523.43,298.618 505.117,306.163 501.283,289.184 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="532.955,284.395 513.814,272.254 534.295,261.053 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="534.295,261.053 515.131,252.216 536.957,240.59 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="534.295,261.053 513.814,272.254 515.131,252.216 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="528.844,226.013 505.025,229.928 508.201,212.24 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="515.131,252.216 505.025,229.928 528.844,226.013 		" />
+                                            </g>
+                                            <g>
+                                                <polygon className="onlinegon" fill="#EF4F54" points="324.45,202.481 312.2,220.22 301.47,202.481 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="312.2,220.22 290.28,220.22 301.47,202.481 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="301.47,202.481 290.28,220.22 278.61,202.481 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="290.28,220.22 272.75,220.22 278.61,202.481 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="278.61,202.481 272.75,220.22 263.49,202.481 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="272.75,220.22 255.79,210.321 263.49,202.481 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="272.75,220.22 255.79,226.701 255.79,210.321 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="272.75,220.22 272.75,234.861 255.79,226.92 255.79,226.701 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="272.75,234.861 255.79,242.05 255.79,226.92 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="272.75,234.861 272.75,250.55 255.79,242.05 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="272.75,250.55 255.79,257.05 255.79,242.05 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="272.75,262.241 255.79,270.67 255.79,257.05 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="272.75,262.241 272.75,275.67 255.79,270.67 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="272.75,275.67 255.79,283.741 255.79,270.67 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="272.75,275.67 272.75,290.11 255.79,283.741 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="272.75,290.11 255.79,297.491 255.79,283.741 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="272.75,290.11 272.75,303.21 255.79,297.491 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="272.75,303.21 255.79,310.55 255.79,297.491 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="272.75,303.21 272.75,317.61 255.79,310.55 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="272.75,317.61 255.79,326.741 255.79,310.55 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="272.75,317.61 272.75,333.05 255.79,326.741 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="272.75,333.05 255.79,341.11 255.79,326.741 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="272.75,333.05 272.75,347.05 255.79,341.11 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="272.75,347.05 272.75,359.93 255.79,352.491 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="272.75,359.93 255.79,367.17 255.79,352.491 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="272.75,359.93 272.75,375.241 255.79,367.17 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="272.75,375.241 255.79,382.36 255.79,367.17 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="272.75,375.241 272.75,386.89 255.79,382.36 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="272.75,386.89 255.79,396.241 255.79,382.36 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="272.75,386.89 263.85,403.94 255.79,396.241 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="280.91,403.94 263.85,403.94 272.75,386.89 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="290.97,386.89 280.91,403.94 272.75,386.89 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="298.15,403.94 280.91,403.94 290.97,386.89 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="308.28,386.89 298.15,403.94 290.97,386.89 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="317.22,403.94 298.15,403.94 308.28,386.89 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="327.15,386.89 317.22,403.94 308.28,386.89 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="335.15,403.94 317.22,403.94 327.15,386.89 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="343.47,386.89 335.15,403.94 327.15,386.89 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="352.34,403.94 335.15,403.94 343.47,386.89 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="360.65,386.89 352.34,403.94 343.47,386.89 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="368.41,403.94 352.34,403.94 360.65,386.89 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="377.47,386.89 368.41,403.94 360.65,386.89 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="385.84,403.94 368.41,403.94 377.47,386.89 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="394.22,386.89 385.84,403.94 377.47,386.89 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="402.78,403.94 385.84,403.94 394.22,386.89 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="411.84,386.89 402.78,403.94 394.22,386.89 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="419.589,403.94 402.78,403.94 411.84,386.89 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="428.029,386.89 419.589,403.94 411.84,386.89 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="435.529,403.94 419.589,403.94 428.029,386.89 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="444.41,386.89 435.529,403.94 428.029,386.89 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="454.91,403.94 435.529,403.94 444.41,386.89 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="463.59,386.89 454.91,403.94 444.41,386.89 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="471.359,403.94 454.91,403.94 463.59,386.89 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="479.59,386.89 471.359,403.94 463.59,386.89 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="486.84,403.94 471.359,403.94 479.59,386.89 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="496.279,386.89 486.84,403.94 479.59,386.89 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="505.65,403.94 486.84,403.94 496.279,386.89 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="513.41,386.89 505.65,403.94 496.279,386.89 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="521.721,403.94 505.65,403.94 513.41,386.89 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="528.32,386.89 521.721,403.94 513.41,386.89 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="535.529,403.94 521.721,403.94 528.32,386.89 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="542.891,386.89 535.529,403.94 528.32,386.89 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="551.74,403.94 535.529,403.94 542.891,386.89 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="557.51,386.89 551.74,403.94 542.891,386.89 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="566.721,403.94 551.74,403.94 557.51,386.89 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="568.41,386.89 566.721,403.94 557.51,386.89 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="578.49,403.94 566.721,403.94 568.41,386.89 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="586.1,395.14 578.49,403.94 568.41,386.89 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="586.1,378.17 586.1,395.14 568.41,386.89 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="586.1,378.17 568.41,386.89 568.41,370.17 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="586.1,361.8 586.1,378.17 568.41,370.17 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="586.1,361.8 568.41,370.17 568.41,355.67 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="586.1,348.3 586.1,361.8 568.41,355.67 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="586.1,348.3 568.41,355.67 568.41,340.61 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="586.1,329.991 586.1,348.3 568.41,340.61 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="586.1,329.991 568.41,340.61 568.41,321.05 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="586.1,309.36 586.1,329.991 568.41,321.05 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="586.1,309.36 568.41,321.05 568.41,300.17 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="586.1,289.55 586.1,309.36 568.41,300.17 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="586.1,289.55 568.41,300.17 568.41,279.05 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="586.1,267.86 586.1,289.55 568.41,279.05 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="586.1,267.86 568.41,279.05 568.41,260.43 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="586.1,252.861 586.1,267.86 568.41,260.43 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="586.1,252.861 568.41,260.43 568.41,246.05 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="586.1,239.93 586.1,252.861 568.41,246.05 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="586.1,239.93 568.41,246.05 568.41,232.43 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="586.1,223.991 586.1,239.93 568.41,232.43 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="586.1,223.991 568.41,232.43 568.41,220.491 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="586.1,208.81 586.1,223.991 568.41,220.491 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="586.1,208.81 568.41,220.491 578.76,202.481 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="578.76,202.481 568.41,220.491 559.91,202.481 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="568.41,220.491 549.699,220.46 559.91,202.481 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="559.91,202.481 549.699,220.46 549.799,202.481 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="324.45,202.481 324.45,220.22 312.2,220.22 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="272.75,250.55 272.75,262.241 255.79,257.05 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="272.75,347.05 255.79,352.491 255.79,341.11 		" />
+                                                <polyline fill="none" stroke="#EF4F54" stroke-miterlimit="10" points="255.79,226.92 255.53,226.8 255.79,226.701 		" />
+                                            </g>
+                                            <g>
+                                                <g>
+                                                    <polygon className="onlinegon" fill="#A81E35" points="608.199,422.71 594.221,427.67 601.529,414.22 			" />
+                                                    <polygon className="onlinegon" fill="#EF4F54" points="608.199,422.71 608.199,431.27 594.221,427.67 			" />
+                                                    <polygon className="onlinegon" fill="#FBD8C2" points="608.199,431.27 602.09,438.57 594.221,427.67 			" />
+                                                    <polygon className="onlinegon" fill="#FBD8C2" points="601.529,414.22 577.84,425.17 566.221,414.34 571.209,414.32 585.129,414.27 585.27,414.27 			
+                                "/>
+                                                    <polygon className="onlinegon" fill="#ED2E38" points="592.59,438.57 570.09,438.57 577.84,425.17 			" />
+                                                    <polygon className="onlinegon" fill="#A81E35" points="570.09,438.57 521.721,438.57 551.74,431.43 			" />
+                                                    <polygon className="onlinegon" fill="#A81E35" points="542.221,414.42 521.721,438.57 519.471,414.5 530.98,414.46 			" />
+                                                    <polygon className="onlinegon" fill="#F38889" points="521.721,438.57 491.279,438.57 499.779,424.3 			" />
+                                                    <polygon className="onlinegon" fill="#F38889" points="486.84,414.621 473.699,425.13 460.721,414.71 477.02,414.65 			" />
+                                                    <polygon className="onlinegon" fill="#EF4F54" points="473.699,425.13 459.221,419.1 460.721,414.71 			" />
+                                                    <polygon className="onlinegon" fill="#EF4F54" points="473.699,425.13 454.539,422.71 459.221,419.1 			" />
+                                                    <polygon className="onlinegon" fill="#A81E35" points="466.779,438.57 444.41,438.57 454.539,422.71 			" />
+                                                    <polygon className="onlinegon" fill="#FBD8C2" points="454.539,422.71 444.41,438.57 432.949,422.71 			" />
+                                                    <polygon className="onlinegon" fill="#F38889" points="444.41,438.57 420.949,438.57 432.949,422.71 			" />
+                                                    <polygon className="onlinegon" fill="#ED2E38" points="432.949,422.71 420.949,438.57 408.45,422.71 			" />
+                                                    <polygon className="onlinegon" fill="#A81E35" points="420.949,438.57 395.58,438.57 395.56,438.531 408.45,422.71 			" />
+                                                    <polygon className="onlinegon" fill="#EF4F54" points="408.45,422.71 395.56,438.531 387.09,422.71 			" />
+                                                    <polygon className="onlinegon" fill="#EF4F54" points="395.54,438.55 395.53,438.57 355.61,438.57 375.08,429.3 			" />
+                                                    <polygon className="onlinegon" fill="#EF4F54" points="387.09,422.71 375.08,429.3 382.53,419.34 			" />
+                                                    <polygon className="onlinegon" fill="#EF4F54" points="382.53,419.34 375.08,429.3 380.56,414.22 			" />
+                                                    <polygon className="onlinegon" fill="#A81E35" points="380.56,414.22 359.61,423.8 334.15,414.22 			" />
+                                                    <polygon className="onlinegon" fill="#FBD8C2" points="375.08,429.3 355.61,438.57 359.61,423.8 			" />
+                                                    <polygon className="onlinegon" fill="#FBD8C2" points="359.61,423.8 335.31,429.86 334.15,414.22 			" />
+                                                    <polygon className="onlinegon" fill="#A81E35" points="355.61,438.57 328.72,438.57 335.31,429.86 			" />
+                                                    <polygon className="onlinegon" fill="#EF4F54" points="328.72,438.57 310.09,438.57 319.22,426.67 			" />
+                                                    <polygon className="onlinegon" fill="#FBD8C2" points="314.41,414.22 296.78,422.55 272.38,414.22 			" />
+                                                    <polygon className="onlinegon" fill="#ED2E38" points="296.78,422.55 277.65,428.43 272.38,414.22 			" />
+                                                    <polygon className="onlinegon" fill="#F38889" points="291.41,438.57 253.28,438.57 253.53,438.13 277.65,428.43 			" />
+                                                    <polygon className="onlinegon" fill="#F38889" points="272.38,414.22 261.53,423.991 253.91,414.22 			" />
+                                                    <polygon className="onlinegon" fill="#ED2E38" points="253.28,438.57 241.6,438.57 245.53,426.39 			" />
+                                                    <polygon className="onlinegon" fill="#EF4F54" points="245.53,426.39 233.69,431.411 233.69,421.26 			" />
+                                                    <polygon className="onlinegon" fill="#EF4F54" points="245.53,426.39 241.6,438.57 241.39,438.38 233.69,431.411 			" />
+                                                    <polygon className="onlinegon" fill="#FBD8C2" points="245.53,426.39 233.69,421.26 233.98,420.991 240.95,414.22 			" />
+                                                    <polygon className="onlinegon" fill="#EF4F54" points="253.91,414.22 245.53,426.39 240.95,414.22 			" />
+                                                    <polygon className="onlinegon" fill="#EF4F54" points="310.09,438.57 291.41,438.57 296.78,422.55 			" />
+                                                    <polygon className="onlinegon" fill="#ED2E38" points="334.15,414.22 319.22,426.67 314.41,414.22 			" />
+                                                    <polygon className="onlinegon" fill="none" points="395.58,438.57 395.53,438.57 395.54,438.55 395.56,438.531 			" />
+                                                    <polygon className="onlinegon" fill="#EF4F54" points="491.279,438.57 466.779,438.57 473.699,425.13 			" />
+                                                    <polygon className="onlinegon" fill="#EF4F54" points="519.471,414.5 499.779,424.3 486.84,414.621 492.359,414.6 492.391,414.6 510.869,414.531 			" />
+                                                    <polygon className="onlinegon" fill="#ED2E38" points="565.99,414.34 551.74,431.43 542.221,414.42 553.629,414.38 			" />
+                                                </g>
+                                                <polygon className="onlinegon" fill="#EF4F54" points="261.53,423.991 253.53,438.13 253.28,438.57 245.53,426.39 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="277.65,428.43 261.53,423.991 272.38,414.22 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="261.53,423.991 245.53,426.39 253.91,414.22 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="296.78,422.55 291.41,438.57 277.65,428.43 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="277.65,428.43 253.53,438.13 261.53,423.991 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="359.61,423.8 355.61,438.57 335.31,429.86 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="335.31,429.86 319.22,426.67 334.15,414.22 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="319.22,426.67 296.78,422.55 314.41,414.22 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="319.22,426.67 310.09,438.57 296.78,422.55 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="335.31,429.86 328.72,438.57 319.22,426.67 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="380.56,414.22 375.08,429.3 359.61,423.8 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="473.699,425.13 466.779,438.57 454.539,422.71 		" />
+                                                <polygon className="onlinegon" fill="#ED2E38" points="521.721,438.57 499.779,424.3 519.471,414.5 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="499.779,424.3 473.699,425.13 486.84,414.621 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="499.779,424.3 491.279,438.57 473.699,425.13 		" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="551.74,431.43 521.721,438.57 542.221,414.42 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="577.84,425.17 570.09,438.57 551.74,431.43 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="577.84,425.17 551.74,431.43 565.99,414.34 566.221,414.34 		" />
+                                                <polygon className="onlinegon" fill="none" points="566.221,414.34 565.99,414.34 566.09,414.22 		" />
+                                                <polygon className="onlinegon" fill="#EF4F54" points="602.09,438.57 592.59,438.57 594.221,427.67 		" />
+                                                <polygon className="onlinegon" fill="#A81E35" points="594.221,427.67 592.59,438.57 577.84,425.17 		" />
+                                                <polygon className="onlinegon" fill="#F38889" points="601.529,414.22 594.221,427.67 577.84,425.17 		" />
+                                                <line fill="none" x1="395.58" y1="438.57" x2="395.54" y2="438.55" />
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="395.56,438.531 395.54,438.55 375.08,429.3 387.09,422.71 		" />
+                                            </g>
+                                        </g>
+                                    </Link>
+                                </svg>
+
+                            </div>
+                            <div className="mainfinalmainattractioninternal mainfinalattraction2" id="onlinetrigger" >
+                                <div className="mainfinalmainattractioninternalsvgcontainer">
+                                    <svg version="1.1" id="mainfinalonlinesvgmove" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                        viewBox="0 -10 3403 446.825" enableBackground="new 0 0 3403 446.825" xmlSpace="preserve">
+                                        <Link to="/onlineevents">
+                                            <g>
+                                                <g>
+                                                    <path fill="#fff" d="M1621.663,144.52c-2.449-4.49-6.43-7.246-11.943-8.27c-1.227-0.203-2.551-0.303-3.982-0.303
+                                                        c-4.082,0-7.861,1.221-11.332,3.674c-4.086,2.859-6.638,6.635-7.657,11.336c-0.613,1.834-0.919,3.57-0.919,5.203
                                                 c0,3.471,1.021,6.432,3.063,8.885c2.654,3.674,6.431,5.924,11.333,6.734c1.43,0.205,2.754,0.305,3.98,0.305
                                                 c3.473,0,6.738-0.918,9.802-2.752c4.491-2.451,7.555-6.535,9.19-12.254c0.405-1.426,0.609-2.961,0.609-4.596
                                                 C1623.808,149.831,1623.095,147.18,1621.663,144.52z"/>
                                             <path id="onlinesvg" fill="none" strokeWidth="7" stroke="#FFF" d="M1904.064,212.215c-0.817-1.227-2.044-1.943-3.677-2.148h-0.92c-1.223,0-2.347,0.305-3.367,0.922
-                                                c-1.227,1.016-1.941,2.244-2.146,3.676c-0.406,3.059-0.813,6.021-1.223,8.877c-0.613,3.883-1.328,7.557-2.145,11.027
+                                                        c-1.227,1.016-1.941,2.244-2.146,3.676c-0.406,3.059-0.813,6.021-1.223,8.877c-0.613,3.883-1.328,7.557-2.145,11.027
                                                 c-1.836,9.801-4.085,18.484-6.739,26.037c-8.37,14.293-17.663,21.441-27.872,21.441c-9.801,0-16.539-2.961-20.216-8.834
                                                 c-3.673-4.441-6.226-9.951-7.655-16.436c-1.226-5.258-2.043-10.771-2.451-16.436c11.129-0.818,20.063-3.371,26.75-7.607
                                                 c8.115-5.516,12.148-13.529,12.148-24.1c0-8.523-3.369-15.822-10.107-21.893c-6.736-6.283-14.496-9.449-23.277-9.449
@@ -2353,7 +2359,7 @@ export default class HomeIndex extends React.Component {
                                                 c3.625,0,6.993,2.143,10.006,6.436c2.807,4.078,4.234,7.961,4.234,11.637c0,7.146-3.01,12.352-9.084,15.623
                                                 c-4.646,2.652-10.926,4.285-18.787,4.895C1825.347,215.991,1826.266,206.491,1828.104,200.569z"/>
                                             <path id="onlinesvg1" fill="none" strokeWidth="7" stroke="#FFF" d="M2601.178,211.292h-0.917c-2.654,0-4.188,1.328-4.595,3.984c-4.494,33.076-17.866,68.811-40.126,107.203
-                                                c1.227-10.621,1.738-20.117,1.533-28.488c0-12.455-7.352-28.793-22.054-49.004l-4.288-5.82l-3.98-5.514
+                                                        c1.227-10.621,1.738-20.117,1.533-28.488c0-12.455-7.352-28.793-22.054-49.004l-4.288-5.82l-3.98-5.514
                                                 c-3.063-4.084-5.411-7.559-7.047-10.416c-4.695-7.352-7.043-13.574-7.043-18.678c0-8.172,7.043-12.256,21.133-12.256h1.838
                                                 c2.859,0,4.39-1.535,4.594-4.596v-0.309c0-3.061-1.53-4.592-4.594-4.592h-2.757c-12.046,0-21.95,1.939-29.709,5.818
                                                 c-11.028,5.514-16.542,14.602-16.542,27.26c0,3.727,0.564,7.557,1.637,11.436c-5.261,26.801-10.773,50.031-16.645,69.732
@@ -2423,20 +2429,20 @@ export default class HomeIndex extends React.Component {
                                                 c0,7.146-3.011,12.352-9.085,15.623c-4.646,2.652-10.926,4.285-18.787,4.895C2213.415,215.991,2214.335,206.491,2216.122,200.569z
                                                 "/>
                                         </g>
-                                    </g>
-                                    </Link>
-                                </svg>
+                                            </g>
+                                        </Link>
+                                    </svg>
 
-                            </div>
-                            <div className="mainfinalmainattractioninternaltextcontainer">
+                                </div>
+                                <div className="mainfinalmainattractioninternaltextcontainer">
 
-                                <p id="onlineeventstext">With Several online events in line, the reach of Thomso is more than just 3 days. Expanding its horizons to reach out to a wider audience, Thomso organises various online events as well. From Sketching to Photography, Literature to Fashion, Travel to Quizzing, these events cover the whole hog of culture and intellect.</p>
+                                    <p id="onlineeventstext">With Several online events in line, the reach of Thomso is more than just 3 days. Expanding its horizons to reach out to a wider audience, Thomso organises various online events as well. From Sketching to Photography, Literature to Fashion, Travel to Quizzing, these events cover the whole hog of culture and intellect.</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="mainfinalmainthirdinternalcontainer" id="carnivalsssvgtrigger">
-                        <div className="mainfinalsplitsvgcont1 mainfinalcarnivalgoncont mainfinalcarn">
-                            {/* <svg version="1.1" className="mainfinalsplitlit mainfinalsplitlit2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        <div className="mainfinalmainthirdinternalcontainer" id="carnivalsssvgtrigger">
+                            <div className="mainfinalsplitsvgcont1 mainfinalcarnivalgoncont mainfinalcarn">
+                                {/* <svg version="1.1" className="mainfinalsplitlit mainfinalsplitlit2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                 width="841.89px" height="595.276px" viewBox="0 0 841.89 595.276" enableBackground="new 0 0 841.89 595.276"
                                 xmlSpace="preserve">
                                 <polygon className="carngon" fill="#FFF85F" points="463.135,469.63 422.585,488.7 421.965,488.7 414.745,469.63 " />
@@ -2798,184 +2804,184 @@ export default class HomeIndex extends React.Component {
                                 <polygon className="carngon" fill="#FADD53" points="492.085,419.231 460.425,428.691 465.425,402.22 " />
                                 <polygon className="carngon" fill="#F7CB46" points="465.425,402.22 460.425,428.691 439.095,408.39 " />
                             </svg> */}
-                            
-                            <svg version="1.1" id="Layer_1" className="mainfinalsplitlit mainfinalsplitlit2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	                                viewBox="0 0 4961 3508" enableBackground="new 0 0 4961 3508" xmlSpace="preserve">
-                                    
-                                    <polygon className="carngon mainfinalst0" points="1657,1942 1334,2025.9 1304,1782.6 "/>
-                                        <polygon className="carngon mainfinalst0" points="1419.9,1601.3 1304,1782.6 1296.5,1722.1 1272.3,1592.6 "/>
-                                        <path className="carngon mainfinalst1" d="M1375.4,1493.1l-134-63.2c29.3-45,29.3-45,29.3-45L1375.4,1493.1z"/>
-                                        <polygon className="carngon mainfinalst2" points="1577,1468 1270.7,1384.9 1528.8,1357.3 "/>
-                                        <polygon className="carngon mainfinalst3" points="1789.2,1411 1528.8,1357.3 1782.5,1286.7 "/>
-                                        <polygon className="carngon mainfinalst0" points="1979.5,1326.9 1782.5,1286.7 1962.4,1198.4 "/>
-                                        <polygon className="carngon mainfinalst3" points="2193.4,1027.9 2148.6,1219.4 2084.8,1108.1 "/>
-                                        <polygon className="carngon mainfinalst4" points="2148.6,1219.4 1962.4,1198.4 2084.8,1108.1 "/>
-                                        <polygon className="carngon mainfinalst3" points="1706.9,2270 1343.8,2307 1334,2025.9 "/>
-                                        <polygon className="carngon mainfinalst0" points="1547,2502 1319.7,2556.2 1343.8,2307 "/>
-                                        <polygon className="carngon mainfinalst5" points="1706.9,2270 1547,2502 1343.8,2307 "/>
-                                        <polygon className="carngon mainfinalst1" points="1642.9,2834 1250.5,2759.6 1319.7,2556.2 "/>
-                                        <polygon className="carngon mainfinalst6" points="1346.1,2986 1346,2986 1186.1,2849.4 1250.5,2759.6 "/>
-                                        <polygon className="carngon mainfinalst6" points="1209.6,2985.7 1082.7,2985.1 1156,2867.4 1186.1,2849.4 "/>
-                                        <polygon className="carngon mainfinalst4" points="1346,2986 1270.7,2985.9 1209.6,2985.7 1186.1,2849.4 "/>
-                                        <polygon className="carngon mainfinalst1" points="1156,2867.4 1082.7,2985.1 1071.8,2871.2 "/>
-                                        <polygon className="carngon mainfinalst4" points="1082.7,2985.1 1029.4,2926.2 1071.8,2871.2 "/>
-                                        <polygon className="carngon mainfinalst3" points="1918.2,2986 1759.8,2986 1483.7,2986.1 1346.3,2986 1642.9,2834 "/>
-                                        <polygon className="carngon mainfinalst2" points="1853.2,2822 1642.9,2834 1782.5,2582.6 1805.4,2643.9 "/>
-                                        <polygon className="carngon mainfinalst3" points="1782.5,2582.6 1642.9,2834 1547,2502 "/>
-                                        <polygon className="carngon mainfinalst1" points="1828.3,2448.9 1547,2502 1706.9,2270 "/>
-                                        <polygon className="carngon mainfinalst2" points="1942,2064.1 1657,1942 1935.9,1878 "/>
-                                        <polygon className="carngon mainfinalst1" points="2084.8,2378 1913.2,2429.4 1828.3,2448.9 1860.6,2279.2 1935.8,2306.5 "/>
-                                        <polygon className="carngon mainfinalst7" points="1882,2643.9 1853.2,2822 1805.4,2643.9 "/>
-                                        <polygon className="carngon mainfinalst6" points="2084.8,2270 2084.8,2378 1989,2251.2 "/>
-                                        <polygon className="carngon mainfinalst3" points="2468.7,2986 2323.8,2986 2062.8,2986 1918.8,2986 2165.1,2865.3 "/>
-                                        <polygon className="carngon mainfinalst6" points="3381,2582 3304.9,2986 3063,2599.1 "/>
-                                        <polygon className="carngon mainfinalst2" points="3608.7,2733.5 3381,2582 3548.5,2539.1 "/>
-                                        <polygon className="carngon mainfinalst4" points="3548.5,2539.1 3381,2582 3531.4,2262.8 "/>
-                                        <polygon className="carngon mainfinalst3" points="3381,2582 3023.2,2463.8 3283,2305.9 "/>
-                                        <polygon className="carngon mainfinalst4" points="3381,2582 3063,2599.1 3023.2,2463.8 "/>
-                                        <polygon className="carngon mainfinalst6" points="3553.5,1996.2 3531.4,2262.8 3283,2305.9 "/>
-                                        <polygon className="carngon mainfinalst2" points="3584.3,1817.3 3553.5,1996.2 3201,1982.1 "/>
-                                        <polygon className="carngon mainfinalst6" points="3584.3,1817.3 3201,1982.1 3315,1671.2 "/>
-                                        <polygon className="carngon mainfinalst2" points="2927.4,2305.9 2632.2,2582 2859.8,2265.1 "/>
-                                        <polygon className="carngon mainfinalst3" points="3201,1982.1 2884.6,2066.6 2916.8,1665.9 "/>
-                                        <polygon className="carngon mainfinalst1" points="3201,1982.1 2965.7,2130 2884.6,2066.6 "/>
-                                        <polygon className="carngon mainfinalst2" points="3012.6,2657.6 2877,2830 2947.9,2623.4 "/>
-                                        <polygon className="carngon mainfinalst2" points="2958.5,2421.4 2905.1,2489.7 2927.4,2305.9 "/>
-                                        <polygon className="carngon mainfinalst7" points="3023.2,2463.8 2958.5,2421.4 2978.4,2256.2 "/>
-                                        <polygon className="carngon mainfinalst7" points="2868.3,2986 2707.8,2986.1 2469.1,2986 2751.8,2865.3 "/>
-                                        <polygon className="carngon mainfinalst7" points="3304.9,2986 2965.9,2986 2877,2986 2877,2830 "/>
-                                        <polygon className="carngon mainfinalst1" points="2325.5,1064.7 2193.4,1027.9 2246.9,970.8 "/>
-                                        <polygon className="carngon mainfinalst5" points="2453.7,917.7 2246.9,970.8 2324.1,888.4 "/>
-                                        <polygon className="carngon mainfinalst4" points="2527.2,783.2 2324.1,888.4 2407.4,770.1 "/>
-                                        <polygon className="carngon mainfinalst2" points="2530.1,584.4 2527.2,783.2 2407.4,770.1 "/>
-                                        <polygon className="carngon mainfinalst1" points="2530.1,584.4 2407.4,770.1 2410,582.7 2410,447.7 "/>
-                                        <polygon className="carngon mainfinalst5" points="2531,466.8 2410,447.7 2497.7,414.9 "/>
-                                        <polygon className="carngon mainfinalst7" points="2497.7,414.9 2410,447.7 2460.2,407.4 "/>
-                                        <polygon className="carngon mainfinalst4" points="2643.6,584.3 2530.1,584.4 2643,466.9 "/>
-                                        <polygon className="carngon mainfinalst7" points="2699.3,555.8 2643.6,584.3 2643,466.9 "/>
-                                        <polygon className="carngon mainfinalst0" points="2699.3,495.4 2699.3,555.8 2643,466.9 "/>
-                                        <polygon className="carngon mainfinalst3" points="2561.2,862.7 2453.7,917.7 2527.2,783.2 "/>
-                                        <polygon className="carngon mainfinalst3" points="2724.3,1037.2 2563.5,1045.5 2561.2,862.7 "/>
-                                        <polygon className="carngon mainfinalst6" points="2927.6,1189.5 2704.7,1177 2724.3,1037.2 "/>
-                                        <polygon className="carngon mainfinalst4" points="3162.7,1300.7 2910,1316.6 2927.6,1189.5 "/>
-                                        <polygon className="carngon mainfinalst6" points="3402.5,1361.2 3090.6,1400.1 3162.7,1300.7 "/>
-                                        <polygon className="carngon mainfinalst3" points="3634.3,1384.9 3329.6,1467.2 3402.5,1361.2 "/>
-                                        <polygon className="carngon mainfinalst7" points="3666.3,1431.9 3537.6,1493.3 3634.3,1384.9 "/>
-                                        <polygon className="carngon mainfinalst4" points="3666.3,1431.9 3616.2,1642.6 3537.6,1493.3 "/>
-                                        <polygon className="carngon mainfinalst7" points="3616.2,1642.6 3609.4,1671.2 3584.3,1817.3 3431.5,1630.9 "/>
-                                        <polygon className="carngon mainfinalst4" points="3584.3,1817.3 3315,1671.2 3431.5,1630.9 "/>
-                                        <polygon className="carngon mainfinalst2" points="3753.1,2983.6 3565.9,2986.1 3304.9,2986 3608.7,2733.5 3694.2,2868.3 "/>
-                                        <polygon className="carngon mainfinalst6" points="3861,2870 3753.1,2983.6 3694.2,2868.3 "/>
-                                        <polygon className="carngon mainfinalst2" points="3867.7,2982 3753.1,2983.6 3861,2870 "/>
-                                        <polygon className="carngon mainfinalst4" points="3908.5,2925.9 3867.7,2982 3861,2870 "/>
-                                        <polygon className="carngon mainfinalst0" points="2527.2,783.2 2453.7,917.7 2324.1,888.4 "/>
-                                        <polygon className="carngon mainfinalst0" points="2531,466.8 2530.1,584.4 2410,447.7 "/>
-                                        <polygon className="carngon mainfinalst2" points="2643,466.9 2530.1,584.4 2531,466.8 "/>
-                                        <polygon className="carngon mainfinalst4" points="1657,1942 1304,1782.6 1567.3,1655.4 "/>
-                                        <polygon className="carngon mainfinalst3" points="1567.3,1655.4 1304,1782.6 1419.9,1601.3 "/>
-                                        <polygon className="carngon mainfinalst4" points="1419.9,1601.3 1272.3,1592.6 1266,1558.6 1241.4,1429.9 "/>
-                                        <polygon className="carngon mainfinalst2" points="1419.9,1601.3 1241.4,1429.9 1375.4,1493.1 "/>
-                                        <polygon className="carngon mainfinalst0" points="1577,1468 1375.4,1493.1 1270.7,1384.9 "/>
-                                        <polygon className="carngon mainfinalst7" points="1789.2,1411 1577,1468 1528.8,1357.3 "/>
-                                        <polygon className="carngon mainfinalst4" points="1979.5,1326.9 1789.2,1411 1782.5,1286.7 "/>
-                                        <polygon className="carngon mainfinalst2" points="2148.6,1219.4 1979.5,1326.9 1962.4,1198.4 "/>
-                                        <polygon className="carngon mainfinalst5" points="2325.5,1064.7 2148.6,1219.4 2193.4,1027.9 "/>
-                                        <polygon className="carngon mainfinalst3" points="2453.7,917.7 2325.5,1064.7 2246.9,970.8 "/>
-                                        <polygon className="carngon mainfinalst6" points="2563.5,1045.5 2453.7,917.7 2561.2,862.7 "/>
-                                        <polygon className="carngon mainfinalst4" points="2724.3,1037.2 2704.7,1177 2563.5,1045.5 "/>
-                                        <polygon className="carngon mainfinalst3" points="2927.6,1189.5 2910,1316.6 2704.7,1177 "/>
-                                        <polygon className="carngon mainfinalst2" points="3162.7,1300.7 3090.6,1400.1 2910,1316.6 "/>
-                                        <polygon className="carngon mainfinalst4" points="3402.5,1361.2 3329.6,1467.2 3090.6,1400.1 "/>
-                                        <polygon className="carngon mainfinalst5" points="3634.3,1384.9 3537.6,1493.3 3329.6,1467.2 "/>
-                                        <polygon className="carngon mainfinalst2" points="1706.9,2270 1334,2025.9 1657,1942 "/>
-                                        <polygon className="carngon mainfinalst6" points="1935.9,1878 1657,1942 1706.9,1604.4 "/>
-                                        <polygon className="carngon mainfinalst0" points="1706.9,1604.4 1657,1942 1567.3,1655.4 "/>
-                                        <polygon className="carngon mainfinalst6" points="2293,1754 1935.9,1878 1918.4,1598.9 2036.9,1664.7 "/>
-                                        <polygon className="carngon mainfinalst0" points="2490.6,1648.5 2467.1,1794.5 2373.4,1633.3 "/>
-                                        <polygon className="carngon mainfinalst7" points="2373.4,1633.3 2293,1754 2282.2,1549.3 "/>
-                                        <polygon className="carngon mainfinalst2" points="2293,1754 2219.6,1554.3 2282.2,1549.3 "/>
-                                        <polygon className="carngon mainfinalst4" points="2293,1754 2106.7,1651.3 2219.6,1554.3 "/>
-                                        <polygon className="carngon mainfinalst3" points="2293,1754 2036.9,1664.7 2106.7,1651.3 "/>
-                                        <polygon className="carngon mainfinalst4" points="1918.4,1598.9 1706.9,1604.4 1770.6,1551.4 "/>
-                                        <polygon className="carngon mainfinalst0" points="1918.4,1598.9 1770.6,1551.4 1872.5,1555.8 "/>
-                                        <polygon className="carngon mainfinalst7" points="2643,1882 2490.6,1648.5 2602.1,1577.4 "/>
-                                        <polygon className="carngon mainfinalst4" points="2792.1,1597 2602.1,1577.4 2724.5,1548.4 "/>
-                                        <polygon className="carngon mainfinalst7" points="2916.8,1665.9 2643,1882 2792.1,1597 "/>
-                                        <polygon className="carngon mainfinalst2" points="3315,1671.2 2916.8,1665.9 3027,1601 3139.1,1540.8 3230.6,1610.7 "/>
-                                        <polygon className="carngon mainfinalst3" points="3616.2,1642.6 3431.5,1630.9 3537.6,1493.3 "/>
-                                        <polygon className="carngon mainfinalst5" points="3315,1671.2 3201,1982.1 2916.8,1665.9 "/>
-                                        <polygon className="carngon mainfinalst0" points="3283,2305.9 2965.7,2130 3201,1982.1 "/>
-                                        <polygon className="carngon mainfinalst0" points="2916.8,1665.9 2884.6,2066.6 2643,1882 "/>
-                                        <polygon className="carngon mainfinalst7" points="3553.5,1996.2 3283,2305.9 3201,1982.1 "/>
-                                        <polygon className="carngon mainfinalst6" points="2792.1,1597 2643,1882 2602.1,1577.4 "/>
-                                        <polygon className="carngon mainfinalst2" points="3531.4,2262.8 3381,2582 3283,2305.9 "/>
-                                        <polygon className="carngon mainfinalst2" points="3283,2305.9 2978.4,2256.2 2965.7,2130 "/>
-                                        <polygon className="carngon mainfinalst6" points="3283,2305.9 3023.2,2463.8 2978.4,2256.2 "/>
-                                        <polygon className="carngon mainfinalst5" points="3608.7,2733.5 3304.9,2986 3381,2582 "/>
-                                        <polygon className="carngon mainfinalst6" points="1642.9,2834 1319.7,2556.2 1547,2502 "/>
-                                        <polygon className="carngon mainfinalst4" points="1642.9,2834 1346.3,2986 1346.1,2986 1250.5,2759.6 "/>
-                                        <polyline className="carngon mainfinalst8" points="1346.3,2986 1346.1,2986.1 1346.1,2986 "/>
-                                        <polygon className="carngon mainfinalst4" points="1828.3,2448.9 1782.5,2582.6 1547,2502 "/>
-                                        <line className="carngon mainfinalst8" x1="1346.1" y1="2986.1" x2="1346" y2="2986"/>
-                                        <polygon className="carngon mainfinalst4" points="3304.9,2986 2877,2830 3012.6,2657.6 3063,2599.1 "/>
-                                        <polygon className="carngon mainfinalst7" points="1935.9,1878 1706.9,1604.4 1918.4,1598.9 "/>
-                                        <line className="carngon mainfinalst8" x1="2632.2" y1="2582" x2="2632.2" y2="2582"/>
-                                        <polygon className="carngon mainfinalst2" points="2084.8,2378 1935.8,2306.5 1989,2251.2 "/>
-                                        <polygon className="carngon mainfinalst6" points="1860.6,2279.2 1828.3,2448.9 1706.9,2270 "/>
-                                        <polygon className="carngon mainfinalst1" points="1881.5,2146.7 1860.6,2279.2 1706.9,2270 "/>
-                                        <polygon className="carngon mainfinalst7" points="1881.5,2146.7 1706.9,2270 1657,1942 "/>
-                                        <polygon className="carngon mainfinalst0" points="1942,2064.1 1881.5,2146.7 1657,1942 "/>
-                                        <polygon className="carngon mainfinalst1" points="1918.4,2986 1918.2,2986 1642.9,2834 1853.2,2822 "/>
-                                        <polyline className="carngon mainfinalst8" points="1918.2,2986 1918.4,2986.1 1918.4,2986 "/>
-                                        <polygon className="carngon mainfinalst4" points="2643,1882 2521,2120.1 2495,1965.3 2467.1,1794.5 "/>
-                                        <polygon className="carngon mainfinalst7" points="2467.1,1794.5 2434.2,1980.9 2407.6,2129.7 2293,1754 "/>
-                                        <polygon className="carngon mainfinalst4" points="2467.1,1794.5 2293,1754 2373.4,1633.3 "/>
-                                        <polygon className="carngon mainfinalst2" points="2643,1882 2467.1,1794.5 2490.6,1648.5 "/>
-                                        <polygon className="carngon mainfinalst4" points="2407.6,2129.7 1935.9,1878 2293,1754 "/>
-                                        <polygon className="carngon mainfinalst5" points="2407.6,2129.7 2004.6,2107.1 1935.9,1878 "/>
-                                        <polygon className="carngon mainfinalst0" points="2407.6,2129.7 2084.8,2270 2004.6,2107.1 "/>
-                                        <polygon className="carngon mainfinalst1" points="2084.8,2270 1989,2251.2 2004.6,2107.1 "/>
-                                        <polygon className="carngon mainfinalst0" points="2084.8,2378 1940.1,2493.9 1913.2,2429.4 "/>
-                                        <polygon className="carngon mainfinalst0" points="2333.6,2448.3 2084.8,2477.1 2084.8,2270 "/>
-                                        <polygon className="carngon mainfinalst4" points="2084.8,2378 2084.8,2477.1 1940.1,2493.9 "/>
-                                        <polygon className="carngon mainfinalst7" points="2333.6,2448.3 2282.5,2608.1 2255.8,2673.5 1940.1,2493.9 2084.8,2477.1 "/>
-                                        <polygon className="carngon mainfinalst1" points="2255.8,2673.5 1882,2643.9 1940.1,2493.9 "/>
-                                        <polygon className="carngon mainfinalst3" points="2255.8,2673.5 2225.5,2747.7 2165.1,2865.3 1882,2643.9 "/>
-                                        <polygon className="carngon mainfinalst6" points="2165.1,2865.3 1853.2,2822 1882,2643.9 "/>
-                                        <polygon className="carngon mainfinalst4" points="2165.1,2865.3 1918.8,2986 1918.4,2986 1853.2,2822 "/>
-                                        <polygon className="carngon mainfinalst5" points="2884.6,2066.6 2521,2120.1 2643,1882 "/>
-                                        <polygon className="carngon mainfinalst2" points="2859.8,2265.1 2554.1,2291.1 2521,2120.1 "/>
-                                        <polygon className="carngon mainfinalst7" points="2859.8,2265.1 2632.2,2582 2594.7,2459.8 2554.1,2291.1 "/>
-                                        <polygon className="carngon mainfinalst6" points="2947.9,2623.4 2877,2830 2632.2,2582 2632.2,2582 "/>
-                                        <polygon className="carngon mainfinalst2" points="2877,2830 2751.8,2865.3 2687.1,2729.6 2638.3,2602.1 2632.2,2582 "/>
-                                        <polygon className="carngon mainfinalst6" points="2877,2828.9 2877,2997 2868.2,2987.8 2749.5,2864.8 "/>
-                                        <polygon className="carngon mainfinalst5" points="2751.8,2865.3 2469.1,2986 2468.7,2986 2165.1,2865.3 "/>
-                                        <polygon className="carngon mainfinalst3" points="2407.9,2129.7 2376.8,2278.5 2334,2448.3 2085.1,2270 "/>
-                                        <polyline className="carngon mainfinalst8" points="2584.8,3031.4 2585,3031.5 2585.2,3031.4 "/>
-                                        <line className="carngon mainfinalst8" x1="1918.8" y1="2986" x2="1918.4" y2="2986.1"/>
-                                        <polygon className="carngon mainfinalst0" points="2840.7,2122.1 2859.8,2265.1 2521,2120.1 2884.6,2066.6 "/>
-                                        <line className="carngon mainfinalst8" x1="2632.2" y1="2582" x2="2632.2" y2="2582"/>
-                                        <polygon className="carngon mainfinalst5" points="2927.4,2305.9 2905.1,2489.7 2632.2,2582 "/>
-                                        <polygon className="carngon mainfinalst1" points="2947.9,2623.4 2632.2,2582 2632.2,2582 2905.1,2489.7 "/>
-                                        <polygon className="carngon mainfinalst0" points="2978.4,2256.2 2958.5,2421.4 2927.4,2305.9 "/>
-                                        <polyline className="carngon mainfinalst9" points="1480.4,626 1481.3,624.1 1481.3,625.5 "/>
-                                        <polygon className="carngon mainfinalst0" points="2004.6,2107.1 1942,2064.1 1935.9,1878 "/>
-                                        <line className="carngon mainfinalst8" x1="1209.7" y1="2986.1" x2="1209.6" y2="2985.7"/>
-                                    </svg>
-                        </div>
-                        <div className="mainfinalmainattractioninternal mainfinalattraction1" id="carnivalstrigger">
-                            <div className="mainfinalmainattractioninternalsvgcontainer">
-                                <svg version="1.1" id="mainfinalcarnivalsvgmove" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                    viewBox="0 -10 3403 446.825" enableBackground="new 0 0 3403 446.825" xmlSpace="preserve">
-                                    <g>
+
+                                <svg version="1.1" id="Layer_1" className="mainfinalsplitlit mainfinalsplitlit2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                    viewBox="0 0 4961 3508" enableBackground="new 0 0 4961 3508" xmlSpace="preserve">
+
+                                    <polygon className="carngon mainfinalst0" points="1657,1942 1334,2025.9 1304,1782.6 " />
+                                    <polygon className="carngon mainfinalst0" points="1419.9,1601.3 1304,1782.6 1296.5,1722.1 1272.3,1592.6 " />
+                                    <path className="carngon mainfinalst1" d="M1375.4,1493.1l-134-63.2c29.3-45,29.3-45,29.3-45L1375.4,1493.1z" />
+                                    <polygon className="carngon mainfinalst2" points="1577,1468 1270.7,1384.9 1528.8,1357.3 " />
+                                    <polygon className="carngon mainfinalst3" points="1789.2,1411 1528.8,1357.3 1782.5,1286.7 " />
+                                    <polygon className="carngon mainfinalst0" points="1979.5,1326.9 1782.5,1286.7 1962.4,1198.4 " />
+                                    <polygon className="carngon mainfinalst3" points="2193.4,1027.9 2148.6,1219.4 2084.8,1108.1 " />
+                                    <polygon className="carngon mainfinalst4" points="2148.6,1219.4 1962.4,1198.4 2084.8,1108.1 " />
+                                    <polygon className="carngon mainfinalst3" points="1706.9,2270 1343.8,2307 1334,2025.9 " />
+                                    <polygon className="carngon mainfinalst0" points="1547,2502 1319.7,2556.2 1343.8,2307 " />
+                                    <polygon className="carngon mainfinalst5" points="1706.9,2270 1547,2502 1343.8,2307 " />
+                                    <polygon className="carngon mainfinalst1" points="1642.9,2834 1250.5,2759.6 1319.7,2556.2 " />
+                                    <polygon className="carngon mainfinalst6" points="1346.1,2986 1346,2986 1186.1,2849.4 1250.5,2759.6 " />
+                                    <polygon className="carngon mainfinalst6" points="1209.6,2985.7 1082.7,2985.1 1156,2867.4 1186.1,2849.4 " />
+                                    <polygon className="carngon mainfinalst4" points="1346,2986 1270.7,2985.9 1209.6,2985.7 1186.1,2849.4 " />
+                                    <polygon className="carngon mainfinalst1" points="1156,2867.4 1082.7,2985.1 1071.8,2871.2 " />
+                                    <polygon className="carngon mainfinalst4" points="1082.7,2985.1 1029.4,2926.2 1071.8,2871.2 " />
+                                    <polygon className="carngon mainfinalst3" points="1918.2,2986 1759.8,2986 1483.7,2986.1 1346.3,2986 1642.9,2834 " />
+                                    <polygon className="carngon mainfinalst2" points="1853.2,2822 1642.9,2834 1782.5,2582.6 1805.4,2643.9 " />
+                                    <polygon className="carngon mainfinalst3" points="1782.5,2582.6 1642.9,2834 1547,2502 " />
+                                    <polygon className="carngon mainfinalst1" points="1828.3,2448.9 1547,2502 1706.9,2270 " />
+                                    <polygon className="carngon mainfinalst2" points="1942,2064.1 1657,1942 1935.9,1878 " />
+                                    <polygon className="carngon mainfinalst1" points="2084.8,2378 1913.2,2429.4 1828.3,2448.9 1860.6,2279.2 1935.8,2306.5 " />
+                                    <polygon className="carngon mainfinalst7" points="1882,2643.9 1853.2,2822 1805.4,2643.9 " />
+                                    <polygon className="carngon mainfinalst6" points="2084.8,2270 2084.8,2378 1989,2251.2 " />
+                                    <polygon className="carngon mainfinalst3" points="2468.7,2986 2323.8,2986 2062.8,2986 1918.8,2986 2165.1,2865.3 " />
+                                    <polygon className="carngon mainfinalst6" points="3381,2582 3304.9,2986 3063,2599.1 " />
+                                    <polygon className="carngon mainfinalst2" points="3608.7,2733.5 3381,2582 3548.5,2539.1 " />
+                                    <polygon className="carngon mainfinalst4" points="3548.5,2539.1 3381,2582 3531.4,2262.8 " />
+                                    <polygon className="carngon mainfinalst3" points="3381,2582 3023.2,2463.8 3283,2305.9 " />
+                                    <polygon className="carngon mainfinalst4" points="3381,2582 3063,2599.1 3023.2,2463.8 " />
+                                    <polygon className="carngon mainfinalst6" points="3553.5,1996.2 3531.4,2262.8 3283,2305.9 " />
+                                    <polygon className="carngon mainfinalst2" points="3584.3,1817.3 3553.5,1996.2 3201,1982.1 " />
+                                    <polygon className="carngon mainfinalst6" points="3584.3,1817.3 3201,1982.1 3315,1671.2 " />
+                                    <polygon className="carngon mainfinalst2" points="2927.4,2305.9 2632.2,2582 2859.8,2265.1 " />
+                                    <polygon className="carngon mainfinalst3" points="3201,1982.1 2884.6,2066.6 2916.8,1665.9 " />
+                                    <polygon className="carngon mainfinalst1" points="3201,1982.1 2965.7,2130 2884.6,2066.6 " />
+                                    <polygon className="carngon mainfinalst2" points="3012.6,2657.6 2877,2830 2947.9,2623.4 " />
+                                    <polygon className="carngon mainfinalst2" points="2958.5,2421.4 2905.1,2489.7 2927.4,2305.9 " />
+                                    <polygon className="carngon mainfinalst7" points="3023.2,2463.8 2958.5,2421.4 2978.4,2256.2 " />
+                                    <polygon className="carngon mainfinalst7" points="2868.3,2986 2707.8,2986.1 2469.1,2986 2751.8,2865.3 " />
+                                    <polygon className="carngon mainfinalst7" points="3304.9,2986 2965.9,2986 2877,2986 2877,2830 " />
+                                    <polygon className="carngon mainfinalst1" points="2325.5,1064.7 2193.4,1027.9 2246.9,970.8 " />
+                                    <polygon className="carngon mainfinalst5" points="2453.7,917.7 2246.9,970.8 2324.1,888.4 " />
+                                    <polygon className="carngon mainfinalst4" points="2527.2,783.2 2324.1,888.4 2407.4,770.1 " />
+                                    <polygon className="carngon mainfinalst2" points="2530.1,584.4 2527.2,783.2 2407.4,770.1 " />
+                                    <polygon className="carngon mainfinalst1" points="2530.1,584.4 2407.4,770.1 2410,582.7 2410,447.7 " />
+                                    <polygon className="carngon mainfinalst5" points="2531,466.8 2410,447.7 2497.7,414.9 " />
+                                    <polygon className="carngon mainfinalst7" points="2497.7,414.9 2410,447.7 2460.2,407.4 " />
+                                    <polygon className="carngon mainfinalst4" points="2643.6,584.3 2530.1,584.4 2643,466.9 " />
+                                    <polygon className="carngon mainfinalst7" points="2699.3,555.8 2643.6,584.3 2643,466.9 " />
+                                    <polygon className="carngon mainfinalst0" points="2699.3,495.4 2699.3,555.8 2643,466.9 " />
+                                    <polygon className="carngon mainfinalst3" points="2561.2,862.7 2453.7,917.7 2527.2,783.2 " />
+                                    <polygon className="carngon mainfinalst3" points="2724.3,1037.2 2563.5,1045.5 2561.2,862.7 " />
+                                    <polygon className="carngon mainfinalst6" points="2927.6,1189.5 2704.7,1177 2724.3,1037.2 " />
+                                    <polygon className="carngon mainfinalst4" points="3162.7,1300.7 2910,1316.6 2927.6,1189.5 " />
+                                    <polygon className="carngon mainfinalst6" points="3402.5,1361.2 3090.6,1400.1 3162.7,1300.7 " />
+                                    <polygon className="carngon mainfinalst3" points="3634.3,1384.9 3329.6,1467.2 3402.5,1361.2 " />
+                                    <polygon className="carngon mainfinalst7" points="3666.3,1431.9 3537.6,1493.3 3634.3,1384.9 " />
+                                    <polygon className="carngon mainfinalst4" points="3666.3,1431.9 3616.2,1642.6 3537.6,1493.3 " />
+                                    <polygon className="carngon mainfinalst7" points="3616.2,1642.6 3609.4,1671.2 3584.3,1817.3 3431.5,1630.9 " />
+                                    <polygon className="carngon mainfinalst4" points="3584.3,1817.3 3315,1671.2 3431.5,1630.9 " />
+                                    <polygon className="carngon mainfinalst2" points="3753.1,2983.6 3565.9,2986.1 3304.9,2986 3608.7,2733.5 3694.2,2868.3 " />
+                                    <polygon className="carngon mainfinalst6" points="3861,2870 3753.1,2983.6 3694.2,2868.3 " />
+                                    <polygon className="carngon mainfinalst2" points="3867.7,2982 3753.1,2983.6 3861,2870 " />
+                                    <polygon className="carngon mainfinalst4" points="3908.5,2925.9 3867.7,2982 3861,2870 " />
+                                    <polygon className="carngon mainfinalst0" points="2527.2,783.2 2453.7,917.7 2324.1,888.4 " />
+                                    <polygon className="carngon mainfinalst0" points="2531,466.8 2530.1,584.4 2410,447.7 " />
+                                    <polygon className="carngon mainfinalst2" points="2643,466.9 2530.1,584.4 2531,466.8 " />
+                                    <polygon className="carngon mainfinalst4" points="1657,1942 1304,1782.6 1567.3,1655.4 " />
+                                    <polygon className="carngon mainfinalst3" points="1567.3,1655.4 1304,1782.6 1419.9,1601.3 " />
+                                    <polygon className="carngon mainfinalst4" points="1419.9,1601.3 1272.3,1592.6 1266,1558.6 1241.4,1429.9 " />
+                                    <polygon className="carngon mainfinalst2" points="1419.9,1601.3 1241.4,1429.9 1375.4,1493.1 " />
+                                    <polygon className="carngon mainfinalst0" points="1577,1468 1375.4,1493.1 1270.7,1384.9 " />
+                                    <polygon className="carngon mainfinalst7" points="1789.2,1411 1577,1468 1528.8,1357.3 " />
+                                    <polygon className="carngon mainfinalst4" points="1979.5,1326.9 1789.2,1411 1782.5,1286.7 " />
+                                    <polygon className="carngon mainfinalst2" points="2148.6,1219.4 1979.5,1326.9 1962.4,1198.4 " />
+                                    <polygon className="carngon mainfinalst5" points="2325.5,1064.7 2148.6,1219.4 2193.4,1027.9 " />
+                                    <polygon className="carngon mainfinalst3" points="2453.7,917.7 2325.5,1064.7 2246.9,970.8 " />
+                                    <polygon className="carngon mainfinalst6" points="2563.5,1045.5 2453.7,917.7 2561.2,862.7 " />
+                                    <polygon className="carngon mainfinalst4" points="2724.3,1037.2 2704.7,1177 2563.5,1045.5 " />
+                                    <polygon className="carngon mainfinalst3" points="2927.6,1189.5 2910,1316.6 2704.7,1177 " />
+                                    <polygon className="carngon mainfinalst2" points="3162.7,1300.7 3090.6,1400.1 2910,1316.6 " />
+                                    <polygon className="carngon mainfinalst4" points="3402.5,1361.2 3329.6,1467.2 3090.6,1400.1 " />
+                                    <polygon className="carngon mainfinalst5" points="3634.3,1384.9 3537.6,1493.3 3329.6,1467.2 " />
+                                    <polygon className="carngon mainfinalst2" points="1706.9,2270 1334,2025.9 1657,1942 " />
+                                    <polygon className="carngon mainfinalst6" points="1935.9,1878 1657,1942 1706.9,1604.4 " />
+                                    <polygon className="carngon mainfinalst0" points="1706.9,1604.4 1657,1942 1567.3,1655.4 " />
+                                    <polygon className="carngon mainfinalst6" points="2293,1754 1935.9,1878 1918.4,1598.9 2036.9,1664.7 " />
+                                    <polygon className="carngon mainfinalst0" points="2490.6,1648.5 2467.1,1794.5 2373.4,1633.3 " />
+                                    <polygon className="carngon mainfinalst7" points="2373.4,1633.3 2293,1754 2282.2,1549.3 " />
+                                    <polygon className="carngon mainfinalst2" points="2293,1754 2219.6,1554.3 2282.2,1549.3 " />
+                                    <polygon className="carngon mainfinalst4" points="2293,1754 2106.7,1651.3 2219.6,1554.3 " />
+                                    <polygon className="carngon mainfinalst3" points="2293,1754 2036.9,1664.7 2106.7,1651.3 " />
+                                    <polygon className="carngon mainfinalst4" points="1918.4,1598.9 1706.9,1604.4 1770.6,1551.4 " />
+                                    <polygon className="carngon mainfinalst0" points="1918.4,1598.9 1770.6,1551.4 1872.5,1555.8 " />
+                                    <polygon className="carngon mainfinalst7" points="2643,1882 2490.6,1648.5 2602.1,1577.4 " />
+                                    <polygon className="carngon mainfinalst4" points="2792.1,1597 2602.1,1577.4 2724.5,1548.4 " />
+                                    <polygon className="carngon mainfinalst7" points="2916.8,1665.9 2643,1882 2792.1,1597 " />
+                                    <polygon className="carngon mainfinalst2" points="3315,1671.2 2916.8,1665.9 3027,1601 3139.1,1540.8 3230.6,1610.7 " />
+                                    <polygon className="carngon mainfinalst3" points="3616.2,1642.6 3431.5,1630.9 3537.6,1493.3 " />
+                                    <polygon className="carngon mainfinalst5" points="3315,1671.2 3201,1982.1 2916.8,1665.9 " />
+                                    <polygon className="carngon mainfinalst0" points="3283,2305.9 2965.7,2130 3201,1982.1 " />
+                                    <polygon className="carngon mainfinalst0" points="2916.8,1665.9 2884.6,2066.6 2643,1882 " />
+                                    <polygon className="carngon mainfinalst7" points="3553.5,1996.2 3283,2305.9 3201,1982.1 " />
+                                    <polygon className="carngon mainfinalst6" points="2792.1,1597 2643,1882 2602.1,1577.4 " />
+                                    <polygon className="carngon mainfinalst2" points="3531.4,2262.8 3381,2582 3283,2305.9 " />
+                                    <polygon className="carngon mainfinalst2" points="3283,2305.9 2978.4,2256.2 2965.7,2130 " />
+                                    <polygon className="carngon mainfinalst6" points="3283,2305.9 3023.2,2463.8 2978.4,2256.2 " />
+                                    <polygon className="carngon mainfinalst5" points="3608.7,2733.5 3304.9,2986 3381,2582 " />
+                                    <polygon className="carngon mainfinalst6" points="1642.9,2834 1319.7,2556.2 1547,2502 " />
+                                    <polygon className="carngon mainfinalst4" points="1642.9,2834 1346.3,2986 1346.1,2986 1250.5,2759.6 " />
+                                    <polyline className="carngon mainfinalst8" points="1346.3,2986 1346.1,2986.1 1346.1,2986 " />
+                                    <polygon className="carngon mainfinalst4" points="1828.3,2448.9 1782.5,2582.6 1547,2502 " />
+                                    <line className="carngon mainfinalst8" x1="1346.1" y1="2986.1" x2="1346" y2="2986" />
+                                    <polygon className="carngon mainfinalst4" points="3304.9,2986 2877,2830 3012.6,2657.6 3063,2599.1 " />
+                                    <polygon className="carngon mainfinalst7" points="1935.9,1878 1706.9,1604.4 1918.4,1598.9 " />
+                                    <line className="carngon mainfinalst8" x1="2632.2" y1="2582" x2="2632.2" y2="2582" />
+                                    <polygon className="carngon mainfinalst2" points="2084.8,2378 1935.8,2306.5 1989,2251.2 " />
+                                    <polygon className="carngon mainfinalst6" points="1860.6,2279.2 1828.3,2448.9 1706.9,2270 " />
+                                    <polygon className="carngon mainfinalst1" points="1881.5,2146.7 1860.6,2279.2 1706.9,2270 " />
+                                    <polygon className="carngon mainfinalst7" points="1881.5,2146.7 1706.9,2270 1657,1942 " />
+                                    <polygon className="carngon mainfinalst0" points="1942,2064.1 1881.5,2146.7 1657,1942 " />
+                                    <polygon className="carngon mainfinalst1" points="1918.4,2986 1918.2,2986 1642.9,2834 1853.2,2822 " />
+                                    <polyline className="carngon mainfinalst8" points="1918.2,2986 1918.4,2986.1 1918.4,2986 " />
+                                    <polygon className="carngon mainfinalst4" points="2643,1882 2521,2120.1 2495,1965.3 2467.1,1794.5 " />
+                                    <polygon className="carngon mainfinalst7" points="2467.1,1794.5 2434.2,1980.9 2407.6,2129.7 2293,1754 " />
+                                    <polygon className="carngon mainfinalst4" points="2467.1,1794.5 2293,1754 2373.4,1633.3 " />
+                                    <polygon className="carngon mainfinalst2" points="2643,1882 2467.1,1794.5 2490.6,1648.5 " />
+                                    <polygon className="carngon mainfinalst4" points="2407.6,2129.7 1935.9,1878 2293,1754 " />
+                                    <polygon className="carngon mainfinalst5" points="2407.6,2129.7 2004.6,2107.1 1935.9,1878 " />
+                                    <polygon className="carngon mainfinalst0" points="2407.6,2129.7 2084.8,2270 2004.6,2107.1 " />
+                                    <polygon className="carngon mainfinalst1" points="2084.8,2270 1989,2251.2 2004.6,2107.1 " />
+                                    <polygon className="carngon mainfinalst0" points="2084.8,2378 1940.1,2493.9 1913.2,2429.4 " />
+                                    <polygon className="carngon mainfinalst0" points="2333.6,2448.3 2084.8,2477.1 2084.8,2270 " />
+                                    <polygon className="carngon mainfinalst4" points="2084.8,2378 2084.8,2477.1 1940.1,2493.9 " />
+                                    <polygon className="carngon mainfinalst7" points="2333.6,2448.3 2282.5,2608.1 2255.8,2673.5 1940.1,2493.9 2084.8,2477.1 " />
+                                    <polygon className="carngon mainfinalst1" points="2255.8,2673.5 1882,2643.9 1940.1,2493.9 " />
+                                    <polygon className="carngon mainfinalst3" points="2255.8,2673.5 2225.5,2747.7 2165.1,2865.3 1882,2643.9 " />
+                                    <polygon className="carngon mainfinalst6" points="2165.1,2865.3 1853.2,2822 1882,2643.9 " />
+                                    <polygon className="carngon mainfinalst4" points="2165.1,2865.3 1918.8,2986 1918.4,2986 1853.2,2822 " />
+                                    <polygon className="carngon mainfinalst5" points="2884.6,2066.6 2521,2120.1 2643,1882 " />
+                                    <polygon className="carngon mainfinalst2" points="2859.8,2265.1 2554.1,2291.1 2521,2120.1 " />
+                                    <polygon className="carngon mainfinalst7" points="2859.8,2265.1 2632.2,2582 2594.7,2459.8 2554.1,2291.1 " />
+                                    <polygon className="carngon mainfinalst6" points="2947.9,2623.4 2877,2830 2632.2,2582 2632.2,2582 " />
+                                    <polygon className="carngon mainfinalst2" points="2877,2830 2751.8,2865.3 2687.1,2729.6 2638.3,2602.1 2632.2,2582 " />
+                                    <polygon className="carngon mainfinalst6" points="2877,2828.9 2877,2997 2868.2,2987.8 2749.5,2864.8 " />
+                                    <polygon className="carngon mainfinalst5" points="2751.8,2865.3 2469.1,2986 2468.7,2986 2165.1,2865.3 " />
+                                    <polygon className="carngon mainfinalst3" points="2407.9,2129.7 2376.8,2278.5 2334,2448.3 2085.1,2270 " />
+                                    <polyline className="carngon mainfinalst8" points="2584.8,3031.4 2585,3031.5 2585.2,3031.4 " />
+                                    <line className="carngon mainfinalst8" x1="1918.8" y1="2986" x2="1918.4" y2="2986.1" />
+                                    <polygon className="carngon mainfinalst0" points="2840.7,2122.1 2859.8,2265.1 2521,2120.1 2884.6,2066.6 " />
+                                    <line className="carngon mainfinalst8" x1="2632.2" y1="2582" x2="2632.2" y2="2582" />
+                                    <polygon className="carngon mainfinalst5" points="2927.4,2305.9 2905.1,2489.7 2632.2,2582 " />
+                                    <polygon className="carngon mainfinalst1" points="2947.9,2623.4 2632.2,2582 2632.2,2582 2905.1,2489.7 " />
+                                    <polygon className="carngon mainfinalst0" points="2978.4,2256.2 2958.5,2421.4 2927.4,2305.9 " />
+                                    <polyline className="carngon mainfinalst9" points="1480.4,626 1481.3,624.1 1481.3,625.5 " />
+                                    <polygon className="carngon mainfinalst0" points="2004.6,2107.1 1942,2064.1 1935.9,1878 " />
+                                    <line className="carngon mainfinalst8" x1="1209.7" y1="2986.1" x2="1209.6" y2="2985.7" />
+                                </svg>
+                            </div>
+                            <div className="mainfinalmainattractioninternal mainfinalattraction1" id="carnivalstrigger">
+                                <div className="mainfinalmainattractioninternalsvgcontainer">
+                                    <svg version="1.1" id="mainfinalcarnivalsvgmove" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                        viewBox="0 -10 3403 446.825" enableBackground="new 0 0 3403 446.825" xmlSpace="preserve">
                                         <g>
-                                            <path fill="#fff" d="M1534.009,155.595c-2.451-4.49-6.43-7.248-11.943-8.271c-1.227-0.201-2.553-0.307-3.982-0.307
-                                                c-4.084,0-7.863,1.176-11.332,3.68c-4.084,2.861-6.635,6.635-7.656,11.281c-0.615,1.889-0.924,3.623-0.924,5.258
+                                            <g>
+                                                <path fill="#fff" d="M1534.009,155.595c-2.451-4.49-6.43-7.248-11.943-8.271c-1.227-0.201-2.553-0.307-3.982-0.307
+                                                    c-4.084,0-7.863,1.176-11.332,3.68c-4.084,2.861-6.635,6.635-7.656,11.281c-0.615,1.889-0.924,3.623-0.924,5.258
                                                 c0,3.471,1.021,6.432,3.066,8.883c2.652,3.676,6.43,5.924,11.332,6.688c1.43,0.254,2.756,0.354,3.982,0.354
                                                 c3.469,0,6.74-0.969,9.801-2.752c4.492-2.453,7.553-6.535,9.188-12.254c0.408-1.426,0.613-2.963,0.613-4.646
                                                 C1536.153,160.906,1535.44,158.253,1534.009,155.595z"/>
                                             <path id="carnivalssvg" fill="none" strokeWidth="8" stroke="#FFF" d="M2366.505,199.65c-0.613-3.215-2.348-5.873-5.211-7.912c-2.855-2.037-5.916-2.754-9.188-2.143
-                                                c-3.264,0.613-5.971,2.348-7.961,5.154c0,0.256-0.154,0.563-0.309,0.973l-0.305,0.303v0.613c-0.408,0.41-0.768,0.818-0.918,1.229
+                                                    c-3.264,0.613-5.971,2.348-7.961,5.154c0,0.256-0.154,0.563-0.309,0.973l-0.305,0.303v0.613c-0.408,0.41-0.768,0.818-0.918,1.229
                                                 c-0.406,1.016-0.971,1.939-1.684,2.75c-0.768,0.818-1.48,2.043-2.299,3.68c-0.816,1.426-1.734,2.912-2.756,4.443
                                                 c-1.021,1.529-2.299,3.215-3.674,5.049c-1.227,1.791-2.658,3.777-4.293,5.822c-1.631,2.045-3.471,4.287-5.514,6.74
                                                 c-1.834,2.039-3.828,4.285-5.973,6.686c-2.143,2.502-4.641,4.9-7.502,7.402c-5.105,5.105-10.924,10.209-17.459,15.314
@@ -3084,90 +3090,90 @@ export default class HomeIndex extends React.Component {
                                                 c0-2.398,0.205-5.359,0.615-8.834c0.613-4.336,1.43-8.166,2.453-11.637c2.855-9.594,6.734-14.445,11.635-14.445
                                                 c4.088,0,8.066,1.482,11.943,4.287c2.658,2.094,5.719,5.055,9.193,8.934C1755.866,231.246,1754.843,238.705,1754.229,246.207z"/>
                                         </g>
-                                    </g>
-                                </svg>
-                            </div>
-                            <div className="mainfinalmainattractioninternaltextcontainer">
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div className="mainfinalmainattractioninternaltextcontainer">
 
-                                <p id="carnivaltext">A carnival exhilerates the fanatics with euphoria and ecstasy, Thomso carnival is no exception to the fact. With events ranging from Paintball to Body Zorbing , Human foosball to dodgeball, magic shows to boulevard games , it is the showstopper of Thomso for the whole three days.</p>
+                                    <p id="carnivaltext">A carnival exhilerates the fanatics with euphoria and ecstasy, Thomso carnival is no exception to the fact. With events ranging from Paintball to Body Zorbing , Human foosball to dodgeball, magic shows to boulevard games , it is the showstopper of Thomso for the whole three days.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className="mainfinalmainpage4">
-                    <div className="mainpage4-heading">
-                        <Celebrities />
-                    </div> 
-                    <div className="mainfinalmainpage-carousel-desktop">
-                        {this.state.carouselDisplay ? null : <Carousel history={this.props.history}/>}
+                    <div className="mainfinalmainpage4">
+                        <div className="mainpage4-heading">
+                            <Celebrities />
+                        </div>
+                        <div className="mainfinalmainpage-carousel-desktop">
+                            {this.state.carouselDisplay ? null : <Carousel history={this.props.history} />}
+                        </div>
+                        <div className="mainfinalmainpage-carousel-mobile">
+                            {this.state.carouselDisplay ? <MobileCarousel /> : null}
+                        </div>
                     </div>
-                    <div className="mainfinalmainpage-carousel-mobile">
-                        {this.state.carouselDisplay ? <MobileCarousel /> :null}
-                    </div>
-                </div>
-                <div className="mainfinalmainpage5">
-                    <div className="mainfinalmainpage5-thomsologo">
-                        <img src={logosvg} alt="" />
-                    </div>
-                    <div className="mainfinalmainpage5con">
-                        <div className="mainfinalmainpagecontainer-outer-left">
-                            <div className="mainfinalmainpage5container-inner">
-                                <div className="mainfinalmainpage5container-inner-in">
-                                    <div className="mainfinalmainpage5imgandtextcont">
-                                        <div className="mainfinalmainpage5container-inner-in-left"><img src={phone} alt="" srcSet="" /></div>
-                                        <div className="mainfinalmainpage5container-inner-in-right">
-                                            <h1><b>Contact</b></h1>
-                                            <h4>Suyash Singh (Convener)</h4>
-                                            <h4 className="mainfinalmainpage5container-inner-in-righth4">+91-8417954805</h4>
-                                            <h4>Abhishek Kumar (Co-Convener)</h4>
-                                            <h4 className="mainfinalmainpage5container-inner-in-righth4">+91-7979071260</h4>
-                                            <h4 > Samarth Gubrele(Co-Convener)</h4>
-                                            <h4 className="mainfinalmainpage5container-inner-in-righth4">+91-9425101043</h4>
-                                            
-                                        </div>
-                                    </div>
-                                    <div className="mainfinalmainpage5container-inner-in-right-righter">
-                                        <div className="mainfinalmainpagecontainer-outer-rightin">
-                                            <div className="mainfinalmainpagecontainer-outer-rightin-inner">
-                                                <div className="mainfinalmainpagecontainer-outer-rightin-inner-inside"><Link to="/comingSoon">Team Page<span><img src={rightarrow} alt="right-arrow" srcSet="" /></span></Link>
-
-                                                    {/* <div className="mainfinalmainpage5internalsvgcontainer">
-                                                                    <img src="./right-arrow.svg" alt="right-arrow" srcSet="">
-                                                             </div>    */}
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="mainfinalmainpage5container-inner address-last-page">
+                    <div className="mainfinalmainpage5">
+                        <div className="mainfinalmainpage5-thomsologo">
+                            <img src={logosvg} alt="" />
+                        </div>
+                        <div className="mainfinalmainpage5con">
+                            <div className="mainfinalmainpagecontainer-outer-left">
+                                <div className="mainfinalmainpage5container-inner">
                                     <div className="mainfinalmainpage5container-inner-in">
                                         <div className="mainfinalmainpage5imgandtextcont">
-                                            <div className="mainfinalmainpage5container-inner-in-left"><img src={address} alt="address" /></div>
+                                            <div className="mainfinalmainpage5container-inner-in-left"><img src={phone} alt="" srcSet="" /></div>
                                             <div className="mainfinalmainpage5container-inner-in-right">
-                                                <h1><b>Address</b></h1>
-                                                <h4>THOMSO OFFICE</h4>
-                                                <h4> Multi Activity Centre</h4>
-                                                <h4>Indian Institute of Technology</h4>
-                                                <h4>  Roorkee</h4>
-                                                <h4>247667</h4>
+                                                <h1><b>Contact</b></h1>
+                                                <h4>Suyash Singh (Convener)</h4>
+                                                <h4 className="mainfinalmainpage5container-inner-in-righth4">+91-8417954805</h4>
+                                                <h4>Abhishek Kumar (Co-Convener)</h4>
+                                                <h4 className="mainfinalmainpage5container-inner-in-righth4">+91-7979071260</h4>
+                                                <h4 > Samarth Gubrele(Co-Convener)</h4>
+                                                <h4 className="mainfinalmainpage5container-inner-in-righth4">+91-9425101043</h4>
+
                                             </div>
                                         </div>
                                         <div className="mainfinalmainpage5container-inner-in-right-righter">
                                             <div className="mainfinalmainpagecontainer-outer-rightin">
                                                 <div className="mainfinalmainpagecontainer-outer-rightin-inner">
-                                                    <div className="mainfinalmainpagecontainer-outer-rightin-inner-inside">
-                                                        <a target="_blank" rel="noopener noreferrer" href="https://goo.gl/maps/b9xPn3VcGVF2">Get Directions <span><img src={rightarrow} alt="right-arrow" /></span></a>
-                                                        {/*- <div className="mainfinalmainpage5internalsvgcontainer">
-                                                                            <img src="./right-arrow.svg" alt="right-arrow" srcSet="">
-                                                                     </div>    */}
+                                                    <div className="mainfinalmainpagecontainer-outer-rightin-inner-inside"><Link to="/comingSoon">Team Page<span><img src={rightarrow} alt="right-arrow" srcSet="" /></span></Link>
+
+                                                        {/* <div className="mainfinalmainpage5internalsvgcontainer">
+                                                                    <img src="./right-arrow.svg" alt="right-arrow" srcSet="">
+                                                             </div>    */}
+
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                {/*<div className="mainpagecontainer-outer-right">
+                                    <div className="mainfinalmainpage5container-inner address-last-page">
+                                        <div className="mainfinalmainpage5container-inner-in">
+                                            <div className="mainfinalmainpage5imgandtextcont">
+                                                <div className="mainfinalmainpage5container-inner-in-left"><img src={address} alt="address" /></div>
+                                                <div className="mainfinalmainpage5container-inner-in-right">
+                                                    <h1><b>Address</b></h1>
+                                                    <h4>THOMSO OFFICE</h4>
+                                                    <h4> Multi Activity Centre</h4>
+                                                    <h4>Indian Institute of Technology</h4>
+                                                    <h4>  Roorkee</h4>
+                                                    <h4>247667</h4>
+                                                </div>
+                                            </div>
+                                            <div className="mainfinalmainpage5container-inner-in-right-righter">
+                                                <div className="mainfinalmainpagecontainer-outer-rightin">
+                                                    <div className="mainfinalmainpagecontainer-outer-rightin-inner">
+                                                        <div className="mainfinalmainpagecontainer-outer-rightin-inner-inside">
+                                                            <a target="_blank" rel="noopener noreferrer" href="https://goo.gl/maps/b9xPn3VcGVF2">Get Directions <span><img src={rightarrow} alt="right-arrow" /></span></a>
+                                                            {/*- <div className="mainfinalmainpage5internalsvgcontainer">
+                                                                            <img src="./right-arrow.svg" alt="right-arrow" srcSet="">
+                                                                     </div>    */}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/*<div className="mainpagecontainer-outer-right">
                         <div className="mainpagecontainer-outer-rightin">
                             <div className="mainpagecontainer-outer-rightin-inner">
                             </div>
@@ -3178,10 +3184,10 @@ export default class HomeIndex extends React.Component {
                                 </div>
                         </div>                     */}
 
-                            </div>
+                                </div>
 
 
-                            {/* <div className="mainpagecontainer-outer">
+                                {/* <div className="mainpagecontainer-outer">
                 <div className="mainpage5container-inner"><h1>Contact</h1>
                     <div className="mainpage5container-inner-in">
                             <div className="mainpage5container-inner-in-left"><img src="./phone svg-01.svg" alt="" srcSet=""></div>
@@ -3215,10 +3221,10 @@ export default class HomeIndex extends React.Component {
                 <div className="teampagecontainerlink">
                 </div>
             </div> */}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             </div>
         )
     }
