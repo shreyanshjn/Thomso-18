@@ -94,7 +94,7 @@
 {
     display:flex;
     flex-wrap:wrap;
-    justify-content:center;
+    justify-content:space-around;
 }
 .paynow-button-workshops
 {
@@ -103,7 +103,7 @@
     background: #0000007a;
     color: white;
     text-decoration:none;
-    margin-top:14px;
+    margin-bottom:14px;
 }
 .description-workshops
 {

@@ -20,8 +20,6 @@
     background-image: url("../team/img/teamfinal.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    
-
 }
 
 .main-team-wrapper{
@@ -93,8 +91,8 @@
     bottom: -8px;
     left: 0;
     right: 0;
-    background-color: #071829;
-    box-shadow: 5px -5px 10px 10px  #071829;
+    background-color: #194a50;
+    box-shadow: 5px -5px 10px 10px  #194a50;
     opacity: .7;
     width: 100%;
     overflow: hidden;
@@ -270,12 +268,9 @@
             background-image: url("../team/img/teamfinal.jpg");
             background-size: cover;
             background-repeat: no-repeat;
-            
         }
        
         .main-team-card-inner{
             width: 100%;
         }
-    
-        
     }
