@@ -20,8 +20,6 @@
     background-image: url("../team/img/teamfinal.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    
-
 }
 
 .main-team-wrapper{
@@ -266,13 +264,13 @@
         }
         .main-team-card-maindiv {
             padding: 10% 5%;
-            height: 1200vh;
+            height: fit-content;
             background: #071829;
         }
         .main-team-card-innerdiv {
             position: relative;
             TEXT-ALIGN: CENTER;
-            width: 100%;
+            width: fit-content;
         }
         .main-team-card-inner{
             width: 100%;
