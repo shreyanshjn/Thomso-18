@@ -155,7 +155,7 @@
   .main-team-info {
     z-index: 1;
     color: white;
-    font-size: 13px;
+    font-size: 12px;
     white-space: nowrap;
     position: relative;
     line-height: 1em;
@@ -266,21 +266,16 @@
         }
         .main-team-card-maindiv {
             padding: 10% 5%;
-            height: 1200vh;
-            background: #071829;
+            background-attachment: fixed;
+            background-image: url("../team/img/teamfinal.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            
         }
-        .main-team-card-innerdiv {
-            position: relative;
-            TEXT-ALIGN: CENTER;
-            width: 100%;
-        }
+       
         .main-team-card-inner{
             width: 100%;
         }
-        .main-team-info{
-            left:65%;
-        }
-        .main-team-card-footer-icons{
-            left: 10%;
-        }
+    
+        
     }

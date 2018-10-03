@@ -41,7 +41,7 @@ export const MemberDetails=
                     first_name:"Samarth",
                     last_name:"Gubrele",
                     email:"samarth.thomso@gmail.com",
-                    mobile:"9425101043/8349146260(WhatsApp)",
+                    mobile:"9425101043/8349146260",
                     fblink:"https://m.facebook.com/samarth.gubrele?ref=bookmarks",
                     instalink:"https://www.instagram.com/awe_sam_arth/",
                     linkedln:"",
