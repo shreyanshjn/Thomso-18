@@ -671,7 +671,17 @@
     justify-content: space-evenly;
 }
 .whythomso-faqs-ansque-columntwo-one{
-    height: 20vh;
+    height: 10vh;
+    margin-top: 10px;
+    margin-bottom:10px;
+    padding: 10px;
+    font-family: Poppins;
+    font-size: 16px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+.whythomso-faqs-ansque-columntwo-one-new{
+    height: 30vh;
     margin-top: 10px;
     margin-bottom:10px;
     padding: 10px;

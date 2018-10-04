@@ -1,6 +1,5 @@
 export const MemberDetails=
     [   
- 
         {
             "position":"Convenor",
             "members": [
@@ -54,28 +53,16 @@ export const MemberDetails=
             "position":"Events",
             "members": [
                 {
-                        id:5,
-                        image:"Arihant.jpg",
-                        first_name:"Arihant",
-                        last_name:"Rokadia",
-                        email:"",
-                        mobile:"",
-                        fblink:"",
-                        linkedln:"",
-                        instalink:"",
-                        position:"Events",
-                },
-                {
-                    id:6,
-                    image:"Chandni.jpg",
-                    first_name:"Chandni",
-                    last_name:"Beniwal",
-                    email:"Chandni.thomso@gmail.com ",
-                    mobile:"7740949800",
-                    fblink:"https://www.facebook.com/chandni.beniwal.52",
-                    instalink:"https://www.instagram.com/the_lost_explorerr/",
-                    linkedln:"https://www.linkedin.com/in/chandni-beniwal-065812158/",
-                    position:"Events",   
+                    id:5,
+                    image:"Arihant.jpg",
+                    first_name:"Arihant",
+                    last_name:"Rokadia",
+                    email:"",
+                    mobile:"",
+                    fblink:"",
+                    linkedln:"",
+                    instalink:"",
+                    position:"Events",
                 },
                 {
                     id:7,
@@ -90,16 +77,29 @@ export const MemberDetails=
                     position:"Events",
                 },
                 {
+                    id:6,
+                    image:"Chandni.jpg",
+                    first_name:"Chandni",
+                    last_name:"Beniwal",
+                    email:"Chandni.thomso@gmail.com ",
+                    mobile:"7740949800",
+                    fblink:"https://www.facebook.com/chandni.beniwal.52",
+                    instalink:"https://www.instagram.com/the_lost_explorerr/",
+                    linkedln:"https://www.linkedin.com/in/chandni-beniwal-065812158/",
+                    position:"Events",   
+                },
+                
+                {
                     id:4,
-                        image:"subham.jpg",
-                        first_name:"Shubham",
-                        last_name:"Jaiswal",
-                        email:"shubham.thomso18@gmail.com",
-                        mobile:"9693482762",
-                        fblink:"https://www.facebook.com/sbhmsh",
-                        instalink:"https://www.instagram.com/shubham_jaiss/",
-                        linkedln:"https://www.linkedin.com/in/sbhmsh/",
-                        position:"Events",
+                    image:"subham.jpg",
+                    first_name:"Shubham",
+                    last_name:"Jaiswal",
+                    email:"shubham.thomso18@gmail.com",
+                    mobile:"9693482762",
+                    fblink:"https://www.facebook.com/sbhmsh",
+                    instalink:"https://www.instagram.com/shubham_jaiss/",
+                    linkedln:"https://www.linkedin.com/in/sbhmsh/",
+                    position:"Events",
                 },
                 {
                     id:8,
@@ -121,18 +121,6 @@ export const MemberDetails=
             "position":"Sponsorships",
             "members": [
 
-                {
-                    id:9,
-                    image:"vivek.jpg",
-                    first_name:"Vivek",
-                    last_name:"Singh",
-                    email:"viveksingh.thomso@gmail.com",
-                    mobile:"9425726597",
-                    fblink:"",
-                    instalink:"",
-                    linkedln:"",
-                    position:"Sponsorships",
-                },
                 {
                     id:10,
                     image:"Anurag.jpg",
@@ -182,25 +170,24 @@ export const MemberDetails=
                     linkedln:"https://www.linkedin.com/in/saakshya-devat-a21a3514b",
                     position:"Sponsorships",
                 },
-
+                {
+                    id:9,
+                    image:"vivek.jpg",
+                    first_name:"Vivek",
+                    last_name:"Singh",
+                    email:"viveksingh.thomso@gmail.com",
+                    mobile:"9425726597",
+                    fblink:"",
+                    instalink:"",
+                    linkedln:"",
+                    position:"Sponsorships",
+                },
             ]
         },
 
         {   
-            "position":"Marketting",
+            "position":"Marketing",
             "members": [
-                {
-                    id:16,
-                    image:"Lavnish.jpg",
-                    first_name:"Lavnish",
-                    last_name:"Gupta",
-                    email:"lavnish.thomso2018@gmail.com",
-                    mobile:"7017292166",
-                    fblink:"https://www.facebook.com/lavnish34",
-                    instalink:"https://www.instagram.com/lavnish34",
-                    linkedln:"",
-                    position:"Marketting",
-                },
                 {
                     id:17,
                     image:"AbhishekKumar.jpg",
@@ -211,17 +198,72 @@ export const MemberDetails=
                     fblink:"https://www.facebook.com/Abhishekumar333",
                     instalink:"https://instagram.com/abhishekumar333",
                     linkedln:"https://www.linkedin.com/in/abhishekkumar333",
-                    position:"Marketting",
+                    position:"Marketing",
                 },
-    
-    
+                {
+                    id:16,
+                    image:"Lavnish.jpg",
+                    first_name:"Lavnish",
+                    last_name:"Gupta",
+                    email:"lavnish.thomso2018@gmail.com",
+                    mobile:"7017292166",
+                    fblink:"https://www.facebook.com/lavnish34",
+                    instalink:"https://www.instagram.com/lavnish34",
+                    linkedln:"",
+                    position:"Marketing",
+                },
+                {
+                    id:13,
+                    image:"SagarGupta.jpg",
+                    first_name:"Sagar",
+                    last_name:"Gupta",
+                    email:"sagargupta.thomso@gmail.com",
+                    mobile:"9870639330/9479588083",
+                    fblink:"https://www.facebook.com/sagar.gupta.587",
+                    instalink:"https://www.instagram.com/sagar_gupta16/",
+                    linkedln:"",
+                    position:"",
+                },
+                {
+                    id:15,
+                    image:"ShwetankSaxena.jpg",
+                    first_name:"Shwetank",
+                    last_name:"Saxena",
+                    email:"shwetank.thomso@gmail.com",
+                    mobile:"9711008976/8562981350",
+                    fblink:"https://www.facebook.com/shwetank.saxena",
+                    instalink:"",
+                    linkedln:"",
+                    position:"",
+                },
             ]
         },
         {   
             "position":"Promotions",
             "members": [
-    
-            
+                {
+                    id:15,
+                    image:"",
+                    first_name:"Abdulahad",
+                    last_name:"Khan",
+                    email:"abdul.thomso@gmail.com",
+                    mobile:"9834653974",
+                    fblink:"https://www.facebook.com/qadbury0123456789",
+                    instalink:"https://www.instagram.com/qadbury123/",
+                    linkedln:"https://www.linkedin.com/in/abdulahad-khan-profile/",
+                    position:"Promotions ",
+                },
+                {
+                    id:22,
+                    image:"Abhay.jpg",
+                    first_name:"Abhay",
+                    last_name:"Agarwal",
+                    email:"abhay.thomso@gmail.com",
+                    mobile:"9131700765",
+                    fblink:"https://www.facebook.com/abhay.agrawal.75457",
+                    instalink:"https://www.instagram.com/abhayyashagrawal/?hl=en",
+                    position:"Promotions",
+                },
                 {
                     id:20,
                     image:"Harshit.jpg",
@@ -247,14 +289,15 @@ export const MemberDetails=
                     position:"Promotions",
                 },
                 {
-                    id:22,
-                    image:"Abhay.jpg",
-                    first_name:"Abhay",
-                    last_name:"Agarwal",
-                    email:"abhay.thomso@gmail.com",
-                    mobile:"9131700765",
-                    fblink:"https://www.facebook.com/abhay.agrawal.75457",
-                    instalink:"https://www.instagram.com/abhayyashagrawal/?hl=en",
+                    id:24,
+                    image:"Suraj.jpg",
+                    first_name:"Suraj",
+                    last_name:"Kumar",
+                    email:"suraj.thomso@gmail.com",
+                    mobile:"9798856789",
+                    fblink:"https://www.facebook.com/surajkumar161098",
+                    instalink:"https://www.instagram.com/suraj_kr91/",
+                    linkedln:"https://www.linkedin.com/in/suraj-kumar-bb8a1a137/",
                     position:"Promotions",
                 },
                 {
@@ -269,48 +312,11 @@ export const MemberDetails=
                     linkedln:"https://www.linkedin.com/in/vivek-kumar-914b05149",
                     position:"Promotions",
                 },
-                {
-                    id:24,
-                    image:"Suraj.jpg",
-                    first_name:"Suraj",
-                    last_name:"Kumar",
-                    email:"suraj.thomso@gmail.com",
-                    mobile:"9798856789",
-                    fblink:"https://www.facebook.com/surajkumar161098",
-                    instalink:"https://www.instagram.com/suraj_kr91/",
-                    linkedln:"https://www.linkedin.com/in/suraj-kumar-bb8a1a137/",
-                    position:"Promotions",
-                },
-                {
-                    id:15,
-                    image:"",
-                    first_name:"Abdulahad",
-                    last_name:"Khan",
-                    email:"abdul.thomso@gmail.com",
-                    mobile:"9834653974",
-                    fblink:"https://www.facebook.com/qadbury0123456789",
-                    instalink:"https://www.instagram.com/qadbury123/",
-                    linkedln:"https://www.linkedin.com/in/abdulahad-khan-profile/",
-                    position:"Promotions ",
-                },
     
             ]
         },{   
             "position":"Design",
             "members": [
-    
-                {
-                    id:18,
-                    image:"Prabal.jpg",
-                    first_name:"Prabal",
-                    last_name:"Gondane",
-                    email:"prabal.gondane17@gmail.com",
-                    mobile:"7055558567",
-                    fblink:"https://www.facebook.com/prbll",
-                    instalink:"https://www.instagram.com/greydesigner/",
-                    linkedln:"https://www.linkedin.com/in/prabal-gondane-029661135/",
-                    position:"Design",
-                },
                 {
                     id:19,
                     image:"Divyanshu.jpg",
@@ -323,8 +329,18 @@ export const MemberDetails=
                     linkedln:"https://www.linkedin.com/in/divyanshukachhap/",
                     position:"Design",
                 },
-    
-    
+                {
+                    id:18,
+                    image:"Prabal.jpg",
+                    first_name:"Prabal",
+                    last_name:"Gondane",
+                    email:"prabal.gondane17@gmail.com",
+                    mobile:"7055558567",
+                    fblink:"https://www.facebook.com/prbll",
+                    instalink:"https://www.instagram.com/greydesigner/",
+                    linkedln:"https://www.linkedin.com/in/prabal-gondane-029661135/",
+                    position:"Design",
+                },
             ]
         },
         {   
@@ -363,30 +379,7 @@ export const MemberDetails=
           
         
            
-            // {
-            //     id:13,
-            //     image:"Sagar.jpg",
-            //     first_name:"Sagar",
-            //     last_name:"Gupta",
-            //     email:"sagargupta.thomso@gmail.com",
-            //     mobile:"9870639330/9479588083",
-            //     fblink:"https://www.facebook.com/sagar.gupta.587",
-            //     instalink:"https://www.instagram.com/sagar_gupta16/",
-            //     linkedln:"",
-            //     position:"",
-            // },
-            // {
-            //     id:15,
-            //     image:"Shwetank.jpg",
-            //     first_name:"Shwetank",
-            //     last_name:"Saxena",
-            //     email:"shwetank.thomso@gmail.com",
-            //     mobile:"9711008976/8562981350",
-            //     fblink:"https://www.facebook.com/shwetank.saxena",
-            //     instalink:"",
-            //     linkedln:"",
-            //     position:"",
-            // },
+            
             
 
             // {

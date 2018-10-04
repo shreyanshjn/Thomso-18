@@ -378,6 +378,19 @@ export default class WhyThomso extends Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <div className="whythomso-faqs-ansque-columntwo-one-new">
+                                        <div className="whythomso-faqs-height">
+                                            <div className="whythomso-faqs-question">
+                                                <span><strong>Q</strong></span>
+                                                <span>What will be provided in the fee of 2100?</span>
+                                            </div>
+                                            <div className="whythomso-faqs-answer">
+                                                <span><strong>A</strong></span> 
+                                                <span>
+                                                You will be provided with 4 night accommodation, 6 meals (dinner not included, you can buy it here on nominal charges of 50-60 Rs), all pronite passes, event passses of all center stage events, merchandise of Thomso'18 etc.</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div className="whythomso-faqs-ansque-columnthree-sixth">
                                         <div className="whythomso-faqs-height">
                                             <div className="whythomso-faqs-question">
@@ -462,7 +475,7 @@ export default class WhyThomso extends Component {
                                                 <span><strong>A</strong></span>
                                                 <span>
                                                     Once you reached Roorkee, you can easily take an E-rickshaw, the bus station is
-                                                just 1 km away whereas railway station is just 3 km away from the main gate of IIT
+                                                just 100 m away whereas railway station is just 3 km away from the main gate of IIT
                                                 Roorkee.
                                                 </span>
                                             </div>

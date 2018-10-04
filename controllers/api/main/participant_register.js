@@ -73,6 +73,7 @@ exports.participant_registration = function (req, res) {
                     if (genratedToken) {
                         var newToken = {
                             email: req.body.email,
+                            user_id: user._id,
                             verified: false,
                             token: genratedToken,
                             expiration_time: moment().day(30),
