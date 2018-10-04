@@ -378,19 +378,6 @@ export default class WhyThomso extends Component {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="whythomso-faqs-ansque-columntwo-one-new">
-                                        <div className="whythomso-faqs-height">
-                                            <div className="whythomso-faqs-question">
-                                                <span><strong>Q</strong></span>
-                                                <span>What will be provided in the fee of 2100?</span>
-                                            </div>
-                                            <div className="whythomso-faqs-answer">
-                                                <span><strong>A</strong></span> 
-                                                <span>
-                                                You will be provided with 4 night accommodation, 6 meals (dinner not included, you can buy it here on nominal charges of 50-60 Rs), all pronite passes, event passses of all center stage events, merchandise of Thomso'18 etc.</span>
-                                            </div>
-                                        </div>
-                                    </div>
                                     <div className="whythomso-faqs-ansque-columnthree-sixth">
                                         <div className="whythomso-faqs-height">
                                             <div className="whythomso-faqs-question">
@@ -436,6 +423,20 @@ export default class WhyThomso extends Component {
                                             </div>
                                         </div>
                                     </div>
+                                    <div className="whythomso-faqs-ansque-columnthree-fifth">
+                                        <div className="whythomso-faqs-height">
+                                            <div className="whythomso-faqs-question">
+                                                <span><strong>Q</strong></span>
+                                                <span>What will be provided in the fee of 2100?</span>
+                                            </div>
+                                            <div className="whythomso-faqs-answer">
+                                                <span><strong>A</strong></span>
+                                                <span>
+                                                    You will be provided with 4 night accommodation, 6 meals(dinner not include, you can buy it at here on nominal charges of 50-60 Rs), all pronite passes, event passes of all center stage events, merchandise of thomso'18 etc.
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div className="whythomso-sixth-child-middle-columnthree">
@@ -460,7 +461,7 @@ export default class WhyThomso extends Component {
                                                 <span><strong>A</strong></span>
                                                 <span>
                                                     You can get latest updates from our Facebook page 
-                                                    <a href="www.facebook.com/thomsoiitroorkee/">www.facebook.com/thomsoiitroorkee/</a> .
+                                                    <a href="https://www.facebook.com/thomsoiitroorkee/" rel="noopener noreferrer" target="_blank" >Thomsoiitroorkee/facebook</a> .
                                                 </span>
                                             </div>
                                         </div>

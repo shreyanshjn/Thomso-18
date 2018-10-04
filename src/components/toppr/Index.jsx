@@ -4,6 +4,7 @@ import "./src/toppr.css";
 import Popup from '../common/popup/Index';
 import FetchApi from '../../utils/FetchAPI';
 import validateInput from '../../utils/validation/loginValidation';
+import topprlogo from './src/topprlogo.jpg';
 
 class Toppr extends Component {
     constructor() {
@@ -20,14 +21,11 @@ class Toppr extends Component {
         }
     }
     handleChange = (e) => {
-        const name = e.target.name;
-        let value = e.target.value;
-        if (name === 'mobilenumber' && value) {
+        const name = e.target.name; let value = e.target.value; if (name === 'mobilenumber' && value) {
             value = value.trim()
             value = value.substring(0, 10)
         }
-        this.setState({ [name]: value });
-    }
+        this.setState({ [name]: value }); }
     handleSubmit = (e) => {
         e.preventDefault();
         let { name, schoolname, email, city, standard, mobilenumber, entry } = this.state;
@@ -99,12 +97,24 @@ class Toppr extends Component {
                 <Navbar />
                 <div className="main-toppr-child-first">
                     <div className="main-toppr-child-first-details">
+                        <p className="toppr-association-heading">
+                            Thomso in association with 
+                            <a href="https://www.toppr.com/" className="toppr-link" target="_blank" rel="noopener noreferrer">
+                                TOPPR 
+                            </a>
+                            <span>
+                                <a href="https://www.toppr.com/" target="_blank" rel="noopener noreferrer">
+                                    <img src={topprlogo} className="toppr-logo" alt="toppr logo" />
+                                </a>
+                            </span>
+                                presents
+                        </p>
                         <div className="main-toppr-child-first-details-heading">
-                            <h2>TOPPR</h2>
+                            <h2>WRITE UP COMPETITION</h2>
                         </div>
                         <div className="main-toppr-child-first-details-content">
                             <p>
-                            'Writing is the painting of the voice.' To bring out the inner writer within you, Thomso in association with Toppr presents to you a writing competition for students with an opportunity to let the world know about your inner potential.
+                                'Writing is the painting of the voice.' To bring out the inner writer within you, Thomso in association with Toppr presents to you a writing competition for students with an opportunity to let the world know about your inner potential.
                             </p>
                         </div>
                     </div>

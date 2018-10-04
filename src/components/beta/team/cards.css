@@ -12,14 +12,15 @@
     
         }
     
-
-.main-team-card-maindiv{
-    padding: 100px 50px;
+@media only screen and (min-width: 768px){
+    .main-team-card-maindiv{
+        padding: 100px 50px;
     height: fit-content;
     background-attachment: fixed;
     background-image: url("../team/img/teamfinal.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+   }
 }
 
 .main-team-wrapper{
@@ -265,9 +266,11 @@
         .main-team-card-maindiv {
             padding: 10% 5%;
             background-attachment: fixed;
-            background-image: url("../team/img/teamfinal.jpg");
+            background-image: url("../team/img/teamPortrait.jpg");
             background-size: cover;
-            background-repeat: no-repeat;
+            background-position:center center;
+            background-repeat:no-repeat;
+            min-height:100vh;
         }
        
         .main-team-card-inner{

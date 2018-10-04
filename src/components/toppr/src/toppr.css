@@ -27,7 +27,7 @@
     color: white;
     font-family: Poppins;
     font-weight: 600;
-    font-size: 44px;
+    font-size: 36px;
 }
 .main-toppr-child-first-details-heading h2::after{
     content: "";
@@ -110,6 +110,31 @@
     font-family: Poppins;
     width: fit-content;
 }
+.toppr-association-heading
+{
+    color: white;
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 36px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    text-transform:uppercase;
+    margin:0px;
+} 
+.toppr-logo
+{
+    margin-right:10px;
+    margin-left:10px;
+    height:10vh;
+    width:auto;
+}
+.toppr-link
+{
+    text-decoration:none;
+    color:white;
+    margin-left:10px;
+}
 @media only screen and (max-width:768px){
     .main-toppr-child-first-details{
         bottom: 0vh;
@@ -123,5 +148,24 @@
     }
     .main-toppr-child-second form{
         padding: 0px;
+    }
+    .toppr-association-heading
+    {
+        display:block;
+    }
+    .toppr-association-heading
+    {
+        font-size:25px;
+    }
+    .main-toppr-child-first-details-heading h2
+    {
+        font-size:25px;
+    }
+    .toppr-logo
+    {
+        margin-right:10px;
+        margin-left:10px;
+        height:4.1vh;
+        width:auto;
     }
 }
