@@ -53,40 +53,16 @@ export const MemberDetails=
             "position":"Events",
             "members": [
                 {
-                    id:4,
-                        image:"subham.jpg",
-                        first_name:"Shubham",
-                        last_name:"Jaiswal",
-                        email:"shubham.thomso18@gmail.com",
-                        mobile:"9693482762",
-                        fblink:"https://www.facebook.com/sbhmsh",
-                        instalink:"https://www.instagram.com/shubham_jaiss/",
-                        linkedln:"https://www.linkedin.com/in/sbhmsh/",
-                        position:"Events",
-                },
-                {
-                        id:5,
-                        image:"Arihant.jpg",
-                        first_name:"Arihant",
-                        last_name:"Rokadia",
-                        email:"",
-                        mobile:"",
-                        fblink:"",
-                        linkedln:"",
-                        instalink:"",
-                        position:"Events",
-                },
-                {
-                    id:6,
-                    image:"Chandni.jpg",
-                    first_name:"Chandni",
-                    last_name:"Beniwal",
-                    email:"Chandni.thomso@gmail.com ",
-                    mobile:"7740949800",
-                    fblink:"https://www.facebook.com/chandni.beniwal.52",
-                    instalink:"https://www.instagram.com/the_lost_explorerr/",
-                    linkedln:"https://www.linkedin.com/in/chandni-beniwal-065812158/",
-                    position:"Events",   
+                    id:5,
+                    image:"Arihant.jpg",
+                    first_name:"Arihant",
+                    last_name:"Rokadia",
+                    email:"",
+                    mobile:"",
+                    fblink:"",
+                    linkedln:"",
+                    instalink:"",
+                    position:"Events",
                 },
                 {
                     id:7,
@@ -101,6 +77,18 @@ export const MemberDetails=
                     position:"Events",
                 },
                 {
+                    id:6,
+                    image:"Chandni.jpg",
+                    first_name:"Chandni",
+                    last_name:"Beniwal",
+                    email:"Chandni.thomso@gmail.com ",
+                    mobile:"7740949800",
+                    fblink:"https://www.facebook.com/chandni.beniwal.52",
+                    instalink:"https://www.instagram.com/the_lost_explorerr/",
+                    linkedln:"https://www.linkedin.com/in/chandni-beniwal-065812158/",
+                    position:"Events",   
+                },
+                {
                     id:8,
                     image:"Tanvi.jpg",
                     first_name:"Tanvi",
@@ -112,26 +100,26 @@ export const MemberDetails=
                     linkedln:"",
                     position:"Events",
                 },
+                {
+                    id:4,
+                    image:"subham.jpg",
+                    first_name:"Shubham",
+                    last_name:"Jaiswal",
+                    email:"shubham.thomso18@gmail.com",
+                    mobile:"9693482762",
+                    fblink:"https://www.facebook.com/sbhmsh",
+                    instalink:"https://www.instagram.com/shubham_jaiss/",
+                    linkedln:"https://www.linkedin.com/in/sbhmsh/",
+                    position:"Events",
+                },
             ]
         
         },
 
         {   
-            "position":"Sponsorship",
+            "position":"Sponsorships",
             "members": [
 
-                {
-                    id:9,
-                    image:"vivek.jpg",
-                    first_name:"Vivek",
-                    last_name:"Singh",
-                    email:"viveksingh.thomso@gmail.com",
-                    mobile:"9425726597",
-                    fblink:"",
-                    instalink:"",
-                    linkedln:"",
-                    position:"Sponsorship",
-                },
                 {
                     id:10,
                     image:"Anurag.jpg",
@@ -142,7 +130,7 @@ export const MemberDetails=
                     fblink:"www.facebook.com/twrnrg",
                     instalink:"https://www.instagram.com/anuragtiwarie/",
                     linkedln:"https://www.linkedin.com/in/twrnrg/",
-                    position:"Sponsorship",
+                    position:"Sponsorships",
                 },
                 {
                     id:11,
@@ -154,7 +142,7 @@ export const MemberDetails=
                     fblink:"",
                     instalink:"",
                     linkedln:"",
-                    position:"Sponsorship",
+                    position:"Sponsorships",
                 },
                 {
                     id:12,
@@ -166,7 +154,7 @@ export const MemberDetails=
                     fblink:"",
                     instalink:"",
                     linkedln:"https://www.linkedin.com/in/rishabh-rana-5b707414b/",
-                    position:"Sponsorship",
+                    position:"Sponsorships",
                 },
                  
                 {
@@ -179,7 +167,7 @@ export const MemberDetails=
                     fblink:"https://www.facebook.com/saakshya",
                     instalink:"https://www.instagram.com/ubercool_boiii/",
                     linkedln:"https://www.linkedin.com/in/saakshya-devat-a21a3514b",
-                    position:"Sponsorship",
+                    position:"Sponsorships",
                 },
                 {
                     id:9,
@@ -224,16 +212,28 @@ export const MemberDetails=
                     position:"Marketing",
                 },
                 {
-                    id:17,
-                    image:"AbhishekKumar.jpg",
-                    first_name:"Abhishek",
-                    last_name:"Kumar",
-                    email:"abhishekkumar.thomso@gmail.com ",
-                    mobile:"8755517133",
-                    fblink:"https://www.facebook.com/Abhishekumar333",
-                    instalink:"https://instagram.com/abhishekumar333",
-                    linkedln:"https://www.linkedin.com/in/abhishekkumar333",
-                    position:"Marketing",
+                    id:13,
+                    image:"SagarGupta.jpg",
+                    first_name:"Sagar",
+                    last_name:"Gupta",
+                    email:"sagargupta.thomso@gmail.com",
+                    mobile:"9870639330/9479588083",
+                    fblink:"https://www.facebook.com/sagar.gupta.587",
+                    instalink:"https://www.instagram.com/sagar_gupta16/",
+                    linkedln:"",
+                    position:"",
+                },
+                {
+                    id:15,
+                    image:"ShwetankSaxena.jpg",
+                    first_name:"Shwetank",
+                    last_name:"Saxena",
+                    email:"shwetank.thomso@gmail.com",
+                    mobile:"9711008976/8562981350",
+                    fblink:"https://www.facebook.com/shwetank.saxena",
+                    instalink:"",
+                    linkedln:"",
+                    position:"",
                 },
             ]
         },
@@ -402,7 +402,7 @@ export const MemberDetails=
 
 
     // {   
-    //     "position":"Sponsorship",
+    //     "position":"Sponsorships",
     //     "members": [
 
 
