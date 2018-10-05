@@ -1100,7 +1100,7 @@ background: url("../img/bg\ bg-01.png")
        display:none;
     }
 }
-@meia only screen and (min-width:768px)
+@media only screen and (min-width:768px)
 {
     .mainfinalmaincontainersecondleft:hover{
         background:url("../img/bright-01.png");

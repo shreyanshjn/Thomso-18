@@ -299,16 +299,17 @@
     width: 50%;
 }
 .whythomso-fourth-child-the-nightmare{
-    width:30%;
+    width:18%;
 }
 .whythomso-fourth-child-the-daymare{
-    width:30%;
+    width:18%;
 }
-/* .whythomso-fourth-child-the-evemare{
-    width:20%;
-} */
+.whythomso-fourth-child-the-evemare{
+    width:18%;
+}
 .whythomso-fourth-child-the-nightmare{
     margin-top: 15px;
+    height: fit-content;
 }
 .whythomso-fourth-child-the-nightmare-image{
     height: 200px;
@@ -356,6 +357,8 @@
 }
 .whythomso-fourth-child-the-daymare{
     margin-top: 15px;
+
+    height: fit-content;
 }
 .whythomso-fourth-child-the-daymare-image{
     height: 200px;
@@ -403,11 +406,20 @@
 }
 .whythomso-fourth-child-the-evemare{
     margin-top: 15px;
+
+    height: fit-content;
 }
 .whythomso-fourth-child-the-evemare-image{
-    height: 150px;
+    height: 200px;
     width: auto;
-    background-image:url("../../beta/home/src/img/lucknow2.jpg");
+    background-image:url("../../whyThomso/src/images/social.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.whythomso-fourth-child-the-eve-image{
+    height: 200px;
+    width: auto;
+    background-image:url("../../whyThomso/src/images/recent.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -428,6 +440,9 @@
     color: black;
     font-weight: 400;
     font-family: Poppins;
+}
+.whythomso-fourth-child-the-evemare-content-heading a{
+    text-decoration: none;
 }
 .whythomso-fourth-child-the-evemare-date h3{
     margin: 0;
@@ -836,11 +851,13 @@
         width: 90%;
         margin-left: auto;
         margin-right: auto;
+        height: fit-content;
     }
     .whythomso-fourth-child-the-daymare{
         width: 90%;
         margin-left: auto;
         margin-right: auto;
+        height: fit-content;
     }
     .whythomso-fifth-child-artist{
         width: 90%;

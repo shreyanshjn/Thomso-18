@@ -20,6 +20,14 @@ const litfest = Loadable({
     loader: () => import("./blog2/index"),
     loading: loading
 });
+const socialendeavours = Loadable({
+    loader: () => import("./blog3/index"),
+    loading: loading
+});
+const recentinnovation = Loadable({
+    loader: () => import("./blog4/index"),
+    loading: loading
+});
 
 export default class BlogIndex extends React.Component {
     render() {
@@ -27,6 +35,8 @@ export default class BlogIndex extends React.Component {
             <React.Fragment>
                 <Route path="/blog/Behind_the_scenes" component={behindmyscenes} />
                 <Route path="/blog/litfest" component={litfest} />
+                <Route path="/blog/The_Social_Endeavours" component={socialendeavours} />
+                <Route path="/blog/recent_innovation_at_iitr" component={recentinnovation} />
             </React.Fragment>
         );
     }
