@@ -1640,6 +1640,14 @@ padding:1%;
     100%{
         transform: translateX(-50%) rotateZ(-360deg);
     }
+}
+@media only screen and (max-width: 1400px){
+    .mainfinalsecondwholeinternalcontainerinnerintop>a{
+        font-size:1.45rem;
+    }
+    .mainfinalsecondwholeinternalcontainerinnerinbottom>h3{
+        font-size: .88rem;
+    }
 } 
 @media only screen and (max-width: 768px){
     .mainfinalmainpage5{
