@@ -68,11 +68,11 @@ export default class EventDetail extends React.Component {
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 backgroundPosition: "center center",
-            }}>
+            }}> 
                 <div className="events-details-images-main-div-child">
                     <div className="events-details-images-name">
-                        <p>{this.state.data && this.state.data.name}</p>
-                        <p>{this.state.data && this.state.data.details}</p>
+                        {(this.state.data && this.state.data.name) ? <p>{this.state.data.name}</p> : null}
+                        {(this.state.data && this.state.data.details) ? <p>{this.state.data.details}</p> : null}
                     </div>
                     <div className="events-details-modal">
                         <span className="events-modal-close" onClick={this.props.close}>
@@ -97,7 +97,9 @@ export default class EventDetail extends React.Component {
                                 </div> : null}
                         </div>
                         <div className="events-text-scroll-cont">
-                            <p className="events-text-child">{this.state.data.content}</p>
+                            <p className="events-text-child" style={{display: 'block'}}>{this.state.data.content}
+                                {(this.state.data && this.state.data.promotionalLink) ? <p className="events-text-child" style={{marginTop: '10px', color: 'gold'}}>Register <a href={this.state.data.promotionalLink} style={{fontWeight: '500', color: 'red', textDecoration: 'none'}} target="_blank" rel="noopener noreferrer">&nbsp;here&nbsp;</a> for {this.state.data.name ? this.state.data.name : null}</p> : null }
+                            </p>
                         </div>
                     </div> : null}
                 {this.state.data && this.props.eventsId !== 9 ?
@@ -113,10 +115,11 @@ export default class EventDetail extends React.Component {
                                 </React.Fragment>
                             }
                         </div>
-                        {(this.state.data.rulebook) ?
-                            <div className="events-addevents-child">
-                                <a href={!this.state.isAuthenticated ? "/main" : this.state.data.rulebook} className="be-events-modal-button" target="_blank">Rulebook</a>
-                            </div>
+                        {
+                            this.state.data.rulebook ?
+                                <div className="events-addevents-child">
+                                    <a href={this.state.data.rulebook} className="be-events-modal-button" target="_blank">Rulebook</a>
+                                </div>
                             : null
                         }
                     </div>

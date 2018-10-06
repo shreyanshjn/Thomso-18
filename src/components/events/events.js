@@ -142,7 +142,8 @@ export const EventDetails =
                         content: "In the words of Plato: Music gives a soul to the universe, wings to the mind, flight to the imagination and life to everything.This is your chance to flaunt your gift. Here’s an opportunity to get on stage and tell your story through your flair. It’s the IITR’s premier singing contest. If you believe in yourself then come compete with the elite.You can sing or play an instrument. Just be your best self and own the stage. !",
                         rulebook: "https://drive.google.com/open?id=1GHvKKC8gRCVKlzrXCRDmPRmffaEsHIqe",
                         image: "sargam.jpeg",
-                        prize: "125"
+                        prize: "125",
+                        promotionalLink: "https://songdew.com/opportunities/campus-idol-iitroorkee/451"
                     }]
         }, {
             id: 13,

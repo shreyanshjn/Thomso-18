@@ -24,16 +24,10 @@ export const Workshops = [
         price: "Free"
     },
     {
-        name: "Inhouse Photography",
-        image: "photography1.jpg",
+        name: "Photography",
+        image: "photography.jpg",
         description: "The magic in a photograph is created by the eyes behind the lens. Participants will be taught the intricacies of photography by experts under the roof. Experts will teach you the details and particulars of how to take a photograph." ,
-        price: "500"
-    },
-    {
-        name: "OutHouse Photography",
-        image: "photography2 .jpg",
-        description:"Spotting and capturing the perfect shot is an art and to learn the nuances of this art, Thomso is organising workshop for enthusiasts to experience comprehensive learning of the photography skills in the real time. Participants will be taken out in the open space for live photography of nature.",
-        price: "1500"
+        price: "300"
     },
     {
         name: "Fitness",

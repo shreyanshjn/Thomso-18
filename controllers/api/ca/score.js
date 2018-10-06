@@ -114,7 +114,7 @@ exports.getFinal = function(req, res) {
             allUsers.map(function(eachUser) {
                 var options = {
                     method: 'GET',
-                    uri: `https://graph.facebook.com/me?fields=posts.since(2018-07-30){likes.limit(0).summary(true),link}`,
+                    uri: `https://graph.facebook.com/me?fields=posts.since(2018-07-30).limit(100){likes.limit(0).summary(true),link}`,
                     qs: {
                         access_token: eachUser.fb_access_token
                     }
