@@ -119,7 +119,18 @@ export const MemberDetails =
         {
             "position": "Sponsorships",
             "members": [
-
+                {
+                    id: 9,
+                    image: "vivek.jpg",
+                    first_name: "Vivek",
+                    last_name: "Singh",
+                    email: "viveksingh.thomso@gmail.com",
+                    mobile: "9425726597",
+                    fblink: "",
+                    instalink: "",
+                    linkedln: "",
+                    position: "Sponsorships",
+                },
                 {
                     id: 10,
                     image: "Anurag.jpg",
@@ -168,19 +179,7 @@ export const MemberDetails =
                     instalink: "https://www.instagram.com/ubercool_boiii/",
                     linkedln: "https://www.linkedin.com/in/saakshya-devat-a21a3514b",
                     position: "Sponsorships",
-                },
-                {
-                    id: 9,
-                    image: "vivek.jpg",
-                    first_name: "Vivek",
-                    last_name: "Singh",
-                    email: "viveksingh.thomso@gmail.com",
-                    mobile: "9425726597",
-                    fblink: "",
-                    instalink: "",
-                    linkedln: "",
-                    position: "Sponsorships",
-                },
+                }
             ]
         },
 
