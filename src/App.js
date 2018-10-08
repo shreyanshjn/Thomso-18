@@ -131,10 +131,10 @@ const onlineevents = Loadable({
     loader: () => import("./components/onlineEvents/Index"),
     loading: () => <Loader />
 })
-// const ControlsIndex = Loadable({
-//     loader: () => import("./components/controls/Index.jsx"),
-//     loading: () => <Loader />
-// })
+const ControlsIndex = Loadable({
+    loader: () => import("./components/controls/Index.jsx"),
+    loading: () => <Loader />
+})
 
 const MUNIndex = Loadable({
     loader: () => import("./components/beta/mun/Index"),
@@ -213,7 +213,7 @@ class App extends Component {
                             <Route path="/campusclicks" component={CampusClicks} />
                             <Route path="/silhoutte" component={Silhoutte} />
                             {/* <Route  path="/coordinators" component={CoordinatorsIndex} /> */}
-                            {/* <Route  path="/controls" component={ControlsIndex} /> */}
+                            <Route  path="/controls" component={ControlsIndex} />
                             <Route path="/cupid" component={Cupid} />
                             <Route path="/mun" component={MUNIndex} />
                             {/* <Route path="/xpression" component={Xpression} /> */}

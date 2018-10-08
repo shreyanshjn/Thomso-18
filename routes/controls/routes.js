@@ -20,6 +20,8 @@ router.post('/auth/register', controlsRegister.register);
 
 // -> /api/controls/
 router.get('/info', ControlsTokenMiddleware.verifyUser, controlsControl.info);
+router.get('/user_info', ControlsTokenMiddleware.verifyUser, controlsControl.user_info);
+router.put('/payment_update', ControlsTokenMiddleware.verifyUser, controlsControl.payment_update);
 
 
 module.exports = router;
