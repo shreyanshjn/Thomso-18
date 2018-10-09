@@ -9,13 +9,18 @@ import thomsomain from './src/img/thomsomain.png'
 import foot from './src/img/foot svg-01.svg'
 import college from './src/img/college svg-01.svg'
 import events from './src/img/events svg-01.svg'
-import phone from './src/img/phone svg-01.svg'
 import rightarrow from './src/img/right-arrow.svg'
 import logosvg from './src/img/thomso logo svg-01.svg'
-import address from './src/img/address svg-01.svg'
+import astronaut from './src/img/astronaut white bg gif.gif'
+import frontCircle from './src/img/footer front.png'
+import backCircle from './src/img/footer back.png'
 import Navbar from '../beta/home/Navbar'
 import Carousel from '../carousel/Index'
 import register from "./src/img/register.png"
+import fbicon from "./src/img/facebook-app-symbol.svg"
+import twicon from "./src/img/twitter-black-shape.svg"
+import instaicon from "./src/img/instagram.svg"
+import youtubeicon from "./src/img/youtube.svg"
 // import payment from "./src/img/payment.png"
 import './src/css/style.css'
 import MobileCarousel from '../mobilecarousel/Index';
@@ -737,8 +742,8 @@ export default class HomeIndex extends React.Component {
                             <div className="mainfinalsplitsvgcont1 mainfinalworkgoncont mainfinalwork" >
                                 {/* <Workshopbulb /> */}
                                 <svg version="1.1" className="mainfinalsplitlit mainfinalsplitlit2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                    width="612px" height="792px" viewBox="0 0 612 792" enableBackground="new 0 0 612 792" xmlSpace="preserve">
-                                        <g>
+                                     viewBox="0 0 800 800" enableBackground="new 0 0 800 800" xmlSpace="preserve">
+                                        {/* <g>
                                             <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="295.322,78.412 249.482,101.096 255.13,39.817 	" />
                                             <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F68D40" points="389.251,50.405 337.701,111.921 335.247,35.945 	" />
                                             <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="454.729,93.348 405.724,106.508 389.251,50.405 	" />
@@ -880,6 +885,46 @@ export default class HomeIndex extends React.Component {
                                         289.819,699.094 	"/>
                                     <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#F05232" points="334.951,750.375 301.59,722.903 301.565,722.87 
                                         301.565,722.842 301.59,722.279 330.603,698.799 331.964,698.799 	"/>
+                                </g> */}
+                                                                <g>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#B10026" points="389.25,321.96 295.42,231.3 366.75,205.96 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E31A1C" points="295.42,231.3 223.36,330.82 212.75,220.791 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FEB24C" points="389.25,321.96 276.991,427.561 223.36,330.82 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FED976" points="414.39,426.27 305.34,524.8 276.991,427.561 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FC4E2A" points="491.31,524.8 305.34,524.8 414.39,426.27 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FEB24C" points="514.75,430.981 491.31,524.8 414.39,426.27 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FED976" points="568.75,341.63 514.75,430.981 414.39,426.27 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FC4E2A" points="568.75,341.63 414.39,426.27 389.25,321.96 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#B10026" points="587.25,234.63 568.75,341.63 479.42,218.63 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FEB24C" points="587.25,234.63 479.42,218.63 528.861,134.311 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#B10026" points="528.861,134.311 479.42,218.63 451.75,88.13 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FED976" points="451.75,88.13 366.75,205.96 354.42,87.53 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E31A1C" points="366.75,205.96 267.25,135.63 354.42,87.53 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E31A1C" points="319.02,546.451 319.02,583.44 307.75,564.071 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FEB24C" points="479.701,582.92 319.02,546.451 387.02,546.15 
+                                        429.791,545.94 431.06,545.94 479.571,545.71 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#B10026" points="491.02,564.01 479.701,582.92 479.571,545.71 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E31A1C" points="398.831,663.59 355.13,694.75 340.65,664.031 
+                                        383.791,663.72 384.27,663.72 384.741,663.69 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FED976" points="399.281,712.47 355.13,694.75 398.831,663.59 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#B10026" points="441.63,695.01 399.281,712.47 398.831,663.59 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FC4E2A" points="457,663.17 441.63,695.01 398.831,663.59 420.38,663.43 
+                                        422.38,663.43 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FEB24C" points="366.75,205.96 295.42,231.3 267.25,135.63 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FC4E2A" points="295.42,231.3 212.75,220.791 267.25,135.63 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FC4E2A" points="479.42,218.63 366.75,205.96 451.75,88.13 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FEB24C" points="479.42,218.63 389.25,321.96 366.75,205.96 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E31A1C" points="414.39,426.27 276.991,427.561 389.25,321.96 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E31A1C" points="568.75,341.63 389.25,321.96 479.42,218.63 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FED976" points="389.25,321.96 223.36,330.82 295.42,231.3 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FC4E2A" points="479.701,582.92 399.941,583.18 319.02,583.44 
+                                        319.02,546.451 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E31A1C" points="491.02,622.531 479.75,641.9 479.75,604.911 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FEB24C" points="479.75,604.911 319.07,641.38 319.201,604.17 
+                                        367.71,604.4 368.98,604.4 411.75,604.611 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#B10026" points="319.201,604.17 319.07,641.38 307.75,622.46 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FED976" points="479.75,604.911 479.75,641.9 398.831,641.64 
+                                        319.07,641.38 	"/>
                                 </g>
                                 </svg>
                             </div>
@@ -1060,10 +1105,10 @@ export default class HomeIndex extends React.Component {
                             <div className="mainfinalsplitsvgcont1 mainfinalzonalgoncont mainfinalzonal">
                                 {/* <Karvaan />*/}
                                 <svg version="1.1" className="mainfinalsplitlit mainfinalsplitlit2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                    width="841.89px" height="595.276px" viewBox="0 0 841.89 595.276" enableBackground="new 0 0 841.89 595.276"
-                                    xmlSpace="preserve">
+                                     viewBox="0 0 800 800" enableBackground="new 0 0 800 800" xmlSpace="preserve">
                                     <Link to="/zonals/home">
-                                        <g>
+                                    <g>
+                                        {/* 
                                             <polygon className="zongon" fill="#238B45" points="225.876,149.98 198.805,146.542 216.195,139.817 	" />
                                             <polygon className="zongon" fill="#005A32" points="225.876,149.98 189.568,170.249 198.805,146.542 	" />
                                             <polygon className="zongon" fill="#238B45" points="225.876,149.98 221.45,177.284 189.568,170.249 	" />
@@ -1270,7 +1315,145 @@ export default class HomeIndex extends React.Component {
                                             <polygon className="zongon" fill="#238B45" points="478.517,260.099 451.466,246.09 472.796,240.082 472.876,239.984 	" />
                                             <polygon className="zongon" fill="#238B45" points="472.796,240.082 455.757,219.33 471.347,215.426 472.758,239.58 472.777,239.656 	" />
                                             <polyline fill="#282828" points="472.876,239.984 472.837,239.85 472.837,239.829 472.777,239.656 	" />
-                                            <line fill="#282828" x1="473.434" y1="239.271" x2="472.876" y2="239.522" />
+                                            <line fill="#282828" x1="473.434" y1="239.271" x2="472.876" y2="239.522" /> */}
+                                            <g>
+                                                <path fill="#B10026" stroke="#FFFFFF" strokeMiterlimit="10" d="M579.342,314.134l-0.008,0.017l0.016-0.017H579.342z"/>
+                                                <polygon className="zongon" fill="#005A32" points="410.577,458.786 383.609,475.883 390.985,448.159 		"/>
+                                                <polygon className="zongon" fill="#74C476" points="390.985,448.159 383.609,475.883 357.026,455.452 		"/>
+                                                <polygon className="zongon" fill="#005A32" points="383.609,475.883 330.233,475.211 357.026,455.452 		"/>
+                                                <polygon className="zongon" fill="#41AB5D" points="357.026,455.452 330.233,475.211 309.951,446.819 		"/>
+                                                <polygon className="zongon" fill="#74C476" points="330.233,475.211 284.492,454.1 309.951,446.819 		"/>
+                                                <polygon className="zongon" fill="#005A32" points="309.951,446.819 284.492,454.1 266.117,411.934 		"/>
+                                                <polygon className="zongon" fill="#238B45" points="284.492,454.1 238.359,411.934 266.117,411.934 		"/>
+                                                <polygon className="zongon" fill="#41AB5D" points="266.117,411.934 238.359,411.934 210.633,352.084 230.042,373.792 244.784,390.285 		"/>
+                                                <polygon className="zongon" fill="#A1D99B" points="576.194,387.118 561.051,387.309 563.25,369.151 565.893,347.36 566.442,326.309 		"/>
+                                                <polygon className="zongon" fill="#A1D99B" points="579.334,314.151 566.442,326.309 566.368,308.61 		"/>
+                                                <polygon className="zongon" fill="#238B45" points="579.334,314.151 576.194,387.118 566.442,326.309 		"/>
+                                                <polygon className="zongon" fill="#005A32" points="566.442,326.309 565.893,347.36 541.819,334.41 		"/>
+                                                <polygon className="zongon" fill="#A1D99B" points="566.442,326.309 541.819,334.41 531.819,315.143 		"/>
+                                                <polygon className="zongon" fill="#A1D99B" points="531.819,315.143 524.526,348.785 507.442,335.66 		"/>
+                                                <polygon className="zongon" fill="#005A32" points="524.526,348.785 499.651,361.869 507.442,335.66 		"/>
+                                                <polygon className="zongon" fill="#A1D99B" points="522.651,373.16 508.325,389.31 499.651,361.869 		"/>
+                                                <polygon className="zongon" fill="#005A32" points="537.86,389.202 529.602,407.409 508.325,389.31 		"/>
+                                                <polygon className="zongon" fill="#A1D99B" points="553.901,407.952 529.602,407.409 537.86,389.202 		"/>
+                                                <polygon className="zongon" fill="#41AB5D" points="576.194,387.118 564.11,476.077 553.901,407.952 		"/>
+                                                <polygon className="zongon" fill="#238B45" points="564.11,476.077 536.61,470.452 553.901,407.952 		"/>
+                                                <polygon className="zongon" fill="#41AB5D" points="564.11,476.077 547.793,490.375 547.202,489.954 536.61,470.452 		"/>
+                                                <polygon className="zongon" fill="#005A32" points="592.51,499.684 578.342,510.036 569.084,498.411 		"/>
+                                                <polygon className="zongon" fill="#A1D99B" points="607.793,419.684 592.51,499.684 569.084,498.411 		"/>
+                                                <polygon className="zongon" fill="#005A32" points="607.793,419.684 569.084,498.411 590.842,404.684 		"/>
+                                                <polygon className="zongon" fill="#A1D99B" points="607.793,419.684 590.842,404.684 601.569,325.551 		"/>
+                                                <polygon className="zongon" fill="#238B45" points="620.569,333.018 607.793,419.684 601.569,325.551 		"/>
+                                                <polygon className="zongon" fill="#238B45" points="679.11,342.743 647.819,345.376 676.401,315.143 		"/>
+                                                <polygon className="zongon" fill="#005A32" points="676.401,315.143 647.819,345.376 637.793,310.66 		"/>
+                                                <polygon className="zongon" fill="#A1D99B" points="647.819,345.376 620.569,333.018 601.569,325.551 637.793,310.66 		"/>
+                                                <polygon className="zongon" fill="#238B45" points="637.793,310.66 601.569,325.551 591.934,290.167 602.543,294.543 605.618,295.809 		"/>
+                                                <polygon className="zongon" fill="#005A32" points="601.569,325.551 579.334,314.151 579.35,314.134 579.35,314.126 591.934,290.167 		"/>
+                                                <polygon className="zongon" fill="#238B45" points="591.934,290.167 566.368,308.61 536.485,295.693 509.776,284.161 		"/>
+                                                <polygon className="zongon" fill="#A1D99B" stroke="#FFFFFF" strokeMiterlimit="10" points="516.801,260.468 509.776,284.161 472.008,251.66 		"/>
+                                                <polygon className="zongon" fill="#41AB5D" points="591.934,290.167 509.776,284.161 516.801,260.468 562.475,278.009 581.327,285.793 		"/>
+                                                <polygon className="zongon" fill="#238B45" points="509.776,284.161 454.11,270.11 472.008,251.66 		"/>
+                                                <polygon className="zongon" fill="#41AB5D" points="472.008,251.66 454.11,270.11 416.25,250.643 		"/>
+                                                <polygon className="zongon" fill="#A1D99B" points="454.11,270.11 391.092,272.393 416.25,250.643 		"/>
+                                                <polygon className="zongon" fill="#74C476" points="416.25,250.643 391.092,272.393 345.525,262.75 		"/>
+                                                <polygon className="zongon" fill="#238B45" points="391.092,272.393 329.95,286.56 345.525,262.75 		"/>
+                                                <polygon className="zongon" fill="#A1D99B" points="345.525,262.75 329.95,286.56 300.226,278.227 		"/>
+                                                <polygon className="zongon" fill="#74C476" points="329.95,286.56 280.859,306.285 300.226,278.227 		"/>
+                                                <polygon className="zongon" fill="#238B45" points="300.226,278.227 280.859,306.285 243.876,307.759 		"/>
+                                                <polygon className="zongon" fill="#A1D99B" points="280.859,306.285 233.734,333.634 243.876,307.759 		"/>
+                                                <polygon className="zongon" fill="#74C476" points="243.876,307.759 233.734,333.634 199.026,340.218 		"/>
+                                                <polygon className="zongon" fill="#238B45" points="238.359,411.934 198.017,363.393 210.633,352.084 		"/>
+                                                <polygon className="zongon" fill="#A1D99B" points="233.734,333.634 210.633,352.084 199.026,340.218 		"/>
+                                                <polygon className="zongon" fill="#74C476" points="138.408,505.709 125.833,509.217 127.025,474.829 127.358,467.543 		"/>
+                                                <polygon className="zongon" fill="#A1D99B" points="153.033,405.742 127.358,467.543 128.367,445.153 130.742,413.485 		"/>
+                                                <polygon className="zongon" fill="#74C476" points="198.017,363.393 177,383.185 153.033,405.742 159.267,374.584 		"/>
+                                                <polygon className="zongon" fill="#41AB5D" points="199.026,340.218 186.716,350.935 176.209,320.16 		"/>
+                                                <polygon className="zongon" fill="#74C476" points="159.267,374.584 133.825,394.151 143.226,347.818 147.433,327.043 		"/>
+                                                <polygon className="zongon" fill="#005A32" points="130.742,413.485 102.65,398.993 116.901,384.651 		"/>
+                                                <polygon className="zongon" fill="#41AB5D" points="116.901,384.651 102.65,398.993 93.483,363.368 		"/>
+                                                <polygon className="zongon" fill="#A1D99B" points="122.441,335.452 93.483,363.368 112.025,320.66 		"/>
+                                                <polygon className="zongon" fill="#41AB5D" points="176.209,320.16 147.433,327.043 122.441,335.452 152.733,304.952 		"/>
+                                                <polygon className="zongon" fill="#005A32" points="176.209,320.16 152.733,304.952 163.758,269.55 171.309,244.833 		"/>
+                                                <polygon className="zongon" fill="#A1D99B" points="199.108,248.368 190.842,275.384 176.209,320.16 171.309,244.833 		"/>
+                                                <polygon className="zongon" fill="#005A32" points="199.108,248.368 171.309,244.833 186.542,237.926 		"/>
+                                                <polygon className="zongon" fill="#238B45" points="593.483,244.41 576.676,263.301 566.676,250.643 		"/>
+                                                <polygon className="zongon" fill="#41AB5D" points="593.483,244.41 566.676,250.643 577.125,237 		"/>
+                                                <path fill="#B10026" stroke="#FFFFFF" strokeMiterlimit="10" d="M272.151,370.584"/>
+                                                <polygon className="zongon" fill="#238B45" points="501,332.402 476.516,329.659 488.276,315.143 		"/>
+                                                <polygon className="zongon" fill="#41AB5D" points="488.276,315.143 476.516,329.659 466.893,322.818 		"/>
+                                                <polygon className="zongon" fill="#A1D99B" points="476.516,329.659 452.684,340.892 466.893,322.818 		"/>
+                                                <polygon className="zongon" fill="#238B45" points="454.217,317.426 452.684,340.892 435.885,320.66 		"/>
+                                                <polygon className="zongon" fill="#41AB5D" points="452.684,340.892 429.225,362.452 435.885,320.66 		"/>
+                                                <polygon className="zongon" fill="#238B45" points="458.559,361.452 429.176,362.744 429.225,362.452 452.684,340.892 		"/>
+                                                <polygon className="zongon" fill="#74C476" points="458.559,361.452 411.959,385.934 429.176,362.744 		"/>
+                                                <polygon className="zongon" fill="#A1D99B" points="458.559,361.452 450.243,378.577 440.258,399.193 411.959,385.934 		"/>
+                                                <polygon className="zongon" fill="#238B45" points="440.258,399.193 417.375,402.743 411.959,385.934 		"/>
+                                                <polygon className="zongon" fill="#74C476" points="417.375,402.743 395.559,400.976 411.959,385.934 		"/>
+                                                <polygon className="zongon" fill="#41AB5D" points="411.959,385.934 395.559,400.976 384.459,375.443 		"/>
+                                                <polygon className="zongon" fill="#005A32" points="411.959,385.934 384.459,375.443 403,371.51 		"/>
+                                                <polygon className="zongon" fill="#41AB5D" points="402.975,371.235 403,371.51 381.327,356.885 411.542,348.577 		"/>
+                                                <polygon className="zongon" fill="#005A32" points="411.542,348.577 392.092,342.051 408.758,320.384 		"/>
+                                                <polygon className="zongon" fill="#41AB5D" points="408.758,320.384 392.092,342.051 375.292,327.468 		"/>
+                                                <polygon className="zongon" fill="#238B45" points="375.292,327.468 368.341,355.935 340.925,353.785 		"/>
+                                                <polygon className="zongon" fill="#74C476" points="384.459,375.443 358.333,393.018 360.41,370.584 		"/>
+                                                <polygon className="zongon" fill="#74C476" points="360.41,370.584 338.268,380.518 340.708,353.994 340.925,353.785 		"/>
+                                                <polygon className="zongon" fill="#005A32" points="341.701,393.202 326.6,402.743 338.268,380.518 		"/>
+                                                <polygon className="zongon" fill="#41AB5D" points="358.333,393.018 341.701,393.202 338.268,380.518 		"/>
+                                                <polygon className="zongon" fill="#238B45" points="338.268,380.518 326.6,402.743 320.984,386.768 		"/>
+                                                <polygon className="zongon" fill="#74C476" points="326.6,402.743 304.593,397.885 320.984,386.768 		"/>
+                                                <polygon className="zongon" fill="#A1D99B" points="313.883,374.685 304.593,397.885 294.434,375.26 		"/>
+                                                <polygon className="zongon" fill="#74C476" points="294.434,375.26 276.508,389.194 272.151,370.584 		"/>
+                                                <polygon className="zongon" fill="#238B45" points="276.508,389.194 275.892,389.676 252.65,384.968 272.151,370.584 		"/>
+                                                <polygon className="zongon" fill="#A1D99B" points="272.151,370.584 252.65,384.968 251.508,360.459 		"/>
+                                                <polygon className="zongon" fill="#005A32" points="319.735,349.967 313.883,374.685 290.983,359.102 		"/>
+                                                <polygon className="zongon" fill="#A1D99B" points="319.735,349.967 300.983,342.185 315.45,325.36 		"/>
+                                                <polygon className="zongon" fill="#A1D99B" points="501,332.402 486.475,343.592 476.516,329.659 		"/>
+                                                <polygon className="zongon" fill="#41AB5D" points="583.334,531.985 541.684,551.252 516.319,563 513.743,555.061 		"/>
+                                                <polygon className="zongon" fill="#005A32" points="657.793,496.077 583.334,531.985 576.702,522.227 576.717,522.227 		"/>
+                                                <polygon className="zongon" fill="#A1D99B" points="657.793,496.077 644.528,516.702 583.334,531.985 		"/>
+                                                <polygon className="zongon" fill="#005A32" points="695.084,522.762 644.528,516.702 657.793,496.077 		"/>
+                                                <polygon className="zongon" fill="#238B45" points="706.518,515.252 695.084,522.762 703.5,499.602 		"/>
+                                                <polyline fill="none" stroke="#FFFFFF" strokeMiterlimit="10" points="579.334,314.134 579.342,314.134 579.35,314.134 		"/>
+                                                <line fill="none" stroke="#FFFFFF" strokeMiterlimit="10" x1="579.35" y1="314.126" x2="579.334" y2="314.093"/>
+                                                <polygon className="zongon" fill="#74C476" points="210.633,352.084 198.017,363.393 199.026,340.218 		"/>
+                                                <polygon className="zongon" fill="#B10026" stroke="#FFFFFF" strokeMiterlimit="10" points="384.458,375.443 384.458,375.443 384.458,375.443 		"/>
+                                            </g>
+                                            <polygon className="zongon" fill="#005A32" points="152.733,304.952 122.441,335.452 112.025,320.66 	"/>
+                                            <polygon className="zongon" fill="#41AB5D" points="122.441,335.452 111.084,360.218 93.483,363.368 	"/>
+                                            <polygon className="zongon" fill="#A1D99B" points="116.901,384.651 93.483,363.368 111.084,360.218 	"/>
+                                            <polygon className="zongon" fill="#74C476" points="153.033,405.742 130.742,413.485 116.901,384.651 133.825,394.151 	"/>
+                                            <polygon className="zongon" fill="#005A32" points="159.267,374.584 153.033,405.742 133.825,394.151 	"/>
+                                            <polygon className="zongon" fill="#005A32" points="153.033,405.742 149.083,428.344 143.483,467.926 138.408,505.709 127.358,467.543 	"/>
+                                            <polygon className="zongon" fill="#A1D99B" points="170.608,336.568 159.267,374.584 147.433,327.043 	"/>
+                                            <polygon className="zongon" fill="#238B45" points="176.209,320.16 170.608,336.568 147.433,327.043 	"/>
+                                            <polygon className="zongon" fill="#41AB5D" points="186.716,350.935 170.608,336.568 176.209,320.16 	"/>
+                                            <polygon className="zongon" fill="#005A32" points="199.026,340.218 198.017,363.393 159.267,374.584 186.716,350.935 	"/>
+                                            <polygon className="zongon" fill="#41AB5D" points="591.934,290.167 579.35,314.126 579.35,314.134 579.342,314.134 579.334,314.151 566.368,308.61 	
+                                                "/>
+                                            <polygon className="zongon" fill="#238B45" points="576.194,387.118 553.901,407.952 561.051,387.309 	"/>
+                                            <polygon className="zongon" fill="#238B45" points="561.051,387.309 553.901,407.952 537.86,389.202 	"/>
+                                            <polygon className="zongon" fill="#238B45" points="537.86,389.202 508.325,389.31 522.651,373.16 	"/>
+                                            <polygon className="zongon" fill="#238B45" points="524.526,348.785 522.651,373.16 499.651,361.869 	"/>
+                                            <polygon className="zongon" fill="#005A32" points="541.819,334.41 524.526,348.785 531.819,315.143 	"/>
+                                            <polygon className="zongon" fill="#238B45" points="282.925,329.826 278.9,356.635 251.508,360.459 	"/>
+                                            <polygon className="zongon" fill="#74C476" points="313.883,374.685 294.434,375.26 290.983,359.102 	"/>
+                                            <line fill="none" stroke="#FFFFFF" strokeMiterlimit="10" x1="276.659" y1="389.818" x2="276.508" y2="389.194"/>
+                                            <polygon className="zongon" fill="#238B45" points="320.984,386.768 304.593,397.885 313.883,374.685 	"/>
+                                            <polygon className="zongon" fill="#005A32" points="368.341,355.935 360.41,370.584 340.925,353.785 	"/>
+                                            <polygon className="zongon" fill="#A1D99B" points="392.092,342.051 368.341,355.935 375.292,327.468 	"/>
+                                            <polygon className="zongon" fill="#238B45" points="411.542,348.577 381.327,356.885 392.092,342.051 	"/>
+                                            <polygon className="zongon" fill="#A1D99B" points="583.334,531.985 513.743,555.061 576.702,522.227 	"/>
+                                            <polygon className="zongon" fill="#41AB5D" points="703.5,499.602 695.084,522.762 657.793,496.077 	"/>
+                                            <polygon className="zongon" fill="#A1D99B" points="593.483,244.41 591.043,260.693 576.676,263.301 	"/>
+                                            <polygon className="zongon" fill="#A1D99B" points="300.983,342.185 278.9,356.635 282.925,329.826 	"/>
+                                            <polygon className="zongon" fill="#238B45" points="315.45,325.36 300.983,342.185 282.925,329.826 	"/>
+                                            <polygon className="zongon" fill="#74C476" points="319.735,349.967 290.983,359.102 300.983,342.185 	"/>
+                                            <polygon className="zongon" fill="#005A32" points="278.9,356.635 272.151,370.584 251.508,360.459 	"/>
+                                            <polygon className="zongon" fill="#238B45" points="294.434,375.26 272.151,370.584 290.983,359.102 	"/>
+                                            <polygon className="zongon" fill="#238B45" points="384.459,375.443 360.41,370.584 381.327,356.885 	"/>
+                                            <polygon className="zongon" fill="#74C476" points="403,371.51 384.459,375.443 381.327,356.885 	"/>
+                                            <polygon className="zongon" fill="#41AB5D" points="476.516,329.659 458.559,361.452 452.684,340.892 	"/>
+                                            <polygon className="zongon" fill="#A1D99B" points="360.41,370.584 358.333,393.018 338.268,380.518 	"/>
                                         </g>
                                     </Link>
                                 </svg>
@@ -1904,7 +2087,7 @@ export default class HomeIndex extends React.Component {
                                     width="841.89px" height="595.276px" viewBox="0 0 841.89 595.276" enableBackground="new 0 0 841.89 595.276"
                                     xmlSpace="preserve">
                                     <Link to="/onlineevents">
-                                        <g>
+                                        {/* <g>
                                             <g>
                                                 <polygon className="onlinegon" fill="#A81E35" points="377.076,168.045 367.474,162.272 371.371,156.706 		" />
                                                 <polygon className="onlinegon" fill="#F38889" points="381.111,177.441 367.196,179.25 377.076,168.045 		" />
@@ -2240,6 +2423,45 @@ export default class HomeIndex extends React.Component {
                                                 <polygon className="onlinegon" fill="#F38889" points="601.529,414.22 594.221,427.67 577.84,425.17 		" />
                                                 <line fill="none" x1="395.58" y1="438.57" x2="395.54" y2="438.55" />
                                                 <polygon className="onlinegon" fill="#FBD8C2" points="395.56,438.531 395.54,438.55 375.08,429.3 387.09,422.71 		" />
+                                            </g>
+                                        </g> */}
+                                        <g>
+                                            <g>
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="370.563,225.944 339.344,208.134 339.952,152.505 339.961,152.535 		"/>
+                                                <polygon className="onlinegon" fill="#EF4F54" points="370.563,225.944 370.563,225.955 338.755,261.198 339.344,208.134 		"/>
+                                                <polygon className="onlinegon" fill="#ED2E38" points="366.608,278.082 338.147,316.914 338.755,261.198 		"/>
+                                                <polygon className="onlinegon" fill="#EF4F54" points="376.497,312.332 338.147,316.914 366.608,278.082 		"/>
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="393.768,328.751 365.325,355.428 376.497,312.332 		"/>
+                                                <polygon className="onlinegon" fill="#ED2E38" points="365.325,355.428 337.434,381.594 338.147,316.914 		"/>
+                                                <polygon className="onlinegon" fill="#A81E35" points="424.543,355.428 424.543,402.316 393.768,328.751 		"/>
+                                                <polygon className="onlinegon" fill="#F38889" points="458.061,435.824 441.467,442.771 424.555,402.336 		"/>
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="370.563,225.955 366.608,278.082 338.755,261.198 		"/>
+                                                <polygon className="onlinegon" fill="#A81E35" points="376.497,312.332 365.325,355.428 338.147,316.914 		"/>
+                                                <polygon className="onlinegon" fill="#F38889" points="406.58,312.332 393.768,328.751 376.497,312.332 		"/>
+                                                <polygon className="onlinegon" fill="#F38889" points="395.021,284.613 366.608,278.082 370.563,225.955 370.573,225.973 		"/>
+                                                <polygon className="onlinegon" fill="#ED2E38" points="395.021,284.613 376.497,312.332 366.608,278.082 		"/>
+                                                <polygon className="onlinegon" fill="#EF4F54" points="406.58,312.332 376.497,312.332 395.021,284.613 395.03,284.642 		"/>
+                                                <polygon className="onlinegon" fill="#ED2E38" points="424.543,355.428 393.768,328.751 406.58,312.332 406.589,312.36 		"/>
+                                                <polygon className="onlinegon" fill="#EF4F54" points="458.061,435.824 424.555,402.336 424.543,402.328 424.543,355.438 424.555,355.449 
+                                                    424.555,355.458 		"/>
+                                            </g>
+                                            <g>
+                                                <polygon className="onlinegon" fill="#FCE0CE" points="379.902,191.26 370.573,225.973 370.563,225.955 370.563,225.944 339.961,152.535 		"/>
+                                                <polygon className="onlinegon" fill="#F15860" points="418.003,228.193 370.573,225.973 379.902,191.26 		"/>
+                                                <polygon className="onlinegon" fill="#F15860" points="458.014,266.977 410.39,259.867 418.003,228.193 		"/>
+                                                <polygon className="onlinegon" fill="#F27276" points="458.014,266.977 427.768,290.99 410.39,259.867 		"/>
+                                                <polygon className="onlinegon" fill="#FCE0CE" points="466.242,313.392 427.273,314.821 427.768,290.99 		"/>
+                                                <polygon className="onlinegon" fill="#F15860" points="504.457,311.994 466.242,313.392 458.014,266.977 		"/>
+                                                <polygon className="onlinegon" fill="#B94B5D" points="457.867,388.462 424.555,355.458 424.555,355.449 427.273,314.821 		"/>
+                                                <polygon className="onlinegon" fill="#F5A0A1" points="474.684,428.956 458.068,435.854 457.867,388.482 		"/>
+                                                <polygon className="onlinegon" fill="#FCE0CE" points="418.003,228.193 410.39,259.867 370.573,225.973 		"/>
+                                                <polygon className="onlinegon" fill="#B94B5D" points="466.242,313.392 427.768,290.99 458.014,266.977 		"/>
+                                                <polygon className="onlinegon" fill="#F5A0A1" points="427.768,290.99 427.273,314.821 406.589,312.36 		"/>
+                                                <polygon className="onlinegon" fill="#F5A0A1" points="410.39,259.867 395.03,284.642 395.021,284.613 370.573,225.973 		"/>
+                                                <polygon className="onlinegon" fill="#F15860" points="427.768,290.99 395.03,284.642 410.39,259.867 		"/>
+                                                <polygon className="onlinegon" fill="#F27276" points="427.768,290.99 406.589,312.36 406.58,312.332 395.03,284.642 		"/>
+                                                <polygon className="onlinegon" fill="#F27276" points="427.273,314.821 424.555,355.449 424.543,355.438 424.543,355.428 406.589,312.36 		"/>
+                                                <polygon className="onlinegon" fill="#F27276" points="458.068,435.854 458.061,435.824 424.555,355.458 457.867,388.472 457.867,388.482 		"/>
                                             </g>
                                         </g>
                                     </Link>
@@ -2798,9 +3020,9 @@ export default class HomeIndex extends React.Component {
                             </svg> */}
 
                                 <svg version="1.1" id="Layer_1" className="mainfinalsplitlit mainfinalsplitlit2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                    viewBox="0 0 4961 3508" enableBackground="new 0 0 4961 3508" xmlSpace="preserve">
+                                    viewBox="0 0 841.89 595.276" enableBackground="new 0 0 841.89 595.276" xmlSpace="preserve">
 
-                                    <polygon className="carngon mainfinalst0" points="1657,1942 1334,2025.9 1304,1782.6 " />
+                                    {/* <polygon className="carngon mainfinalst0" points="1657,1942 1334,2025.9 1304,1782.6 " />
                                     <polygon className="carngon mainfinalst0" points="1419.9,1601.3 1304,1782.6 1296.5,1722.1 1272.3,1592.6 " />
                                     <path className="carngon mainfinalst1" d="M1375.4,1493.1l-134-63.2c29.3-45,29.3-45,29.3-45L1375.4,1493.1z" />
                                     <polygon className="carngon mainfinalst2" points="1577,1468 1270.7,1384.9 1528.8,1357.3 " />
@@ -2958,8 +3180,53 @@ export default class HomeIndex extends React.Component {
                                     <polygon className="carngon mainfinalst0" points="2978.4,2256.2 2958.5,2421.4 2927.4,2305.9 " />
                                     <polyline className="carngon mainfinalst9" points="1480.4,626 1481.3,624.1 1481.3,625.5 " />
                                     <polygon className="carngon mainfinalst0" points="2004.6,2107.1 1942,2064.1 1935.9,1878 " />
-                                    <line className="carngon mainfinalst8" x1="1209.7" y1="2986.1" x2="1209.6" y2="2985.7" />
+                                    <line className="carngon mainfinalst8" x1="1209.7" y1="2986.1" x2="1209.6" y2="2985.7" /> */}
+                                        <polygon className="carngon" fill="#FCEB55" points="353.153,284.52 254.954,262.835 344.406,229.294 "/>
+                                        <polygon className="carngon" fill="#F4A934" points="353.153,284.52 254.954,284.52 254.954,262.835 "/>
+                                        <polygon className="carngon" fill="#B94B5D" stroke="#FFFFFF" strokeMiterlimit="10" points="428.438,194.778 428.438,194.958 428.438,194.958 
+                                            428.402,194.923 "/>
+                                        <polygon className="carngon" fill="#FD9534" points="602.536,262.835 503.578,284.52 512.758,229.294 "/>
+                                        <polygon className="carngon" fill="#FCEB55" points="602.536,262.835 602.536,284.52 503.578,284.52 "/>
+                                        <polygon className="carngon" fill="#FD9534" points="298.29,284.52 274.94,318.242 254.954,284.52 "/>
+                                        <polygon className="carngon" fill="#F7CB46" points="601.632,284.52 578.283,318.242 558.298,284.52 "/>
+                                        <polygon className="carngon" fill="#FD9534" points="424.027,364.744 330.853,398.141 361.61,322.242 "/>
+                                        <polygon className="carngon" fill="#F4A934" points="330.853,398.141 274.94,474.041 274.94,322.242 "/>
+                                        <polygon className="carngon" fill="#FCEB55" points="459.772,482.111 359.478,512.253 251.05,482.111 "/>
+                                        <polygon className="carngon" fill="#F7CB46" points="606.439,512.253 359.478,512.253 459.772,482.111 "/>
+                                        <polygon className="carngon" fill="#FCEB55" points="606.439,482.111 606.439,512.253 459.772,482.111 "/>
+                                        <polygon className="carngon" fill="#FCEB55" points="382.32,474.041 274.94,474.041 330.853,398.141 "/>
+                                        <polygon className="carngon" fill="#F4A934" points="424.027,364.744 382.32,474.041 330.853,398.141 "/>
+                                        <polygon className="carngon" fill="#F7CB46" points="526.104,160.473 436.212,160.473 508.452,141.541 "/>
+                                        <polygon className="carngon" fill="#FD9534" points="526.104,122.609 508.452,141.541 436.212,122.609 "/>
+                                        <line fill="#B94B5D" stroke="#FFFFFF" strokeMiterlimit="10" x1="428.438" y1="194.778" x2="428.438" y2="194.958"/>
+                                        <polygon className="carngon" fill="#FD9534" points="471.629,284.52 448.28,318.242 428.293,284.52 "/>
+                                        <polygon className="carngon" fill="#F7CB46" points="424.027,364.744 361.61,322.242 404.945,322.242 "/>
+                                        <polygon className="carngon" fill="#F4A934" points="448.28,322.242 424.027,364.744 404.945,322.242 "/>
+                                        <polygon className="carngon" fill="#F7CB46" points="514.962,396.044 472.422,474.041 424.027,364.744 "/>
+                                        <polygon className="carngon" fill="#F7CB46" points="341.623,284.52 318.275,318.242 298.29,284.52 "/>
+                                        <polygon className="carngon" fill="#F7CB46" points="361.61,322.242 330.853,398.141 274.94,322.242 "/>
+                                        <polygon className="carngon" fill="#FD9534" points="558.298,284.52 534.95,318.242 514.962,284.52 "/>
+                                        <polygon className="carngon" fill="#F4A934" points="578.283,322.242 514.962,396.044 536.613,322.242 "/>
+                                        <polygon className="carngon" fill="#FD9534" points="514.962,396.044 424.027,364.744 448.28,322.242 "/>
+                                        <polygon className="carngon" fill="#FCEB55" points="536.613,322.242 514.962,396.044 448.28,322.242 "/>
+                                        <polygon className="carngon" fill="#F4A934" points="578.283,474.041 472.422,474.041 514.962,396.044 "/>
+                                        <polygon className="carngon" fill="#FD9534" points="578.283,322.242 578.283,474.041 514.962,396.044 "/>
+                                        <polygon className="carngon" fill="#F4A934" points="508.452,141.541 436.212,160.473 436.212,122.609 "/>
+                                        <polygon className="carngon" fill="#F7CB46" points="428.438,197.958 422.04,205.152 353.153,284.52 344.406,229.294 422.04,200.165 428.438,197.958 "/>
+                                        <polygon className="carngon" fill="#FD9534" points="384.959,284.52 361.61,318.242 341.623,284.52 "/>
+                                        <polygon className="carngon" fill="#F7CB46" points="428.293,284.52 404.945,318.242 384.959,284.52 "/>
+                                        <polygon className="carngon" fill="#F4A934" points="428.438,197.958 428.438,207.213 428.293,284.52 353.153,284.52 422.04,205.152 428.438,197.958 "/>
+                                        <polygon className="carngon" fill="#F7CB46" points="514.962,284.52 491.614,318.242 471.629,284.52 "/>
+                                        <polygon className="carngon" fill="#FCEB55" points="503.578,284.52 428.293,284.52 428.438,207.213 428.438,197.958 434.545,204.972 "/>
+                                        <polygon className="carngon" fill="#F4A934" points="512.758,229.294 503.578,284.52 434.545,204.972 428.438,197.958 428.438,197.958 434.545,200.055 
+                                            "/>
+                                        <polygon className="carngon" fill="#F4A934" points="428.755,193.216 428.624,193.258 420.944,196.129 420.944,122.609 "/>
+                                        <path fill="#B94B5D" stroke="#FFFFFF" strokeMiterlimit="10" d="M428.438,194.958"/>
+                                        <polygon className="carngon" fill="#FD9534" points="436.212,122.609 428.755,193.216 420.944,122.609 "/>
+                                        <polygon className="carngon" fill="#F7CB46" points="436.212,122.609 436.212,195.995 428.755,193.216 "/>
+                                        <polygon className="carngon" fill="#F7CB46" points="359.478,512.253 251.05,512.253 251.05,482.111 "/>
                                 </svg>
+                                
                             </div>
                             <div className="mainfinalmainattractioninternal mainfinalattraction1" id="carnivalstrigger">
                                 <div className="mainfinalmainattractioninternalsvgcontainer">
@@ -3104,7 +3371,7 @@ export default class HomeIndex extends React.Component {
                         </div>
                     </div>
                     <div className="mainfinalmainpage5">
-                        <div className="mainfinalmainpage5-thomsologo">
+                        {/* <div className="mainfinalmainpage5-thomsologo">
                             <img src={logosvg} alt="" />
                         </div>
                         <div className="mainfinalmainpage5con">
@@ -3128,11 +3395,6 @@ export default class HomeIndex extends React.Component {
                                             <div className="mainfinalmainpagecontainer-outer-rightin">
                                                 <div className="mainfinalmainpagecontainer-outer-rightin-inner">
                                                     <div className="mainfinalmainpagecontainer-outer-rightin-inner-inside"><Link to="/team">Team Page<span><img src={rightarrow} alt="right-arrow" srcSet="" /></span></Link>
-
-                                                        {/* <div className="mainfinalmainpage5internalsvgcontainer">
-                                                                    <img src="./right-arrow.svg" alt="right-arrow" srcSet="">
-                                                             </div>    */}
-
                                                     </div>
                                                 </div>
                                             </div>
@@ -3156,67 +3418,72 @@ export default class HomeIndex extends React.Component {
                                                     <div className="mainfinalmainpagecontainer-outer-rightin-inner">
                                                         <div className="mainfinalmainpagecontainer-outer-rightin-inner-inside">
                                                             <a target="_blank" rel="noopener noreferrer" href="https://goo.gl/maps/b9xPn3VcGVF2">Get Directions <span><img src={rightarrow} alt="right-arrow" /></span></a>
-                                                            {/*- <div className="mainfinalmainpage5internalsvgcontainer">
-                                                                            <img src="./right-arrow.svg" alt="right-arrow" srcSet="">
-                                                                     </div>    */}
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    {/*<div className="mainpagecontainer-outer-right">
-                        <div className="mainpagecontainer-outer-rightin">
-                            <div className="mainpagecontainer-outer-rightin-inner">
-                            </div>
-
-                        </div>
-                        <div className="mainpagecontainer-outer-rightin">
-                                <div className="mainpagecontainer-outer-rightin-inner">
                                 </div>
-                        </div>                     */}
-
-                                </div>
-
-
-                                {/* <div className="mainpagecontainer-outer">
-                <div className="mainpage5container-inner"><h1>Contact</h1>
-                    <div className="mainpage5container-inner-in">
-                            <div className="mainpage5container-inner-in-left"><img src="./phone svg-01.svg" alt="" srcSet=""></div>
-                            <div className="mainpage5container-inner-in-right">
-                                <h4>John Doe (John Doe)</h4>
-                                <h4>43566237757</h4>
-                                <br>
-                                <h4>John Doe (John Doe)</h4>
-                                <h4>43566237757</h4>
-                            </div>
-                    </div>
-                </div>
-                <div className="mainpage5container-inner mainpage5container-innersec">
-                    <h1>Address</h1>
-                    <div className="mainpage5container-inner-in">
-                            <div className="mainpage5container-inner-in-left"><img src="./address svg-01.svg" alt="" srcSet=""></div>
-                            <div className="mainpage5container-inner-in-right">
-                                <h4>THOMSO OFFICE</h4>
-                                <h4> Multi Activity Centre</h4>
-                                <h4>Indian Institute of Technology</h4> 
-                                  <h4>  Roorkee</h4>
-                                <h4>646774373474</h4>
-                            </div>
-                    </div>
-                </div>
-            </div>
-            <div className="mainpagecontainer-outerright">
-                <div className="getdirectionscontainerlink">
-
-                </div>
-                <div className="teampagecontainerlink">
-                </div>
-            </div> */}
                             </div>
                         </div>
+                        </div> */}
+                        <div className="mainfinalmainpage5wholecontainer">
+                            <div className="mainfinalregisterloginwholecontainer">
+                                <div className="mainfinalregisterloginwholecontainerimglogocontainer">
+                                    <img src={logosvg} alt="" />
+                                </div>
+                                <div className="mainfinalregisterloginwholecontainerregisterlogintextcontainer">
+                                    <Link to="/main">Register/Login</Link>   
+                                </div>                            
+                            </div>
+                            <div className="mainfinalsecondwholeinternalcontainer">
+                                    <div className="mainfinalsecondwholeinternalcontainerinner">
+                                        <div className="mainfinalsecondwholeinternalcontainerinnerin">
+                                        <div className="mainfinalsecondwholeinternalcontainerinnerintop">
+                                            <Link to="/team">Contact Us<span><img src={rightarrow} alt="right-arrow" srcSet="" /></span></Link>
+                                        </div>
+                                        <div className="mainfinalsecondwholeinternalcontainerinnerinbottom">
+                                            <h3>+91-8417954805</h3>
+                                            <h3>thomso@iitr.ac.in</h3>
+                                            </div>    
+                                        </div>
+                                    </div>
+                                    <div className="mainfinalsecondwholeinternalcontainerinner">
+                                        <div className="mainfinalsecondwholeinternalcontainerinnerin">
+                                            <div className="mainfinalsecondwholeinternalcontainerinnerinsecond">
+                                            <h4>follow us</h4>
+                                            <div className="mainfinalsecondwholeinternalcontainerinnerinsecondsocial">
+                                            <a href="https://www.facebook.com/thomsoiitroorkee/" target="_blank" rel="noopener noreferrer"><img src={fbicon} alt="" /></a>
+                                            <a href="https://twitter.com/thomso_iitr" target="_blank" rel="noopener noreferrer"><img src={twicon} alt="" /></a>
+                                            <a href="https://www.instagram.com/thomso.iitr/" target="_blank" rel="noopener noreferrer"><img src={instaicon} alt="" /></a>
+                                            <a href="https://www.youtube.com/user/iitrthomso" target="_blank" rel="noopener noreferrer"><img src={youtubeicon} alt="" /></a>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="mainfinalsecondwholeinternalcontainerinner">
+                                        <div className="mainfinalsecondwholeinternalcontainerinnerin">
+                                        <div className="mainfinalsecondwholeinternalcontainerinnerintop">
+                                        <a target="_blank" rel="noopener noreferrer" href="https://goo.gl/maps/b9xPn3VcGVF2">Get Directions <span><img src={rightarrow} alt="right-arrow" /></span></a>
+                                        </div>
+                                        <div className="mainfinalsecondwholeinternalcontainerinnerinbottom">
+                                            <h3>Thomso Office</h3>
+                                            <h3>Multi Activity Centre</h3>
+                                            <h3>Indian Institute Of Technology</h3>
+                                            <h3>Roorkee 247667</h3>                                           
+                                            </div>                            
+                                        </div>
+                                    </div>
+                            </div>
+                            <div className="mainfinalbottomeffectwholecontainer">
+                                <img src={backCircle} alt="" />
+                                <img src={frontCircle} alt="" />
+                                <img src={astronaut} alt="" />
+                            </div>
+                        </div>
                     </div>
-                </div>
+                    </div>
             </div>
         )
     }
