@@ -93,8 +93,7 @@
     width:100%;
     height:100%;
     position: relative;
-    overflow: hidden;
-    cursor: url(../img/cursor.png), auto;	
+    overflow: hidden;	
 }
 .mainfinalmainfirst{
     width:100vw;
@@ -1549,9 +1548,14 @@ padding:1%;
     font-weight: 300;
     text-decoration: none;
     justify-content: space-between;
+    position:relative;
 }
 .mainfinalsecondwholeinternalcontainerinnerintop span{
     width:18%;
+}
+.mainfinalsecondwholeinternalcontainerinnerintop img{
+    position:absolute;
+    top:31%;
 }
 .mainfinalsecondwholeinternalcontainerinnerinsecond{
     display:flex;
@@ -1572,12 +1576,14 @@ padding:1%;
     border: 1px solid #a7a7a7;
     padding: 7px;
     border-radius: 38px;
+    transition: all linear.5s;
 }
 .mainfinalsecondwholeinternalcontainerinnerinsecondsocial>a:hover{
     background-color:black;
 }
 .mainfinalsecondwholeinternalcontainerinnerinsecondsocial>a>img{
     width:30px;
+    transition: all linear.5s;
 }
 .mainfinalsecondwholeinternalcontainerinnerinsecondsocial>a:hover img{
     filter:invert(100%);
@@ -1594,15 +1600,21 @@ padding:1%;
 .mainfinalbottomeffectwholecontainer>img{
     position:absolute;
     left:50%;
+    top:-28%;
     transform:translateX(-50%);
-    width: 100%;
+    width: 150%;
 }
 
 .mainfinalbottomeffectwholecontainer>img:nth-child(1){
-    animation: backrotation 50s linear infinite;
+    animation: backrotation 126s linear infinite;
     transition:all linear 0.5s;
+    width:140%;
 }
-
+.mainfinalbottomeffectwholecontainer>img:nth-child(3){
+    width: 7%;
+    position: absolute;
+    top: 44%;
+}
 @keyframes frontrotation{
     0%{
         transform: translateX(-50%) rotateZ(0deg);
@@ -1621,7 +1633,7 @@ padding:1%;
     }
 } 
 .mainfinalbottomeffectwholecontainer>img:nth-child(2){
-    animation: backrotation 30s linear infinite;
+    animation: backrotation 88s linear infinite;
     transition:all linear 0.5s;
 }
 @keyframes backrotation{
@@ -1659,7 +1671,7 @@ padding:1%;
     .mainfinalsecondwholeinternalcontainer{
         width:85%;
         height:49%;
-        top:30%;
+        top:33%;
     }
     .mainfinalsecondwholeinternalcontainerinner{
         width: 100%;
@@ -1682,11 +1694,24 @@ padding:1%;
     .mainfinalsecondwholeinternalcontainerinnerintop>a {
         font-size: 1.6rem;
         margin-bottom: -10px;
+        top:-15px;
     }
     .mainfinalsecondwholeinternalcontainerinnerinbottom>h3{
         font-size: 1rem;
     }
     .mainfinalregisterloginwholecontainerregisterlogintextcontainer{
         font-size: 1.3rem;                                                                          
+    }
+    .mainfinalbottomeffectwholecontainer>img:nth-child(1){
+        top:-7%;
+        width:105%;
+    }
+    .mainfinalbottomeffectwholecontainer>img:nth-child(2){
+        top:-7%;
+        width:105%;
+    }
+    .mainfinalbottomeffectwholecontainer>img:nth-child(3){
+        top:12%;
+        width:22%;
     }
 }

@@ -889,43 +889,43 @@ export default class HomeIndex extends React.Component {
                                         301.565,722.842 301.59,722.279 330.603,698.799 331.964,698.799 	"/>
                                 </g> */}
                                                                 <g>
-                                    <polygon className="workgon" fill-rule="evenodd" clipRule="evenodd" fill="#B10026" points="389.25,321.96 295.42,231.3 366.75,205.96 	"/>
-                                    <polygon className="workgon" fill-rule="evenodd" clipRule="evenodd" fill="#E31A1C" points="295.42,231.3 223.36,330.82 212.75,220.791 	"/>
-                                    <polygon className="workgon" fill-rule="evenodd" clipRule="evenodd" fill="#FEB24C" points="389.25,321.96 276.991,427.561 223.36,330.82 	"/>
-                                    <polygon className="workgon" fill-rule="evenodd" clipRule="evenodd" fill="#FED976" points="414.39,426.27 305.34,524.8 276.991,427.561 	"/>
-                                    <polygon className="workgon" fill-rule="evenodd" clipRule="evenodd" fill="#FC4E2A" points="491.31,524.8 305.34,524.8 414.39,426.27 	"/>
-                                    <polygon className="workgon" fill-rule="evenodd" clipRule="evenodd" fill="#FEB24C" points="514.75,430.981 491.31,524.8 414.39,426.27 	"/>
-                                    <polygon className="workgon" fill-rule="evenodd" clipRule="evenodd" fill="#FED976" points="568.75,341.63 514.75,430.981 414.39,426.27 	"/>
-                                    <polygon className="workgon" fill-rule="evenodd" clipRule="evenodd" fill="#FC4E2A" points="568.75,341.63 414.39,426.27 389.25,321.96 	"/>
-                                    <polygon className="workgon" fill-rule="evenodd" clipRule="evenodd" fill="#B10026" points="587.25,234.63 568.75,341.63 479.42,218.63 	"/>
-                                    <polygon className="workgon" fill-rule="evenodd" clipRule="evenodd" fill="#FEB24C" points="587.25,234.63 479.42,218.63 528.861,134.311 	"/>
-                                    <polygon className="workgon" fill-rule="evenodd" clipRule="evenodd" fill="#B10026" points="528.861,134.311 479.42,218.63 451.75,88.13 	"/>
-                                    <polygon className="workgon" fill-rule="evenodd" clipRule="evenodd" fill="#FED976" points="451.75,88.13 366.75,205.96 354.42,87.53 	"/>
-                                    <polygon className="workgon" fill-rule="evenodd" clipRule="evenodd" fill="#E31A1C" points="366.75,205.96 267.25,135.63 354.42,87.53 	"/>
-                                    <polygon className="workgon" fill-rule="evenodd" clipRule="evenodd" fill="#E31A1C" points="319.02,546.451 319.02,583.44 307.75,564.071 	"/>
-                                    <polygon className="workgon" fill-rule="evenodd" clipRule="evenodd" fill="#FEB24C" points="479.701,582.92 319.02,546.451 387.02,546.15 
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#B10026" points="389.25,321.96 295.42,231.3 366.75,205.96 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E31A1C" points="295.42,231.3 223.36,330.82 212.75,220.791 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FEB24C" points="389.25,321.96 276.991,427.561 223.36,330.82 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FED976" points="414.39,426.27 305.34,524.8 276.991,427.561 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FC4E2A" points="491.31,524.8 305.34,524.8 414.39,426.27 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FEB24C" points="514.75,430.981 491.31,524.8 414.39,426.27 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FED976" points="568.75,341.63 514.75,430.981 414.39,426.27 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FC4E2A" points="568.75,341.63 414.39,426.27 389.25,321.96 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#B10026" points="587.25,234.63 568.75,341.63 479.42,218.63 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FEB24C" points="587.25,234.63 479.42,218.63 528.861,134.311 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#B10026" points="528.861,134.311 479.42,218.63 451.75,88.13 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FED976" points="451.75,88.13 366.75,205.96 354.42,87.53 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E31A1C" points="366.75,205.96 267.25,135.63 354.42,87.53 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E31A1C" points="319.02,546.451 319.02,583.44 307.75,564.071 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FEB24C" points="479.701,582.92 319.02,546.451 387.02,546.15 
                                         429.791,545.94 431.06,545.94 479.571,545.71 	"/>
-                                    <polygon className="workgon" fill-rule="evenodd" clipRule="evenodd" fill="#B10026" points="491.02,564.01 479.701,582.92 479.571,545.71 	"/>
-                                    <polygon className="workgon" fill-rule="evenodd" clipRule="evenodd" fill="#E31A1C" points="398.831,663.59 355.13,694.75 340.65,664.031 
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#B10026" points="491.02,564.01 479.701,582.92 479.571,545.71 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E31A1C" points="398.831,663.59 355.13,694.75 340.65,664.031 
                                         383.791,663.72 384.27,663.72 384.741,663.69 	"/>
-                                    <polygon className="workgon" fill-rule="evenodd" clipRule="evenodd" fill="#FED976" points="399.281,712.47 355.13,694.75 398.831,663.59 	"/>
-                                    <polygon className="workgon" fill-rule="evenodd" clipRule="evenodd" fill="#B10026" points="441.63,695.01 399.281,712.47 398.831,663.59 	"/>
-                                    <polygon className="workgon" fill-rule="evenodd" clipRule="evenodd" fill="#FC4E2A" points="457,663.17 441.63,695.01 398.831,663.59 420.38,663.43 
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FED976" points="399.281,712.47 355.13,694.75 398.831,663.59 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#B10026" points="441.63,695.01 399.281,712.47 398.831,663.59 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FC4E2A" points="457,663.17 441.63,695.01 398.831,663.59 420.38,663.43 
                                         422.38,663.43 	"/>
-                                    <polygon className="workgon" fill-rule="evenodd" clipRule="evenodd" fill="#FEB24C" points="366.75,205.96 295.42,231.3 267.25,135.63 	"/>
-                                    <polygon className="workgon" fill-rule="evenodd" clipRule="evenodd" fill="#FC4E2A" points="295.42,231.3 212.75,220.791 267.25,135.63 	"/>
-                                    <polygon className="workgon" fill-rule="evenodd" clipRule="evenodd" fill="#FC4E2A" points="479.42,218.63 366.75,205.96 451.75,88.13 	"/>
-                                    <polygon className="workgon" fill-rule="evenodd" clipRule="evenodd" fill="#FEB24C" points="479.42,218.63 389.25,321.96 366.75,205.96 	"/>
-                                    <polygon className="workgon" fill-rule="evenodd" clipRule="evenodd" fill="#E31A1C" points="414.39,426.27 276.991,427.561 389.25,321.96 	"/>
-                                    <polygon className="workgon" fill-rule="evenodd" clipRule="evenodd" fill="#E31A1C" points="568.75,341.63 389.25,321.96 479.42,218.63 	"/>
-                                    <polygon className="workgon" fill-rule="evenodd" clipRule="evenodd" fill="#FED976" points="389.25,321.96 223.36,330.82 295.42,231.3 	"/>
-                                    <polygon className="workgon" fill-rule="evenodd" clipRule="evenodd" fill="#FC4E2A" points="479.701,582.92 399.941,583.18 319.02,583.44 
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FEB24C" points="366.75,205.96 295.42,231.3 267.25,135.63 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FC4E2A" points="295.42,231.3 212.75,220.791 267.25,135.63 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FC4E2A" points="479.42,218.63 366.75,205.96 451.75,88.13 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FEB24C" points="479.42,218.63 389.25,321.96 366.75,205.96 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E31A1C" points="414.39,426.27 276.991,427.561 389.25,321.96 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E31A1C" points="568.75,341.63 389.25,321.96 479.42,218.63 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FED976" points="389.25,321.96 223.36,330.82 295.42,231.3 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FC4E2A" points="479.701,582.92 399.941,583.18 319.02,583.44 
                                         319.02,546.451 	"/>
-                                    <polygon className="workgon" fill-rule="evenodd" clipRule="evenodd" fill="#E31A1C" points="491.02,622.531 479.75,641.9 479.75,604.911 	"/>
-                                    <polygon className="workgon" fill-rule="evenodd" clipRule="evenodd" fill="#FEB24C" points="479.75,604.911 319.07,641.38 319.201,604.17 
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#E31A1C" points="491.02,622.531 479.75,641.9 479.75,604.911 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FEB24C" points="479.75,604.911 319.07,641.38 319.201,604.17 
                                         367.71,604.4 368.98,604.4 411.75,604.611 	"/>
-                                    <polygon className="workgon" fill-rule="evenodd" clipRule="evenodd" fill="#B10026" points="319.201,604.17 319.07,641.38 307.75,622.46 	"/>
-                                    <polygon className="workgon" fill-rule="evenodd" clipRule="evenodd" fill="#FED976" points="479.75,604.911 479.75,641.9 398.831,641.64 
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#B10026" points="319.201,604.17 319.07,641.38 307.75,622.46 	"/>
+                                    <polygon className="workgon" fillRule="evenodd" clipRule="evenodd" fill="#FED976" points="479.75,604.911 479.75,641.9 398.831,641.64 
                                         319.07,641.38 	"/>
                                 </g>
                                 </svg>
@@ -1319,7 +1319,7 @@ export default class HomeIndex extends React.Component {
                                             <polyline fill="#282828" points="472.876,239.984 472.837,239.85 472.837,239.829 472.777,239.656 	" />
                                             <line fill="#282828" x1="473.434" y1="239.271" x2="472.876" y2="239.522" /> */}
                                             <g>
-                                                <path fill="#B10026" stroke="#FFFFFF" stroke-miterlimit="10" d="M579.342,314.134l-0.008,0.017l0.016-0.017H579.342z"/>
+                                                <path fill="#B10026" stroke="#FFFFFF" strokeMiterlimit="10" d="M579.342,314.134l-0.008,0.017l0.016-0.017H579.342z"/>
                                                 <polygon className="zongon" fill="#005A32" points="410.577,458.786 383.609,475.883 390.985,448.159 		"/>
                                                 <polygon className="zongon" fill="#74C476" points="390.985,448.159 383.609,475.883 357.026,455.452 		"/>
                                                 <polygon className="zongon" fill="#005A32" points="383.609,475.883 330.233,475.211 357.026,455.452 		"/>
@@ -1352,7 +1352,7 @@ export default class HomeIndex extends React.Component {
                                                 <polygon className="zongon" fill="#238B45" points="637.793,310.66 601.569,325.551 591.934,290.167 602.543,294.543 605.618,295.809 		"/>
                                                 <polygon className="zongon" fill="#005A32" points="601.569,325.551 579.334,314.151 579.35,314.134 579.35,314.126 591.934,290.167 		"/>
                                                 <polygon className="zongon" fill="#238B45" points="591.934,290.167 566.368,308.61 536.485,295.693 509.776,284.161 		"/>
-                                                <polygon className="zongon" fill="#A1D99B" stroke="#FFFFFF" stroke-miterlimit="10" points="516.801,260.468 509.776,284.161 472.008,251.66 		"/>
+                                                <polygon className="zongon" fill="#A1D99B" stroke="#FFFFFF" strokeMiterlimit="10" points="516.801,260.468 509.776,284.161 472.008,251.66 		"/>
                                                 <polygon className="zongon" fill="#41AB5D" points="591.934,290.167 509.776,284.161 516.801,260.468 562.475,278.009 581.327,285.793 		"/>
                                                 <polygon className="zongon" fill="#238B45" points="509.776,284.161 454.11,270.11 472.008,251.66 		"/>
                                                 <polygon className="zongon" fill="#41AB5D" points="472.008,251.66 454.11,270.11 416.25,250.643 		"/>
@@ -1380,7 +1380,7 @@ export default class HomeIndex extends React.Component {
                                                 <polygon className="zongon" fill="#005A32" points="199.108,248.368 171.309,244.833 186.542,237.926 		"/>
                                                 <polygon className="zongon" fill="#238B45" points="593.483,244.41 576.676,263.301 566.676,250.643 		"/>
                                                 <polygon className="zongon" fill="#41AB5D" points="593.483,244.41 566.676,250.643 577.125,237 		"/>
-                                                <path fill="#B10026" stroke="#FFFFFF" stroke-miterlimit="10" d="M272.151,370.584"/>
+                                                <path fill="#B10026" stroke="#FFFFFF" strokeMiterlimit="10" d="M272.151,370.584"/>
                                                 <polygon className="zongon" fill="#238B45" points="501,332.402 476.516,329.659 488.276,315.143 		"/>
                                                 <polygon className="zongon" fill="#41AB5D" points="488.276,315.143 476.516,329.659 466.893,322.818 		"/>
                                                 <polygon className="zongon" fill="#A1D99B" points="476.516,329.659 452.684,340.892 466.893,322.818 		"/>
@@ -1415,10 +1415,10 @@ export default class HomeIndex extends React.Component {
                                                 <polygon className="zongon" fill="#A1D99B" points="657.793,496.077 644.528,516.702 583.334,531.985 		"/>
                                                 <polygon className="zongon" fill="#005A32" points="695.084,522.762 644.528,516.702 657.793,496.077 		"/>
                                                 <polygon className="zongon" fill="#238B45" points="706.518,515.252 695.084,522.762 703.5,499.602 		"/>
-                                                <polyline fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="579.334,314.134 579.342,314.134 579.35,314.134 		"/>
-                                                <line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="579.35" y1="314.126" x2="579.334" y2="314.093"/>
+                                                <polyline fill="none" stroke="#FFFFFF" strokeMiterlimit="10" points="579.334,314.134 579.342,314.134 579.35,314.134 		"/>
+                                                <line fill="none" stroke="#FFFFFF" strokeMiterlimit="10" x1="579.35" y1="314.126" x2="579.334" y2="314.093"/>
                                                 <polygon className="zongon" fill="#74C476" points="210.633,352.084 198.017,363.393 199.026,340.218 		"/>
-                                                <polygon className="zongon" fill="#B10026" stroke="#FFFFFF" stroke-miterlimit="10" points="384.458,375.443 384.458,375.443 384.458,375.443 		"/>
+                                                <polygon className="zongon" fill="#B10026" stroke="#FFFFFF" strokeMiterlimit="10" points="384.458,375.443 384.458,375.443 384.458,375.443 		"/>
                                             </g>
                                             <polygon className="zongon" fill="#005A32" points="152.733,304.952 122.441,335.452 112.025,320.66 	"/>
                                             <polygon className="zongon" fill="#41AB5D" points="122.441,335.452 111.084,360.218 93.483,363.368 	"/>
@@ -1439,7 +1439,7 @@ export default class HomeIndex extends React.Component {
                                             <polygon className="zongon" fill="#005A32" points="541.819,334.41 524.526,348.785 531.819,315.143 	"/>
                                             <polygon className="zongon" fill="#238B45" points="282.925,329.826 278.9,356.635 251.508,360.459 	"/>
                                             <polygon className="zongon" fill="#74C476" points="313.883,374.685 294.434,375.26 290.983,359.102 	"/>
-                                            <line fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="276.659" y1="389.818" x2="276.508" y2="389.194"/>
+                                            <line fill="none" stroke="#FFFFFF" strokeMiterlimit="10" x1="276.659" y1="389.818" x2="276.508" y2="389.194"/>
                                             <polygon className="zongon" fill="#238B45" points="320.984,386.768 304.593,397.885 313.883,374.685 	"/>
                                             <polygon className="zongon" fill="#005A32" points="368.341,355.935 360.41,370.584 340.925,353.785 	"/>
                                             <polygon className="zongon" fill="#A1D99B" points="392.092,342.051 368.341,355.935 375.292,327.468 	"/>
@@ -2089,7 +2089,7 @@ export default class HomeIndex extends React.Component {
                                     width="841.89px" height="595.276px" viewBox="0 0 841.89 595.276" enableBackground="new 0 0 841.89 595.276"
                                     xmlSpace="preserve">
                                     <Link to="/onlineevents">
-                                        <g>
+                                        {/* <g>
                                             <g>
                                                 <polygon className="onlinegon" fill="#A81E35" points="377.076,168.045 367.474,162.272 371.371,156.706 		" />
                                                 <polygon className="onlinegon" fill="#F38889" points="381.111,177.441 367.196,179.25 377.076,168.045 		" />
@@ -2425,6 +2425,45 @@ export default class HomeIndex extends React.Component {
                                                 <polygon className="onlinegon" fill="#F38889" points="601.529,414.22 594.221,427.67 577.84,425.17 		" />
                                                 <line fill="none" x1="395.58" y1="438.57" x2="395.54" y2="438.55" />
                                                 <polygon className="onlinegon" fill="#FBD8C2" points="395.56,438.531 395.54,438.55 375.08,429.3 387.09,422.71 		" />
+                                            </g>
+                                        </g> */}
+                                        <g>
+                                            <g>
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="370.563,225.944 339.344,208.134 339.952,152.505 339.961,152.535 		"/>
+                                                <polygon className="onlinegon" fill="#EF4F54" points="370.563,225.944 370.563,225.955 338.755,261.198 339.344,208.134 		"/>
+                                                <polygon className="onlinegon" fill="#ED2E38" points="366.608,278.082 338.147,316.914 338.755,261.198 		"/>
+                                                <polygon className="onlinegon" fill="#EF4F54" points="376.497,312.332 338.147,316.914 366.608,278.082 		"/>
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="393.768,328.751 365.325,355.428 376.497,312.332 		"/>
+                                                <polygon className="onlinegon" fill="#ED2E38" points="365.325,355.428 337.434,381.594 338.147,316.914 		"/>
+                                                <polygon className="onlinegon" fill="#A81E35" points="424.543,355.428 424.543,402.316 393.768,328.751 		"/>
+                                                <polygon className="onlinegon" fill="#F38889" points="458.061,435.824 441.467,442.771 424.555,402.336 		"/>
+                                                <polygon className="onlinegon" fill="#FBD8C2" points="370.563,225.955 366.608,278.082 338.755,261.198 		"/>
+                                                <polygon className="onlinegon" fill="#A81E35" points="376.497,312.332 365.325,355.428 338.147,316.914 		"/>
+                                                <polygon className="onlinegon" fill="#F38889" points="406.58,312.332 393.768,328.751 376.497,312.332 		"/>
+                                                <polygon className="onlinegon" fill="#F38889" points="395.021,284.613 366.608,278.082 370.563,225.955 370.573,225.973 		"/>
+                                                <polygon className="onlinegon" fill="#ED2E38" points="395.021,284.613 376.497,312.332 366.608,278.082 		"/>
+                                                <polygon className="onlinegon" fill="#EF4F54" points="406.58,312.332 376.497,312.332 395.021,284.613 395.03,284.642 		"/>
+                                                <polygon className="onlinegon" fill="#ED2E38" points="424.543,355.428 393.768,328.751 406.58,312.332 406.589,312.36 		"/>
+                                                <polygon className="onlinegon" fill="#EF4F54" points="458.061,435.824 424.555,402.336 424.543,402.328 424.543,355.438 424.555,355.449 
+                                                    424.555,355.458 		"/>
+                                            </g>
+                                            <g>
+                                                <polygon className="onlinegon" fill="#FCE0CE" points="379.902,191.26 370.573,225.973 370.563,225.955 370.563,225.944 339.961,152.535 		"/>
+                                                <polygon className="onlinegon" fill="#F15860" points="418.003,228.193 370.573,225.973 379.902,191.26 		"/>
+                                                <polygon className="onlinegon" fill="#F15860" points="458.014,266.977 410.39,259.867 418.003,228.193 		"/>
+                                                <polygon className="onlinegon" fill="#F27276" points="458.014,266.977 427.768,290.99 410.39,259.867 		"/>
+                                                <polygon className="onlinegon" fill="#FCE0CE" points="466.242,313.392 427.273,314.821 427.768,290.99 		"/>
+                                                <polygon className="onlinegon" fill="#F15860" points="504.457,311.994 466.242,313.392 458.014,266.977 		"/>
+                                                <polygon className="onlinegon" fill="#B94B5D" points="457.867,388.462 424.555,355.458 424.555,355.449 427.273,314.821 		"/>
+                                                <polygon className="onlinegon" fill="#F5A0A1" points="474.684,428.956 458.068,435.854 457.867,388.482 		"/>
+                                                <polygon className="onlinegon" fill="#FCE0CE" points="418.003,228.193 410.39,259.867 370.573,225.973 		"/>
+                                                <polygon className="onlinegon" fill="#B94B5D" points="466.242,313.392 427.768,290.99 458.014,266.977 		"/>
+                                                <polygon className="onlinegon" fill="#F5A0A1" points="427.768,290.99 427.273,314.821 406.589,312.36 		"/>
+                                                <polygon className="onlinegon" fill="#F5A0A1" points="410.39,259.867 395.03,284.642 395.021,284.613 370.573,225.973 		"/>
+                                                <polygon className="onlinegon" fill="#F15860" points="427.768,290.99 395.03,284.642 410.39,259.867 		"/>
+                                                <polygon className="onlinegon" fill="#F27276" points="427.768,290.99 406.589,312.36 406.58,312.332 395.03,284.642 		"/>
+                                                <polygon className="onlinegon" fill="#F27276" points="427.273,314.821 424.555,355.449 424.543,355.438 424.543,355.428 406.589,312.36 		"/>
+                                                <polygon className="onlinegon" fill="#F27276" points="458.068,435.854 458.061,435.824 424.555,355.458 457.867,388.472 457.867,388.482 		"/>
                                             </g>
                                         </g>
                                     </Link>
@@ -3146,7 +3185,7 @@ export default class HomeIndex extends React.Component {
                                     <line className="carngon mainfinalst8" x1="1209.7" y1="2986.1" x2="1209.6" y2="2985.7" /> */}
                                         <polygon className="carngon" fill="#FCEB55" points="353.153,284.52 254.954,262.835 344.406,229.294 "/>
                                         <polygon className="carngon" fill="#F4A934" points="353.153,284.52 254.954,284.52 254.954,262.835 "/>
-                                        <polygon className="carngon" fill="#B94B5D" stroke="#FFFFFF" stroke-miterlimit="10" points="428.438,194.778 428.438,194.958 428.438,194.958 
+                                        <polygon className="carngon" fill="#B94B5D" stroke="#FFFFFF" strokeMiterlimit="10" points="428.438,194.778 428.438,194.958 428.438,194.958 
                                             428.402,194.923 "/>
                                         <polygon className="carngon" fill="#FD9534" points="602.536,262.835 503.578,284.52 512.758,229.294 "/>
                                         <polygon className="carngon" fill="#FCEB55" points="602.536,262.835 602.536,284.52 503.578,284.52 "/>
@@ -3161,7 +3200,7 @@ export default class HomeIndex extends React.Component {
                                         <polygon className="carngon" fill="#F4A934" points="424.027,364.744 382.32,474.041 330.853,398.141 "/>
                                         <polygon className="carngon" fill="#F7CB46" points="526.104,160.473 436.212,160.473 508.452,141.541 "/>
                                         <polygon className="carngon" fill="#FD9534" points="526.104,122.609 508.452,141.541 436.212,122.609 "/>
-                                        <line fill="#B94B5D" stroke="#FFFFFF" stroke-miterlimit="10" x1="428.438" y1="194.778" x2="428.438" y2="194.958"/>
+                                        <line fill="#B94B5D" stroke="#FFFFFF" strokeMiterlimit="10" x1="428.438" y1="194.778" x2="428.438" y2="194.958"/>
                                         <polygon className="carngon" fill="#FD9534" points="471.629,284.52 448.28,318.242 428.293,284.52 "/>
                                         <polygon className="carngon" fill="#F7CB46" points="424.027,364.744 361.61,322.242 404.945,322.242 "/>
                                         <polygon className="carngon" fill="#F4A934" points="448.28,322.242 424.027,364.744 404.945,322.242 "/>
@@ -3184,7 +3223,7 @@ export default class HomeIndex extends React.Component {
                                         <polygon className="carngon" fill="#F4A934" points="512.758,229.294 503.578,284.52 434.545,204.972 428.438,197.958 428.438,197.958 434.545,200.055 
                                             "/>
                                         <polygon className="carngon" fill="#F4A934" points="428.755,193.216 428.624,193.258 420.944,196.129 420.944,122.609 "/>
-                                        <path fill="#B94B5D" stroke="#FFFFFF" stroke-miterlimit="10" d="M428.438,194.958"/>
+                                        <path fill="#B94B5D" stroke="#FFFFFF" strokeMiterlimit="10" d="M428.438,194.958"/>
                                         <polygon className="carngon" fill="#FD9534" points="436.212,122.609 428.755,193.216 420.944,122.609 "/>
                                         <polygon className="carngon" fill="#F7CB46" points="436.212,122.609 436.212,195.995 428.755,193.216 "/>
                                         <polygon className="carngon" fill="#F7CB46" points="359.478,512.253 251.05,512.253 251.05,482.111 "/>
@@ -3442,7 +3481,7 @@ export default class HomeIndex extends React.Component {
                             <div className="mainfinalbottomeffectwholecontainer">
                                 <img src={backCircle} alt="" />
                                 <img src={frontCircle} alt="" />
-                                {/* <img src={astronaut} alt="" /> */}
+                                <img src={astronaut} alt="" />
                             </div>
                         </div>
                     </div>
