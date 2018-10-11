@@ -271,7 +271,7 @@ export const MemberDetails =
                     mobile: "9340043505",
                     fblink: "https://www.facebook.com/harshit.m.kankariya",
                     instalink: "https://www.instagram.com/kankariya_h/",
-                    linkedln: "",
+                    linkedln: "https://www.linkedin.com/in/harshit-kankariya-59b260151",
                     position: "Promotions",
                 },
                 {
@@ -283,7 +283,7 @@ export const MemberDetails =
                     mobile: "7023511775",
                     fblink: "https://www.facebook.com/profile.php?id=100017457583537",
                     instalink: "",
-                    linkedln: "https://www.linkedin.com/in/harshit-kankariya-59b260151",
+                    linkedln: "",
                     position: "Promotions",
                 },
                 {
