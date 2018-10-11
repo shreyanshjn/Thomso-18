@@ -10,7 +10,8 @@ var zonalsRoutes = require('./zonals/routes');
 var mainRoutes = require('./main/routes');
 var munRoutes = require('./mun/routes');
 var coordinatorsRoutes = require('./coordinators/routes');
-var controlsRoutes = require('./controls/routes');
+var superAdminRoutes = require('./super/routes');
+// var controlsRoutes = require('./controls/routes');
 // Controllers
 var viewController = require('../controllers/view_controller');
 var verifyCerti = require('../controllers/api/Certificates/verifyCertificates');
@@ -26,7 +27,9 @@ router.use('/api/zonals', zonalsRoutes);
 router.use('/api/main', mainRoutes);
 router.use('/api/mun', munRoutes);
 router.use('/api/coordinators', coordinatorsRoutes);
-router.use('/api/controls', controlsRoutes);
+
+router.use('/api/super', superAdminRoutes);
+// router.use('/api/controls', controlsRoutes);
 
 // -> /sitemap.xml
 router.get("/sitemap.xml", viewController.sitemap);

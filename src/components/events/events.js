@@ -307,6 +307,14 @@ export const EventDetails =
                         rulebook: "https://drive.google.com/open?id=1LwQfu69j6JZuCMIy0QEB6HWcf3ydhYS7",
                         image: "snooker.jpeg",
                         prize: "10"
+                    },
+                    {
+                        id: '8_4',
+                        name: "PUBG Mobile",
+                        content: `It's all fun and games, don't take it so seriously, man"- have you ever heard this sentence and it just irked your soul? Do you think gaming is more than just games? Do you live to win and are you born to win? Fret not, Thomso'18 welcomes you to a world of fierce rivalries and fiercer camaraderie. The much awaited PUBG tournament is finally here and if you got what it takes to rule the arena,  giddy up, you are in for a wild ride. Grit your teeth, roll your sleeves and snatch away the crown from the most lethal gamers around. Happy gaming,y'all!`,
+                        rulebook: "https://drive.google.com/open?id=1J6pyubzmZ1fY8op1NI4H8pTLJKrk2Ghh",
+                        image: "pubg.jpeg",
+                        prize: "20"
                     }
                 ]
         },
@@ -371,6 +379,14 @@ export const EventDetails =
                         rulebook: "https://drive.google.com/file/d/1BCBvq7DzEVaMom34V84hQKr4wEBYK9Sn/view?usp=sharing",
                         image: "junkyard.jpeg",
                         prize: "20"
+                    },
+                    {
+                        id: '10_6',
+                        name: "Live Sketching",
+                        content: `"Sketching is the breath of art: it is the most refreshing of all the more impulsive forms of creative self-expression and, as such, it should be as free, and happy, as a song in the bath."- Mervyn Levy Flesh and blood, glitters and stardust, literally and figuratively, we have the universe inside our bones. Not just the artists, we are the art ourselves. So this thomso, let's awaken the magic that sleeps in our soul as we are here with one more among many of its sterling events for the ones born with a pencil in their hands. Draw the sketch of the live scenery, during Thomso and get yourself into the competition with many of the skilled artists.`,
+                        rulebook: "https://drive.google.com/open?id=1yAnKDeDk0oFlx6q2QwSFHs-Yk71O4HAP",
+                        image: "liveSketching.jpeg",
+                        prize: "10"
                     }
                 ]
         },

@@ -215,6 +215,27 @@ export default class WhyThomso extends Component {
                             </div>
                         </div>
 
+                    </div>
+                    <div className="whythomso-fourth-child-middle">
+                        <div className="whythomso-fourth-child-the-nightmare">
+                            <Link to="/blog/karwaan">
+                                <div className="whythomso-fourth-child-the-nightmare-image-karvaan">
+                                </div>
+                            </Link>
+                            <div className="whythomso-fourth-child-the-nightmare-content">
+                                <div className="whythomso-fourth-child-the-nightmare-content-heading">
+                                    <Link to="/blog/karwaan">
+                                        <h3>KARWAAN-THOMSO ZONALS</h3>
+                                    </Link>
+                                </div>
+                                <div className="whythomso-fourth-child-the-nightmare-date">
+                                    <h3>08.09.18</h3>
+                                </div>
+                                <div className="whythomso-fourth-child-the-nightmare-content-content">
+                                    <p>“The cultural fest of IIT Roorkee serves as its one of the premier brand tag and a signature which represents this institute of national importance all over the country."</p>
+                                </div>
+                            </div>
+                        </div>
                         <div className="whythomso-fourth-child-the-evemare">
                             <Link to="/blog/recent_innovation_at_iitr">
                                 <div className="whythomso-fourth-child-the-eve-image">

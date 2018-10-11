@@ -214,6 +214,7 @@
 }
 .whythomso-third-child-slider{
     display: flex;
+    margin-top: 7%;
     justify-content: space-between;
 }
 .translate-left{
@@ -234,7 +235,6 @@
     font-family: Poppins;
 }
 .cards-slider-wrapper{
-    margin-top: 60px;
     display: flex;
     flex-direction: row;
     justify-content:space-evenly;
@@ -256,7 +256,6 @@
 }
 .whythomso-fourth-child{
     width: 100vw;
-    height: 100vh;
 }
 .whythomso-fourth-child-top{
     height: 24vh;
@@ -278,6 +277,9 @@
     flex-direction: row;
     justify-content: space-around;
     background-color: #e8e6e9;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 .whythomso-fourth-child-recent-heading{
     background-color: #e8e6e9;
@@ -299,22 +301,32 @@
     width: 50%;
 }
 .whythomso-fourth-child-the-nightmare{
-    width:18%;
+    width:25%;
 }
 .whythomso-fourth-child-the-daymare{
-    width:18%;
+    width:25%;
+    margin-top: 30px;
 }
 .whythomso-fourth-child-the-evemare{
-    width:18%;
+    width:25%;
+    margin-top: 30px;
 }
 .whythomso-fourth-child-the-nightmare{
-    margin-top: 15px;
+    margin-top: 30px;
     height: fit-content;
+    margin-bottom: 30px;
 }
 .whythomso-fourth-child-the-nightmare-image{
     height: 200px;
     width: auto;
     background-image:url("../../beta/blog/blog1/image/thomsoblog.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.whythomso-fourth-child-the-nightmare-image-karvaan{
+    height: 200px;
+    width: auto;
+    background-image:url("../src/images/karvaan.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -356,7 +368,7 @@
     width: 140%;
 }
 .whythomso-fourth-child-the-daymare{
-    margin-top: 15px;
+    margin-top: 30px;
 
     height: fit-content;
 }
@@ -405,7 +417,7 @@
     width: 140%;
 }
 .whythomso-fourth-child-the-evemare{
-    margin-top: 15px;
+    margin-top: 30px;
 
     height: fit-content;
 }
@@ -906,5 +918,9 @@
     }
     .whythomso-sixth-child-middle-columnthree{
         width: 100%;
+    }
+    .whythomso-fourth-child-the-evemare{
+        width: 100%;
+        margin-bottom: 20px;
     }
 }

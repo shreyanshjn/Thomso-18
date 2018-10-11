@@ -131,8 +131,13 @@ const onlineevents = Loadable({
     loader: () => import("./components/onlineEvents/Index"),
     loading: () => <Loader />
 })
-const ControlsIndex = Loadable({
-    loader: () => import("./components/controls/Index.jsx"),
+// const ControlsIndex = Loadable({
+//     loader: () => import("./components/controls/Index.jsx"),
+//     loading: () => <Loader />
+// })
+
+const SuperAdminIndex = Loadable({
+    loader: () => import("./components/superAdmin/Index.jsx"),
     loading: () => <Loader />
 })
 
@@ -213,9 +218,10 @@ class App extends Component {
                             <Route path="/campusclicks" component={CampusClicks} />
                             <Route path="/silhoutte" component={Silhoutte} />
                             <Route  path="/coordinators" component={CoordinatorsIndex} />
-                            <Route  path="/controls" component={ControlsIndex} />
+                            {/* <Route  path="/controls" component={ControlsIndex} /> */}
                             <Route path="/cupid" component={Cupid} />
                             <Route path="/mun" component={MUNIndex} />
+                            <Route path="/super" component={SuperAdminIndex} />
                             {/* <Route path="/xpression" component={Xpression} /> */}
                             {/* <Route component={Error404} /> */}
                         </React.Fragment>
