@@ -19,24 +19,24 @@ exports.info = (req, res) => {
 }
 
 exports.user_info = (req, res) => {
-    console.log(req.body)
     if(req && req.body && req.body.thomso_id){
        User_controls.findOne({thomso_id:req.body.thomso_id})
-       .select(' name email contact thomso_id college state branch referred_by gender address')
+       .select(' name email contact thomso_id college state branch referred_by gender address payment_type')
        .exec( (err, result) => {
             if(err) return res.status(400).send({success:false, msg:"Something went wrong"})
             if(!result) return res.status(400).send({success:false, msg:"No User With This ID."})
-            else res.json({success:false, body:result, msg:"USER FOUND"})     
+            else res.json({success:true, body:result, msg:"USER FOUND"})     
        } ) 
     }else return res.status(400).send({success:false, msg:"Invalid Request"})
 }
 
 exports.payment_update = (req, res) => {
-    if(req && req.body && req.body.thomso_id && req.body.payment && req.body.accomodation){
-       User_controls.findOneAndUpdate({thomso_id:req.body.thomso_id}, {payment:req.body.payment, accomodation:req.body.accomodation})
+    if(req && req.body && req.body.thomso_id1 && req.body.payment_type && req.body.accomodation){
+        var payType = Number(req.body.payment_type);
+       User_controls.findOneAndUpdate({thomso_id:req.body.thomso_id1}, {payment_type:payType, accomodation:req.body.accomodation})
        .exec( (err) => {
             if(err) return res.status(400).send({success:false, msg:"Something went wrong"})
-            res.json({success:false,msg:"Updated"})     
+            res.json({success:true,msg:"Updated"})     
        } ) 
     }else return res.status(400).send({success:false, msg:"Invalid Request"})
 }

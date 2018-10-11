@@ -46,7 +46,7 @@ var UserSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
-    payment:{
+    payment_type:{
         type:Number,
         default:0
     },
