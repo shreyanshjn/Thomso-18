@@ -21,7 +21,7 @@ exports.userInfo = function(req,res){
                     .populate('primary_event', 'name')
                     .exec(function (err, user) {
                         if (err) {
-                            return res.status(400).send({ success: false, msg: 'Unable to connect to database. Please try again.' })
+                            return res.status(400).send({ success: false, msg: 'Unable to connect to database. Please try again.' });
                         }
                         if (!user) {
                             return res.status(400).send({ success: false, msg: 'User not found' });
@@ -45,7 +45,7 @@ exports.userInfo = function(req,res){
                             .populate('event', 'name')
                             .exec(function (err, user) {
                                 if (err) {
-                                    return res.status(400).send({ success: false, msg: 'Unable to connect to database. Please try again.' })
+                                    return res.status(400).send({ success: false, msg: 'Unable to connect to database. Please try again.' });
                                 }
                                 if (!user) {
                                     return res.status(400).send({ success: false, msg: 'User not found' });
@@ -76,7 +76,7 @@ exports.userInfo = function(req,res){
                             .populate('event', 'name')
                             .exec(function (err, user) {
                                 if (err) {
-                                    return res.status(400).send({ success: false, msg: 'Unable to connect to database. Please try again.' })
+                                    return res.status(400).send({ success: false, msg: 'Unable to connect to database. Please try again.' });
                                 }
                                 if (!user) {
                                     return res.status(400).send({ success: false, msg: 'User not found' });
@@ -108,7 +108,7 @@ exports.userInfo = function(req,res){
                     .sort( { "thomso_id": 1, "name": 1 } )
                     .exec(function (err, user) {
                         if (err) {
-                            return res.status(400).send({ success: false, msg: 'Unable to connect to database. Please try again.' })
+                            return res.status(400).send({ success: false, msg: 'Unable to connect to database. Please try again.' });
                         }
                         if (!user) {
                             return res.status(400).send({ success: false, msg: 'User not found' });
@@ -129,11 +129,11 @@ exports.eventUser = function(req,res){
         .populate('users', 'name')
         .select('name')
         .exec(function(err, result){
-            if(err) return res.status(400).send({success:false, msg:'Error'})
-            if(result) res.json({success:true, body:result, msg:'Fetched'})
-            else return res.status(400).send({success:false, msg:'Unable to fetch event info'})
+            if(err) return res.status(400).send({success:false, msg:'Error'});
+            if(result) res.json({success:true, body:result, msg:'Fetched'});
+            else return res.status(400).send({success:false, msg:'Unable to fetch event info'});
         })
-    }else return res.status(400).send({success:false, msg:"Insuffiecient Data"})
+    }else return res.status(400).send({success:false, msg:"Insuffiecient Data"});
 }
 
 
@@ -152,12 +152,12 @@ exports.addEvent = function(req, res) {
             var newEvent = new Thomso_Event(data);
             newEvent.save(function(err){
                 if(err) {
-                    return res.status(400).send({success:false, msg:'Unable to add event'})
+                    return res.status(400).send({success:false, msg:'Unable to add event'});
                 };
                 res.json({success:true, msg:'Event added'});
             })
         }
-    }else return res.status(400).send({success:false, msg:"Insuffiecient Data"})
+    }else return res.status(400).send({success:false, msg:"Insuffiecient Data"});
 };
 
 exports.fetchEvents = function(req, res) {

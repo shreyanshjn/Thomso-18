@@ -46,6 +46,10 @@ var UserSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
+    blocked:{
+        type:Boolean,
+        default:false
+    },
     payment_type:{
         type:Number,
         default:0

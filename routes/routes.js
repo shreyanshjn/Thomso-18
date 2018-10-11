@@ -9,7 +9,7 @@ var notificationRoutes = require('./notification/routes');
 var zonalsRoutes = require('./zonals/routes');
 var mainRoutes = require('./main/routes');
 var munRoutes = require('./mun/routes');
-// var coordinatorsRoutes = require('./coordinators/routes');
+var coordinatorsRoutes = require('./coordinators/routes');
 var controlsRoutes = require('./controls/routes');
 // Controllers
 var viewController = require('../controllers/view_controller');
@@ -25,7 +25,7 @@ router.use('/api/certiVerify', cors(corsOptions),  verifyCerti.certi_verify );
 router.use('/api/zonals', zonalsRoutes);
 router.use('/api/main', mainRoutes);
 router.use('/api/mun', munRoutes);
-// router.use('/api/coordinators', coordinatorsRoutes);
+router.use('/api/coordinators', coordinatorsRoutes);
 router.use('/api/controls', controlsRoutes);
 
 // -> /sitemap.xml

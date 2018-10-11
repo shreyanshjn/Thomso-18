@@ -91,8 +91,8 @@ exports.update_image = function (req, res) {
                     email:data.email
                 }, updateData)
                 .exec(function(err){
-                    if (err) return res.status(400).send({ success: false, msg: "Unable To Upload Image. Please Try Again." })
-                    res.json({ success: true, body:url, msg: "Image Uploaded Successfully." })
+                    if (err) return res.status(400).send({ success: false, msg: "Unable To Upload Image. Please Try Again." });
+                    res.json({ success: true, body:url, msg: "Image Uploaded Successfully." });
                 })
             }
         })
@@ -107,7 +107,7 @@ exports.resendOTP = function (req, res) {
             .select('name email otp')
             .exec(function (err, user) {
                 if (err) {
-                    return res.status(400).send({ success: false, msg: 'Unable to connect to database. Please try again.' })
+                    return res.status(400).send({ success: false, msg: 'Unable to connect to database. Please try again.' });
                 }
                 if (!user) {
                     return res.status(400).send({ success: false, msg: 'User not found' });
