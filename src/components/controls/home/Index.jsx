@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import AuthService from '../../../handlers/controls/AuthService';
 import FetchApi from '../../../utils/FetchAPI';
-
+import "../src/style.css"
 export default class HomeIndex extends Component {
     constructor() {
         super();
@@ -97,93 +97,101 @@ export default class HomeIndex extends Component {
         const { errors, thomso_id,disabled, disabledPayment,userData ,payment_type,message, accomodation   } = this.state;
         return (
             <div>
-                <form onSubmit={this.onSubmit}>
-                    {errors ?
-                        <div style={{ textAlign: 'center', color: 'red', fontWeight: '600' }}>
-                            {errors}
-                        </div>
-                        : null
-                    }
-                    <div>
-                        <h2>Thomso ID</h2>
-                    </div>
-                    <div >
+                <div className="controlsMainDiv">
+                    <form style={{paddingTop:"100px"}} onSubmit={this.onSubmit}>
+                        {errors ?
+                            <div className="controlsRedError">
+                                {errors}
+                            </div>
+                            : null
+                        }
                         <div>
-                            <input
-                                name="thomso_id"
-                                type="text"
-                                id="inputThomsoID"
-                                placeholder="Thomso ID"
-                                value={thomso_id}
-                                onChange={this.onChange}
-                                autoCapitalize="off"
-                                autoCorrect="off"
-                                autoComplete="off"
-                                spellCheck="off"
-                                required
-                            />
+                            <h2>Payment Verification</h2>
                         </div>
-                    </div>
-                    <div>
-                        <button type="submit" disabled={disabled}>SUBMIT</button>
-                    </div>
-                </form>
-                { userData && userData.thomso_id ?
-                <div>
-                    Thomso Id : {userData.thomso_id ? userData.thomso_id :null}<br />
-                    Name : {userData.name ? userData.name :null}<br />
-                    College : {userData.college ? userData.college :null}<br />
-                    Contact : {userData.contact ? userData.contact :null}<br />
-                    Branch : {userData.branch ? userData.branch :null}<br />
-                    Gender : {userData.gender ? userData.gender :null}<br />
-                    Address : {userData.address ? userData.address :null}<br />
-                    State : {userData.state ? userData.state :null}<br />
-                    <form onSubmit={this.onPayment}>
-                        <div>
-                            {console.log("sd", payment_type, accomodation)}
-                            <label htmlFor="paymentType">Payment Type</label>
-                            <select
-                                id="paymentType"
-                                name="payment_type"
-                                value={payment_type}
-                                onChange={this.onChange}
-                                required
-                            >
-                                <option value="" disabled="true"> Payment Type </option>
-                                <option value="1"> Online Payment </option>
-                                <option value="2"> NEFT </option>
-                                <option value="3"> Draft </option>
-                                <option value="4"> Campus Ambassador </option>
-                            </select>
+                        <div >
+                            <div>
+                                <input
+                                    name="thomso_id"
+                                    type="text"
+                                    id="inputThomsoID"
+                                    placeholder="Thomso ID"
+                                    value={thomso_id}
+                                    onChange={this.onChange}
+                                    autoCapitalize="off"
+                                    autoCorrect="off"
+                                    autoComplete="off"
+                                    spellCheck="off"
+                                    required
+                                    className="controlsThomsoIdForm"
+                                />
+                            </div>
                         </div>
                         <div>
-                            <label htmlFor="inputType">Accomodation Type</label>
-                            <select
-                                id="inputType"
-                                name="accomodation"
-                                value={accomodation}
-                                onChange={this.onChange}
-                                required
-                            >
-                                <option value="" disabled="true"> Accomodation Type </option>
-                                <option value="accomodation"> Accomodation </option>
-                                <option value="non-accomodation"> Non-accomodation </option>
-                            </select>
-                        </div>
-                        <div>
-                            <button type="submit" disabled={disabledPayment}>SUBMIT</button>
+                            <button style={{marginTop:"20px"}} type="submit" disabled={disabled}>SUBMIT</button>
                         </div>
                     </form>
-                    {message ?
-                        <div style={{ textAlign: 'center', color: 'green', fontWeight: '600' }}>
-                            {message}
+                        <div style={{paddingTop:"50px"}}>
+                            <Link to="controls/logout"  style={{textDecoration:"none", color:"red"}}>LOGOUT</Link>
                         </div>
-                        : null
-                    }
                 </div>
-                :null}
-
-                <Link to="controls/logout" >LOGOUT</Link>
+                <div className="controlsCsecondDiv">
+                
+                    { userData && userData.thomso_id ?
+                    <div className="controlsDetail" style={{paddingBottom:"7px"}}>
+                       <span> Thomso Id </span>: {userData.thomso_id ? userData.thomso_id :null}<br />
+                       <span> Name </span>: {userData.name ? userData.name :null}<br />
+                       <span> College </span>: {userData.college ? userData.college :null}<br />
+                       <span> Contact </span>: {userData.contact ? userData.contact :null}<br />
+                       <span> Branch </span>: {userData.branch ? userData.branch :null}<br />
+                       <span> Gender </span>: {userData.gender ? userData.gender :null}<br />
+                       <span> Address </span>: {userData.address ? userData.address :null}<br />
+                       <span> State </span>: {userData.state ? userData.state :null}<br />
+                        <form onSubmit={this.onPayment}>
+                            <div>
+                                <label className="controlAccomodatioFormLabel" htmlFor="paymentType">Payment Type : </label>
+                                <select
+                                    id="paymentType"
+                                    name="payment_type"
+                                    value={payment_type}
+                                    onChange={this.onChange}
+                                    required
+                                    className="controlPaymentForm"
+                                >
+                                    <option value="" disabled="true"> Payment Type </option>
+                                    <option value="1"> Online Payment </option>
+                                    <option value="2"> NEFT </option>
+                                    <option value="3"> Draft </option>
+                                    <option value="4"> Campus Ambassador </option>
+                                </select>
+                            </div>
+                            <div>
+                                <label className="controlAccomodatioFormLabel" htmlFor="inputType">Accomodation Type : </label>
+                                <select
+                                    id="inputType"
+                                    name="accomodation"
+                                    value={accomodation}
+                                    onChange={this.onChange}
+                                    required
+                                    className="controlAccomodatioForm"
+                                >
+                                    <option value="" disabled="true"> Accomodation Type </option>
+                                    <option value="accomodation"> Accomodation </option>
+                                    <option value="non-accomodation"> Non-accomodation </option>
+                                </select>
+                            </div>
+                            <div>
+                                <button type="submit" disabled={disabledPayment}>SUBMIT</button>
+                            </div>
+                        </form>
+                        {message ?
+                            <div className="controlsGreenError">
+                                {message}
+                            </div>
+                            : null
+                        }
+                    </div>
+                    :<span className="controlsNoUSer">No User</span>}
+                </div>
             </div>
            
         );
