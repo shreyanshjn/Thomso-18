@@ -136,6 +136,11 @@ const onlineevents = Loadable({
 //     loading: () => <Loader />
 // })
 
+const SuperAdminIndex = Loadable({
+    loader: () => import("./components/superAdmin/Index.jsx"),
+    loading: () => <Loader />
+})
+
 const MUNIndex = Loadable({
     loader: () => import("./components/beta/mun/Index"),
     loading: () => <Loader />
@@ -165,10 +170,10 @@ const Ngo = Loadable({
 //     loading: () => <Loader />
 // })
 
-// const CoordinatorsIndex = Loadable({
-//     loader: () => import("./components/coordinators/Index.jsx"),
-//     loading: () => <Loader />
-// })
+const CoordinatorsIndex = Loadable({
+    loader: () => import("./components/coordinators/Index.jsx"),
+    loading: () => <Loader />
+})
 
 class App extends Component {
     constructor() {
@@ -218,10 +223,11 @@ class App extends Component {
                             {/* <Route path="/c" component={Carousel} /> */}
                             <Route path="/campusclicks" component={CampusClicks} />
                             <Route path="/silhoutte" component={Silhoutte} />
-                            {/* <Route  path="/coordinators" component={CoordinatorsIndex} /> */}
+                            <Route  path="/coordinators" component={CoordinatorsIndex} />
                             {/* <Route  path="/controls" component={ControlsIndex} /> */}
                             <Route path="/cupid" component={Cupid} />
                             <Route path="/mun" component={MUNIndex} />
+                            <Route path="/super" component={SuperAdminIndex} />
                             {/* <Route path="/xpression" component={Xpression} /> */}
                             {/* <Route component={Error404} /> */}
                         </React.Fragment>

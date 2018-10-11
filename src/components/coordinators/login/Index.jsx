@@ -19,7 +19,7 @@ export default class LoginIndex extends Component {
     onChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;
-        this.setState({[name]: value});
+        this.setState({[name]: value, message:''});
     }
 
     onSubmit = (e) => {

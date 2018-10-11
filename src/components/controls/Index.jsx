@@ -83,7 +83,7 @@ export default class MainIndex extends React.Component {
                 {isAuthenticated ? 
                      <React.Fragment> 
                         <Route exact path="/controls" render={props => (<HomeIndex {...props} userData={userData} />)}  />
-                         <Route  path="/controls/logout" component={LogoutIndex} /> 
+                         <Route  path="/controls/logout" render={props => (<LogoutIndex {...props} updateRoutes={this.handleUpdate} />)} /> 
                      </React.Fragment> 
                      : 
                      <React.Fragment> 

@@ -33,10 +33,11 @@ exports.addWinner = (req, res) => {
         if(req.body.thomso_id){
             console.log(req.body.thomso_id,'2')
             Main_User.findOne({thomso_id:req.body.thomso_id})
-            .select('name college email contact')
+            .select('name college email contact blocked paymant_type')
             .exec( (errr, result) => {
                 if(errr) return res.status(400).send({success:false, msg:"winner data not found"})
                 else if(!result) return res.json({success:false, msg:"Incorrect Thomso ID"});
+                else if(result.blocked) return res.json({success:false, msg:"User is blocked"});
                 else{
                     var data = {
                         thomso_id:req.body.thomso_id,

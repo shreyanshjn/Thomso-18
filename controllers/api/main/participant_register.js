@@ -285,10 +285,10 @@ exports.reset_password = function (req, res) {
                                         updateData
                                     )
                                         .exec(function (err) {
-                                            if (err) return status(401).send({ success: false, msg: "Unable To Update Password. Please Try Again." })
-                                            res.json({ success: true, msg: "Password Successfully Changed." })
+                                            if (err) return status(401).send({ success: false, msg: "Unable To Update Password. Please Try Again." });
+                                            res.json({ success: true, msg: "Password Successfully Changed." });
                                         })
-                                } else return status(401).send({ success: false, msg: "Unable To create hash" })
+                                } else return status(401).send({ success: false, msg: "Unable To create hash" });
                             })
                             .catch (
                                 function (err) {
@@ -296,8 +296,8 @@ exports.reset_password = function (req, res) {
                                 }
                             )
                         }
-                        else if (err) return res.json({ success: false, msg: "Something went wrong" })
-                        else return res.json({ success: false, msg: "Wrong Password" })
+                        else if (err) return res.json({ success: false, msg: "Something went wrong" });
+                        else return res.json({ success: false, msg: "Wrong Password" });
                     })
                 }
             })
@@ -321,15 +321,15 @@ exports.reset_password_email = function (req, res) {
                             Main_User.findOneAndUpdate({ email: req.body.email }, updateData, { new: true })
                                 .select('name email')
                                 .exec(function (err, result) {
-                                    if (err) { return res.state(400).send({ success: false, msg: "Something Went Wrong" }) }
-                                    if (!result) { return res.json({ success: false, msg: "Email Doesn't exist" }) }
+                                    if (err) { return res.state(400).send({ success: false, msg: "Something Went Wrong" }); }
+                                    if (!result) { return res.json({ success: false, msg: "Email Doesn't exist" }); }
                                     else {
                                         mailer.participantResetPassword({
                                             name: result.name,
                                             email: result.email,
                                             password: newPass
                                         });
-                                        res.json({ status: 200, success: true, body: result, msg: 'Email sent' })
+                                        res.json({ status: 200, success: true, body: result, msg: 'Email sent' });
                                     }
                                 })
                         } else return res.json({ success: false, msg: 'Something went wrong' });

@@ -24,8 +24,8 @@ mongoose
 
 app.use(logger('dev'));
 // app.use(bodyParser.json());
-app.use(bodyParser.json({limit: '500kb'}));
-app.use(bodyParser.urlencoded({limit: '500kb', extended: true}));
+app.use(bodyParser.json({limit: '130kb'}));
+// app.use(bodyParser.urlencoded({limit: '500kb', extended: true}));
 // app.use(bodyParser.urlencoded({'extended':'false'}));
 if (process.env.REACT_APP_SERVER_ENVIORNMENT !== 'dev') {
   app.use(favicon(path.join(__dirname, 'build/favicon.ico')));
@@ -46,6 +46,10 @@ app.get("/pdf/*", function(req, res){
 });
 
 app.get("/uploads/*", function(req, res){
+  if (req.url.indexOf('?') > 0) {
+    req.url = req.url.substring(0, req.url.indexOf('?'));
+  }
+  console.log(req.url);
   fs.readFile(`.${req.url}`, function (err, content) {
     if (err) {
         res.writeHead(400, {'Content-type':'text/html'})

@@ -42,7 +42,7 @@ export default class RegisterIndex extends React.Component {
             value = value.trim();
             value = value.substring(0, 10)
         }
-        this.setState({ [name]: value });
+        this.setState({ [name]: value , errors:''});
     }
 
     onSubmit = (e) => {

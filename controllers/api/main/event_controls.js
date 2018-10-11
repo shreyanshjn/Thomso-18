@@ -8,7 +8,7 @@ exports.getEvents = function (req, res) {
             .sort({ name: 1 })
             .exec(function (err, result) {
                 console.log(err);
-                console.log(result);
+                // console.log(result);
                 if (err) return res.status(400).send({ success: false, msg: 'Unable to fetch event' });
                 if (result) res.json({ success: true, msg: 'event fetched', body: result });
                 else return res.status(400).send({ success: false, msg: 'Unable to fetch event' });

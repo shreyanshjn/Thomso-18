@@ -34,7 +34,6 @@ export default class Sidebar extends React.Component {
             file: '',
             imagePreviewUrl: '',
             disabled: true,
-            hidden: true,
             days: 0
         };
         this.Auth = new AuthService();
@@ -70,7 +69,6 @@ export default class Sidebar extends React.Component {
         if (days < 0) {
             days = 0;
         }
-        this.setState({hidden:true})
         this.setState({ days })
     }
 
@@ -84,101 +82,156 @@ export default class Sidebar extends React.Component {
         Field.remove()
     }
 
-    onSubmit = (e) => {
-        e.preventDefault();
-        if (this.state.file.size > 101200) {
-            this.setState({ disabled: true, errors: 'Size of image exceeded 100kb' })
-        }
-        else if (this.state.file.type !== "image/jpeg" && this.state.file.type !== "image/jpg" && this.state.file.type !== "image/png") {
-            this.setState({ disabled: true, errors: 'Image Format not supported' })
-        }
-        else {
-            let data = {
-                image: this.state.imagePreviewUrl,
-                format: this.state.file.type
-            }
-            const token = this.Auth.getToken()
-            FetchApi('post', '/api/main/updateImage', data, token)
-                .then(res => {
-                    console.log(res.data)
-                    if (res && res.data && res.data.success && res.data.body) {
-                        if (process.env.REACT_APP_SERVER_ENVIORNMENT === "dev") { this.setState({ user: 'https://localhost:' + process.env.REACT_APP_SERVER_PORT + res.data.body, errors: "", hidden: true }) }
-                        else { this.setState({ user: res.data.body }) }
-                    }
-                    else {
-                        this.setState({ disabled: true, errors: 'Unable to upload' })
-                    }
-                })
-                .catch(err => {
-                    console.log(err)
-                });
+    triggerFileSelect = () => {
+        const button = document.getElementById("updateimage-file-input")
+        if (button) {
+            button.click()
         }
     }
 
     handleImageChange(e) {
         e.preventDefault();
-        let reader = new FileReader();
-        let file = e.target.files[0];
-        reader.onloadend = () => {
-            this.setState({
-                file: file,
-                imagePreviewUrl: reader.result,
-                disabled: false,
-                errors: '',
-                hidden: false
-            });
-            // this.props.imagePrev(reader.result);
+        const reader = new FileReader();
+        const file = e.target.files[0];
+        if (file) {
+            if (file.type !== "image/jpeg" && file.type !== "image/jpg" && file.type !== "image/png") {
+                this.setState({errors: 'Image Format not supported' })
+            } else if (file.size < 101200) {
+                reader.onloadend = (e) => {
+                    const img = document.createElement("img");
+                    img.onload = () => {
+                        const data = {
+                            image: reader.result,
+                            format: file.type
+                        }
+                        const token = this.Auth.getToken()
+                        if (data.image && data.format) {
+                            this.setState({ disabled: true, errors: '' })
+                            FetchApi('post', '/api/main/updateImage', data, token)
+                                .then(res => {
+                                    if (res && res.data && res.data.success && res.data.body) {
+                                        if (process.env.REACT_APP_SERVER_ENVIORNMENT === "dev") {
+                                            this.setState({ user: 'https://localhost:' + process.env.REACT_APP_SERVER_PORT + res.data.body +'?'+ new Date().getTime(), errors: "", disabled: false })
+                                        }
+                                        else {
+                                            this.setState({ user: res.data.body +'?'+ new Date().getTime(), disabled: false })
+                                        }
+                                    }
+                                    else {
+                                        this.setState({ disabled: false, errors: 'Unable to upload' })
+                                    }
+                                })
+                                .catch(err => {
+                                    this.setState({ disabled: false, errors: 'Image too Large' })
+                                });
+                        }
+                    
+                    }
+                    img.src = e.target.result;
+                }
+                reader.readAsDataURL(file)
+            } else {
+                reader.onloadend = (e) => {
+                    const img = document.createElement("img");
+                    img.onload = () => {
+                        const canvas = document.createElement('canvas');
+                        const ctx = canvas.getContext("2d");
+                        ctx.drawImage(img, 0, 0);
+        
+                        const MAX_WIDTH = 300;
+                        const MAX_HEIGHT = 300;
+        
+                        let width = img.width;
+                        let height = img.height;
+        
+                        if (width > height) {
+                            if (width > MAX_WIDTH) {
+                                height *= MAX_WIDTH / width;
+                                width = MAX_WIDTH;
+                            }
+                        } else {
+                            if (height > MAX_HEIGHT) {
+                                width *= MAX_HEIGHT / height;
+                                height = MAX_HEIGHT;
+                            }
+                        }
+                        canvas.width = width;
+                        canvas.height = height;
+                        const ctx2 = canvas.getContext("2d");
+                        ctx2.drawImage(img, 0, 0, width, height);
+                        const dataurl = canvas.toDataURL("image/png");
+
+                        const data = {
+                            image: dataurl,
+                            format: "image/png"
+                        }
+                        const token = this.Auth.getToken()
+                        if (data.image && data.format) {
+                            this.setState({ disabled: true, errors: '' })
+                            FetchApi('post', '/api/main/updateImage', data, token)
+                                .then(res => {
+                                    if (res && res.data && res.data.success && res.data.body) {
+                                        if (process.env.REACT_APP_SERVER_ENVIORNMENT === "dev") {
+                                            this.setState({ user: 'https://localhost:' + process.env.REACT_APP_SERVER_PORT + res.data.body +'?'+ new Date().getTime(), errors: "", disabled: false })
+                                        }
+                                        else {
+                                            this.setState({ user: res.data.body +'?'+ new Date().getTime(), disabled: false })
+                                        }
+                                    }
+                                    else {
+                                        this.setState({ disabled: false, errors: 'Unable to upload' })
+                                    }
+                                })
+                                .catch(err => {
+                                    this.setState({ disabled: false, errors: 'Image too Large' })
+                                });
+                        }
+                    }
+                    img.src = e.target.result;
+                }
+                reader.readAsDataURL(file)
+            }
         }
-        reader.readAsDataURL(file)
     }
 
     render() {
         let { user, disabled } = this.state
         return (
-            <div>
-                <div
-                    id="mySidenav"
-                    className="sidenav"
-                    style={{ backgroundColor: 'white' }}
-                >
-                    <div className="main-sidebar-user">
-                        <div className="main-sidebar-user-child">
-                            {/* {(this.props.userData && this.props.userData.image) ?  */}
-                            <div className="upload-image-parent-div">
-                                <img src={user} className="image" alt="User" />
-                            </div>
-                            {/* <React.Fragment>
-                  {(this.props.userData && this.props.userData.gender === 'female') ?
-                    <img src={girl} className="image" alt="User" /> :
-                    <img src={boy} className="image" alt="User" />
-                  }
-                </React.Fragment>} */}
+<div>
+    <div
+        id="mySidenav"
+        className="sidenav"
+        style={{ backgroundColor: 'white' }}
+    >
+        <div className="main-sidebar-user">
+            <div className="main-sidebar-user-child">
+                <div className="upload-image-parent-div">
+                    <img src={user} className="image" alt="User" onClick={() => this.triggerFileSelect()}/>
+                </div>
             </div>
             <div className="main-sidebar-user-details">
                 <div className="text">{this.props.userData ? this.props.userData.name : "User"}</div>
                 <div className="cname">{this.props.userData ? this.props.userData.college : "-"}</div>
                 <div>
-                    <form onSubmit={this.onSubmit}>
+                    <form>
                         <div>
                             <input
                                 className="updateimage-file-input"
+                                id="updateimage-file-input"
                                 name="file"
                                 type="file"
                                 onChange={(e) => this.handleImageChange(e)}
-                                accept="" />
+                                accept=""
+                                disabled={disabled}
+                            />
                         </div>
-
-                        <button className={this.state.hidden ? "updateimage-file-button hidden" : "updateimage-file-button"} type="submit" disabled={disabled}> Upload</button>
                     </form>
                     <small>{this.state.errors}</small>
                 </div>
-                {/* <div>
-                <UpdateImage imagePrev={(data) => this.setState({ img: data })} imageUpdated={(data) => data ? this.setState({ errors: 'Image updated successfully' }) : this.setState({ errors: 'Unable to update image' })} />
-              </div> */}
-          </div>
-      </div>
-      <div className="main-sidebar-line">
-      </div>
+            </div>
+        </div>
+        <div className="main-sidebar-line">
+        </div>
       <div className="main-sidebar-contents">
           <Link
               to="/main/"

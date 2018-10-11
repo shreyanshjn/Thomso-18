@@ -8,14 +8,14 @@ var Counter = require('../../../models/counters/Counter');
 var TokenHelper = require('../../../helpers/TokenHelper');
 var Generator = require("../../../helpers/GeneratePassword");
 
-exports.info = (req, res) => {
+exports.info = function(req, res) {
     if(req && req.locals && req.locals.email){
         Coordinators_User.findOne({email: req.locals.email})
         .select(' name email ')
         .exec( (err, result) => {
-            if(err) return res.status(400).send({success:false, msg:"Something went wrong"})
-            else if(!result) return res.status(400).send({success:false, msg:"no user found"})
-            res.json({success:true, body:result, msg:"User Found"})
+            if(err) return res.status(400).send({success:false, msg:"Something went wrong"});
+            else if(!result) return res.status(400).send({success:false, msg:"no user found"});
+            res.json({success:true, body:result, msg:"User Found"});
         } )
-    }else return res.status(400).send({success:false, msg:"Invalid Request"})
+    }else return res.status(400).send({success:false, msg:"Invalid Request"});
 }

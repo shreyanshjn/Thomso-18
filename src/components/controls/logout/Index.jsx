@@ -8,6 +8,7 @@ export default class LogoutIndex extends React.Component{
     }
     componentWillMount() {
         this.Auth.logout();
+        this.props.updateRoutes(false, true);
     }
     render(){
         return (<Redirect to="/controls" />)
