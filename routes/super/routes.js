@@ -4,6 +4,8 @@ var router = express.Router();
 // Controllers
 var adminAuth = require('../../controllers/api/super/admin_auth');
 var adminControls = require('../../controllers/api/super/admin_controls');
+var mainAdminControls = require('../../controllers/api/main/admin/admin_controls');
+var coordinatorControls = require('../../controllers/api/coordinators/coordinators_register');
 
 // Middlewares
 var SuperAdminTokenMiddleware = require("../../middlewares/super/TokenMiddleware");
@@ -17,6 +19,17 @@ router.post('/auth/login', adminAuth.login);
 // -> /super/
 router.use('/', SuperAdminTokenMiddleware.verify);
 
-// router.get('/participants', adminControls.getParticipant);
+router.get('/user/:page', mainAdminControls.userInfo);
+
+router.get('/participant/:id', adminControls.getParticipant);
+router.get('/participanttoken/:id', adminControls.getParticipantToken);
+router.put('/participant/:id', adminControls.patchParticipantData);
+router.post('/coordinators/register', coordinatorControls.register);
+
+router.get('/coordinators', adminControls.getAllCoordinators);
+router.get('/coordinator/:id', adminControls.getCoordinator);
+router.put('/coordinator/:id', adminControls.patchCoordinator);
+router.get('/coordinatortoken/:id', adminControls.getCoordinatorToken);
+
 
 module.exports = router;

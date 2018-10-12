@@ -38,14 +38,15 @@ var UserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    event_id:{
+    event_id: {
         type:String
     },
     password: {
         type: String,
     },
-    tempPassword:{
-        type:String
+    blocked: {
+        type:Boolean,
+        default:false
     },
     created_date:{
         type:Date,

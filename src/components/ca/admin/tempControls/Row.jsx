@@ -150,9 +150,9 @@ export default class Row extends React.Component {
                                 onChange={this.onChange}
                                 disabled={!this.state.bonusEditing}
                             />
-                            <button disabled={this.setState.bonusDisabled} onClick={ () => this.toggleEdit() }>{this.state.bonusEditing ? 'Cancel': 'Edit'}</button>
+                            <button disabled={this.state.bonusDisabled} onClick={ () => this.toggleEdit() }>{this.state.bonusEditing ? 'Cancel': 'Edit'}</button>
                             {this.state.bonusEditing ?
-                                <button disabled={this.setState.bonusDisabled} onClick={ () => this.updateBonus() }>Update</button>
+                                <button disabled={this.state.bonusDisabled} onClick={ () => this.updateBonus() }>Update</button>
                                 : null
                             }
                         </td>
