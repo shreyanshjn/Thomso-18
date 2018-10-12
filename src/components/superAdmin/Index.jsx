@@ -39,6 +39,16 @@ const NavbarIndex = Loadable({
     loading: Loading,
 });
 
+const AddCoordinator = Loadable({
+    loader: () => import('./addCoordinator/Index'),
+    loading: Loading,
+});
+
+const ListCoordinators = Loadable({
+    loader: () => import('./listCoordinators/Index'),
+    loading: Loading,
+});
+
 export default class AdminIndex extends React.Component{
     constructor() {
         super();
@@ -65,6 +75,8 @@ export default class AdminIndex extends React.Component{
                         <Route path="/super" component={NavbarIndex} />
                         <Route exact path="/super/logout" render={ () => <LogoutIndex updateRoutes={this.handleUpdate}/> } />
                         <Route exact path="/super" component={HomeIndex} />
+                        <Route exact path="/super/addCoordinator" component={AddCoordinator} />
+                        <Route exact path="/super/coordinators" component={ListCoordinators} />
                     </div>
                 :
                     <div>

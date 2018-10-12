@@ -12,6 +12,16 @@ render(){
               Home
             </Link>
           </li>
+          <li>
+            <Link to="/super/addCoordinator">
+              AddCoordinator
+            </Link>
+          </li>
+          <li>
+            <Link to="/super/coordinators">
+              ListCoordinators
+            </Link>
+          </li>
           <li><Link to="/super/logout">Logout</Link></li>
         </ul>
       </div>

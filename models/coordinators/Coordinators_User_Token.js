@@ -16,6 +16,10 @@ var UserSchema = new mongoose.Schema({
         type: Date,
         required: true
     },
+    blocked:{
+        type:Boolean,
+        default:false
+    },
     updated_date: {
         type: Date,
         default: Date.now,

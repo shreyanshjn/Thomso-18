@@ -1,16 +1,13 @@
 import React from 'react';
 
 import AuthService from "../../../handlers/superAdmin/AuthService";
-import ParticipantAuthService from '../../../handlers/main/AuthService';
+import CoordinatorAuthService from '../../../handlers/coordinators/AuthService';
 import FetchApi from "../../../utils/FetchAPI";
 
 export default class EditBox extends React.Component {
     constructor() {
         super();
         this.state = {
-            thomso_id : '',
-            is_thomso_id_disabled: true,
-            is_thomso_id_updating: false,
             name : '',
             is_name_disabled: true,
             is_name_updating: false,
@@ -20,49 +17,47 @@ export default class EditBox extends React.Component {
             gender : '',
             is_gender_disabled: true,
             is_gender_updating: false,
-            contact : '',
-            is_contact_disabled: true,
-            is_contact_updating: false,
-            college : '',
-            is_college_disabled: true,
-            is_college_updating: false,
-            state : '',
-            is_state_disabled: true,
-            is_state_updating: false,
-            address : '',
-            is_address_disabled: true,
-            is_address_updating: false,
-            verified : false,
-            is_verified_updating: false,
-            blocked : false,
-            is_blocked_updating: false,
-            payment_type : 0,
-            is_payment_type_disabled: true,
-            is_payment_type_updating: false,
-            accomodation : '',
-            is_accomodation_disabled: true,
-            is_accomodation_updating: false,
-            password : '',
-            is_password_disabled: true,
-            is_password_updating: false,
+            contact1 : '',
+            is_contact1_disabled: true,
+            is_contact1_updating: false,
+            contact2 : '',
+            is_contact2_disabled: true,
+            is_contact2_updating: false,
+            bhawan : '',
+            is_bhawan_disabled: true,
+            is_bhawan_updating: false,
+            enrollment_no : '',
+            is_enrollment_no_disabled: true,
+            is_enrollment_no_updating: false,
             branch : '',
             is_branch_disabled: true,
             is_branch_updating: false,
+            year : '',
+            is_year_disabled: true,
+            is_year_updating: false,
+            event_id : '',
+            is_event_id_disabled: true,
+            is_event_id_updating: false,
+            password : '',
+            is_password_disabled: true,
+            is_password_updating: false,
+            blocked : false,
+            is_blocked_updating: false,
             errors : ''
         };
         this.Auth = new AuthService();
-        this.ParticipantAuth = new ParticipantAuthService();
+        this.CoordinatorAuth = new CoordinatorAuthService();
     }
 
     onChange = (e) => {
         const name = e.target.name;
         let value = e.target.value;
-        if (name === 'thomso_id' && value) {
+        if (name === 'event_id' && value) {
             value = value.trim();
-            value = value.substring(0, 9)
+            value = value.substring(0, 4)
             value = value.toUpperCase();
         }
-        if (name === 'contact' && value) {
+        if ((name === 'contact1' || name === 'contact2') && value) {
             value = value.trim();
             value = value.substring(0, 10)
         }
@@ -72,7 +67,7 @@ export default class EditBox extends React.Component {
     componentDidMount() {
         if (this.props.userID) {
             const token = this.Auth.getToken()
-            FetchApi('GET', `/api/super/participant/${this.props.userID}`, null, token)
+            FetchApi('GET', `/api/super/coordinator/${this.props.userID}`, null, token)
                 .then(r => {
                     if (r && r.data && r.data.success && r.data.body) {
                         this.setState({...r.data.body, ...{password: ''}})
@@ -96,7 +91,7 @@ export default class EditBox extends React.Component {
                 [bool]: newValue
             }
 
-            FetchApi('PUT', `/api/super/participant/${this.props.userID}`, updateData, token)
+            FetchApi('PUT', `/api/super/coordinator/${this.props.userID}`, updateData, token)
                 .then(r => {
                     if (r && r.data && r.data.success && r.data.body) {
                         this.setState({...r.data.body, ...{password: '', [isUpdating]: false}})
@@ -116,14 +111,14 @@ export default class EditBox extends React.Component {
         }
     }
 
-    loginParticipant = () => {
+    loginCoordinator = () => {
         const token = this.Auth.getToken()
-        FetchApi('GET', `/api/super/participanttoken/${this.props.userID}`, null, token)
+        FetchApi('GET', `/api/super/coordinatortoken/${this.props.userID}`, null, token)
             .then(r => {
                 if (r && r.data) {
-                    this.ParticipantAuth.setToken(r.data.token)
+                    this.CoordinatorAuth.setToken(r.data.token)
                     this.setState({ errors: '' })
-                    this.props.history.push('/main')
+                    this.props.history.push('/coordinators')
                 }
             })
             .catch(e => {
@@ -139,7 +134,7 @@ export default class EditBox extends React.Component {
             const updateData = {
                 [field]: this.state[field]
             }
-            FetchApi('PUT', `/api/super/participant/${this.props.userID}`, updateData, token)
+            FetchApi('PUT', `/api/super/coordinator/${this.props.userID}`, updateData, token)
                 .then(r => {
                     if (r && r.data && r.data.success && r.data.body) {
                         this.setState({...r.data.body, ...{password: '', [isUpdating]: false}})
@@ -154,57 +149,24 @@ export default class EditBox extends React.Component {
 
     render(){
         const {
-            thomso_id, is_thomso_id_disabled, is_thomso_id_updating, 
             name, is_name_disabled, is_name_updating, 
             email, is_email_disabled, is_email_updating, 
             gender, is_gender_disabled, is_gender_updating, 
-            contact, is_contact_disabled, is_contact_updating, 
-            college, is_college_disabled, is_college_updating, 
-            state, is_state_disabled, is_state_updating, 
-            address, is_address_disabled, is_address_updating, 
-            verified, is_verified_updating, 
-            blocked, is_blocked_updating, 
-            payment_type, is_payment_type_disabled, is_payment_type_updating, 
-            accomodation, is_accomodation_disabled, is_accomodation_updating, 
-            password, is_password_disabled, is_password_updating, 
+            contact1, is_contact1_disabled, is_contact1_updating, 
+            contact2, is_contact2_disabled, is_contact2_updating, 
+            bhawan, is_bhawan_disabled, is_bhawan_updating, 
+            enrollment_no, is_enrollment_no_disabled, is_enrollment_no_updating, 
             branch, is_branch_disabled, is_branch_updating, 
+            year, is_year_disabled, is_year_updating, 
+            event_id, is_event_id_disabled, is_event_id_updating, 
+            password, is_password_disabled, is_password_updating, 
+            blocked, is_blocked_updating, 
             errors,
-            image
         } = this.state
-        let imageURL
-        if (process.env.REACT_APP_SERVER_ENVIORNMENT === "dev" && image) {
-            imageURL = 'https://localhost:' + process.env.REACT_APP_SERVER_PORT + '/uploads/img/ProfileImage/' + image
-        }
-        else if (image) {
-            imageURL = '/uploads/img/ProfileImage/' + image
-        }
 
         return (
             <div>
                 {errors ? errors : null}
-
-                {imageURL ? <img src={imageURL} alt="user" /> : 'No Image'}
-                <div>
-                    <label htmlFor="input_thomso_id">thomso_id</label>
-                    <input
-                        id="input_thomso_id"
-                        type="text"
-                        placeholder="Your Name"
-                        name="thomso_id"
-                        value={thomso_id}
-                        disabled={is_thomso_id_disabled}
-                        autoCorrect="off"
-                        autoComplete="off"
-                        autoCapitalize="on"
-                        onChange={this.onChange}
-                        spellCheck="false"
-                    />
-                    <button disabled={is_thomso_id_updating} onClick={ () => this.switchEditing('is_thomso_id_disabled', 'is_thomso_id_updating') }>{is_thomso_id_disabled ? 'Edit': 'Cancel'}</button>
-                    {is_thomso_id_disabled ?
-                        null :
-                        <button disabled={is_thomso_id_updating} onClick={ () => this.patchData('thomso_id', 'is_thomso_id_disabled', 'is_thomso_id_updating') }>Update</button>
-                    }
-                </div>
                 <div>
                     <label htmlFor="inputName">Name</label>
                     <input
@@ -268,157 +230,87 @@ export default class EditBox extends React.Component {
                     }
                 </div>
                 <div>
-                    <label htmlFor="inputContact">Contact</label>
+                    <label htmlFor="inputContact1">Contact1</label>
                     <input
-                        id="inputContact"
+                        id="inputContact1"
                         type="text"
-                        placeholder="Your Contact"
-                        name="contact"
-                        value={contact}
-                        disabled={is_contact_disabled}
+                        placeholder="Your Contact1"
+                        name="contact1"
+                        value={contact1}
+                        disabled={is_contact1_disabled}
                         autoCorrect="off"
                         autoComplete="off"
                         autoCapitalize="on"
                         onChange={this.onChange}
                         spellCheck="false"
                     />
-                    <button disabled={is_contact_updating} onClick={ () => this.switchEditing('is_contact_disabled', 'is_contact_updating') }>{is_contact_disabled ? 'Edit': 'Cancel'}</button>
-                    {is_contact_disabled ?
+                    <button disabled={is_contact1_updating} onClick={ () => this.switchEditing('is_contact1_disabled', 'is_contact1_updating') }>{is_contact1_disabled ? 'Edit': 'Cancel'}</button>
+                    {is_contact1_disabled ?
                         null :
-                        <button disabled={is_contact_updating} onClick={ () => this.patchData('contact', 'is_contact_disabled', 'is_contact_updating') }>Update</button>
+                        <button disabled={is_contact1_updating} onClick={ () => this.patchData('contact1', 'is_contact1_disabled', 'is_contact1_updating') }>Update</button>
                     }
                 </div>
                 <div>
-                    <label htmlFor="inputCollege">College</label>
+                    <label htmlFor="inputContact2">Contact2</label>
                     <input
-                        id="inputCollege"
+                        id="inputContact2"
                         type="text"
-                        placeholder="Your College"
-                        name="college"
-                        value={college}
-                        disabled={is_college_disabled}
+                        placeholder="Your Contact2"
+                        name="contact2"
+                        value={contact2}
+                        disabled={is_contact2_disabled}
                         autoCorrect="off"
                         autoComplete="off"
                         autoCapitalize="on"
                         onChange={this.onChange}
                         spellCheck="false"
                     />
-                    <button disabled={is_college_updating} onClick={ () => this.switchEditing('is_college_disabled', 'is_college_updating') }>{is_college_disabled ? 'Edit': 'Cancel'}</button>
-                    {is_college_disabled ?
+                    <button disabled={is_contact2_updating} onClick={ () => this.switchEditing('is_contact2_disabled', 'is_contact2_updating') }>{is_contact2_disabled ? 'Edit': 'Cancel'}</button>
+                    {is_contact2_disabled ?
                         null :
-                        <button disabled={is_college_updating} onClick={ () => this.patchData('college', 'is_college_disabled', 'is_college_updating') }>Update</button>
+                        <button disabled={is_contact2_updating} onClick={ () => this.patchData('contact2', 'is_contact2_disabled', 'is_contact2_updating') }>Update</button>
                     }
                 </div>
                 <div>
-                    <label htmlFor="inputState">State</label>
+                    <label htmlFor="inputBhawan">Bhawan</label>
                     <input
-                        id="inputState"
+                        id="inputBhawan"
                         type="text"
-                        placeholder="Your State"
-                        name="state"
-                        value={state}
-                        disabled={is_state_disabled}
+                        placeholder="Your Bhawan"
+                        name="bhawan"
+                        value={bhawan}
+                        disabled={is_bhawan_disabled}
                         autoCorrect="off"
                         autoComplete="off"
                         autoCapitalize="on"
                         onChange={this.onChange}
                         spellCheck="false"
                     />
-                    <button disabled={is_state_updating} onClick={ () => this.switchEditing('is_state_disabled', 'is_state_updating') }>{is_state_disabled ? 'Edit': 'Cancel'}</button>
-                    {is_state_disabled ?
+                    <button disabled={is_bhawan_updating} onClick={ () => this.switchEditing('is_bhawan_disabled', 'is_bhawan_updating') }>{is_bhawan_disabled ? 'Edit': 'Cancel'}</button>
+                    {is_bhawan_disabled ?
                         null :
-                        <button disabled={is_state_updating} onClick={ () => this.patchData('state', 'is_state_disabled', 'is_state_updating') }>Update</button>
+                        <button disabled={is_bhawan_updating} onClick={ () => this.patchData('bhawan', 'is_bhawan_disabled', 'is_bhawan_updating') }>Update</button>
                     }
                 </div>
                 <div>
-                    <label htmlFor="inputAddress">Address</label>
+                    <label htmlFor="input_enrollment_no">enrollment_no</label>
                     <input
-                        id="inputAddress"
+                        id="input_enrollment_no"
                         type="text"
-                        placeholder="Your Address"
-                        name="address"
-                        value={address}
-                        disabled={is_address_disabled}
+                        placeholder="Your enrollment_no"
+                        name="enrollment_no"
+                        value={enrollment_no}
+                        disabled={is_enrollment_no_disabled}
                         autoCorrect="off"
                         autoComplete="off"
                         autoCapitalize="on"
                         onChange={this.onChange}
                         spellCheck="false"
                     />
-                    <button disabled={is_address_updating} onClick={ () => this.switchEditing('is_address_disabled', 'is_address_updating') }>{is_address_disabled ? 'Edit': 'Cancel'}</button>
-                    {is_address_disabled ?
+                    <button disabled={is_enrollment_no_updating} onClick={ () => this.switchEditing('is_enrollment_no_disabled', 'is_enrollment_no_updating') }>{is_enrollment_no_disabled ? 'Edit': 'Cancel'}</button>
+                    {is_enrollment_no_disabled ?
                         null :
-                        <button disabled={is_address_updating} onClick={ () => this.patchData('address', 'is_address_disabled', 'is_address_updating') }>Update</button>
-                    }
-                </div>
-                <div>
-                    <button onClick={() => this.switchBool('verified', 'is_verified_updating')} disabled={is_verified_updating}>
-                        {verified ? 'Unverify' : 'Verify' }
-                    </button>
-                </div>
-                <div>
-                    <button onClick={() => this.switchBool('blocked', 'is_blocked_updating')} disabled={is_blocked_updating}>
-                        {blocked ? 'Unblock' : 'Block' }
-                    </button>
-                </div>
-                <div>
-                    <label htmlFor="paymentType">Payment Type : </label>
-                    <select
-                        id="paymentType"
-                        name="payment_type"
-                        value={payment_type}
-                        disabled={is_payment_type_disabled}
-                        onChange={this.onChange}
-                    >
-                        <option value="" disabled="true"> Payment Type </option>
-                        <option value="1"> Online Payment </option>
-                        <option value="2"> NEFT </option>
-                        <option value="3"> Draft </option>
-                        <option value="4"> Campus Ambassador </option>
-                    </select>
-                    <button disabled={is_payment_type_updating} onClick={ () => this.switchEditing('is_payment_type_disabled', 'is_payment_type_updating') }>{is_payment_type_disabled ? 'Edit': 'Cancel'}</button>
-                    {is_payment_type_disabled ?
-                        null :
-                        <button disabled={is_payment_type_updating} onClick={ () => this.patchData('payment_type', 'is_payment_type_disabled', 'is_payment_type_updating') }>Update</button>
-                    }
-                </div>
-                <div>
-                    <label htmlFor="inputAccomodation">Accomodation Type : </label>
-                    <select
-                        id="inputAccomodation"
-                        name="accomodation"
-                        value={accomodation}
-                        disabled={is_accomodation_disabled}
-                        onChange={this.onChange}
-                    >
-                        <option value="" disabled="true"> Accomodation Type </option>
-                        <option value="accomodation"> Accomodation </option>
-                        <option value="non-accomodation"> Non-accomodation </option>
-                    </select>
-                    <button disabled={is_accomodation_updating} onClick={ () => this.switchEditing('is_accomodation_disabled', 'is_accomodation_updating') }>{is_accomodation_disabled ? 'Edit': 'Cancel'}</button>
-                    {is_accomodation_disabled ?
-                        null :
-                        <button disabled={is_accomodation_updating} onClick={ () => this.patchData('accomodation', 'is_accomodation_disabled', 'is_accomodation_updating') }>Update</button>
-                    }
-                </div>
-                <div>
-                    <label htmlFor="inputPassword">Password</label>
-                    <input
-                        id="inputPassword"
-                        type="password"
-                        placeholder="Password"
-                        name="password"
-                        autoCorrect="off"
-                        autoComplete="off"
-                        autoCapitalize="off"
-                        value={password}
-                        disabled={is_password_disabled}
-                        onChange={this.onChange}
-                    />
-                    <button disabled={is_password_updating} onClick={ () => this.switchEditing('is_password_disabled', 'is_password_updating') }>{is_password_disabled ? 'Edit': 'Cancel'}</button>
-                    {is_password_disabled ?
-                        null :
-                        <button disabled={is_password_updating} onClick={ () => this.patchData('password', 'is_password_disabled', 'is_password_updating') }>Update</button>
+                        <button disabled={is_enrollment_no_updating} onClick={ () => this.patchData('enrollment_no', 'is_enrollment_no_disabled', 'is_enrollment_no_updating') }>Update</button>
                     }
                 </div>
                 <div>
@@ -443,7 +335,74 @@ export default class EditBox extends React.Component {
                     }
                 </div>
                 <div>
-                    <button onClick={() => this.loginParticipant()}>
+                    <label htmlFor="inputYear">Year</label>
+                    <input
+                        id="inputYear"
+                        type="text"
+                        placeholder="Your Year"
+                        name="year"
+                        value={year}
+                        disabled={is_year_disabled}
+                        autoCorrect="off"
+                        autoComplete="off"
+                        autoCapitalize="on"
+                        onChange={this.onChange}
+                        spellCheck="false"
+                    />
+                    <button disabled={is_year_updating} onClick={ () => this.switchEditing('is_year_disabled', 'is_year_updating') }>{is_year_disabled ? 'Edit': 'Cancel'}</button>
+                    {is_year_disabled ?
+                        null :
+                        <button disabled={is_year_updating} onClick={ () => this.patchData('year', 'is_year_disabled', 'is_year_updating') }>Update</button>
+                    }
+                </div>
+                <div>
+                    <label htmlFor="input_event_id">event_id</label>
+                    <input
+                        id="input_event_id"
+                        type="text"
+                        placeholder="Your event_id"
+                        name="event_id"
+                        value={event_id}
+                        disabled={is_event_id_disabled}
+                        autoCorrect="off"
+                        autoComplete="off"
+                        autoCapitalize="on"
+                        onChange={this.onChange}
+                        spellCheck="false"
+                    />
+                    <button disabled={is_event_id_updating} onClick={ () => this.switchEditing('is_event_id_disabled', 'is_event_id_updating') }>{is_event_id_disabled ? 'Edit': 'Cancel'}</button>
+                    {is_event_id_disabled ?
+                        null :
+                        <button disabled={is_event_id_updating} onClick={ () => this.patchData('event_id', 'is_event_id_disabled', 'is_event_id_updating') }>Update</button>
+                    }
+                </div>
+                <div>
+                    <label htmlFor="inputPassword">Password</label>
+                    <input
+                        id="inputPassword"
+                        type="password"
+                        placeholder="Password"
+                        name="password"
+                        autoCorrect="off"
+                        autoComplete="off"
+                        autoCapitalize="off"
+                        value={password}
+                        disabled={is_password_disabled}
+                        onChange={this.onChange}
+                    />
+                    <button disabled={is_password_updating} onClick={ () => this.switchEditing('is_password_disabled', 'is_password_updating') }>{is_password_disabled ? 'Edit': 'Cancel'}</button>
+                    {is_password_disabled ?
+                        null :
+                        <button disabled={is_password_updating} onClick={ () => this.patchData('password', 'is_password_disabled', 'is_password_updating') }>Update</button>
+                    }
+                </div>
+                <div>
+                    <button onClick={() => this.switchBool('blocked', 'is_blocked_updating')} disabled={is_blocked_updating}>
+                        {blocked ? 'Unblock' : 'Block' }
+                    </button>
+                </div>
+                <div>
+                    <button onClick={() => this.loginCoordinator()}>
                         Login
                     </button>
                 </div>
