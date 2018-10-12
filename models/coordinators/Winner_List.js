@@ -38,6 +38,9 @@ var UserSchema = new mongoose.Schema({
     bank_name: {
         type: String,
     },
+    account_holder_name:{
+        type:String
+    },
     verified:{
         type:Boolean,
         default:true
