@@ -63,9 +63,10 @@ import logo59 from './img/114.png';
 import logo60 from './img/115.png';
 import logo61 from './img/116.png';
 import logo62 from './img/225.png';
+import biubiu from "./img/biubiu.png";
 
-export default class SponsorIndex extends React.Component{
-    render(){
+export default class SponsorIndex extends React.Component {
+    render() {
         return (
             <div>
 
@@ -255,9 +256,6 @@ export default class SponsorIndex extends React.Component{
                             </div>
 
 
-
-
-
                             <div className="sponsors-Titlediv">
 
                                 <center>
@@ -407,6 +405,19 @@ export default class SponsorIndex extends React.Component{
                                     </center>
                                 </div>
                             </div>
+                            <div>
+                                <div className="sponsors-TitleSpons">
+                                    <center>
+                                        <h2>Meme Partner</h2>
+                                    </center>
+                                </div>
+
+                                <div className="sponsors-imgdiv2">
+                                    <center>
+                                        <a href="https://www.biubiu.com/" target="_blank" rel="noopener noreferrer"><img height="65px" className="sponsors-sponsors-responsive-image" src={biubiu} alt="" /></a>
+                                    </center>
+                                </div>
+                            </div>`
                             <div className="sponsors-Titlediv">
                                 <center>
                                     <h2> Online Media Partners</h2></center>
@@ -525,11 +536,11 @@ export default class SponsorIndex extends React.Component{
                                     <center>
                                         <h4>Content Partner</h4></center>
                                 </div>
-                          </div>
-
                             </div>
-                          </div>
+
                         </div>
+                    </div>
+                </div>
             </div>
         )
     }

@@ -13,7 +13,7 @@ var SuperAdminTokenMiddleware = require("../../middlewares/super/TokenMiddleware
 // Routes
 
 // -> /super/auth
-// router.post('/auth/register', adminAuth.register);
+router.post('/auth/register', adminAuth.register);
 router.post('/auth/login', adminAuth.login);
 
 // -> /super/

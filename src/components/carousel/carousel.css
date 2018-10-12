@@ -41,14 +41,14 @@
     transition: 1s;
   }
   .card-carousel .my-card:nth-child(3){
-    background-image: url("/img/main/whythomso/farhaaan.jpeg");
+    background-image: url("/img/main/whythomso/Farhaan.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 2px;
   }
   .card-carousel .my-card:nth-child(1){
-    background-image: url("/img/main/whythomso/sunidhi.jpeg");
+    background-image: url("/img/main/whythomso/sunidhichauhan.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -62,7 +62,7 @@
     border-radius: 2px;
   }
   .card-carousel .my-card:nth-child(4){
-    background-image: url("/img/main/whythomso/nucleya.jpeg");
+    background-image: url("/img/main/whythomso/Nucleya.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
