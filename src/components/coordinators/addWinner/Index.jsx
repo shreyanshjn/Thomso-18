@@ -255,12 +255,7 @@ export default class AddWinnerIndex extends React.Component{
                                 <input type="button" onClick={this.resetChange} style={{fontSize:"20px", padding:"5px", marginLeft:"50px"}} value="Reset" />
                             : null}
                         </div>
-                        {errors ?
-                        <div style={{ textAlign: 'center', color: 'red', fontWeight: '600', fontSize:"25px" }}>
-                            {errors}
-                        </div>
-                        : null
-                    }
+                       
                     </form>
                 </div>
             </div>
