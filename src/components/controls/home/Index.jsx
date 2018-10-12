@@ -27,6 +27,12 @@ export default class HomeIndex extends Component {
         this.setState({ [name]: value, errors:"",message:'' });
     }
 
+    onReset = () => {
+        this.setState({
+            userData:''
+        })
+    }
+
     onSubmit = (e) => {
         e.preventDefault();
         if (!this.state.disabled) {
@@ -41,7 +47,7 @@ export default class HomeIndex extends Component {
                             .then(r => {
                                 // console.log(r.data.body)
                                 if (r && r.data && r.data.success && r.data.body && r.data.body.payment_type!==0) {
-                                    this.setState({ userData: r.data.body ,disabled:false, thomso_id1:r.data.body.thomso_id});
+                                    this.setState({ userData: r.data.body ,disabled:false, thomso_id1:r.data.body.thomso_id, thomso_id:''});
                                 }
                                 else{
                                     if (r && r.data && r.data.success && r.data.body ) {
@@ -130,6 +136,9 @@ export default class HomeIndex extends Component {
                             <button style={{marginTop:"20px"}} type="submit" disabled={disabled}>SUBMIT</button>
                         </div>
                     </form>
+                    <div>
+                        <button style={{marginTop:"20px"}} type="button" onClick={this.onReset} > Reset Details </button>
+                    </div>
                         <div style={{paddingTop:"50px"}}>
                             <Link to="controls/logout"  style={{textDecoration:"none", color:"red"}}>LOGOUT</Link>
                         </div>
@@ -183,6 +192,7 @@ export default class HomeIndex extends Component {
                                 <button type="submit" disabled={disabledPayment}>SUBMIT</button>
                             </div>
                         </form>
+                        
                         {message ?
                             <div className="controlsGreenError">
                                 {message}

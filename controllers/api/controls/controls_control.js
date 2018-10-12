@@ -1,10 +1,10 @@
-var moment = require('moment');
-var Counter = require('../../../models/counters/Counter');
+// var moment = require('moment');
+// var Counter = require('../../../models/counters/Counter');
 var Controls_user = require('../../../models/controls/Controls_User');
-var Controls_user_token = require('../../../models/controls/Controls_User_Token');
+// var Controls_user_token = require('../../../models/controls/Controls_User_Token');
 var User_controls = require('../../../models/main/Main_User');
-var TokenHelper = require('../../../helpers/TokenHelper');
-var Generator = require("../../../helpers/GeneratePassword");
+// var TokenHelper = require('../../../helpers/TokenHelper');
+// var Generator = require("../../../helpers/GeneratePassword");
 
 exports.info = function(req, res) {
     if(req && req.locals && req.locals.email){

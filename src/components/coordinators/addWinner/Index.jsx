@@ -16,6 +16,7 @@ export default class AddWinnerIndex extends React.Component{
             account_no:'',
             bank_name:'',
             errors:'',
+            account_holder_name:'',
             disabled:false
         }
         this.Auth = new AuthService();
@@ -44,6 +45,7 @@ export default class AddWinnerIndex extends React.Component{
             ifsc_code:'',
             account_no:'',
             bank_name:'',
+            account_holder_name:''
         })
         this.Auth = new AuthService();
     }
@@ -58,17 +60,18 @@ export default class AddWinnerIndex extends React.Component{
         e.preventDefault();
         let coordinator_email = this.props.userData.email;
         console.log(coordinator_email)
-        let { thomso_id, event_name, position, ifsc_code, account_no, bank_name }= this.state;
+        let { thomso_id, event_name, account_holder_name, position, ifsc_code, account_no, bank_name }= this.state;
         if (thomso_id) thomso_id = thomso_id.trim()
         if (event_name) event_name = event_name.trim()
         if (position) position = position.trim()
         if (ifsc_code) ifsc_code = ifsc_code.trim()
         if (account_no) account_no = account_no.trim()
         if (bank_name) bank_name = bank_name.trim()
+        if (account_holder_name) account_holder_name = account_holder_name.trim()
 
-        const data = {thomso_id, event_name, position, ifsc_code, bank_name, account_no, coordinator_email};
+        const data = {thomso_id, event_name, account_holder_name, position, ifsc_code, bank_name, account_no, coordinator_email};
         const isAuthenticated = this.Auth.hasToken();
-        if(thomso_id && event_name && position && ifsc_code && account_no && bank_name){
+        if(thomso_id && event_name && position && ifsc_code && account_holder_name && account_no && bank_name){
             if(isAuthenticated){
                 const token = this.Auth.getToken();
                 console.log(token)
@@ -97,7 +100,7 @@ export default class AddWinnerIndex extends React.Component{
     }
 
     render(){
-        let {event_type, thomso_id, event_name, position, ifsc_code, account_no, bank_name, errors, disabled} = this.state;
+        let {event_type, thomso_id, account_holder_name, event_name, position, ifsc_code, account_no, bank_name, errors, disabled} = this.state;
         return(
             <div>
                 {this.props && this.props.userData && this.props.userData.name ? <h3> Hello, {this.props.userData.name}</h3> :null}
@@ -121,11 +124,16 @@ export default class AddWinnerIndex extends React.Component{
                         <span><input onChange={this.eventOptionChange} type="radio" name="multiple" value="multiple" checked={!event_type}   /></span><span>Group Event</span>
                     </div>
                 </div>
-                
+                {errors ?
+                        <div style={{ textAlign: 'center', color: 'red', fontWeight: '600', fontSize:"25px" }}>
+                            {errors}
+                        </div>
+                        : null
+                    }
                 <div style={{marginTop:"30px"}}>
                     <form id="addWinnerForm" onSubmit={this.onSubmit}>
                         <div style={{paddingLeft:"2%", fontSize:"20px",width:"60%",display:"flex",marginTop:"10px", justifyContent:"space-evenly"}}>
-                            <label style={{width:"20%"}} htmlFor="inputThomsoId">Thomso ID</label>
+                            <label style={{width:"20%"}} htmlFor="inputThomsoId">Thomso ID : </label>
                             <input
                                 id="inputThomsoId"
                                 type="text"
@@ -142,7 +150,7 @@ export default class AddWinnerIndex extends React.Component{
                             />
                         </div>
                         <div style={{paddingLeft:"2%", fontSize:"20px",width:"60%",display:"flex",marginTop:"10px", justifyContent:"space-evenly"}}>
-                            <label style={{width:"20%"}} htmlFor="inputPosition">Position</label>
+                            <label style={{width:"20%"}} htmlFor="inputPosition">Position : </label>
                             <select
                                 id="inputPosition"
                                 name="position"
@@ -160,7 +168,7 @@ export default class AddWinnerIndex extends React.Component{
                         </div>
                         
                         <div style={{paddingLeft:"2%", fontSize:"20px",width:"60%",display:"flex",marginTop:"10px", justifyContent:"space-evenly"}}>
-                            <label style={{width:"20%"}} htmlFor="inputEventName">Event Name</label>
+                            <label style={{width:"20%"}} htmlFor="inputEventName">Event Name : </label>
                             <input
                                 id="inputEventName"
                                 type="text"
@@ -177,11 +185,27 @@ export default class AddWinnerIndex extends React.Component{
                             />
                         </div>
                         <div style={{paddingLeft:"2%", fontSize:"20px",width:"60%",display:"flex",marginTop:"10px", justifyContent:"space-evenly"}}>
-                            <label style={{width:"20%"}} htmlFor="inputBank">Bank Name</label>
+                            <label style={{width:"20%"}} htmlFor="inputbankname">Account Holder Name :   </label>
+                            <input
+                                id="inputbankname"
+                                type="text"
+                                placeholder="Account Holder Name"
+                                name="account_holder_name"
+                                autoCorrect="off"
+                                autoComplete="off"
+                                autoCapitalize="on"
+                                value={account_holder_name}
+                                onChange={this.onChange}
+                                required
+                                style={{marginLeft:"5%", borderRadius:"5px", padding:"10px 5px", width:"20%"}}
+                            />
+                        </div>
+                        <div style={{paddingLeft:"2%", fontSize:"20px",width:"60%",display:"flex",marginTop:"10px", justifyContent:"space-evenly"}}>
+                            <label style={{width:"20%"}} htmlFor="inputBank">Bank Name : </label>
                             <input
                                 id="inputBank"
                                 type="text"
-                                placeholder="Winner's Bank Name"
+                                placeholder="Name of Bank"
                                 name="bank_name"
                                 autoCorrect="off"
                                 autoComplete="off"
@@ -193,7 +217,7 @@ export default class AddWinnerIndex extends React.Component{
                             />
                         </div>
                         <div style={{paddingLeft:"2%", fontSize:"20px",width:"60%",display:"flex",marginTop:"10px", justifyContent:"space-evenly"}}>
-                            <label style={{width:"20%"}} htmlFor="inputAccount">Account Number</label>
+                            <label style={{width:"20%"}} htmlFor="inputAccount">Account Number : </label>
                             <input
                                 id="inputAccount"
                                 type="text"
@@ -209,7 +233,7 @@ export default class AddWinnerIndex extends React.Component{
                             />
                         </div>
                         <div style={{paddingLeft:"2%", fontSize:"20px",width:"60%",display:"flex",marginTop:"10px", justifyContent:"space-evenly"}}>
-                            <label style={{width:"20%"}} htmlFor="inputifsc">IFSC Code</label>
+                            <label style={{width:"20%"}} htmlFor="inputifsc">IFSC Code : </label>
                             <input
                                 id="inputifsc"
                                 type="text"
@@ -231,12 +255,7 @@ export default class AddWinnerIndex extends React.Component{
                                 <input type="button" onClick={this.resetChange} style={{fontSize:"20px", padding:"5px", marginLeft:"50px"}} value="Reset" />
                             : null}
                         </div>
-                        {errors ?
-                        <div style={{ textAlign: 'center', color: 'red', fontWeight: '600', fontSize:"25px" }}>
-                            {errors}
-                        </div>
-                        : null
-                    }
+                       
                     </form>
                 </div>
             </div>

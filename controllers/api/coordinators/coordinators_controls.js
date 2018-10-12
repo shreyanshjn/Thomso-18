@@ -1,12 +1,12 @@
-var moment = require('moment');
+// var moment = require('moment');
 var Coordinators_User = require('../../../models/coordinators/Coordinators_User');
-var Coordinators_User_Token = require('../../../models/coordinators/Coordinators_User_Token');
-var Winner_List = require('../../../models/coordinators/Winner_List');
-var Main_User = require('../../../models/main/Main_User');
-var Counter = require('../../../models/counters/Counter');
+// var Coordinators_User_Token = require('../../../models/coordinators/Coordinators_User_Token');
+// var Winner_List = require('../../../models/coordinators/Winner_List');
+// var Main_User = require('../../../models/main/Main_User');
+// var Counter = require('../../../models/counters/Counter');
 // var EventSchema = require('../../../models/main/Thomso_Event');
-var TokenHelper = require('../../../helpers/TokenHelper');
-var Generator = require("../../../helpers/GeneratePassword");
+// var TokenHelper = require('../../../helpers/TokenHelper');
+// var Generator = require("../../../helpers/GeneratePassword");
 
 exports.info = function(req, res) {
     if(req && req.locals && req.locals.email){
