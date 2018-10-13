@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./addcordinator.css"
 import FetchApi from "../../../utils/FetchAPI";
 import validateInput from '../../../utils/validation/loginValidation';
 import AuthService from "../../../handlers/superAdmin/AuthService";
@@ -14,18 +14,18 @@ export default class RegisterIndex extends React.Component {
         this.state = {
             name: '',
             contact1: '',
-            contact2:'',
+            contact2: '',
             email: '',
             gender: '',
             branch: '',
-            year:'',
-            event_id:'',
-            enrollment_no:'',
-            bhawan:'',
+            year: '',
+            event_id: '',
+            enrollment_no: '',
+            bhawan: '',
             password: '',
             confirmPassword: '',
             selectedOption: null,
-            errors:''
+            errors: ''
         }
         this.Auth = new AuthService();
     }
@@ -42,12 +42,12 @@ export default class RegisterIndex extends React.Component {
             value = value.trim();
             value = value.substring(0, 10)
         }
-        this.setState({ [name]: value , errors:''});
+        this.setState({ [name]: value, errors: '' });
     }
 
     onSubmit = (e) => {
         e.preventDefault();
-        let { name, contact1,contact2,  email, gender, branch, year, event_id, enrollment_no, bhawan, password, confirmPassword } = this.state;
+        let { name, contact1, contact2, email, gender, branch, year, event_id, enrollment_no, bhawan, password, confirmPassword } = this.state;
         if (name) name = name.trim()
         if (email) email = email.trim()
         if (gender) gender = gender.trim()
@@ -60,9 +60,9 @@ export default class RegisterIndex extends React.Component {
         if (enrollment_no) enrollment_no = enrollment_no.trim()
         if (!isNaN(contact1) && !isNaN(contact2)) {
             if (password === confirmPassword) {
-                const data = { name, contact1,contact2,  email, gender, branch, year, event_id, enrollment_no, bhawan, password}
+                const data = { name, contact1, contact2, email, gender, branch, year, event_id, enrollment_no, bhawan, password }
                 const check = validateInput(data)
-                if (name && contact1 &&contact2 &&  email && gender && branch && year && event_id && enrollment_no && bhawan && password && check.isValid) {
+                if (name && contact1 && contact2 && email && gender && branch && year && event_id && enrollment_no && bhawan && password && check.isValid) {
                     const token = this.Auth.getToken()
                     FetchApi('POST', '/api/super/coordinators/register', data, token)
                         .then(res => {
@@ -95,16 +95,11 @@ export default class RegisterIndex extends React.Component {
     }
 
     render() {
-        const {errors, name, contact1,contact2,  email, gender, branch, year, event_id, enrollment_no, bhawan, password, confirmPassword  } = this.state;
+        const { errors, name, contact1, contact2, email, gender, branch, year, event_id, enrollment_no, bhawan, password, confirmPassword } = this.state;
         return (
             <div className="main-verify-register-parent">
                 <div className="register-child">
                     <div className="register-heading">
-                        <div className="r-logo">
-                            {/* <Link to="/main"><img src={img} alt="r-logo" /></Link> */}
-                        </div>
-                        <div className="vertical_line">
-                        </div>
                         <div className="register-ca common-cursor">
                             <h1>Coordinator Registration</h1>
                         </div>
@@ -152,7 +147,7 @@ export default class RegisterIndex extends React.Component {
                                         <option value="other"> Other </option>
                                     </select>
                                 </div>
-                                
+
                             </div>
                             <div className="form-first-child">
                                 <div className="form-email">
@@ -187,7 +182,7 @@ export default class RegisterIndex extends React.Component {
                                     />
                                 </div>
                             </div>
-                           
+
                             <div className="form-first-child">
                                 <div className="form-contactnumber">
                                     <label htmlFor="inputContact1">Contact 1</label>
