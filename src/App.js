@@ -141,10 +141,10 @@ const ControlsIndex = Loadable({
     loading: () => <Loader />
 })
 
-// const SuperAdminIndex = Loadable({
-//     loader: () => import("./components/superAdmin/Index.jsx"),
-//     loading: () => <Loader />
-// })
+const SuperAdminIndex = Loadable({
+    loader: () => import("./components/superAdmin/Index.jsx"),
+    loading: () => <Loader />
+})
 
 const MUNIndex = Loadable({
     loader: () => import("./components/beta/mun/Index"),
@@ -228,7 +228,7 @@ class App extends Component {
                             <Route path="/controls" component={ControlsIndex} />
                             <Route path="/cupid" component={Cupid} />
                             <Route path="/mun" component={MUNIndex} />
-                            {/* <Route path="/super" component={SuperAdminIndex} /> */}
+                            <Route path="/super" component={SuperAdminIndex} />
                             {/* <Route path="/xpression" component={Xpression} /> */}
                             {/* <Route component={Error404} /> */}
                         </React.Fragment>
