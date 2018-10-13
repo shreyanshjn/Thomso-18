@@ -1,12 +1,12 @@
 import React from "react";
-// import { Link } from 'react-router-dom';
 
 import FetchApi from "../../../utils/FetchAPI";
 import validateInput from '../../../utils/validation/loginValidation';
-import AuthService from '../../../handlers/main/AuthService';
+import AuthService from "../../../handlers/superAdmin/AuthService";
+
 
 import "../../campusAmbassador/register/css/register.css";
-// import img from "../../campusAmbassador/register/img/logo.png"
+// import img from "../../campusAmbassador/register/img/  logo.png"
 
 export default class RegisterIndex extends React.Component {
     constructor() {
@@ -63,13 +63,12 @@ export default class RegisterIndex extends React.Component {
                 const data = { name, contact1,contact2,  email, gender, branch, year, event_id, enrollment_no, bhawan, password}
                 const check = validateInput(data)
                 if (name && contact1 &&contact2 &&  email && gender && branch && year && event_id && enrollment_no && bhawan && password && check.isValid) {
-                    FetchApi('POST', '/api/coordinators/auth/register', data)
+                    const token = this.Auth.getToken()
+                    FetchApi('POST', '/api/super/coordinators/register', data, token)
                         .then(res => {
                             if (res && res.data) {
                                 if (res.data.success === true) {
-                                    this.Auth.setToken(res.data.token);
-                                    // this.props.updateRoutes(true, false);
-                                    this.props.history.push('/coordinators')
+                                    this.props.history.push('/super/coordinators')
                                 }
                                 else
                                     this.setState({ errors: res.data.msg })

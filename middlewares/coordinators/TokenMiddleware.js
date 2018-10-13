@@ -7,7 +7,8 @@ exports.verifyUser = (req, res, next) => {
     if (authHeader !== undefined) {
         // Find token in db
         Coordinators_User_Token.findOne({
-            token: authHeader
+            token: authHeader,
+            blocked: { $ne: true }
         }, function(err, user) {
             if (err) {
                 res.status(403).send({success: false, msg: 'Token Error'});

@@ -42,6 +42,12 @@ export default class LoginIndex extends Component {
                     if(error.response && error.response.status === 401) {
                         this.setState({ message: 'Login failed. Username or password not match' });
                     }
+                    else if(error.response && error.response.msg) {
+                        this.setState({ message: error.response.msg});
+                    }
+                    else{
+                        this.setState({message:"Something went wrong."})
+                    }
                 });
         } else {
             this.setState({message: check.errors.password})

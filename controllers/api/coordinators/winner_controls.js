@@ -1,21 +1,24 @@
-var moment = require('moment');
-var Coordinators_User = require('../../../models/coordinators/Coordinators_User');
-var Coordinators_User_Token = require('../../../models/coordinators/Coordinators_User_Token');
+// var moment = require('moment');
+// var Coordinators_User = require('../../../models/coordinators/Coordinators_User');
+// var Coordinators_User_Token = require('../../../models/coordinators/Coordinators_User_Token');
 var Winner_List = require('../../../models/coordinators/Winner_List');
 var Main_User = require('../../../models/main/Main_User');
 var Counter = require('../../../models/counters/Counter');
 // var EventSchema = require('../../../models/main/Thomso_Event');
-var TokenHelper = require('../../../helpers/TokenHelper');
-var Generator = require("../../../helpers/GeneratePassword");
+// var TokenHelper = require('../../../helpers/TokenHelper');
+// var Generator = require("../../../helpers/GeneratePassword");
 
 exports.addWinner = (req, res) => {
-    if(req.body && req.body.thomso_id && req.body.event_name && req.body.position && req.body.account_no && req.body.bank_name && req.body.ifsc_code && req.locals.email){
+    if(req.body && req.body.account_holder_name && req.body.thomso_id && req.body.event_name && req.body.position && req.body.account_no && req.body.bank_name && req.body.ifsc_code && req.locals.email){
         console.log(req.body.thomso_id,'1')
         if (req.body.thomso_id) {
             req.body.thomso_id = req.body.thomso_id.trim();
         }
         if (req.body.event_name) {
             req.body.event_name = req.body.event_name.trim();
+        }
+        if (req.body.account_holder_name) {
+            req.body.account_holder_name = req.body.account_holder_name.trim();
         }
         if (req.body.position) {
             req.body.position = req.body.position.trim();
@@ -51,6 +54,7 @@ exports.addWinner = (req, res) => {
                         name:result.name,
                         email:result.email,
                         contact:result.contact,
+                        account_holder_name:req.body.account_holder_name,
                         event_name_email:req.body.event_name + result.email
                     }
                     var newUser = new Winner_List(data);
@@ -101,7 +105,6 @@ exports.remove_winner = (req, res) => {
         .select('_id name')
         .exec( (err, result)=> {
             if(err) return res.state(400).send({success:false, msg:"User not found"})
-            console.log(result)
             res.json({success:true, msg:"Successfully removed"})
         })
     }else return res.status(400).send({msg:"Invalid Data", success:false})
