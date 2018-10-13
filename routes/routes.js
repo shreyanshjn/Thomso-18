@@ -29,7 +29,7 @@ router.use('/api/mun', munRoutes);
 router.use('/api/coordinators', coordinatorsRoutes);
 
 router.use('/api/super', superAdminRoutes);
-router.use('/api/controls', controlsRoutes);
+// router.use('/api/controls', controlsRoutes);
 
 // -> /sitemap.xml
 router.get("/sitemap.xml", viewController.sitemap);
