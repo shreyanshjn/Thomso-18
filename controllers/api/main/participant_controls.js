@@ -96,7 +96,7 @@ exports.update_image = function (req, res) {
                 })
             }
         })
-    }else res.status(400).send({ success: false, msg: 'Invalid Data' });
+    } else res.status(400).send({ success: false, msg: 'Invalid Data' });
 }
 
 exports.resendOTP = function (req, res) {

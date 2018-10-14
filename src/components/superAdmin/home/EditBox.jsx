@@ -424,6 +424,7 @@ export default class EditBox extends React.Component {
                             onChange={this.onChange}
                         >
                             <option value="" disabled="true"> Payment Type </option>
+                            <option value="0"> Unpaid </option>
                             <option value="1"> Online Payment </option>
                             <option value="2"> NEFT </option>
                             <option value="3"> Draft </option>

@@ -19,6 +19,9 @@ var UserSchema = new mongoose.Schema({
         required: true,
         unique: true,
     },
+    organization: {
+        type: String
+    },
     image: {
         type: String,
     }
