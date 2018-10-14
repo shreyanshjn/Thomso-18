@@ -180,10 +180,20 @@ export default class EditBox extends React.Component {
         }
 
         return (
-            <div>
+            <div className="superadmin-parent">
                 {errors ? errors : null}
 
-                {imageURL ? <img src={imageURL} alt="user" /> : 'No Image'}
+                {imageURL ? <div style={{
+                    backgroundImage: `url(${imageURL})`,
+                    backgroundPosition: "center center",
+                    backgroundSize: "contain",
+                    height: "300px",
+                    width: "300px",
+                    backgroundRepeat: "no-repeat",
+                    paddingLeft: "10px"
+                }}>
+                </div> : 'No Image'}
+
                 <div className="superadmin-form-input">
                     <div>
                         <label htmlFor="input_thomso_id">thomso_id</label>
@@ -203,8 +213,8 @@ export default class EditBox extends React.Component {
                             spellCheck="false"
                         />
                     </div>
-                    <div>
-                        <button disabled={is_thomso_id_updating} onClick={() => this.switchEditing('is_thomso_id_disabled', 'is_thomso_id_updating')}>{is_thomso_id_disabled ? 'Edit' : 'Cancel'}</button>
+                    <div className="superadmin-buttons-cancel-update">
+                        <button className={is_thomso_id_disabled ? null : "color-red"} disabled={is_thomso_id_updating} onClick={() => this.switchEditing('is_thomso_id_disabled', 'is_thomso_id_updating')}>{is_thomso_id_disabled ? 'Edit' : 'Cancel'}</button>
                         {is_thomso_id_disabled ?
                             null :
                             <button disabled={is_thomso_id_updating} onClick={() => this.patchData('thomso_id', 'is_thomso_id_disabled', 'is_thomso_id_updating')}>Update</button>
@@ -230,8 +240,8 @@ export default class EditBox extends React.Component {
                             spellCheck="false"
                         />
                     </div>
-                    <div>
-                        <button disabled={is_name_updating} onClick={() => this.switchEditing('is_name_disabled', 'is_name_updating')}>{is_name_disabled ? 'Edit' : 'Cancel'}</button>
+                    <div className="superadmin-buttons-cancel-update">
+                        <button className={is_name_disabled ? null : "color-red"} disabled={is_name_updating} onClick={() => this.switchEditing('is_name_disabled', 'is_name_updating')}>{is_name_disabled ? 'Edit' : 'Cancel'}</button>
                         {is_name_disabled ?
                             null :
                             <button disabled={is_name_updating} onClick={() => this.patchData('name', 'is_name_disabled', 'is_name_updating')}>Update</button>
@@ -257,8 +267,8 @@ export default class EditBox extends React.Component {
                             spellCheck="false"
                         />
                     </div>
-                    <div>
-                        <button disabled={is_email_updating} onClick={() => this.switchEditing('is_email_disabled', 'is_email_updating')}>{is_email_disabled ? 'Edit' : 'Cancel'}</button>
+                    <div className="superadmin-buttons-cancel-update">
+                        <button className={is_email_disabled ? null : "color-red"} disabled={is_email_updating} onClick={() => this.switchEditing('is_email_disabled', 'is_email_updating')}>{is_email_disabled ? 'Edit' : 'Cancel'}</button>
                         {is_email_disabled ?
                             null :
                             <button disabled={is_email_updating} onClick={() => this.patchData('email', 'is_email_disabled', 'is_email_updating')}>Update</button>
@@ -283,8 +293,8 @@ export default class EditBox extends React.Component {
                             <option value="other"> Other </option>
                         </select>
                     </div>
-                    <div>
-                        <button disabled={is_gender_updating} onClick={() => this.switchEditing('is_gender_disabled', 'is_gender_updating')}>{is_gender_disabled ? 'Edit' : 'Cancel'}</button>
+                    <div className="superadmin-buttons-cancel-update">
+                        <button className={is_gender_disabled ? null : "color-red"} disabled={is_gender_updating} onClick={() => this.switchEditing('is_gender_disabled', 'is_gender_updating')}>{is_gender_disabled ? 'Edit' : 'Cancel'}</button>
                         {is_gender_disabled ?
                             null :
                             <button disabled={is_gender_updating} onClick={() => this.patchData('gender', 'is_gender_disabled', 'is_gender_updating')}>Update</button>
@@ -310,8 +320,8 @@ export default class EditBox extends React.Component {
                             spellCheck="false"
                         />
                     </div>
-                    <div>
-                        <button disabled={is_contact_updating} onClick={() => this.switchEditing('is_contact_disabled', 'is_contact_updating')}>{is_contact_disabled ? 'Edit' : 'Cancel'}</button>
+                    <div className="superadmin-buttons-cancel-update">
+                        <button className={is_contact_disabled ? null : "color-red"} disabled={is_contact_updating} onClick={() => this.switchEditing('is_contact_disabled', 'is_contact_updating')}>{is_contact_disabled ? 'Edit' : 'Cancel'}</button>
                         {is_contact_disabled ?
                             null :
                             <button disabled={is_contact_updating} onClick={() => this.patchData('contact', 'is_contact_disabled', 'is_contact_updating')}>Update</button>
@@ -337,8 +347,8 @@ export default class EditBox extends React.Component {
                             spellCheck="false"
                         />
                     </div>
-                    <div>
-                        <button disabled={is_college_updating} onClick={() => this.switchEditing('is_college_disabled', 'is_college_updating')}>{is_college_disabled ? 'Edit' : 'Cancel'}</button>
+                    <div className="superadmin-buttons-cancel-update">
+                        <button className={is_college_disabled ? null : "color-red"} disabled={is_college_updating} onClick={() => this.switchEditing('is_college_disabled', 'is_college_updating')}>{is_college_disabled ? 'Edit' : 'Cancel'}</button>
                         {is_college_disabled ?
                             null :
                             <button disabled={is_college_updating} onClick={() => this.patchData('college', 'is_college_disabled', 'is_college_updating')}>Update</button>
@@ -364,8 +374,8 @@ export default class EditBox extends React.Component {
                             spellCheck="false"
                         />
                     </div>
-                    <div>
-                        <button disabled={is_state_updating} onClick={() => this.switchEditing('is_state_disabled', 'is_state_updating')}>{is_state_disabled ? 'Edit' : 'Cancel'}</button>
+                    <div className="superadmin-buttons-cancel-update">
+                        <button className={is_state_disabled ? null : "color-red"} disabled={is_state_updating} onClick={() => this.switchEditing('is_state_disabled', 'is_state_updating')}>{is_state_disabled ? 'Edit' : 'Cancel'}</button>
                         {is_state_disabled ?
                             null :
                             <button disabled={is_state_updating} onClick={() => this.patchData('state', 'is_state_disabled', 'is_state_updating')}>Update</button>
@@ -391,8 +401,8 @@ export default class EditBox extends React.Component {
                             spellCheck="false"
                         />
                     </div>
-                    <div>
-                        <button disabled={is_address_updating} onClick={() => this.switchEditing('is_address_disabled', 'is_address_updating')}>{is_address_disabled ? 'Edit' : 'Cancel'}</button>
+                    <div className="superadmin-buttons-cancel-update">
+                        <button className={is_address_disabled ? null : "color-red"} disabled={is_address_updating} onClick={() => this.switchEditing('is_address_disabled', 'is_address_updating')}>{is_address_disabled ? 'Edit' : 'Cancel'}</button>
                         {is_address_disabled ?
                             null :
                             <button disabled={is_address_updating} onClick={() => this.patchData('address', 'is_address_disabled', 'is_address_updating')}>Update</button>
@@ -430,8 +440,8 @@ export default class EditBox extends React.Component {
                             <option value="4"> Campus Ambassador </option>
                         </select>
                     </div>
-                    <div>
-                        <button disabled={is_payment_type_updating} onClick={() => this.switchEditing('is_payment_type_disabled', 'is_payment_type_updating')}>{is_payment_type_disabled ? 'Edit' : 'Cancel'}</button>
+                    <div className="superadmin-buttons-cancel-update">
+                        <button className={is_payment_type_disabled ? null : "color-red"} disabled={is_payment_type_updating} onClick={() => this.switchEditing('is_payment_type_disabled', 'is_payment_type_updating')}>{is_payment_type_disabled ? 'Edit' : 'Cancel'}</button>
                         {is_payment_type_disabled ?
                             null :
                             <button disabled={is_payment_type_updating} onClick={() => this.patchData('payment_type', 'is_payment_type_disabled', 'is_payment_type_updating')}>Update</button>
@@ -455,8 +465,8 @@ export default class EditBox extends React.Component {
                             <option value="non-accomodation"> Non-accomodation </option>
                         </select>
                     </div>
-                    <div>
-                        <button disabled={is_accomodation_updating} onClick={() => this.switchEditing('is_accomodation_disabled', 'is_accomodation_updating')}>{is_accomodation_disabled ? 'Edit' : 'Cancel'}</button>
+                    <div className="superadmin-buttons-cancel-update">
+                        <button className={is_accomodation_disabled ? null : "color-red"} disabled={is_accomodation_updating} onClick={() => this.switchEditing('is_accomodation_disabled', 'is_accomodation_updating')}>{is_accomodation_disabled ? 'Edit' : 'Cancel'}</button>
                         {is_accomodation_disabled ?
                             null :
                             <button disabled={is_accomodation_updating} onClick={() => this.patchData('accomodation', 'is_accomodation_disabled', 'is_accomodation_updating')}>Update</button>
@@ -481,8 +491,8 @@ export default class EditBox extends React.Component {
                             onChange={this.onChange}
                         />
                     </div>
-                    <div>
-                        <button disabled={is_password_updating} onClick={() => this.switchEditing('is_password_disabled', 'is_password_updating')}>{is_password_disabled ? 'Edit' : 'Cancel'}</button>
+                    <div className="superadmin-buttons-cancel-update">
+                        <button className={is_password_disabled ? null : "color-red"} disabled={is_password_updating} onClick={() => this.switchEditing('is_password_disabled', 'is_password_updating')}>{is_password_disabled ? 'Edit' : 'Cancel'}</button>
                         {is_password_disabled ?
                             null :
                             <button disabled={is_password_updating} onClick={() => this.patchData('password', 'is_password_disabled', 'is_password_updating')}>Update</button>
@@ -508,8 +518,8 @@ export default class EditBox extends React.Component {
                             spellCheck="false"
                         />
                     </div>
-                    <div>
-                        <button disabled={is_branch_updating} onClick={() => this.switchEditing('is_branch_disabled', 'is_branch_updating')}>{is_branch_disabled ? 'Edit' : 'Cancel'}</button>
+                    <div className="superadmin-buttons-cancel-update">
+                        <button className={is_branch_disabled ? null : "color-red"} disabled={is_branch_updating} onClick={() => this.switchEditing('is_branch_disabled', 'is_branch_updating')}>{is_branch_disabled ? 'Edit' : 'Cancel'}</button>
                         {is_branch_disabled ?
                             null :
                             <button disabled={is_branch_updating} onClick={() => this.patchData('branch', 'is_branch_disabled', 'is_branch_updating')}>Update</button>

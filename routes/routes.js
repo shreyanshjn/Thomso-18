@@ -28,7 +28,7 @@ router.use('/api/main', mainRoutes);
 router.use('/api/mun', munRoutes);
 router.use('/api/coordinators', coordinatorsRoutes);
 
-// router.use('/api/super', superAdminRoutes);
+router.use('/api/super', superAdminRoutes);
 router.use('/api/controls', controlsRoutes);
 
 // -> /sitemap.xml
