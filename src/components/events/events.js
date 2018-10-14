@@ -440,7 +440,7 @@ export const EventDetails =
                         id: '11_1',
                         name: "Literati",
                         content: "A plethora of events under the banner of Literati. Organizing 5 events, in some of the most popular formats:1. JAM (Just a minute)2. Anonymity (An on-the- spot letter writing competition)3. Spell Bee (An on-the- spot spelling competition) 4. Word Games (Fun vocabulary based games)",
-                        rulebook: "",
+                        rulebook: "https://drive.google.com/open?id=1E5-cSP4ayOJBV82Ak1iwsw1tPvIhqkxc",
                         image: "literati.jpeg",
                         prize: "10"
                     },

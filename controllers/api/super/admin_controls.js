@@ -1,31 +1,33 @@
+var bcrypt = require('bcrypt-nodejs');
+
 var Participant = require("../../../models/main/Main_User");
 var ParticipantToken = require("../../../models/main/Main_User_Token");
 var Coordinators = require("../../../models/coordinators/Coordinators_User");
 var CoordinatorToken = require("../../../models/coordinators/Coordinators_User_Token");
 
-exports.getParticipant = function(req, res) {
-    if (req.params.id) {
-        console.log(req.params.id);
-        Participant.findOne({_id: req.params.id})
-            .select('image thomso_id name email gender contact college state address verified blocked payment_type accomodation branch')
-            .populate('event', 'name')
-            .exec(function (err, user) {
-                if (err) {
-                    return res.status(400).send({ success: false, msg: 'Unable to connect to database. Please try again.' });
-                }
-                if (!user) {
-                    return res.status(400).send({ success: false, msg: 'User not found' });
-                }
-                res.json({ success: true, msg: 'Participant Data', body: user });
-            });
-    } else {
-        return res.status(400).send({ success: false, msg: 'Invalid Params' });
-    }
-};
+// exports.getParticipant = function(req, res) {
+//     if (req.params.id) {
+//         console.log(req.params.id);
+//         Participant.findOne({_id: req.params.id})
+//             .select('image thomso_id name email gender contact college state address verified blocked payment_type accomodation branch')
+//             .populate('event', 'name')
+//             .exec(function (err, user) {
+//                 if (err) {
+//                     return res.status(400).send({ success: false, msg: 'Unable to connect to database. Please try again.' });
+//                 }
+//                 if (!user) {
+//                     return res.status(400).send({ success: false, msg: 'User not found' });
+//                 }
+//                 res.json({ success: true, msg: 'Participant Data', body: user });
+//             });
+//     } else {
+//         return res.status(400).send({ success: false, msg: 'Invalid Params' });
+//     }
+// };
 
-exports.getParticipantToken = function(req, res) {
+exports.getParticipantToken = function (req, res) {
     if (req.params.id) {
-        ParticipantToken.findOne({user_id: req.params.id})
+        ParticipantToken.findOne({ user_id: req.params.id })
             .select('token')
             .exec(function (err, user) {
                 if (err) {
@@ -42,7 +44,7 @@ exports.getParticipantToken = function(req, res) {
     }
 }
 
-exports.patchParticipantData = function(req, res) {
+exports.patchParticipantData = function (req, res) {
     if (req.params.id) {
         if (req.body) {
             var updateData = {};
@@ -88,13 +90,39 @@ exports.patchParticipantData = function(req, res) {
             if (req.body.accomodation) {
                 updateData.accomodation = req.body.accomodation;
             }
-            if (req.body.password) {
-                updateData.password = req.body.password;
-            }
             if (req.body.branch) {
                 updateData.branch = req.body.branch;
             }
-            if (updateData) {
+            if (req.body.password) {
+                updateData.password = req.body.password;
+                return bcrypt.genSalt(10, function (err, salt) {
+                    if (err) {
+                        return res.status(400).send({ success: false, msg: 'Failed to generate salt' });
+                    }
+                    bcrypt.hash(req.body.password, salt, null, function (err, hash) {
+                        if (err) {
+                            return res.status(400).send({ success: false, msg: 'Failed to create hash' });
+                        }
+                        updateData.password = hash;
+                        if (updateData) {
+                            Participant.findByIdAndUpdate(req.params.id, updateData, {new: true})
+                                .select('image thomso_id name email gender contact college state address verified blocked payment_type accomodation password branch')
+                                .exec(function (err, user) {
+                                    if (err) {
+                                        return res.status(400).send({ success: false, msg: 'Unable to connect to database. Please try again.' });
+                                    }
+                                    if (!user) {
+                                        return res.status(400).send({ success: false, msg: 'User not found' });
+                                    }
+                                    return res.json({ success: true, msg: 'Updated Data', body: user });
+                                });
+                        } else {
+                            return res.status(400).send({ success: false, msg: 'Empty Data' });
+                        }
+                    });
+                });
+            }
+            if (updateData && !updateData.password) {
                 Participant.findByIdAndUpdate(req.params.id, updateData, {new: true})
                     .select('image thomso_id name email gender contact college state address verified blocked payment_type accomodation password branch')
                     .exec(function (err, user) {
@@ -117,7 +145,7 @@ exports.patchParticipantData = function(req, res) {
     }
 }
 
-exports.getAllCoordinators = function(req, res) {
+exports.getAllCoordinators = function (req, res) {
     Coordinators.find()
         .select('name email gender contact1 contact2 bhawan enrollment_no branch year event_id blocked')
         .exec(function (err, user) {
@@ -131,9 +159,9 @@ exports.getAllCoordinators = function(req, res) {
         });
 };
 
-exports.getCoordinator = function(req, res) {
+exports.getCoordinator = function (req, res) {
     if (req.params.id) {
-        Coordinators.findOne({_id: req.params.id})
+        Coordinators.findOne({ _id: req.params.id })
             .select('name email gender contact1 contact2 bhawan enrollment_no branch year event_id blocked')
             .exec(function (err, user) {
                 if (err) {
@@ -149,7 +177,7 @@ exports.getCoordinator = function(req, res) {
     }
 };
 
-exports.patchCoordinator = function(req, res) {
+exports.patchCoordinator = function (req, res) {
     if (req.params.id) {
         if (req.body) {
             var updateData = {};
@@ -187,13 +215,41 @@ exports.patchCoordinator = function(req, res) {
                 updateData.blocked = req.body.blocked;
                 CoordinatorToken.update({ user_id: req.params.id }, { blocked: req.body.blocked }, { multi: true })
                     .exec(function (err) {
-                        console.log('updated', req.body.blocked);
                         if (err) {
                             console.log(err)
                         };
                     })
             }
-            if (updateData) {
+            if (req.body.password) {
+                updateData.password = req.body.password;
+                return bcrypt.genSalt(10, function (err, salt) {
+                    if (err) {
+                        return res.status(400).send({ success: false, msg: 'Failed to generate salt' });
+                    }
+                    bcrypt.hash(req.body.password, salt, null, function (err, hash) {
+                        if (err) {
+                            return res.status(400).send({ success: false, msg: 'Failed to create hash' });
+                        }
+                        updateData.password = hash;
+                        if (updateData) {
+                            Coordinators.findByIdAndUpdate(req.params.id, updateData, {new: true})
+                                .select('image thomso_id name email gender contact college state address verified blocked payment_type accomodation password branch')
+                                .exec(function (err, user) {
+                                    if (err) {
+                                        return res.status(400).send({ success: false, msg: 'Unable to connect to database. Please try again.' });
+                                    }
+                                    if (!user) {
+                                        return res.status(400).send({ success: false, msg: 'User not found' });
+                                    }
+                                    return res.json({ success: true, msg: 'Updated Data', body: user });
+                                });
+                        } else {
+                            return res.status(400).send({ success: false, msg: 'Empty Data' });
+                        }
+                    });
+                });
+            }
+            if (updateData && !updateData.password) {
                 Coordinators.findByIdAndUpdate(req.params.id, updateData, {new: true})
                     .select('name email gender contact1 contact2 bhawan enrollment_no branch year event_id blocked')
                     .exec(function (err, user) {
@@ -216,9 +272,9 @@ exports.patchCoordinator = function(req, res) {
     }
 }
 
-exports.getCoordinatorToken = function(req, res) {
+exports.getCoordinatorToken = function (req, res) {
     if (req.params.id) {
-        CoordinatorToken.findOne({user_id: req.params.id})
+        CoordinatorToken.findOne({ user_id: req.params.id })
             .select('token')
             .exec(function (err, user) {
                 if (err) {

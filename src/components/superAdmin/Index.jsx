@@ -8,9 +8,9 @@ import AuthService from '../../handlers/superAdmin/AuthService';
 
 const Loading = ({ error }) => {
     if (error) {
-      return <div>Error loading component</div>;
+        return <div>Error loading component</div>;
     } else {
-      return <Loader />;
+        return <Loader />;
     }
 }
 
@@ -49,7 +49,7 @@ const ListCoordinators = Loadable({
     loading: Loading,
 });
 
-export default class AdminIndex extends React.Component{
+export default class AdminIndex extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -57,31 +57,31 @@ export default class AdminIndex extends React.Component{
         };
         this.Auth = new AuthService();
     }
-     
+
     componentWillMount() {
         const isAuthenticated = this.Auth.hasToken();
-        this.setState({isAuthenticated});
-    }
-    
-    handleUpdate = isAuthenticated => {
-        this.setState({isAuthenticated})
+        this.setState({ isAuthenticated });
     }
 
-    render(){
-        return(
+    handleUpdate = isAuthenticated => {
+        this.setState({ isAuthenticated })
+    }
+
+    render() {
+        return (
             <React.Fragment>
-                {this.state.isAuthenticated ? 
+                {this.state.isAuthenticated ?
                     <div>
                         <Route path="/super" component={NavbarIndex} />
-                        <Route exact path="/super/logout" render={ () => <LogoutIndex updateRoutes={this.handleUpdate}/> } />
+                        <Route exact path="/super/logout" render={() => <LogoutIndex updateRoutes={this.handleUpdate} />} />
                         <Route exact path="/super" component={HomeIndex} />
                         <Route exact path="/super/addCoordinator" component={AddCoordinator} />
                         <Route exact path="/super/coordinators" component={ListCoordinators} />
                     </div>
-                :
+                    :
                     <div>
                         {/* <Route exact path="/super/register" component={RegisterIndex} /> */}
-                        <Route exact path="/super" render={ () => <LoginIndex updateRoutes={this.handleUpdate}/> } />
+                        <Route exact path="/super" render={() => <LoginIndex updateRoutes={this.handleUpdate} />} />
                     </div>
                 }
             </React.Fragment>

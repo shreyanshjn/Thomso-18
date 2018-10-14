@@ -16,6 +16,11 @@ const FakeNotification = Loadable({
     loading: () => <Loader />,
 });
 
+const EconomicIndex = Loadable({
+    loader: () => import("./components/common/economichost"),
+    loading: () => <Loader />,
+});
+
 const CAIndex = Loadable({
     loader: () => import("./components/ca/Index"),
     loading: () => <Loader />,
@@ -131,15 +136,15 @@ const onlineevents = Loadable({
     loader: () => import("./components/onlineEvents/Index"),
     loading: () => <Loader />
 })
-// const ControlsIndex = Loadable({
-//     loader: () => import("./components/controls/Index.jsx"),
-//     loading: () => <Loader />
-// })
-
-const SuperAdminIndex = Loadable({
-    loader: () => import("./components/superAdmin/Index.jsx"),
+const ControlsIndex = Loadable({
+    loader: () => import("./components/controls/Index.jsx"),
     loading: () => <Loader />
 })
+
+// const SuperAdminIndex = Loadable({
+//     loader: () => import("./components/superAdmin/Index.jsx"),
+//     loading: () => <Loader />
+// })
 
 const MUNIndex = Loadable({
     loader: () => import("./components/beta/mun/Index"),
@@ -192,10 +197,12 @@ class App extends Component {
             <BrowserRouter>
                 <React.Fragment>
                     <Route path="/" component={FakeNotification} />
+
                     <Switch>
                         <React.Fragment>
                             {/* <Route path="/beta" component={BetaIndex} /> */}
                             {/* <Route exact path="/" component={HomeIndex} /> */}
+                            <Route path="/" component={EconomicIndex} />
                             <Route exact path="/" component={MainHomeIndex} />
                             <Route exact path="/sponsors" component={SponsorsIndex} />
                             <Route exact path="/associate" component={AccociateIndex} />
@@ -223,11 +230,11 @@ class App extends Component {
                             {/* <Route path="/c" component={Carousel} /> */}
                             <Route path="/campusclicks" component={CampusClicks} />
                             <Route path="/silhoutte" component={Silhoutte} />
-                            <Route  path="/coordinators" component={CoordinatorsIndex} />
-                            {/* <Route  path="/controls" component={ControlsIndex} /> */}
+                            <Route path="/coordinators" component={CoordinatorsIndex} />
+                            <Route path="/controls" component={ControlsIndex} />
                             <Route path="/cupid" component={Cupid} />
                             <Route path="/mun" component={MUNIndex} />
-                            <Route path="/super" component={SuperAdminIndex} />
+                            {/* <Route path="/super" component={SuperAdminIndex} /> */}
                             {/* <Route path="/xpression" component={Xpression} /> */}
                             {/* <Route component={Error404} /> */}
                         </React.Fragment>

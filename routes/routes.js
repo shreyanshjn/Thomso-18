@@ -11,7 +11,7 @@ var mainRoutes = require('./main/routes');
 var munRoutes = require('./mun/routes');
 var coordinatorsRoutes = require('./coordinators/routes');
 var superAdminRoutes = require('./super/routes');
-// var controlsRoutes = require('./controls/routes');
+var controlsRoutes = require('./controls/routes');
 // Controllers
 var viewController = require('../controllers/view_controller');
 var verifyCerti = require('../controllers/api/Certificates/verifyCertificates');
@@ -22,7 +22,7 @@ var verifyCerti = require('../controllers/api/Certificates/verifyCertificates');
 router.use('/api/ca', caRoutes);
 router.use('/api/beta', betaRoutes);
 router.use('/api/notification', notificationRoutes);
-router.use('/api/certiVerify', cors(corsOptions),  verifyCerti.certi_verify );
+router.use('/api/certiVerify', cors(corsOptions), verifyCerti.certi_verify);
 router.use('/api/zonals', zonalsRoutes);
 router.use('/api/main', mainRoutes);
 router.use('/api/mun', munRoutes);
