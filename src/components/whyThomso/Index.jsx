@@ -143,8 +143,7 @@ export default class WhyThomso extends Component {
                                 <div className="whythomso-third-child-iit-content-heading">
                                     <h3>IIT Roorkee</h3>
                                 </div>
-                            </div> */}
-                        </div>
+                            </div> */} </div>
                     </div>
                 </div>
                 <div id="blogs" className="whythomso-fourth-child">
