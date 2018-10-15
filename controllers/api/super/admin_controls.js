@@ -5,10 +5,10 @@ var ParticipantToken = require("../../../models/main/Main_User_Token");
 var Coordinators = require("../../../models/coordinators/Coordinators_User");
 var CoordinatorToken = require("../../../models/coordinators/Coordinators_User_Token");
 
-exports.getParticipant = function(req, res) {
+exports.getParticipant = function (req, res) {
     if (req.params.id) {
         console.log(req.params.id);
-        Participant.findOne({_id: req.params.id})
+        Participant.findOne({ _id: req.params.id })
             .select('image thomso_id name email gender contact college state address verified blocked payment_type accomodation branch')
             .populate('event', 'name')
             .exec(function (err, user) {
@@ -105,7 +105,7 @@ exports.patchParticipantData = function (req, res) {
                         }
                         updateData.password = hash;
                         if (updateData) {
-                            Participant.findByIdAndUpdate(req.params.id, updateData, {new: true})
+                            Participant.findByIdAndUpdate(req.params.id, updateData, { new: true })
                                 .select('image thomso_id name email gender contact college state address verified blocked payment_type accomodation password branch')
                                 .exec(function (err, user) {
                                     if (err) {
@@ -123,7 +123,7 @@ exports.patchParticipantData = function (req, res) {
                 });
             }
             if (updateData && !updateData.password) {
-                Participant.findByIdAndUpdate(req.params.id, updateData, {new: true})
+                Participant.findByIdAndUpdate(req.params.id, updateData, { new: true })
                     .select('image thomso_id name email gender contact college state address verified blocked payment_type accomodation password branch')
                     .exec(function (err, user) {
                         if (err) {
@@ -232,7 +232,7 @@ exports.patchCoordinator = function (req, res) {
                         }
                         updateData.password = hash;
                         if (updateData) {
-                            Coordinators.findByIdAndUpdate(req.params.id, updateData, {new: true})
+                            Coordinators.findByIdAndUpdate(req.params.id, updateData, { new: true })
                                 .select('image thomso_id name email gender contact college state address verified blocked payment_type accomodation password branch')
                                 .exec(function (err, user) {
                                     if (err) {
@@ -250,7 +250,7 @@ exports.patchCoordinator = function (req, res) {
                 });
             }
             if (updateData && !updateData.password) {
-                Coordinators.findByIdAndUpdate(req.params.id, updateData, {new: true})
+                Coordinators.findByIdAndUpdate(req.params.id, updateData, { new: true })
                     .select('name email gender contact1 contact2 bhawan enrollment_no branch year event_id blocked')
                     .exec(function (err, user) {
                         if (err) {

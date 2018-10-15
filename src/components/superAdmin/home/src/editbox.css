@@ -64,3 +64,17 @@
     border: 1px solid #444;
     padding: 7px 12px;
 } 
+.superadmin-buttons-cancel-update button{
+    margin-top: 10px;
+}
+.color-red{
+    background: red !important;
+}
+.superadmin-parent{
+    position: fixed;
+    top: 0px;
+    height: 100vh;
+    background: grey;
+    width: 100%;
+    overflow: scroll;
+}

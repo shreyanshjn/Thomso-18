@@ -4,26 +4,26 @@ var User = require("../../../models/super/Super_Admin");
 var Super_Admin_Token = require("../../../models/super/Super_Admin_Token");
 var TokenHelper = require("../../../helpers/TokenHelper");
 
-exports.register = function (req, res) {
-    if (req.body.username) {
-        req.body.username = req.body.username.toLowerCase();
-        req.body.username = req.body.username.trim()
-    }
-    if (!req.body.username || !req.body.password) {
-        res.json({ success: false, msg: 'Please pass username and password.' });
-    } else {
-        var newUser = new User({
-            username: req.body.username,
-            password: req.body.password
-        });
-        newUser.save(function (err) {
-            if (err) {
-                return res.json({ success: false, msg: 'Username already exists.' });
-            }
-            res.json({ success: true, msg: 'Successfully created new user.' });
-        });
-    }
-};
+// exports.register = function (req, res) {
+//     if (req.body.username) {
+//         req.body.username = req.body.username.toLowerCase();
+//         req.body.username = req.body.username.trim()
+//     }
+//     if (!req.body.username || !req.body.password) {
+//         res.json({ success: false, msg: 'Please pass username and password.' });
+//     } else {
+//         var newUser = new User({
+//             username: req.body.username,
+//             password: req.body.password
+//         });
+//         newUser.save(function (err) {
+//             if (err) {
+//                 return res.json({ success: false, msg: 'Username already exists.' });
+//             }
+//             res.json({ success: true, msg: 'Successfully created new user.' });
+//         });
+//     }
+// };
 
 exports.login = function (req, res) {
     if (req.body.username) {
