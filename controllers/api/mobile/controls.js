@@ -202,3 +202,47 @@ exports.getPronite = function(req, res) {
         }
     })
 }
+
+exports.getParticipantByQR = function(req, res) {
+    if (req.params.id && req.params.id.trim()) {
+        req.params.id = req.params.id.trim();
+        Main_User.findOne({ qr: req.params.id, verified: true })
+            .select('thomso_id name email college contact image blocked')
+            .exec(function (err, user) {
+                if (err) {
+                    return res.json({ success: false, msg: 'Something Went Wrong', error: err })
+                }
+                if (!user) {
+                    return res.json({ success: false, msg: 'User not found' });
+                }
+                if (user.blocked) {
+                    return res.json({ success: false, msg: 'Unauthorized User' });
+                }
+                return res.json({ success: true, msg: 'User Found', body: user });
+            });
+    } else {
+        return res.json({ success: false, msg: 'Empty QR' });
+    }
+};
+
+exports.getMediaByQR = function(req, res) {
+    if (req.params.id && req.params.id.trim()) {
+        req.params.id = req.params.id.trim();
+        Media_User.findOne({ qr: req.params.id })
+            .select('name email contact organization image blocked')
+            .exec(function (err, user) {
+                if (err) {
+                    return res.json({ success: false, msg: 'Something Went Wrong', error: err })
+                }
+                if (!user) {
+                    return res.json({ success: false, msg: 'User not found' });
+                }
+                if (user.blocked) {
+                    return res.json({ success: false, msg: 'Unauthorized User' });
+                }
+                return res.json({ success: true, msg: 'User Found', body: user });
+            });
+    } else {
+        return res.json({ success: false, msg: 'Empty QR' });
+    }
+};
