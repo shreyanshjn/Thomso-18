@@ -13,4 +13,7 @@ router.post('/register/participant', mobileControls.scanParticipantQR);
 router.get('/register/participant/:id', mobileControls.getParticipant);
 router.get('/pronite', mobileControls.getPronite);
 
+router.get('/security/participant/:id', mobileControls.getParticipantByQR);
+router.get('/security/media/:id', mobileControls.getMediaByQR);
+
 module.exports = router;
