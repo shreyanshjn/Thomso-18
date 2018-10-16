@@ -1,6 +1,6 @@
 // Whitelist
 
- var whitelist = ['in.thomso.thomso2018', 'com.project.nikhil.thomso17'];
+ var whitelist = ['in.thomso.thomso2018', 'com.project.nikhil.thomso17', 'com.example.kira.thomso18',  'com.example.kira.thomso18media',  'com.example.kira.thomso18user'];
 
 if (process.env.REACT_APP_SERVER_ENVIORNMENT === 'dev') {
   whitelist = ['in.thomso.thomso2018', 'com.project.nikhil.thomso17'];
