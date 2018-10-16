@@ -13,7 +13,7 @@ var mainRoutes = require('./main/routes');
 var munRoutes = require('./mun/routes');
 var coordinatorsRoutes = require('./coordinators/routes');
 var superAdminRoutes = require('./super/routes');
-var controlsRoutes = require('./controls/routes');
+// var controlsRoutes = require('./controls/routes');
 var mobileRoutes = require('./mobile/routes');
 
 // Controllers

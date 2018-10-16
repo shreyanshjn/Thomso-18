@@ -9,7 +9,6 @@ var Generator = require("../../../helpers/GeneratePassword");
 
 exports.register = function (req, res) {
     if (req.body) {
-        // console.log(req.body, "sd")
         if (req.body.name) {
             req.body.name = req.body.name.trim();
         }
@@ -51,43 +50,21 @@ exports.register = function (req, res) {
             year: req.body.year,
             branch: req.body.branch,
             enrollment_no: req.body.enrollment_no,
-            event_id: req.body.event_id
+            event_id: req.body.event_id,
+            password:req.body.password
         };
-        // console.log(data);
         if (data.name && data.contact1 && data.contact2 && data.email && data.gender && data.bhawan && data.year && data.branch && data.enrollment_no && data.event_id) {
             var newUser = new Coordinators_User(data);
             newUser.save(function (err) {
                 if (err) {
-                    // console.log(err)
                     return res.json({ success: false, msg: 'Username already exists.' });
                 }
-                    var generateHash = Generator.generateHash(req.body.password);
-                    generateHash.then(
-                        function (newHash) {
-                            if (newHash) {
-                                var updateData = {
-                                    password: newHash
-                                };
-                                Coordinators_User.updateOne({ email: req.body.email }, updateData)
-                                    .exec(function (err) {
-                                        if (err) {
-                                            return res.status(400).send({ success: false, msg: 'Unable Update Hash' });
-                                        }
-                                        Counter.findByIdAndUpdate({ _id: 'coordinators_id' }, { $inc: { seq: 1 } }, { upsert: true, new: true }, function (error, cnt) {
-                                            if (error) {
-                                                return res.status(400).send({ success: false, msg: 'Unable Create ID' });
-                                            }
-                                            res.json({ success: true, msg: 'Successfully Registered' });
-                                        })
-                                    });
-                            } else {
-                                res.status(400).send({ success: false, msg: 'Promise Failed' });
-                            }
-                        }
-                    )
-                        .catch(function (err) {
-                            res.status(400).send({ success: false, msg: 'Failed to generate new hash' });
-                        })
+                Counter.findByIdAndUpdate({ _id: 'coordinators_id' }, { $inc: { seq: 1 } }, { upsert: true, new: true }, function (error, cnt) {
+                    if (error) {
+                        return res.status(400).send({ success: false, msg: 'Unable Create ID' });
+                    }
+                    res.json({ success: true, msg: 'Successfully Registered' });
+                })                     
             });
         } else {
             res.status(400).send({ success: false, msg: 'Invalid Data' });
