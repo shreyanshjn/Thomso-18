@@ -46,10 +46,10 @@ export default class HomeIndex extends React.Component {
 
     handleClick(event) {
         if (event.target && event.target.id) {
-            this.props.history.push(`/main/admin/participants/${event.target.id}`);
+            this.props.history.push(`/super/participants/${event.target.id}`);
             const currentPage = event.target.id;
             const token = this.Auth.getToken()
-            FetchApi('GET', `/api/main/admin/user/page=${currentPage}&registered=${this.state.hideUnverified}${this.state.searchText ? `&search=${this.state.searchText}` : ''}`, null, token)
+            FetchApi('GET', `/api/super/user/page=${currentPage}&registered=${this.state.hideUnverified}${this.state.searchText ? `&search=${this.state.searchText}` : ''}`, null, token)
                 .then(r => {
                     if (r && r.data) {
                         if (r.data.body && r.data.pages && r.data.limit) {
@@ -73,7 +73,7 @@ export default class HomeIndex extends React.Component {
             currentPage = parseInt(this.props.match.params.page, 10);
         }
         const token = this.Auth.getToken()
-        FetchApi('GET', `/api/main/admin/user/page=${currentPage}&registered=${!this.state.hideUnverified}${this.state.searchText ? `&search=${this.state.searchText}` : ''}`, null, token)
+        FetchApi('GET', `/api/super/user/page=${currentPage}&registered=${!this.state.hideUnverified}${this.state.searchText ? `&search=${this.state.searchText}` : ''}`, null, token)
             .then(r => {
                 if (r && r.data) {
                     if (r.data.body && r.data.pages && r.data.limit) {
@@ -104,7 +104,7 @@ export default class HomeIndex extends React.Component {
             currentPage = parseInt(this.props.match.params.page, 10);
         }
         const token = this.Auth.getToken()
-        FetchApi('GET', `/api/main/admin/user/page=${currentPage}&registered=${this.state.hideUnverified}${this.state.searchText ? `&search=${this.state.searchText}` : ''}`, null, token)
+        FetchApi('GET', `/api/super/user/page=${currentPage}&registered=${this.state.hideUnverified}${this.state.searchText ? `&search=${this.state.searchText}` : ''}`, null, token)
             .then(r => {
                 if (r && r.data) {
                     if (r.data.body && r.data.pages && r.data.limit) {

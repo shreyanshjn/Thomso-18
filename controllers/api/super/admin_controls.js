@@ -5,25 +5,25 @@ var ParticipantToken = require("../../../models/main/Main_User_Token");
 var Coordinators = require("../../../models/coordinators/Coordinators_User");
 var CoordinatorToken = require("../../../models/coordinators/Coordinators_User_Token");
 
-// exports.getParticipant = function(req, res) {
-//     if (req.params.id) {
-//         console.log(req.params.id);
-//         Participant.findOne({_id: req.params.id})
-//             .select('image thomso_id name email gender contact college state address verified blocked payment_type accomodation branch')
-//             .populate('event', 'name')
-//             .exec(function (err, user) {
-//                 if (err) {
-//                     return res.status(400).send({ success: false, msg: 'Unable to connect to database. Please try again.' });
-//                 }
-//                 if (!user) {
-//                     return res.status(400).send({ success: false, msg: 'User not found' });
-//                 }
-//                 res.json({ success: true, msg: 'Participant Data', body: user });
-//             });
-//     } else {
-//         return res.status(400).send({ success: false, msg: 'Invalid Params' });
-//     }
-// };
+exports.getParticipant = function(req, res) {
+    if (req.params.id) {
+        console.log(req.params.id);
+        Participant.findOne({_id: req.params.id})
+            .select('image thomso_id name email gender contact college state address verified blocked payment_type accomodation branch')
+            .populate('event', 'name')
+            .exec(function (err, user) {
+                if (err) {
+                    return res.status(400).send({ success: false, msg: 'Unable to connect to database. Please try again.' });
+                }
+                if (!user) {
+                    return res.status(400).send({ success: false, msg: 'User not found' });
+                }
+                res.json({ success: true, msg: 'Participant Data', body: user });
+            });
+    } else {
+        return res.status(400).send({ success: false, msg: 'Invalid Params' });
+    }
+};
 
 exports.getParticipantToken = function (req, res) {
     if (req.params.id) {
