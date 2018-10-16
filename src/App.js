@@ -165,6 +165,11 @@ const Toppr = Loadable({
     loading: () => <Loader />
 })
 
+// const Ngo = Loadable({
+//     loader: () => import("./components/ngo/Index.jsx"),
+//     loading: () => <Loader />
+// })
+
 // const Carousel = Loadable({
 //     loader: () => import("./components/carousel/Index"),
 //     loading: () => <Loader />
@@ -225,6 +230,7 @@ class App extends Component {
                             <Route path="/events" component={Events} />
                             <Route path="/meme" component={Meme} />
                             <Route path="/toppr" component={Toppr} />
+                            {/* <Route path="/ngo" component={Ngo} />*/}
                             <Route path="/MrMissThomso" component={MrMissThomso} />
                             <Route path="/Payment" component={PaymentIndex} />
                             {/* <Route path="/c" component={Carousel} /> */}

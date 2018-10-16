@@ -20,99 +20,45 @@ export default class FAQIndex extends React.Component {
                     </div>
                     <div className="faq-content">
                         <div className="faq-content-child">
-                            <div className="question"><div className="dot"></div>Are there any EXTRA CHANGES for pronites?</div>
-                            <div> <p><strong>NO</strong>, Registration fee is inclusive of pronites passes..</p></div>
-
-                            <div className="question"><div className="dot"></div>Where to REGISTER for Thomso’180?</div>
-                            <div>
-                                <p>You can register at
-                                    <div>
-                                        <Link to="/main/">www.thomso.in</Link>
-                                    </div>
-                                </p>
-                            </div>
-
-                            <div className="question"><div className="dot"></div>What is the LAST DATE for registration?</div>
+                            <div className="question"><div className="dot"></div> What is the registration fee for Thomso’18?</div>
+                            <div> <p> Registration fee with accommodation is Rs. 2100 and Rs. 1600 without accommodation. Once paid, fee is non-refundable</p></div>
+                            <div className="question"><div className="dot"></div> Where to REGISTER for Thomso’18?</div>
+                            <div> <p> You can register at <Link to = "/main/register">Register for Thomso'18</Link></p></div>
+                            <div className="question"><div className="dot"></div> What is the LAST DATE for registration?</div>
                             <div> <p> As such there is no last date for registration but there are limited entries, so register as soon as possible.</p></div>
-
-                            <div className="question"><div className="dot"></div>How to reach IIT Roorkee?</div>
-                            <div>
-                                <p>
-                                    Visit
-                                    <div className="faq-anchor">
-                                        <a href="https://www.iitr.ac.in/institute/pages/How_to_reach_IIT_Roorkee.html"> https://www.iitr.ac.in/institute/pages/How_to_reach_IIT_Roorkee.html for complete details.
-                                      </a>
-                                    </div>
-                                </p>
-                            </div>
-
-                            <div className="question"><div className="dot"></div>What is the REGISTRATION FEE for Thomso’18?</div>
-                            <div> <p> Registration fee with accommodation is Rs. 2000 and Rs. 1500 without accommodation. Once paid, fee is non-refundable.</p></div>
-
-                            <div className="question"><div className="dot"></div>What is the DATE of Thomso’18?</div>
-                            <div> <p> Thomso is from 26th to 28th October.</p></div>
-
+                            <div className="question"><div className="dot"></div> Are there any extra charges for pronites?</div>
+                            <div> <p> No, Registration fee is inclusive of pronites passes.</p></div>
+                            <div className="question"><div className="dot"></div> Are there extra charges for workshops?</div>
+                            <div> <p> Yes. Visit <Link to ="/workshop">Workshops</Link> for more details.</p></div>
                             <div className="question"><div className="dot"></div> From where we can get information for events for Thomso’18?</div>
-                            <div>
-                                <p>
-                                    <div className="faq-anchor">
-                                        <a href="www.thomso.in/events"> Visit www.thomso.in/events for details of all the events and their registration.
-                                    </a>
-                                    </div>
-                                </p>
-                            </div>
-
-                            <div className="question"><div className="dot"></div>What is the THEME of Thomso’18?</div>
+                            <div> <p> Visit <Link to = "events">www.thomso.in/events</Link> for details of all the events and their registration.</p></div>
+                            <div className="question"><div className="dot"></div> Does Thomso has any age restriction?</div>
+                            <div> <p> As such, there is no such restriction of age for the participants but it is necessary that the participant must be a college-studying student.</p></div>
+                            <div className="question"><div className="dot"></div> What is the date of Thomso’18?</div>
+                            <div> <p> Thomso is from 26th to 28th October.</p></div>
+                            <div className="question"><div className="dot"></div> What are the important things that i should bring along with me to Thomso?</div>
+                            <div> <p> We strongly suggest you to bring an extension cord,small lock,a blanket and your college ID card to avoid any issues.</p></div>
+                            <div className="question"><div className="dot"></div> How do I get to Roorkee?</div>
+                            <div> <p> By Airways
+The nearest airport to Roorkee is situated in Dehradun, around 70km away, so one could easily take a taxi or bus to reach Roorkee.
+By Railways
+Trains are one of the easiest ways through which we could reach Roorkee, especially for a long distance journey.
+By Bus
+Buses can be obtained either from I.S.B.T. Kashmiri Gate, Delhi or from I.S.B.T. Anand Vihar Ghaziabad. A taxi is also an option of course, but you should be warned that the road isnt exactly an expressway.</p></div>
+                            <div className="question"><div className="dot"></div> What is the theme of Thomso’18?</div>
                             <div> <p> Theme of Thomso’18 is “Seized By Stardust”.</p></div>
-
-                            <div className="question"><div className="dot"></div>From where I can get the latest updates related to Thomso’18?</div>
-                            <div> <p> You can get latest updates from our Facebook page
-                                <div className="faq-anchor">
-                                    <a href="www.facebook.com/thomsoiitroorkee/">www.facebook.com/thomsoiitroorkee/</a> .
-                                </div>
-                            </p></div>
-
-                            <div className="question"><div className="dot"></div>Are there extra charges for workshops?</div>
-                            <div>
-                                <p> Yes. Visit
-                                    <div className="faq-anchor">
-                                        <a href="http://thomso.in/workshop">http://thomso.in/workshop </a>for more details.
-                                    </div>
-                                </p>
-                            </div>
-
-                            <div className="question"><div className="dot"></div>What’s the climate like? Do I need to bring some winter clothes now?</div>
-                            <div> <p>The climate during the last week of October is usually chilly with some rainfall likely to
-                                    occur. Hence some winter clothes will be required.
-                        </p></div>
-
-                            <div className="question"><div className="dot"></div>How do I get to Roorkee?</div>
-                            <div> <p>
-                                By Airways<br /><br />
-                                The nearest airport to Roorkee is situated in Dehradun, around 70km away, so one
-                            could easily take a taxi or bus to reach Roorkee.<br /><br />
-                                By Railways<br /><br />
-                                Trains are one of the easiest ways through which we could reach Roorkee, especially
-                            for a long distance journey.<br /><br />
-                                By Bus<br /><br />
-                                Buses can be obtained either from I.S.B.T. Kashmiri Gate, Delhi or from I.S.B.T.
-                                Anand Vihar Ghaziabad. A taxi is also an option of course, but you should be warned
-                                that the road isnt exactly an expressway.
-                        </p></div>
-
-                            <div className="question"><div className="dot"></div>How to reach IIT Roorkee?</div>
-                            <div> <p>Once you reached Roorkee, you can easily take an E-rickshaw, the bus station is
-                                    just 1 km away whereas railway station is just 3 km away from the main gate of IIT
-                                    Roorkee.
-                        </p></div>
-
-                            <div className="question"><div className="dot"></div>Is personal vehicle allowed inside the campus?</div>
-                            <div>No, personal vehicles are not allowed inside the campus</div>
-
-                            <div className="question"><div className="dot"></div>Will there be accommodation facility for me?</div>
-                            <div> There are many Hostels which would be available for the accommodation, the
-                             registration for allotment would be done on Thomso website.
-                            </div>
+                            <div className="question"><div className="dot"></div> What will be provided in the fee of 2100?</div>
+                            <div> <p> You will be provided with 4 night accommodation, 6 meals(dinner not include, you can buy it at here on nominal charges of 50-60 Rs), all pronite passes, event passes of all center stage events, merchandise of thomso'18 etc.</p></div>
+                            <div className="question"><div className="dot"></div> What’s the climate like? Do I need to bring some winter clothes now?</div>
+                            <div> <p> The climate during the last week of October is usually chilly with some rainfall likely to occur. During the daytime the weather is warm, however nights are a little cold. Hence, it is advisable to carry some warm clothes.</p></div>
+                            <div className="question"><div className="dot"></div> From where I can get the latest updates related to Thomso’18?</div>
+                            <div> <p> You can get latest updates from our Facebook page <a href="https://www.facebook.com/thomsoiitroorkee/" rel="noopener noreferrer" target="_blank" >Thomsoiitroorkee/facebook .</a></p></div>
+                            <div className="question"><div className="dot"></div> How to reach IIT Roorkee?</div>
+                            <div> <p> Once you reached Roorkee, you can easily take an E-rickshaw, the bus station is just 100 m away whereas railway station is just 3 km away from the main gate of IIT Roorkee.</p></div>
+                            <div className="question"><div className="dot"></div> Will there be accommodation facility for me?</div>
+                            <div> <p> There are many Hostels which would be available for the accommodation, the registration for allotment would be done on Thomso website.</p></div>
+                            <div className="question"><div className="dot"></div> Is personal vehicle allowed inside the campus?</div>
+                            <div> <p> No, personal vehicles are not allowed inside the campus.</p></div>
 
                         </div>
                     </div>

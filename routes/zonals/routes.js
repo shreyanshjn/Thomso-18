@@ -21,15 +21,15 @@ router.use('/admin', cors(corsOptions), zonalsAdminRoutes);
 router.use('/', cors(corsOptions));
 
 // -> /zonals/delhi
-router.post('/delhi', cors(corsOptions), zonalsControl.register_delhi);
+router.post('/delhi', zonalsControl.register_delhi);
 
 // -> /zonals/chandigadh
-// router.post('/chandigadh', cors(corsOptions), zonalsControl.register_chandigadh);
+// router.post('/chandigadh', zonalsControl.register_chandigadh);
 
 // -> /zonals/jaipur
-router.post('/jaipur', cors(corsOptions), zonalsControl.register_jaipur);
+router.post('/jaipur', zonalsControl.register_jaipur);
 
 // -> /zonals/lucknow
-router.post('/lucknow', cors(corsOptions), zonalsControl.register_lucknow);
+router.post('/lucknow', zonalsControl.register_lucknow);
 
 module.exports = router;
