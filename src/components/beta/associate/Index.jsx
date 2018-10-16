@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { Helmet } from "react-helmet";
 import img from "../../campusAmbassador/register/img/logo.png";
 import FetchApi from '../../../utils/FetchAPI';
 import validateInput from '../../../utils/validation/loginValidation';
@@ -78,6 +78,10 @@ export default class RegisterIndex extends React.Component {
         const { name, contact, email, sponsorType, message, errors } = this.state;
         return (
             <div className="register-parent">
+                <Helmet>
+                    <meta keywords="" description="Associate with Thomso by registering in your details. Fill in the name, email id, contact
+                        number and connect with us" />
+                </Helmet>
                 <Popup {...this.props} onRef={ref => (this.popup = ref)} />
                 <div className="register-child">
                     <div className="register-child-child">
@@ -164,7 +168,7 @@ export default class RegisterIndex extends React.Component {
                                         value={sponsorType}
                                         onChange={this.onChange}
                                         required
-                                        style={{textAlignLast: 'center'}}
+                                        style={{ textAlignLast: 'center' }}
                                     >
                                         <option value="" disabled="true"> Type </option>
                                         <option value="Sponsors"> Sponsors </option>

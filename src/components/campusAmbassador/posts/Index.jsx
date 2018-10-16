@@ -2,7 +2,7 @@ import React from 'react';
 import "../../ca/home/updatedcard.css";
 import AuthService from '../../../handlers/ca/temp/AuthService';
 import FetchApi from '../../../utils/FetchAPI';
-
+import { Helmet } from "react-helmet"
 import Card from '../../ca/home/Card';
 
 let unmount = false
@@ -71,6 +71,10 @@ export default class PostIndex extends React.Component {
         const { posts, message, isVisible } = this.state;
         return (
             <div className="cards">
+                <Helmet>
+                    <meta keywords="" description="Amount of reach by campus ambassador determines their chances of winning. Post and
+                        publicize about events at Thomso&#39;" />
+                </Helmet>
                 {isVisible ? message : null}
                 {posts ? posts.map((post, index) => {
                     if (post.link) {

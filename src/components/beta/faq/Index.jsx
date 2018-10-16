@@ -2,10 +2,15 @@ import React from 'react';
 import Navbar from '../home/Navbar';
 import { Link } from 'react-router-dom';
 import './faq.css';
+import { Helmet } from "react-helmet"
 export default class FAQIndex extends React.Component {
     render() {
         return (
             <div className="faq-index-container">
+                <Helmet>
+                    <meta keywords="" description="All doubts and queries regarding Thomso, the Annual cultural fest of IIT Roorkee are cleared
+                        here." />
+                </Helmet>
                 <div className="faq-navbar-style">
                     <Navbar />
                 </div>

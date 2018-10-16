@@ -462,9 +462,9 @@ export const EventDetails =
                     },
                     {
                         id: '11_4',
-                        name: "Book Pitching",
+                        name: "Big Ideas",
                         content: "Engage with some of India’s finest authors as they discuss their latest works in a candid event suffused with literary vibrancy.",
-                        rulebook: "",
+                        rulebook: "https://drive.google.com/open?id=12Zgw7KWhsKkrWd2L2P3ybmMUGz7Y0FEQ",
                         image: "bookpitching.jpeg",
                     },
                     {

@@ -2,12 +2,17 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from '../beta/home/Navbar'
 import './src/css/OnlineEvents.css'
+import {Helmet} from "react-helmet"
 
 class OnlineEventsIndex extends Component {
     render() {
         return (
             <div className="onlineevents-mainpage-parent">
-                <Navbar/>
+                <Helmet>
+                    <meta keywords="" description="Quizardry in association with dare2compete is the online quiz competition. Its a platform
+                        to showcase knowledge and skills on movies, sports, art, music, television, politics." />
+                </Helmet>
+                <Navbar />
                 <div className="main-parent-online-events-1">
                     <div className="onlineevents-mainpage-parent-child">
                         <div className="onlineevents-mainpage-cards">
@@ -66,7 +71,7 @@ class OnlineEventsIndex extends Component {
                                 </div>
                             </Link>
                             <div className="onlineevents-mainpage-cards-title">
-                                SILHOUETTE 
+                                SILHOUETTE
                             </div>
                             <div className="onlineevents-mainpage-cards-button">
                                 <Link to="/silhoutte">
@@ -75,7 +80,7 @@ class OnlineEventsIndex extends Component {
                             </div>
                         </div>
                     </div>
-                    
+
                     <div className="onlineevents-mainpage-parent-child">
                         <div className="onlineevents-mainpage-cards">
                             <Link to="/MrMissThomso">
