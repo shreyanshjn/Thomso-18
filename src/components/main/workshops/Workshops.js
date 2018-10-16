@@ -12,12 +12,6 @@ export const Workshops = [
         price: "1000"
     },
     {
-        name: 'Blockchain',
-        image: "blockchain.gif",
-        description: 'Another key technology unlocking a spectrum of infinite possibilities is Blockchain with the paramount goal of secure and effortless transaction of money. This Thomso, have a closer look at this technology with the Blockchain workshop in our lineup of technical events.',
-        price: "1000"
-    },
-    {
         name: "Origami",
         image: "origami.jpeg",
         description: "Origami isn’t just a paper art, it’s a scientific experiment with no fuss. For those who wish to experiment and try their hands on this miscellaneous art, Thomso presents to them it's Origami workshop",
