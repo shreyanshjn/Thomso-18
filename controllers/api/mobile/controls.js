@@ -166,7 +166,7 @@ exports.getPronite = function(req, res) {
                 artist: 'Coming Soon1',
                 description: 'Coming Soon1',
                 venue: 'Coming Soon1',
-                image: 'https://www.thomso.in/uploads/img/Pronite/coming_soon.png',
+                image: 'https://www.thomso.in/uploads/img/Pronite/coming_soon.jpg',
                 time: 'Coming Soon1'
             },
             second :{
@@ -176,7 +176,7 @@ exports.getPronite = function(req, res) {
                 artist: 'Coming Soon2',
                 description: 'Coming Soon2',
                 venue: 'Coming Soon2',
-                image: 'https://www.thomso.in/uploads/img/Pronite/coming_soon.png',
+                image: 'https://www.thomso.in/uploads/img/Pronite/coming_soon.jpg',
                 time: 'Coming Soon2'
             },
             third :{
@@ -186,7 +186,7 @@ exports.getPronite = function(req, res) {
                 artist: 'Coming Soon3',
                 description: 'Coming Soon3',
                 venue: 'Coming Soon3',
-                image: 'https://www.thomso.in/uploads/img/Pronite/coming_soon.png',
+                image: 'https://www.thomso.in/uploads/img/Pronite/coming_soon.jpg',
                 time: 'Coming Soon3'
             },
             fourth :{
@@ -196,7 +196,7 @@ exports.getPronite = function(req, res) {
                 artist: 'Coming Soon4',
                 description: 'Coming Soon4',
                 venue: 'Coming Soon4',
-                image: 'https://www.thomso.in/uploads/img/Pronite/coming_soon.png',
+                image: 'https://www.thomso.in/uploads/img/Pronite/coming_soon.jpg',
                 time: 'Coming Soon4'
             }
         }
