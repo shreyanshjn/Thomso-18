@@ -166,39 +166,39 @@ exports.getPronite = function(req, res) {
                 artist: 'Coming Soon',
                 description: 'Coming Soon',
                 venue: 'Coming Soon',
-                image: 'https://www.thomso.in/uploads/img/Pronite/coming_soon.jpg',
+                image: 'https://www.thomso.in/uploads/img/Pronite/coming_soon.jpeg',
                 time: 'Coming Soon'
             },
-            // second :{
-            //     day: 'Day 1 ',
-            //     date: '26-10-2018',
-            //     name: 'Coming Soon2',
-            //     artist: 'Coming Soon2',
-            //     description: 'Coming Soon2',
-            //     venue: 'Coming Soon2',
-            //     image: 'https://www.thomso.in/uploads/img/Pronite/coming_soon.jpg',
-            //     time: 'Coming Soon2'
-            // },
-            // third :{
-            //     day: 'Day 2 ',
-            //     date: '27-10-2018',
-            //     name: 'Coming Soon3',
-            //     artist: 'Coming Soon3',
-            //     description: 'Coming Soon3',
-            //     venue: 'Coming Soon3',
-            //     image: 'https://www.thomso.in/uploads/img/Pronite/coming_soon.jpg',
-            //     time: 'Coming Soon3'
-            // },
-            // fourth :{
-            //     day: 'Day 3 ',
-            //     date: '28-10-2018',
-            //     name: 'Coming Soon4',
-            //     artist: 'Coming Soon4',
-            //     description: 'Coming Soon4',
-            //     venue: 'Coming Soon4',
-            //     image: 'https://www.thomso.in/uploads/img/Pronite/coming_soon.jpg',
-            //     time: 'Coming Soon4'
-            // }
+            second :{
+                day: 'Day 1 ',
+                date: '26-10-2018',
+                name: 'Coming Soon',
+                artist: 'Coming Soon',
+                description: 'Coming Soon',
+                venue: 'Coming Soon',
+                image: 'https://www.thomso.in/uploads/img/Pronite/coming_soon.jpeg',
+                time: 'Coming Soon'
+            },
+            third :{
+                day: 'Day 2 ',
+                date: '27-10-2018',
+                name: 'Coming Soon',
+                artist: 'Coming Soon',
+                description: 'Coming Soon',
+                venue: 'Coming Soon',
+                image: 'https://www.thomso.in/uploads/img/Pronite/coming_soon.jpeg',
+                time: 'Coming Soon'
+            },
+            fourth :{
+                day: 'Day 3 ',
+                date: '28-10-2018',
+                name: 'Coming Soon',
+                artist: 'Coming Soon',
+                description: 'Coming Soon',
+                venue: 'Coming Soon',
+                image: 'https://www.thomso.in/uploads/img/Pronite/coming_soon.jpeg',
+                time: 'Coming Soon'
+            }
         }
     })
 }

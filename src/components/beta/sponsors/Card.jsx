@@ -19,7 +19,7 @@ export default class CardIndex extends Component {
             <React.Fragment>
                 {this.state.batch && this.state.batch.map((t, index) =>
                     <div className="sponors-image-parent" key={index}>
-                        <img src={`/img/main/sponsors/${t.image}`} alt="sponsors" />
+                        <a href={t.link} target="_blank"><img src={`/img/main/sponsors/${t.image}`} alt="sponsors" /></a>
                     </div>
                 )}
             </React.Fragment>
