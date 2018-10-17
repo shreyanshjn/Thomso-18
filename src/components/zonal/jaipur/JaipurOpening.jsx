@@ -47,7 +47,7 @@ export default class DelhiOpening extends Component {
                         <div className="zonals-parallax-delhi-layer2-main-child">
                             <div className="parallax-delhi-layer2-child">
                                 <img src={jaipur} alt="indiagate" data-hover-only="true"  className="zonals-india-gate"/>
-                                <h1 className="zonals-delhi-layer2-h1">DELHI ZONALS</h1>
+                                <h1 className="zonals-delhi-layer2-h1">JAIPUR ZONALS</h1>
                             </div>
                         </div>
                     </div>

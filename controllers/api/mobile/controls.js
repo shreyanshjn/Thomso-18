@@ -166,7 +166,7 @@ exports.getPronite = function(req, res) {
                 artist: 'Coming Soon1',
                 description: 'Coming Soon1',
                 venue: 'Coming Soon1',
-                image: 'https://www.thomso.in/uploads/img/Pronite/coming_soon.png',
+                image: 'https://www.thomso.in/uploads/img/Pronite/coming_soon.jpg',
                 time: 'Coming Soon1'
             },
             second :{
@@ -176,7 +176,7 @@ exports.getPronite = function(req, res) {
                 artist: 'Coming Soon2',
                 description: 'Coming Soon2',
                 venue: 'Coming Soon2',
-                image: 'https://www.thomso.in/uploads/img/Pronite/coming_soon.png',
+                image: 'https://www.thomso.in/uploads/img/Pronite/coming_soon.jpg',
                 time: 'Coming Soon2'
             },
             third :{
@@ -186,7 +186,7 @@ exports.getPronite = function(req, res) {
                 artist: 'Coming Soon3',
                 description: 'Coming Soon3',
                 venue: 'Coming Soon3',
-                image: 'https://www.thomso.in/uploads/img/Pronite/coming_soon.png',
+                image: 'https://www.thomso.in/uploads/img/Pronite/coming_soon.jpg',
                 time: 'Coming Soon3'
             },
             fourth :{
@@ -196,9 +196,53 @@ exports.getPronite = function(req, res) {
                 artist: 'Coming Soon4',
                 description: 'Coming Soon4',
                 venue: 'Coming Soon4',
-                image: 'https://www.thomso.in/uploads/img/Pronite/coming_soon.png',
+                image: 'https://www.thomso.in/uploads/img/Pronite/coming_soon.jpg',
                 time: 'Coming Soon4'
             }
         }
     })
 }
+
+exports.getParticipantByQR = function(req, res) {
+    if (req.params.id && req.params.id.trim()) {
+        req.params.id = req.params.id.trim();
+        Main_User.findOne({ qr: req.params.id, verified: true })
+            .select('thomso_id name email college contact image blocked')
+            .exec(function (err, user) {
+                if (err) {
+                    return res.json({ success: false, msg: 'Something Went Wrong', error: err })
+                }
+                if (!user) {
+                    return res.json({ success: false, msg: 'User not found' });
+                }
+                if (user.blocked) {
+                    return res.json({ success: false, msg: 'Unauthorized User' });
+                }
+                return res.json({ success: true, msg: 'User Found', body: user });
+            });
+    } else {
+        return res.json({ success: false, msg: 'Empty QR' });
+    }
+};
+
+exports.getMediaByQR = function(req, res) {
+    if (req.params.id && req.params.id.trim()) {
+        req.params.id = req.params.id.trim();
+        Media_User.findOne({ qr: req.params.id })
+            .select('name email contact organization image blocked')
+            .exec(function (err, user) {
+                if (err) {
+                    return res.json({ success: false, msg: 'Something Went Wrong', error: err })
+                }
+                if (!user) {
+                    return res.json({ success: false, msg: 'User not found' });
+                }
+                if (user.blocked) {
+                    return res.json({ success: false, msg: 'Unauthorized User' });
+                }
+                return res.json({ success: true, msg: 'User Found', body: user });
+            });
+    } else {
+        return res.json({ success: false, msg: 'Empty QR' });
+    }
+};
