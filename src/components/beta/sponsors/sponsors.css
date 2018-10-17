@@ -19,15 +19,20 @@
 }
 .sponors-image-parent img{
     height: 80px;
-    width: auto;
+    width: 165px;
+    object-fit:contain;
 }
 .sponsors-title{
+    border-bottom: 1.5px solid black;
+    margin: auto;
+    width: fit-content;
     font-weight: 500;
-    font-family: Ubuntu;
+    font-family: Montserrat;
     font-size: 28px;
     line-height: 1.2em;
-    text-align: left;
-    padding: 15px;
+    padding: 15px; 
+    padding-bottom: 6px;
+    text-align: center;
 }
 .sponsors-image{
     display: flex;
@@ -48,6 +53,16 @@
   outline: 1px solid slategrey;
   }
   .sponsors-child-parent{
-      border-bottom:2px solid #d2d2d2; 
       margin-top: 10px;
+  }
+  @media only screen and (max-width:768px){
+      .sponsors-image{
+          flex-direction: column;
+      }
+      .sponsors-title{
+          font-size: 16px;
+      }
+      .sponors-image-parent img{
+          width: 100%;
+      }
   }
