@@ -1,6 +1,37 @@
 export const EventDetails =
     [
         {
+            id: 16,
+            name: "Mondanza",
+            image: "ttfashion.jpg",
+            subevents: [
+                {
+                    id: '16_1',
+                    name: "Kiki Challenge",
+                    details: "",
+                    content: "Win a chance to meet the celebrity stars from Thomso’18, to directly enter the finals of Mr. & Ms. Thomso, to get branded merchandise from TikTok and Thomso’18 by participating in #Thomsokikichallenge. Whether it’s dance, free-style or performance, creators are encouraged to let their imagination run wild and set their expressions free. So, create your kiki challenge videos in unique way on platform Tik Tok downloaded from link bit.ly/esthomso.",
+                    rulebook: "",
+                    image: "kiki.jpg",
+                    prize: "5"
+                },
+                {
+                    id: '16_2',
+                    name: "Mr. & Ms. Thomso",
+                    details: "",
+                    content: "Thomso’ providing exclusive opportunity to enter the finals of the much reputed fashion competition Mr. & amp; Ms.Thomso at Thomso, IIT Roorkee.Showcase your talent by uploading your ramp walk videos on platform TikTok downloaded from the link bit.ly / esthomso and win a chance to meet the celebrity stars from Thomso’18",
+                    rulebook: "",
+                    image: "mrthomso.jpg",
+                    prize: ""
+                },
+                {
+                    id: '16_3',
+                    name: "Thomsostar",
+                    content: "Whether it’s dance, free-style or performance, creators are encouraged to let their imagination run wild and set their expressions free. Thomso, in association with TikTok presents to you #ThomsoStar. Showcase your talent by uploading your videos by downloading TikTok from the platform http://bit.ly/esthomso and using #thomsostar",
+                    image: "athomsostar.jpg",
+                }
+            ]
+        },
+        {
             id: 1,
             name: "Choreo",
             image: "choreo.jpg",
@@ -169,6 +200,39 @@ export const EventDetails =
                     }]
         },
         {
+
+            id: 17,
+            name: "Bamboozned",
+            image: "ttdance.jpg",
+            subevents: [
+                {
+                    id: '17_1',
+                    name: "Adrenaline Rush",
+                    details: "",
+                    content: "TikTok, the official social media partner of Thomso’18. Thomso, in association with TikTok unleashes event ‘Adrenaline Rush’ for you. WHO DOESNT LOVE ADRENALINE RUSH? Upload a thrilling video showcasing your unique talent, participate by downloading and creating an account on the TikTok app from the platformbit.ly/esthomso and win a chance to meet celebrity stars at Thomso along with exciting T-shirts, pop sockets.",
+                    rulebook: "",
+                    image: "adrenaline.jpg",
+                    prize: "10"
+                },
+                {
+                    id: '17_2',
+                    name: "Harlem Shake",
+                    details: "",
+                    content: "Thomso, in association with TikTok is yet again back with a heartwarming event &#39;Harlem Shake&#39;. Get your freinds and make more engaging Harlem Shake on platform. Use your creativity to make most engaging video.Download the app and create your account on the TikTok app from the platform bit.ly/esthomso and win a chance to meet celebrity stars at Thomso along with exciting T-shirts, pop sockets and other exciting merchandise from TikTok.",
+                    rulebook: "",
+                    image: "harlem.jpeg",
+                    prize: "5"
+                },
+                {
+                    id: '17_3',
+                    name: "Mannequin Challenge",
+                    content: "Thomso, in association with TikTok is presenting a heartwarming event Mannequin Challenge&#39;. Get your freinds and make more engaging mannequin Challenge on platform. Use your creativity to make most engaging video.Download the app and create your account on the TikTok app from the platform bit.ly/esthomso and win a chance to meet celebrity stars at Thomso along with exciting T-shirts, pop sockets and other exciting merchandise from TikTok.",
+                    image: "mannequin.jpg",
+                    prize: "5"
+                }
+            ]
+        },
+        {
             id: 6,
             name: "Cinematic",
             image: "cinematic.jpg",
@@ -333,6 +397,37 @@ export const EventDetails =
                         prize: "50"
                     }
                 ]
+        },
+        {
+            id: 18,
+            name: "Musicivity",
+            image: "ttmusicivity.jpg",
+            subevents: [
+                {
+                    id: '18_1',
+                    name: "Dubslam",
+                    details: "",
+                    content: "TikTok, the official social media partner of Thomso’18 is the new cultural benchmark for global creators that strives to empower more creative minds to be part of the content revolution. Showcase your talent by uploading your dubbed videos by downloading the TikTok from the platform bit.ly/esthomso and win a chance to meet celebrity stars at Thomso along with exciting T-shirts and merchandise from TikTok.",
+                    rulebook: "",
+                    image: "Dubslam.jpg",
+                    prize: "5"
+                },
+                {
+                    id: '18_2',
+                    name: "Enthusia",
+                    details: "",
+                    content: "The rhythm of music can penetrate the hearts and find its way to the most inward places of the soul. Showcase your talent by uploading your singing/instrument palying videos by downloading the TikTok from the platformbit.ly/esthomso and win a chance to meet celebrity stars at Thomso along with exciting T-shirts, pop sockets and other exciting merchandise from TikTok..",
+                    rulebook: "",
+                    image: "enthusia.jpg"
+                },
+                {
+                    id: '18_3',
+                    name: "Duet Duet",
+                    content: "Thomso, in association with TikTok is presenting you a heartwarming event DUET. Get in pair with your TikTok partner and participate in the event. Download the app and create your account on the TikTok app from the platform bit.ly/esthomso and win a chance to meet celebrity stars at Thomso along with exciting T-shirts, pop sockets and other exciting merchandise from TikTok.",
+                    image: "duet.jpg",
+                    prize: "5"
+                }
+            ]
         },
         {
             id: 10,

@@ -34,14 +34,14 @@ class EventsOpening extends Component {
     }
     render() {
         let [e1, e2, e3] = [[], [], []];
-        for (let i = 0; i < 16; i++) {
-            if (i < 5) {
+        for (let i = 0; i < 19; i++) {
+            if (i < 6) {
                 e1.push(EventDetails[i])
             }
-            if (i >= 5 && i < 10) {
+            if (i >= 6 && i < 12) {
                 e2.push(EventDetails[i])
             }
-            if (i >= 10 && i < 15) {
+            if (i >= 12 && i < 18) {
                 e3.push(EventDetails[i])
             }
 

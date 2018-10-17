@@ -51,3 +51,18 @@
       border-bottom:2px solid #d2d2d2; 
       margin-top: 10px;
   }
+  @media only screen and (max-width:768px){
+      .sponsors-child{
+          width: 85%;
+          overflow-x: hidden;
+          left: 7.5%;
+      }
+      .sponsors-image{
+          display: flex;
+          flex-direction: column;
+      }
+      .sponors-image-parent img{
+        height: 50px;
+        width: auto;
+    }
+  }

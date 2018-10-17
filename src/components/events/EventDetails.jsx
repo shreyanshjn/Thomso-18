@@ -68,7 +68,7 @@ export default class EventDetail extends React.Component {
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 backgroundPosition: "center center",
-            }}> 
+            }}>
                 <div className="events-details-images-main-div-child">
                     <div className="events-details-images-name">
                         {(this.state.data && this.state.data.name) ? <p>{this.state.data.name}</p> : null}
@@ -97,8 +97,8 @@ export default class EventDetail extends React.Component {
                                 </div> : null}
                         </div>
                         <div className="events-text-scroll-cont">
-                            <p className="events-text-child" style={{display: 'block'}}>{this.state.data.content}
-                                {(this.state.data && this.state.data.promotionalLink) ? <p className="events-text-child" style={{marginTop: '10px', color: 'gold'}}>Register <a href={this.state.data.promotionalLink} style={{fontWeight: '500', color: 'red', textDecoration: 'none'}} target="_blank" rel="noopener noreferrer">&nbsp;here&nbsp;</a> for {this.state.data.name ? this.state.data.name : null}</p> : null }
+                            <p className="events-text-child" style={{ display: 'block' }}>{this.state.data.content}
+                                {(this.state.data && this.state.data.promotionalLink) ? <p className="events-text-child" style={{ marginTop: '10px', color: 'gold' }}>Register <a href={this.state.data.promotionalLink} style={{ fontWeight: '500', color: 'red', textDecoration: 'none' }} target="_blank" rel="noopener noreferrer">&nbsp;here&nbsp;</a> for {this.state.data.name ? this.state.data.name : null}</p> : null}
                             </p>
                         </div>
                     </div> : null}
@@ -120,7 +120,7 @@ export default class EventDetail extends React.Component {
                                 <div className="events-addevents-child">
                                     <a href={this.state.data.rulebook} className="be-events-modal-button" target="_blank">Rulebook</a>
                                 </div>
-                            : null
+                                : null
                         }
                     </div>
                     : null}

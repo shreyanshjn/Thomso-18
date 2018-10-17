@@ -35,7 +35,7 @@ export default class EventsModal extends React.Component {
         window.removeEventListener('keyup', this.handleKeys)
     }
     nextCat = (id) => {
-        if (id === 15) {
+        if (id === 18) {
             this.setState({ eventId: 1 }, () => {
                 let filteredData = EventDetails.filter(e => e.id === this.state.eventId);
                 this.setState(
@@ -57,7 +57,7 @@ export default class EventsModal extends React.Component {
     }
     prevCat = (id) => {
         if (id === 1) {
-            this.setState({ eventId: 15 }, () => {
+            this.setState({ eventId: 18 }, () => {
                 let filteredData = EventDetails.filter(e => e.id === this.state.eventId);
                 this.setState(
                     {
@@ -93,7 +93,7 @@ export default class EventsModal extends React.Component {
                                 )}
                             </ul>
                         </div>
-                        {this.state.data ? <EventDetail history={this.props.history} id={this.state.subEventId} updateParentSubEvent={id => this.setState({subEventId: id})} detail={this.state.data} eventsId={this.state.eventId} close={this.props.modalClose} subevents={this.state.data.subevents} data={this.props.data} /> : null}
+                        {this.state.data ? <EventDetail history={this.props.history} id={this.state.subEventId} updateParentSubEvent={id => this.setState({ subEventId: id })} detail={this.state.data} eventsId={this.state.eventId} close={this.props.modalClose} subevents={this.state.data.subevents} data={this.props.data} /> : null}
                     </div>
                     <div className="events-modals-last-arrow">
                         <p href="" className="arrow-button-events" onClick={() => this.prevCat(this.state.eventId)}>
