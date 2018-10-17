@@ -1,7 +1,6 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import Loadable from "react-loadable";
-
 import FetchApi from "../../utils/FetchAPI";
 import AuthService from "../../handlers/ca/temp/AuthService";
 import Loader from "../common/Loader";

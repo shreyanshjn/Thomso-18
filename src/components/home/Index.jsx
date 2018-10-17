@@ -25,7 +25,7 @@ import youtubeicon from "./src/img/youtube.svg"
 import './src/css/style.css'
 import MobileCarousel from '../mobilecarousel/Index';
 import Celebrities from './src/celebrities';
-
+import {Helmet} from "react-helmet"
 let scrollInit = false
 
 export default class HomeIndex extends React.Component {
@@ -64,6 +64,10 @@ export default class HomeIndex extends React.Component {
     render() {
         return (
             <div className="bodymainfinal">
+                <Helmet>
+                    <meta keywords="" description="Thomso is North India&#39;s biggest cultural fest. It has a footfall of about thousands of students
+                    from across India who enjoy the fest in IIT Roorkee."/>
+                </Helmet>
                 <div>
                     <Navbar logohide="true" />
                     <div className="mainfinalsticky-container">

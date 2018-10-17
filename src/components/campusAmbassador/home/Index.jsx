@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom' ;
 import { SectionsContainer, Section } from 'react-fullpage';
-
+import {Helmet} from 'react-helmet';
 import Wisca from '../../ca/login/Wisca.jsx';
 import Roles from '../../ca/login/Roles.jsx';
 import Contact from '../../ca/login/Contact.jsx';
@@ -29,6 +29,12 @@ export default class HomeIndex extends React.Component {
         };
         return (
             <div className="ca-opening-middlesection">
+                <Helmet>
+                    <meta keywords="" description="Become the Campus Ambassador your college and represent IIT Roorkee by greeting visitors to
+                    the campus. Role of CA includes active social media presence, ground publicity and involvement in
+                    activities.
+                    Perks include a certificate of appreciation, to Thomso&#39;18 merchandise, gifts and goodies." />
+                </Helmet>
                 <CalandingNavbar className={(window.location.hash === "#Wisca" || window.location.hash === "#Roles" || window.location.hash === "#Contact") ? 'ca-landing-heading ca-landing-heading-dark' : 'ca-landing-heading'} />
                 <SectionsContainer {...options}>
                     <div className="ca-opening-child-middle">

@@ -3,6 +3,7 @@ import DataRow from './DataRow';
 import AuthService from '../../../handlers/ca/temp/AuthService';
 import FetchApi from '../../../utils/FetchAPI';
 import './Leaderboard.css';
+import {Helmet} from "react-helmet"
 export default class LeaderboardIndex extends React.Component {
     constructor() {
         super();
@@ -36,6 +37,10 @@ export default class LeaderboardIndex extends React.Component {
     render() {
         return (
             <div className="campusAmb-leader-indexMain">
+                <Helmet>
+                    <meta keywords="" description="The rankings of campus ambassadors from various colleges participating in Thomso
+                        18 is represented on leaderboard based on performance." />
+                </Helmet>
                 <div className="campusAmb-leader-maintable">
                     <table className="campusAmb-leaderboard-table">
                         <tbody>
