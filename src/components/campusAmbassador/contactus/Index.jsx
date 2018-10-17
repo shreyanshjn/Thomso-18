@@ -1,5 +1,6 @@
 import React from 'react';
 import "./css/contactus.css";
+import {Helmet} from "react-helmet"
 import gmail from "../../beta/home/src/img/gmail.png";
 import call from "../../beta/home/src/img/call.png"
 
@@ -12,8 +13,12 @@ export default class ContactIndex extends React.Component {
     render() {
         return (
             <div className={this.props.main ? "campusAmb-contact-parent campusAmb-contact-parent-main" : "campusAmb-contact-parent"}>
+                <Helmet>
+                    <meta keywords="" description="Campus ambassadors maximizing the contacts to increase popularity and reach of
+                        thomso 18, north India&#39;s biggest cultural fest." />
+                </Helmet>
                 <div className="campusAmb-contact-child">
-                <div className="campusAmb-contact-child-first">
+                    <div className="campusAmb-contact-child-first">
                         <div className="campusAmb-contact-child-wrapper flex_column">
                             <div className="campusAmb-contact-image_one">
                             </div>
@@ -25,11 +30,11 @@ export default class ContactIndex extends React.Component {
                                     <h2>PUBLIC RELATIONS</h2>
                                 </div>
                                 <div className="campusAmb-contact-details-gmail">
-                                    <img src={gmail} alt="email"/>
+                                    <img src={gmail} alt="email" />
                                     <span>harshit.thomso@gmail.com</span>
                                 </div>
                                 <div className="campusAmb-contact-details-call">
-                                    <img src={call} alt="mobile"/>
+                                    <img src={call} alt="mobile" />
                                     <span>+91-9340043505</span>
                                 </div>
                             </div>
@@ -47,11 +52,11 @@ export default class ContactIndex extends React.Component {
                                     <h2>PUBLIC RELATIONS</h2>
                                 </div>
                                 <div className="campusAmb-contact-details-gmail">
-                                    <img src={gmail} alt="email"/>
+                                    <img src={gmail} alt="email" />
                                     <span>niranjan98.thomso@gmail.com</span>
                                 </div>
                                 <div className="campusAmb-contact-details-call">
-                                    <img src={call} alt="mobile"/>
+                                    <img src={call} alt="mobile" />
                                     <span>+91-7023511775</span>
                                 </div>
                             </div>
@@ -69,11 +74,11 @@ export default class ContactIndex extends React.Component {
                                     <h2>EVENTS AND ALLIANCES HEAD</h2>
                                 </div>
                                 <div className="campusAmb-contact-details-gmail">
-                                    <img src={gmail} alt="email"/>
+                                    <img src={gmail} alt="email" />
                                     <span>shubham.thomso18@gmail.com</span>
                                 </div>
                                 <div className="campusAmb-contact-details-call">
-                                    <img src={call} alt="mobile"/>
+                                    <img src={call} alt="mobile" />
                                     <span>+91-9693482762</span>
                                 </div>
                             </div>
@@ -91,11 +96,11 @@ export default class ContactIndex extends React.Component {
                                     <h2>EVENTS AND MANAGEMENT</h2>
                                 </div>
                                 <div className="campusAmb-contact-details-gmail">
-                                    <img src={gmail} alt="email"/>
+                                    <img src={gmail} alt="email" />
                                     <span>ayush.thomso@gmail.com</span>
                                 </div>
                                 <div className="campusAmb-contact-details-call">
-                                    <img src={call} alt="mobile"/>
+                                    <img src={call} alt="mobile" />
                                     <span>+91-9411028240</span>
                                 </div>
                             </div>
@@ -113,11 +118,11 @@ export default class ContactIndex extends React.Component {
                                     <h2>TECHNICAL HEAD</h2>
                                 </div>
                                 <div className="campusAmb-contact-details-gmail">
-                                    <img src={gmail} alt="email"/>
+                                    <img src={gmail} alt="email" />
                                     <span>nikhil.thomso@gmail.com</span>
                                 </div>
                                 <div className="campusAmb-contact-details-call">
-                                    <img src={call} alt="mobile"/>
+                                    <img src={call} alt="mobile" />
                                     <span>+91-9116891112</span>
                                 </div>
                             </div>
@@ -135,11 +140,11 @@ export default class ContactIndex extends React.Component {
                                     <h2>TECHNICAL HEAD</h2>
                                 </div>
                                 <div className="campusAmb-contact-details-gmail">
-                                    <img src={gmail} alt="email"/>
+                                    <img src={gmail} alt="email" />
                                     <span>prashant.thomso@gmail.com</span>
                                 </div>
                                 <div className="campusAmb-contact-details-call">
-                                    <img src={call} alt="mobile"/>
+                                    <img src={call} alt="mobile" />
                                     <span>+91-8840592467</span>
                                 </div>
                             </div>
