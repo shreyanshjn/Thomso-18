@@ -158,9 +158,9 @@ exports.getPronite = function(req, res) {
     res.json({
         status: 200,
         success: true,
-        data: {
-            first :{
-                day: 'Day 0',
+        data: [
+            {
+                day: 'Day 0 ',
                 date: '25-10-2018',
                 name: 'Coming Soon',
                 artist: 'Coming Soon',
@@ -168,38 +168,8 @@ exports.getPronite = function(req, res) {
                 venue: 'Coming Soon',
                 image: 'https://www.thomso.in/uploads/img/Pronite/coming_soon.jpeg',
                 time: 'Coming Soon'
-            },
-            second :{
-                day: 'Day 1 ',
-                date: '26-10-2018',
-                name: 'Coming Soon',
-                artist: 'Coming Soon',
-                description: 'Coming Soon',
-                venue: 'Coming Soon',
-                image: 'https://www.thomso.in/uploads/img/Pronite/coming_soon.jpeg',
-                time: 'Coming Soon'
-            },
-            third :{
-                day: 'Day 2 ',
-                date: '27-10-2018',
-                name: 'Coming Soon',
-                artist: 'Coming Soon',
-                description: 'Coming Soon',
-                venue: 'Coming Soon',
-                image: 'https://www.thomso.in/uploads/img/Pronite/coming_soon.jpeg',
-                time: 'Coming Soon'
-            },
-            fourth :{
-                day: 'Day 3 ',
-                date: '28-10-2018',
-                name: 'Coming Soon',
-                artist: 'Coming Soon',
-                description: 'Coming Soon',
-                venue: 'Coming Soon',
-                image: 'https://www.thomso.in/uploads/img/Pronite/coming_soon.jpeg',
-                time: 'Coming Soon'
             }
-        }
+        ]
     })
 }
 

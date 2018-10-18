@@ -39,6 +39,12 @@ export const SponsDetails = [
                 image: "PFC.png",
                 link: "http://www.pfcindia.com/",
 
+            },
+            {
+                name: "Welspun Enterprises",
+                image: "WELSPUN.jpg",
+                link: "http://www.welspunenterprises.com/",
+
             }
         ]
     },
@@ -54,25 +60,33 @@ export const SponsDetails = [
         ]
     },
     {
-        title: "Co-Sponsor",
+        title: "Co-Sponsors",
         sponsors: [
+            {
+                name: "GAIL",
+                image: "gail.jpg",
+                link: "http://gailonline.com/hindi/home.html",
+            },
+            {
+                name: "IES Master",
+                image: "iesMaster.png",
+                link: "https://iesmaster.org",
+            },
             {
                 name: "Petronet LNG",
                 image: "petronet.jpg",
                 link: "https://www.petronetlng.com/",
-
+            },
+            {
+                name: "RailTel",
+                image: "Railtel.png",
+                link: "https://www.railtelindia.com/",
             },
             {
                 name: "TATA Chemicals Ltd.",
                 image: "TCL.jpg",
                 link: "http://www.tatachemicals.com/",
             }
-            , {
-                name: "GAIL",
-                image: "gail.jpg",
-                link: "http://gailonline.com/hindi/home.html",
-            }
-
         ]
     },
     {
@@ -159,6 +173,50 @@ export const SponsDetails = [
                 name: "Safe Express",
                 image: "safexpress.png",
                 link: "http://www.safexpress.com/",
+
+            }
+        ]
+    },
+    {
+        title: "Merchandise Partner",
+        sponsors: [
+            {
+                name: "Fastrack",
+                image: "fastrack.png",
+                link: "https://www.fastrack.in/",
+
+            }
+        ]
+    },
+    {
+        title: "Fragrance Partner",
+        sponsors: [
+            {
+                name: "Denver",
+                image: "denver.png",
+                link: "http://denverformen.com/",
+
+            }
+        ]
+    },
+    // {
+    //     title: "Tourism Partner",
+    //     sponsors: [
+    //         {
+    //             name: "UK Tourism",
+    //             image: "",
+    //             link: "",
+
+    //         }
+    //     ]
+    // },
+    {
+        title: "EDM Night Partner",
+        sponsors: [
+            {
+                name: "Integriti Dance Music",
+                image: "integriti.png",
+                link: "http://www.integritidancemusic.com/",
 
             }
         ]
