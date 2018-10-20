@@ -35,9 +35,6 @@
     text-align: center;
 }
 .sponsors-image{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
     padding: 30px;
 }
 .sponsors-child::-webkit-scrollbar {
@@ -55,8 +52,15 @@
   .sponsors-child-parent{
       margin-top: 10px;
   }
+  .sponors-image-grandparent{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      padding: 15px;
+  }
   @media only screen and (max-width:768px){
-      .sponsors-image{
+    .sponors-image-grandparent{
+          display: flex;
           flex-direction: column;
       }
       .sponsors-title{
@@ -64,5 +68,8 @@
       }
       .sponors-image-parent img{
           width: 100%;
+      }
+      .sponors-image-parent{
+          margin-top: 10px;
       }
   }

@@ -221,5 +221,322 @@ export const SponsDetails = [
             }
         ]
     },
+    {
+        title: "Newspaper Partner",
+        sponsors: [
+            {
+                name: "Amar Ujala",
+                image: "AmarUjala.png",
+                link: "https://www.amarujala.com/",
 
+            }
+        ]
+    },
+    {
+        title: "Magazine Partner",
+        sponsors: [
+            {
+                name: "Woman's Era",
+                image: "WomansEra.png",
+                link: "https://www.womansera.com/",
+
+            },
+            {
+                name: "Cricket Today",
+                image: "CricToday.png",
+                link: "http://www.crictoday.com/",
+
+            },
+            {
+                name: "Youth Incorporated",
+                image: "YouthIncorporated.png",
+                link: "http://www.youthincmag.com/",
+
+            },
+            {
+                name: "Curriculum",
+                image: "Curriculum.jpg",
+                link: "http://www.curriculum-magazine.com/",
+
+            },
+            {
+                name: "The Youth Chronicles",
+                image: "tyc.jpg",
+                link: "http://theyouthchronicles.in/",
+
+            },
+            {
+                name: "Lex Witness",
+                image: "lex.png",
+                link: "http://www.witnesslive.in/",
+
+            },
+            {
+                name: "DelhiNOW Magazine",
+                image: "delhinow.png",
+                link: "https://www.delhinowmagazine.com/",
+
+            },
+            {
+                name: "Brainfeed",
+                image: "Brainfeed.png",
+                link: "http://brainfeedmagazine.com/",
+
+            },
+            {
+                name: "Creativica",
+                image: "Creativica.png",
+                link: "https://www.creativica.in/",
+
+            },
+        ]
+    },
+    {
+        title: "Digital Media Partner",
+        sponsors: [
+            {
+                name: "The Logical Indian",
+                image: "TheLogicalIndian.png",
+                link: "https://thelogicalindian.com/",
+
+            },
+            {
+                name: "Be like Bro",
+                image: "dp.png",
+                link: "https://www.facebook.com/BelykBro/",
+
+            },
+            {
+                name: "SIT",
+                image: "SIT.png",
+                link: "https://www.facebook.com/SITofficial/",
+
+            },
+            {
+                name: "Never Stop Learning ",
+                image: "NSL.png",
+                link: "https://play.google.com/store/apps/details?id=com.taritas.nsl",
+
+            },
+            {
+                name: "Marketing Mind",
+                image: "MarketingMind.png",
+                link: "https://www.marketingmind.in/",
+
+            },
+            {
+                name: "DelhiNOW Magazine",
+                image: "delhinow.png",
+                link: "http://www.delhinowmagazine.com/",
+
+            },
+            {
+                name: "Dil Ki Baat",
+                image: "dkb.jpg",
+                link: "https://www.facebook.com/Dilkibaatlive/",
+
+            },
+            {
+                name: "ScoopNow",
+                image: "scoopnow.png",
+                link: "https://scoopnow.com/",
+
+            },
+            {
+                name: "Delhi Food Walks",
+                image: "DelhiFoodWalks.png",
+                link: "http://www.delhifoodwalks.com/",
+
+            },
+
+            {
+                name: "World Of India",
+                image: "Worldofindia.png",
+                link: "http://www.worldofind.com/",
+
+            },
+            {
+                name: "What's Up Life",
+                image: "WUL.png",
+                link: "https://www.whatsuplife.in/",
+
+            },
+
+            {
+                name: "Knocksense",
+                image: "knocksense.png",
+                link: "https://www.knocksense.com/",
+
+            },
+            {
+                name: "JaipurLove.com",
+                image: "jaipurlove.png",
+                link: "https://www.facebook.com/jaipurlove/",
+
+            },
+
+            {
+                name: "DU Updates",
+                image: "duupdates.jpg",
+                link: "https://www.facebook.com/duupdates/",
+
+            },
+            {
+                name: "Tricity Events",
+                image: "tricity.png",
+                link: "https://www.facebook.com/eventsintricity/",
+
+            },
+            {
+                name: "PU Pulse",
+                image: "pu_pulse.png",
+                link: "https://www.facebook.com/pupulse/",
+
+            },
+
+        ]
+    },
+    {
+        title: "Online Media Partner",
+        sponsors: [
+            {
+                name: "RVCJ",
+                image: "RVCJ.png",
+                link: "https://www.rvcj.com/",
+
+            },
+            {
+                name: "Knowafest.com",
+                image: "knowafest.png",
+                link: "http://www.knowafest.com/",
+
+            },
+            {
+                name: "Ignite Engineers",
+                image: "IgniteEngineers.png",
+                link: "https://www.igniteengineers.com/",
+
+            },
+            {
+                name: "TopYaps",
+                image: "TopYas.png",
+                link: "https://topyaps.com/",
+
+            },
+            {
+                name: "OhCampus.com",
+                image: "OhCampus.png",
+                link: "http://ohcampus.com/",
+
+            },
+            {
+                name: "TestFunda.com",
+                image: "TestFunda.png",
+                link: "http://testfunda.com/",
+
+            },
+            {
+                name: "EFY Group",
+                image: "efy.png",
+                link: "https://efy.in/",
+
+            },
+            {
+                name: "Festpav",
+                image: "festpav.png",
+                link: "http://festpav.com/",
+
+            },
+            {
+                name: "bhopalsamachar.com ",
+                image: "bs.png",
+                link: "https://www.bhopalsamachar.com/",
+
+            },
+        ]
+    },
+    {
+        title: "SMS Partner",
+        sponsors: [
+            {
+                name: "Top10SMS",
+                image: "TOP10SMS.png",
+                link: "https://www.top10sms.in/",
+
+            },
+            {
+                name: "MSG91",
+                image: "MSG91.png",
+                link: "https://msg91.com/",
+
+            },
+            {
+                name: "Textlocal",
+                image: "textlocal.jpg",
+                link: "https://www.textlocal.in/",
+
+            },
+
+        ]
+    },
+    {
+        title: "Hoarding Partner",
+        sponsors: [
+            {
+                name: "Catalyst Advertising",
+                image: "Catalyst.png",
+                link: "https://catalystadvertising.com/",
+
+            },
+
+        ]
+    },
+    {
+        title: "Competition Partner",
+        sponsors: [
+            {
+                name: "Dare2Compete",
+                image: "dare2compete.png",
+                link: "https://dare2compete.com/",
+
+            },
+
+        ]
+    },
+    {
+        title: "Travel Partner",
+        sponsors: [
+            {
+                name: "HelloTravel",
+                image: "HelloTravel.png",
+                link: "https://www.hellotravel.com/",
+
+            },
+
+        ]
+    },
+    {
+        title: "Blogging Outreach Partner",
+        sponsors: [
+            {
+                name: " BlogAdda.com",
+                image: "BA.png",
+                link: "https://www.blogadda.com/",
+
+            },
+
+        ]
+    },
+    {
+        title: "Intern Partner",
+        sponsors: [
+            {
+                name: "HelloIntern.com",
+                image: "HelloIntern.png",
+                link: "https://www.hellointern.com/",
+
+            },
+
+        ]
+    },
 ]
