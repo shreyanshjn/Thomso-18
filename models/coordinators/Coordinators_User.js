@@ -39,7 +39,7 @@ var UserSchema = new mongoose.Schema({
         required: true
     },
     event_id: {
-        type:String
+        type:String,
     },
     password: {
         type: String,

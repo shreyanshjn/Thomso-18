@@ -25,9 +25,11 @@ class Toppr extends Component {
             value = value.trim()
             value = value.substring(0, 10)
         }
+        console.log("skjf");
         this.setState({ [name]: value }); }
     handleSubmit = (e) => {
         e.preventDefault();
+        console.log('sjk');
         let { name, schoolname, email, city, standard, mobilenumber, entry } = this.state;
         if (name) {
             name = name.trim()
@@ -53,7 +55,9 @@ class Toppr extends Component {
         const data = { name, schoolname, email, city, standard, mobilenumber, entry }
         const check = validateInput(email, 'email')
         if (!isNaN(mobilenumber)) {
+            console.log(this.state)
             if (name && mobilenumber && city && standard && email && schoolname && entry && check.isValid) {
+                console.log("hello")
                 FetchApi('POST', '/api/mun/toppr', data)
                     .then(r => {
                         if (r && r.data && this.popup) {
@@ -78,8 +82,10 @@ class Toppr extends Component {
                         this.popup.show('Something went wrong.')
                     });
             } else if (check.errors && check.errors.email) {
+                console.log("sda")
                 this.setState({ errors: check.errors.email })
             } else {
+                console.log("ss")
                 this.setState({ errors: 'Fields cannot be empty' })
             }
         }

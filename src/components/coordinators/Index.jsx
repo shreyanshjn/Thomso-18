@@ -37,6 +37,10 @@ const ShowWinnerIndex = Loadable({
     loader: () => import("./showWinner/Index"),
     loading: () => <Loader/>
 });
+const ParticipantsIndex = Loadable({
+    loader: () => import("./participants/Index"),
+    loading: () => <Loader/>
+});
 const LogoutIndex = Loadable({
     loader: () => import("./logout/Index"),
     loading: () => <Loader/>
@@ -87,6 +91,7 @@ export default class MainIndex extends React.Component {
                 {isAuthenticated ? 
                     <React.Fragment>
                         <Route exact path="/coordinators" render={props => (<AddWinnerIndex {...props} userData={userData} />)}  />
+                        <Route exact path="/coordinators/participants" render={props => (<ParticipantsIndex {...props} userData={userData} />)}  />
                         <Route exact path="/coordinators/showWinner" render={props => (<ShowWinnerIndex {...props} userData={this.state.userData} />)} />
                         <Route exact path="/coordinators/logout" render={props => (<LogoutIndex {...props} updateRoutes={this.handleUpdate} />)} />
                     </React.Fragment>

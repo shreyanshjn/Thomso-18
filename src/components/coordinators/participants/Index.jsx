@@ -9,30 +9,29 @@ export default class ShowWinnerIndex extends React.Component{
         super();
         this.state = {
             errors:'',
-            winnerData:[],
+            participantData:[],
         }
         this.Auth = new AuthService();
     }
 
     componentWillMount(){
         const isAuth = this.Auth.hasToken();
-        if(isAuth){
+        var {event_id} = this.props.userData;
+        var data = {event_id};
+        if(isAuth && data){
             const token = this.Auth.getToken(); 
-            console.log(token)
-            FetchApi('GET','/api/coordinators/getWinner',null, token)
+            FetchApi('POST','/api/coordinators/participants',data, token)
             .then( res =>{
                 if(res && res.data && res.data.success){
                     if(res.data.body){
-                        console.log(res.data.body)
-                        this.setState({winnerData: res.data.body})
+                        this.setState({participantData: res.data.body})
                     }
                     else{
-                        this.setState({errors:"No Winners Added"})
+                        this.setState({errors:"No Participants"})
                     }
                 }
             })
             .catch( err => {
-                console.log(err);
                 this.setState({errors:"Something Went Wrong"})
             })
         }else{
@@ -43,15 +42,15 @@ export default class ShowWinnerIndex extends React.Component{
 
     
     render(){
-        let {winnerData, errors} = this.state;
+        let {participantData, errors} = this.state;
         return(
             <div>
                 <div style={{display:"inline", paddingLeft:"50px",paddingBottom:"30px"}}>
                     <Link to="/coordinators"> Add Winners </Link>
                 </div>
-                <div style={{display:"inline", paddingLeft:"50px",paddingBottom:"30px"}}>
-                    <Link to="/coordinators/participants"> participants list </Link>
-                </div>
+                <span  style={{display:"inline",marginLeft:"80px"}}  >
+                    <Link to="/coordinators/showWinner"> Show Winner's List </Link>
+                </span>
                 <div style={{display:"inline", paddingLeft:"50px",paddingBottom:"30px"}}>
                     <Link to="/coordinators/logout"> Logout </Link>
                 </div>
@@ -61,7 +60,7 @@ export default class ShowWinnerIndex extends React.Component{
                         </div>
                         : null
                     }
-                {(winnerData && winnerData.length) ? <DataTable participants={winnerData} /> :null}
+                {(participantData.users && participantData.users.length) ? <DataTable participants={participantData} /> :null}
             </div>
         )
     }

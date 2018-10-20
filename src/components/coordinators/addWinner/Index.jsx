@@ -107,6 +107,7 @@ export default class AddWinnerIndex extends React.Component{
                 <div>
                     <h4 style={{display:"inline"}}  > Add Winner </h4>
                     <span  style={{display:"inline",marginLeft:"80px"}}  ><Link to="/coordinators/showWinner"> Show Winner's List </Link></span>
+                    <span  style={{display:"inline",marginLeft:"80px"}}  ><Link to="/coordinators/participants"> Participants List </Link></span>
                     <span  style={{display:"inline",marginLeft:"80px"}}  ><Link to="/coordinators/logout"> Logout </Link></span>
                 </div>       
                 <div>

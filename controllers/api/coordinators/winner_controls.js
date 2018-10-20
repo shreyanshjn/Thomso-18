@@ -99,7 +99,7 @@ exports.getWinner = (req, res) => {
 }
 
 exports.remove_winner = (req, res) => {
-    console.log(req.body, req.locals)
+    // console.log(req.body, req.locals)
     if(req.body && req.locals.email &&  req.body.id){
         Winner_List.findOneAndUpdate({_id:req.body.id}, {verified:false})
         .select('_id name')
