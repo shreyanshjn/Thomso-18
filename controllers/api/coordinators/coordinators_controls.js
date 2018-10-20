@@ -23,7 +23,7 @@ exports.info = function(req, res) {
 exports.participants = function(req, res) {
     if(req.body && req.body.event_id && req.locals && req.locals.email){
         EventSchema.findOne({event_id: req.body.event_id})
-        .populate('users', 'thomso_id college name email contact gender')
+        .populate('users', 'thomso_id college name email contact gender payment_type blocked')
         .select(' name ')
         .exec( (err, result) => {
             if(err){ 
