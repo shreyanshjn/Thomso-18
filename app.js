@@ -49,14 +49,27 @@ app.get("/uploads/*", function(req, res){
   if (req.url.indexOf('?') > 0) {
     req.url = req.url.substring(0, req.url.indexOf('?'));
   }
-  console.log(req.url);
   fs.readFile(`.${req.url}`, function (err, content) {
     if (err) {
         res.writeHead(400, {'Content-type':'text/html'})
-        console.log(err);
         res.end("No such image");
     } else {
         res.writeHead(200,{'Content-type':'image/jpg'});
+        res.end(content);
+    }
+  });
+});
+
+app.get("/getFonts/*", function(req, res){
+  if (req.url.indexOf('?') > 0) {
+    req.url = req.url.substring(0, req.url.indexOf('?'));
+  }
+  fs.readFile(`.${req.url}`, function (err, content) {
+    if (err) {
+        res.writeHead(400, {'Content-type':'text/html'})
+        res.end("No such font");
+    } else {
+        res.writeHead(200,{'Content-type':'application/x-font-ttf'});
         res.end(content);
     }
   });

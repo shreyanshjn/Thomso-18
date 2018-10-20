@@ -31,10 +31,10 @@ const FAQIndex = Loadable({
     loading: () => <Loader />
 });
 
-const SponsorsIndex = Loadable({
-    loader: () => import("./components/beta/sponsors/Index"),
-    loading: () => <Loader />
-});
+// const SponsorsIndex = Loadable({
+//     loader: () => import("./components/beta/sponsors/Index"),
+//     loading: () => <Loader />
+// });
 
 const AccociateIndex = Loadable({
     loader: () => import("./components/beta/associate/Index"),
@@ -180,6 +180,11 @@ const CoordinatorsIndex = Loadable({
     loading: () => <Loader />
 })
 
+const SponsIndex = Loadable({
+    loader: () => import("./components/beta/sponsors/Index"),
+    loading: () => <Loader />
+})
+
 class App extends Component {
     constructor() {
         super();
@@ -204,7 +209,7 @@ class App extends Component {
                             {/* <Route exact path="/" component={HomeIndex} /> */}
                             <Route path="/" component={EconomicIndex} />
                             <Route exact path="/" component={MainHomeIndex} />
-                            <Route exact path="/sponsors" component={SponsorsIndex} />
+                            {/* <Route exact path="/sponsors" component={SponsorsIndex} /> */}
                             <Route exact path="/associate" component={AccociateIndex} />
                             <Route exact path="/quizardry" component={QuizardryIndex} />
                             <Route exact path="/team" component={TeamIndex} />
@@ -215,6 +220,7 @@ class App extends Component {
                             <Route path="/zonals" component={ZonalsIndex} />
                             <Route path="/blog" component={blog} />
                             <Route path="/whythomso" component={WhyThomso} />
+                            <Route path="/sponsors" component={SponsIndex} />
                             <Route path="/onlineevents" component={onlineevents} />
                             <Route path="/verifyCerti/" component={VerifyCerti} />
                             <Route path="/policy" component={Policy} />
