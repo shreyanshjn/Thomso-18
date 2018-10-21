@@ -222,6 +222,64 @@ export const SponsDetails = [
         ]
     },
     {
+        title: "Entertainment Network Partner",
+        sponsors: [
+            {
+                name: "Viacom 18",
+                image: "viacom18.jpg",
+                link: "https://www.viacom18.com/",
+
+            }
+        ]
+    },
+    {
+        title: "Music Channel Partner",
+        sponsors: [
+            {
+                name: "MTV",
+                image: "MTV.png",
+                link: "https://www.mtvindia.com/",
+
+            },
+            {
+                name: "MTV Beats",
+                image: "MTVbeats.png",
+                link: "https://www.mtvbeats.in/",
+
+            },
+            {
+                name: "Vh1",
+                image: "vh1.png",
+                link: "https://www.vh1.in/",
+
+            },
+            {
+                name: "9XM",
+                image: "9xm.png",
+                link: "https://www.9xm.in/",
+
+            },
+            {
+                name: "9XO",
+                image: "9xo.png",
+                link: "https://www.9xo.in/",
+
+            },
+
+        ]
+    },
+    {
+        title: "Comedy Channel Partner",
+        sponsors: [
+            {
+                name: "Comedy Central",
+                image: "comedycentral.jpg",
+                link: "https://www.comedycentral.in",
+
+            },
+        ]
+    },
+    {
         title: "Newspaper Partner",
         sponsors: [
             {
