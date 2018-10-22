@@ -76,16 +76,16 @@
     font-family: 'MyWebFont';
     /* src: url('webfont.eot'); IE9 Compat Modes */
     src:   
-    url(/fonts/SlowLife.ttf)
+    url(https://www.thomso.in/getFonts/SlowLife.ttf)
 
 }
 @font-face{
     font-family: 'aboutuscontentfont';
-    src:url(/fonts/HansKendrick-Regular.otf);
+    src:url(https://www.thomso.in/getFonts/HansKendrick-Regular.otf);
 }
 @font-face{
     font-family:"georgiafont";
-    src:url(/fonts/georgiab.ttf);
+    src:url(https://www.thomso.in/getFonts/georgiab.ttf);
 }
 .bodymainfinal{
     padding: 0px;
