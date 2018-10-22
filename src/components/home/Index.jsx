@@ -130,7 +130,7 @@ export default class HomeIndex extends React.Component {
                                         <Link to="/events" className="mainfinalleftsidebarevents">Events</Link>
                                     </div>
                                     <div className="mainfinalleftsidebarcontent">
-                                        <Link to="/comingSoon" className="mainfinalleftsidebarpronites">Pronites</Link>
+                                        <Link to="/pronites" className="mainfinalleftsidebarpronites">Pronites</Link>
                                     </div>
                                     <div className="mainfinalleftsidebarcontent">
                                         <Link to="/sponsors" className="mainfinalleftsidebarsponsors">Sponsors</Link>

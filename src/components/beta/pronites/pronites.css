@@ -191,9 +191,9 @@
   opacity: 0.8;
 }
 .content__right .content__main p:last-child {
-  text-transform: uppercase;
   letter-spacing: 0.15em;
   font-size: 0.85em;
+  
 }
 .content__right .content__index {
   font-size: 30vh;
@@ -205,25 +205,33 @@
   color: #fff;
 }
 [data-type="iceland"] .content__left {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/215059/iceland.jpg");
+  background-image: url('./img/kenny.jpg');
+  background-position: center;
+  background-size: contain;
 }
 .spinner--right [data-type="iceland"] .content__left {
   background-image: none;
 }
 [data-type="china"] .content__left {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/215059/china.jpg");
+  background-image: url("./img/localtrain.jpg");
+  background-position: center;
+  background-size: contain;
 }
 .spinner--right [data-type="china"] .content__left {
   background-image: none;
 }
 [data-type="usa"] .content__left {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/215059/usa.jpg");
+  background-image: url("./img/Amit.jpg");
+  background-position: center;
+  background-size: contain;
 }
 .spinner--right [data-type="usa"] .content__left {
   background-image: none;
 }
 [data-type="peru"] .content__left {
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/215059/peru.jpg");
+  background-image: url("./img/wolfpack.jpg");
+  background-position: center;
+  background-size: contain;
 }
 .spinner--right [data-type="peru"] .content__left {
   background-image: none;
@@ -236,7 +244,31 @@
 		height: 50vh;
 		top:25vh;
 		
-	  }
+    }
+
+    .content__right .content__main {
+      position: absolute;
+      font-family: Merriweather, serif;
+      text-align: left;
+      color: #fff;
+      font-size: 9px;
+      padding: 0 8vw;
+      line-height: 1.65;
+      font-weight: 300;
+      margin: 0;
+      opacity: 0.8;
+  }
+    
+    [data-type="china"] .content__left {
+      background-image: url('./img/localtrainmobile.jpg');
+      background-position: center;
+      background-size: contain;
+    }
+    [data-type="usa"] .content__left {
+      background-image: url("./img/Amit.jpg");
+      background-position: center;
+      background-size: contain;
+    }
 
 
 }
