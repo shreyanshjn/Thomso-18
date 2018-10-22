@@ -1,18 +1,18 @@
-.js-transitions-disabled * {
+.pronites-js-transitions-disabled * {
   transition: none !important;
 }
-.carousel-parentdiv{
+.pronites-carousel-parentdiv{
 	height: 100vh;
 	background: url('../../home/src/img/about\ us\ new.jpg');
 }
-.carousel {
+.pronites-carousel {
   position: relative;
   height: 100vh;
   overflow: hidden;
   perspective: 50vw;
   perspective-origin: 50% 50%;
 }
-.carousel__control {
+.pronites-carousel__control {
   position: absolute;
   height: 160px;
   width: 40px;
@@ -23,24 +23,24 @@
   margin: auto;
   z-index: 1;
 }
-.carousel__control a {
+.pronites-carousel__control a {
   position: relative;
   display: block;
   width: 100%;
   padding-top: 75%;
   box-sizing: border-box;
 }
-.carousel__control a:hover:before {
+.pronites-carousel__control a:hover:before {
   background-color: rgba(0,0,0,0.4);
 }
-.carousel__control a.active:before,
-.carousel__control a.active:hover:before {
+.pronites-carousel__control a.active:before,
+.pronites-carousel__control a.active:hover:before {
   background-color: rgba(0,0,0,0.6);
 }
-.carousel__control a:first-child {
+.pronites-carousel__control a:first-child {
   margin-top: 15px;
 }
-.carousel__control a:before {
+.pronites-carousel__control a:before {
   position: absolute;
   top: 50%;
   left: 0;
@@ -54,7 +54,7 @@
   display: block;
   margin-top: -12.5%;
 }
-.carousel__stage {
+.pronites-carousel__stage {
   position: absolute;
   top: 20px;
   bottom: 20px;
@@ -64,7 +64,7 @@
   transform-style: preserve-3d;
   transform: translateZ(calc(-50vh + 20px));
 }
-.spinner {
+.pronites-spinner {
   position: absolute;
   width: calc(50vw - (20px));
   height: calc(100vh - 40px);
@@ -79,72 +79,72 @@
   transform-origin: 50% 50%;
   transform: rotateX(0);
 }
-.js-spin-fwd .spinner {
+.pronites-js-spin-fwd .pronites-spinner {
   transform: rotateX(-90deg);
 }
-.js-spin-bwd .spinner {
+.pronites-js-spin-bwd .pronites-spinner {
   transform: rotateX(90deg);
 }
-.js-spin-fwd .spinner--right {
+.pronites-js-spin-fwd .pronites-spinner--right {
   transform: rotateX(90deg);
 }
-.js-spin-bwd .spinner--right {
+.pronites-js-spin-bwd .pronites-spinner--right {
   transform: rotateX(-90deg);
 }
-.spinner--right {
+.pronites-spinner--right {
   right: 0;
   left: auto;
 }
-.spinner__face {
+.pronites-spinner__face {
   display: none;
   position: absolute;
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
-.spinner__face.js-next {
+.pronites-spinner__face.pronites-js-next {
   display: block;
   transform: rotateX(90deg) translateZ(calc(50vh - 20px));
 }
-.spinner--right .spinner__face.js-next {
+.pronites-spinner--right .pronites-spinner__face.pronites-js-next {
   transform: rotateX(270deg) translateZ(calc(50vh - 20px));
 }
-.js-spin-bwd .spinner__face.js-next {
+.pronites-js-spin-bwd .pronites-spinner__face.pronites-js-next {
   transform: rotateX(-90deg) translateZ(calc(50vh - 20px));
 }
-.js-spin-bwd .spinner--right .spinner__face.js-next {
+.pronites-js-spin-bwd .pronites-spinner--right .pronites-spinner__face.pronites-js-next {
   transform: rotateX(-270deg) translateZ(calc(50vh - 20px));
 }
-.js-active {
+.pronites-js-active {
   display: block;
   transform: translateZ(calc(50vh - 20px));
 }
-.content {
+.pronites-content {
   position: absolute;
   width: 200%;
   height: 100%;
   left: 0;
 }
-.spinner--right .content {
+.pronites-spinner--right .pronites-content {
   left: -100%;
 }
-.content__left,
-.content__right {
+.pronites-content__left,
+.pronites-content__right {
   position: absolute;
   left: 0;
   top: 0;
   width: 50%;
   height: 100%;
 }
-.content__right {
+.pronites-content__right {
   right: 0;
   left: auto;
 }
-.content__left {
+.pronites-content__left {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.content__left:after {
+.pronites-content__left:after {
   position: absolute;
   display: block;
   content: "";
@@ -152,7 +152,7 @@
   height: 100%;
   background-color: rgba(0,0,0,0.1);
 }
-.content__left h1 {
+.pronites-content__left h1 {
   position: absolute;
   top: 50%;
   margin-top: -3vw;
@@ -166,19 +166,19 @@
   letter-spacing: 0.15em;
   line-height: 0.6;
 }
-.content__left span {
+.pronites-content__left span {
   font-size: 1vw;
   font-weight: 300;
   letter-spacing: 0.2em;
   opacity: 0.9;
   font-family: Merriweather;
 }
-.content__right {
+.pronites-content__right {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.content__right .content__main {
+.pronites-content__right .pronites-content__main {
   position: absolute;
   font-family: Merriweather, serif;
   text-align: left;
@@ -190,12 +190,12 @@
   margin: 0;
   opacity: 0.8;
 }
-.content__right .content__main p:last-child {
+.pronites-content__right .pronites-content__main p:last-child {
   letter-spacing: 0.15em;
   font-size: 0.85em;
   
 }
-.content__right .content__index {
+.pronites-content__right .pronites-content__index {
   font-size: 30vh;
   position: absolute;
   right: -1vh;
@@ -204,49 +204,49 @@
   font-family: oswald;
   color: #fff;
 }
-[data-type="iceland"] .content__left {
+[data-type="kenny"] .pronites-content__left {
   background-image: url('./img/kenny.jpg');
   background-position: center;
   background-size: contain;
 }
-.spinner--right [data-type="iceland"] .content__left {
+.pronites-spinner--right [data-type="kenny"] .pronites-content__left {
   background-image: none;
 }
-[data-type="china"] .content__left {
+[data-type="localtrain"] .pronites-content__left {
   background-image: url("./img/localtrain.jpg");
   background-position: center;
   background-size: contain;
 }
-.spinner--right [data-type="china"] .content__left {
+.pronites-spinner--right [data-type="localtrain"] .pronites-content__left {
   background-image: none;
 }
-[data-type="usa"] .content__left {
+[data-type="amit"] .pronites-content__left {
   background-image: url("./img/Amit.jpg");
   background-position: center;
   background-size: contain;
 }
-.spinner--right [data-type="usa"] .content__left {
+.pronites-spinner--right [data-type="amit"] .pronites-content__left {
   background-image: none;
 }
-[data-type="peru"] .content__left {
+[data-type="wolfpack"] .pronites-content__left {
   background-image: url("./img/wolfpack.jpg");
   background-position: center;
   background-size: contain;
 }
-.spinner--right [data-type="peru"] .content__left {
+.pronites-spinner--right [data-type="wolfpack"] .pronites-content__left {
   background-image: none;
 }
 
 
 @media only screen and (max-width:768px){
-	.carousel {
+	.pronites-carousel {
 		position: relative;
 		height: 50vh;
 		top:25vh;
 		
     }
 
-    .content__right .content__main {
+    .pronites-content__right .pronites-content__main {
       position: absolute;
       font-family: Merriweather, serif;
       text-align: left;
@@ -259,12 +259,12 @@
       opacity: 0.8;
   }
     
-    [data-type="china"] .content__left {
+    [data-type="localtrain"] .pronites-content__left {
       background-image: url('./img/localtrainmobile.jpg');
       background-position: center;
       background-size: contain;
     }
-    [data-type="usa"] .content__left {
+    [data-type="amit"] .pronites-content__left {
       background-image: url("./img/Amit.jpg");
       background-position: center;
       background-size: contain;
