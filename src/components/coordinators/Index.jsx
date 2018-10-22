@@ -45,6 +45,14 @@ const LogoutIndex = Loadable({
     loader: () => import("./logout/Index"),
     loading: () => <Loader/>
 });
+const CoCoordinatorIndex = Loadable({
+    loader: () => import("./cocoordinator/Index"),
+    loading: () => <Loader/>
+}); 
+const ShowCoCoordinatorIndex = Loadable({
+    loader: () => import("./showCoCoordinator/Index"),
+    loading: () => <Loader/>
+}); 
 
 
 export default class MainIndex extends React.Component {
@@ -93,6 +101,8 @@ export default class MainIndex extends React.Component {
                         <Route exact path="/coordinators" render={props => (<AddWinnerIndex {...props} userData={userData} />)}  />
                         <Route exact path="/coordinators/participants" render={props => (<ParticipantsIndex {...props} userData={userData} />)}  />
                         <Route exact path="/coordinators/showWinner" render={props => (<ShowWinnerIndex {...props} userData={this.state.userData} />)} />
+                        <Route exact path="/coordinators/showCoCOordinator" render={props => (<ShowCoCoordinatorIndex {...props} userData={this.state.userData} />)} />
+                        <Route exact path="/coordinators/cocoordinator" render={props => (<CoCoordinatorIndex {...props} userData={this.state.userData} />)} />
                         <Route exact path="/coordinators/logout" render={props => (<LogoutIndex {...props} updateRoutes={this.handleUpdate} />)} />
                     </React.Fragment>
                     :

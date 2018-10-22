@@ -1,7 +1,7 @@
 // var moment = require('moment');
 var Coordinators_User = require('../../../models/coordinators/Coordinators_User');
 // var Coordinators_User_Token = require('../../../models/coordinators/Coordinators_User_Token');
-// var Winner_List = require('../../../models/coordinators/Winner_List');
+var CoCOordiantor_List = require('../../../models/coordinators/CoCoordinator_User');
 // var Main_User = require('../../../models/main/Main_User');
 // var Counter = require('../../../models/counters/Counter');
 var EventSchema = require('../../../models/main/Thomso_Event');
@@ -36,87 +36,73 @@ exports.participants = function(req, res) {
 }
 
 exports.addCocoordinator = (req, res) => {
-    if(req.body && req.body.account_holder_name && req.body.thomso_id && req.body.event_name && req.body.position && req.body.account_no && req.body.bank_name && req.body.ifsc_code && req.locals.email){
-        console.log(req.body.thomso_id,'1')
-        if (req.body.thomso_id) {
-            req.body.thomso_id = req.body.thomso_id.trim();
+    if(req.body && req.locals.email&& req.body.name && req.body.enrollment_no && req.body.email && req.body.bhawan && req.body.branch && req.body.year && req.body.event_id && req.body.gender && req.body.contact){
+        console.log(req.body.name,'1')
+        if (req.body.name) {
+            req.body.name = req.body.name.trim();
         }
-        if (req.body.event_name) {
-            req.body.event_name = req.body.event_name.trim();
+        if (req.body.email) {
+            req.body.email = req.body.email.trim();
         }
-        if (req.body.account_holder_name) {
-            req.body.account_holder_name = req.body.account_holder_name.trim();
+        if (req.body.enrollment_no) {
+            req.body.enrollment_no = req.body.enrollment_no.trim();
         }
-        if (req.body.position) {
-            req.body.position = req.body.position.trim();
+        if (req.body.bhawan) {
+            req.body.bhawan = req.body.bhawan.trim();
         }
-        if (req.body.account_no) {
-            req.body.account_no = req.body.account_no.trim();
+        if (req.body.branch) {
+            req.body.branch = req.body.branch.trim();
         }
-        if (req.body.ifsc_code) {
-            req.body.ifsc_code = req.body.ifsc_code.trim();
+        if (req.body.year) {
+            req.body.year = req.body.year.trim();
         }
-        if (req.body.bank_name) {
-            req.body.bank_name = req.body.bank_name.trim();
+        if (req.body.event_id) {
+            req.body.event_id = req.body.event_id.trim();
+        }
+        if (req.body.contact) {
+            req.body.contact = req.body.contact.trim();
+        }
+        if (req.body.gender) {
+            req.body.gender = req.body.gender.trim();
         }
 
-        if(req.body.thomso_id){
-            console.log(req.body.thomso_id,'2')
-            Main_User.findOne({thomso_id:req.body.thomso_id})
-            .select('name college email contact blocked paymant_type')
-            .exec( (errr, result) => {
-                if(errr) return res.status(400).send({success:false, msg:"winner data not found"})
-                else if(!result) return res.json({success:false, msg:"Incorrect Thomso ID"});
-                else if(result.blocked) return res.json({success:false, msg:"User is blocked"});
-                else{
-                    var data = {
-                        thomso_id:req.body.thomso_id,
-                        event_name:req.body.event_name,
-                        position:req.body.position,
-                        account_no:req.body.account_no,
-                        ifsc_code:req.body.ifsc_code,
-                        bank_name:req.body.bank_name,
-                        coordinator_email:req.locals.email,
-                        college:result.college,
-                        name:result.name,
-                        email:result.email,
-                        contact:result.contact,
-                        account_holder_name:req.body.account_holder_name,
-                        event_name_email:req.body.event_name + result.email
-                    }
-                    var newUser = new Winner_List(data);
-                    newUser.save( function(err){
-                        if(err) {
-                            return res.status(400).send({success:false, msg:"Something Went Wrong1"})
-                        }
-                        Counter.findByIdAndUpdate({ _id: 'winners_count' }, { $inc: { seq: 1 } }, { upsert: true, new: true }, function (error) {
-                            if(error) {return res.status(400).send({success:false, msg:"unable to add count"})}
-                                res.json({ success: true, msg: 'Successfully Registered' });
-                        })
-                    } )
+        if(req.body && req.body.name){
+            console.log(req.body.name,'2')
+            var data = {
+                name:req.body.name,
+                email:req.body.email,
+                gender:req.body.gender,
+                branch:req.body.branch,
+                year:req.body.year,
+                bhawan:req.body.bhawan,
+                contact:req.body.contact,
+                event_id:req.body.event_id,
+                enrollment_no:req.body.enrollment_no,
+                coordinator_email:req.locals.email   
+            }
+            var newUser = new CoCOordiantor_List(data);
+            newUser.save( function(err){
+                if(err) {
+                    return res.status(400).send({success:false, msg:"Something Went Wrong1"})
                 }
-                
-            }) 
-        }
-        else{
-            return res.status(400).send({success:false, msg:"Something Went Wrong2"})
-        }
-    } else{
-       return res.status(400).send({success:false, msg:"Something Went Wrong3"})
-    }       
+                res.json({ success: true, msg: 'Successfully Registered' });
+            })
+        }       
+    }
+    else return res.status(400).send({success:false, msg:"Invalid Request"})
 }
 
 exports.get_cocoordinator = (req, res) => {
     if(req.body && req.locals.email){
         if(req.locals.email === 'prashantverma1223@gmail.com' || req.locals.email === 'pra@gmail.com'){
-            Winner_List.find()
+            CoCOordiantor_List.find()
             .exec( (err, result) => {
                 if(err) return res.status(400).send({success: false, msg:"No Data"});
                 res.json({success:true, body:result, msg:"Fetched Successfully!!"})
             } )
         }
         else{
-            Winner_List.find({ coordinator_email: req.locals.email })
+            CoCOordiantor_List.find({ coordinator_email: req.locals.email })
             .exec( (err, result) => {
                 if(err) return res.status(400).send({success: false, msg:"No Data"});
                 res.json({success:true, body:result, msg:"Fetched Successfully!!"})
@@ -128,9 +114,9 @@ exports.get_cocoordinator = (req, res) => {
 exports.remove_cocoordinator = (req, res) => {
     // console.log(req.body, req.locals)
     if(req.body && req.locals.email &&  req.body.id){
-        Winner_List.findOneAndUpdate({_id:req.body.id}, {verified:false})
+       CoCOordiantor_List.findOneAndUpdate({_id:req.body.id}, {blocked:true})
         .select('_id name')
-        .exec( (err, result)=> {
+        .exec( (err)=> {
             if(err) return res.state(400).send({success:false, msg:"User not found"})
             res.json({success:true, msg:"Successfully removed"})
         })
