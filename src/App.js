@@ -185,6 +185,14 @@ const SponsIndex = Loadable({
     loading: () => <Loader />
 })
 
+const PronitesIndex = Loadable({
+    loader: () => import("./components/beta/pronites/Index"),
+    loading: () => <Loader />
+})
+const ProIndex = Loadable({
+    loader: () => import("./components/beta/pronite/Index"),
+    loading: () => <Loader />
+})
 class App extends Component {
     constructor() {
         super();
@@ -214,6 +222,13 @@ class App extends Component {
                             <Route exact path="/quizardry" component={QuizardryIndex} />
                             <Route exact path="/team" component={TeamIndex} />
                             <Route exact path="/comingSoon" component={ComingSoonIndex} />
+                            <Route exact path="/pronites" component={PronitesIndex} />
+
+
+                            <Route exact path="/pro" component={ProIndex} />
+
+
+                            
                             <Route exact path="/faq" component={FAQIndex} />
                             <Route path="/ca/" component={CAIndex} />
                             <Route path="/campusAmbassador/" component={CampusIndex} />
