@@ -162,7 +162,7 @@ export default class PronitesIndex extends React.Component {
                     <div className="pronites-carousel__stage">
                         <div className="pronites-spinner pronites-spinner--left">
                             
-                            <div className="pronites-spinner__face pronites-js-active" data-bg="#27323c">
+                            {/* <div className="pronites-spinner__face pronites-js-active" data-bg="#27323c">
                                 <div className="pronites-content" data-type="kenny">
                                     <div className="pronites-content__left">
                                        
@@ -175,8 +175,8 @@ export default class PronitesIndex extends React.Component {
                                         <h3 className="pronites-content__index">Day-0</h3>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="pronites-spinner__face" data-bg="#19304a">
+                            </div> */}
+                            <div className="pronites-spinner__face pronites-js-active" data-bg="#19304a">
                                 <div className="pronites-content" data-type="localtrain">
                                     <div className="pronites-content__left">
                                        
@@ -206,7 +206,7 @@ export default class PronitesIndex extends React.Component {
                                     </div>
                                 </div>
                             </div>
-                            <div className="pronites-spinner__face" data-bg="#312f2d">
+                            {/* <div className="pronites-spinner__face" data-bg="#312f2d">
                                 <div className="pronites-content" data-type="wolfpack">
                                     <div className="pronites-content__left">
                                       
@@ -219,7 +219,7 @@ export default class PronitesIndex extends React.Component {
                                         <h3 className="pronites-content__index">Day-3</h3>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
