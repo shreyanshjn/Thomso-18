@@ -344,24 +344,16 @@ export const SponsDetails = [
     {
         title: "Music Channel Partner",
         sponsors: [
-            {
-                name: "MTV",
-                image: "MTV.png",
-                link: "http://www.mtvindia.com/",
 
-            },
-            {
-                name: "MTV Beats",
-                image: "MTVbeats.png",
-                link: "http://www.mtvbeats.in/",
+            // {
+            //     name: "Vh1",
+            //     image: "vh1.png",
+            //     link: "https://www.vh1.in/",
 
-            },
-            {
-                name: "Vh1",
-                image: "vh1.png",
-                link: "https://www.vh1.in/",
+            // },
 
-            },
+
+
             {
                 name: "9XM",
                 image: "9xm.png",
@@ -374,26 +366,39 @@ export const SponsDetails = [
                 link: "https://www.9xo.in/",
 
             },
-
-        ]
-    },
-    {
-        title: "Comedy Channel Partner",
-        sponsors: [
             {
-                name: "Comedy Central",
-                image: "comedycentral.jpg",
-                link: "http://www.comedycentral.in",
+                name: "MTV",
+                image: "MTV.png",
+                link: "http://www.mtvindia.com/",
 
             },
+            {
+                name: "MTV Beats",
+                image: "MTVbeats.png",
+                link: "http://www.mtvbeats.in/",
+
+            },
+
+
         ]
     },
+    // {
+    //     title: "Comedy Channel Partner",
+    //     sponsors: [
+    //         {
+    //             name: "Comedy Central",
+    //             image: "comedycentral.jpg",
+    //             link: "http://www.comedycentral.in",
+
+    //         },
+    //     ]
+    // },
     {
         title: "Newspaper Partner",
         sponsors: [
             {
                 name: "Amar Ujala",
-                image: "AmarUjala.png",
+                image: "amar.jpeg",
                 link: "https://www.amarujala.com/",
 
             }
@@ -416,15 +421,15 @@ export const SponsDetails = [
             },
 
             {
-                name: "Cricket Today",
-                image: "CricToday.png",
-                link: "http://www.crictoday.com/",
-
-            },
-            {
                 name: "Youth Incorporated",
                 image: "YouthIncorporated.png",
                 link: "http://www.youthincmag.com/",
+
+            },
+            {
+                name: "Cricket Today",
+                image: "CricToday.png",
+                link: "http://www.crictoday.com/",
 
             },
             {
@@ -466,6 +471,45 @@ export const SponsDetails = [
         ]
     },
     {
+
+        title: "Event Co-Sponsor",
+        sponsors: [
+            {
+                name: "HelloTravel",
+                image: "HelloTravel.png",
+                link: "https://www.hellotravel.com/",
+
+            },
+
+        ]
+    },
+    {
+        title: "Competition Partner",
+        sponsors: [
+            {
+                name: "Dare2Compete",
+                image: "dare2compete.png",
+                link: "https://dare2compete.com/",
+
+            },
+
+        ]
+    },
+    {
+        title: "Hoarding Partner",
+        sponsors: [
+            {
+                name: "Catalyst Advertising",
+                image: "Catalyst.png",
+                link: "https://catalystadvertising.com/",
+
+            },
+
+        ]
+    },
+
+
+    {
         title: "Digital Media Partner",
         sponsors: [
             {
@@ -480,24 +524,19 @@ export const SponsDetails = [
                 link: "https://www.facebook.com/SITofficial/",
 
             },
-            {
-                name: "Be like Bro",
-                image: "dp.png",
-                link: "https://www.facebook.com/BelykBro/",
 
-            },
             {
                 name: "Never Stop Learning ",
                 image: "NSL.png",
                 link: "https://play.google.com/store/apps/details?id=com.taritas.nsl",
 
             },
-            // {
-            //     name: "Marketing Mind",
-            //     image: "MarketingMind.png",
-            //     link: "https://www.marketingmind.in/",
+            {
+                name: "Be like Bro",
+                image: "dp.png",
+                link: "https://www.facebook.com/BelykBro/",
 
-            // },
+            },
             {
                 name: "Dil Ki Baat",
                 image: "dkb.jpg",
@@ -574,6 +613,12 @@ export const SponsDetails = [
 
             },
             {
+                name: "Marketing Mind",
+                image: "marketing.png",
+                link: "https://www.marketingmind.in/",
+
+            },
+            {
                 name: "Knowafest.com",
                 image: "knowafest.png",
                 link: "http://www.knowafest.com/",
@@ -592,11 +637,12 @@ export const SponsDetails = [
 
             },
             {
-                name: "OhCampus.com",
-                image: "OhCampus.png",
-                link: "http://ohcampus.com/",
+                name: "bhopalsamachar.com ",
+                image: "bs.png",
+                link: "https://www.bhopalsamachar.com/",
 
             },
+
             {
                 name: "TestFunda.com",
                 image: "TestFunda.png",
@@ -604,9 +650,9 @@ export const SponsDetails = [
 
             },
             {
-                name: "EFY Group",
-                image: "efy.png",
-                link: "https://efy.in/",
+                name: "OhCampus.com",
+                image: "OhCampus.png",
+                link: "http://ohcampus.com/",
 
             },
             {
@@ -616,11 +662,13 @@ export const SponsDetails = [
 
             },
             {
-                name: "bhopalsamachar.com ",
-                image: "bs.png",
-                link: "https://www.bhopalsamachar.com/",
+                name: "EFY Group",
+                image: "efy.png",
+                link: "https://efy.in/",
 
             },
+
+
         ]
     },
     {
@@ -642,43 +690,6 @@ export const SponsDetails = [
                 name: "Textlocal",
                 image: "textlocal.jpg",
                 link: "https://www.textlocal.in/",
-
-            },
-
-        ]
-    },
-    {
-        title: "Hoarding Partner",
-        sponsors: [
-            {
-                name: "Catalyst Advertising",
-                image: "Catalyst.png",
-                link: "https://catalystadvertising.com/",
-
-            },
-
-        ]
-    },
-    {
-        title: "Competition Partner",
-        sponsors: [
-            {
-                name: "Dare2Compete",
-                image: "dare2compete.png",
-                link: "https://dare2compete.com/",
-
-            },
-
-        ]
-    },
-    {
-
-        title: "Travel Partner",
-        sponsors: [
-            {
-                name: "HelloTravel",
-                image: "HelloTravel.png",
-                link: "https://www.hellotravel.com/",
 
             },
 
