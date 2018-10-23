@@ -467,6 +467,20 @@ export default class WhyThomso extends Component {
                                         </div>
                                     </div>
                                 </div>
+                                <div className="whythomso-faqs-ansque-sixth">
+                                    <div className="whythomso-faqs-height">
+                                        <div className="whythomso-faqs-question">
+                                            <span><strong>Q</strong></span>
+                                            <span>Is personal vehicle allowed inside the campus?</span>
+                                        </div>
+                                        <div className="whythomso-faqs-answer">
+                                            <span><strong>A</strong></span>
+                                            <span>
+                                                No, personal vehicles are not allowed inside the campus.
+                                                </span>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div className="whythomso-faqs-ansque-columnthree-fifth">
                                     <div className="whythomso-faqs-height">
                                         <div className="whythomso-faqs-question">
@@ -540,17 +554,28 @@ export default class WhyThomso extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="whythomso-faqs-ansque-sixth">
+                                <div className="whythomso-faqs-ansque-columnthree-seventh">
                                     <div className="whythomso-faqs-height">
                                         <div className="whythomso-faqs-question">
-                                            <span><strong>Q</strong></span>
-                                            <span>Is personal vehicle allowed inside the campus?</span>
+                                            <span><strong>Q </strong></span>
+                                            <span>Time slots for payment verification, identity verification and accommodation allotment?</span>
                                         </div>
                                         <div className="whythomso-faqs-answer">
-                                            <span><strong>A</strong></span>
-                                            <span>
-                                                No, personal vehicles are not allowed inside the campus.
-                                                </span>
+                                            <span><strong>A</strong></span><span>
+                                                We will be having the following slots for the above mentioned affairs:<br />
+                                                On 25th of October:<br />  11 A.M to 5 P.M<br />
+                                                8 P.M to 2 A.M
+                                                <br /><br />
+                                                On 26th of October: <br /> 6 A.M to 12 Noon.<br />
+                                                3 P.M to 6 P.M
+                                                <br /><br />
+                                                On 27th of October: <br /> 12 A.M to 2 A.M<br />
+                                                6 A.M to 9 A.M<br />
+                                                3 P.M to 6 P.M
+                                                <br /><br />
+                                                On 28th of October: <br /> 9 A.M to 11 A.M<br />
+                                                4 P.M to  6 P.M<br />
+                                                11 P.M to  1 A.M</span>
                                         </div>
                                     </div>
                                 </div>

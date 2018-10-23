@@ -9,6 +9,7 @@ export default class CardIndex extends Component {
     }
     componentDidMount() {
         if (this.props.info) {
+            console.log(this.props.info, "info")
             this.setState({
                 batch: this.props.info
             })
@@ -16,13 +17,13 @@ export default class CardIndex extends Component {
     }
     render() {
         return (
-            <React.Fragment>
+            <div className="sponors-image-grandparent">
                 {this.state.batch && this.state.batch.map((t, index) =>
                     <div className="sponors-image-parent" key={index}>
                         <a href={t.link} target="_blank"><img src={`/img/main/sponsors/${t.image}`} alt="sponsors" /></a>
                     </div>
                 )}
-            </React.Fragment>
+            </div>
         );
     }
 }
