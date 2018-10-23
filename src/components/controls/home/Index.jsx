@@ -46,7 +46,7 @@ export default class HomeIndex extends Component {
                     FetchApi('POST', '/api/controls/user_info', data, token)
                         .then(r => {
                             // console.log(r.data.body)
-                            if (r && r.data && r.data.success && r.data.body && r.data.body.payment_type !== 0) {
+                            if (r && r.data && r.data.success && r.data.body && r.data.body.payment_type === 0) {
                                 this.setState({ userData: r.data.body, disabled: false, thomso_id1: r.data.body.thomso_id, thomso_id: '' });
                             }
                             else {
