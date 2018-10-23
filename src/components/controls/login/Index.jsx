@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import AuthService from '../../../handlers/controls/AuthService';
 import validateInput from '../../../utils/validation/loginValidation';

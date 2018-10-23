@@ -16,7 +16,7 @@ export default class HomeIndex extends Component {
             disabledPayment: false,
             payment_type: '',
             accomodation: '',
-            message: ''
+            message: '', user:''
         };
         this.Auth = new AuthService();
     }
@@ -45,9 +45,19 @@ export default class HomeIndex extends Component {
                     const token = this.Auth.getToken()
                     FetchApi('POST', '/api/controls/user_info', data, token)
                         .then(r => {
-                            // console.log(r.data.body)
+                            console.log(r.data.body)
                             if (r && r.data && r.data.success && r.data.body && r.data.body.payment_type === 0) {
-                                this.setState({ userData: r.data.body, disabled: false, thomso_id1: r.data.body.thomso_id, thomso_id: '' });
+                                if(r.data.body.image){
+                                    if( process.env.REACT_APP_SERVER_ENVIORNMENT === "dev"){
+                                        this.setState({ userData: r.data.body, disabled: false, thomso_id1: r.data.body.thomso_id, thomso_id: '',  user: 'https://localhost:' + process.env.REACT_APP_SERVER_PORT + '/uploads/img/ProfileImage/' + r.data.body.image });
+                                    }
+                                    else{
+                                        this.setState({ userData: r.data.body, disabled: false, thomso_id1: r.data.body.thomso_id, thomso_id: '', user: '/uploads/img/ProfileImage/' + r.data.body.image });
+                                    }
+                                }
+                                else{
+                                    this.setState({ userData: r.data.body, disabled: false, thomso_id1: r.data.body.thomso_id, thomso_id: ''});
+                                }
                             }
                             else {
                                 if (r && r.data && r.data.success && r.data.body) {
@@ -100,7 +110,7 @@ export default class HomeIndex extends Component {
     }
 
     render() {
-        const { errors, thomso_id, disabled, disabledPayment, userData, payment_type, message, accomodation } = this.state;
+        const { errors, thomso_id, disabled, disabledPayment, userData, payment_type, message, accomodation ,user} = this.state;
         return (
             <div className="controls-parent">
                 <div className="controlsMainDiv">
@@ -146,7 +156,11 @@ export default class HomeIndex extends Component {
                 <div className="controlsCsecondDiv">
 
                     {userData && userData.thomso_id ?
+                         
                         <div className="controlsDetail" style={{ paddingBottom: "7px" }}>
+                            <div className="upload-image-parent-div">
+                                <img src={user} style={{height:"65px", width:"auto"}} alt="User"/>
+                            </div>
                             <div className="contols-detail">
                                 <div> Thomso Id :</div> <div>{userData.thomso_id ? userData.thomso_id : null}</div>
                             </div>
@@ -182,7 +196,7 @@ export default class HomeIndex extends Component {
                                         required
                                         className="controlPaymentForm"
                                     >
-                                        <option value="" disabled="true"> Payment Type </option>
+                                        <option value="" disabled> Payment Type </option>
                                         <option value="1"> Online Payment </option>
                                         <option value="2"> NEFT </option>
                                         <option value="3"> Draft </option>

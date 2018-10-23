@@ -44,7 +44,7 @@ export default class RegisterIndex extends React.Component {
         if (contact) contact = contact.trim()
         if (branch) branch = branch.trim()
         if (year) year = year.trim()
-        {console.log(this.props)}
+        // {console.log(this.props)}
         event_id = this.props.userData.event_id;
         if (bhawan) bhawan = bhawan.trim()
         if (enrollment_no) enrollment_no = enrollment_no.trim()
