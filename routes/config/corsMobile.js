@@ -1,9 +1,9 @@
 // Whitelist
 
- var whitelist = ['in.thomso.thomso2018', 'com.project.nikhil.thomso17', 'com.thomso.nikhil.thomso18', 'com.example.kira.thomso18',  'com.example.kira.thomso18media',  'com.example.kira.thomso18user'];
+ var whitelist = ['in.thomso.thomso2018', 'com.project.nikhil.thomso17', 'com.thomso.nikhil.thomso18', 'com.example.kira.thomso18',  'com.example.kira.thomso18media',  'com.example.kira.thomso18user', 'com.example.kira.secuirity','in.thomso.thomsosec'];
 
 if (process.env.REACT_APP_SERVER_ENVIORNMENT === 'dev') {
-  whitelist = ['in.thomso.thomso2018', 'com.project.nikhil.thomso17', 'com.thomso.nikhil.thomso18', 'com.example.kira.thomso18',  'com.example.kira.thomso18media',  'com.example.kira.thomso18user'];
+  whitelist = ['in.thomso.thomso2018', 'com.project.nikhil.thomso17', 'com.thomso.nikhil.thomso18', 'com.example.kira.thomso18',  'com.example.kira.thomso18media',  'com.example.kira.thomso18user', 'com.example.kira.secuirity','in.thomso.thomsosec'];
 }
 var corsOptions = function (req, callback) {
   var corsOptions1;
