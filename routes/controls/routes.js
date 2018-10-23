@@ -16,7 +16,7 @@ router.use('/', cors(corsOptions));
 
 // -> /api/controls/auth
 router.post('/auth/login', controlsRegister.login)
-// router.post('/auth/register', controlsRegister.register);
+router.post('/auth/register', controlsRegister.register);
 
 // -> /api/controls/
 router.get('/info', ControlsTokenMiddleware.verifyUser, controlsControl.info);

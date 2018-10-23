@@ -13,7 +13,7 @@ var mainRoutes = require('./main/routes');
 var munRoutes = require('./mun/routes');
 var coordinatorsRoutes = require('./coordinators/routes');
 var superAdminRoutes = require('./super/routes');
-// var controlsRoutes = require('./controls/routes');
+var controlsRoutes = require('./controls/routes');
 var mobileRoutes = require('./mobile/routes');
 
 // Controllers
@@ -35,7 +35,7 @@ router.use('/api/coordinators', coordinatorsRoutes);
 router.use('/api/super', cors(corsOptions), superAdminRoutes);
 
 router.use('/api/mobile', cors(corsMobileOptions), mobileRoutes);
-// router.use('/api/controls', controlsRoutes);
+router.use('/api/controls', controlsRoutes);
 
 // -> /sitemap.xml
 router.get("/sitemap.xml", viewController.sitemap);

@@ -88,8 +88,6 @@ export default class LoginIndex extends Component {
                     />
                     <button type="submit">Login</button>
                 </form>
-
-                <Link to="/controls/register">Register</Link>
             </div>
         );
     }

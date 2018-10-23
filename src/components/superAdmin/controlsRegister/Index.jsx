@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import validateInput from '../../../utils/validation/loginValidation';
 import FetchApi from '../../../utils/FetchAPI';
+import AuthService from '../../../handlers/superAdmin/AuthService';
 
 export default class RegisterIndex extends Component {
 
@@ -11,26 +12,27 @@ export default class RegisterIndex extends Component {
             password: '',
             error: ''
         };
+        this.Auth = new AuthService();
     }
     onChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;
-        this.setState({ [name]: value });
+        this.setState({ [name]: value, error:"" });
     }
 
     onSubmit = (e) => {
         e.preventDefault();
 
         const { email, password } = this.state;
-
+        const idAuthenticated = this.Auth.hasToken()
         const check = validateInput(password, 'password');
-        if (check.isValid) {
-            FetchApi('POST', '/api/controls/auth/register', { email, password })
+        if (check.isValid && idAuthenticated) {
+            const token = this.Auth.getToken()
+            FetchApi('POST', '/api/super/controls/register', { email, password }, token)
                 .then(res => {
                     if (res && res.data) {
                         if (res.data.success) {
                             this.setState({ error: res.data.msg })
-                            this.props.history.push("/controls")
                         } else {
                             this.setState({ error: res.data.msg })
                         }
