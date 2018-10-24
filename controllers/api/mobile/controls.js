@@ -37,7 +37,7 @@ exports.scanMediaQR = function(req, res) {
                         });
                     }
                     if (!user) {
-                        var baseImg = data.img.split(',')[1];
+                        var baseImg = data.img;
                         var binaryData = new Buffer(baseImg, 'base64');
                         var ext = data.format.split('/')[1];
                         updateData.image = `${updateData.qr}.${ext}`;
@@ -115,7 +115,7 @@ exports.scanParticipantQR = function(req, res) {
                             img:req.body.image,
                             format:req.body.format
                         };
-                        var baseImg = data.img.split(',')[1];
+                        var baseImg = data.img;
                         var binaryData = new Buffer(baseImg, 'base64');
                         var ext = data.format.split('/')[1];
                         updateData.image = `${data.id}.${ext}`;

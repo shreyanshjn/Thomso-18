@@ -24,7 +24,7 @@ mongoose
 
 app.use(logger('dev'));
 // app.use(bodyParser.json());
-app.use(bodyParser.json({limit: '130kb'}));
+app.use(bodyParser.json({limit: '250kb'}));
 // app.use(bodyParser.urlencoded({limit: '500kb', extended: true}));
 // app.use(bodyParser.urlencoded({'extended':'false'}));
 if (process.env.REACT_APP_SERVER_ENVIORNMENT !== 'dev') {
