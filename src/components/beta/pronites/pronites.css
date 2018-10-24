@@ -260,12 +260,12 @@
   }
     
     [data-type="localtrain"] .pronites-content__left {
-      background-image: url('./img/localtrainmobile.jpg');
+      /* background-image: url('./img/localtrainmobile.jpg'); */
       background-position: center;
       background-size: contain;
     }
     [data-type="amit"] .pronites-content__left {
-      background-image: url("./img/Amit.jpg");
+      /* background-image: url("./img/Amit.jpg"); */
       background-position: center;
       background-size: contain;
     }
