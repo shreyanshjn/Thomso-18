@@ -159,16 +159,46 @@ exports.getPronite = function(req, res) {
         status: 200,
         success: true,
         data: [
+            // {
+            //     day: 'Day 0 ',
+            //     date: '25-10-2018',
+            //     name: 'Coming Soon',
+            //     artist: 'Coming Soon',
+            //     description: 'Coming Soon',
+            //     venue: 'Coming Soon',
+            //     image: 'https://www.thomso.in/uploads/img/Pronite/coming_soon.jpeg',
+            //     time: 'Coming Soon'
+            // },
             {
-                day: 'Day 0 ',
-                date: '25-10-2018',
-                name: 'Coming Soon',
-                artist: 'Coming Soon',
+                day: 'Day 1 ',
+                date: '26-10-2018',
+                name: 'Pronite',
+                artist: 'The Local Train',
                 description: 'Coming Soon',
-                venue: 'Coming Soon',
-                image: 'https://www.thomso.in/uploads/img/Pronite/coming_soon.jpeg',
+                venue: 'LBS Ground',
+                image: 'https://www.thomso.in/uploads/img/Pronite/localtrain.jpeg',
                 time: 'Coming Soon'
-            }
+            },
+            {
+                day: 'Day 2 ',
+                date: '27-10-2018',
+                name: 'Wargasm',
+                artist: 'Amit Trivedi',
+                description: 'Coming Soon',
+                venue: 'LBS Ground',
+                image: 'https://www.thomso.in/uploads/img/Pronite/amit.jpeg',
+                time: 'Coming Soon'
+            },
+            // {
+            //     day: 'Day 3 ',
+            //     date: '28-10-2018',
+            //     name: 'Coming Soon',
+            //     artist: 'Coming Soon',
+            //     description: 'Coming Soon',
+            //     venue: 'Coming Soon',
+            //     image: 'https://www.thomso.in/uploads/img/Pronite/coming_soon.jpeg',
+            //     time: 'Coming Soon'
+            // },
         ]
     })
 }
