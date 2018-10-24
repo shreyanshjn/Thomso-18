@@ -23,7 +23,7 @@ class PaymentTerms extends Component {
                         <h1>Terms and Conditions</h1>
                         <ul>
                             <li>
-                                Any participant who is found guilty of breaking any rules or lands himself/herself in trouble by not following the regulations and guidlines should know that in any such circumstances, the IIT Roorkee would not be responsible for it any scenario. Moreover, his/her participation would be cancelled if any such above mentioned action is being taken against him/her.
+                                Any participant who is found guilty of breaking any rules or lands himself/herself in trouble by not following the regulations and guidlines should know that in any such circumstances, the IIT Roorkee would not be responsible for it in any scenario. Moreover, his/her participation would be cancelled if any such above mentioned action is being taken against him/her.
                             </li>
                             <li>
                                 Any activity that is found to be illicit or involving unlawful action would be taken into consideration and the final decision would rest in the hands of the organizing team.

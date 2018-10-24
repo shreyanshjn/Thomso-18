@@ -20,7 +20,15 @@ export default class FAQIndex extends React.Component {
                     </div>
                     <div className="faq-content">
                         <div className="faq-content-child">
-                            <div className="question"><div className="dot"></div> What is the registration fee for Thomso’18?</div>
+                        <div className="question"><div className="dot"></div> To whom should I contact for any queries?</div>
+                            <div>
+                                <p> Shubham Jaiswal: 9693482762 </p>
+                                <p> Abhishek Kumaar: 7409247817 </p>
+                                <p> Ayush Dhaka: 8979702197 / 9411028240 </p>
+                                <p> Chandni Beniwal: 7740949800 </p>
+                            </div>
+
+                            {/* <div className="question"><div className="dot"></div> What is the registration fee for Thomso’18?</div>
                             <div> <p> Registration fee with accommodation is Rs. 2100 and Rs. 1600 without accommodation. Once paid, fee is non-refundable</p></div>
                             <div className="question"><div className="dot"></div> Where to REGISTER for Thomso’18?</div>
                             <div> <p> You can register at <Link to = "/main/register">Register for Thomso'18</Link></p></div>
@@ -58,7 +66,7 @@ Buses can be obtained either from I.S.B.T. Kashmiri Gate, Delhi or from I.S.B.T.
                             <div className="question"><div className="dot"></div> Will there be accommodation facility for me?</div>
                             <div> <p> There are many Hostels which would be available for the accommodation, the registration for allotment would be done on Thomso website.</p></div>
                             <div className="question"><div className="dot"></div> Is personal vehicle allowed inside the campus?</div>
-                            <div> <p> No, personal vehicles are not allowed inside the campus.</p></div>
+                            <div> <p> No, personal vehicles are not allowed inside the campus.</p></div> */}
 
                         </div>
                     </div>

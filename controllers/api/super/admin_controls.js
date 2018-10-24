@@ -9,7 +9,7 @@ exports.getParticipant = function (req, res) {
     if (req.params.id) {
         console.log(req.params.id);
         Participant.findOne({ _id: req.params.id })
-            .select('image thomso_id name email gender contact college state address verified blocked payment_type accomodation branch')
+            .select('image thomso_id name email gender contact college state address verified blocked payment_type accomodation branch qr')
             .populate('event', 'name')
             .exec(function (err, user) {
                 if (err) {
@@ -92,6 +92,9 @@ exports.patchParticipantData = function (req, res) {
             }
             if (req.body.branch) {
                 updateData.branch = req.body.branch;
+            }
+            if (req.body.qr) {
+                updateData.qr = req.body.qr;
             }
             if (req.body.password) {
                 updateData.password = req.body.password;

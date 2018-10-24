@@ -3,6 +3,7 @@ var Main_User = require('../../../models/main/Main_User');
 
 exports.scanMediaQR = function(req, res) {
     if (req.body) {
+        console.log(req.body);
         var updateData = {};
         if (req.body.name) {
             updateData.name = req.body.name;
@@ -26,6 +27,7 @@ exports.scanMediaQR = function(req, res) {
             format:req.body.format
         }
         if (updateData) {
+            console.log(updateData)
             Media_User.findOne({qr: updateData.qr})
                 .select('name email')
                 .exec(function(err, user) {
@@ -37,9 +39,10 @@ exports.scanMediaQR = function(req, res) {
                         });
                     }
                     if (!user) {
+                        console.log(data)
                         var baseImg = data.img;
                         var binaryData = new Buffer(baseImg, 'base64');
-                        var ext = data.format.split('/')[1];
+                        var ext = data.format;
                         updateData.image = `${updateData.qr}.${ext}`;
                         require("fs").writeFile(`./uploads/img/MediaImage/${updateData.image}`, binaryData, function(err) {
                             if(err) {
@@ -97,7 +100,7 @@ exports.scanParticipantQR = function(req, res) {
         Main_User.findOne({
             thomso_id:req.body.thomso_id
         })
-            .select('verified blocked')
+            .select('verified blocked payment_type')
             .exec(function(err, user) {
                 if (err) {
                     return res.json({ success: false, msg: "Something Went Wrong", error: err });
@@ -109,6 +112,9 @@ exports.scanParticipantQR = function(req, res) {
                     if (user.blocked) {
                         return res.json({ success: false, msg: "Your Account Seems Suspecious" });
                     }
+                    if (!user.payment_type) {
+                        return res.json({ success: false, msg: "Payment Not Verified" });
+                    }
                     if (req.body.image && req.body.format) {
                         var data = {
                             id:user._id,
@@ -117,7 +123,7 @@ exports.scanParticipantQR = function(req, res) {
                         };
                         var baseImg = data.img;
                         var binaryData = new Buffer(baseImg, 'base64');
-                        var ext = data.format.split('/')[1];
+                        var ext = data.format;
                         updateData.image = `${data.id}.${ext}`;
                         require("fs").writeFile(`./uploads/img/ProfileImage/${updateData.image}`, binaryData, function(err) {
                             if(err) {
@@ -182,23 +188,23 @@ exports.getPronite = function(req, res) {
             {
                 day: 'Day 2 ',
                 date: '27-10-2018',
-                name: 'Wargasm',
+                name: 'Xhileration',
                 artist: 'Amit Trivedi',
                 description: 'Coming Soon',
                 venue: 'LBS Ground',
                 image: 'https://www.thomso.in/uploads/img/Pronite/amit.jpeg',
                 time: 'Coming Soon'
             },
-            // {
-            //     day: 'Day 3 ',
-            //     date: '28-10-2018',
-            //     name: 'Coming Soon',
-            //     artist: 'Coming Soon',
-            //     description: 'Coming Soon',
-            //     venue: 'Coming Soon',
-            //     image: 'https://www.thomso.in/uploads/img/Pronite/coming_soon.jpeg',
-            //     time: 'Coming Soon'
-            // },
+            {
+                day: 'Day 3 ',
+                date: '28-10-2018',
+                name: 'Wargasm',
+                artist: 'WolfPack',
+                description: 'Coming Soon',
+                venue: 'LBS Ground',
+                image: 'https://www.thomso.in/uploads/img/Pronite/wolfpack.jpeg',
+                time: 'Coming Soon'
+            },
         ]
     })
 }
@@ -207,7 +213,7 @@ exports.getParticipantByQR = function(req, res) {
     if (req.params.id && req.params.id.trim()) {
         req.params.id = req.params.id.trim();
         Main_User.findOne({ qr: req.params.id, verified: true })
-            .select('thomso_id name email college contact image blocked')
+            .select('thomso_id name email college contact image blocked, payment_type')
             .exec(function (err, user) {
                 if (err) {
                     return res.json({ success: false, msg: 'Something Went Wrong', error: err })
@@ -217,6 +223,9 @@ exports.getParticipantByQR = function(req, res) {
                 }
                 if (user.blocked) {
                     return res.json({ success: false, msg: 'Unauthorized User' });
+                }
+                if (!user.payment_type) {
+                    return res.json({ success: false, msg: 'Payment Not Verified' });
                 }
                 return res.json({ success: true, msg: 'User Found', body: user });
             });

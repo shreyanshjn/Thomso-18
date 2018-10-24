@@ -3448,7 +3448,7 @@ export default class HomeIndex extends React.Component {
                                             <Link to="/team">Contact Us<span><img src={rightarrow} alt="right-arrow" srcSet="" /></span></Link>
                                         </div>
                                         <div className="mainfinalsecondwholeinternalcontainerinnerinbottom">
-                                            <h3>+91-9675477585</h3>
+                                            <h3>+91-9218313614</h3>
                                             <h3>thomso@iitr.ac.in</h3>
                                             </div>    
                                         </div>
