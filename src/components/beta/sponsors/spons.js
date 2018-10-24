@@ -21,6 +21,18 @@ export const SponsDetails = [
         ]
     },
     {
+        title: "Hosting Partner",
+        sponsors: [
+            {
+                name: " Economicalhost.com",
+                image: "economical.png",
+                link: "https://www.economicalhost.com/",
+
+            },
+
+        ]
+    },
+    {
         title: "Social Media Partner",
         sponsors: [
             {
@@ -731,6 +743,7 @@ export const SponsDetails = [
 
         ]
     },
+
     {
         title: "Intern Partner",
         sponsors: [
