@@ -26,5 +26,8 @@ router.post('/addWinner', CoordinatorsTokenMiddleware.verifyUser, winnerControls
 router.get('/getWinner', CoordinatorsTokenMiddleware.verifyUser, winnerControls.getWinner);
 router.put('/removeWinner', CoordinatorsTokenMiddleware.verifyUser, winnerControls.remove_winner);
 router.post('/participants', CoordinatorsTokenMiddleware.verifyUser, coordinatorControls.participants);
+router.post('/addCoCoordinator', CoordinatorsTokenMiddleware.verifyUser, coordinatorControls.addCocoordinator);
+router.put('/removeCoCoordinator', CoordinatorsTokenMiddleware.verifyUser, coordinatorControls.remove_cocoordinator);
+router.get('/getCoCoordinator', CoordinatorsTokenMiddleware.verifyUser, coordinatorControls.get_cocoordinator);
 
 module.exports = router;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import AuthService from '../../../handlers/controls/AuthService';
 import validateInput from '../../../utils/validation/loginValidation';
@@ -88,8 +88,6 @@ export default class LoginIndex extends Component {
                     />
                     <button type="submit">Login</button>
                 </form>
-
-                <Link to="/controls/register">Register</Link>
             </div>
         );
     }

@@ -85,6 +85,9 @@ var UserSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'MUN_Answer'
     },
+    qr:{
+        type:String
+    }
 });
 
 UserSchema.index({name: 'text', email : 'text', thomso_id: 'text', gender: 'text', contact: 'text', college: 'text'});

@@ -22,6 +22,11 @@ render(){
               ListCoordinators
             </Link>
           </li>
+          <li>
+            <Link to="/super/controls/register">
+              Add controls
+            </Link>
+          </li>
           <li><Link to="/super/logout">Logout</Link></li>
         </ul>
       </div>

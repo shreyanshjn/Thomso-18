@@ -21,7 +21,7 @@ exports.info = function (req, res) {
 exports.user_info = function (req, res) {
     if (req && req.body && req.body.thomso_id) {
         User_controls.findOne({ thomso_id: req.body.thomso_id })
-            .select(' name email contact thomso_id college state branch referred_by gender address payment_type blocked')
+            .select(' name email contact thomso_id college state branch referred_by gender address payment_type blocked image')
             .exec((err, result) => {
                 if (err) return res.status(400).send({ success: false, msg: "Something went wrong" });
                 if (!result) return res.status(400).send({ success: false, msg: "No User With This ID." });

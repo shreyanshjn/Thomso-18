@@ -32,6 +32,17 @@ export const SponsDetails = [
         ]
     },
     {
+        title: "Smartphone Partner",
+        sponsors: [
+            {
+                name: "Tecno mobiles",
+                image: "tecno.png",
+                link: "http://www.tecno-mobile.in/?utm_Source=direct&utm_Campaign=web&utm_Medium=med",
+
+            }
+        ]
+    },
+    {
         title: "Major Sponsors",
         sponsors: [
             {
@@ -45,7 +56,22 @@ export const SponsDetails = [
                 image: "WELSPUN.jpg",
                 link: "http://www.welspunenterprises.com/",
 
-            }
+            },
+            {
+                name: "RailTel",
+                image: "Railtel.png",
+                link: "https://www.railtelindia.com/",
+            },
+            {
+                name: "Petronet LNG",
+                image: "petronet.jpg",
+                link: "https://www.petronetlng.com/",
+            },
+            {
+                name: "COY",
+                image: "coy.jpeg",
+                link: "http://www.mtvindia.com/colorsofyouth/",
+            },
         ]
     },
     {
@@ -73,22 +99,13 @@ export const SponsDetails = [
                 link: "https://iesmaster.org",
             },
             {
-                name: "Petronet LNG",
-                image: "petronet.jpg",
-                link: "https://www.petronetlng.com/",
-            },
-            {
-                name: "RailTel",
-                image: "Railtel.png",
-                link: "https://www.railtelindia.com/",
-            },
-            {
                 name: "TATA Chemicals Ltd.",
                 image: "TCL.jpg",
                 link: "http://www.tatachemicals.com/",
             }
         ]
     },
+
     {
         title: "Construction Partner",
         sponsors: [
@@ -97,7 +114,47 @@ export const SponsDetails = [
                 image: "vkj.jpg",
                 link: "http://vkjprojects.com/",
 
-            }
+            },
+            {
+                name: "NBCC",
+                image: "nbcc.jpeg",
+                link: "http://www.nbccindia.com/",
+
+            },
+            {
+                name: "CPWD",
+                image: "cpwd.jpeg",
+                link: "https://cpwd.gov.in/",
+
+            },
+        ]
+    },
+    {
+        title: "Ticketing partner",
+        sponsors: [
+            {
+                name: "The college fever",
+                image: "collegefever.svg",
+                link: "https://www.thecollegefever.com/",
+
+            },
+        ]
+    },
+    {
+        title: "Banking partner",
+        sponsors: [
+            {
+                name: "PnB",
+                image: "pnb.jpeg",
+                link: "https://www.pnbindia.in/",
+
+            },
+            {
+                name: "SBI",
+                image: "sbi.png",
+                link: "http://www.sbi.com",
+
+            },
         ]
     },
     {
@@ -107,6 +164,17 @@ export const SponsDetails = [
                 name: "Afcons",
                 image: "afcons.png",
                 link: "https://www.afcons.com/",
+
+            }
+        ]
+    },
+    {
+        title: "Building partner",
+        sponsors: [
+            {
+                name: "Everest industries",
+                image: "everest.png",
+                link: "https://www.everestind.com/",
 
             }
         ]
@@ -164,17 +232,58 @@ export const SponsDetails = [
                 link: "https://www.toppr.com/",
 
             }
+            ,
+            {
+                name: "Made easy",
+                image: "madeeasy.png",
+                link: "https://www.madeeasy.in/",
+
+            }
         ]
     },
     {
-        title: "Logistics Partner",
+        title: "Supply Chain Partner",
         sponsors: [
             {
                 name: "Safe Express",
                 image: "safexpress.png",
                 link: "http://www.safexpress.com/",
 
+            },
+        ]
+    },
+    {
+        title: "Development Partner",
+        sponsors: [
+            {
+                name: "HRDA",
+                image: "hrda.png",
+                link: "http://onlinehrda.com/",
+
+            },
+        ]
+    },
+    {
+        title: "Golden Sponsor",
+        sponsors: [
+            {
+                name: "IITR Alumni Association",
+                image: "iitraa.gif",
+                link: "https://www.iitraa.in",
+
+            },
+        ]
+    },
+    {
+        title: "Logistics Partner",
+        sponsors: [
+            {
+                name: "DHL",
+                image: "dhl.jpg",
+                link: "http://www.dhl.com",
+
             }
+
         ]
     },
     {
@@ -199,17 +308,17 @@ export const SponsDetails = [
             }
         ]
     },
-    // {
-    //     title: "Tourism Partner",
-    //     sponsors: [
-    //         {
-    //             name: "UK Tourism",
-    //             image: "",
-    //             link: "",
+    {
+        title: "Tourism Partner",
+        sponsors: [
+            {
+                name: "UK Tourism",
+                image: "uktourism.jpg",
+                link: "https://uttarakhandtourism.gov.in/",
 
-    //         }
-    //     ]
-    // },
+            }
+        ]
+    },
     {
         title: "EDM Night Partner",
         sponsors: [
@@ -238,13 +347,13 @@ export const SponsDetails = [
             {
                 name: "MTV",
                 image: "MTV.png",
-                link: "https://www.mtvindia.com/",
+                link: "http://www.mtvindia.com/",
 
             },
             {
                 name: "MTV Beats",
                 image: "MTVbeats.png",
-                link: "https://www.mtvbeats.in/",
+                link: "http://www.mtvbeats.in/",
 
             },
             {
@@ -274,7 +383,7 @@ export const SponsDetails = [
             {
                 name: "Comedy Central",
                 image: "comedycentral.jpg",
-                link: "https://www.comedycentral.in",
+                link: "http://www.comedycentral.in",
 
             },
         ]
@@ -299,6 +408,13 @@ export const SponsDetails = [
                 link: "https://www.womansera.com/",
 
             },
+            {
+                name: "Abraxas Lifestyle",
+                image: "abraxas.jpg",
+                link: "https://abraxaslifestyle.com/",
+
+            },
+
             {
                 name: "Cricket Today",
                 image: "CricToday.png",
@@ -332,7 +448,7 @@ export const SponsDetails = [
             {
                 name: "DelhiNOW Magazine",
                 image: "delhinow.png",
-                link: "https://www.delhinowmagazine.com/",
+                link: "http://www.delhinowmagazine.com/",
 
             },
             {
@@ -359,15 +475,15 @@ export const SponsDetails = [
 
             },
             {
-                name: "Be like Bro",
-                image: "dp.png",
-                link: "https://www.facebook.com/BelykBro/",
-
-            },
-            {
                 name: "SIT",
                 image: "SIT.png",
                 link: "https://www.facebook.com/SITofficial/",
+
+            },
+            {
+                name: "Be like Bro",
+                image: "dp.png",
+                link: "https://www.facebook.com/BelykBro/",
 
             },
             {
@@ -376,18 +492,12 @@ export const SponsDetails = [
                 link: "https://play.google.com/store/apps/details?id=com.taritas.nsl",
 
             },
-            {
-                name: "Marketing Mind",
-                image: "MarketingMind.png",
-                link: "https://www.marketingmind.in/",
+            // {
+            //     name: "Marketing Mind",
+            //     image: "MarketingMind.png",
+            //     link: "https://www.marketingmind.in/",
 
-            },
-            {
-                name: "DelhiNOW Magazine",
-                image: "delhinow.png",
-                link: "http://www.delhinowmagazine.com/",
-
-            },
+            // },
             {
                 name: "Dil Ki Baat",
                 image: "dkb.jpg",
@@ -440,15 +550,15 @@ export const SponsDetails = [
 
             },
             {
-                name: "Tricity Events",
-                image: "tricity.png",
-                link: "https://www.facebook.com/eventsintricity/",
-
-            },
-            {
                 name: "PU Pulse",
                 image: "pu_pulse.png",
                 link: "https://www.facebook.com/pupulse/",
+
+            },
+            {
+                name: "Tricity Events",
+                image: "tricity.png",
+                link: "https://www.facebook.com/eventsintricity/",
 
             },
 
@@ -562,12 +672,37 @@ export const SponsDetails = [
         ]
     },
     {
+
         title: "Travel Partner",
         sponsors: [
             {
                 name: "HelloTravel",
                 image: "HelloTravel.png",
                 link: "https://www.hellotravel.com/",
+
+            },
+
+        ]
+    },
+    {
+        title: "Platform Partner",
+        sponsors: [
+            {
+                name: "Sheroes",
+                image: "sheroes.png",
+                link: "https://sheroes.com",
+
+            },
+
+        ]
+    },
+    {
+        title: "Content  Partner",
+        sponsors: [
+            {
+                name: "ATKT",
+                image: "atkt.png",
+                link: "http://www.ATKT.in",
 
             },
 

@@ -52,11 +52,6 @@ export default class EditBox extends React.Component {
     onChange = (e) => {
         const name = e.target.name;
         let value = e.target.value;
-        if (name === 'event_id' && value) {
-            value = value.trim();
-            value = value.substring(0, 4)
-            value = value.toUpperCase();
-        }
         if ((name === 'contact1' || name === 'contact2') && value) {
             value = value.trim();
             value = value.substring(0, 10)

@@ -23,10 +23,10 @@ const LoginIndex = Loadable({
     loading: () => Loading
 });
 
-const RegisterIndex = Loadable({
-    loader: () => import("./register/Index"),
-    loading: () => Loading
-});
+// const RegisterIndex = Loadable({
+//     loader: () => import("./register/Index"),
+//     loading: () => Loading
+// });
 
 const HomeIndex = Loadable({
     loader: () => import("./home/Index"),
@@ -88,7 +88,7 @@ export default class MainIndex extends React.Component {
                      : 
                      <React.Fragment> 
                          <Route exact path="/controls" render={props => (<LoginIndex {...props} updateRoutes={this.handleUpdate} setUserData={this.setUserData} />)} /> 
-                        <Route  path="/controls/register" component={RegisterIndex} />
+                        {/* <Route  path="/controls/register" component={RegisterIndex} /> */}
                      </React.Fragment> 
                  } 
             </React.Fragment>
