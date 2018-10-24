@@ -439,6 +439,7 @@ export default class EditBox extends React.Component {
                             <option value="2"> NEFT </option>
                             <option value="3"> Draft </option>
                             <option value="4"> Campus Ambassador </option>
+                            <option value="5"> Friends </option>
                         </select>
                     </div>
                     <div className="superadmin-buttons-cancel-update">

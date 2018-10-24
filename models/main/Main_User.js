@@ -86,7 +86,8 @@ var UserSchema = new mongoose.Schema({
         ref: 'MUN_Answer'
     },
     qr:{
-        type:String
+        type:String,
+        unique:true
     }
 });
 
