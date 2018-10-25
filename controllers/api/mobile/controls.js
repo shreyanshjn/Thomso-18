@@ -3,6 +3,7 @@ var Main_User = require('../../../models/main/Main_User');
 
 exports.scanMediaQR = function(req, res) {
     if (req.body) {
+        console.log(req.body);
         var updateData = {};
         if (req.body.name) {
             updateData.name = req.body.name;
@@ -26,6 +27,7 @@ exports.scanMediaQR = function(req, res) {
             format:req.body.format
         }
         if (updateData) {
+            console.log(updateData)
             Media_User.findOne({qr: updateData.qr})
                 .select('name email')
                 .exec(function(err, user) {
@@ -37,9 +39,10 @@ exports.scanMediaQR = function(req, res) {
                         });
                     }
                     if (!user) {
+                        console.log(data)
                         var baseImg = data.img;
                         var binaryData = new Buffer(baseImg, 'base64');
-                        var ext = data.format.split('/')[1];
+                        var ext = data.format;
                         updateData.image = `${updateData.qr}.${ext}`;
                         require("fs").writeFile(`./uploads/img/MediaImage/${updateData.image}`, binaryData, function(err) {
                             if(err) {
@@ -117,7 +120,7 @@ exports.scanParticipantQR = function(req, res) {
                         };
                         var baseImg = data.img;
                         var binaryData = new Buffer(baseImg, 'base64');
-                        var ext = data.format.split('/')[1];
+                        var ext = data.format;
                         updateData.image = `${data.id}.${ext}`;
                         require("fs").writeFile(`./uploads/img/ProfileImage/${updateData.image}`, binaryData, function(err) {
                             if(err) {
