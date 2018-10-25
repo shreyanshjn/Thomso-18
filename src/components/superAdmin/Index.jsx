@@ -39,10 +39,16 @@ const NavbarIndex = Loadable({
     loading: Loading,
 });
 
+const qrIndex = Loadable({
+    loader: () => import('./qr/Index'),
+    loading: Loading,
+});
+
 const AddCoordinator = Loadable({
     loader: () => import('./addCoordinator/Index'),
     loading: Loading,
 });
+
 
 const ListCoordinators = Loadable({
     loader: () => import('./listCoordinators/Index'),
@@ -90,6 +96,7 @@ export default class AdminIndex extends React.Component {
                         <Route exact path="/super/coordinators" component={ListCoordinators} />
                         <Route exact path="/super/controls/register" component={ControlsRegisterIndex} />
                         <Route exact path="/super/allParticipant" component={PaidParticipantIndex} />
+                        <Route exact path="/super/qr" component={qrIndex} />
                     </div>
                     :
                     <div>

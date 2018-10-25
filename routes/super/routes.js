@@ -24,6 +24,7 @@ router.get('/user/:page', mainAdminControls.userInfo);
 
 router.get('/participant/:id', adminControls.getParticipant);
 router.get('/participanttoken/:id', adminControls.getParticipantToken);
+router.get('/paid', adminControls.getPaidParticipant);
 router.put('/participant/:id', adminControls.patchParticipantData);
 router.post('/coordinators/register', coordinatorControls.register);
 

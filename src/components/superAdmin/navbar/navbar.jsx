@@ -13,7 +13,7 @@ render(){
             </Link>
           </li>
           <li>
-            <Link to="/super/allParticipant">
+            <Link to="/super/qr">
               paid Parti. 
             </Link>
           </li>

@@ -2,16 +2,12 @@ import React from 'react';
 
 export default class Row extends React.Component {
     render(){
-        let indexInit = 1;
-        if (this.props.currentPage && this.props.limit) {
-            indexInit = (this.props.currentPage - 1)*this.props.limit + 1
-        }
+        
         return (
             <React.Fragment>
-            {/* {console.log(this.props.data)} */}
+            {console.log(this.props.data)}
                 {this.props.data && this.props.data.payment_type && this.props.data.payment_type!==0 ? 
                     <tr style={{border: 'solid 1px black'}}>
-                        <td style={{textAlign: 'center'}}>{(this.props.index !== undefined) ? (this.props.index + indexInit) : '--'}</td>
                         <td style={{textAlign: 'center'}}>{this.props.data.thomso_id ? this.props.data.thomso_id : '--'}</td>
                         <td style={{textAlign: 'center'}}>
                             <button onClick={() => this.props.setEdit(this.props.data._id)} >
