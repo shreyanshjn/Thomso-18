@@ -48,6 +48,9 @@ export default class EditBox extends React.Component {
             branch: '',
             is_branch_disabled: true,
             is_branch_updating: false,
+            qr: '',
+            is_qr_disabled: true,
+            is_qr_updating: false,
             errors: ''
         };
         this.Auth = new AuthService();
@@ -168,6 +171,7 @@ export default class EditBox extends React.Component {
             accomodation, is_accomodation_disabled, is_accomodation_updating,
             password, is_password_disabled, is_password_updating,
             branch, is_branch_disabled, is_branch_updating,
+            qr, is_qr_disabled, is_qr_updating,
             errors,
             image
         } = this.state
@@ -439,6 +443,8 @@ export default class EditBox extends React.Component {
                             <option value="2"> NEFT </option>
                             <option value="3"> Draft </option>
                             <option value="4"> Campus Ambassador </option>
+                            <option value="5"> Friend </option>
+                            <option value="6"> Misc </option>
                         </select>
                     </div>
                     <div className="superadmin-buttons-cancel-update">
@@ -524,6 +530,33 @@ export default class EditBox extends React.Component {
                         {is_branch_disabled ?
                             null :
                             <button disabled={is_branch_updating} onClick={() => this.patchData('branch', 'is_branch_disabled', 'is_branch_updating')}>Update</button>
+                        }
+                    </div>
+                </div>
+                <div className="superadmin-form-input">
+                    <div>
+                        <label htmlFor="inputQR">QR</label>
+                    </div>
+                    <div>
+                        <input
+                            id="inputQR"
+                            type="text"
+                            placeholder="Your QR"
+                            name="qr"
+                            value={qr}
+                            disabled={is_qr_disabled}
+                            autoCorrect="off"
+                            autoComplete="off"
+                            autoCapitalize="on"
+                            onChange={this.onChange}
+                            spellCheck="false"
+                        />
+                    </div>
+                    <div className="superadmin-buttons-cancel-update">
+                        <button className={is_qr_disabled ? null : "color-red"} disabled={is_qr_updating} onClick={() => this.switchEditing('is_qr_disabled', 'is_qr_updating')}>{is_qr_disabled ? 'Edit' : 'Cancel'}</button>
+                        {is_qr_disabled ?
+                            null :
+                            <button disabled={is_qr_updating} onClick={() => this.patchData('qr', 'is_qr_disabled', 'is_qr_updating')}>Update</button>
                         }
                     </div>
                 </div>

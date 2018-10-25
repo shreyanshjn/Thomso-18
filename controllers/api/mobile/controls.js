@@ -100,7 +100,7 @@ exports.scanParticipantQR = function(req, res) {
         Main_User.findOne({
             thomso_id:req.body.thomso_id
         })
-            .select('verified blocked')
+            .select('verified blocked payment_type')
             .exec(function(err, user) {
                 if (err) {
                     return res.json({ success: false, msg: "Something Went Wrong", error: err });
@@ -111,6 +111,9 @@ exports.scanParticipantQR = function(req, res) {
                     }
                     if (user.blocked) {
                         return res.json({ success: false, msg: "Your Account Seems Suspecious" });
+                    }
+                    if (!user.payment_type) {
+                        return res.json({ success: false, msg: "Payment Not Verified" });
                     }
                     if (req.body.image && req.body.format) {
                         var data = {
@@ -185,23 +188,23 @@ exports.getPronite = function(req, res) {
             {
                 day: 'Day 2 ',
                 date: '27-10-2018',
-                name: 'Wargasm',
+                name: 'Xhileration',
                 artist: 'Amit Trivedi',
                 description: 'Coming Soon',
                 venue: 'LBS Ground',
                 image: 'https://www.thomso.in/uploads/img/Pronite/amit.jpeg',
                 time: 'Coming Soon'
             },
-            // {
-            //     day: 'Day 3 ',
-            //     date: '28-10-2018',
-            //     name: 'Coming Soon',
-            //     artist: 'Coming Soon',
-            //     description: 'Coming Soon',
-            //     venue: 'Coming Soon',
-            //     image: 'https://www.thomso.in/uploads/img/Pronite/coming_soon.jpeg',
-            //     time: 'Coming Soon'
-            // },
+            {
+                day: 'Day 3 ',
+                date: '28-10-2018',
+                name: 'Wargasm',
+                artist: 'WolfPack',
+                description: 'Coming Soon',
+                venue: 'LBS Ground',
+                image: 'https://www.thomso.in/uploads/img/Pronite/wolfpack.jpeg',
+                time: 'Coming Soon'
+            },
         ]
     })
 }
@@ -210,7 +213,7 @@ exports.getParticipantByQR = function(req, res) {
     if (req.params.id && req.params.id.trim()) {
         req.params.id = req.params.id.trim();
         Main_User.findOne({ qr: req.params.id, verified: true })
-            .select('thomso_id name email college contact image blocked')
+            .select('thomso_id name email college contact image blocked, payment_type')
             .exec(function (err, user) {
                 if (err) {
                     return res.json({ success: false, msg: 'Something Went Wrong', error: err })
@@ -220,6 +223,9 @@ exports.getParticipantByQR = function(req, res) {
                 }
                 if (user.blocked) {
                     return res.json({ success: false, msg: 'Unauthorized User' });
+                }
+                if (!user.payment_type) {
+                    return res.json({ success: false, msg: 'Payment Not Verified' });
                 }
                 return res.json({ success: true, msg: 'User Found', body: user });
             });

@@ -206,20 +206,24 @@ export default class PronitesIndex extends React.Component {
                                     </div>
                                 </div>
                             </div>
-                            {/* <div className="pronites-spinner__face" data-bg="#312f2d">
+                            <div className="pronites-spinner__face" data-bg="#312f2d">
                                 <div className="pronites-content" data-type="wolfpack">
                                     <div className="pronites-content__left">
                                       
                                     </div>
                                     <div className="pronites-content__right">
                                         <div className="pronites-content__main">
-                                            <p>""</p>
+                                            <p>
+                                                All set to fuse the electric waves of music in the stringing nerves of the incited crowd, we are back with one more unexpected name. 
+                                                Hold on hard, b'coz it is bigger, bigger than ever!
+                                                And we'll be having the Mighty Sentinels to DJ MAG's 35th position, WolfPack, here itself at R-land! Known worldwide for their Electro house, <strong>DJ Wolfpack's </strong>splendor at 'Wargasm', the EDM night of Thomso, will be something too stupendous to have been seen ever before. Beware, the wolves are coming to conquer this territory, prancing onto your brains and scratching your souls with the dynamic music beats in an explosive EDM night!!!
+                                            </p>
                                             <p>Wolf Pack</p>
                                         </div>
                                         <h3 className="pronites-content__index">Day-3</h3>
                                     </div>
                                 </div>
-                            </div> */}
+                            </div>
                         </div>
                     </div>
                 </div>
