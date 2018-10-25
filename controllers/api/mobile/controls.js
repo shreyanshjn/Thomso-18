@@ -42,7 +42,7 @@ exports.scanMediaQR = function(req, res) {
                         console.log(data)
                         var baseImg = data.img;
                         var binaryData = new Buffer(baseImg, 'base64');
-                        var ext = data.format;
+                        var ext = data.format.split('/')[1];
                         updateData.image = `${updateData.qr}.${ext}`;
                         require("fs").writeFile(`./uploads/img/MediaImage/${updateData.image}`, binaryData, function(err) {
                             if(err) {
@@ -123,7 +123,7 @@ exports.scanParticipantQR = function(req, res) {
                         };
                         var baseImg = data.img;
                         var binaryData = new Buffer(baseImg, 'base64');
-                        var ext = data.format;
+                        var ext = data.format.split('/')[1];
                         updateData.image = `${data.id}.${ext}`;
                         require("fs").writeFile(`./uploads/img/ProfileImage/${updateData.image}`, binaryData, function(err) {
                             if(err) {
@@ -213,7 +213,7 @@ exports.getParticipantByQR = function(req, res) {
     if (req.params.id && req.params.id.trim()) {
         req.params.id = req.params.id.trim();
         Main_User.findOne({ qr: req.params.id, verified: true })
-            .select('thomso_id name email college contact image blocked, payment_type')
+            .select('thomso_id name email college contact image blocked payment_type')
             .exec(function (err, user) {
                 if (err) {
                     return res.json({ success: false, msg: 'Something Went Wrong', error: err })

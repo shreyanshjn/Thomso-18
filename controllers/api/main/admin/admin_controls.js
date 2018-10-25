@@ -16,7 +16,7 @@ exports.userInfo = function(req,res){
         }
         if (params.page === "all") {
             Main_User.find(query)
-                    .select('name email gender thomso_id college address branch contact verified referral')
+                    .select('name email gender thomso_id college address payment_type branch contact verified referral')
                     .populate('event', 'name')
                     .populate('primary_event', 'name')
                     .exec(function (err, user) {
@@ -41,7 +41,7 @@ exports.userInfo = function(req,res){
                         Main_User.find(query)
                             .skip(skip)
                             .limit(limit)
-                            .select('name email gender thomso_id college address branch contact verified referral')
+                            .select('name email gender thomso_id college address payment_type branch contact verified referral')
                             .populate('event', 'name')
                             .exec(function (err, user) {
                                 if (err) {
@@ -72,7 +72,7 @@ exports.userInfo = function(req,res){
                         Main_User.find(query)
                             .skip(skip)
                             .limit(limit)
-                            .select('name email gender thomso_id college address branch contact verified referral')
+                            .select('name email gender thomso_id college address payment_type branch contact verified referral')
                             .populate('event', 'name')
                             .exec(function (err, user) {
                                 if (err) {
@@ -102,7 +102,7 @@ exports.userInfo = function(req,res){
                 Main_User.find(query)
                     .skip(skip)
                     .limit(limit)
-                    .select('name email gender thomso_id college address branch contact verified referral')
+                    .select('name email gender thomso_id college address branch payment_type contact verified referral')
                     .populate('event', 'name')
                     .populate('primary_event', 'name')
                     .sort( { "thomso_id": 1, "name": 1 } )

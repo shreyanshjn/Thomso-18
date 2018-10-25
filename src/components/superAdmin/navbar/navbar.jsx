@@ -13,6 +13,11 @@ render(){
             </Link>
           </li>
           <li>
+            <Link to="/super/allParticipant">
+              paid Parti. 
+            </Link>
+          </li>
+          <li>
             <Link to="/super/addCoordinator">
               AddCoordinator
             </Link>

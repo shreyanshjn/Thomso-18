@@ -52,6 +52,11 @@ const ControlsRegisterIndex = Loadable({
         loader: () => import("./controlsRegister/Index"),
         loading: () => Loading
     });
+
+    const PaidParticipantIndex = Loadable({
+        loader: () => import("./paidParticipant/Index"),
+        loading: () => Loading
+    });
     
 
 export default class AdminIndex extends React.Component {
@@ -84,6 +89,7 @@ export default class AdminIndex extends React.Component {
                         <Route exact path="/super/addCoordinator" component={AddCoordinator} />
                         <Route exact path="/super/coordinators" component={ListCoordinators} />
                         <Route exact path="/super/controls/register" component={ControlsRegisterIndex} />
+                        <Route exact path="/super/allParticipant" component={PaidParticipantIndex} />
                     </div>
                     :
                     <div>
