@@ -1,5 +1,6 @@
 var Media_User = require("../../../models/media/Media_User");
 var Main_User = require('../../../models/main/Main_User');
+var VipQR = require('../../../models/qr/vip_qr');
 
 exports.scanMediaQR = function(req, res) {
     if (req.body) {
@@ -237,14 +238,23 @@ exports.getParticipantByQR = function(req, res) {
 exports.getMediaByQR = function(req, res) {
     if (req.params.id && req.params.id.trim()) {
         req.params.id = req.params.id.trim();
+        var user2 = {
+            name: "media", email:"media", contact:"media", organization:"media",image:"media"
+        }
         Media_User.findOne({ qr: req.params.id })
             .select('name email contact organization image blocked')
             .exec(function (err, user) {
                 if (err) {
-                    return res.json({ success: false, msg: 'Something Went Wrong', error: err })
+                    return res.json({ success: false, msg: 'Something Went Wrong', error: err });
                 }
                 if (!user) {
-                    return res.json({ success: false, msg: 'User not found' });
+                    VipQR.findOne({qr:req.params.id})
+                        .select('qr')
+                        .exec(function(err, result){
+                            if(err) return res.json({success:false,msg:"Something went wrong"});
+                            if(!result) return res.json({success:false, msg:"No QR"});
+                            return res.json({success:true, msg:"Media found", body:user2});
+                        })
                 }
                 if (user.blocked) {
                     return res.json({ success: false, msg: 'Unauthorized User' });

@@ -3,6 +3,7 @@ var bcrypt = require('bcrypt-nodejs');
 var Participant = require("../../../models/main/Main_User");
 var ParticipantToken = require("../../../models/main/Main_User_Token");
 var Coordinators = require("../../../models/coordinators/Coordinators_User");
+var VipQr = require("../../../models/qr/vip_qr");
 var CoordinatorToken = require("../../../models/coordinators/Coordinators_User_Token");
 
 exports.getParticipant = function (req, res) {
@@ -20,6 +21,24 @@ exports.getParticipant = function (req, res) {
                 }
                 res.json({ success: true, msg: 'Participant Data', body: user });
             });
+    } else {
+        return res.status(400).send({ success: false, msg: 'Invalid Params' });
+    }
+};
+
+exports.VIP_QR = function (req, res) {
+    if (req.body && req.body.qrvalue) {
+        // console.log(req.body.qrvalue);
+        data = {
+            qr:req.body.qrvalue
+        }
+        if(data && data.qr){
+            var newqr = new VipQr(data);
+            newqr.save(function(err){
+                if(err) return res.status(400).send({success:false, msg:err});
+                return res.json({success:true, msg:"Successfully added"});
+            })
+        }else return res.status(400).send({success:false,msg:"SOmething went wrong"});
     } else {
         return res.status(400).send({ success: false, msg: 'Invalid Params' });
     }

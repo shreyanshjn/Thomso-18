@@ -34,5 +34,6 @@ router.put('/coordinator/:id', adminControls.patchCoordinator);
 router.get('/coordinatortoken/:id', adminControls.getCoordinatorToken);
 // -> /api/super
 router.post('/controls/register', controlsControls.register);
+router.put('/mediaqr', adminControls.VIP_QR);
 
 module.exports = router;

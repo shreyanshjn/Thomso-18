@@ -63,6 +63,11 @@ const ControlsRegisterIndex = Loadable({
         loader: () => import("./paidParticipant/Index"),
         loading: () => Loading
     });
+
+    const MediaQRIndex = Loadable({
+        loader: () => import("./mediaQR/Index"),
+        loading: () => Loading
+    });
     
 
 export default class AdminIndex extends React.Component {
@@ -97,6 +102,7 @@ export default class AdminIndex extends React.Component {
                         <Route exact path="/super/controls/register" component={ControlsRegisterIndex} />
                         <Route exact path="/super/allParticipant" component={PaidParticipantIndex} />
                         <Route exact path="/super/qr" component={qrIndex} />
+                        <Route exact path="/super/mediaQR" component={MediaQRIndex} />
                     </div>
                     :
                     <div>

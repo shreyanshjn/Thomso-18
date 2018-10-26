@@ -13,6 +13,11 @@ render(){
             </Link>
           </li>
           <li>
+            <Link to="/super/mediaQR">
+              Add QR
+            </Link>
+          </li>
+          <li>
             <Link to="/super/qr">
               paid Parti. 
             </Link>
