@@ -616,6 +616,17 @@ export const SponsDetails = [
         ]
     },
     {
+        title: "Saving Partner",
+        sponsors: [
+            {
+                name: "Grabon",
+                image: "grabon.png",
+                link: "https://www.grabon.in/",
+
+            },
+        ]
+    },
+    {
         title: "Online Media Partner",
         sponsors: [
             {
