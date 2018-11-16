@@ -256,7 +256,7 @@ exports.getMediaByQR = function(req, res) {
                             return res.json({success:true, msg:"Media found", body:user2});
                         })
                 }
-                if (user.blocked) {
+                else if (user.blocked) {
                     return res.json({ success: false, msg: 'Unauthorized User' });
                 }
                 return res.json({ success: true, msg: 'User Found', body: user });

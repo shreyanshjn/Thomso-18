@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import AuthService from '../../../handlers/superAdmin/AuthService';
-import validateInput from '../../../utils/validation/loginValidation';
+// import validateInput from '../../../utils/validation/loginValidation';
 import FetchApi from '../../../utils/FetchAPI';
 
 // import './style.css';

@@ -46,7 +46,7 @@ exports.VIP_QR = function (req, res) {
 
 exports.getPaidParticipant = function (req, res) {
     if (req) {
-        console.log("kajssd");
+        // console.log("kajssd");
         Participant.find({payment_type:{$gt:0} })
         .select('image thomso_id name email gender contact college state address verified blocked payment_type accomodation branch qr')
         .populate('event', 'name')

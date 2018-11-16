@@ -2,6 +2,7 @@ import React from 'react';
 import $ from 'jquery'
 
 import Row from './Row';
+import downloadCSV from '../../../utils/JSONtoCSV';
 
 import EditBox from './EditBox';
 
@@ -22,6 +23,12 @@ export default class DataTable extends React.Component {
         });
     }
 
+    download = () => {
+        if (this.props.participants && this.props.participants.length > 0) {
+            downloadCSV({data: this.props.participants, filename: 'paid_participants.csv'})
+        }
+    }
+
     setEdit = id => {
         this.setState({editID: id})
     }
@@ -34,6 +41,7 @@ export default class DataTable extends React.Component {
                 <input id="myInput" type="text" onChange={(e) => this.handleFilter(e)} placeholder="Type here to search..." 
                 style={{padding:"7px", borderRadius:"3px"}} />
             </div>
+            <button onClick={this.download}> Download </button>
             {editID ? <EditBox userID={editID} close={() => this.setEdit(null)} history={this.props.history} /> : null}
             <table style={{borderCollapse: 'collapse'}}>
                 <thead>
