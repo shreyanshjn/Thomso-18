@@ -3,12 +3,12 @@ var bcrypt = require('bcrypt-nodejs');
 var Participant = require("../../../models/main/Main_User");
 var ParticipantToken = require("../../../models/main/Main_User_Token");
 var Coordinators = require("../../../models/coordinators/Coordinators_User");
+var Winner_List = require("../../../models/coordinators/Winner_List");
 var VipQr = require("../../../models/qr/vip_qr");
 var CoordinatorToken = require("../../../models/coordinators/Coordinators_User_Token");
 
 exports.getParticipant = function (req, res) {
     if (req.params.id) {
-        console.log(req.params.id);
         Participant.findOne({ _id: req.params.id })
             .select('image thomso_id name email gender contact college state address verified blocked payment_type accomodation branch qr')
             .populate('event', 'name')
@@ -20,6 +20,23 @@ exports.getParticipant = function (req, res) {
                     return res.status(400).send({ success: false, msg: 'User not found' });
                 }
                 res.json({ success: true, msg: 'Participant Data', body: user });
+            });
+    } else {
+        return res.status(400).send({ success: false, msg: 'Invalid Params' });
+    }
+};
+
+exports.winners = function (req, res) {
+    if (req) {
+        Winner_List.find({verified:true})
+            .exec(function (err, user) {
+                if (err) {
+                    return res.status(400).send({ success: false, msg: 'Unable to connect to database. Please try again.' });
+                }
+                if (!user) {
+                    return res.status(400).send({ success: false, msg: 'Winners not found' });
+                }
+                res.json({ success: true, msg: 'Winners Data', body: user });
             });
     } else {
         return res.status(400).send({ success: false, msg: 'Invalid Params' });

@@ -1,6 +1,7 @@
 import React from 'react';
 import Row from './Row';
 import $ from 'jquery'
+import downloadCSV from '../../../utils/JSONtoCSV';
 
 export default class DataTable extends React.Component {
     handleFilter(e){
@@ -12,6 +13,13 @@ export default class DataTable extends React.Component {
             });
         });
     }
+
+    download = () => {
+        if (this.props.participants && this.props.participants.users && this.props.participants.users.length > 0) {
+            downloadCSV({data: this.props.participants.users, filename: 'Co-coordinators.csv'})
+        }
+    }
+
     render() {
       return (
         <div>
@@ -19,6 +27,8 @@ export default class DataTable extends React.Component {
                 <input id="myInput" type="text" onChange={(e) => this.handleFilter(e)} placeholder="Type here to search..." 
                 style={{padding:"7px", borderRadius:"3px"}} />
             </div>
+            <button onClick={this.download}> Download </button>
+
             <table style={{borderCollapse: 'collapse',marginTop:"15px"}}>
                 <thead>
                     <tr>

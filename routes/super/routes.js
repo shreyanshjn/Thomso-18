@@ -23,6 +23,7 @@ router.use('/', SuperAdminTokenMiddleware.verify);
 router.get('/user/:page', mainAdminControls.userInfo);
 
 router.get('/participant/:id', adminControls.getParticipant);
+router.get('/winner', adminControls.winners);
 router.get('/participanttoken/:id', adminControls.getParticipantToken);
 router.get('/paid', adminControls.getPaidParticipant);
 router.put('/participant/:id', adminControls.patchParticipantData);

@@ -3,6 +3,7 @@ import React from 'react';
 import Row from './Row';
 
 import EditBox from './EditBox';
+import downloadCSV from '../../../utils/JSONtoCSV';
 
 export default class DataTable extends React.Component {
     constructor() {
@@ -15,11 +16,18 @@ export default class DataTable extends React.Component {
     setEdit = id => {
         this.setState({editID: id})
     }
+    download = () => {
+        if (this.props.participants && this.props.participants.length > 0) {
+            downloadCSV({data: this.props.participants, filename: 'list_coordinators.csv'})
+        }
+    }
 
     render() {
         const {editID} = this.state
       return (
         <div>
+            <button onClick={this.download}> Download </button>
+
             {editID ? <EditBox userID={editID} close={() => this.setEdit(null)} history={this.props.history} /> : null}
             <table style={{borderCollapse: 'collapse'}}>
                 <thead>

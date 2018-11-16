@@ -1,8 +1,10 @@
 import React from 'react';
 import $ from 'jquery'
+import FetchApi from "../../../utils/FetchAPI";
 
 import Row from './Row';
 import downloadCSV from '../../../utils/JSONtoCSV';
+import AuthService from "../../../handlers/superAdmin/AuthService";
 
 import EditBox from './EditBox';
 
@@ -10,8 +12,11 @@ export default class DataTable extends React.Component {
     constructor() {
         super();
         this.state = {
-            editID: null
+            editID: null,
+            winnersData:[],
+            errors:''
         };
+        this.Auth = new AuthService();
     }
     handleFilter(e){
         e.preventDefault();
@@ -29,20 +34,51 @@ export default class DataTable extends React.Component {
         }
     }
 
+    downloadWinner = () => {
+        const isAuth = this.Auth.hasToken();
+        if(isAuth ){
+            const token = this.Auth.getToken(); 
+            FetchApi('GET','/api/super/winner',null, token)
+            .then( res =>{
+                if(res && res.data && res.data.success){
+                    // console.log(res.data.body)
+                    if(res.data.body && res.data.body.length>0){
+                        downloadCSV({data: res.data.body, filename: 'winners.csv'})
+                    }
+                    else{
+                        this.setState({errors:"No Winners"})
+                    }
+                }
+            })
+            .catch( err => {
+                this.setState({errors:"Something Went Wrong"})
+            })
+        }else{
+            this.setState({errors:"Unauthenticated"});
+        }
+        if (this.state.winnersData && this.state.winnersData.length > 0) {
+            downloadCSV({data: this.state.winnersData, filename: 'paid_participants.csv'})
+        }
+    }
+
+
     setEdit = id => {
         this.setState({editID: id})
     }
 
     render() {
-        const {editID} = this.state
+        const {editID, errors} = this.state
       return (
         <div>
              <div style={{marginTop:"25px", marginLeft:"50px"}}>
                 <input id="myInput" type="text" onChange={(e) => this.handleFilter(e)} placeholder="Type here to search..." 
                 style={{padding:"7px", borderRadius:"3px"}} />
             </div>
+            <button onClick={this.downloadWinner}> Download  Winner</button>
+
             <button onClick={this.download}> Download </button>
             {editID ? <EditBox userID={editID} close={() => this.setEdit(null)} history={this.props.history} /> : null}
+            {errors ? <span style={{color:"red", fontSize:"22px"}} >{errors} </span>:null}
             <table style={{borderCollapse: 'collapse'}}>
                 <thead>
                     <tr>
