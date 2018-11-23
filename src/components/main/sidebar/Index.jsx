@@ -380,6 +380,26 @@ export default class Sidebar extends React.Component {
               </div>
           </Link>
           <Link
+              to="/main/certificates"
+              className={
+                  this.state.activeState === "certificates"
+                      ? "sideNavItem activeSideItem"
+                      : "sideNavItem"
+              }
+              onClick={() => {
+                  this.setActive("certificates");
+              }}
+          >
+              <div className="main-sidebar-payment flex_row">
+                  <div className="main-sidebar-svg-logo">
+                      <Payment />
+                  </div>
+                  <div className="main-sidebar-navitem-name">
+                      CERTIFICATES
+                  </div>
+              </div>
+          </Link>
+          <Link
               to="/main/logout"
               className={
                   this.state.activeState === "logout"

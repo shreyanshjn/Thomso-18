@@ -164,6 +164,7 @@ exports.resendOTP = function (req, res) {
 
 exports.ticktok_username = function (req, res) {
     if (req.locals.email && req.body.username) {
+        console.log(req.locals, req.body)
         req.body.username = req.body.username.trim()
 
         let data = {
@@ -172,11 +173,12 @@ exports.ticktok_username = function (req, res) {
         Main_User.findOneAndUpdate({
             email: req.locals.email
         }, data)
+        .select('name')
             .exec(function (err, user) {
                 if (err) {
                     return res.status(400).send({ success: false, msg: 'Unable to connect to database. Please try again.' });
                 }
-                res.json({ success: true, msg: "Updated" })
+                res.json({ success: true,body:user, msg: "Updated" })
             });
     } else {
         res.status(400).send({ success: false, msg: 'User Not Found' });
