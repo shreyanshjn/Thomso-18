@@ -1,6 +1,7 @@
 var Main_User = require('../../../models/main/Main_User');
 var MUN_Answer = require('../../../models/mun/MUN_Answer');
 var EventSchema = require('../../../models/main/Thomso_Event');
+var Winner = require('../../../models/coordinators/Winner_List');
 
 var mailer = require('../../common/mailer');
 
@@ -26,6 +27,42 @@ exports.userInfo = function (req, res) {
                 return res.json({ success: true, isVerified: true, msg: 'User Data Found', body: user });
             }
         });
+};
+exports.fetch_certificates = function (req, res) {
+    if(req.locals && req.locals.email){
+        Main_User.findOne({
+            email: req.locals.email
+        })
+        .select('name thomso_id college verified payment_type ticktok_username ticktok_verified')
+        .exec(function (err, user) {
+            if (err) {
+                return res.status(400).send({ success: false, msg: 'Unable to connect to database. Please try again.', error: err })
+            }
+            if (!user) {
+                return res.status(400).send({ success: false, msg: 'User not found' });
+            } else if (!user.verified) {
+                return res.json({ success: true, isVerified: false, msg: 'User Data Found', body: { email: user.email, name: user.name } });
+            } else {
+                Winner.find({
+                    email: req.locals.email
+                })
+                    .select('position event_name')
+                    .exec(function (err, result) {
+                        if (err) {
+                            return res.status(400).send({ success: false, msg: 'Unable to connect to database. Please try again.', error: err })
+                        }
+                        var data = user;
+                        if(result){
+                            data.position = result.position;
+                            data.event_name = result.event_name;
+                            return res.json({success:true, body:data,msg:"Success"})
+                        }
+                        return res.json({success:true, body:data,msg:"Success"})
+                    });
+                return res.json({ success: true, isVerified: true, msg: 'User Data Found', body: user });
+            }
+        });
+    }
 };
 exports.get_image = function (req, res) {
     Main_User.findOne({

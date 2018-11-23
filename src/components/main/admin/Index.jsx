@@ -53,6 +53,11 @@ const AssociateWithUsIndex = Loadable({
     loading: Loading,
 });
 
+const VerifyCertificateIndex = Loadable({
+    loader: () => import('./verifyCertificate/Index'),
+    loading: Loading,
+});
+
 
 export default class AdminIndex extends React.Component{
     constructor() {
@@ -84,6 +89,7 @@ export default class AdminIndex extends React.Component{
                         <Route exact path="/main/admin/participants/:page" render={ (props) => <HomeIndex {...props} updateRoutes={this.handleUpdate} /> } />
                         <Route exact path="/main/admin/eventUser" component={EventUserIndex} />
                         <Route exact path="/main/admin/associateWithUs" component={AssociateWithUsIndex} />
+                        <Route exact path="/main/admin/verifyCertificate" component={VerifyCertificateIndex} />
                     </React.Fragment>
                 :
                     <React.Fragment>

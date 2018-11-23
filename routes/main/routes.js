@@ -39,7 +39,9 @@ router.get('/primary', eventControl.getEvents);
 router.get('/events', MainUserTokenMiddleware.verify, participantControl.getUserEvents);
 router.post('/updateImage', MainUserTokenMiddleware.verify, participantControl.update_image);
 router.post('/getImage', MainUserTokenMiddleware.verify, participantControl.get_image);
+
 router.post('/ticktok_username', MainUserTokenMiddleware.verify, participantControl.ticktok_username);
+router.get('/fetch_certificate', MainUserTokenMiddleware.verify, participantControl.fetch_certificates);
 
 router.delete('/removeEvent', MainUserTokenMiddleware.verify, eventControl.removeEvent);
 

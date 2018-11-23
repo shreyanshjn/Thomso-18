@@ -10,6 +10,7 @@ render(){
           <li><Link to="/main/admin/">HOME</Link></li>
           <li><Link to="/main/admin/associateWithUs">Asso.Us</Link></li>
           <li><Link to="/main/admin/eventUser">Event</Link></li>
+          <li><Link to="/main/admin/verifyCertificate">Verify Certi.</Link></li>
           <li><Link to="/main/admin/logout">Logout</Link></li>
         </ul>
       </div>

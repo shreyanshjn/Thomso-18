@@ -15,12 +15,12 @@ export default class CertificateIndex extends Component {
         this.Auth = new AuthService();
     }
     handleSubmit = () => {
-        const { username } = this.state
+        let { username } = this.state
         const isAuthenticated = this.Auth.hasToken();
         if (isAuthenticated) {
             const token = this.Auth.getToken()
 
-            if (username) username = username.trim()
+            if (username) username =username.trim()
             let data = {
                 username: username
             }
