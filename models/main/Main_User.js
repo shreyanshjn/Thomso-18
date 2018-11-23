@@ -88,7 +88,15 @@ var UserSchema = new mongoose.Schema({
     qr:{
         type:String,
         unique:true
-    }
+    },
+    ticktok_username: {
+        type: String,
+        unique: true
+    },
+    ticktok_verified: {
+        type: Boolean,
+        default:false
+    },
 });
 
 UserSchema.index({name: 'text', email : 'text', thomso_id: 'text', gender: 'text', contact: 'text', college: 'text'});

@@ -189,7 +189,10 @@ const PronitesIndex = Loadable({
     loader: () => import("./components/beta/pronites/Index"),
     loading: () => <Loader />
 })
-
+const CertificateIndex = Loadable({
+    loader: () => import("./components/certificates/Index"),
+    loading: () => <Loader />
+})
 class App extends Component {
     constructor() {
         super();
@@ -219,7 +222,7 @@ class App extends Component {
                             <Route exact path="/quizardry" component={QuizardryIndex} />
                             <Route exact path="/team" component={TeamIndex} />
                             <Route exact path="/comingSoon" component={ComingSoonIndex} />
-                            <Route exact path="/pronites" component={PronitesIndex} />                        
+                            <Route exact path="/pronites" component={PronitesIndex} />
                             <Route exact path="/faq" component={FAQIndex} />
                             <Route path="/ca/" component={CAIndex} />
                             <Route path="/campusAmbassador/" component={CampusIndex} />
@@ -247,6 +250,7 @@ class App extends Component {
                             <Route path="/cupid" component={Cupid} />
                             <Route path="/mun" component={MUNIndex} />
                             <Route path="/super" component={SuperAdminIndex} />
+                            <Route path="/certificate" component={CertificateIndex} />
                             {/* <Route path="/xpression" component={Xpression} /> */}
                             {/* <Route component={Error404} /> */}
                         </React.Fragment>

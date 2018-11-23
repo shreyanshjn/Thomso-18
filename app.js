@@ -24,7 +24,7 @@ mongoose
 
 app.use(logger('dev'));
 // app.use(bodyParser.json());
-app.use(bodyParser.json({limit: '250kb'}));
+app.use(bodyParser.json({ limit: '250kb' }));
 // app.use(bodyParser.urlencoded({limit: '500kb', extended: true}));
 // app.use(bodyParser.urlencoded({'extended':'false'}));
 if (process.env.REACT_APP_SERVER_ENVIORNMENT !== 'dev') {
@@ -34,43 +34,43 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 app.use(cors());
 
-app.get("/static/*.js", function(req, res, next) {
+app.get("/static/*.js", function (req, res, next) {
   req.url = req.url + ".gz";
   res.set("Content-Encoding", "gzip");
   res.set("Content-Type", "text/javascript");
   next();
 });
 
-app.get("/pdf/*", function(req, res){
+app.get("/pdf/*", function (req, res) {
   res.sendFile(req.url);
 });
 
-app.get("/uploads/*", function(req, res){
+app.get("/uploads/*", function (req, res) {
   if (req.url.indexOf('?') > 0) {
     req.url = req.url.substring(0, req.url.indexOf('?'));
   }
   fs.readFile(`.${req.url}`, function (err, content) {
     if (err) {
-        res.writeHead(400, {'Content-type':'text/html'})
-        res.end("No such image");
+      res.writeHead(400, { 'Content-type': 'text/html' })
+      res.end("No such image");
     } else {
-        res.writeHead(200,{'Content-type':'image/jpg'});
-        res.end(content);
+      res.writeHead(200, { 'Content-type': 'image/jpg' });
+      res.end(content);
     }
   });
 });
 
-app.get("/getFonts/*", function(req, res){
+app.get("/getFonts/*", function (req, res) {
   if (req.url.indexOf('?') > 0) {
     req.url = req.url.substring(0, req.url.indexOf('?'));
   }
   fs.readFile(`.${req.url}`, function (err, content) {
     if (err) {
-        res.writeHead(400, {'Content-type':'text/html'})
-        res.end("No such font");
+      res.writeHead(400, { 'Content-type': 'text/html' })
+      res.end("No such font");
     } else {
-        res.writeHead(200,{'Content-type':'application/x-font-ttf'});
-        res.end(content);
+      res.writeHead(200, { 'Content-type': 'application/x-font-ttf' });
+      res.end(content);
     }
   });
 });
@@ -85,14 +85,14 @@ app.get("/getFonts/*", function(req, res){
 app.use('/', routes);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   var err = new Error("Not Found");
   err.status = 404;
   next(err);
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};
@@ -101,5 +101,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
+
 
 module.exports = app;
