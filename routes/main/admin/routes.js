@@ -21,4 +21,6 @@ router.post('/addEvent', MainAdminTokenMiddleware.verify, adminControls.addEvent
 router.post('/eventUser', MainAdminTokenMiddleware.verify,adminControls.eventUser);
 router.get('/fetchEvents', MainAdminTokenMiddleware.verify,adminControls.fetchEvents);
 router.get('/associateFetch', MainAdminTokenMiddleware.verify,adminControls.associate_fetch);
+router.get('/certificate_data', MainAdminTokenMiddleware.verify,adminControls.certificate_verify_data);
+router.post('/certificate_verify', MainAdminTokenMiddleware.verify,adminControls.verify_certificate);
 module.exports = router;

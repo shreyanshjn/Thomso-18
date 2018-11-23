@@ -136,6 +136,29 @@ exports.eventUser = function(req,res){
     }else return res.status(400).send({success:false, msg:"Insuffiecient Data"});
 }
 
+exports.certificate_verify_data = function(req,res){
+    if(req){
+        Main_User.find({ticktok_username: { $exists:true}, ticktok_verified:false})
+        .select(' name thomso_id email contact ticktok_username ticktok_verified college')
+        .exec(function(err, result){
+            if(err) return res.status(400).send({success:false, msg:'Error'});
+            if(result) res.json({success:true, msg:'Fetched', body : result});
+            else return res.status(400).send({success:false, msg:'Unable to fetch user'});
+        })
+    }else return res.status(400).send({success:false, msg:"Insuffiecient Data"});
+}
+
+
+exports.verify_certificate = function(req,res){
+    if(req && req.body && req.body.email){
+        Main_User.findOneAndUpdate({email:req.body.email}, ticktok_verified=true)
+        .exec(function(err){
+            if(err) return res.status(400).send({success:false, msg:'Error'});
+             res.json({success:true, msg:'Updated'});
+        })
+    }else return res.status(400).send({success:false, msg:"Insuffiecient Data"});
+}
+
 
 exports.addEvent = function(req, res) {
     if(req && req.body && req.body.name && req.body.event_id){
