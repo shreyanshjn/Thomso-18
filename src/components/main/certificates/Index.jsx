@@ -70,6 +70,9 @@ export default class CertificateIndex extends Component {
                     </div>
                 </div>
                 {this.state.showform && this.state.userdata.ticktok_username && this.state.userdata.verified ?
+                <div className="certificate-submit-msg">
+                    Your username is under verification.Your certificate will available after your username is verified(24 hrs).
+                </div> :
                 <form onSubmit={this.usernameSubmit}>
                 <div className="form-first-child">
                <div className="certificate-errors-msg">
@@ -115,9 +118,7 @@ export default class CertificateIndex extends Component {
                         required /> */}
                      
                 </form>
-                :<div className="certificate-submit-msg">
-                    Your username is under verification.Your certificate will available after your username is verified(24 hrs).
-                </div>
+                
                 }
             </div>
         );
