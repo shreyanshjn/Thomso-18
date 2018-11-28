@@ -37,11 +37,13 @@ export default class VerifyCertificate extends React.Component {
 
     switchBlock = (e) =>{
         e.preventDefault();
-        var data = {id:e.target.value};
+        var data = {email:e.target.value};
+        console.log(data)
         if(data){
             const isAuthenticated = this.Auth.hasToken();
             if(isAuthenticated){
                 const token = this.Auth.getToken();
+                console.log(data,token)
                 FetchApi('PUT','/api/main/admin/certificate_verify',data,token)
                 .then( res => {
                     if(res && res.data && res.data.success){

@@ -138,7 +138,7 @@ exports.eventUser = function(req,res){
 
 exports.certificate_verify_data = function(req,res){
     if(req){
-        Main_User.find({ticktok_username: { $exists:true}, ticktok_verified:false})
+        Main_User.find({ticktok_username: { $exists:true} })
         .select(' name thomso_id email contact ticktok_username ticktok_verified college')
         .exec(function(err, result){
             if(err) return res.status(400).send({success:false, msg:'Error'});
