@@ -36,17 +36,17 @@ export default class VerifyCertificate extends React.Component {
         else this.setState({errors:'Unauthenticated'})
     }
 
-    switchBlock = (e) =>{
-        e.preventDefault();
-        const verify = !!!this.state.verified;
-        var data = {email:e.target.value, ticktok_verified:verify};
+    switchBlock = (email, verify) =>{
+        // e.preventDefault();
+        // const verify = !!!this.state.verified;
+        var data = {email:email, ticktok_verified:verify};
         // console.log(data, verify)
-        this.setState({verified:verify})
+        // this.setState({verified:verify})
         if(data){
             const isAuthenticated = this.Auth.hasToken();
             if(isAuthenticated){
                 const token = this.Auth.getToken();
-                // console.log(data,token)
+                console.log(data,token)
                 FetchApi('PUT','/api/main/admin/certificate_verify',data,token)
                 .then( res => {
                     if(res && res.data && res.data.success){
@@ -94,8 +94,8 @@ export default class VerifyCertificate extends React.Component {
                                 <td>{data.college ? data.college : '--'}</td>
                                 <td>{data.ticktok_username ? data.ticktok_username : '--'}</td>
                                 <td style={{textAlign: 'center'}}>
-                                    <button onClick={this.switchBlock} value={data.email}>
-                                        {this.state.verified ? 
+                                    <button onClick={()=>this.switchBlock(data.email, !!!data.ticktok_verified)} value={data.email}>
+                                        {data.ticktok_verified ? 
                                         'Unverify' : 
                                         'Verify'}
                                     </button>
