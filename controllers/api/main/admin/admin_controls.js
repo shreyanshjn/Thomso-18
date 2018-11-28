@@ -151,7 +151,8 @@ exports.certificate_verify_data = function(req,res){
 
 exports.verify_certificate = function(req,res){
     if(req && req.body && req.body.email){
-        Main_User.findOneAndUpdate({email:req.body.email}, ticktok_verified=true)
+        data = { ticktok_verified:req.body.ticktok_verified }
+        Main_User.findOneAndUpdate({email:req.body.email}, data)
         .exec(function(err){
             if(err) return res.status(400).send({success:false, msg:'Error'});
              res.json({success:true, msg:'Updated'});

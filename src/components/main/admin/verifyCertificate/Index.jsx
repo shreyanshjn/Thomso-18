@@ -8,7 +8,8 @@ export default class VerifyCertificate extends React.Component {
         this.state = {
             authenticated : false,
             errors:'',
-            user:[]
+            user:[],
+            verified:false
         }
         this.Auth = new AuthService();
     }
@@ -22,7 +23,7 @@ export default class VerifyCertificate extends React.Component {
                 if(res && res.data){
                     if(res.data.success){
                         console.log(res.data.body)
-                        this.setState({user:res.data.body})   
+                        this.setState({user:res.data.body, verified:res.data.body.ticktok_verified})   
                     }
                     else this.setState({errors:'Unable to fetch events'})
                 }
@@ -37,17 +38,19 @@ export default class VerifyCertificate extends React.Component {
 
     switchBlock = (e) =>{
         e.preventDefault();
-        var data = {email:e.target.value};
-        console.log(data)
+        const verify = !!!this.state.verified;
+        var data = {email:e.target.value, ticktok_verified:verify};
+        // console.log(data, verify)
+        this.setState({verified:verify})
         if(data){
             const isAuthenticated = this.Auth.hasToken();
             if(isAuthenticated){
                 const token = this.Auth.getToken();
-                console.log(data,token)
+                // console.log(data,token)
                 FetchApi('PUT','/api/main/admin/certificate_verify',data,token)
                 .then( res => {
                     if(res && res.data && res.data.success){
-                        this.setState({errors:"Certi Verified"})
+                        this.setState({errors:"Done"})
                     }
                     else this.setState({errors:"Unable To verify."})
                 })
@@ -77,6 +80,7 @@ export default class VerifyCertificate extends React.Component {
                             <td  style={{width:"15vw"}}>Contact</td>
                             <td  style={{width:"15vw"}}>College</td>
                             <td  style={{width:"35vw"}}>Tictok Username</td>
+                            <td  style={{width:"15vw"}}>Verify</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -91,18 +95,20 @@ export default class VerifyCertificate extends React.Component {
                                 <td>{data.ticktok_username ? data.ticktok_username : '--'}</td>
                                 <td style={{textAlign: 'center'}}>
                                     <button onClick={this.switchBlock} value={data.email}>
-                                        Remove
+                                        {this.state.verified ? 
+                                        'Unverify' : 
+                                        'Verify'}
                                     </button>
+                                </td>
+                                <td>
+                                    {errors ?
+                                        <span style={{textAlign: 'center', color: 'red', fontWeight: '600'}}>
+                                            {errors}
+                                        </span>
+                                    : null}
                                 </td>
                             </tr>
                         ) : null}
-                        <tr>
-                            {errors ?
-                                <div style={{textAlign: 'center', color: 'red', fontWeight: '600'}}>
-                                    {errors}
-                                </div>
-                            : null}
-                        </tr>
                     </tbody>
                 </table>
             </div>
