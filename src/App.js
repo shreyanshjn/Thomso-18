@@ -189,6 +189,10 @@ const PronitesIndex = Loadable({
     loader: () => import("./components/beta/pronites/Index"),
     loading: () => <Loader />
 })
+const CertificateVerification = Loadable({
+    loader: () => import("./components/CertificateVerification/Index"),
+    loading: () => <Loader />
+});
 class App extends Component {
     constructor() {
         super();
@@ -246,6 +250,7 @@ class App extends Component {
                             <Route path="/cupid" component={Cupid} />
                             <Route path="/mun" component={MUNIndex} />
                             <Route path="/super" component={SuperAdminIndex} />
+                            <Route path="/verify" component={CertificateVerification} />
                             {/* <Route path="/xpression" component={Xpression} /> */}
                             {/* <Route component={Error404} /> */}
                         </React.Fragment>

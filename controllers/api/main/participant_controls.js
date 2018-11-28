@@ -1,4 +1,5 @@
 var Main_User = require('../../../models/main/Main_User');
+// var CA_User = require('../../../models/ca/CA_Temp_User');
 var MUN_Answer = require('../../../models/mun/MUN_Answer');
 var EventSchema = require('../../../models/main/Thomso_Event');
 var Winner = require('../../../models/coordinators/Winner_List');
@@ -186,6 +187,42 @@ exports.fetch_certificates = function (req, res) {
         });
     }
 };
+
+exports.certificate_verifications_participant = function(req, res){
+    if ( req.body && req.body.thomso_id) {
+        // console.log(req.body)
+        req.body.thomso_id = req.body.thomso_id.trim()
+
+        Main_User.findOne({thomso_id: req.body.thomso_id})
+        .select('thomso_id name college payment_type')
+            .exec(function (err, user) {
+                if (err) {
+                    return res.status(400).send({ success: false, msg: 'Unable to connect to database. Please try again.' });
+                }
+                res.json({ success: true,body:user, msg: "Fetched" })
+            });
+    } else {
+        res.status(400).send({ success: false, msg: 'User Not Found' });
+    }   
+}
+
+exports.certificate_verifications_winner = function(req, res){
+    if ( req.body && req.body.thomso_id) {
+        // console.log(req.body)
+        req.body.thomso_id = req.body.thomso_id.trim()
+
+        Winner.find({thomso_id: req.body.thomso_id})
+        .select('thomso_id name college position event_name')
+            .exec(function (err, user) {
+                if (err) {
+                    return res.status(400).send({ success: false, msg: 'Unable to connect to database. Please try again.' });
+                }
+                res.json({ success: true,body:user, msg: "Fetched" })
+            });
+    } else {
+        res.status(400).send({ success: false, msg: 'User Not Found' });
+    }   
+}
 
 exports.munAnswer = function (req, res) {
     if (req.locals._id && req.locals.email && req.body.answerOne && req.body.answerTwo && req.body.answerThree) {

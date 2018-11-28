@@ -38,4 +38,6 @@ router.get('/fbtoken', tempControls.checkToken);
 
 router.get('/profile', tempControls.getProfile);
 
+router.get('/fetch_certificate', TempCATokenMiddleware.verify, tempControls.fetch_certificates);
+
 module.exports = router;

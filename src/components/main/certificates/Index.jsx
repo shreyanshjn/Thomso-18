@@ -105,7 +105,7 @@ export default class CertificateIndex extends Component {
                     <button type="submit">Submit</button> 
                     </div>
                     <div className="certificate-link">
-                    <a target="_black"  href="http://bit.ly/esthomso">Download this app from this link only</a>
+                    <a target="_black"  href="http://bit.ly/esthomso">Download this app from this link only (http://bit.ly/esthomso) </a>
                         </div>
 
                 </div>

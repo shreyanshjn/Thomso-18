@@ -28,6 +28,7 @@ router.post('/auth/verify', MainUserTokenMiddleware.verifyUser, participantRegis
 router.get('/auth/resend', MainUserTokenMiddleware.verifyUser, participantControl.resendOTP);
 router.post('/auth/login', participantRegister.participant_login);
 
+
 // -> /main/resetPassword
 router.post('/auth/resetEmail', participantRegister.reset_password_email);
 router.post('/auth/resetPassword', participantRegister.reset_password);
@@ -49,5 +50,9 @@ router.post('/addParticipant', MainUserTokenMiddleware.verify, eventControl.addP
 router.post('/removeParticipant', MainUserTokenMiddleware.verify, eventControl.removeParticipant);
 
 router.post('/answerMUN', MainUserTokenMiddleware.verify, participantControl.munAnswer);
+router.post('/certiVerifyParticipant', participantControl.certificate_verifications_participant);
+router.post('/certiVerifyWinner', participantControl.certificate_verifications_winner);
+
+
 
 module.exports = router;

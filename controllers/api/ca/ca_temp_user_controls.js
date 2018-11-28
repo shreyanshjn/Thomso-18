@@ -267,3 +267,24 @@ exports.getProfile = function (req, res) {
             res.json({ success: true, msg: 'Profile Data', body: user });
         })
 };
+
+exports.fetch_certificates = function (req, res) {
+    if(req.locals && req.locals.email){
+        Temp_User.findOne({
+            email: req.locals.email
+        })
+        .select('name thomso_id college verified payment_type')
+        .exec(function (err, user) {
+            if (err) {
+                return res.status(400).send({ success: false, msg: 'Unable to connect to database. Please try again.', error: err })
+            }
+            if (!user) {
+                return res.status(400).send({ success: false, msg: 'User not found' });
+            } else if (!user.verified) {
+                return res.json({ success: true, isVerified: false, msg: 'User Data Found', body: { email: user.email, name: user.name } });
+            } else {
+                return res.json({ success: true, isVerified: true, msg: 'User Data Found', body: user });
+            }
+        });
+    }
+};
