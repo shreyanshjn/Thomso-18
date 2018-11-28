@@ -95,3 +95,28 @@
     padding: 10px;
     height: 10px;
 }
+.certificate-download-container{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.certificate-download-first{
+    width: fit-content;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.certificate-download-first button {
+    padding: 5px;
+    margin: 5px 20px;
+    font-family: Montserrat;
+    background: black;
+    border: 1px solid black;
+    color:white;
+    font-weight: 600;
+    cursor: pointer;
+}

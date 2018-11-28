@@ -8,11 +8,11 @@ exports.verifyUser = (req, res, next) => {
         // Find token in db
         Main_User_Token.findOne({
             token: authHeader
-        }, function(err, user) {
+        }, function (err, user) {
             if (err) {
-                res.status(403).send({success: false, msg: 'Token Error'});
+                res.status(403).send({ success: false, msg: 'Token Error' });
             } else if (!user) {
-                res.status(403).send({success: false, msg: 'User Not Found'});
+                res.status(403).send({ success: false, msg: 'User Not Found' });
             } else if (moment() > user.expirationTime) {
                 res.status(403).send({ success: false, message: 'Token Expired' });
             } else {
@@ -35,11 +35,11 @@ exports.verify = (req, res, next) => {
         Main_User_Token.findOne({
             token: authHeader,
             verified: true
-        }, function(err, user) {
+        }, function (err, user) {
             if (err) {
-                res.status(403).send({success: false, msg: 'Token Error'});
+                res.status(403).send({ success: false, msg: 'Token Error' });
             } else if (!user) {
-                res.status(403).send({success: false, msg: 'Invalid Token'});
+                res.status(403).send({ success: false, msg: 'Invalid Token' });
             } else if (moment() > user.expirationTime) {
                 res.status(403).send({ success: false, message: 'Token Expired' });
             } else {
