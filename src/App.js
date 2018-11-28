@@ -190,7 +190,7 @@ const PronitesIndex = Loadable({
     loading: () => <Loader />
 })
 const CertificateIndex = Loadable({
-    loader: () => import("./components/certificates/Index"),
+    loader: () => import("./components/main/certificates/Index"),
     loading: () => <Loader />
 })
 class App extends Component {
