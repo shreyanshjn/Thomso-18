@@ -42,7 +42,8 @@ router.post('/updateImage', MainUserTokenMiddleware.verify, participantControl.u
 router.post('/getImage', MainUserTokenMiddleware.verify, participantControl.get_image);
 
 router.post('/ticktok_username', MainUserTokenMiddleware.verify, participantControl.ticktok_username);
-router.get('/fetch_certificate', MainUserTokenMiddleware.verify, participantControl.fetch_certificates);
+router.get('/fetch_certificate_participant', MainUserTokenMiddleware.verify, participantControl.fetch_certificates_participant);
+router.get('/fetch_certificate_winner', MainUserTokenMiddleware.verify, participantControl.fetch_certificates_winner);
 
 router.delete('/removeEvent', MainUserTokenMiddleware.verify, eventControl.removeEvent);
 
