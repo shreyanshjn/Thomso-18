@@ -189,7 +189,8 @@ export default class CertificateIndex extends Component {
                 doc.text(200, 117, `${event_name}`);
             }
         }
-
+        doc.setFontSize(12)
+        doc.textWithLink('Verify your certificate: https://www.thomso.in/verify', 200, 207, { url: 'https://www.thomso.in/verify' });
         doc.save('certificate_of_merit.pdf');
 
 

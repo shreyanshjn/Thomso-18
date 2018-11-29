@@ -79,20 +79,20 @@ export default class VerifyCertificate extends React.Component {
                     />
                     <button type="submit">Fetch Certificate Details</button>
                 </form>
-
+                {console.log(user , userWinner)}
                 {(user && user.name && user.payment_type > 0) ?
-                    <div className="certify-success">This is to certify that Mr./Ms. {user.name} of {user.college} has participated in Thomso'18 "Siezed By Stardust", held at IIT Roorkee from 26-Oct to 28-Oct.<br /> <br /> <br /></div>
+                    <div className="certify-success">This is to certify that Mr./Ms.<b> {user.name} </b> of <b>{user.college} </b>has participated in Thomso'18 "Siezed By Stardust", held at IIT Roorkee from 26-Oct to 28-Oct.</div>
                     :
                     <span>{errors}</span>
                 }
                 {(user && user.name && user.payment_type === 4) ? 
-                    <div>This is to certify that Mr./Ms. {user.name} of {user.college} was Campus Ambassador in Thomso'18 "Siezed By Stardust", held at IIT Roorkee from 26-Oct to 28-Oct.<br/> <br/> <br/></div>
+                    <div className="certify-success2">This is to certify that Mr./Ms.<b> {user.name} </b>of <b>{user.college} </b>was Campus Ambassador in Thomso'18 "Siezed By Stardust", held at IIT Roorkee from 26-Oct to 28-Oct.</div>
                 :
                     null 
                 }
                 {(user && user.name && user.payment_type>0 && userWinner && userWinner.length>0)? 
                     userWinner.map( (data,i )=>
-                        <div key={i}>This is to certify that Mr./Ms. {user.name} of {user.college} has secured {data.position} position in the event {data.event_name} during Thomso'18 "Siezed By Stardust", held at IIT Roorkee from 26-Oct to 28-Oct.<br/> <br/> <br/></div>)
+                        <div className="certify-success3" key={i}>This is to certify that Mr./Ms. <b>{user.name}</b> of <b>{user.college}</b> has secured<b> {data.position}</b> position in the event<b> {data.event_name}</b> during Thomso'18 "Siezed By Stardust", held at IIT Roorkee from 26-Oct to 28-Oct.</div>)
                 :
                      null
                 }

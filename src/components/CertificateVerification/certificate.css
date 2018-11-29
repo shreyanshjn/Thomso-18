@@ -27,5 +27,21 @@
     color: green;
     font-family: Montserrat;
     font-size: 16px;
-    text-align: justify;
+    text-align: center;
+    padding:20px 50px;
+}
+
+.certify-success2{
+    color: brown;
+    font-family: Montserrat;
+    font-size: 16px;
+    text-align: center;
+    padding:20px 50px;
+}
+.certify-success3{
+    color: blue;
+    font-family: Montserrat;
+    font-size: 16px;
+    text-align: center;
+    padding:20px 50px;
 }
