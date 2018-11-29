@@ -224,24 +224,20 @@ export default class CertificateIndex extends Component {
             const token = this.Auth.getToken()
             FetchApi('GET', '/api/main/fetch_certificate_participant', null, token)
                 .then(r => {
-                    console.log(r.data)
                     if (r && r.data && r.data.body) {
                         this.setState({ userdata: r.data.body })
                     }
                 })
                 .catch(e => {
-                    console.log(e)
                     this.setState({ errors: "Something went wrong" })
                 });
             FetchApi('GET', '/api/main/fetch_certificate_winner', null, token)
             .then(r => {
-                console.log(r.data)
                 if (r && r.data && r.data.body) {
                     this.setState({ userdataWinner: r.data.body })
                 }
             })
             .catch(e => {
-                console.log(e)
                 this.setState({ errors: "Something went wrong" })
             });
         }

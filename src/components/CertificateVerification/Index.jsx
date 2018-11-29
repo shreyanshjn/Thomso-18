@@ -85,16 +85,14 @@ export default class VerifyCertificate extends React.Component {
                 :
                     <span>{errors}</span> 
                 }
-
                 {(user && user.name && user.payment_type === 4) ? 
                     <div>This is to certify that Mr./Ms. {user.name} of {user.college} was Campus Ambassador in Thomso'18 "Siezed By Stardust", held at IIT Roorkee from 26-Oct to 28-Oct.<br/> <br/> <br/></div>
                 :
                     null 
                 }
-
                 {(user && user.name && user.payment_type>0 && userWinner && userWinner.length>0)? 
                     userWinner.map( (data,i )=>
-                        <div key={i}>This is to certify that Mr./Ms. {user.name} of {user.college} has secured {data.position} position in the event {data.event_name} during Thomso'18 "Siezed By Stardust", held at IIT Roorkee from 26-Oct to 28-Oct.</div>)
+                        <div key={i}>This is to certify that Mr./Ms. {user.name} of {user.college} has secured {data.position} position in the event {data.event_name} during Thomso'18 "Siezed By Stardust", held at IIT Roorkee from 26-Oct to 28-Oct.<br/> <br/> <br/></div>)
                 :
                      null
                 }

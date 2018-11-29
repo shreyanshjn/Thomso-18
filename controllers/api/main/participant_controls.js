@@ -86,7 +86,6 @@ exports.update_image = function (req, res) {
         const url = `/uploads/img/ProfileImage/${updateData.image}`;
         require("fs").writeFile(`./uploads/img/ProfileImage/${updateData.image}`, binaryData, function (err) {
             if (err) {
-                console.log(err);
                 return res.status(400).send({ success: false, msg: "something went wrong" });
             } else {
                 Main_User.findOneAndUpdate({
@@ -130,7 +129,6 @@ exports.resendOTP = function (req, res) {
 
 exports.ticktok_username = function (req, res) {
     if (req.locals.email && req.body.username) {
-        console.log(req.locals, req.body)
         req.body.username = req.body.username.trim()
 
         let data = {
@@ -189,9 +187,7 @@ exports.fetch_certificates_winner = function (req, res) {
 
 exports.certificate_verifications_participant = function(req, res){
     if ( req.body && req.body.thomso_id) {
-        // console.log(req.body)
         req.body.thomso_id = req.body.thomso_id.trim()
-
         Main_User.findOne({thomso_id: req.body.thomso_id})
         .select('thomso_id name college payment_type')
             .exec(function (err, user) {
@@ -207,9 +203,7 @@ exports.certificate_verifications_participant = function(req, res){
 
 exports.certificate_verifications_winner = function(req, res){
     if ( req.body && req.body.thomso_id) {
-        // console.log(req.body)
         req.body.thomso_id = req.body.thomso_id.trim()
-
         Winner.find({thomso_id: req.body.thomso_id})
         .select('thomso_id name college position event_name')
             .exec(function (err, user) {

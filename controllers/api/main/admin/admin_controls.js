@@ -123,7 +123,6 @@ exports.userInfo = function(req,res){
 }
 
 exports.eventUser = function(req,res){
-    console.log(req.body, req.body.event_id)
     if(req && req.body && req.body.event_id){
         Thomso_Event.findOne({event_id:req.body.event_id})
         .populate('users', 'name')
