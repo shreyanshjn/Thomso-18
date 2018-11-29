@@ -116,6 +116,8 @@ export default class CertificateIndex extends Component {
             doc.setFontSize(20)
             doc.text(60, 106, `${this.state.userdata.college}`);
         }
+        doc.setFontSize(12)
+        doc.textWithLink('Verify your certificate: https://www.thomso.in/verify', 200, 207, { url: 'https://www.thomso.in/verify' });
         doc.save('certificate_of_participation.pdf');
     }
 
@@ -234,16 +236,16 @@ export default class CertificateIndex extends Component {
                     this.setState({ errors: "Something went wrong" })
                 });
             FetchApi('GET', '/api/main/fetch_certificate_winner', null, token)
-            .then(r => {
-                console.log(r.data)
-                if (r && r.data && r.data.body) {
-                    this.setState({ userdataWinner: r.data.body })
-                }
-            })
-            .catch(e => {
-                console.log(e)
-                this.setState({ errors: "Something went wrong" })
-            });
+                .then(r => {
+                    console.log(r.data)
+                    if (r && r.data && r.data.body) {
+                        this.setState({ userdataWinner: r.data.body })
+                    }
+                })
+                .catch(e => {
+                    console.log(e)
+                    this.setState({ errors: "Something went wrong" })
+                });
         }
     }
     handleChange = (e) => {
@@ -252,118 +254,119 @@ export default class CertificateIndex extends Component {
         this.setState({ [name]: value, errors: "", msg: "" });
     }
     render() {
-        let {userdata, userdataWinner, errors} = this.state;
+        let { userdata, userdataWinner, errors } = this.state;
         return (
             <div className="certificate-contact-parent">
                 <div className="certificate-tiktok-parent">
                     <div className="certificate-tiktok">
                     </div>
                 </div>
-                {console.log(userdata, "duhgaiudgha")}
 
-                { (userdata && userdata.ticktok_username && userdata.ticktok_verified && userdata.payment_type>0) ?
-                     <div className="certificate-download-container">
+                {(userdata && userdata.ticktok_username && userdata.ticktok_verified && userdata.payment_type > 0) ?
+                    <div className="certificate-download-container">
                         <div className="certificate-download-first">
                             Certificate of Participation
                             <button onClick={this.certi_participation}>Download</button>
                         </div>
                     </div>
-                :
-                (userdata && userdata.ticktok_username && !userdata.ticktok_verified && userdata.payment_type>0) ?
-                <div>
-                    <div className="certificate-submit-msg">
-                        Your username is under verification.Your certificate will available after your username is verified(24 hrs).
+                    :
+                    (userdata && userdata.ticktok_username && !userdata.ticktok_verified && userdata.payment_type > 0) ?
+                        <div>
+                            <div className="certificate-submit-msg">
+                                Your username is under verification.Your certificate will available after your username is verified(24 hrs).
                     </div>
-                    <form onSubmit={this.usernameSubmit}>
-                        <div className="form-first-child">
-                            <div className="certificate-errors-msg">
-                                <div className="certificate-errors">
-                                    {this.state.errors ? <span>{this.state.errors}</span> : null}
+                            <form onSubmit={this.usernameSubmit}>
+                                <div className="form-first-child">
+                                    <div className="certificate-errors-msg">
+                                        <div className="certificate-errors">
+                                            {this.state.errors ? <span>{this.state.errors}</span> : null}
+                                        </div>
+                                    </div>
+                                    <div className="certificate-errors-msg">
+                                        <div className="certificate-msg">
+                                            {this.state.msg ? <span>{this.state.msg}</span> : null}
+                                        </div>
+                                    </div>
+
+                                    <div className="form-email">
+                                        <input
+                                            name="username"
+                                            type="text"
+                                            id="inputusername"
+                                            value={this.state.username}
+                                            onChange={this.handleChange}
+                                            placeholder="Re-Enter your TickTok Username"
+                                            autoCapitalize="off"
+                                            autoCorrect="off"
+                                            autoComplete="off"
+                                            spellCheck="off"
+                                            required
+                                        />
+                                    </div>
+                                    <div className="certificate-button">
+                                        <button type="submit">Submit</button>
+                                    </div>
+                                    <div className="certificate-link">
+                                        <a target="_black" href="http://bit.ly/esthomso">Download or Reinstall this app from this link only  ( http://bit.ly/esthomso )</a>
+                                    </div>
                                 </div>
+                            </form>
+                        </div>
+                        :
+                        (userdata && userdata.payment_type === 0) ?
+                            <div className="certificate-notelli">
+                                <span >You Are not elegible for any certificates</span>
                             </div>
-                            <div className="certificate-errors-msg">
-                                <div className="certificate-msg">
-                                    {this.state.msg ? <span>{this.state.msg}</span> : null}
+                            :
+                            <form onSubmit={this.usernameSubmit}>
+                                <div className="form-first-child">
+                                    <div className="certificate-errors-msg">
+                                        <div className="certificate-errors">
+                                            {this.state.errors ? <span>{this.state.errors}</span> : null}
+                                        </div>
+                                    </div>
+                                    <div className="certificate-errors-msg">
+                                        <div className="certificate-msg">
+                                            {this.state.msg ? <span>{this.state.msg}</span> : null}
+                                        </div>
+                                    </div>
+
+                                    <div className="form-email">
+                                        <input
+                                            name="username"
+                                            type="text"
+                                            id="inputusername"
+                                            value={this.state.username}
+                                            onChange={this.handleChange}
+                                            placeholder="Enter your TickTok Username"
+                                            autoCapitalize="off"
+                                            autoCorrect="off"
+                                            autoComplete="off"
+                                            spellCheck="off"
+                                            required
+                                        />
+                                    </div>
+                                    <div className="certificate-button">
+                                        <button type="submit">Submit</button>
+                                    </div>
+                                    <div className="certificate-link">
+                                        <a target="_black" href="http://bit.ly/esthomso">Download or Reinstall this app from this link only ( http://bit.ly/esthomso )</a>
+                                    </div>
+
                                 </div>
-                            </div>
-
-                            <div className="form-email">
-                                <input
-                                    name="username"
-                                    type="text"
-                                    id="inputusername"
-                                    value={this.state.username}
-                                    onChange={this.handleChange}
-                                    placeholder="Re-Enter your TickTok Username"
-                                    autoCapitalize="off"
-                                    autoCorrect="off"
-                                    autoComplete="off"
-                                    spellCheck="off"
-                                    required
-                                />
-                            </div>
-                            <div className="certificate-button">
-                                <button type="submit">Submit</button>
-                            </div>
-                            <div className="certificate-link">
-                                <a target="_black" href="http://bit.ly/esthomso">Download or Reinstall this app from this link only  ( http://bit.ly/esthomso )</a>
-                            </div>
-                        </div>
-                    </form> 
-                </div>
-                :
-                (userdata && userdata.payment_type===0) ?  
-                    <span>You Are not elegible for any certificates</span>
-                :
-                <form onSubmit={this.usernameSubmit}>
-                    <div className="form-first-child">
-                        <div className="certificate-errors-msg">
-                            <div className="certificate-errors">
-                                {this.state.errors ? <span>{this.state.errors}</span> : null}
-                            </div>
-                        </div>
-                        <div className="certificate-errors-msg">
-                            <div className="certificate-msg">
-                                {this.state.msg ? <span>{this.state.msg}</span> : null}
-                            </div>
-                        </div>
-
-                        <div className="form-email">
-                            <input
-                                name="username"
-                                type="text"
-                                id="inputusername"
-                                value={this.state.username}
-                                onChange={this.handleChange}
-                                placeholder="Enter your TickTok Username"
-                                autoCapitalize="off"
-                                autoCorrect="off"
-                                autoComplete="off"
-                                spellCheck="off"
-                                required
-                            />
-                        </div>
-                        <div className="certificate-button">
-                            <button type="submit">Submit</button>
-                        </div>
-                        <div className="certificate-link">
-                            <a target="_black" href="http://bit.ly/esthomso">Download or Reinstall this app from this link only ( http://bit.ly/esthomso )</a>
-                        </div>
-
-                    </div>
-                </form>
+                            </form>
                 }
-                {userdata && userdata.ticktok_verified && userdata.payment_type>0 && userdataWinner && userdataWinner.length>0 ?
-                    userdataWinner.map((data, i) => 
-                    <div className="certificate-download-container" key={i}>
-                        <div className="certificate-download-first">
-                            Certificate of {data.event_name}<button onClick={()=>this.certi_merit(data.event_name, data.position)}>Download</button>
+                {userdata && userdata.ticktok_verified && userdata.payment_type > 0 && userdataWinner && userdataWinner.length > 0 ?
+                    userdataWinner.map((data, i) =>
+                        <div className="certificate-download-container" key={i}>
+                            <div className="certificate-download-first">
+                                Certificate of {data.event_name}<button onClick={() => this.certi_merit(data.event_name, data.position)}>Download</button>
+                            </div>
                         </div>
-                    </div>
                     )
-                : null}
+                    : null}
             </div>
-            
+
         );
     }
 }
