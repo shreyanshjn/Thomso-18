@@ -195,7 +195,8 @@ export default class CertificateIndex extends Component {
                 doc.text(200, 117, `${event_name}`);
             }
         }
-
+        doc.setFontSize(12)
+        doc.textWithLink('Verify your certificate: https://www.thomso.in/verify', 200, 207, { url: 'https://www.thomso.in/verify' });
         doc.save('certificate_of_merit.pdf');
 
 
@@ -232,26 +233,22 @@ export default class CertificateIndex extends Component {
             const token = this.Auth.getToken()
             FetchApi('GET', '/api/main/fetch_certificate_participant', null, token)
                 .then(r => {
-                    console.log(r.data)
                     if (r && r.data && r.data.body) {
                         this.setState({ userdata: r.data.body })
                     }
                 })
                 .catch(e => {
-                    console.log(e)
                     this.setState({ errors: "Something went wrong" })
                 });
             FetchApi('GET', '/api/main/fetch_certificate_winner', null, token)
-                .then(r => {
-                    console.log(r.data)
-                    if (r && r.data && r.data.body) {
-                        this.setState({ userdataWinner: r.data.body })
-                    }
-                })
-                .catch(e => {
-                    console.log(e)
-                    this.setState({ errors: "Something went wrong" })
-                });
+            .then(r => {
+                if (r && r.data && r.data.body) {
+                    this.setState({ userdataWinner: r.data.body })
+                }
+            })
+            .catch(e => {
+                this.setState({ errors: "Something went wrong" })
+            });
         }
     }
     handleChange = (e) => {

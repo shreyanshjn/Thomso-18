@@ -37,16 +37,11 @@ export default class VerifyCertificate extends React.Component {
     }
 
     switchBlock = (email, verify) =>{
-        // e.preventDefault();
-        // const verify = !!!this.state.verified;
         var data = {email:email, ticktok_verified:verify};
-        // console.log(data, verify)
-        // this.setState({verified:verify})
         if(data){
             const isAuthenticated = this.Auth.hasToken();
             if(isAuthenticated){
                 const token = this.Auth.getToken();
-                console.log(data,token)
                 FetchApi('PUT','/api/main/admin/certificate_verify',data,token)
                 .then( res => {
                     if(res && res.data && res.data.success){
@@ -99,13 +94,6 @@ export default class VerifyCertificate extends React.Component {
                                         'Unverify' : 
                                         'Verify'}
                                     </button>
-                                </td>
-                                <td>
-                                    {errors ?
-                                        <span style={{textAlign: 'center', color: 'red', fontWeight: '600'}}>
-                                            {errors}
-                                        </span>
-                                    : null}
                                 </td>
                             </tr>
                         ) : null}
