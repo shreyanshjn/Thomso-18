@@ -1,6 +1,6 @@
 .certificate-contact-parent{
     width: 76%;
-    height: 100%;
+    height: 80%;
     min-height: 100vh;
     margin-left: auto;
     font-family: Montserrat;
@@ -10,14 +10,14 @@
     color: black;
 }   
 .certificate-tiktok-parent{
-    padding-top: 70px;  
+    padding-top: 40px;  
 }
 .certificate-tiktok{
     background-image: url("./tiktok.png");
     background-position: center;
     background-size: cover;
-    height: 200px;
-    width: 200px;
+    height: 120px;
+    width: 120px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -27,15 +27,16 @@
     margin-right: auto;
     padding: 20px;
     margin-top: 20px;
-    font-size: 20px;
+    font-size: 16px;
     text-align: center;
     color: green;
+
 }
 .form-first-child{
     width: 35%;
     margin-left: auto;
     margin-right: auto;
-    padding: 20px 10px;
+    padding: 0px 10px;
 }
 #inputusername{
     font-size: 14px;
@@ -129,6 +130,7 @@
     font-family: Montserrat;
     font-size: 16px;
     color: black;
-    padding: 10px 20px;
+    text-align: center;
+    /* padding: 10px 20px; */
     line-height: 2.2em;
 }
