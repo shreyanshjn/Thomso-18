@@ -241,14 +241,14 @@ export default class CertificateIndex extends Component {
                     this.setState({ errors: "Something went wrong" })
                 });
             FetchApi('GET', '/api/main/fetch_certificate_winner', null, token)
-            .then(r => {
-                if (r && r.data && r.data.body) {
-                    this.setState({ userdataWinner: r.data.body })
-                }
-            })
-            .catch(e => {
-                this.setState({ errors: "Something went wrong" })
-            });
+                .then(r => {
+                    if (r && r.data && r.data.body) {
+                        this.setState({ userdataWinner: r.data.body })
+                    }
+                })
+                .catch(e => {
+                    this.setState({ errors: "Something went wrong" })
+                });
         }
     }
     handleChange = (e) => {
@@ -310,7 +310,12 @@ export default class CertificateIndex extends Component {
                                         <button type="submit">Submit</button>
                                     </div>
                                     <div className="certificate-link">
-                                        <a target="_black" href="http://bit.ly/esthomso">Download or Reinstall this app from this link only  ( http://bit.ly/esthomso )</a>
+                                        <p className="certificate-link-p">
+                                            Follow this procedure to enter the username.<br />
+                                            1.<a target="_black" href="http://bit.ly/esthomso">Download or Reinstall this app from this link only ( http://bit.ly/esthomso )</a><br />
+                                            2. Create fresh new user id. If you have already an account, then sign up with <br />another email/contact which you have not used before on tiktok.<br />
+                                            3. The user-id generated from signing up, enter where its asked.<br />
+                                        </p>
                                     </div>
                                 </div>
                             </form>
@@ -318,7 +323,7 @@ export default class CertificateIndex extends Component {
                         :
                         (userdata && userdata.payment_type === 0) ?
                             <div className="certificate-notelli">
-                                <span >You Are not elegible for any certificates</span>
+                                <span >You are not elegible for any certificates</span>
                             </div>
                             :
                             <form onSubmit={this.usernameSubmit}>
@@ -352,10 +357,15 @@ export default class CertificateIndex extends Component {
                                     <div className="certificate-button">
                                         <button type="submit">Submit</button>
                                     </div>
-                                    <div className="certificate-link">
-                                        <a target="_black" href="http://bit.ly/esthomso">Download or Reinstall this app from this link only ( http://bit.ly/esthomso )</a>
-                                    </div>
 
+                                </div>
+                                <div className="certificate-link">
+                                    <p className="certificate-link-p">
+                                        Follow this procedure to enter the username.<br />
+                                        1.<a target="_black" href="http://bit.ly/esthomso">Download or Reinstall this app from this link only ( http://bit.ly/esthomso )</a><br />
+                                        2. Create fresh new user id. If you have already an account, then sign up with <br />another email/contact which you have not used before on tiktok.<br />
+                                        3. The user-id generated from signing up, enter where its asked.<br />
+                                    </p>
                                 </div>
                             </form>
                 }
