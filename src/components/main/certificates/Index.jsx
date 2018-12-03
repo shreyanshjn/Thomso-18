@@ -276,7 +276,7 @@ export default class CertificateIndex extends Component {
                     (userdata && userdata.ticktok_username && !userdata.ticktok_verified && userdata.payment_type > 0) ?
                         <div>
                             <div className="certificate-submit-msg">
-                                Your username is under verification.Your certificate will available after your username is verified(24 hrs).
+                                Your username is under verification.Your certificate will available after your username is verified(24 hrs).As soon as its verified you will receive a message.
                     </div>
                             <form onSubmit={this.usernameSubmit}>
                                 <div className="form-first-child">
@@ -309,14 +309,14 @@ export default class CertificateIndex extends Component {
                                     <div className="certificate-button">
                                         <button type="submit">Submit</button>
                                     </div>
-                                    <div className="certificate-link">
-                                        <p className="certificate-link-p">
-                                            Follow this procedure to enter the username.<br />
-                                            1.<a target="_black" href="http://bit.ly/esthomso">Download or Reinstall this app from this link only ( http://bit.ly/esthomso )</a><br />
-                                            2. Create fresh new user id. If you have already an account, then sign up with <br />another email/contact which you have not used before on tiktok.<br />
-                                            3. The user-id generated from signing up, enter where its asked.<br />
-                                        </p>
-                                    </div>
+                                </div>
+                                <div className="certificate-link">
+                                    <p className="certificate-link-p">
+                                        Follow this procedure to enter the username.<br />
+                                        1.<a target="_black" href="http://bit.ly/esthomso">Download or Reinstall this app from this link only ( http://bit.ly/esthomso )</a><br />
+                                        2. Create fresh new user id. If you have already an account, then sign up with <br />another email/contact which you have not used before on tiktok.<br />
+                                        3. The user-id generated from signing up, enter where its asked.<br />
+                                    </p>
                                 </div>
                             </form>
                         </div>
