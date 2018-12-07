@@ -83,7 +83,7 @@ export default class PronitesIndex extends React.Component {
             if (activeIndex < 0) {
                 activeIndex = (limit - 1)
             }
-            const $activeEls = $('.pronites-spinner__face.pronites-js-active')
+            // const $activeEls = $('.pronites-spinner__face.pronites-js-active')
             const $nextEls = $(`.pronites-spinner__face[data-index=${activeIndex}]`)
             $nextEls.addClass('pronites-js-next')
 
