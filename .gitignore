@@ -31,6 +31,9 @@ package-json.json
 /uploads/img/ProfileImage/*.png
 /uploads/img/ProfileImage/*.jpg
 /uploads/img/ProfileImage/*.jpeg
+/uploads/img/ProfileImage/*.undefined
+/uploads/img/ProfileImage/**
+/uploads/img/MediaImage/*.undefined
 /uploads/img/MediaImage/*.png
 /uploads/img/MediaImage/*.jpg
 /uploads/img/MediaImage/*.jpeg

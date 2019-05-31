@@ -95,7 +95,7 @@ var UserSchema = new mongoose.Schema({
     },
     ticktok_verified: {
         type: Boolean,
-        default:false
+        default:true
     },
 });
 
