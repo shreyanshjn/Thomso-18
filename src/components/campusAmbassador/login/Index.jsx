@@ -36,6 +36,7 @@ export default class LoginIndex extends React.Component {
         this.setState({showVerify: true})
     }
 
+    
     login = (e) => {
         e.preventDefault();
         if (!this.state.disabled) {
@@ -61,7 +62,14 @@ export default class LoginIndex extends React.Component {
                                 } else {
                                     this.props.updateRoutes(true)
                                     this.props.setUserData(r.data.body)
-                                    this.props.history.push('/CampusAmbassador')
+                                    if(this.props.facebook === true)
+                                    {
+                                        this.props.history.push('/campus/profile')
+                                    }
+                                    else 
+                                    {
+                                        this.props.history.push('/CampusAmbassador')
+                                    }
                                 }
                             } else {
                                 this.setState({
@@ -249,4 +257,8 @@ export default class LoginIndex extends React.Component {
             </div>
         );
     }
+}
+
+LoginIndex.defaultProps ={
+    facebook: false
 }

@@ -73,7 +73,6 @@ export default class RegisterIndex extends React.Component {
                         }
                     })
                     .catch(e => {
-                        console.log(e)
                         this.popup.show('Something went wrong.')
                     });
             } else if (check.errors && check.errors.email) {

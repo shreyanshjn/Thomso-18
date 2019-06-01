@@ -83,6 +83,12 @@ const CampusIndex = Loadable({
     loader: () => import("./components/campusAmbassador/Index"),
     loading: () => <Loader />,
 });
+
+const FacebookIndex = Loadable({
+    loader: () => import("./components/facebook/Index"),
+    loading: () => <Loader />,
+});
+
 const ZonalsIndex = Loadable({
     loader: () => import("./components/zonal/Index"),
     loading: () => <Loader />
@@ -226,6 +232,7 @@ class App extends Component {
                             <Route exact path="/faq" component={FAQIndex} />
                             <Route path="/ca/" component={CAIndex} />
                             <Route path="/campusAmbassador/" component={CampusIndex} />
+                            <Route path="/campus" component={FacebookIndex} />
                             <Route path="/zonals" component={ZonalsIndex} />
                             <Route path="/blog" component={blog} />
                             <Route path="/whythomso" component={WhyThomso} />

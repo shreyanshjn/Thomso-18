@@ -41,12 +41,24 @@ export default class HomeIndex extends React.Component {
                         <Section>
                             <div className="ca-opening-button-parent">
                                 <div>
-                                        <Link to="/CampusAmbassador/login">
-                                            <button className="ca-opening-button">Login</button>
-                                        </Link>
+                                    {this.props.facebook===true ? 
+                                    <Link to="/campus/login">
+                                        <button className="ca-opening-button">Login</button>
+                                    </Link>
+                                        :
+                                    <Link to="/CampusAmbassador/login">
+                                        <button className="ca-opening-button">Login</button>
+                                    </Link>
+                                        }
+                                    {this.props.facebook===true ? 
+                                    <Link to="/campus/register">
+                                        <button className="ca-opening-button">Register</button>
+                                    </Link>
+                                        :
                                         <Link to="/CampusAmbassador/register" style={{marginLeft: '3vw'}}>
                                             <button className="ca-opening-button">Register</button>
                                         </Link>
+                                        }
                                 </div>
                                 <div>
                                     <a href="#Wisca" address="true">
@@ -77,3 +89,7 @@ export default class HomeIndex extends React.Component {
         );
     }
 }
+
+HomeIndex.defaultProps = {
+    facebook: false
+} 

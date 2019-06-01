@@ -15,6 +15,10 @@ export default class LogoutIndex extends React.Component{
     }
 
     render(){
-        return (<Redirect to="/CampusAmbassador/" />)
+        return (this.props.facebook===true ? <Redirect to="/campus" /> : <Redirect to="/campusambassador" />)
     }
+}
+
+LogoutIndex.defaultProps = {
+    facebook: false
 }
