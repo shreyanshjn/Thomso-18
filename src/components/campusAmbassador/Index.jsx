@@ -130,6 +130,7 @@ export default class CampusIndex extends React.Component {
         });
     };
     render() {
+        console.log(this.state.userData,'user data')
         return (
             <React.Fragment >
                 {this.state.isAuthenticated ?
@@ -140,7 +141,8 @@ export default class CampusIndex extends React.Component {
                             <React.Fragment>
                                 <Route path="/campusAmbassador" render={props => (<Sidebar {...props} userData={this.state.userData} />)} />
                                 <Route exact path="/campusAmbassador/leaderboard" render={props => (<LeaderboardIndex {...props} userData={this.state.userData} />)} />
-                                <Route exact path="/campusAmbassador/payment" component={PaymentIndex} />)} />
+                                <Route exact path="/campusAmbassador/payment" component={PaymentIndex} />)}
+                                />
                                 <Route exact path="/campusAmbassador/contact" render={props => (<ContactIndex {...props} userData={this.state.userData} />)} />
                                 <Route exact path="/campusAmbassador/ideas" component={IdeasIndex} />
                                 <Route exact path="/campusAmbassador/guidelines" component={GuideIndex} />

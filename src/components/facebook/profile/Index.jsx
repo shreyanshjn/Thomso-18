@@ -7,11 +7,13 @@ export default class ProfileIndex extends React.Component {
     constructor() {
         super()
         this.state = {
-            profileData: null
+            profileData: null,
+            userPosts: '',
+            max: '',
+            total: ''
         }
         this.Auth = new AuthService()
     }
-
     componentDidMount() {
         const authtoken = this.Auth.getToken()
         FetchApi('GET', '/api/ca/temp/profile', null, authtoken)
@@ -24,6 +26,7 @@ export default class ProfileIndex extends React.Component {
     }
 
     render() {
+        let { total, max } = this.props
         return (
             <React.Fragment>
                 {
@@ -52,57 +55,24 @@ export default class ProfileIndex extends React.Component {
                                     <div className="profiles-scores-chart-1">
                                         <div>
                                             <b>
-                                                {this.state.profileData.fb_likes}
+                                                {total}
                                             </b>
                                             <p>
-                                                LIKES
-                                            </p>
-                                        </div>
-                                        <div>
-                                            <b>
-                                                {this.state.profileData.fb_shares}
-                                            </b>
-                                            <p>
-                                                SHARES
-                                            </p>
-                                        </div>
-                                        <div>
-                                            <b>
-                                                {this.state.profileData.bonus}
-                                            </b>
-                                            <p>
-                                                BONUS
-                                            </p>
-                                        </div>
-                                        <div>
-                                            <b>
-                                                {this.state.profileData.ideas ? this.state.profileData.ideas.length : 0} 
-                                            </b>
-                                            <p>
-                                                IDEAS
-                                            </p>
-                                        </div>
-                                        <div>
-                                            <b>
-                                                {this.state.profileData.referrals}
-                                            </b>
-                                            <p>
-                                                REFERRALS
+                                                Total LIKES
                                             </p>
                                         </div>
                                     </div>
                                     <div className="profiles-scores-chart-2">
                                         <div>
                                             <b>
-                                                {this.state.profileData.score}
+                                                {max}
                                             </b>
                                             <p>
-                                                SCORES
+                                                Maximum likes on any post
                                             </p>
                                         </div>
                                     </div>
                                 </div>
-                                <p className="scores-updation-notice">*Scores will be updated within 24 hours</p>
                             </div>
                         </div>
                         : null

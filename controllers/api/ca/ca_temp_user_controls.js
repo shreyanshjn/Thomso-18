@@ -47,10 +47,10 @@ exports.update_image = function (req, res) {
                 Temp_User.findOneAndUpdate({
                     email:data.email
                 }, updateData)
-                .exec(function(err){
-                    if (err) return status(401).send({ success: false, msg: "Unable To Upload Image. Please Try Again." })
-                    res.json({ success: true, msg: "Image Uploaded Successfully." })
-                })
+                    .exec(function(err){
+                        if (err) return status(401).send({ success: false, msg: "Unable To Upload Image. Please Try Again." })
+                        res.json({ success: true, msg: "Image Uploaded Successfully." })
+                    })
             }
         })
     }else res.status(400).send({ success: false, msg: 'Invalid Data' });
@@ -75,6 +75,44 @@ exports.getPosts = function (req, res) {
         res.status(400).send({ success: false, msg: 'Token Not Found' });
     }
 };
+
+exports.getUserPosts = function (req, res) 
+{
+    Temp_User.find({email: req.locals.email})
+        .select('fb_id fb_access_token')
+        .exec( function(err, user)
+            {
+                if(err) return res.status(400).send({ success: false, msg: 'Facebook returned error.', error: err })
+                if(user)
+                {
+                    if(user.length>0)
+                    {
+                        user.map(function(eachUser) {
+                            console.log(eachUser)
+                            var options = {
+                                method: 'GET',
+                                uri: 'https://graph.facebook.com/v3.3/me?fields=posts.since(2018-07-30){created_time,id,full_picture,message,link,likes.summary(true)}',
+                                qs: {
+                                    access_token: eachUser.fb_access_token
+                                }
+                            }
+                            request(options, function (err, response, body) {
+                                if (err) {
+                                    console.log(err)
+                                    return res.status(400).send({ success: false, msg: 'Facebook returned error.', error: err });
+                                }
+                                if (response.statusCode) {
+                                    console.log('returned user post')
+                                    return res.status(response.statusCode).send(body);
+                                }
+                                return res.status(400).send({ success: false, msg: 'Facebook didnt return status.' });
+                            })
+                        })
+
+                    }
+                }
+            })
+}
 
 /* Create Idea */
 exports.postIdea = function (req, res) {
@@ -245,6 +283,7 @@ exports.checkToken = function (req, res) {
             if (err) return res.json({ success: false, msg: 'Unable to find user.' });
             if (!user) return res.json({ success: false, msg: 'Unable to find user.' });
             var fb_auth_token = user.fb_access_token;
+            console.log(fb_auth_token,'check token');
             request(`https://graph.facebook.com/v3.1/me?fields=link&access_token=${fb_auth_token}`, function (err, response, body) {
                 if (err) return res.json({ success: false, msg: 'Facebook returned error.', error: err });
                 if (response.statusCode === 200) {
@@ -273,18 +312,18 @@ exports.fetch_certificates = function (req, res) {
         Temp_User.findOne({
             email: req.locals.email
         })
-        .select('name thomso_id college verified payment_type')
-        .exec(function (err, user) {
-            if (err) {
-                return res.status(400).send({ success: false, msg: 'Unable to connect to database. Please try again.', error: err })
-            }
-            if (!user) {
-                return res.status(400).send({ success: false, msg: 'User not found' });
-            } else if (!user.verified) {
-                return res.json({ success: true, isVerified: false, msg: 'User Data Found', body: { email: user.email, name: user.name } });
-            } else {
-                return res.json({ success: true, isVerified: true, msg: 'User Data Found', body: user });
-            }
-        });
+            .select('name thomso_id college verified payment_type')
+            .exec(function (err, user) {
+                if (err) {
+                    return res.status(400).send({ success: false, msg: 'Unable to connect to database. Please try again.', error: err })
+                }
+                if (!user) {
+                    return res.status(400).send({ success: false, msg: 'User not found' });
+                } else if (!user.verified) {
+                    return res.json({ success: true, isVerified: false, msg: 'User Data Found', body: { email: user.email, name: user.name } });
+                } else {
+                    return res.json({ success: true, isVerified: true, msg: 'User Data Found', body: user });
+                }
+            });
     }
 };

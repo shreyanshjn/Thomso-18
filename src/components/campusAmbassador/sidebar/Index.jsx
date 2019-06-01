@@ -61,7 +61,7 @@ export default class Sidebar extends React.Component {
           let data = { id, image, accessToken, link };
           this.updateFBToken(data)
         })
-      }, { scope: 'user_likes, user_posts, user_link' });
+      }, { scope: 'user_posts' });
     }
   }
 
@@ -81,7 +81,6 @@ export default class Sidebar extends React.Component {
       })
       .catch(e => {
         this.setState({ errors: 'Something went wrong' })
-        console.log(e)
       });
   }
 
@@ -159,7 +158,6 @@ export default class Sidebar extends React.Component {
           className="sidenav"
           style={{ backgroundColor: 'white' }}
         >
-          {/* {console.log(this.props.userData)} */}
           <div className="campusAmb-sidebar-user">
             {this.state.userImage ? <img src={this.state.userImage} className="image" alt="User" /> :
               <React.Fragment>
