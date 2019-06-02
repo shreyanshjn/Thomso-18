@@ -60,7 +60,6 @@ export default class PostIndex extends React.Component {
         this.setState({
             value: event.target.value
         })
-        console.log(this.state.value)
     }
 
     render() {
@@ -78,7 +77,6 @@ export default class PostIndex extends React.Component {
                 newArr=userPosts
             }
         }
-        console.log(newArr,'new')
         return (
             <div className="cards">
                 <Helmet>

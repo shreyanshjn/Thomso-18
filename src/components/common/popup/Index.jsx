@@ -36,7 +36,7 @@ export default class Popup extends React.Component {
     }
     confirm = () => {
         if (this.state.url && typeof (this.state.url) === "string") {
-            this.props.history.push('/CampusAmbassador')
+            this.props.history.push('/campus')
         } else {
             this.setState({
                 close: true

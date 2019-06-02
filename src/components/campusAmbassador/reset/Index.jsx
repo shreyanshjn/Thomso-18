@@ -44,7 +44,7 @@ export default class ResetIndex extends React.Component {
                             if (r.data.success) {
                                 this.props.updateRoutes(true)
                                 this.props.setUserData(r.data.body)
-                                this.props.history.push('/CampusAmbassador')
+                                this.props.history.push('/campus')
                             } else {
                                 this.setState({
                                     disabled: false,

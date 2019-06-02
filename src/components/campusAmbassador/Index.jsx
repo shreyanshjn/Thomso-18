@@ -130,7 +130,6 @@ export default class CampusIndex extends React.Component {
         });
     };
     render() {
-        console.log(this.state.userData,'user data')
         return (
             <React.Fragment >
                 {this.state.isAuthenticated ?

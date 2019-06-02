@@ -23,7 +23,7 @@ router.get('/info', TempCATokenMiddleware.verifyTemp, tempControls.getData);
 // -> /ca/temp/
 router.use('/', TempCATokenMiddleware.verify)
 router.get('/posts', tempControls.getPosts);
-router.get('/UserPosts', TempCATokenMiddleware.verifyTemp, tempControls.getUserPosts);
+router.get('/UserPosts', tempControls.getUserPosts);
 router.post('/updateImage', TempCATokenMiddleware.verifyTemp, tempControls.update_image);
 
 router.post('/idea', tempControls.postIdea);

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {BrowserRouter, Route } from 'react-router-dom'
+import {Route } from 'react-router-dom'
 import Loadable from 'react-loadable'
 import FetchApi from '../../utils/FetchAPI'
 import AuthService from '../../handlers/ca/temp/AuthService'
@@ -43,6 +43,11 @@ const ProfileIndex = Loadable({
     loading: Loading
 })
 
+const ResetIndex = Loadable({
+    loader: () => import("../campusAmbassador/reset/Index"),
+    loading: Loading
+});
+
 const LoginIndex = Loadable({
     loader: () => import('../campusAmbassador/login/Index'),
     loading: Loading
@@ -62,7 +67,6 @@ export default class Facebook extends Component
         this.Auth = new AuthService()
     }
     componentDidMount() {
-        console.log('component did mount')
         const isAuthenticated = this.Auth.hasToken()
             const token = this.Auth.getToken()
         if(isAuthenticated)
@@ -74,7 +78,7 @@ export default class Facebook extends Component
                             this.setState({ isAuthenticated: true, isTemp: false, userData: r.data.body })
                         } else {
                             this.setState({ isAuthenticated: true, isTemp: true })
-                            this.props.history.push('/CampusAmbassador/reset')
+                            this.props.history.push('/campus/reset')
                         }
                     }
                 })
@@ -136,29 +140,31 @@ export default class Facebook extends Component
     }
 
     render() {
-        console.log('not ok')
         return (
-            <BrowserRouter>
+            <React.Fragment >
+                {this.state.isAuthenticated ?
                     <React.Fragment>
-                        {this.state.isAuthenticated ?
-                            <React.Fragment>
-                                <React.Fragment>
-                                    <Route path="/campus" render={props => (<SidebarIndex {...props} userData={this.state.userData} total={this.state.total} max={this.state.max} setUserPosts={this.setUserPosts} />)} />
-                                    <Route exact path="/campus" render={props => (<ProfileIndex {...props} userData={this.state.userData} total={this.state.total} max={this.state.max} />)} />
-                                    <Route exact path="/campus/profile" render={props => (<ProfileIndex {...props} total={this.state.total} max={this.state.max} userData={this.state.userData} updateRoutes={this.handleUpdate} setUserData={this.setUserData} />)} />
-                                    <Route exact path="/campus/timeline" render={props => (<TimelineIndex {...props} userPosts={this.state.userPosts} />)} />
-                                </React.Fragment>
-                                <Route exact path="/campus/logout" render={props => (<LogoutIndex {...props} updateRoutes={this.handleUpdate} facebook={true} />)} />
-                            </React.Fragment>
+                        {this.state.isTemp ?
+                            <Route exact path="/campus/*" render={props => (<ResetIndex {...props} updateRoutes={this.handleUpdate} setUserData={this.setUserData} />)} />
                             :
                             <React.Fragment>
+                                    <Route path="/campus" render={props => (<SidebarIndex {...props} userData={this.state.userData} total={this.state.total} max={this.state.max} setUserPosts={this.setUserPosts} />)} />
+                                    <Route exact path="/campus/profile" render={props => (<ProfileIndex {...props} total={this.state.total} max={this.state.max} userData={this.state.userData} updateRoutes={this.handleUpdate} setUserData={this.setUserData} />)} />
+                                />
+                                    <Route exact path="/campus" render={props => (<ProfileIndex {...props} userData={this.state.userData} total={this.state.total} max={this.state.max} />)} />
+                                    <Route exact path="/campus/timeline" render={props => (<TimelineIndex {...props} userPosts={this.state.userPosts} />)} />
+                            </React.Fragment>
+                        }
+                                <Route exact path="/campus/logout" render={props => (<LogoutIndex {...props} updateRoutes={this.handleUpdate} facebook={true} />)} />
+                    </React.Fragment>
+                    :
+                    <React.Fragment>
                                 <Route exact path="/campus" render={props => (<HomeIndex facebook={true} />)} />
                                 <Route exact path="/campus/register" render={props => (<RegisterIndex {...props}/>)} />
                                 <Route exact path="/campus/login" render={props => (<LoginIndex {...props} updateRoutes={this.handleUpdate} setUserData={this.setUserData} facebook={true} />)} />
-                            </React.Fragment>
-                        }
                     </React.Fragment>
-            </BrowserRouter>
+                }
+            </React.Fragment>
         )
     }
 }
