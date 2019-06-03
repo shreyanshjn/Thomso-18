@@ -67,21 +67,18 @@ export default class PostIndex extends React.Component {
         const { userPosts } = this.props
         if(userPosts)
         {
-            if(value==='leastLiked')
+            var newArr = _.sortBy(userPosts, 'likes.summary.total_count', function(n) {
+                return Math.sin(n)
+            })
+            if(value==='mostLiked')
             {
-                var newArr = _.sortBy(userPosts, 'likes.summary.total_count', function(n) {
-                    return Math.sin(n)
-                })
-            }
-            else {
-                newArr=userPosts
+                newArr=newArr.reverse()
             }
         }
         return (
             <div className="cards">
                 <Helmet>
-                    <meta keywords="" description="Amount of reach by campus ambassador determines their chances of winning. Post and
-                        publicize about events at Thomso&#39;" />
+                    <meta keywords="" description="Amount of reach by campus ambassador determines their chances of winning. Post and publicize about events at Thomso&#39;" />
                 </Helmet>
                 <div className="liked-semi-square liked-styled-select liked-blue outer-select">
                     <form>
@@ -100,7 +97,7 @@ export default class PostIndex extends React.Component {
                                 return <Card key={'CA-Home-Posts' + index} data={post} sharePost={this.sharePost} />
                             else
                                 return null
-                }) : <div className="facebook-not-connected-popup"><div>Facebook not connected.<br />Connect with facebook to access your timelines.<br/>Do not worry we never post on your wall.</div></div>}
+                }) : <div className="facebook-not-connected-popup"><div>Facebook not connected.<br />Connect with facebook to access your timeline.<br/>Do not worry we never post on your wall.</div></div>}
                     </div>
         )
     }
