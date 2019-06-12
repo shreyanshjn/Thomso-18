@@ -129,6 +129,9 @@ export default class EventDetail extends React.Component {
                         {this.state.data.noRegister}
                     </div> : null
                 }
+                <div className="terms-and-conditions-last">
+                    *The net worth of prize money is subjected to total participation in the event <br /> and will be decided by the the core committee of Thomso 18.
+                </div>
             </div>
         )
     }
